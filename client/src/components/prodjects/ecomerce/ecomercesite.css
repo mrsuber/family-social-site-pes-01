@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+  --orange:#ff7800;
+  --black:#130f40;
+  --white:#fff;
+  --light-color:#666;
+  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+  --border:.2rem solid rgba(0,0,0,.1);
+  --outline:.1rem solid rgba(0,0,0,.1);
+  --outline-hover:.2rem solid var(--black);
+}
+.ecomerce-body{
+  margin:0;
+  padding: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  outline: none;border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+
+}
+html{
+  font-size: 65.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top:7rem;
+  background: #eee;
+}
+section{
+  padding: 2rem 9%;
+}
+.ecom__box-container{
+  /* width:100%; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+  gap:1.5rem;
+
+}
+
+
+.ecom__heading{
+  text-align: center;
+  padding: 2rem 0;
+  padding-bottom: 3rem;
+  font-size: 3.5rem;
+  color: var(--black);
+
+}
+.ecom__heading span{
+  background: var(--orange);
+  color: var(--white);
+  display: inline-block;
+  padding: 0 3rem;
+  clip-path:polygon(100% 0,93% 50%,100% 99%,0% 100%,7% 50%,0% 0%);
+}
+
+/* media Queries*/
+@media (max-width:991px) {
+  html{
+  font-size: 55%;
+  }
+}
+
+
+/* media Queries*/
+@media (max-width:450px) {
+  html{
+  font-size: 50%;
+  }
+}
