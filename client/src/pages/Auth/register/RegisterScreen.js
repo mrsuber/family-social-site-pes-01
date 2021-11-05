@@ -37,7 +37,7 @@ const RegisterScreen = ({history}) => {
        localStorage.setItem("authToken",data.token)
        history.push("/")
     }catch(error){
-      setError(error.response.data.error)
+      setError(error.response.data.msg)
         setTimeout(()=>{
           setError("")
         },5000)

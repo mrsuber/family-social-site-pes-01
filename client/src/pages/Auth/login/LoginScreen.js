@@ -33,13 +33,14 @@ const LoginScreen = ({history}) => {
        localStorage.setItem("authToken",data.token)
        history.push("/")
     }catch(error){
-      setError(error.response.data.error)
+      // console.log(error.response.data)
+      setError(error.response.data.msg)
         setTimeout(()=>{
           setError("")
         },5000)
     }
   }
-
+// console.log(error)
 
 
 
