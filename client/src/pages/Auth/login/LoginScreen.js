@@ -2,36 +2,14 @@ import './LoginScreen.css'
 import {useState,useEffect} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
-import dashbourd from './dashboard.png'
-import SecondaryButton from '../buttons/SecondaryButton'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import EcomShoppingCard from '../cards/ecomshoppingcard/EcomShoppingCard'
-// import PrimaryButton from "../buttons/PrimaryButton"
-import {
-  faShoppingBasket,
-  faBars,
-  faSearch,
-  faShoppingCart,
-  faUser,
-  faTrash,
-  faDatabase
-
-
- } from '@fortawesome/free-solid-svg-icons';
-
-
+import {CircularProgress} from "@material-ui/core"
 
 const LoginScreen = ({history}) => {
 
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
   const [error,setError]=useState('')
-  const [isScrolled,setIsScrolled]=useState(true)
-  window.onscroll =()=>{
-    setIsScrolled(window.pageYOffset===0?false:true)
-    return ()=>(window.onscroll=null);
-  }
-  console.log(window.pageYOffset)
+  const [isFectching,setIsFectching]=useState(false)
 
   useEffect(()=>{
     if(localStorage.getItem("authToken")){
@@ -68,9 +46,12 @@ const LoginScreen = ({history}) => {
 
   return (
     <>
-    <div className="register-screen">
-    <form onSubmit={loginHandler} className="register-screen_form">
-      <h3 className="register-screen_title" >Login Now</h3>
+    <div className="login-screen">
+    <div className="login-wrapper">
+
+    <div className="login-form login-screen_form">
+    <form onSubmit={loginHandler} >
+      <h3 className="login-screen_title" >Login Now</h3>
       {error && <span className="error-message">{error}</span>}
 
 
@@ -85,12 +66,22 @@ const LoginScreen = ({history}) => {
           <label htmlFor="password">Password:</label>
           <input type="password" required id="password" placeholder="Enter Password" value={password} onChange={(e) =>setPassword(e.target.value)}/>
         </div>
-      
-      <button type="submit" className="btn btn-primary" tabIndex={3}>Login</button>
-      <span className="register-screen_subtext">forgot your password? <Link to="/forgotpassword">Reset Now</Link></span>
-      <span className="register-screen_subtext">Don't have an account? <Link to="/register">Create Now</Link></span>
+        <button className="btn btn-primary" type="submit" tabIndex={3} disabled={isFectching}>{isFectching ? <CircularProgress color="white" size="20px"/> : "Log In"}</button>
+
+      <span className="login-screen_subtext">forgot your password? <Link to="/forgotpassword">Reset Now</Link></span>
+      <span className="login-screen_subtext">Don't have an account? <Link to="/register">Create Now</Link></span>
 
     </form>
+    </div>
+
+    <div className="login-other-boxes">
+    <div className="login-box1"></div>
+    <div className="login-box2"></div>
+    <div className="login-box3"></div>
+    </div>
+    </div>
+
+
     </div>
 
     </>

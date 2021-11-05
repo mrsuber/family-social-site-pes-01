@@ -3,6 +3,7 @@ const express = require('express')
 const connectDB = require('./config/db')
 const errorHandler = require('./middleware/error')
 const path = require('path')
+const cookieParser = require('cookie-parser')
 
 
 //connectDB
@@ -11,7 +12,7 @@ connectDB();
 const app = express();
 
 app.use(express.json())
-
+app.use(cookieParser())
 
 //Error unhandler(should be last piece of middleware)
 app.use(errorHandler)

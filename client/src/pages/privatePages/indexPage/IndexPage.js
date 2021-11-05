@@ -1,7 +1,8 @@
 import {useState,useEffect} from 'react'
 import axios from 'axios'
+import './IndexPage.css'
 
-const PrivateScreen = ({history}) => {
+const IndexPage = ({history}) => {
   const [error,setError] =useState("")
   const [privateData,setPrivateData]=useState("");
 
@@ -39,11 +40,24 @@ const PrivateScreen = ({history}) => {
     error? <span className="error-message">{error}</span>
     :
     <>
+    <input type="checkbox" id="theme" />
+    <div className="index-body">
       <div style={{background:"green", color:"white"}}>PrivateData:{privateData}</div>
       <button onClick={logoutHandler}>Logout</button>
+
+      <div className="index-wrapper">
+        <div className="index-box1">
+          <h1 className="index-box1_title">MSB-Social</h1>
+        </div>
+        <div className="index-box1"></div>
+        <div className="index-box1"></div>
+        <div className="index-box1"></div>
+      </div>
+
+      </div>
     </>
 
   )
 }
 
-export default PrivateScreen
+export default IndexPage
