@@ -7,17 +7,18 @@ const jwt = require('jsonwebtoken')
 const UserSchema = new mongoose.Schema({
   fullname:{
     type:String,
-    require:[true,"please provide your Full name  "],
     trim:true,
     maxlength:25
   },
   username:{
     type:String,
-    required:[true,"please provide a username  "]
+    required:[true,"please provide a username  "],
+    unique:true
   },
   email:{
     type:String,
     required:[true,"please provide an email"],
+    trim:true,
     unique:true,
     match:[
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -28,9 +29,32 @@ const UserSchema = new mongoose.Schema({
     type:String,
     required:[true,"Please add a password"],
     minlength:6,
-    select:false,
+    select:false
   },
-  profilePic:{type:String,default:""},
+  profilePic:{type:String,default:"https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png"},
+  role:{type:String,default:'user'},
+  gender:{type:String,default:'male'},
+  mobile:{type:String,default:''},
+  address:{type:String,default:''},
+  story:{
+    type:String,
+    default:'',
+    maxlength:200
+
+  },
+  website:{type:String,default:''},
+  followers:[
+    {
+    type:mongoose.Types.ObjectId,
+    ref:'user'
+  }
+],
+  following:[
+    {
+      type:mongoose.Types.ObjectId,
+      ref:'user'
+    }
+  ],
   isAdmin:{type:Boolean,default:false},
   resetPasswordToken: String,
   resetPasswordExpire:Date

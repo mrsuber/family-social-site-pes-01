@@ -117,6 +117,14 @@ exports.resetpassword= async (req,res,next)=>{
   }
 }
 
+exports.logout = async (req,res) =>{
+  res.status(200).json("still working on the logout route")
+}
+exports.generateFreshToken=async (req,res)=>{
+  res.status(200).json("still working on the generate new token  route")
+
+}
+
 const sendToken = (user,statusCode,res) =>{
   const token = user.getSignedToken()
   res.status(statusCode).json({success:true,token})
