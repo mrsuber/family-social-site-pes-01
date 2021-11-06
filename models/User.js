@@ -80,6 +80,10 @@ UserSchema.methods.getSignedToken = function(){
   return jwt.sign({id:this._id}, process.env.JWT_SECRET,{expiresIn:process.env.JWT_EXPIRE})
 }
 
+UserSchema.methods.refreshToken = function(){
+  return jwt.sign({id:this._id}, process.env.JWT_SECRET,{expiresIn:'30d'})
+}
+
 UserSchema.methods.getResetPasswordToken = function(){
   const resetToken= crypto.randomBytes(20).toString("hex")
   this.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex");

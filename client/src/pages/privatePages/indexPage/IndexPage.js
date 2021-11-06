@@ -1,6 +1,7 @@
 import {useState,useEffect} from 'react'
 import axios from 'axios'
 import './IndexPage.css'
+import {Link} from 'react-router-dom'
 
 const IndexPage = ({history}) => {
   const [error,setError] =useState("")
@@ -46,10 +47,11 @@ const IndexPage = ({history}) => {
       <button onClick={logoutHandler}>Logout</button>
 
       <div className="index-wrapper">
-        <div className="index-box1">
+          <Link to="/home" className="social2__link"><div className="index-box1">
           <h1 className="index-box1_title">MSB-Social</h1>
-        </div>
-        <div className="index-box1"></div>
+        </div></Link>
+
+      <div className="index-box1"></div>
         <div className="index-box1"></div>
         <div className="index-box1"></div>
       </div>

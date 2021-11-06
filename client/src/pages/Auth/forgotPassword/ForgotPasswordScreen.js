@@ -1,6 +1,7 @@
 import './ForgotPasswordScreen.css'
 import axios from 'axios'
 import {useState} from "react"
+import {Link} from 'react-router-dom'
 
 const ForgotPasswordScreen = () => {
   const[email,setEmail]=useState("")
@@ -19,7 +20,7 @@ const ForgotPasswordScreen = () => {
       const{data}=await axios.post("/api/auth/forgotpassword",{email}, config )
       setSuccess(data.data)
     }catch(error){
-      setError(error.response.data.error);
+      setError(error.response.data.msg);
       setEmail("")
       setTimeout(()=>{
         setError("")
@@ -40,7 +41,10 @@ const ForgotPasswordScreen = () => {
           <input type="email" required id="email" placeholder="Email address" value={email} onChange={(e)=>setEmail(e.target.value)}/>
         </div>
         <button type="submit" className="btn btn-primary">Send Email</button>
+        <span className="register-screen_subtext">Already have an account? <Link to="/login">Login</Link></span>
+
       </form>
+
     </div>
   )
 }

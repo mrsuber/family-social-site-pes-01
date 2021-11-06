@@ -31,7 +31,7 @@ const ResetPasswordScreen = ({match}) => {
 
     setSuccess(data.data)
   }catch(error){
-    setError(error.response.data.error)
+    setError(error.response.data.msg)
     setTimeout(()=>{
       setError("")
     },5000)
@@ -56,7 +56,10 @@ const ResetPasswordScreen = ({match}) => {
         </div>
 
         <button type="submit" className="btn btn-primary">Reset Password</button>
+          <span className="register-screen_subtext">Already have an account? <Link to="/login">Login</Link></span>
       </form>
+
+
     </div>
   )
 }
