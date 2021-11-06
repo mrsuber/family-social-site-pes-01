@@ -10,6 +10,10 @@ body{
   background: #eee;
   color: #333;
 }
+.social2__link{
+text-decoration: none;
+color: inherit;
+}
 
 .form-group,
 .form-group label,

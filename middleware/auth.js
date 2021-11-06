@@ -9,6 +9,7 @@ exports.protect = async (req,res,next)=>{
 
   }
   if(!token){
+    res.status(401).json({msg:"Not authorized to acess this route(no token)"})
     return next(new ErrorResponse("Not authorized to acess this route(no token)",401))
   }
   try{
@@ -19,13 +20,15 @@ exports.protect = async (req,res,next)=>{
     const user =  await User.findById(decoded.id)
 
     if(!user){
+      res.status(404).json({msg:"No user found with this id"})
       return next(new ErrorResponse("No user found with this id",404));
     }
-  
+
     req.user =user
     next()
   }catch(error){
     // console.error(error);
+    res.status(401).json({msg:"Not authorized to access this root(strang error)"})
     return next(new ErrorResponse("Not authorized to access this root(strang error)",401) )
   }
 }
