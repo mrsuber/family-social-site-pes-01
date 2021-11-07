@@ -24,8 +24,8 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use('/uploads',express.static(path.join(__dirname,'uploads')))
 // end file upload
-app.use('/api/auth',require('./routes/auth'))
-app.use('/api/private',require('./routes/private'))
+app.use('/api',require('./routes/auth'))
+app.use('/api',require('./routes/private'))
 
 if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join(__dirname,'/client/build')))

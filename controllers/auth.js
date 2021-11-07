@@ -33,8 +33,8 @@ exports.register= async (req,res,next)=>{
     const user= await User.create({
       username,email,password
     })
-
-    sendToken(user, 201,res)
+    const msg = "User Registration Success"
+    sendToken(user, 201,res,msg)
   }catch(error){
     // next(error)
     res.status(500).json({msg:error.message})
@@ -56,10 +56,10 @@ exports.login= async (req,res,next)=>{
   }
 
   try{
+
     const user = await User.findOne({email}).select("+password")
-    // const user = await User.findOne({email}).populate("followers following","-password")
     if(!user){
-      res.status(401).json({msg:"Invalid credentialls"})
+      res.status(401).json({msg:"Invalid login credentialls"})
       return next(new ErrorResponse("Invalid credentials",401))
 
     }
@@ -72,8 +72,8 @@ exports.login= async (req,res,next)=>{
 
     }
 
-
-    sendToken(user, 200,res)
+    const msg = "Login Success"
+    sendToken(user, 200,res,msg)
   }catch(error){
 
   }
@@ -158,7 +158,7 @@ exports.generateFreshToken=async (req,res)=>{
 
 }
 
-const sendToken = (user,statusCode,res) =>{
+const sendToken = (user,statusCode,res,msg) =>{
   const token = user.getSignedToken()
   // const refresh_token= user.refreshToken()
   // res.cookie("refreshtoken",refresh_token,{
@@ -168,6 +168,7 @@ const sendToken = (user,statusCode,res) =>{
   // })
   res.status(statusCode).json({
     success:true,
+    msg,
     token,
     user:{
       ...user._doc,

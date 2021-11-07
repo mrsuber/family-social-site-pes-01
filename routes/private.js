@@ -19,19 +19,19 @@ const { protect } = require('../middleware/auth')
 const {upload} = require('../helpers/filehelper')
 
 //manupulate user data
-router.route("/updateuser/:id").put(protect,updateUser)
-router.route("/finduser/:id").get(protect,findUser)
-router.route("/getallusers").get(protect,getAllUsers)
-router.route("/stats").get(protect,getUserStatistics)
-router.route("/deleteuser/:id").delete(protect,deleteUser)
+router.route("/private/updateuser/:id").put(protect,updateUser)
+router.route("/private/finduser/:id").get(protect,findUser)
+router.route("/private/getallusers").get(protect,getAllUsers)
+router.route("/private/stats").get(protect,getUserStatistics)
+router.route("/private/deleteuser/:id").delete(protect,deleteUser)
 
 
 //movie routes
-router.post('/createnewrecipe',upload.single('file'),protect,createNewRecipe)
-router.route("/updaterecipe/:recipeId").put(protect,updateRecipe)
-router.route("/deleterecipe/:recipeId").delete(protect,deleteRecipe)
-router.route("/getarecipe/:recipeId").get(protect,getARecipe)
-router.route("/getallrecipe").get(getAllRecipe)
+router.post('/private/createnewrecipe',upload.single('file'),protect,createNewRecipe)
+router.route("/private/updaterecipe/:recipeId").put(protect,updateRecipe)
+router.route("/private/deleterecipe/:recipeId").delete(protect,deleteRecipe)
+router.route("/private/getarecipe/:recipeId").get(protect,getARecipe)
+router.route("/private/getallrecipe").get(getAllRecipe)
 
 router.route("/").get(protect,getPrivateData);
 
