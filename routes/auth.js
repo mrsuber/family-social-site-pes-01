@@ -3,17 +3,17 @@ const router = express.Router();
 
 const {register,login,forgotpassword,resetpassword,logout,generateFreshToken} = require('../controllers/auth')
 
-router.route("/register").post(register)
+router.route("/auth/register").post(register)
 
-router.route("/login").post(login)
+router.route("/auth/login").post(login)
 
-router.route("/logout").post(logout)
+router.route("/auth/logout").post(logout)
 
-router.route("/refresh_token").post(generateFreshToken)
+router.route("/auth/refresh_token").post(generateFreshToken)
 
-router.route("/forgotpassword").post(forgotpassword)
+router.route("/auth/forgotpassword").post(forgotpassword)
 
-router.route("/resetpassword/:resetToken").put(resetpassword)
+router.route("/auth/resetpassword/:resetToken").put(resetpassword)
 
 
 module.exports = router;

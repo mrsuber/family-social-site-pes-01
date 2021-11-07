@@ -3,14 +3,33 @@ import {useState,useEffect} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import {CircularProgress} from "@material-ui/core"
+import {login} from '../../../redux/actions/authAction'
+import {useDispatch} from 'react-redux'
 
 const LoginScreen = ({history}) => {
-
-  const [email,setEmail]=useState('')
-  const [password,setPassword]=useState('')
+  const initialState = {email:'',password:''}
+  const[userData,setUserData]= useState(initialState)
+  // const [email,setEmail]=useState('')
+  // const [password,setPassword]=useState('')
   const [error,setError]=useState('')
   const [isFectching,setIsFectching]=useState(false)
+  const {email,password} = userData
 
+  const [typePass,setTypePass]=useState(false)
+
+  const dispatch = useDispatch()
+  // function handleEmailOnchange(e){
+  //   setEmail(e.target.value)
+  //   setUserData({email:email,password:password})
+  // }
+  // function handlePasswordOnchange(e){
+  //   setPassword(e.target.value)
+  //   setUserData({email:email,password:password})
+  // }
+  const handleChangeInput = e=>{
+    const {name,value} = e.target
+    setUserData({...userData,[name]:value})
+  }
   useEffect(()=>{
     if(localStorage.getItem("authToken")){
       history.push("/")
@@ -19,26 +38,24 @@ const LoginScreen = ({history}) => {
 
 
 
-  const loginHandler= async (e)=>{
+  const loginHandler= (e)=>{
     e.preventDefault()
-    const config = {
-      header:{
-        "Content-Type":"application/json"
-      }
-    }
+    dispatch(login(userData))
 
 
-    try{
-       const {data}= await axios.post("/api/auth/login",{email,password},config);
-       localStorage.setItem("authToken",data.token)
-       history.push("/")
-    }catch(error){
-      // console.log(error.response.data)
-      setError(error.response.data.msg)
-        setTimeout(()=>{
-          setError("")
-        },5000)
-    }
+
+
+    // try{
+    //    const {data}= await axios.post("/api/auth/login",{email,password},config);
+    //    localStorage.setItem("authToken",data.token)
+    //    history.push("/")
+    // }catch(error){
+    //   // console.log(error.response.data)
+    //   setError(error.response.data.msg)
+    //     setTimeout(()=>{
+    //       setError("")
+    //     },5000)
+    // }
   }
 // console.log(error)
 
@@ -57,16 +74,21 @@ const LoginScreen = ({history}) => {
 
 
 
-      <div className="form-group">
+      <div className="login-form-group">
         <label htmlFor="email">Email:</label>
-        <input  type="email" required id="email" placeholder="Enter email" value={email} onChange={(e) =>setEmail(e.target.value)} tabIndex={1}/>
+        <input  type="email" required id="email" placeholder="Enter email" value={email} onChange={handleChangeInput} name="email" tabIndex={1}/>
         </div>
 
 
-        <div className="form-group">
+        <div className="login-form-group">
           <label htmlFor="password">Password:</label>
-          <input type="password" required id="password" placeholder="Enter Password" value={password} onChange={(e) =>setPassword(e.target.value)}/>
+          <input type={typePass? "text":"password"} required id="password" placeholder="Enter Password" value={password} onChange={handleChangeInput} name="password"/>
+          <small onClick={()=>setTypePass(!typePass)}>
+          {typePass? 'Hide':'Show'}
+          </small>
         </div>
+
+
         <button className="btn btn-primary" type="submit" tabIndex={3} disabled={isFectching}>{isFectching ? <CircularProgress color="white" size="20px"/> : "Log In"}</button>
 
       <span className="login-screen_subtext">forgot your password? <Link to="/forgotpassword">Reset Now</Link></span>
@@ -77,8 +99,8 @@ const LoginScreen = ({history}) => {
 
     <div className="login-other-boxes">
     <div className="login-box1"></div>
-    <div className="login-box2"></div>
-    <div className="login-box3"></div>
+    <div className="login-box1"></div>
+    <div className="login-box1"></div>
     </div>
     </div>
 
