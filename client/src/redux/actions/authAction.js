@@ -1,9 +1,11 @@
 import {postDataAPI} from '../../utils/fetchData'
 import {GLOBALTYPES} from './globlaTypes'
+import valid from '../../utils/valid'
 
 
 export const login = (data) => async (dispatch)=>{
   try{
+
     const config = {
       headers:{
         "Content-Type":"application/json"
@@ -19,7 +21,7 @@ export const login = (data) => async (dispatch)=>{
       }
 
     })
-
+    // localStorage.setItem("authToken",res.data.token)
     localStorage.setItem("firstLogin",true)
     dispatch({
       type:GLOBALTYPES.ALERT,
@@ -38,13 +40,18 @@ export const login = (data) => async (dispatch)=>{
 
 export const register = (data) => async (dispatch)=>{
   try{
+    const check = valid(data)
+    if(check.errLength > 0){
+
+      return dispatch({type:GLOBALTYPES.ALERT,payload:check.errMsg})
+    }
     const config = {
       headers:{
         "Content-Type":"application/json"
       }
     }
     dispatch({type:GLOBALTYPES.ALERT,payload:{loading:true}})
-    const res = await postDataAPI('auth/register',data,config)
+    const res = await postDataAPI('auth/register',{data},config)
     dispatch({
       type:GLOBALTYPES.AUTH,
       payload:{
@@ -53,7 +60,7 @@ export const register = (data) => async (dispatch)=>{
       }
 
     })
-    localStorage.setItem("authToken",data.token)
+    // localStorage.setItem("authToken",res.data.token)
     localStorage.setItem("firstLogin",true)
     dispatch({
       type:GLOBALTYPES.ALERT,
@@ -65,7 +72,7 @@ export const register = (data) => async (dispatch)=>{
   }catch(err){
       dispatch({
         type:GLOBALTYPES.ALERT,
-        payload:{error:err.response.data}
+        payload:{error:err.response.data.msg}
       })
       }
 

@@ -20,6 +20,11 @@ color: inherit;
   color:white;
 
 }
+.social2DangerTextColor{
+  
+  color:red;
+
+}
 .social2SuccessColor{
   background-color: green !important;
   color: white;

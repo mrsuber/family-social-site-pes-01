@@ -56,3 +56,12 @@
   cursor: pointer;
   opacity: 0.5;
 }
+
+.register-screen-small-text{
+  position: relative !important;
+  top:0 !important;
+  right: 0 !important;
+  transform: none !important;
+  cursor: default !important;
+  opacity: 1 !important;
+}

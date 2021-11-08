@@ -7,7 +7,8 @@ const jwt = require('jsonwebtoken')
 exports.register= async (req,res,next)=>{
 
   try{
-    let {username,email,password} = req.body;
+    let {username,email,password} = req.body.data;
+    
      username = username.toLowerCase().replace(/ /g,'')
 
 

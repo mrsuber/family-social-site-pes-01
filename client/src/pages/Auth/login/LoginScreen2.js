@@ -1,11 +1,15 @@
 import './LoginScreen.css'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {CircularProgress} from "@material-ui/core"
 import {login} from '../../../redux/actions/authAction'
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
+import {useHistory} from 'react-router-dom'
+
 
 const LoginScreen2 = () => {
+  const {auth} = useSelector(state => state)
+  const history = useHistory()
   const initialState = {email:'',password:''}
   const[userData,setUserData]= useState(initialState)
   const [isFectching,setIsFectching]=useState(false)
@@ -27,6 +31,10 @@ const LoginScreen2 = () => {
 
   }
 
+
+  useEffect(()=>{
+    if(auth.token)history.push("/")
+  },[auth.token , history])
 
 
 

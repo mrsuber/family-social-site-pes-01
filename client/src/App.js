@@ -24,7 +24,7 @@ const App=()=> {
       <Alert />
         <Switch>
 
-
+            <Route exact path="/login" component={LoginScreen2} />
             <Route exact path="/register" component={RegisterScreen} />
             <Route exact path="/forgotpassword" component={ForgotPasswordScreen} />
             <Route exact path="/resetpassword" component={ResetPasswordScreen} />

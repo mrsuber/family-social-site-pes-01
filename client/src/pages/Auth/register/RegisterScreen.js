@@ -3,21 +3,23 @@ import {useState,useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {CircularProgress} from "@material-ui/core"
 import {register} from '../../../redux/actions/authAction'
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
+import {useHistory} from 'react-router-dom'
 
-const RegisterScreen = ({history}) => {
-  const initialState = {username:'',email:'',password:''}
+
+const RegisterScreen = () => {
+  const {auth,alert} = useSelector(state=>state)
+  const history = useHistory()
+  const initialState = {username:'',email:'',password:'',cf_password:''}
   const[userData,setUserData]= useState(initialState)
-  // const [username,setUsername]=useState('')
-  // const [email,setEmail]=useState('')
-  // const [password,setPassword]=useState('')
+
   const [confirmpassword,setConfirmpassword]=useState('')
   const [error,setError]=useState('')
   const [isFectching,setIsFectching]=useState(false)
-  const {username,email,password} = userData
+  const {username,email,password,cf_password} = userData
 
   const [typePass,setTypePass]=useState(false)
-
+  const [typeCfPass,setTypeCfPass]=useState(false)
     const dispatch = useDispatch()
 
     const handleChangeInput = e=>{
@@ -27,22 +29,24 @@ const RegisterScreen = ({history}) => {
 
     const registerHandler = (e)=>{
       e.preventDefault()
-      if(password!==confirmpassword){
+      // if(password!==confirmpassword){
+      //
+      //   setConfirmpassword("")
+      //   setTimeout(()=>{
+      //     setError("")
+      //   },5000)
+      //   return setError("Password do not match")
+      // }
 
-        setConfirmpassword("")
-        setTimeout(()=>{
-          setError("")
-        },5000)
-        return setError("Password do not match")
-      }
       dispatch(register(userData))
     }
 
   useEffect(()=>{
-    if(localStorage.getItem("authToken")){
-      history.push("/")
-    }
-  },[history])
+    // if(localStorage.getItem("authToken")){
+    //   history.push("/")
+    // }
+    if(auth.token) history.push("/")
+  },[auth.token,history])
 
   // const registerHandler= async (e)=>{
   //   e.preventDefault()
@@ -79,28 +83,39 @@ const RegisterScreen = ({history}) => {
       {error && <span className="error-message">{error}</span>}
       <div className="register-form-group">
         <label htmlFor="name">Username:</label>
-        <input type="text" required id="name" placeholder="Enter Username" value={username} onChange={handleChangeInput} name="username"/>
+        <input type="text" required id="name" placeholder="Enter Username" value={username.toLowerCase().replace(/ /g, "")} onChange={handleChangeInput} name="username"
+        style={{background: `${alert.username ? '#fd2d6a14' : ''}`}}/>
+        <small className="register-screen-small-text social2DangerTextColor">{alert.username? alert.username :''}</small>
       </div>
 
       <div className="register-form-group">
         <label htmlFor="email">Email:</label>
-        <input type="email" required id="email" placeholder="Enter email" value={email} onChange={handleChangeInput} name="email"/>
+        <input type="email" required id="email" placeholder="Enter email" value={email} onChange={handleChangeInput} name="email"
+        style={{background: `${alert.email ? '#fd2d6a14' : ''}`}}/>
+        <small className="register-screen-small-text social2DangerTextColor">{alert.email? alert.email :''}</small>
+
       </div>
 
       <div className="register-form-group">
         <label htmlFor="password">Password:</label>
-        <input type={typePass? "text":"password"} required id="password" placeholder="Enter Password" value={password} onChange={handleChangeInput} name="password"/>
+        <input type={typePass? "text":"password"} required id="password" placeholder="Enter Password" value={password} onChange={handleChangeInput} name="password"
+          style={{background: `${alert.password ? '#fd2d6a14' : ''}`}}/>
         <small onClick={()=>setTypePass(!typePass)}>
         {typePass? 'Hide':'Show'}
         </small>
+        <small className="register-screen-small-text social2DangerTextColor">{alert.password? alert.password :''}</small>
+
       </div>
 
       <div className="register-form-group">
         <label htmlFor="confirmpassword">Confirm Password:</label>
-        <input type={typePass? "text":"password"} required id="confirmpassword" placeholder="Confirm Password" value={confirmpassword} onChange={(e) =>setConfirmpassword(e.target.value)}/>
-        <small onClick={()=>setTypePass(!typePass)}>
-        {typePass? 'Hide':'Show'}
+        <input type={typeCfPass? "text":"password"} required id="cf_password" placeholder="Confirm Password" value={cf_password} onChange={handleChangeInput} name="cf_password"
+          style={{background: `${alert.cf_password ? '#fd2d6a14' : ''}`}}/>
+        <small onClick={()=>setTypeCfPass(!typeCfPass)}>
+        {typeCfPass? 'Hide':'Show'}
         </small>
+        <small className="register-screen-small-text social2DangerTextColor">{alert.cf_password? alert.cf_password :''}</small>
+
       </div>
       <button type="submit" className="btn btn-primary"disabled={isFectching}>{isFectching ? <CircularProgress color="white" size="20px"/> : "Register"}</button>
 
