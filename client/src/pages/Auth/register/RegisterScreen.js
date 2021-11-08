@@ -1,6 +1,5 @@
 import './RegisterScreen.css'
 import {useState,useEffect} from 'react'
-import axios from 'axios'
 import {Link} from 'react-router-dom'
 import {CircularProgress} from "@material-ui/core"
 import {register} from '../../../redux/actions/authAction'

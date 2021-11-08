@@ -15,6 +15,15 @@ text-decoration: none;
 color: inherit;
 }
 
+.social2DangerColor{
+  background-color: red !important;
+  color:white;
+
+}
+.social2SuccessColor{
+  background-color: green !important;
+  color: white;
+}
 
 .btn{
   padding: 10px 20px;

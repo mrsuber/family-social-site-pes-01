@@ -1,0 +1,38 @@
+.social2-toast{
+  position: fixed;
+  top:5px;
+  right: 5px;
+  min-width: 200px;
+  z-index: 50;
+
+  background-color: white;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.social2-toast-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social2ToastTitleButton{
+  margin-left: 2rem;
+  margin-bottom: 5px;
+  /* background-color: #fff; */
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+  transition: .5s;
+  border-radius: 10px;
+  outline: none;
+}
+
+.social2ToastTitleButton:hover{
+background-color: #fff !important;
+border-radius: 10px;
+color: #000;
+
+}

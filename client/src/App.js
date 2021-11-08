@@ -1,23 +1,36 @@
 import {BrowserRouter as Router,Switch,Route } from 'react-router-dom'
 //Routing
 import PrivateRoute from './routing/privateRoute/PrivateRoute'
-import PageRender from './routing/pageRoute/PageRender'
 // Pages
-import {LoginScreen,RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,IndexPage,HomePage} from './pages'
-
+import {RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,IndexPage,HomePage,LoginScreen2} from './pages'
+//component
+import {Alert} from './components'
+import {useSelector,useDispatch} from 'react-redux'
+import {useEffect} from 'react'
+import {refreshToken} from './redux/actions/authAction'
 
 const App=()=> {
+
+  const {auth} = useSelector(state => state)
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(refreshToken())
+  },[dispatch])
+
   return (
     <Router>
       <div className='App'>
+      <Alert />
         <Switch>
 
-            <Route exact path="/login" component={LoginScreen} />
+
             <Route exact path="/register" component={RegisterScreen} />
             <Route exact path="/forgotpassword" component={ForgotPasswordScreen} />
             <Route exact path="/resetpassword" component={ResetPasswordScreen} />
-            <PrivateRoute exact path="/home" component={HomePage}/>
-            <PrivateRoute path="/" component={IndexPage}/>
+            <PrivateRoute exact path="/root" component={ HomePage }/>
+            <Route exact path="/" component={auth.token? IndexPage : LoginScreen2} />
+            <Route exact path="/social_home" component={auth.token? HomePage : LoginScreen2}/>
 
 
         </Switch>

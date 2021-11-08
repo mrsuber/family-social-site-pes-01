@@ -1,8 +1,6 @@
 import {postDataAPI} from '../../utils/fetchData'
+import {GLOBALTYPES} from './globlaTypes'
 
-export const TYPES = {
-  AUTH:"AUTH"
-}
 
 export const login = (data) => async (dispatch)=>{
   try{
@@ -11,29 +9,27 @@ export const login = (data) => async (dispatch)=>{
         "Content-Type":"application/json"
       }
     }
-    dispatch({type:'NOTIFY',payload:{loading:true}})
+    dispatch({type:GLOBALTYPES.ALERT,payload:{loading:true}})
     const res = await postDataAPI('auth/login',data,config)
     dispatch({
-      type:'AUTH',
+      type:GLOBALTYPES.AUTH,
       payload:{
         token:res.data.token,
         user:res.data.user
       }
 
     })
-    localStorage.setItem("authToken",data.token)
+
     localStorage.setItem("firstLogin",true)
     dispatch({
-      type:'NOTIFY',
+      type:GLOBALTYPES.ALERT,
       payload:{success:res.data.msg}
     })
-
-
-
   }catch(err){
+
       dispatch({
-        type:'NOTIFY',
-        payload:{error:err.response.data}
+        type:GLOBALTYPES.ALERT,
+        payload:{error:err.response.data.msg}
       })
       }
 
@@ -47,10 +43,10 @@ export const register = (data) => async (dispatch)=>{
         "Content-Type":"application/json"
       }
     }
-    dispatch({type:'NOTIFY',payload:{loading:true}})
+    dispatch({type:GLOBALTYPES.ALERT,payload:{loading:true}})
     const res = await postDataAPI('auth/register',data,config)
     dispatch({
-      type:'AUTH',
+      type:GLOBALTYPES.AUTH,
       payload:{
         token:res.data.token,
         user:res.data.user
@@ -60,7 +56,7 @@ export const register = (data) => async (dispatch)=>{
     localStorage.setItem("authToken",data.token)
     localStorage.setItem("firstLogin",true)
     dispatch({
-      type:'NOTIFY',
+      type:GLOBALTYPES.ALERT,
       payload:{success:res.data.msg}
     })
 
@@ -68,9 +64,42 @@ export const register = (data) => async (dispatch)=>{
 
   }catch(err){
       dispatch({
-        type:'NOTIFY',
+        type:GLOBALTYPES.ALERT,
         payload:{error:err.response.data}
       })
       }
 
+}
+
+export const refreshToken = () => async (dispatch)=>{
+  const firstLogin = localStorage.getItem("firstLogin")
+
+  if(firstLogin){
+    dispatch({type:GLOBALTYPES.ALERT,payload:{loading:true}})
+    try{
+      const config = {
+        headers:{
+          "Content-Type":"application/json"
+        }
+      }
+
+      const res= await postDataAPI('auth/refresh_token',config)
+      dispatch({
+        type:GLOBALTYPES.AUTH,
+        payload:{
+          token:res.data.token,
+          user:res.data.user
+        }
+
+      })
+      dispatch({type:GLOBALTYPES.ALERT, payload:{} })
+    }catch(err){
+      dispatch({
+        type:GLOBALTYPES.ALERT,
+        payload:{
+          error:err.response.data.msg
+        }
+      })
+    }
+  }
 }
