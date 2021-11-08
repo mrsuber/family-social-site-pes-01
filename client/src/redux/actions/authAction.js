@@ -1,39 +1,37 @@
 import {postDataAPI} from '../../utils/fetchData'
+import {GLOBALTYPES} from './globlaTypes'
+import valid from '../../utils/valid'
 
-export const TYPES = {
-  AUTH:"AUTH"
-}
 
 export const login = (data) => async (dispatch)=>{
   try{
+
     const config = {
       headers:{
         "Content-Type":"application/json"
       }
     }
-    dispatch({type:'NOTIFY',payload:{loading:true}})
+    dispatch({type:GLOBALTYPES.ALERT,payload:{loading:true}})
     const res = await postDataAPI('auth/login',data,config)
     dispatch({
-      type:'AUTH',
+      type:GLOBALTYPES.AUTH,
       payload:{
         token:res.data.token,
         user:res.data.user
       }
 
     })
-    localStorage.setItem("authToken",data.token)
+    // localStorage.setItem("authToken",res.data.token)
     localStorage.setItem("firstLogin",true)
     dispatch({
-      type:'NOTIFY',
+      type:GLOBALTYPES.ALERT,
       payload:{success:res.data.msg}
     })
-
-
-
   }catch(err){
+
       dispatch({
-        type:'NOTIFY',
-        payload:{error:err.response.data}
+        type:GLOBALTYPES.ALERT,
+        payload:{error:err.response.data.msg}
       })
       }
 
@@ -42,25 +40,30 @@ export const login = (data) => async (dispatch)=>{
 
 export const register = (data) => async (dispatch)=>{
   try{
+    const check = valid(data)
+    if(check.errLength > 0){
+
+      return dispatch({type:GLOBALTYPES.ALERT,payload:check.errMsg})
+    }
     const config = {
       headers:{
         "Content-Type":"application/json"
       }
     }
-    dispatch({type:'NOTIFY',payload:{loading:true}})
-    const res = await postDataAPI('auth/register',data,config)
+    dispatch({type:GLOBALTYPES.ALERT,payload:{loading:true}})
+    const res = await postDataAPI('auth/register',{data},config)
     dispatch({
-      type:'AUTH',
+      type:GLOBALTYPES.AUTH,
       payload:{
         token:res.data.token,
         user:res.data.user
       }
 
     })
-    localStorage.setItem("authToken",data.token)
+    // localStorage.setItem("authToken",res.data.token)
     localStorage.setItem("firstLogin",true)
     dispatch({
-      type:'NOTIFY',
+      type:GLOBALTYPES.ALERT,
       payload:{success:res.data.msg}
     })
 
@@ -68,9 +71,42 @@ export const register = (data) => async (dispatch)=>{
 
   }catch(err){
       dispatch({
-        type:'NOTIFY',
-        payload:{error:err.response.data}
+        type:GLOBALTYPES.ALERT,
+        payload:{error:err.response.data.msg}
       })
       }
 
+}
+
+export const refreshToken = () => async (dispatch)=>{
+  const firstLogin = localStorage.getItem("firstLogin")
+
+  if(firstLogin){
+    dispatch({type:GLOBALTYPES.ALERT,payload:{loading:true}})
+    try{
+      const config = {
+        headers:{
+          "Content-Type":"application/json"
+        }
+      }
+
+      const res= await postDataAPI('auth/refresh_token',config)
+      dispatch({
+        type:GLOBALTYPES.AUTH,
+        payload:{
+          token:res.data.token,
+          user:res.data.user
+        }
+
+      })
+      dispatch({type:GLOBALTYPES.ALERT, payload:{} })
+    }catch(err){
+      dispatch({
+        type:GLOBALTYPES.ALERT,
+        payload:{
+          error:err.response.data.msg
+        }
+      })
+    }
+  }
 }

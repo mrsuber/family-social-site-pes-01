@@ -2,11 +2,13 @@ const crypto = require("crypto")
 const User = require('../models/User')
 const ErrorResponse = require('../utils/errorResponse')
 const sendEmail = require('../utils/sendEmail')
+const jwt = require('jsonwebtoken')
 //register user
 exports.register= async (req,res,next)=>{
 
   try{
-    let {username,email,password} = req.body;
+    let {username,email,password} = req.body.data;
+    
      username = username.toLowerCase().replace(/ /g,'')
 
 
@@ -59,16 +61,16 @@ exports.login= async (req,res,next)=>{
 
     const user = await User.findOne({email}).select("+password")
     if(!user){
-      res.status(401).json({msg:"Invalid login credentialls"})
-      return next(new ErrorResponse("Invalid credentials",401))
+      res.status(400).json({msg:"Invalid login credentialls"})
+      return next(new ErrorResponse("Invalid credentials",400))
 
     }
 
     const isMatch = await user.matchPasswords(password)
 
     if(!isMatch){
-      res.status(401).json({msg:"Invalid Login credentialls"})
-      return next(new ErrorResponse("Invalid Login credentials",401))
+      res.status(400).json({msg:"Invalid Login credentialls"})
+      return next(new ErrorResponse("Invalid Login credentials",400))
 
     }
 
@@ -151,21 +153,75 @@ exports.resetpassword= async (req,res,next)=>{
 }
 
 exports.logout = async (req,res) =>{
-  res.status(200).json("still working on the logout route")
+  res.clearCookie('refreshtoken',{path:'/api/auth/refresh_token'})
+  res.status(200).json({msg:"Logged out!"})
 }
-exports.generateFreshToken=async (req,res)=>{
-  res.status(200).json("still working on the generate new token  route")
+exports.generateAccessToken= async (req,res)=>{
+  try{
+
+     const rf_token = req.cookies.refreshtoken
+
+     if(!rf_token){
+      res.status(400).json({msg:"please login now"})
+       return next(new ErrorResponse("pleas login now",400))
+     }
+
+     jwt.verify(rf_token,process.env.JWT_SECRET,async(err,result) =>{
+       if(err){
+          res.status(400).json({msg:"please login now"})
+         return next(new ErrorResponse("please login now",400))
+       }
+
+       const user = await User.findById(result.id).select("-password")
+
+       if (!user){
+         res.status(400).json({msg:"This user does not exist"})
+         return next(new ErrorResponse("This user does not exist",400))
+       }
+
+       // const access_token = createAccessToken({id:result.id})
+       const token = user.getSignedToken()
+       res.json({
+         token,
+         user
+       })
+
+     })
+     // res.status(200).json({refreshtoken:rf_token})
+  }catch(err){
+     res.status(500).json({msg:err.message})
+     return next(new ErrorResponse(err.message,401))
+
+  }
+  // res.cookie('refreshtoken',refresh_token,{
+  //   httpOnly:true,
+  //   path:'/api/refresh_token',
+  //   maxAge:30*24*60*60*1000
+  // })
+
+  // res.json({
+  //   msg:'Refresh Token',
+  //   refresh_token,
+  //
+  // })
+
+}
+
+const createRefreshToken =(payload)=>{
+  return jwt.sign(payload,process.env.JWT_SECRET,{expiresIn:'30d'})
 
 }
 
 const sendToken = (user,statusCode,res,msg) =>{
   const token = user.getSignedToken()
-  // const refresh_token= user.refreshToken()
-  // res.cookie("refreshtoken",refresh_token,{
-  //   httpOnly:true,
-  //   path:'/api/auth/refresh_token',
-  //   maxAge:30*24*60*60*1000
-  // })
+  const refresh_token = user.refreshToken()
+
+  res.cookie('refreshtoken',refresh_token,{
+    httpOnly:true,
+    path:'/api/auth/refresh_token',
+    maxAge:30*24*60*60*1000
+  })
+
   res.status(statusCode).json({
     success:true,
     msg,

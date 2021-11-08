@@ -3,14 +3,15 @@ import {useState,useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {CircularProgress} from "@material-ui/core"
 import {login} from '../../../redux/actions/authAction'
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
+import {useHistory} from 'react-router-dom'
 
-const LoginScreen = ({history}) => {
+
+const LoginScreen2 = () => {
+  const {auth} = useSelector(state => state)
+  const history = useHistory()
   const initialState = {email:'',password:''}
   const[userData,setUserData]= useState(initialState)
-  // const [email,setEmail]=useState('')
-  // const [password,setPassword]=useState('')
-  const [error,setError]=useState('')
   const [isFectching,setIsFectching]=useState(false)
   const {email,password} = userData
 
@@ -22,19 +23,18 @@ const LoginScreen = ({history}) => {
     const {name,value} = e.target
     setUserData({...userData,[name]:value})
   }
-  useEffect(()=>{
-    if(localStorage.getItem("authToken")){
-      history.push("/")
-    }
-  },[history])
 
 
   const loginHandler= (e)=>{
     e.preventDefault()
     dispatch(login(userData))
+
   }
 
 
+  useEffect(()=>{
+    if(auth.token)history.push("/")
+  },[auth.token , history])
 
 
 
@@ -46,9 +46,6 @@ const LoginScreen = ({history}) => {
     <div className="login-form login-screen_form">
     <form onSubmit={loginHandler} >
       <h3 className="login-screen_title" >Login Now</h3>
-      {error && <span className="error-message">{error}</span>}
-
-
 
       <div className="login-form-group">
         <label htmlFor="email">Email:</label>
@@ -87,4 +84,4 @@ const LoginScreen = ({history}) => {
   )
 }
 
-export default LoginScreen
+export default LoginScreen2
