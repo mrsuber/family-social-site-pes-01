@@ -1,6 +1,7 @@
 
 import './IndexPage.css'
 import {Link} from 'react-router-dom'
+import {MainHeader} from '../../../components'
 
 const IndexPage = () => {
   const logoutHandler=()=>{
@@ -10,6 +11,7 @@ const IndexPage = () => {
   return (
 
     <>
+    <MainHeader/>
     <input type="checkbox" id="theme" />
     <div className="index-body">
       <button onClick={logoutHandler}>Logout</button>

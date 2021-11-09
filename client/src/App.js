@@ -22,6 +22,7 @@ const App=()=> {
     <Router>
       <div className='App'>
       <Alert />
+
         <Switch>
 
             <Route exact path="/login" component={LoginScreen2} />
