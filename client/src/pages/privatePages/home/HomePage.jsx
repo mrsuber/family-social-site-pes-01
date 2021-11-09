@@ -1,8 +1,13 @@
 import React from 'react'
 import './HomePage.css'
+import {Social2Header} from '../../../components'
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <>
+    <Social2Header/>
+    HomePage
+
+    </>
   )
 }
 
