@@ -4,3 +4,4 @@ export {default as ForgotPasswordScreen} from './Auth/forgotPassword/ForgotPassw
 export {default as ResetPasswordScreen} from './Auth/resetPassword/ResetPasswordScreen'
 export {default as IndexPage} from './privatePages/indexPage/IndexPage'
 export {default as HomePage} from './privatePages/home/HomePage'
+export {default as Message} from './privatePages/message/Message'

@@ -8,7 +8,7 @@ const {alert} =   useSelector(state => state)
 const dispatch = useDispatch()
 // console.log(notify.error)
   return (
-    <div>
+    <div >
 
   {alert.loading && <Loading/>}
   {
