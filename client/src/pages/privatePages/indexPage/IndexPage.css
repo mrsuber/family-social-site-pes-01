@@ -36,9 +36,9 @@ justify-content: center;
 margin-top: 10px;
 
 }
-#theme{
+/* #social2__theme{
   display: none;
-}
+} */
 #theme:checked ~ .index-body{
   filter: invert(1);
 

@@ -110,3 +110,24 @@ export const refreshToken = () => async (dispatch)=>{
     }
   }
 }
+
+export const logout = () => async (dispatch) =>{
+  try{
+    localStorage.removeItem('firstLogin')
+    const config = {
+      headers:{
+        "Content-Type":"application/json"
+      }
+    }
+    await postDataAPI('auth/logout',config)
+    window.location.href ="/"
+  }catch(err){
+
+      dispatch({
+        type:GLOBALTYPES.ALERT,
+        payload:{
+          error:err.response.data.msg
+        }
+      })
+  }
+}

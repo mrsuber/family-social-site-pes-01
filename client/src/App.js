@@ -2,7 +2,7 @@ import {BrowserRouter as Router,Switch,Route } from 'react-router-dom'
 //Routing
 import PrivateRoute from './routing/privateRoute/PrivateRoute'
 // Pages
-import {RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,IndexPage,HomePage,LoginScreen2} from './pages'
+import {RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,IndexPage,HomePage,LoginScreen2,Message} from './pages'
 //component
 import {Alert} from './components'
 import {useSelector,useDispatch} from 'react-redux'
@@ -32,6 +32,7 @@ const App=()=> {
             <PrivateRoute exact path="/root" component={ HomePage }/>
             <Route exact path="/" component={auth.token? IndexPage : LoginScreen2} />
             <Route exact path="/social_home" component={auth.token? HomePage : LoginScreen2}/>
+            <Route exact path="/message" component={auth.token? Message : LoginScreen2}/>
 
 
         </Switch>
