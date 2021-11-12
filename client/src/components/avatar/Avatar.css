@@ -1,0 +1,32 @@
+.social2__normal-profileImage{
+
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+
+}
+
+.social2__user-profileImage:hover{
+  border: 2px solid var(--blue);
+  cursor: pointer;
+}
+
+
+.social2__medium-profileImage{
+
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+
+}
+
+.social2__small-profileImage{
+
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+
+}

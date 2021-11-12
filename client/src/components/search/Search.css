@@ -1,0 +1,81 @@
+/*
+.social2__search-box{
+  position: absolute;
+  left: 50%;
+  top:25%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 25px;
+  background: #fafafa;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  color: rgba(0,0,0,0.5);
+  text-align: center;
+  text-transform: capitalize;
+
+}
+
+.social2__search-box:focus{
+  outline: none;
+}
+
+.social2__search-box::placeholder{
+  color: rgba(0,0,0,0.5);
+} */
+
+
+.social2__search_form{
+  position: relative;
+  /* left: 50%;
+  top:25%;
+    transform: translateX(-50%); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  /*width: 200px;
+  height: 25px;
+  background: #fafafa;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  color: rgba(0,0,0,0.5);
+  text-align: center;
+  text-transform: capitalize; */
+}
+
+.social2__search_form #search{
+     background: #fafafa;
+     border: none;
+     min-width: 200px;
+     /* top: 25%; */
+     height: 25px;
+     border: 1px solid #dfdfdf;
+     width: 100%;
+     outline:none;
+     text-indent: 5px;
+     border-radius: 3px;
+
+
+}
+
+.social2__search_icon{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.social2__search_icon svg{
+  font-size: 14px;
+  transform: translateY(3px);
+}
+
+.social2__close_search{
+  position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
+  font-weight: 900;
+  color:crimson;
+}
