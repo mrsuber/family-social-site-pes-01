@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-export const getDataAPI = async (url) =>{
+export const getDataAPI = async (url,token) =>{
   const config = {
     headers:{
       "Content-Type":"application/json",
-      Authorization:`Bearer ${localStorage.getItem("authToken")}`
+      Authorization:`Bearer ${token}`
     }
   }
   const res = await axios.get(`/api/${url}`,config)
