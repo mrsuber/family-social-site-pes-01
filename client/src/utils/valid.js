@@ -1,5 +1,11 @@
-const valid =({username,email,password,cf_password})=>{
+const valid =({fullname,username,email,password,cf_password})=>{
   const err ={}
+  if(!fullname){
+    err.fullname="Please add your fullname"
+
+  }else if(fullname.length<3){
+    err.fullname = "fullname must be atleast 3 characters"
+  }
 
   if(!username){
     err.username="Please add your user name"

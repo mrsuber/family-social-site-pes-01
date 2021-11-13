@@ -1,4 +1,3 @@
-import React,{useState,useEffect} from 'react'
 import {Link,useLocation} from 'react-router-dom'
 import {Home,NearMe,Explore,Favorite} from '@material-ui/icons'
 import {logout} from '../../redux/actions/authAction'
@@ -32,9 +31,12 @@ const Menu = () => {
   return (
     <>
     <span className="social2__nav-items">
+    <div className="social2__menu">
     {navLinks2.map((link,index)=>(
       <Link to={link.path} className="social2__link"><span key={index} className={`${isActive(link.path)}`}>{link.icon}</span></Link>
     ))}
+</div>
+
 
       <div className="social2__dropdown">
 
@@ -50,6 +52,7 @@ const Menu = () => {
             </Link>
         </div>
 </div>
+
     </span>
     </>
   )

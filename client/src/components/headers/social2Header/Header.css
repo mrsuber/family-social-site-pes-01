@@ -67,3 +67,17 @@
   border-radius: 20px;
   padding: 0 10px;
 }
+
+@media (max-width:768px){
+  .social2__nav-wrapper{
+    flex-direction: column;
+
+  }
+.social2__brand-img{
+  height: 30px;
+  width: 30px;
+}
+.social2_logoText{
+  font-size: .7rem;}
+
+}

@@ -1,0 +1,23 @@
+.social2__usercard-wrapper{
+
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  transition: .4s;
+  /* background: #fff; */
+
+}
+.social2__usercard-wrapper:hover{
+  background: #2451af40;
+}
+.social2__usercard-name{
+  margin-left: 1rem;
+  transform: translateY(-2px);
+}
+.social2__usercard-username{
+display: block;
+}
+
+.social2__usercard-fullname{
+opacity: 0.7;
+}

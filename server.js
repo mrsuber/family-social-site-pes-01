@@ -6,6 +6,7 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 
 
+
 //connectDB
 connectDB();
 
@@ -26,6 +27,7 @@ app.use('/uploads',express.static(path.join(__dirname,'uploads')))
 // end file upload
 app.use('/api',require('./routes/auth'))
 app.use('/api',require('./routes/private'))
+app.use('/api',require('./routes/userRouter'))
 
 if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join(__dirname,'/client/build')))
