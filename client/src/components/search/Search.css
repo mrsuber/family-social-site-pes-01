@@ -43,16 +43,6 @@
 }
 
 .social2__search_form #search{
-     background: #fafafa;
-     border: none;
-     min-width: 200px;
-     /* top: 25%; */
-     height: 25px;
-     border: 1px solid #dfdfdf;
-     width: 100%;
-     outline:none;
-     text-indent: 5px;
-     border-radius: 3px;
 
 
 }
@@ -78,4 +68,41 @@
   cursor: pointer;
   font-weight: 900;
   color:crimson;
+}
+
+.social2__search-border{
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+.social2__search-input{
+  background: #fafafa;
+  border: none;
+  min-width: 200px;
+  /* top: 25%; */
+  height: 25px;
+  border: 1px solid #dfdfdf;
+  width: 100%;
+  outline:none;
+  text-indent: 5px;
+  border-radius: 3px;
+
+}
+
+.social2__search-users{
+position: fixed;
+top: 50px;
+width: 200px;
+min-width: 200px;
+background: #fafafa;
+max-height: calc(100vh - 150px);
+overflow: auto;
+margin-top: 3px;
+}
+
+@media (max-width:768px){
+  .social2__search-input{
+  min-width: 80vw;
+
+  }
+
 }

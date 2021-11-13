@@ -10,13 +10,13 @@ import {useHistory} from 'react-router-dom'
 const RegisterScreen = () => {
   const {auth,alert} = useSelector(state=>state)
   const history = useHistory()
-  const initialState = {username:'',email:'',password:'',cf_password:''}
+  const initialState = {fullname:'',username:'',email:'',password:'',cf_password:''}
   const[userData,setUserData]= useState(initialState)
 
   const [confirmpassword,setConfirmpassword]=useState('')
   const [error,setError]=useState('')
   const [isFectching,setIsFectching]=useState(false)
-  const {username,email,password,cf_password} = userData
+  const {fullname,username,email,password,cf_password} = userData
 
   const [typePass,setTypePass]=useState(false)
   const [typeCfPass,setTypeCfPass]=useState(false)
@@ -81,6 +81,15 @@ const RegisterScreen = () => {
     <form onSubmit={registerHandler} className="register-screen_form">
       <h3 className="register-screen_title">Register</h3>
       {error && <span className="error-message">{error}</span>}
+
+      <div className="register-form-group">
+        <label htmlFor="fullname">Full Name:</label>
+        <input type="text" required id="fullname" placeholder="Enter Fullname" value={fullname} onChange={handleChangeInput} name="fullname"
+        style={{background: `${alert.fullname ? '#fd2d6a14' : ''}`}}/>
+        <small className="register-screen-small-text social2DangerTextColor">{alert.fullname? alert.fullname :''}</small>
+
+      </div>
+
       <div className="register-form-group">
         <label htmlFor="name">Username:</label>
         <input type="text" required id="name" placeholder="Enter Username" value={username.toLowerCase().replace(/ /g, "")} onChange={handleChangeInput} name="username"

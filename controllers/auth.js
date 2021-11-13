@@ -7,13 +7,18 @@ const jwt = require('jsonwebtoken')
 exports.register= async (req,res,next)=>{
 
   try{
-    let {username,email,password} = req.body.data;
-    
+    let {fullname,username,email,password} = req.body.data;
+
      username = username.toLowerCase().replace(/ /g,'')
 
 
     const username1 = await User.findOne({username:username})
     const email1 = await User.findOne({email:email})
+
+    if(fullname.length<3){
+      res.status(400).json({msg:"Fullname mustbe at least 3 characters."})
+      return next(new ErrorResponse("Fullname mustbe at least 3 characters.", 400))
+    }
 
     if(username1){
       res.status(400).json({msg:"This username already exits."})
@@ -33,7 +38,7 @@ exports.register= async (req,res,next)=>{
 
 
     const user= await User.create({
-      username,email,password
+      fullname,username,email,password
     })
     const msg = "User Registration Success"
     sendToken(user, 201,res,msg)
