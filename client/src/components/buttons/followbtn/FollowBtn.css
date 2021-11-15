@@ -1,0 +1,15 @@
+.social2__follow_btn{
+  flex:2;
+  font-size: 14px;
+  padding: 10px 0;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  cursor: pointer;
+  transition: .4s;
+
+}
+.social2__follow_btn:hover{
+  background: var(--blue);
+  border: 1px solid var(--white);
+  color: var(--white);
+}

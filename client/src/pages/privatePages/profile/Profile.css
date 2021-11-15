@@ -1,0 +1,11 @@
+.social2__profile-section{
+  margin-top: 60px;
+}
+
+.social2__profile_circularLoader{
+  display: block !important;
+
+  margin:  4rem auto;
+  width: 50px !important;
+height: 50px !important;
+}
