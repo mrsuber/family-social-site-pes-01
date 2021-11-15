@@ -1,0 +1,78 @@
+.social2__info-wrapper{
+width: 100%;
+max-width: 800px;
+margin: auto;
+padding: 20px 10px;
+
+}
+
+.social2__info-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.social2__info_content{
+  min-width: 250px;
+  max-width: 400px;
+  width: 100%;
+  flex: 1;
+  opacity: 0.7;
+  margin: 0 15px;
+}
+
+.social2__info_content_title{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.social2__info_content_title h2{
+  font-size: 2rem;
+  font-weight: 400;
+  transform: translateY(4px);
+  flex:3;
+}
+
+
+.social2__info_content_title_edit_btn{
+  flex:2;
+  font-size: 14px;
+  padding: 10px 0;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  cursor: pointer;
+  transition: .4s;
+
+}
+.social2__info_content_title_edit_btn:hover{
+  background: var(--blue);
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+.social2__info_follower_wrapper{
+  color: var(--blue);
+}
+
+.social2__info_follower{
+  margin-right: 20px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.social2__info_following{
+  margin-left: 20px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.social2__info_following:hover, .social2__info_follower:hover{
+  text-decoration: underline;
+
+}
+
+.social2__address{
+  margin: 0;
+}

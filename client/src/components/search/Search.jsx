@@ -6,6 +6,7 @@ import {getDataAPI} from '../../utils/fetchData'
 import {GLOBALTYPES} from '../../redux/actions/globlaTypes'
 import {Link} from 'react-router-dom'
 import {UserCard} from '../../components'
+import {CircularProgress} from "@material-ui/core"
 
 const Searchs = () => {
   const [search,setSearch]=useState('')
@@ -13,22 +14,44 @@ const Searchs = () => {
 
   const {auth} = useSelector(state=>state)
   const dispatch = useDispatch()
+  const [load, setLoad] = useState(false)
 
-  useEffect(() =>{
-    if(search && auth.token){
-      getDataAPI(`search?username=${search}`,auth.token)
-      .then(res=>setUsers(res.data.users))
+  // useEffect(() =>{
+  //   if(search && auth.token){
+  //     getDataAPI(`search?username=${search}`,auth.token)
+  //     .then(res=>setUsers(res.data.users))
+  //
+  //     .catch(err => {
+  //
+  //       dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
+  //     })
+  //   }else{
+  //     setUsers([])
+  //   }
+  // },[search,auth.token,dispatch])
 
-      .catch(err => {
+const handleSearch = async (e) =>{
+  e.preventDefault()
+  if(!search) return;
 
-        dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
-      })
-    }else{
-      setUsers([])
+  try{
+    setLoad(true)
+    const res = await  getDataAPI(`search?username=${search}`,auth.token)
+    setUsers(res.data.users)
+    if(res.data.users.length===0){
+      dispatch({type:GLOBALTYPES.ALERT, payload:{error:"User not found"}})
     }
-  },[search,auth.token,dispatch])
 
-  const handleClose = (e) =>{
+    setLoad(false)
+
+  }catch(err){
+    dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
+
+  }
+}
+
+
+  const handleClose = () =>{
   setSearch('')
   setUsers([])
   }
@@ -36,7 +59,7 @@ const Searchs = () => {
     <>
     <span>
 
-    <form className="social2__search_form">
+    <form className="social2__search_form" onSubmit={handleSearch}>
       <input
       className="social2__search-input"
       type="text"
@@ -50,11 +73,14 @@ const Searchs = () => {
         <span>Search</span>
       </div>
       <div className="social2__close_search" onClick={handleClose} style={{opacity: users.length===0 ? 0 : 0.7}} >&times;</div>
+      <button type="submit" style={{display:'none'}}>Search</button>
+      {load && <CircularProgress className="social2__circularLoader" color="primary" size="15px"/>}
       <div className="social2__search-users">
         {
           search && users.map(user=>(
+
             <Link key={user._id} to={`/profile/${user._id}`} className="social2__link" onClick={handleClose}>
-                <UserCard user={user} border="social2__search-border"/>
+                <UserCard user={user} border="social2__search-border" />
             </Link>
           ))
         }

@@ -99,6 +99,16 @@ overflow: auto;
 margin-top: 3px;
 }
 
+.social2__circularLoader{
+  position: absolute;
+  top:25%;
+  right: 5px;
+  /* width:15px;
+  height: 15px; */
+  /* transform: translateY(-50%); */
+
+}
+
 @media (max-width:768px){
   .social2__search-input{
   min-width: 80vw;

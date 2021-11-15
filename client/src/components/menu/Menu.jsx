@@ -33,7 +33,7 @@ const Menu = () => {
     <span className="social2__nav-items">
     <div className="social2__menu">
     {navLinks2.map((link,index)=>(
-      <Link to={link.path} className="social2__link"><span key={index} className={`${isActive(link.path)}`}>{link.icon}</span></Link>
+      <Link to={link.path} className="social2__link" key={index}><span  className={`${isActive(link.path)}`}>{link.icon}</span></Link>
     ))}
 </div>
 
