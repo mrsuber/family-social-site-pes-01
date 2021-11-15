@@ -11,9 +11,10 @@ const Profile = () => {
     <>
     <Social2Header/>
     <section className="social2__profile-section">
+
     {
       profile.loading
-      ?<CircularProgress className="social2__circularLoader" color="primary" size="15px"/>
+      ?<CircularProgress className="social2__profile_circularLoader" color="primary" size="15px"/>
       :<Info />
     }
 

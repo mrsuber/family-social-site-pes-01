@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from 'react'
 import {useParams, Link} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
-import {Avatar} from '../../components'
+import {Avatar,EditProfile,FollowBtn} from '../../components'
 import './Info.css'
 import {getProfileUsers} from '../../redux/actions/profileAction'
 const Info = () => {
@@ -11,6 +11,7 @@ const Info = () => {
   const dispatch = useDispatch()
 
   const [userData,setUserData] = useState([])
+  const [onEdit,setOnEdit]= useState(false)
 
   useEffect(()=>{
     if(id===auth.user._id){
@@ -31,7 +32,11 @@ const Info = () => {
             <div className="social2__info_content">
               <div className="social2__info_content_title">
                 <h2>{user.username}</h2>
-                <button className="social2__info_content_title_edit_btn">Edit Profile</button>
+                {
+                  user._id === auth.user._id
+                  ?<button className="social2__info_content_title_edit_btn" onClick={() => setOnEdit(true)}>Edit Profile</button>
+                  :<FollowBtn/>
+                }
                </div>
                <div className="social2__info_follower_wrapper">
                 <span className="social2__info_follower">
@@ -49,6 +54,8 @@ const Info = () => {
                <a href={user.website} target="_blank" rel="noreferrer">{user.website}</a>
                <p>{user.story}</p>
             </div>
+
+            {onEdit && <EditProfile setOnEdit={setOnEdit}/>}
           </div>
         ))
     }
