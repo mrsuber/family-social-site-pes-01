@@ -16,19 +16,6 @@ const Searchs = () => {
   const dispatch = useDispatch()
   const [load, setLoad] = useState(false)
 
-  // useEffect(() =>{
-  //   if(search && auth.token){
-  //     getDataAPI(`search?username=${search}`,auth.token)
-  //     .then(res=>setUsers(res.data.users))
-  //
-  //     .catch(err => {
-  //
-  //       dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
-  //     })
-  //   }else{
-  //     setUsers([])
-  //   }
-  // },[search,auth.token,dispatch])
 
 const handleSearch = async (e) =>{
   e.preventDefault()
@@ -66,11 +53,12 @@ const handleSearch = async (e) =>{
       name='search'
       id="search"
       value={search}
+      title="Enter to Search"
       onChange={e=>setSearch(e.target.value.toLowerCase().replace(/ /g,''))} />
 
       <div className="social2__search_icon" style={{opacity: search ? 0 : 0.3}}>
         <span><Search /></span>
-        <span>Search</span>
+        <span>Enter to Search</span>
       </div>
       <div className="social2__close_search" onClick={handleClose} style={{opacity: users.length===0 ? 0 : 0.7}} >&times;</div>
       <button type="submit" style={{display:'none'}}>Search</button>

@@ -4,6 +4,7 @@ import {useSelector , useDispatch} from 'react-redux'
 import {CameraAlt} from '@material-ui/icons'
 import {checkImage} from '../../utils/imageUpload'
 import {GLOBALTYPES} from '../../redux/actions/globlaTypes'
+import {updateProfileUser} from '../../redux/actions/profileAction'
 
 const EditProfile = ({setOnEdit}) => {
   const initState = {
@@ -35,6 +36,12 @@ const EditProfile = ({setOnEdit}) => {
     setUserData({...userData,[name]:value})
   }
 
+  const handleSubmit = e =>{
+    e.preventDefault()
+  
+    dispatch(updateProfileUser({userData,profilePic}))
+  }
+
   useEffect(()=>{
     setUserData(auth.user)
   },[auth.user])
@@ -44,7 +51,7 @@ const EditProfile = ({setOnEdit}) => {
     Close
     </button>
 
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="social2__info_avatar">
         <img src={profilePic? URL.createObjectURL(profilePic) : auth.user.profilePic} alt="profilePic"  style={{filter:theme? 'invert(1)' : 'invert(0)'}}/>
         <span>

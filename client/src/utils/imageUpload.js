@@ -13,3 +13,13 @@ export const checkImage = (file) => {
 
   return err;
 }
+
+export const imageUpload = (images) => {
+  let imgArr = [];
+  for(const item of images){
+    const formData = new FormData()
+    formData.append("file",item)
+    formData.append("upload_preset","otq8kae0")
+    formData.append("cloud_name","otq8kae0")
+  }
+}

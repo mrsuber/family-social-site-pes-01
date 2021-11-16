@@ -71,9 +71,9 @@ const LoginScreen2 = () => {
     </div>
 
     <div className="login-other-boxes">
-    <div className="login-box1"></div>
-    <div className="login-box1"></div>
-    <div className="login-box1"></div>
+    <Link to="/porfolio/home" className="social2__link"><div className="login-box1">Home</div></Link>
+    <div className="login-box1">Porfolio</div>
+    <div className="login-box1">Resume</div>
     </div>
     </div>
 

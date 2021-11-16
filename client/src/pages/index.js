@@ -8,3 +8,7 @@ export {default as Message} from './privatePages/message/Message'
 export {default as Discover} from './privatePages/discover/Discover'
 export {default as Notify} from './privatePages/notify/Notify'
 export {default as Profile} from './privatePages/profile/Profile'
+
+// porfolio pages
+
+export {default as PorfolioHome} from './myPorfolioSite/home/Home'

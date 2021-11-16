@@ -35,7 +35,7 @@ const Info = () => {
                 {
                   user._id === auth.user._id
                   ?<button className="social2__info_content_title_edit_btn" onClick={() => setOnEdit(true)}>Edit Profile</button>
-                  :<FollowBtn/>
+                  :<FollowBtn user={user}/>
                 }
                </div>
                <div className="social2__info_follower_wrapper">
