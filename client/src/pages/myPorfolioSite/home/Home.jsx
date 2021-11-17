@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './Home.css'
 import profilePic from '../../../images/porfolioImages/profile-pic.png'
-import {Facebook,Instagram, GitHub,LinkedIn} from "@material-ui/icons"
+import {Facebook,Instagram, GitHub,LinkedIn,BusinessCenter} from "@material-ui/icons"
 
 const Home = () => {
   return (
@@ -103,7 +103,7 @@ const Home = () => {
             <p><span>Hi! My name is Mohamad Siysinyuy. I am a Web Developer.</span>I was introduce to software development in my very first year in the university studying computer engineering which gave me a direct line to Web Development.
 </p>
             <p>Due to personal research and following full-stack online curriculum, i learn about HTML and its evolution to HTML5, used tools like WAVE and W3C for accessibility, CSS3 ,Bootstrap, SASS, SCSS,for styling design and animations, then JavaScript, JQuery for logic and fetching data from REST APIs.</p>
-            <p>After a couple of projects with these languages for Front-End and UI Designs, i was introduce to frame works like React and Angular for building single web applications and proper use of props and components certainly made life easier. My new life into frame works lead me to being familiar npm for installing dependencies and tools such as WebPack which came loaded with tools necessary for minifying my code for accessibility, Babel for translating ES6 JavaScript code to ES5 JavaScript code for browser comparability.</p>
+            <p>After a couple of projects with these languages for Front-End and UI Designs, i was introduce to frame works like React and Angular for building single web applications and proper use of props and components certainly made life easier. My new life into frame works lead me to being familiar npm for installing dependencies and tools such as WebPack which came loaded with tools necessary for minifying my code for accessibility, Babel for translating ES6 JavaScript code to ES5 JavaScript code for browser compatability.</p>
 
             <p>To complete my full stack journey as a full stack developer, i was introduce to back-end technologies such as Nodjs, Python frame work like Flask, Django and NoSQL database like MongoDB, SQL database like MYSQL, and Docker technologies.
 </p>
@@ -202,6 +202,59 @@ const Home = () => {
             </div>
         </div>
         {/*skills end*/}
+
+        {/*experience start*/}
+          <div className="pf__row">
+            <div className="pf__experience pf__tab_content">
+            <div className="pf__row">
+            <div className="pf__timeline">
+            <div className="pf__row">
+                {/*experience start*/}
+                  <div className="pf__timeline_item">
+                    <div className="pf__timeline_item_inner pf__outer_shadow">
+                      <span className="pf__icon"><BusinessCenter /></span>
+                      <span>2019 - 2020</span>
+                      <h3>back end developer</h3>
+                      <h4>WAZAHUB Cameroon | Buea | Moliko</h4>
+                      <p>Developement of transaction service Rest API with python frame work (Flask) implementing the Micro-service architecture, deployment on AWS using Docker technologies and MYSQL Database Management and over 200 different email templates using Html and Css. It was an intresting team of engineers</p>
+                    </div>
+                  </div>
+                {/*experience start*/}
+
+                {/*experience start*/}
+                  <div className="pf__timeline_item">
+                    <div className="pf__timeline_item_inner pf__outer_shadow" >
+                      <span className="pf__icon"><BusinessCenter /></span>
+                      <span>2021 - present</span>
+                      <h3>full stack developer</h3>
+                      <h4>Personal Projects</h4>
+                      <p>Developement of transaction service Rest API with Nodejs implementing the Micro-service architecture, deployment on heroku,FireBase,GitHub and NoSQL Database Management MongoDB and over 20+ different prodjects with Html, css,JavaScript,React and more</p>
+                    </div>
+                  </div>
+                {/*experience start*/}
+
+                {/*experience start*/}
+                  <div className="pf__timeline_item">
+                    <div className="pf__timeline_item_inner pf__outer_shadow">
+                      <span className="pf__icon"><BusinessCenter /></span>
+                      <span>2021 - present</span>
+                      <h3>Web Designer</h3>
+                      <h4>Personal Projects</h4>
+                      <p>Developement of transaction service Rest API with Nodejs implementing the Micro-service architecture, deployment on heroku,FireBase,GitHub and NoSQL Database Management MongoDB and over 20+ different prodjects with Html, css,JavaScript,React and more</p>
+                    </div>
+                  </div>
+                {/*experience start*/}
+            </div>
+            </div>
+            </div>
+
+
+            </div>
+          </div>
+        {/*experience ends*/}
+
+          {/*education ends*/}
+            {/*education ends*/}
       </div>
 
     </section>

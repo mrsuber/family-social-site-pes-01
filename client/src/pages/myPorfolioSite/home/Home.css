@@ -591,3 +591,118 @@ margin-bottom:40px;
   color: var(--text-black-600);
   margin-top:-40px;
 }
+
+.pf__about_section .pf__experience{
+  padding-bottom: 80px;
+}
+
+.pf__about_section .pf__timeline{
+  flex: 0 0 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.pf__about_section .pf__timeline:before{
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: var(--bg-black-100);
+    position: absolute;
+    left: 50%;
+    top:0;
+
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item{
+flex:0 0 100%;
+max-width: 100%;
+padding: 0 15px;
+}
+.pf__about_section .pf__timeline .pf__timeline_item:nth-child(odd){
+  padding-right: calc(50% + 50px);
+  text-align: right;
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item:nth-child(even){
+  padding-left: calc(50% + 50px);
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item_inner{
+  padding: 30px;
+  border-radius: 5px;
+  position: relative;
+}
+.pf__about_section .pf__timeline .pf__timeline_item_inner:before{
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 1px;
+  background-color: var(--bg-black-100);
+  top:37px;
+  z-index: -1;
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item:nth-child(odd) .pf__timeline_item_inner:before{
+right: -30px;
+
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item:nth-child(even) .pf__timeline_item_inner:before{
+left: -30px;
+
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item_inner .pf__icon{
+  height: 40px;
+  width: 40px;
+  /* background-color: red; */
+  border: 1px solid var(--bg-black-100);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  font-size: 16px;
+  color: var(--skin-color);
+  top:18px;
+}
+.pf__about_section .pf__timeline .pf__timeline_item_inner .pf__icon svg{
+  margin-top:5px;
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item:nth-child(odd) .pf__icon{
+  right: -70px;
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item:nth-child(even) .pf__icon{
+  left: -70px;
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item_inner span{
+  font-weight: 500;
+  color: var(--skin-color);
+  display: block;
+  margin: 0 0 10px;
+  text-transform: capitalize;
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item_inner h3{
+  font-size: 20px;
+  color:var(--text-black-700);
+  font-weight: 600;
+  margin: 0 0 5px;
+  text-transform: capitalize;
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item_inner h4{
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-black-600);
+  margin: 0;
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item_inner p{
+  font-size: 16px;
+  color:var(--text-black-600);
+  line-height: 26px;
+  margin: 15px 0 0;
+}
