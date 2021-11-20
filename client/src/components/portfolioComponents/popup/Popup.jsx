@@ -49,8 +49,10 @@ const Popup = ({handlepopupDetails,handlePopupClose , handlePrevSlide,handleNext
           <div></div>
         </div>
           {/*porfolio navigation start*/}
+          <div className="pf__next_and_prev_btn_container">
             <div className="pf__pp_prev" onClick={handlePrevSlide}><PlayArrow/></div>
             <div className="pf__pp_next" onClick={handleNextSlide}><PlayArrow/></div>
+              </div>
             {/*porfolio navigation start*/}
       </div>
     </div>

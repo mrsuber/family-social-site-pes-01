@@ -77,7 +77,11 @@ filterContainer.addEventListener("click",(event)=>{
 
 }
 
-const handlePortfolioItems = (event) =>{
+
+
+
+
+function handlePortfolioItems(event){
 if(event.target.closest(".pf__porfolio_item_inner")){
   const portfolioItem = event.target.closest(".pf__porfolio_item_inner").parentElement;
   // get the portfolioItem index
@@ -87,15 +91,14 @@ if(event.target.closest(".pf__porfolio_item_inner")){
   // convert screen shots into an array
   screenshots=screenshots.split(",")
   if(screenshots.length=== 1){
-  const  prevBtn2 = document.querySelector(".pf__pp_prev")
-  // let nextBtn2 = document.querySelector("pf__pp_next")
-  // console.log(nextBtn2)
+  const  prevBtn2 = document.querySelector(".pf__next_and_prev_btn_container")
+
   prevBtn2.style.display="none"
-  // nextBtn.style.display="none"
+
 
 }else{
   // const popup = document.querySelector(".pf__portfolio_popup")
-  const  prevBtn2 = document.querySelector(".pf__pp_prev")
+  const  prevBtn2 = document.querySelector(".pf__next_and_prev_btn_container")
   // const nextBtn = document.querySelector("pf__pp_next")
   prevBtn2.style.display="block"
   // nextBtn.style.display="block"
@@ -108,13 +111,32 @@ if(event.target.closest(".pf__porfolio_item_inner")){
 }
 
 function popupDetails(){
-  //get the project details
-  const portfolioItems = document.querySelectorAll(".pf__porfolio_item")
-  const details = portfolioItems[itemIndex].querySelector(".pf__portfolio_item_details").innerHtml
-  document.querySelector(".pf__pp_project_details").innerHtml = details;
-  const title = portfolioItems[itemIndex].querySelector(".pf__portfolio_item_tittle").innerHtml
-  console.log("title",itemIndex)
+  const filterContainer = document.querySelector(".pf__portfolio_filter"),
+  portfolioItemsContainer = document.querySelector(".pf__portfolio_items"),
+  portfolioItems = document.querySelectorAll(".pf__porfolio_item"),
+  popup = document.querySelector(".pf__portfolio_popup"),
+  prevBtn = popup.querySelector(".pf__pp_prev"),
+  nextBtn = popup.querySelector("pf__pp_next"),
+  closeBtn = popup.querySelector("pf__pp_close"),
+  porjectDetailsContainer = popup.querySelector(".pf__pp_details"),
+  projectDetailsBtn = popup.querySelector(".pf__pp_project_details_btn")
+
+  if(!portfolioItems[itemIndex].querySelector(".pf__portfolio_item_details")){
+    projectDetailsBtn.style.display="none"
+    return;
+  }
+    projectDetailsBtn.style.display="block"
+  const details = portfolioItems[itemIndex].querySelector(".pf__portfolio_item_details").innerHTML;
+  popup.querySelector(".pf__pp_project_details").innerHTML = details
+  const title = portfolioItems[itemIndex].querySelector(".pf__portfolio_item_tittle").innerHTML
+  popup.querySelector(".pf__pp_title h2").innerHTML=title;
+  const category =  portfolioItems[itemIndex].getAttribute("data-category")
+  popup.querySelector(".pf__pp_project_category").innerHTML=category.split("-").join(" ")
 }
+
+
+
+
 
 function popupToggle(){
 const popup = document.querySelector(".pf__portfolio_popup")
