@@ -12,3 +12,13 @@ export {default as Info} from './info/Info'
 export {default as Posts} from './posts/Posts'
 export {default as EditProfile} from './editprofile/EditProfile'
 export {default as FollowBtn} from './buttons/followbtn/FollowBtn'
+//porfolio components exports starts
+export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
+export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'
+export {default as ProfileHome} from './portfolioComponents/home/ProfileHome'
+export {default as ProfileAbout} from './portfolioComponents/about/PorfileAbout'
+export {default as ProfileService} from './portfolioComponents/service/ProfileService'
+export {default as ProfilePortfolio} from './portfolioComponents/portfolio/ProfilePortfolio'
+export {default as Popup} from './portfolioComponents/popup/Popup'
+export {default as PortfolioItem} from './portfolioComponents/portfolio/portfolioItem/PortfolioItems'
+//porfolio components exports end
