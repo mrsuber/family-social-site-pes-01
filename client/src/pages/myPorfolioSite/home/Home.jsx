@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import {Link} from 'react-router-dom'
 import './Home.css'
-import './Home1.css'
 import profilePic from '../../../images/porfolioImages/me.webp'
 
 import {Switcher,Contact,Testimonial,Popup,ProfilePortfolio,ProfileNavbar,ProfileHeader,ProfileHome,ProfileAbout,ProfileService} from '../../../components'
@@ -11,6 +10,11 @@ import {Switcher,Contact,Testimonial,Popup,ProfilePortfolio,ProfileNavbar,Profil
 
 const Home = () => {
 const[remove, setRemove]=useState(false)
+const[color1,setColorOne] = useState(true)
+const[color2,setColorTwo] = useState(false)
+const[color3,setColorThree] = useState(false)
+const[color4,setColorFour] = useState(false)
+const[color5,setColorFive] = useState(false)
 
 let itemIndex, slideIndex, screenshots;
 const aboutSectionManagement=(e)=>{
@@ -292,50 +296,142 @@ useEffect(()=>{
   handleHamburgerBtn()
 },[])
 
-function setActivateStyle(something){
-  console.log(something)
+
+function setColor1(){
+setColorOne(true)
+setColorTwo(false)
+setColorThree(false)
+setColorFour(false)
+setColorFive(false)
 }
-
+function setColor2(){
+setColorOne(false)
+setColorTwo(true)
+setColorThree(false)
+setColorFour(false)
+setColorFive(false)
+}
+function setColor3(){
+setColorOne(false)
+setColorTwo(false)
+setColorThree(true)
+setColorFour(false)
+setColorFive(false)
+}
+function setColor4(){
+setColorOne(false)
+setColorTwo(false)
+setColorThree(false)
+setColorFour(true)
+setColorFive(false)
+}
+function setColor5(){
+setColorOne(false)
+setColorTwo(false)
+setColorThree(false)
+setColorFour(false)
+setColorFive(true)
+}
   return (
-    <div className="pf__body">
-    <ProfileHeader/>
+    <div className="pf__body" >
+    <ProfileHeader
+    color1={color1}
+    color2={color2}
+    color3={color3}
+    color4={color4}
+    color5={color5}
+    />
 
-    <ProfileNavbar/>
+    <ProfileNavbar
+    color1={color1}
+    color2={color2}
+    color3={color3}
+    color4={color4}
+    color5={color5}
+    />
 
 
     {/*home section starts*/}
-    <ProfileHome profilePic={profilePic} />
+    <ProfileHome profilePic={profilePic}
+    color1={color1}
+    color2={color2}
+    color3={color3}
+    color4={color4}
+    color5={color5}
+    />
     {/*home section end*/}
 
     {/*about section end*/}
-    <ProfileAbout profilePic={profilePic} aboutSectionManagement={aboutSectionManagement} />
+    <ProfileAbout profilePic={profilePic} aboutSectionManagement={aboutSectionManagement}
+    color1={color1}
+    color2={color2}
+    color3={color3}
+    color4={color4}
+    color5={color5}
+    />
     {/*about section end*/}
 
 
     {/*service section start*/}
-    <ProfileService/>
+    <ProfileService
+    color1={color1}
+    color2={color2}
+    color3={color3}
+    color4={color4}
+    color5={color5}
+    />
 
     {/*service section end*/}
 
     {/*porfolio section start*/}
-    <ProfilePortfolio aboutPortfolioManagement={aboutPortfolioManagement} handlePortfolioItems={handlePortfolioItems}/>
+    <ProfilePortfolio aboutPortfolioManagement={aboutPortfolioManagement} handlePortfolioItems={handlePortfolioItems}
+    color1={color1}
+    color2={color2}
+    color3={color3}
+    color4={color4}
+    color5={color5}
+    />
 
     {/*porfolio section end*/}
 
     {/*testimonial section start*/}
-    <Testimonial/>
+    <Testimonial
+    color1={color1}
+    color2={color2}
+    color3={color3}
+    color4={color4}
+    color5={color5}
+    />
     {/*testimonial section end*/}
 
     {/*contact section end*/}
-      <Contact />
+      <Contact
+      color1={color1}
+      color2={color2}
+      color3={color3}
+      color4={color4}
+      color5={color5}
+      />
     {/*contact section end*/}
 
     {/*porfolio popup start*/}
-      <Popup handlepopupDetails={handlepopupDetails} handlePopupClose={handlePopupClose} handlePrevSlide={handlePrevSlide} handleNextSlide={handleNextSlide} remove={remove}/>
+      <Popup handlepopupDetails={handlepopupDetails} handlePopupClose={handlePopupClose} handlePrevSlide={handlePrevSlide} handleNextSlide={handleNextSlide} remove={remove}
+      color1={color1}
+      color2={color2}
+      color3={color3}
+      color4={color4}
+      color5={color5}
+      />
     {/*porfolio popup end*/}
 
     {/*style_switcher start*/}
-    <Switcher setActivateStyle={setActivateStyle}/>
+    <Switcher
+    setColor1={setColor1}
+    setColor2={setColor2}
+    setColor3={setColor3}
+    setColor4={setColor4}
+    setColor5={setColor5}
+    />
     {/*style_switcher end*/}
 
     </div>

@@ -3,7 +3,7 @@ import './Switcher.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCog,faMoon} from '@fortawesome/free-solid-svg-icons';
 
-const Switcher = ({setActivateStyle}) => {
+const Switcher = ({setColor1,setColor2,setColor3,setColor4,setColor5}) => {
   useEffect(()=>{
     const styleSwitcherToggler = document.querySelector(".pf__style_switcher_toggler")
     styleSwitcherToggler.addEventListener("click",()=>{
@@ -16,6 +16,9 @@ const Switcher = ({setActivateStyle}) => {
         document.querySelector(".pf__style_switcher").classList.remove("pf__open")
       }
     })
+    /*---------------------------------theme colors-------------------------------------*/
+
+
   },[])
   return (
     <div className="pf__style_switcher pf__outer_shadow">
@@ -27,11 +30,11 @@ const Switcher = ({setActivateStyle}) => {
       </div>
       <h4>Theme Colors</h4>
       <div className="pf__colors">
-      <span className="pf__color_1" onClick={setActivateStyle('color_1')}></span>
-      <span className="pf__color_2" onClick={setActivateStyle('color_2')}></span>
-      <span className="pf__color_3" onClick={setActivateStyle('color_3')}></span>
-      <span className="pf__color_4" onClick={setActivateStyle('color_4')}></span>
-      <span className="pf__color_5" onClick={setActivateStyle('color_5')}></span>
+      <span className="pf__color_1" onClick={setColor1}></span>
+      <span className="pf__color_2" onClick={setColor2}></span>
+      <span className="pf__color_3" onClick={setColor3}></span>
+      <span className="pf__color_4" onClick={setColor4}></span>
+      <span className="pf__color_5" onClick={setColor5}></span>
       </div>
     </div>
   )
