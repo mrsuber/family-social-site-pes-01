@@ -31,7 +31,7 @@ header section
 }
 
 
-.pf__logo{
+.pf__header .pf__logo{
   display: inline-block;
   text-align: center;
   line-height: 36px;

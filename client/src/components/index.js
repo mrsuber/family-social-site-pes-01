@@ -23,4 +23,6 @@ export {default as Popup} from './portfolioComponents/popup/Popup'
 export {default as PortfolioItem} from './portfolioComponents/portfolio/portfolioItem/PortfolioItems'
 export {default as Testimonial} from './portfolioComponents/testimonial/Testimonial'
 export {default as TestimonialItem} from './portfolioComponents/testimonial/testimonialItem/TestimonialItem'
+export {default as Contact} from './portfolioComponents/contact/Contact'
+export {default as Switcher} from './portfolioComponents/switcher/Switcher'
 //porfolio components exports end

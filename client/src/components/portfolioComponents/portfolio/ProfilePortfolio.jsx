@@ -41,7 +41,7 @@ import dsh63 from "../../../images/porfolioImages/portfolio/large/project-6/3.pn
 import dsh71 from "../../../images/porfolioImages/portfolio/large/project-7/1.png"
 import dsh72 from "../../../images/porfolioImages/portfolio/large/project-7/2.png"
 
-import dsh81 from "../../../images/porfolioImages/portfolio/large/project-8/2.png"
+import dsh81 from "../../../images/porfolioImages/portfolio/large/project-8/1.png"
 import dsh82 from "../../../images/porfolioImages/portfolio/large/project-8/2.png"
 
 import './ProfilePortfolio.css'
@@ -49,7 +49,7 @@ import {PortfolioItem} from '../../../components'
 
 const ProfilePortfolio = ({aboutPortfolioManagement,handlePortfolioItems}) => {
   return (
-    <section className="pf__portfolio_section pf__section" onClick={aboutPortfolioManagement}>
+    <section className="pf__portfolio_section pf__section" onClick={aboutPortfolioManagement} id="portfolio">
         <div className="pf__container">
           <div className="pf__row">
               <div className="pf__section_title">

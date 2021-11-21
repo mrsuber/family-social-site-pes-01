@@ -1,9 +1,10 @@
 import React,{useEffect,useState} from 'react'
 import {Link} from 'react-router-dom'
 import './Home.css'
+import './Home1.css'
 import profilePic from '../../../images/porfolioImages/me.webp'
 
-import {Testimonial,Popup,ProfilePortfolio,ProfileNavbar,ProfileHeader,ProfileHome,ProfileAbout,ProfileService} from '../../../components'
+import {Switcher,Contact,Testimonial,Popup,ProfilePortfolio,ProfileNavbar,ProfileHeader,ProfileHome,ProfileAbout,ProfileService} from '../../../components'
 
 
 
@@ -205,12 +206,95 @@ function popupDetailsToggle(){
   }
 }
 
-// testimonial slider
+// hide all section expect the active
 
 
+useEffect(()=>{
+  function handleHamburgerBtn(){
+    const hamburgerBtn = document.querySelector(".pf__hamburger_btn"),
+    navMenu = document.querySelector(".pf__nav_menu"),
+    closeNavBtn = navMenu.querySelector(".pf__close_nav_menu");
 
+    hamburgerBtn.addEventListener("click",showNavMenu)
+    closeNavBtn.addEventListener("click",hideNavMenu)
+    function showNavMenu(){
+      navMenu.classList.add("pf__open")
+      bodyScrollingToggle()
+    }
+    function hideNavMenu(){
+      navMenu.classList.remove("pf__open")
+      fadeOutEffect()
+      bodyScrollingToggle()
+    }
 
+    function fadeOutEffect(){
+      document.querySelector(".pf__fade_out_effect").classList.add("pf__active");
+      setTimeout(()=>{
+        document.querySelector(".pf__fade_out_effect").classList.remove("pf__active");
+      },300)
+    }
+//attach an event handler to document
+    document.addEventListener("click",(event) =>{
+      if(event.target.classList.contains('pf__link_item')){
+        /*make sure event.target.hash has a value before overriding default behavior*/
+        if(event.target.hash !==""){
+          // prevent default anchor click behavior
+          event.preventDefault();
+          const hash = event.target.hash;
+          //deactivate existing active sections
+          document.querySelector(".pf__section.pf__active").classList.add("pf__hide");
+          document.querySelector(".pf__section.pf__active").classList.remove("pf__active");
 
+          //activate new section
+          document.querySelector(hash).classList.add("pf__active")
+          document.querySelector(hash).classList.remove("pf__hide")
+
+          /*deactivate existing active navigation menu 'link-item'*/
+          navMenu.querySelector(".pf__active").classList.add("pf__outer_shadow","pf__hover_in_shadow")
+          navMenu.querySelector(".pf__active").classList.remove("pf__active","pf__inner_shadow")
+          /*if the cliked link is contained within the navigation menu*/
+          if(navMenu.classList.contains("pf__open")){
+              //activate new navigation menu 'link-item'
+              event.target.classList.add("pf__active","pf__inner_shadow")
+              event.target.classList.add("pf__outer_shadow","pf__hover_in_shadow")
+              // hide navigation menubar
+              hideNavMenu()
+        }else{
+          let navItems = navMenu.querySelectorAll(".pf__link_item")
+          navItems.forEach((item)=>{
+            if(hash === item.hash){
+              //activate a new navigation menu 'link-item'
+              item.classList.add("pf__active","pf__inner_shadow")
+              item.classList.add("pf__outer_shadow","pf__hover_in_shadow")
+            }
+          })
+          fadeOutEffect()
+
+        }
+        //add hash (#) to a url
+        window.location.hash=hash
+        }
+
+      }
+    })
+
+  }
+  function hideSection(){
+    const sections = document.querySelectorAll(".pf__section")
+    sections.forEach((section)=>{
+      if(!section.classList.contains("pf__active")){
+        section.classList.add("pf__hide")
+      }
+    })
+
+  }
+  hideSection()
+  handleHamburgerBtn()
+},[])
+
+function setActivateStyle(something){
+  console.log(something)
+}
 
   return (
     <div className="pf__body">
@@ -242,9 +326,17 @@ function popupDetailsToggle(){
     <Testimonial/>
     {/*testimonial section end*/}
 
+    {/*contact section end*/}
+      <Contact />
+    {/*contact section end*/}
+
     {/*porfolio popup start*/}
       <Popup handlepopupDetails={handlepopupDetails} handlePopupClose={handlePopupClose} handlePrevSlide={handlePrevSlide} handleNextSlide={handleNextSlide} remove={remove}/>
     {/*porfolio popup end*/}
+
+    {/*style_switcher start*/}
+    <Switcher setActivateStyle={setActivateStyle}/>
+    {/*style_switcher end*/}
 
     </div>
   )

@@ -4,7 +4,7 @@ import './ProfileAbout.css'
 
 const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
   return (
-    <section className="pf__about_section pf__section">
+    <section className="pf__about_section pf__section" id="about">
       <div className="pf__container">
         <div className="pf__row">
           <div className="pf__section_title">
@@ -37,7 +37,7 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
             <p>To showcase my projects to the world, I had to host them with FireBase, Heroku, Github.</p>
 
             <a href="cv.pdf" className="pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1" >Download Cv</a>
-            <a href="#" className="pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1">Hire Me</a>
+            <a href="#contact" className=" pf__link_item pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1">Hire Me</a>
           </div>
         </div>
         {/*about taps start*/}

@@ -11,7 +11,12 @@
   visibility: hidden;
   overflow-y: auto;
 }
-
+.pf__nav_menu.pf__open{
+  visibility: visible;
+  opacity: 1;
+  z-index: 999;
+  transition: all 0.3s ease-in;
+}
 
 .pf__nav_menu ul{
   padding: 15px;
@@ -38,7 +43,7 @@
   border-radius: 30px;
   transition: all 0.3s ease;
 }
-.pf__nav_menu ul li a.pf_active{
+.pf__nav_menu ul li a.pf__active{
   color: var(--skin-color);
 }
 
@@ -48,7 +53,7 @@
 
 
 
-.pf__close_nav_menu{
+.pf__nav_menu .pf__close_nav_menu{
   height: 40px;
   width: 40px;
   display: block;
