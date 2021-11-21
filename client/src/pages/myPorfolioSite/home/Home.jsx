@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import './Home.css'
 import profilePic from '../../../images/porfolioImages/me.webp'
 
-import {Popup,ProfilePortfolio,ProfileNavbar,ProfileHeader,ProfileHome,ProfileAbout,ProfileService} from '../../../components'
+import {Testimonial,Popup,ProfilePortfolio,ProfileNavbar,ProfileHeader,ProfileHome,ProfileAbout,ProfileService} from '../../../components'
 
 
 
@@ -77,10 +77,6 @@ filterContainer.addEventListener("click",(event)=>{
 
 }
 
-
-
-
-
 function handlePortfolioItems(event){
 if(event.target.closest(".pf__porfolio_item_inner")){
   const portfolioItem = event.target.closest(".pf__porfolio_item_inner").parentElement;
@@ -134,10 +130,6 @@ function popupDetails(){
   popup.querySelector(".pf__pp_project_category").innerHTML=category.split("-").join(" ")
 }
 
-
-
-
-
 function popupToggle(){
 const popup = document.querySelector(".pf__portfolio_popup")
 
@@ -145,15 +137,13 @@ popup.classList.toggle("pf__open")
 bodyScrollingToggle()
 }
 
-
-
 function bodyScrollingToggle(){
 document.body.classList.toggle("pf__stop_scrolling")
 }
 
-
 function handlePopupClose(){
 popupToggle()
+
 }
 
 function popupSlideshow(){
@@ -174,7 +164,6 @@ popup.querySelector(".pf__pp_counter").innerHTML = (slideIndex+1) +" of " + scre
 // popupImg.src = imgSrc;
 }
 
-//next slide:
 function handleNextSlide(){
 if(slideIndex ===screenshots.length-1){
   slideIndex = 0;
@@ -194,9 +183,6 @@ else{
 }
 popupSlideshow()
 }
-
-
-
 
 function handlepopupDetails(){
   popupDetailsToggle()
@@ -218,6 +204,11 @@ function popupDetailsToggle(){
     setRemove(true)
   }
 }
+
+// testimonial slider
+
+
+
 
 
 
@@ -246,6 +237,10 @@ function popupDetailsToggle(){
     <ProfilePortfolio aboutPortfolioManagement={aboutPortfolioManagement} handlePortfolioItems={handlePortfolioItems}/>
 
     {/*porfolio section end*/}
+
+    {/*testimonial section start*/}
+    <Testimonial/>
+    {/*testimonial section end*/}
 
     {/*porfolio popup start*/}
       <Popup handlepopupDetails={handlepopupDetails} handlePopupClose={handlePopupClose} handlePrevSlide={handlePrevSlide} handleNextSlide={handleNextSlide} remove={remove}/>
