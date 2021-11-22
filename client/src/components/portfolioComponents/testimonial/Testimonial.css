@@ -1,0 +1,50 @@
+.pf__testimonial_section{
+
+  padding: 80px 0 80px;
+  min-height: 100vh;
+
+}
+
+.pf__testimonial_section .pf__testi_box{
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.pf__testimonial_section .pf__testi_slider{
+  border-radius: 5px;
+  overflow: hidden;
+}
+.pf__testimonial_section .pf__testi_slider_container{
+  display: flex;
+  transition:margin 1s ease;
+  align-items: center;
+}
+.pf__testimonial_section .pf__testi_slider_nav{
+
+  margin-top: 30px;
+  text-align: center;
+
+}
+
+.pf__testimonial_section .pf__testi_slider_nav span{
+  height: 40px;
+  width: 40px;
+  color: var(--skin-color);
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.pf__testimonial_section .pf__testi_slider_nav span:after{
+  border-radius: 50%;
+}
+
+.pf__testimonial_section .pf__testi_slider_nav span svg{
+  line-height: 40px;
+  margin-top: 10px;
+}

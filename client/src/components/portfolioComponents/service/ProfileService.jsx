@@ -4,7 +4,7 @@ import {Help,Search,Code,Palette,PhoneAndroid,ImportantDevices} from '@material-
 
 const ProfileService = () => {
   return (
-    <section className="pf__service_section pf__section">
+    <section className="pf__service_section pf__section" id="services">
       <div className="pf__container">
         <div className="pf__row">
           <div className="pf__section_title">

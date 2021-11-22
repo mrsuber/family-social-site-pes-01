@@ -1,0 +1,42 @@
+.pf__testimonial_section .pf__testi_item{
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.pf__testimonial_section .pf__testi_item svg{
+  position: absolute;
+  font-size: 30px;
+  color: var(--text-black-600);
+  opacity: 0.1;
+}
+.pf__testimonial_section .pf__testi_item span{
+  display: block;
+  margin: 10px 0 0 ;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-black-700);
+  text-transform: capitalize;
+}
+
+.pf__testimonial_section .pf__testi_item span .pf__left{
+  left: 5px;
+  top: 5px;
+}
+
+.pf__testimonial_section .pf__testi_item span .pf__right{
+  right: 5px;
+  bottom: 5px;
+}
+
+.pf__testimonial_section .pf__testi_item p{
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text-black-600);
+  margin: 0 0 30px;
+}
+
+.pf__testimonial_section .pf__testi_item img{
+  max-width: 70px;
+  display: inline-block;
+}

@@ -1,0 +1,92 @@
+/*-------------------------
+contact section
+--------------------------*/
+
+.pf__contact_section{
+  padding: 80px 0 80px;
+  min-height: 100vh;
+}
+
+.pf__contact_section .pf__contact_item{
+  flex:0 0 33.33%;
+  max-width: 33.33%;
+  padding:15px;
+  display: flex;
+
+}
+
+.pf__contact_section .pf__contact_item_inner{
+  padding: 30px 15px;
+  text-align: center;
+  border-radius: 5px;
+  width: 100%;
+}
+.pf__contact_section .pf__contact_item_inner svg{
+  font-size: 25px;
+  color: var(--skin-color);
+}
+.pf__contact_section .pf__contact_item_inner span{
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-black-700);
+  margin: 15px 0 10px;
+  text-transform: capitalize;
+}
+
+.pf__contact_section .pf__contact_item_inner p{
+   font-size: 16px;
+   color:var(--text-black-600);
+   line-height: 26px;
+   margin: 0;
+   word-break: break-word;
+}
+
+.pf__contact_section .pf__contact_form{
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-top: 50px;
+}
+
+.pf__contact_section .pf__w_50{
+  padding: 0 15px;
+  flex:0 0 50%;
+  max-width: 50%;
+}
+.pf__contact_section .pf__input_group{
+  margin: 0 0 25px;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+}
+
+.pf__contact_section .pf__input_group:after{
+  border-radius: 30px;
+}
+
+.pf__contact_section .pf__input_group .pf__input_control{
+  height: 45px;
+  display: block;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  padding: 0 15px;
+  color: var(--text-black-700);
+}
+.pf__contact_section .pf__input_group .pf__input_control:focus{
+  outline: none;
+}
+
+.pf__contact_section .pf__input_group textarea.pf__input_control{
+  height: 184px;
+  padding-top: 15px;
+  resize: none;
+}
+
+.pf__contact_section .pf__submit_btn{
+  flex:0 0 100%;
+  max-width: 100%;
+  text-align: right;
+  padding: 0 15px;
+}

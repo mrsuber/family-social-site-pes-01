@@ -41,7 +41,7 @@ import dsh63 from "../../../images/porfolioImages/portfolio/large/project-6/3.pn
 import dsh71 from "../../../images/porfolioImages/portfolio/large/project-7/1.png"
 import dsh72 from "../../../images/porfolioImages/portfolio/large/project-7/2.png"
 
-import dsh81 from "../../../images/porfolioImages/portfolio/large/project-8/2.png"
+import dsh81 from "../../../images/porfolioImages/portfolio/large/project-8/1.png"
 import dsh82 from "../../../images/porfolioImages/portfolio/large/project-8/2.png"
 
 import './ProfilePortfolio.css'
@@ -49,7 +49,7 @@ import {PortfolioItem} from '../../../components'
 
 const ProfilePortfolio = ({aboutPortfolioManagement,handlePortfolioItems}) => {
   return (
-    <section className="pf__portfolio_section pf__section" onClick={aboutPortfolioManagement}>
+    <section className="pf__portfolio_section pf__section" onClick={aboutPortfolioManagement} id="portfolio">
         <div className="pf__container">
           <div className="pf__row">
               <div className="pf__section_title">
@@ -71,13 +71,13 @@ const ProfilePortfolio = ({aboutPortfolioManagement,handlePortfolioItems}) => {
               {/*porfolio items start*/}
                 <div className="pf__row pf__portfolio_items" onClick={handlePortfolioItems}>
                 {/*porfolio item start*/}
-                <PortfolioItem img={pf1} dsh={dsh1+","+dsh2+","+dsh3+","+dsh4+","+dsh4+","+dsh5+","+dsh6} />
+                <PortfolioItem img={pf1} site="www.domain.com" date="2020" client="client1" tools="html, css, javascript" cat="web-application" title="Personal portfolio" dsh={dsh1+","+dsh2+","+dsh3+","+dsh4+","+dsh4+","+dsh5+","+dsh6} />
                 {/*porfolio item end*/}
 
 
                 {/*porfolio item start*/}
 
-                <PortfolioItem img={pf2} dsh={dsh11+","+dsh22} />
+                <PortfolioItem img={pf2} site="www.domain2.com" date="2020" client="client2" tools="html, css, jqeury" cat="web-application" title="Weding couple" dsh={dsh11+","+dsh22} />
 
 
                 {/*porfolio item end*/}
@@ -85,7 +85,7 @@ const ProfilePortfolio = ({aboutPortfolioManagement,handlePortfolioItems}) => {
 
 
               {/*porfolio item start*/}
-              <PortfolioItem img={pf3} dsh={dsh111+","+dsh222+","+dsh333+","+dsh444+","+dsh555} />
+              <PortfolioItem img={pf3} site="www.domain.com" date="2020" client="client3" tools="html, css, bootstrap-4" cat="e-commerce" title="Product landing page" dsh={dsh111+","+dsh222+","+dsh333+","+dsh444+","+dsh555} />
 
 
               {/*porfolio item end*/}
@@ -94,35 +94,35 @@ const ProfilePortfolio = ({aboutPortfolioManagement,handlePortfolioItems}) => {
 
 
               {/*porfolio item start*/}
-              <PortfolioItem img={pf4} dsh={dsh1111} />
+              <PortfolioItem site="www.domain.com" date="2020" client="client4" tools="html, css, jquery" cat="web-application" title="Personal portfolio" img={pf4} dsh={dsh1111} />
 
               {/*porfolio item end*/}
 
 
               {/*porfolio item start*/}
-              <PortfolioItem img={pf5} dsh={dsh11111} />
+              <PortfolioItem site="www.domain.com" date="2020" client="client5" tools="html, css, javascript" cat="web-application" title="fitness & gym" img={pf5} dsh={dsh11111} />
 
               {/*porfolio item end*/}
 
 
               {/*porfolio item start*/}
-              <PortfolioItem img={pf6} dsh={dsh61+","+dsh62+","+dsh63} />
-
-
-              {/*porfolio item end*/}
-
-
-              {/*porfolio item start*/}
-              <PortfolioItem img={pf7} dsh={dsh71+","+dsh72} />
+              <PortfolioItem site="www.domain.com" date="2020" client="client6" tools="html, css, javascript" cat="web-application" title="quize application" img={pf6} dsh={dsh61+","+dsh62+","+dsh63} />
 
 
               {/*porfolio item end*/}
 
 
               {/*porfolio item start*/}
-              <PortfolioItem img={pf8} dsh={dsh81+","+dsh82} />
+              <PortfolioItem site="play store" date="2020" client="client7" tools="html, css, javascript" cat="mobile-app" title="xyz app" img={pf7} dsh={dsh71+","+dsh72} />
 
-              
+
+              {/*porfolio item end*/}
+
+
+              {/*porfolio item start*/}
+              <PortfolioItem site="www.domain.com" date="2020" client="client8" tools="html, css, javascript" cat="blender" title="Personal portfolio" img={pf8} dsh={dsh81+","+dsh82} />
+
+
               {/*porfolio item end*/}
 
 

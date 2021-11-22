@@ -98,6 +98,7 @@ padding-bottom: 10px;
 
 .pf__portfolio_popup .pf__pp_title p span{
   font-weight: 400;
+  text-transform: capitalize;
 }
 .pf__portfolio_popup .pf__description{
   flex:0 0 65%;
@@ -125,6 +126,9 @@ padding-bottom: 10px;
 
 .pf__portfolio_popup .pf__info ul li span{
   font-weight: 400;
+}
+.pf__portfolio_popup .pf__info ul li a{
+  color:var(--skin-color);
 }
 .pf__portfolio_popup .pf__info ul li:last-child{
   margin-bottom: 0;
@@ -172,7 +176,7 @@ padding-bottom: 10px;
   top:15px;
   height: 40px;
   line-height: 40px;
-  display: flex;
+  display: flex !important;
   align-items: center;
   transition: all 0.3s ease;
 }
