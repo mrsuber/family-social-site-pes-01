@@ -25,4 +25,5 @@ export {default as Testimonial} from './portfolioComponents/testimonial/Testimon
 export {default as TestimonialItem} from './portfolioComponents/testimonial/testimonialItem/TestimonialItem'
 export {default as Contact} from './portfolioComponents/contact/Contact'
 export {default as Switcher} from './portfolioComponents/switcher/Switcher'
+export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 //porfolio components exports end

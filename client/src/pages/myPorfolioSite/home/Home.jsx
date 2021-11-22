@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import './Home.css'
 import profilePic from '../../../images/porfolioImages/me.webp'
 
-import {Switcher,Contact,Testimonial,Popup,ProfilePortfolio,ProfileNavbar,ProfileHeader,ProfileHome,ProfileAbout,ProfileService} from '../../../components'
+import {Preloader,Switcher,Contact,Testimonial,Popup,ProfilePortfolio,ProfileNavbar,ProfileHeader,ProfileHome,ProfileAbout,ProfileService} from '../../../components'
 
 
 
@@ -411,6 +411,8 @@ if(color5===true){
 }
   return (
     <div className="pf__body" >
+
+    <Preloader />
     <ProfileHeader
 
     />
