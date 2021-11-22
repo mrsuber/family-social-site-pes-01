@@ -299,11 +299,17 @@ useEffect(()=>{
 
 function setColor1(){
 setColorOne(true)
+localStorage.setItem("color1","true")
 setColorTwo(false)
+localStorage.setItem("color2","false")
 setColorThree(false)
+localStorage.setItem("color3","false")
 setColorFour(false)
+localStorage.setItem("color4","false")
 setColorFive(false)
-if(color1===true){
+localStorage.setItem("color5","false")
+
+if(color1===true || localStorage.getItem("color1")==="true"){
   if(document.querySelector(".pf__body").classList.contains("pf__color2")){
     document.querySelector(".pf__body").classList.remove("pf__color2")
   }
@@ -322,11 +328,17 @@ if(color1===true){
 }
 function setColor2(){
 setColorOne(false)
+localStorage.setItem("color1","false")
 setColorTwo(true)
+localStorage.setItem("color2","true")
 setColorThree(false)
+localStorage.setItem("color3","false")
 setColorFour(false)
+localStorage.setItem("color4","false")
 setColorFive(false)
-if(color2===true){
+localStorage.setItem("color5","false")
+
+if(color2===true || localStorage.getItem("color2")==="true"){
   if(document.querySelector(".pf__body").classList.contains("pf__color1")){
     document.querySelector(".pf__body").classList.remove("pf__color1")
   }
@@ -344,11 +356,16 @@ if(color2===true){
 }
 function setColor3(){
 setColorOne(false)
+localStorage.setItem("color1","false")
 setColorTwo(false)
+localStorage.setItem("color2","false")
 setColorThree(true)
+localStorage.setItem("color3","true")
 setColorFour(false)
+localStorage.setItem("color4","false")
 setColorFive(false)
-if(color3===true){
+localStorage.setItem("color5","false")
+if(color3===true || localStorage.getItem("color3")==="true"){
   if(document.querySelector(".pf__body").classList.contains("pf__color1")){
     document.querySelector(".pf__body").classList.remove("pf__color1")
   }
@@ -366,11 +383,16 @@ if(color3===true){
 }
 function setColor4(){
 setColorOne(false)
+localStorage.setItem("color1","false")
 setColorTwo(false)
+localStorage.setItem("color2","false")
 setColorThree(false)
+localStorage.setItem("color3","false")
 setColorFour(true)
+localStorage.setItem("color4","true")
 setColorFive(false)
-if(color4===true){
+localStorage.setItem("color5","false")
+if(color4===true || localStorage.getItem("color4")==="true"){
   if(document.querySelector(".pf__body").classList.contains("pf__color1")){
     document.querySelector(".pf__body").classList.remove("pf__color1")
   }
@@ -388,12 +410,17 @@ if(color4===true){
 }
 function setColor5(){
 setColorOne(false)
+localStorage.setItem("color1","false")
 setColorTwo(false)
+localStorage.setItem("color2","false")
 setColorThree(false)
+localStorage.setItem("color3","false")
 setColorFour(false)
+localStorage.setItem("color4","false")
 setColorFive(true)
+localStorage.setItem("color5","true")
 
-if(color5===true){
+if(color5===true || localStorage.getItem("color5")==="true"){
   if(document.querySelector(".pf__body").classList.contains("pf__color1")){
     document.querySelector(".pf__body").classList.remove("pf__color1")
   }
@@ -409,6 +436,95 @@ if(color5===true){
   document.querySelector(".pf__body").classList.add("pf__color5")
 }
 }
+
+useEffect(()=>{
+  window.addEventListener("load",()=>{
+
+
+  if( localStorage.getItem("color1")==="true"){
+    if(document.querySelector(".pf__body").classList.contains("pf__color2")){
+      document.querySelector(".pf__body").classList.remove("pf__color2")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color3")){
+      document.querySelector(".pf__body").classList.remove("pf__color3")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color4")){
+      document.querySelector(".pf__body").classList.remove("pf__color4")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color5")){
+      document.querySelector(".pf__body").classList.remove("pf__color5")
+    }
+    document.querySelector(".pf__body").classList.add("pf__color1")
+  }
+
+  if( localStorage.getItem("color2")==="true"){
+    if(document.querySelector(".pf__body").classList.contains("pf__color1")){
+      document.querySelector(".pf__body").classList.remove("pf__color1")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color3")){
+      document.querySelector(".pf__body").classList.remove("pf__color3")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color4")){
+      document.querySelector(".pf__body").classList.remove("pf__color4")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color5")){
+      document.querySelector(".pf__body").classList.remove("pf__color5")
+    }
+    console.log("i see this ")
+    document.querySelector(".pf__body").classList.add("pf__color2")
+  }
+
+  if( localStorage.getItem("color3")==="true"){
+    if(document.querySelector(".pf__body").classList.contains("pf__color1")){
+      document.querySelector(".pf__body").classList.remove("pf__color1")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color2")){
+      document.querySelector(".pf__body").classList.remove("pf__color2")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color4")){
+      document.querySelector(".pf__body").classList.remove("pf__color4")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color5")){
+      document.querySelector(".pf__body").classList.remove("pf__color5")
+    }
+    document.querySelector(".pf__body").classList.add("pf__color3")
+  }
+
+  if( localStorage.getItem("color4")==="true"){
+    if(document.querySelector(".pf__body").classList.contains("pf__color1")){
+      document.querySelector(".pf__body").classList.remove("pf__color1")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color2")){
+      document.querySelector(".pf__body").classList.remove("pf__color2")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color3")){
+      document.querySelector(".pf__body").classList.remove("pf__color3")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color5")){
+      document.querySelector(".pf__body").classList.remove("pf__color5")
+    }
+    document.querySelector(".pf__body").classList.add("pf__color4")
+  }
+
+
+  if( localStorage.getItem("color5")==="true"){
+    if(document.querySelector(".pf__body").classList.contains("pf__color1")){
+      document.querySelector(".pf__body").classList.remove("pf__color1")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color2")){
+      document.querySelector(".pf__body").classList.remove("pf__color2")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color3")){
+      document.querySelector(".pf__body").classList.remove("pf__color3")
+    }
+    if(document.querySelector(".pf__body").classList.contains("pf__color4")){
+      document.querySelector(".pf__body").classList.remove("pf__color4")
+    }
+    document.querySelector(".pf__body").classList.add("pf__color5")
+  }
+
+  })
+},[])
   return (
     <div className="pf__body" >
 
