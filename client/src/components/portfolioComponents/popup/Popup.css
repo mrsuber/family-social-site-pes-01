@@ -251,3 +251,18 @@ transition: all 0.3s ease;
 .pf__portfolio_popup .pf__pp_next{
    right: 15px;
 }
+
+/*------------------------------------------------------------------
+resposiveness
+ -------------------------------------------------------------------- */
+@media(max-width: 991px){
+
+
+}
+@media(max-width:767px){
+  .pf__portfolio_popup .info,
+  .pf__portfolio_popup .pf__description {
+    flex:0 0 100%;
+    max-width: 100%;
+  }
+}

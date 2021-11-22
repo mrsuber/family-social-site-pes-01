@@ -168,3 +168,47 @@ margin: 0;
        }
 
      }
+
+
+     /*------------------------------------------------------------------
+   resposiveness
+      -------------------------------------------------------------------- */
+ @media(max-width: 726px){
+
+.pf__home_section .pf__home_text,
+.pf__home_section .pf__home_img{
+  flex:00 100%;
+  max-width: 100%;
+}
+.pf__home_section .pf__home_text{
+  order:2;
+}
+.pf__home_section .pf__home_text{
+  text-align: center;
+}
+.pf__home_section .pf__full_screen{
+  padding: 100px 0;
+}
+.pf__home_section .pf__home_img .pf__img_box{
+  margin-bottom: 40px;
+  max-width: 350px;
+}
+.pf__effect3{
+  margin-left: -60px;
+}
+.pf__effect4{
+  left: 15%;
+}
+.pf__effect5{
+  right:4%;
+}
+ }
+
+@media(max-width:574px){
+  .pf__home_section .pf__home_img .pf__img_box{
+    max-width: 260px;
+  }
+  .pf__home_section .pf__home_text h2{
+    font-size: 40px;
+  }
+}

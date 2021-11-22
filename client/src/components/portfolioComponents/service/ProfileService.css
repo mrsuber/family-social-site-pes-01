@@ -81,3 +81,21 @@ servie section
   color: var(--text-black-600);
   margin: 0;
 }
+
+
+/*------------------------------------------------------------------
+resposiveness
+ -------------------------------------------------------------------- */
+@media(max-width: 991px){
+.pf__service_section .pf__service_item {
+    flex: 0 0 50%;
+    max-width: 50%;;
+  }
+
+}
+@media(max-width:767px){
+  .pf__service_section .pf__service_item{
+    flex:0 0 100%;
+    max-width: 100%;
+  }
+}

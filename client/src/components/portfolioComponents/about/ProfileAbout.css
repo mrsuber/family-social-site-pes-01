@@ -264,3 +264,57 @@ left: -30px;
   line-height: 26px;
   margin: 15px 0 0;
 }
+
+/*------------------------------------------------------------------
+resposiveness
+ -------------------------------------------------------------------- */
+@media(max-width: 726px){
+  .pf__about_section .pf__skills .pf__skill_item,
+  .pf__about_section .pf__about_info,
+  .pf__about_section .pf__about_img{
+    flex:00 100%;
+    max-width: 100%;
+  }
+
+  .pf__about_section .pf__about_img{
+    padding-bottom: 30px;
+  }
+.pf__about_section .pf__about_img{
+  padding-bottom: 30px;
+}
+.pf__about_section .pf__timeline .pf__timeline_item:nth-child(odd){
+  padding-right:15px;
+  text-align: left;
+  padding-left:75px;
+}
+.pf__about_section .pf__timeline .pf__timeline_item:nth-child(even){
+  padding-left:75px;
+  /* text-align: left; */
+}
+.pf__about_section .pf__timeline:before{
+  left:35px;
+}
+.pf__about_section .pf__timeline .pf__timeline_item:nth-child(odd) .pf__icon{
+  right: auto;
+  left: -60px;
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item:nth-child(even) .pf__icon{
+  left: -60px;
+
+}
+.pf__about_section .pf__timeline .pf__timeline_item{
+  margin-bottom: 40px;
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item:last-child{
+  margin-bottom: 0;
+}
+
+.pf__about_section .pf__timeline .pf__timeline_item:nth-child(odd) .pf__timeline_item_inner:before{
+  left:-30px;
+  right: auto;
+}
+
+
+}
