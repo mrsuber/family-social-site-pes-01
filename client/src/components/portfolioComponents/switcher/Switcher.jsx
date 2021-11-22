@@ -9,10 +9,12 @@ const Switcher = ({setColor1,setColor2,setColor3,setColor4,setColor5}) => {
   function toggleDarkMood(){
     setDark(!dark)
     if(dark===true){
+      localStorage.setItem("dark","false")
       if(document.querySelector(".pf__body").classList.contains("pf__dark")){
         document.querySelector(".pf__body").classList.remove("pf__dark")
       }
     }else{
+      localStorage.setItem("dark","true")
       document.querySelector(".pf__body").classList.add("pf__dark")
     }
 
@@ -33,10 +35,9 @@ const Switcher = ({setColor1,setColor2,setColor3,setColor4,setColor5}) => {
     })
     /*---------------------------------theme colors-------------------------------------*/
     window.addEventListener("load",()=>{
-      if(document.querySelector(".pf__body").classList.contains("pf__dark")){
-        console.log("dark state if",dark)
-      }else{
-        console.log("dark state is off",dark)
+      if(localStorage.getItem("dark")==="true"){
+        setDark(true)
+        document.querySelector(".pf__body").classList.add("pf__dark")
       }
     })
 
