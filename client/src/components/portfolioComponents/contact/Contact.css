@@ -90,3 +90,25 @@ contact section
   text-align: right;
   padding: 0 15px;
 }
+
+
+/*------------------------------------------------------------------
+resposiveness
+ -------------------------------------------------------------------- */
+@media(max-width: 991px){
+/* .pf__portfolio_section .pf__porfolio_item {
+    flex: 0 0 50%;
+    max-width: 50%;;
+  } */
+
+}
+@media(max-width:767px){
+  .pf__contact_section .pf__w_50,
+  .pf__contact_section .pf__contact_item {
+    flex:0 0 100%;
+    max-width: 100%;
+  }
+  .pf__contact_section .pf__submit_btn{
+    text-align: center;
+  }
+}

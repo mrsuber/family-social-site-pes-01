@@ -100,3 +100,21 @@ portfolio section
 .pf__portfolio_section .pf__portfolio_item_details{
   display: none;
 }
+
+/*------------------------------------------------------------------
+resposiveness
+ -------------------------------------------------------------------- */
+@media(max-width: 991px){
+.pf__portfolio_section .pf__porfolio_item {
+    flex: 0 0 50%;
+    max-width: 50%;;
+  }
+
+}
+@media(max-width:767px){
+
+  .pf__portfolio_section .pf__porfolio_item {
+    flex:0 0 100%;
+    max-width: 100%;
+  }
+}
