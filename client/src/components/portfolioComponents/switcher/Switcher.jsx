@@ -1,9 +1,24 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import './Switcher.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCog,faMoon} from '@fortawesome/free-solid-svg-icons';
+import {faCog,faMoon,faSun} from '@fortawesome/free-solid-svg-icons';
 
 const Switcher = ({setColor1,setColor2,setColor3,setColor4,setColor5}) => {
+  const [dark,setDark]=useState(false)
+
+  function toggleDarkMood(){
+    setDark(!dark)
+    if(dark===true){
+      if(document.querySelector(".pf__body").classList.contains("pf__dark")){
+        document.querySelector(".pf__body").classList.remove("pf__dark")
+      }
+    }else{
+      document.querySelector(".pf__body").classList.add("pf__dark")
+    }
+
+  }
+
+
   useEffect(()=>{
     const styleSwitcherToggler = document.querySelector(".pf__style_switcher_toggler")
     styleSwitcherToggler.addEventListener("click",()=>{
@@ -17,7 +32,13 @@ const Switcher = ({setColor1,setColor2,setColor3,setColor4,setColor5}) => {
       }
     })
     /*---------------------------------theme colors-------------------------------------*/
-
+    window.addEventListener("load",()=>{
+      if(document.querySelector(".pf__body").classList.contains("pf__dark")){
+        console.log("dark state if",dark)
+      }else{
+        console.log("dark state is off",dark)
+      }
+    })
 
   },[])
   return (
@@ -25,8 +46,9 @@ const Switcher = ({setColor1,setColor2,setColor3,setColor4,setColor5}) => {
       <div className="pf__style_switcher_toggler pf__s_icon pf__outer_shadow pf__hover_in_shadow">
         <FontAwesomeIcon icon={faCog} className="pf__setting"/>
       </div>
-      <div className="pf__day_night pf__s_icon pf__outer_shadow pf__hover_in_shadow">
-      <FontAwesomeIcon icon={faMoon} />
+      <div className="pf__day_night pf__s_icon pf__outer_shadow pf__hover_in_shadow"onClick={toggleDarkMood}>
+    {dark===true? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}
+
       </div>
       <h4>Theme Colors</h4>
       <div className="pf__colors">

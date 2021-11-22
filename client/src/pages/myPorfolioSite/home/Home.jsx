@@ -303,6 +303,22 @@ setColorTwo(false)
 setColorThree(false)
 setColorFour(false)
 setColorFive(false)
+if(color1===true){
+  if(document.querySelector(".pf__body").classList.contains("pf__color2")){
+    document.querySelector(".pf__body").classList.remove("pf__color2")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color3")){
+    document.querySelector(".pf__body").classList.remove("pf__color3")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color4")){
+    document.querySelector(".pf__body").classList.remove("pf__color4")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color5")){
+    document.querySelector(".pf__body").classList.remove("pf__color5")
+  }
+  document.querySelector(".pf__body").classList.add("pf__color1")
+}
+
 }
 function setColor2(){
 setColorOne(false)
@@ -310,6 +326,21 @@ setColorTwo(true)
 setColorThree(false)
 setColorFour(false)
 setColorFive(false)
+if(color2===true){
+  if(document.querySelector(".pf__body").classList.contains("pf__color1")){
+    document.querySelector(".pf__body").classList.remove("pf__color1")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color3")){
+    document.querySelector(".pf__body").classList.remove("pf__color3")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color4")){
+    document.querySelector(".pf__body").classList.remove("pf__color4")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color5")){
+    document.querySelector(".pf__body").classList.remove("pf__color5")
+  }
+  document.querySelector(".pf__body").classList.add("pf__color2")
+}
 }
 function setColor3(){
 setColorOne(false)
@@ -317,6 +348,21 @@ setColorTwo(false)
 setColorThree(true)
 setColorFour(false)
 setColorFive(false)
+if(color3===true){
+  if(document.querySelector(".pf__body").classList.contains("pf__color1")){
+    document.querySelector(".pf__body").classList.remove("pf__color1")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color2")){
+    document.querySelector(".pf__body").classList.remove("pf__color2")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color4")){
+    document.querySelector(".pf__body").classList.remove("pf__color4")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color5")){
+    document.querySelector(".pf__body").classList.remove("pf__color5")
+  }
+  document.querySelector(".pf__body").classList.add("pf__color3")
+}
 }
 function setColor4(){
 setColorOne(false)
@@ -324,6 +370,21 @@ setColorTwo(false)
 setColorThree(false)
 setColorFour(true)
 setColorFive(false)
+if(color4===true){
+  if(document.querySelector(".pf__body").classList.contains("pf__color1")){
+    document.querySelector(".pf__body").classList.remove("pf__color1")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color2")){
+    document.querySelector(".pf__body").classList.remove("pf__color2")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color3")){
+    document.querySelector(".pf__body").classList.remove("pf__color3")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color5")){
+    document.querySelector(".pf__body").classList.remove("pf__color5")
+  }
+  document.querySelector(".pf__body").classList.add("pf__color4")
+}
 }
 function setColor5(){
 setColorOne(false)
@@ -331,96 +392,76 @@ setColorTwo(false)
 setColorThree(false)
 setColorFour(false)
 setColorFive(true)
+
+if(color5===true){
+  if(document.querySelector(".pf__body").classList.contains("pf__color1")){
+    document.querySelector(".pf__body").classList.remove("pf__color1")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color2")){
+    document.querySelector(".pf__body").classList.remove("pf__color2")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color3")){
+    document.querySelector(".pf__body").classList.remove("pf__color3")
+  }
+  if(document.querySelector(".pf__body").classList.contains("pf__color4")){
+    document.querySelector(".pf__body").classList.remove("pf__color4")
+  }
+  document.querySelector(".pf__body").classList.add("pf__color5")
+}
 }
   return (
     <div className="pf__body" >
     <ProfileHeader
-    color1={color1}
-    color2={color2}
-    color3={color3}
-    color4={color4}
-    color5={color5}
+
     />
 
     <ProfileNavbar
-    color1={color1}
-    color2={color2}
-    color3={color3}
-    color4={color4}
-    color5={color5}
+
     />
 
 
     {/*home section starts*/}
     <ProfileHome profilePic={profilePic}
-    color1={color1}
-    color2={color2}
-    color3={color3}
-    color4={color4}
-    color5={color5}
+
     />
     {/*home section end*/}
 
     {/*about section end*/}
     <ProfileAbout profilePic={profilePic} aboutSectionManagement={aboutSectionManagement}
-    color1={color1}
-    color2={color2}
-    color3={color3}
-    color4={color4}
-    color5={color5}
+
     />
     {/*about section end*/}
 
 
     {/*service section start*/}
     <ProfileService
-    color1={color1}
-    color2={color2}
-    color3={color3}
-    color4={color4}
-    color5={color5}
+
     />
 
     {/*service section end*/}
 
     {/*porfolio section start*/}
     <ProfilePortfolio aboutPortfolioManagement={aboutPortfolioManagement} handlePortfolioItems={handlePortfolioItems}
-    color1={color1}
-    color2={color2}
-    color3={color3}
-    color4={color4}
-    color5={color5}
+
     />
 
     {/*porfolio section end*/}
 
     {/*testimonial section start*/}
     <Testimonial
-    color1={color1}
-    color2={color2}
-    color3={color3}
-    color4={color4}
-    color5={color5}
+
     />
     {/*testimonial section end*/}
 
     {/*contact section end*/}
       <Contact
-      color1={color1}
-      color2={color2}
-      color3={color3}
-      color4={color4}
-      color5={color5}
+
       />
     {/*contact section end*/}
 
     {/*porfolio popup start*/}
       <Popup handlepopupDetails={handlepopupDetails} handlePopupClose={handlePopupClose} handlePrevSlide={handlePrevSlide} handleNextSlide={handleNextSlide} remove={remove}
-      color1={color1}
-      color2={color2}
-      color3={color3}
-      color4={color4}
-      color5={color5}
+
       />
     {/*porfolio popup end*/}
 
