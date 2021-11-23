@@ -6,11 +6,7 @@ const Preloader = () => {
 
 useEffect(()=>{
   window.addEventListener("load", ()=>{
-    document.querySelector(".pf__preloader").classList.add("pf__fade_out");
-    setTimeout(()=>{
-      document.querySelector(".pf__preloader").style.display="none";
 
-    },600)
   })
 },[])
 

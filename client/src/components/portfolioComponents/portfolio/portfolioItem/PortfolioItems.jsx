@@ -1,11 +1,11 @@
 import React from 'react'
 
-const PortfolioItem = ({img,dsh,title,cat,tools,client,date,site}) => {
+const PortfolioItem = ({gitLink,siteLink,thumb,siteName,dssh,title,category,tools,client,date,description}) => {
   return (
-    <div className="pf__porfolio_item" data-category={cat}>
+    <div className="pf__porfolio_item" data-category={category}>
       <div className="pf__porfolio_item_inner pf__outer_shadow">
         <div className="pf__portfolio_item_img">
-          <img src={img} alt="portfolio" data-screenshots={dsh} />
+          <img src={thumb} alt="portfolio" data-screenshots={dssh} />
           {/*view porject btn*/}
           <span className="pf__view_project">view project</span>
          </div>
@@ -15,7 +15,7 @@ const PortfolioItem = ({img,dsh,title,cat,tools,client,date,site}) => {
             <div className="pf__row">
               <div className="pf__description">
                 <h3>Project Brief:</h3>
-                <p>After a couple of projects with these languages for Front-End and UI Designs, i was introduce to frame works like React and Angular for building single web applications and proper use of props and components certainly made life easier. My new life into frame works lead me to being</p>
+                <p>{description}</p>
 
               </div>
               <div className="pf__info">
@@ -24,7 +24,8 @@ const PortfolioItem = ({img,dsh,title,cat,tools,client,date,site}) => {
                   <li>Date - <span>{date}</span> </li>
                   <li>Client - <span>{client}</span> </li>
                   <li>Tools - <span>{tools}</span> </li>
-                  <li>Web - <span><a href="#">{site}</a></span> </li>
+                  <li>Web - <span><a href={siteLink}>{siteName}</a></span> </li>
+                  <li>Github - <span><a href={gitLink}>{siteName}</a></span> </li>
 
 
                 </ul>
