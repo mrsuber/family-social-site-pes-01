@@ -32,6 +32,9 @@ const Home = ({profilePic}) => {
               <a href="#about"
               className="pf__link_item pf__btn1 pf__outer_shadow pf__hover_in_shadow pf__link"
               >More About Me</a>
+              <a href="#portfolio"
+              className="pf__btn_portfolio pf__link_item pf__btn1 pf__outer_shadow pf__hover_in_shadow pf__link"
+              >portfolio</a>
             </div>
             <div className="pf__home_img">
               <div className="pf__img_box pf__inner_shadow">

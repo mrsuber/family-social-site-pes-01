@@ -264,6 +264,13 @@ left: -30px;
   line-height: 26px;
   margin: 15px 0 0;
 }
+.pf__project_num1{
+  visibility: hidden;
+}
+.pf__project_num{
+  visibility: visible;
+}
+
 
 /*------------------------------------------------------------------
 resposiveness
@@ -317,4 +324,14 @@ resposiveness
 }
 
 
+
+
+}
+@media(max-width:1005px){
+  .pf__project_num1{
+    visibility: visible;
+  }
+  .pf__project_num{
+    visibility: hidden;
+  }
 }

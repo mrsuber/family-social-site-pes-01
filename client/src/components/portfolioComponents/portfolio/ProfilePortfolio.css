@@ -16,7 +16,9 @@ portfolio section
    margin-bottom: 20px;
 
  }
-
+.pf__btn_portfolio{
+  margin-left: 10px;
+}
  .pf__portfolio_section .pf__filter_item{
    display: inline-block;
    margin: 0 5px 10px;
