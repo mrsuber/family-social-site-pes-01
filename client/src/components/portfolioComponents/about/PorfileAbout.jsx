@@ -39,6 +39,8 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
 
             <a href={cv} className="pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1" >Download Cv</a>
             <a href="#contact" className=" pf__link_item pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1">Hire Me</a>
+            <a href="#portfolio" className=" pf__link_item pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1">portfolio</a>
+
           </div>
         </div>
         {/*about taps start*/}
@@ -62,7 +64,8 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>Html</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(95% - 14px)"}}>
-                        <span>95%(70-projects)</span>
+                        <span className="pf__project_num">95%(70-projects)</span>
+                        <span className="pf__project_num1">95%</span>
                       </div>
                     </div>
                 </div>
@@ -73,7 +76,8 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>Css</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(85% - 14px)"}}>
-                        <span>85%(60-projects)</span>
+                        <span className="pf__project_num">85%(60-projects)</span>
+                        <span className="pf__project_num1">85%</span>
                       </div>
                     </div>
                 </div>
@@ -84,7 +88,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>JavaScript</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(75% - 14px)"}}>
-                        <span>75%(65-projects)</span>
+                        <span className="pf__project_num">75%(65-projects)</span>
+                        <span className="pf__project_num1">75%</span>
+
                       </div>
                     </div>
                 </div>
@@ -96,7 +102,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>bootstrap</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span>40%(5-projects)</span>
+                        <span className="pf__project_num">40%(5-projects)</span>
+                        <span className="pf__project_num1">40%</span>
+
                       </div>
                     </div>
                 </div>
@@ -107,7 +115,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>jquery</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span>40%(2-projects)</span>
+                        <span className="pf__project_num">40%(2-projects)</span>
+                        <span className="pf__project_num1">40%</span>
+
                       </div>
                     </div>
                 </div>
@@ -118,7 +128,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>Git/Github</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(90% - 14px)"}}>
-                        <span>90%(80-projects)</span>
+                        <span className="pf__project_num">90%(80-projects)</span>
+                        <span className="pf__project_num1">90%</span>
+
                       </div>
                     </div>
                 </div>
@@ -129,7 +141,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>Docker</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span>40%(2-projects)</span>
+                        <span className="pf__project_num">40%(2-projects)</span>
+                        <span className="pf__project_num1">40%</span>
+
                       </div>
                     </div>
                 </div>
@@ -140,7 +154,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>angular</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span>40%(1-project)</span>
+                        <span className="pf__project_num">40%(1-project)</span>
+                        <span className="pf__project_num1">40%</span>
+
                       </div>
                     </div>
                 </div>
@@ -151,7 +167,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>react</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(95% - 14px)"}}>
-                        <span>95%(25-projects)</span>
+                        <span className="pf__project_num">95%(25-projects)</span>
+                        <span className="pf__project_num1">95%</span>
+
                       </div>
                     </div>
                 </div>
@@ -162,7 +180,8 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>Nodejs</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(70% - 14px)"}}>
-                        <span>70%(15-projects)</span>
+                        <span className="pf__project_num">70%(15-projects)</span>
+                        <span className="pf__project_num1">70%</span>
                       </div>
                     </div>
                 </div>
