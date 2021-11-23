@@ -1,6 +1,7 @@
 import React from 'react'
-import {Facebook,Instagram, GitHub,LinkedIn,BusinessCenter,School} from '@material-ui/icons'
+import {Facebook,YouTube, GitHub,LinkedIn,BusinessCenter,School} from '@material-ui/icons'
 import './ProfileAbout.css'
+import cv from '../../../images/cv.pdf'
 
 const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
   return (
@@ -18,10 +19,10 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
             </div>
             {/*social links start*/}
             <div className="pf__social_links">
-                <a href="#" className="pf__link pf__outer_shadow pf__hover_in_shadow"><Facebook/></a>
-                <a href="#" className="pf__link pf__outer_shadow pf__hover_in_shadow"><Instagram/></a>
-                <a href="#" className="pf__link pf__outer_shadow pf__hover_in_shadow"><GitHub/></a>
-                <a href="#" className="pf__link pf__outer_shadow pf__hover_in_shadow"><LinkedIn/></a>
+                <a href="https://www.facebook.com/mohamad.siysinyuy" target="__blank" className="pf__link pf__outer_shadow pf__hover_in_shadow"><Facebook/></a>
+                <a href="https://www.youtube.com/channel/UC1DjtEqj9566DSexb-BAtQw" target="__blank" className="pf__link pf__outer_shadow pf__hover_in_shadow"><YouTube/></a>
+                <a href="https://github.com/mrsuber" target="__blank" className="pf__link pf__outer_shadow pf__hover_in_shadow"><GitHub/></a>
+                <a href="https://www.linkedin.com/in/mohamad-siysinyuy-26154215b/" target="__blank" className="pf__link pf__outer_shadow pf__hover_in_shadow"><LinkedIn/></a>
 
             </div>
             {/*social links end*/}
@@ -36,7 +37,7 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
 </p>
             <p>To showcase my projects to the world, I had to host them with FireBase, Heroku, Github.</p>
 
-            <a href="cv.pdf" className="pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1" >Download Cv</a>
+            <a href={cv} className="pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1" >Download Cv</a>
             <a href="#contact" className=" pf__link_item pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1">Hire Me</a>
           </div>
         </div>
@@ -60,8 +61,19 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item" >
                     <p>Html</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(50% - 14px)"}}>
-                        <span>50%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(95% - 14px)"}}>
+                        <span>95%(70-projects)</span>
+                      </div>
+                    </div>
+                </div>
+              {/*skill start*/}
+
+              {/*skill start*/}
+                <div className="pf__skill_item" >
+                    <p>Css</p>
+                    <div className="pf__progress pf__inner_shadow">
+                      <div class="pf__progress_bar" style={{width:"calc(85% - 14px)"}}>
+                        <span>85%(60-projects)</span>
                       </div>
                     </div>
                 </div>
@@ -71,8 +83,8 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item">
                     <p>JavaScript</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(60% - 14px)"}}>
-                        <span>60%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(75% - 14px)"}}>
+                        <span>75%(65-projects)</span>
                       </div>
                     </div>
                 </div>
@@ -83,8 +95,8 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item">
                     <p>bootstrap</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(70% - 14px)"}}>
-                        <span>70%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
+                        <span>40%(5-projects)</span>
                       </div>
                     </div>
                 </div>
@@ -94,8 +106,30 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item">
                     <p>jquery</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(80% - 14px)"}}>
-                        <span>80%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
+                        <span>40%(2-projects)</span>
+                      </div>
+                    </div>
+                </div>
+              {/*skill start*/}
+
+              {/*skill start*/}
+                <div className="pf__skill_item">
+                    <p>Git/Github</p>
+                    <div className="pf__progress pf__inner_shadow">
+                      <div class="pf__progress_bar" style={{width:"calc(90% - 14px)"}}>
+                        <span>90%(80-projects)</span>
+                      </div>
+                    </div>
+                </div>
+              {/*skill start*/}
+
+              {/*skill start*/}
+                <div className="pf__skill_item">
+                    <p>Docker</p>
+                    <div className="pf__progress pf__inner_shadow">
+                      <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
+                        <span>40%(2-projects)</span>
                       </div>
                     </div>
                 </div>
@@ -105,8 +139,8 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item">
                     <p>angular</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(90% - 14px)"}}>
-                        <span>90%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
+                        <span>40%(1-project)</span>
                       </div>
                     </div>
                 </div>
@@ -116,8 +150,19 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item">
                     <p>react</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(100% - 14px)"}}>
-                        <span>100%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(95% - 14px)"}}>
+                        <span>95%(25-projects)</span>
+                      </div>
+                    </div>
+                </div>
+              {/*skill start*/}
+
+              {/*skill start*/}
+                <div className="pf__skill_item">
+                    <p>Nodejs</p>
+                    <div className="pf__progress pf__inner_shadow">
+                      <div class="pf__progress_bar" style={{width:"calc(70% - 14px)"}}>
+                        <span>70%(15-projects)</span>
                       </div>
                     </div>
                 </div>
@@ -155,7 +200,7 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                       <span>2021 - present</span>
                       <h3>full stack developer</h3>
                       <h4>Personal Projects</h4>
-                      <p>Developement of transaction service Rest API with Nodejs implementing the Micro-service architecture, deployment on heroku,FireBase,GitHub and NoSQL Database Management MongoDB and over 20+ different prodjects with Html, css,JavaScript,React and more</p>
+                      <p>Developement of web applications and rest APIs, implementing the Micro-service architecture, deployment on heroku,FireBase,GitHub and NoSQL Database Management MongoDB and over 20+ different prodjects with Html, css,JavaScript,React and more</p>
                     </div>
                   </div>
                 {/*experience start*/}
@@ -165,9 +210,10 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <div className="pf__timeline_item_inner pf__outer_shadow">
                       <span className="pf__icon"><BusinessCenter /></span>
                       <span>2021 - present</span>
-                      <h3>Web Designer</h3>
+                      <h3>Graphic Designer</h3>
                       <h4>Personal Projects</h4>
-                      <p>Developement of transaction service Rest API with Nodejs implementing the Micro-service architecture, deployment on heroku,FireBase,GitHub and NoSQL Database Management MongoDB and over 20+ different prodjects with Html, css,JavaScript,React and more</p>
+                      <p>Design of Graphics such as logos and websites as well as Photoshoots using tools like blender</p>
+
                     </div>
                   </div>
                 {/*experience start*/}

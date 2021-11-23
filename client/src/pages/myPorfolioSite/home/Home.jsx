@@ -438,9 +438,15 @@ if(color5===true || localStorage.getItem("color5")==="true"){
 }
 
 useEffect(()=>{
+
+
   window.addEventListener("load",()=>{
 
+    document.querySelector(".pf__preloader").classList.add("pf__fade_out");
+    setTimeout(()=>{
+      document.querySelector(".pf__preloader").style.display="none";
 
+    },600)
   if( localStorage.getItem("color1")==="true"){
     if(document.querySelector(".pf__body").classList.contains("pf__color2")){
       document.querySelector(".pf__body").classList.remove("pf__color2")

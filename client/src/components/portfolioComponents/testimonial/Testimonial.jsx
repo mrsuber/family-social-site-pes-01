@@ -66,15 +66,15 @@ useEffect(()=>{
             <div className="pf__testi_slider pf__outer_shadow">
                 <div className="pf__testi_slider_container ">
                   {/*testi item start*/}
-                  <TestimonialItem img={img1} name="Michelal Muncha"/>
+                  <TestimonialItem img={img1} name="Mohamad Siysinyuy" description=" I will Stop at nothing to always be beter than my best."/>
                   {/*testi item end*/}
 
                   {/*testi item start*/}
-                  <TestimonialItem img={img1} name="Mohamad Siysinyuy" state="pf__active"/>
+                  <TestimonialItem img={img1} name="Mohamad Siysinyuy" state="pf__active" description=" I will Stop at nothing to always be beter than my best."/>
                   {/*testi item end*/}
 
                   {/*testi item start*/}
-                  <TestimonialItem img={img1} name="Gammer miking"/>
+                  <TestimonialItem img={img1} name="Mohamad Siysinyuy"/>
                   {/*testi item end*/}
                 </div>
             </div>
