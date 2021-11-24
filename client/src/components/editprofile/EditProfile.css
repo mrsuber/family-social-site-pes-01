@@ -8,7 +8,7 @@
   width: 100%;
   height: 100vh;
   background: #0008;
-  z-index: 999;
+  z-index: 1;
   overflow: auto;
 }
 .social2__edit_profile form{
@@ -18,6 +18,11 @@ background: white;
 padding: 20px;
 border-radius: 5px;
 margin: 20px auto;
+}
+.social2__edit_profile form select:focus,
+.social2__edit_profile form textarea:focus,
+.social2__edit_profile form input:focus{
+  outline: 1px solid gray;
 }
 .social2__btn_edit_close{
   position: absolute;
@@ -85,6 +90,7 @@ margin: 20px auto;
   width: 100%;
   height: 30px;
   border: 1px solid gray;
+  padding-left: 10px;
 }
 
 .social2__form_control:focus{
@@ -108,4 +114,18 @@ margin: 20px auto;
 
 .social2__edit_save_btn{
   width: 100%;
+  padding: 5px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.social2__edit_save_btn:hover{
+  background-color: var(--blue);
+  color: var(--white);
+  border: none
+}
+
+.social2__form_group textarea{
+  height: 120px;
+  padding: 10px;
 }

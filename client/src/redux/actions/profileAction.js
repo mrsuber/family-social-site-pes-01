@@ -1,5 +1,5 @@
 import {GLOBALTYPES} from './globlaTypes'
-import { getDataAPI} from '../../utils/fetchData'
+import { getDataAPI, patchDataAPI} from '../../utils/fetchData'
 import {imageUpload} from '../../utils/imageUpload'
 
 export const PROFILE_TYPES = {
@@ -31,7 +31,7 @@ catch(err){
 
 }
 
-export const updateProfileUser = ({userData,profilePic}) =>async(dispatch)=>{
+export const updateProfileUser = ({userData,profilePic,auth}) =>async(dispatch)=>{
 
 
   if(!userData.fullname){
@@ -51,9 +51,28 @@ export const updateProfileUser = ({userData,profilePic}) =>async(dispatch)=>{
 
     try{
       dispatch({type:GLOBALTYPES.ALERT, payload:{loading:true}})
-    media= await imageUpload([profilePic])
+  if(profilePic)media= await imageUpload([profilePic])
 
-    dispatch({type:GLOBALTYPES.ALERT, payload:{loading:false}})
+    const res = await patchDataAPI("user",{
+      ...userData,
+      profilePic: profilePic? media[0].url : auth.user.profilePic
+    },auth.token)
+
+    dispatch({
+      type:GLOBALTYPES.AUTH,
+      payload:{
+        ...auth,
+        user:{
+          ...auth.user,
+          ...userData,
+          profilePic: profilePic? media[0].url : auth.user.profilePic,
+
+        }
+      }
+    })
+
+
+    dispatch({type:GLOBALTYPES.ALERT, payload:{success:res.data.msg}})
       }
     catch(err){
           dispatch({

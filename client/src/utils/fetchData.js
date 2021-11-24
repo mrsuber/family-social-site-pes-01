@@ -33,11 +33,11 @@ export const putDataAPI = async (url,post) =>{
 }
 
 
-export const patchDataAPI = async (url,post) =>{
+export const patchDataAPI = async (url,post,token) =>{
   const config = {
     headers:{
       "Content-Type":"application/json",
-      Authorization:`Bearer ${localStorage.getItem("authToken")}`
+      Authorization:`Bearer ${token}`
     }
   }
   const res = await axios.patch(`/api/${url}`,post,config)

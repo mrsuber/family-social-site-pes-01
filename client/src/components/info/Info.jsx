@@ -48,7 +48,7 @@ const Info = () => {
                 </span>
                </div>
 
-               <h6>{user.fullname} {user.mobile}</h6>
+               <h6>{user.fullname} <span className="social2__info_text">{user.mobile}</span></h6>
                <p className="social2__address">{user.address}</p>
                <h6>{user.email}</h6>
                <a href={user.website} target="_blank" rel="noreferrer">{user.website}</a>
