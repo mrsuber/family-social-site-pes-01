@@ -16,7 +16,7 @@ const EditProfile = ({setOnEdit}) => {
     gender:''
   }
   const [userData,setUserData] = useState(initState)
-  const {fullname,mobile,address,website,story} = userData
+  const {fullname,mobile,address,website,story,gender} = userData
 
   const [profilePic,setProfilePic] = useState('')
 
@@ -38,8 +38,8 @@ const EditProfile = ({setOnEdit}) => {
 
   const handleSubmit = e =>{
     e.preventDefault()
-  
-    dispatch(updateProfileUser({userData,profilePic}))
+
+    dispatch(updateProfileUser({userData,profilePic,auth}))
   }
 
   useEffect(()=>{
@@ -91,13 +91,12 @@ const EditProfile = ({setOnEdit}) => {
          </div>
          <label htmlFor="gender">Gender</label>
          <div className="social2__gender">
-          <select name="gender" id="gender" className="social2__gender_select" onChange={handleInput}>
+          <select name="gender" id="gender" className="social2__gender_select"value={gender} onChange={handleInput}>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
           </select>
          </div>
-
       </div>
 
       <button className="social2__edit_save_btn" type="submit">Save</button>

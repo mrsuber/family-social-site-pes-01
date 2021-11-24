@@ -3,6 +3,7 @@
   width: 100vw;
   height: 100vh;
   text-align: center;
+  z-index: 9990;
 }
 
 .social2-loading{
