@@ -225,7 +225,7 @@ transition: all 0.3s ease;
   font-size: 20px;
   cursor: pointer;
   z-index: 1010;
-  color:var(--text-black-900);
+  color:var(--skin-color);
   transition: all 0.3s ease;
   opacity: 0.5;
 }
@@ -239,6 +239,7 @@ transition: all 0.3s ease;
 .pf__portfolio_popup .pf__pp_prev svg{
   margin-top:7px;
   line-height: 40px !important;
+  color:var(--skin-color);
 }
 
 .pf__portfolio_popup .pf__pp_prev svg{

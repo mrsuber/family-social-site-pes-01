@@ -1,6 +1,6 @@
 import React from 'react'
 import './Popup.css'
-import dsh1 from "../../../images/porfolioImages/portfolio/large/project-1/1.png"
+import dsh1 from "../../../images/porfolioImages/portfolio/large/project-23/1.png"
 
 import {Remove,PlayArrow,Add} from "@material-ui/icons"
 
