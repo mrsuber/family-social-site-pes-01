@@ -6,7 +6,7 @@ import {Loading,Toast} from '../../components'
 const Alert = () => {
 const {alert} =   useSelector(state => state)
 const dispatch = useDispatch()
-// console.log(notify.error)
+
   return (
     <div >
 

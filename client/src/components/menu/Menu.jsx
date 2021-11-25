@@ -46,10 +46,10 @@ const Menu = () => {
             <Link to={`/profile/${auth.user._id}`}>Profile</Link>
             <label htmlFor="theme" className="social2__dropdown-content-theme" onClick={()=> dispatch({type:GLOBALTYPES.THEME,payload: !theme})}>{theme ? 'Light mode' : 'Dark mode'}</label>
 
-            <Link to="/social_home"
+            <a href="/social_home"
             onClick={()=>dispatch(logout())}>
             Logout
-            </Link>
+            </a>
         </div>
 </div>
 

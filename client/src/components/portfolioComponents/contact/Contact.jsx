@@ -47,15 +47,18 @@ const Contact = () => {
         </div>
         <div className="pf__row">
           <div className="pf__contact_form">
-            <form>
+            <form action="https://formsubmit.co/msiysinyuy@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://msb-geneasocial.herokuapp.com/porfolio/home"/>
+            <input type="hidden" name="_subject" value="New email from porfolio site!"/>
+            
                 <div className="pf__row">
                   <div className="pf__w_50">
                     <div className="pf__input_group pf__outer_shadow pf__hover_in_shadow">
-                      <input type="text" placeholder="Name" className="pf__input_control"/>
+                      <input type="text" name="name" placeholder="Name" className="pf__input_control" required/>
                     </div>
 
                     <div className="pf__input_group pf__outer_shadow pf__hover_in_shadow">
-                      <input type="email" placeholder="Email" className="pf__input_control"/>
+                      <input type="email" name="email" placeholder="Email" className="pf__input_control" required/>
                     </div>
 
                     <div className="pf__input_group pf__outer_shadow pf__hover_in_shadow">

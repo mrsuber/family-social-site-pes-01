@@ -114,15 +114,19 @@ margin: 20px auto;
 
 .social2__edit_save_btn{
   width: 100%;
-  padding: 5px;
-  cursor: pointer;
-  transition: .4s;
+  font-size: 14px;
+    padding: 10px 0;
+    background-color: transparent;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    cursor: pointer;
+    transition: .4s;
 }
 
 .social2__edit_save_btn:hover{
   background-color: var(--blue);
   color: var(--white);
-  border: none
+  border: 1px solid var(--white);
 }
 
 .social2__form_group textarea{

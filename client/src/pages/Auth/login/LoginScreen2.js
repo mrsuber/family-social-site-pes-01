@@ -69,20 +69,20 @@ const LoginScreen2 = () => {
 
     </form>
     </div>
-    <Link to="/porfolio/home" className="social2__link">
+    <a href = '/porfolio/home' className="social2__link">
     <div className="animation_container">
     <div className="login-other-boxes">
-    <Link to="/porfolio/home" className="social2__link">
+    <a href = '/porfolio/home' className="social2__link">
 
     <span></span>
     <span></span>
     <span></span>
     <span></span>
     <p>Click Me</p>
-    </Link>
+    </a>
     </div>
     </div>
-      </Link>
+      </a>
 
     </div>
 
