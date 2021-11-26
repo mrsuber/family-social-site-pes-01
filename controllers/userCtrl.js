@@ -43,6 +43,39 @@ const userCtrl = {
       res.status(500).json({msg:err.message})
       return next(new ErrorResponse(err.message, 500))
     }
+  },
+
+  follow: async (req,res)=>{
+
+    try{
+      const user = await Users.find({_id:req.params.id,followers:req.user._id})
+      if(user.length > 0){
+        res.status(400).json({msg:"You followed this user."})
+        return next(new ErrorResponse("You followed this user", 400))
+      }
+      await Users.findOneAndUpdate({_id:req.params.id},{ $push:{followers:req.user._id } },{new:true})
+
+      await Users.findOneAndUpdate({_id:req.user._id},{$push:{following:req.params.id } },{new:true})
+      res.status(200).json({msg:"Followed User."})
+
+    }catch(err){
+      res.status(500).json({msg:err.message})
+      return next(new ErrorResponse(err.message, 500))
+    }
+  },
+
+  unfollow: async (req,res)=>{
+  
+    try{
+
+      await Users.findOneAndUpdate({_id:req.params.id},{  $pull:{followers:req.user._id }   },{new:true})
+
+      await Users.findOneAndUpdate({_id:req.user._id},{ $pull:{following:req.params.id }  },{new:true})
+      res.status(200).json({msg:"UnFollow User."})
+    }catch(err){
+      res.status(500).json({msg:err.message})
+      return next(new ErrorResponse(err.message, 500))
+    }
   }
 
 }

@@ -20,7 +20,7 @@ const FollowBtn = ({user}) => {
   }
   const handleUnFollow = () =>{
     setFollowed(false)
-    dispatch(unfollow({users: profile.users,user,auth}))
+    dispatch(unfollow({users: profile.users, user, auth}))
 
   }
   return (

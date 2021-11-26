@@ -1,4 +1,4 @@
-import {GLOBALTYPES, DeletData,} from './globlaTypes'
+import {GLOBALTYPES, DeletData} from './globlaTypes'
 import { getDataAPI, patchDataAPI} from '../../utils/fetchData'
 import {imageUpload} from '../../utils/imageUpload'
 
@@ -95,14 +95,21 @@ export const follow = ({users, user, auth}) => async (dispatch)=>{
          user:{...auth.user, following:[...auth.user.following,newUser]}
     }
   })
+
+  try{
+
+    const res = await patchDataAPI(`user/${user._id}/follow`, {}, auth.token)
+
+  }catch(err){
+    dispatch({
+      type:GLOBALTYPES.ALERT,
+      payload:{error:err.response.data.msg}})
+  }
 }
 
 export const unfollow = ({users, user, auth}) => async (dispatch)=>{
 
-    let newUser = {
-      ...user,
-      followers: DeletData(user.followers,auth.user._id)
-    }
+    let newUser = { ...user, followers: DeletData(user.followers,auth.user._id)  }
 
 
     dispatch({ type:PROFILE_TYPES.UNFOLLOW, payload:newUser })
@@ -110,9 +117,17 @@ export const unfollow = ({users, user, auth}) => async (dispatch)=>{
       type:GLOBALTYPES.AUTH,
        payload:{
          ...auth,
-         user:{
-           ...auth.user,
-           following: DeletData(auth.user.following,newUser._id)}
+         user:{ ...auth.user, following: DeletData(auth.user.following,newUser._id)}
     }
   })
+
+  try{
+
+    const res = await patchDataAPI(`user/${user._id}/unfollow`, {}, auth.token)
+    
+  }catch(err){
+    dispatch({
+      type:GLOBALTYPES.ALERT,
+      payload:{error:err.response.data.msg}})
+  }
 }
