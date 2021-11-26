@@ -49,8 +49,8 @@ const Contact = () => {
           <div className="pf__contact_form">
             <form action="https://formsubmit.co/msiysinyuy@gmail.com" method="POST">
             <input type="hidden" name="_next" value="https://msb-geneasocial.herokuapp.com/porfolio/home"/>
-            <input type="hidden" name="_subject" value="New email from porfolio site!"/>
-            
+
+
                 <div className="pf__row">
                   <div className="pf__w_50">
                     <div className="pf__input_group pf__outer_shadow pf__hover_in_shadow">
@@ -62,13 +62,13 @@ const Contact = () => {
                     </div>
 
                     <div className="pf__input_group pf__outer_shadow pf__hover_in_shadow">
-                      <input type="text"placeholder="Subject" className="pf__input_control"/>
+                      <input type="text" name="_subject" placeholder="Subject" className="pf__input_control"/>
                     </div>
 
                   </div>
                   <div className="pf__w_50">
                       <div className="pf__input_group pf__outer_shadow pf__hover_in_shadow">
-                          <textarea className="pf__input_control" placeholder="Message"></textarea>
+                          <textarea name="message" className="pf__input_control" placeholder="Message"></textarea>
                       </div>
                   </div>
                 </div>
