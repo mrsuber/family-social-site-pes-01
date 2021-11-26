@@ -34,6 +34,7 @@ export const putDataAPI = async (url,post) =>{
 
 
 export const patchDataAPI = async (url,post,token) =>{
+  
   const config = {
     headers:{
       "Content-Type":"application/json",
