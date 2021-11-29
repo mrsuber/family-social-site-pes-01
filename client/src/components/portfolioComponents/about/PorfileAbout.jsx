@@ -293,7 +293,7 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                       <span className="pf__icon"><School /></span>
                       <span>2016 - 2020</span>
                       <h3>Bachelor of Science in Computer Engineering(BSCE)</h3>
-                      <h4>Incomplete</h4>
+                      <h4>complete</h4>
                       <p>University Of Buea</p>
                     </div>
                   </div>
