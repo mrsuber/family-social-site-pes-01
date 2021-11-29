@@ -64,7 +64,7 @@ exports.login= async (req,res,next)=>{
 
   try{
 
-    const user = await User.findOne({email}).select("+password")
+    const user = await User.findOne({email}).select('+password').populate("followers following")
     if(!user){
       res.status(400).json({msg:"Invalid login credentialls"})
       return next(new ErrorResponse("Invalid credentials",400))

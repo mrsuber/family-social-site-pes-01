@@ -17,7 +17,8 @@ const userCtrl = {
 
   getUser: async (req,res) => {
     try{
-      const user = await Users.findById(req.params.id).select('-password')
+      const user = await Users.findById(req.params.id).select('-password').populate("followers following", "-password")
+
       if(!user){
         res.status(400).json({msg:"User does not exist"})
         return next(new ErrorResponse({msg:"User does not exist"}, 400))
@@ -65,7 +66,7 @@ const userCtrl = {
   },
 
   unfollow: async (req,res)=>{
-  
+
     try{
 
       await Users.findOneAndUpdate({_id:req.params.id},{  $pull:{followers:req.user._id }   },{new:true})
