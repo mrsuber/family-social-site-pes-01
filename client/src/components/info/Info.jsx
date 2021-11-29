@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from 'react'
 import {useParams, Link} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
-import {Avatar,EditProfile,FollowBtn} from '../../components'
+import {Avatar,EditProfile,FollowBtn,Following,Followers} from '../../components'
 import './Info.css'
 import {getProfileUsers} from '../../redux/actions/profileAction'
 const Info = () => {
@@ -12,6 +12,8 @@ const Info = () => {
 
   const [userData,setUserData] = useState([])
   const [onEdit,setOnEdit]= useState(false)
+  const [showFollowers, setShowFollowers]=useState(false)
+  const [showFollowing, setShowFollowing]=useState(false)
 
   useEffect(()=>{
     if(id===auth.user._id){
@@ -24,9 +26,11 @@ const Info = () => {
   },[id,auth,dispatch,profile.users])
 
   return (
+
     <div className="social2__info-wrapper">
     {
         userData.map(user =>(
+
           <div className="social2__info-container" key={user._id}>
             <Avatar src={user.profilePic} size="social2__super-profileImage" />
             <div className="social2__info_content">
@@ -39,11 +43,11 @@ const Info = () => {
                 }
                </div>
                <div className="social2__info_follower_wrapper">
-                <span className="social2__info_follower">
+                <span className="social2__info_follower" onClick={() =>setShowFollowers(true)}>
                   {user.followers.length} Followers
                 </span>
 
-                <span className="social2__info_following">
+                <span className="social2__info_following" onClick={()=>setShowFollowing(true)}>
                   {user.following.length} Following
                 </span>
                </div>
@@ -56,6 +60,9 @@ const Info = () => {
             </div>
 
             {onEdit && <EditProfile setOnEdit={setOnEdit}/>}
+
+            {showFollowers && <Followers users={user.followers} setShowFollowers={setShowFollowers}/> }
+            {showFollowing && <Following  users={user.following} setShowFollowing={setShowFollowing}/> }
           </div>
         ))
     }

@@ -12,6 +12,8 @@ export {default as Info} from './info/Info'
 export {default as Posts} from './posts/Posts'
 export {default as EditProfile} from './editprofile/EditProfile'
 export {default as FollowBtn} from './buttons/followbtn/FollowBtn'
+export {default as Followers} from './followers/Followers'
+export {default as Following} from './following/Following'
 //porfolio components exports starts
 export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
 export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'

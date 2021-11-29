@@ -4,6 +4,7 @@
   padding: 10px;
   align-items: center;
   transition: .4s;
+  justify-content: space-between;
   /* background: #fff; */
 
 }
@@ -19,5 +20,14 @@ display: block;
 }
 
 .social2__usercard-fullname{
-opacity: 0.7;
+/* opacity: 0.7; */
+}
+
+.social2__usercard_link{
+  display: flex;
+  align-items: center;
+}
+
+.social2__usercard_left{
+margin-right: 15px;
 }
