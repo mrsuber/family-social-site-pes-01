@@ -86,7 +86,18 @@ export const updateProfileUser = ({userData,profilePic,auth}) =>async(dispatch)=
 
 export const follow = ({users, user, auth}) => async (dispatch)=>{
 
-    let newUser = {...user, followers:[...user.followers, auth.user]}
+    let newUser
+    if(users.every(item => item._id !== user._id)){
+      newUser= {...user, followers:[...user.followers, auth.user]}
+    }else{
+      users.forEach(item =>{
+        if(item._id === user._id){
+          newUser = {...item, followers:[...item.followers, auth.user]}
+        }
+      })
+    }
+
+
     dispatch({ type:PROFILE_TYPES.FOLLOW, payload:newUser })
     dispatch({
       type:GLOBALTYPES.AUTH,
@@ -98,7 +109,7 @@ export const follow = ({users, user, auth}) => async (dispatch)=>{
 
   try{
 
-    const res = await patchDataAPI(`user/${user._id}/follow`, {}, auth.token)
+  await patchDataAPI(`user/${user._id}/follow`, {}, auth.token)
 
   }catch(err){
     dispatch({
@@ -109,9 +120,18 @@ export const follow = ({users, user, auth}) => async (dispatch)=>{
 
 export const unfollow = ({users, user, auth}) => async (dispatch)=>{
 
-    let newUser = { ...user, followers: DeletData(user.followers,auth.user._id)  }
 
 
+    let newUser;
+    if(users.every(item=>item._id !== user._id)){
+      newUser = {...user, followers: DeletData(user.followers,auth.user._id) }
+    }else{
+      users.forEach(item => {
+        if(item._id === user._id){
+          newUser = {...item, followers: DeletData(item.followers,auth.user._id) }
+        }
+      })
+    }
     dispatch({ type:PROFILE_TYPES.UNFOLLOW, payload:newUser })
     dispatch({
       type:GLOBALTYPES.AUTH,
@@ -123,8 +143,8 @@ export const unfollow = ({users, user, auth}) => async (dispatch)=>{
 
   try{
 
-    const res = await patchDataAPI(`user/${user._id}/unfollow`, {}, auth.token)
-    
+   await patchDataAPI(`user/${user._id}/unfollow`, {}, auth.token)
+
   }catch(err){
     dispatch({
       type:GLOBALTYPES.ALERT,
