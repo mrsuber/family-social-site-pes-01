@@ -1,0 +1,141 @@
+.social2__post{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border:1px solid #dfdfdf;
+  margin-top: 40px;
+}
+.social2__info{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.social2__info .social2__username{
+  width: auto;
+  font-weight: bold;
+  color:#000;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.social2__info .social2__options{
+  height: 15px;
+  cursor:pointer;
+}
+
+.social2__info .social2__user{
+  display: flex;
+  align-items: center;
+}
+
+.social2__info .social2__profile-pic{
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  background: none;
+
+}
+.social2__info .social2__profile-pic img{
+  border: none;
+}
+
+.social2__post-image{
+  width:100%;
+  height: 500px;
+  object-fit: contain;
+
+
+}
+
+.social2__post-content{
+  width: 100%;
+  padding: 20px;
+
+}
+.social2__likes{
+  font-weight: bold;
+
+}
+
+.social2__description{
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.social2__description span{
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.social2__post-time{
+  color:rgba(0,0,0,0.5);
+  font-size: 12px;
+
+}
+
+.social2__comment-wrapper{
+  width:100%;
+  height: 50px;
+  border-radius: 1px solid #dfdfdf;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.social2__comment-wrapper .social2__icon{
+  height: 30px;
+  margin: 0 10px;
+
+}
+
+.social2__comment-box{
+  width: 80%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+
+}
+.social2__comment-btn,
+.social2__action-btn{
+  width:70px;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  text-transform: capitalize;
+  font-size: 16px;
+  color:var(--blue);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: .4s;
+
+}
+.social2__comment-btn:hover,
+.social2__action-btn:hover{
+opacity: 1;
+
+}
+.social2__reaction-wrapper{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-top: -20px;
+  align-items: center;
+}
+.social2__reaction-wrapper .social2Icon{
+  height: 25px;
+  margin: 0;
+  margin-right: 20px;
+
+}
+
+.social2__reaction-wrapper .social2__saveIcon{
+  margin-left: auto;
+}
