@@ -1,0 +1,34 @@
+.social2__status-card{
+  flex:0 0 auto;
+  width: 80px;
+  max-width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.social2__profile-pic{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 3px;
+  background: linear-gradient(45deg,rgb(225,230,0),rgb(225,0,128) 80%)
+}
+.social2__profile-pic img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.social2__username{
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 5px;
+  color: rgba(0,0,0,0.5);
+}
