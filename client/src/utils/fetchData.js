@@ -13,8 +13,14 @@ export const getDataAPI = async (url,token) =>{
 }
 
 
-export const postDataAPI = async (url,data,config) =>{
-
+export const postDataAPI = async (url,data,token) =>{
+  const config = {
+    headers:{
+      "Content-Type":"application/json",
+      Authorization:`Bearer ${token}`
+    }
+  }
+  
   const res = await axios.post(`/api/${url}`,data,config)
 
   return res;
@@ -34,7 +40,7 @@ export const putDataAPI = async (url,post) =>{
 
 
 export const patchDataAPI = async (url,post,token) =>{
-  
+
   const config = {
     headers:{
       "Content-Type":"application/json",

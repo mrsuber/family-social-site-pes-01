@@ -3,6 +3,7 @@ import './StatusModal.css'
 import { useSelector, useDispatch} from 'react-redux'
 import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
 import {CameraAlt,Image} from '@material-ui/icons'
+import {createPost} from '../../../redux/actions/postAction'
 
 const StatusModal = () => {
   const {auth} = useSelector(state => state)
@@ -69,9 +70,22 @@ const StatusModal = () => {
     setStream(false)
   }
 
+const handleSubmit = (e) =>{
+  e.preventDefault()
+  if(images.length === 0){
+    return dispatch({type:GLOBALTYPES.ALERT, payload:{error:"Please add your photo"}})
+  }
+
+  dispatch(createPost({content, images, auth}))
+  setContent('')
+  setImages([])
+  if(tracks) tracks.stop()
+  dispatch({type:GLOBALTYPES.STATUS,payload:false})
+}
+
   return (
     <div className="social2__status_modal_wrapper">
-      <form>
+      <form onSubmit={handleSubmit}>
           <div className="social2__status_modal_header">
             <h5 className="social2__status_modal_title">Create Post</h5>
             <span onClick={() => dispatch({type:GLOBALTYPES.STATUS, payload:false})}>&times;</span>
@@ -119,7 +133,9 @@ const StatusModal = () => {
           </div>
 
           <div className="social2__status_modal_footer">
-            <button className="social2__status_modal_footer_btn">Post</button>
+            <button className="social2__status_modal_footer_btn" type="submit">
+            Post
+            </button>
           </div>
 
       </form>
