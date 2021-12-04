@@ -82,6 +82,11 @@ margin-top: 5px;
   margin: 20px 0;
 }
 
+
+.social2__no_post_title{
+  text-align: center;
+}
+
 @media(max-width:1100px){
   .social2__right-col, .social2__search-box{
     display: none;

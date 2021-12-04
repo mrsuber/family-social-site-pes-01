@@ -139,3 +139,12 @@ opacity: 1;
 .social2__reaction-wrapper .social2__saveIcon{
   margin-left: auto;
 }
+
+/* --------------------------------------new css---------------------------
+ */
+ .social2_post_card_wrapper{
+   width: 100%;
+   background: #fff;
+   border: 1px solid #dfdfdf;
+   border-radius: 2px;
+ }
