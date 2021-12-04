@@ -1,9 +1,21 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './HomePage.css'
 import {Social2Header,Status,Posts} from '../../../components'
 import post from '../../../images/blog-1.jpg'
 import profile from '../../../images/me.webp'
+import {useSelector, useDispatch} from 'react-redux'
+import {getPosts} from '../../../redux/actions/postAction'
+import {CircularProgress} from "@material-ui/core"
+
+
 const HomePage = () => {
+  const {auth, homePosts} = useSelector(state=>state)
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    if(auth.token)dispatch(getPosts(auth.token))
+  },[dispatch,auth.token])
+
   return (
     <>
     <div className="social2__homepage-body">
@@ -16,11 +28,18 @@ const HomePage = () => {
           {/*end of status*/}
 
           {/*begining of status*/}
-          <Posts profile={profile} post={post} />
 
-          <Posts profile={profile} post={post} />
 
-          <Posts profile={profile} post={post} />
+          {
+            homePosts.loading
+            ?<CircularProgress className="social2__profile_circularLoader" color="primary" size="15px"/>
+            :homePosts.result ===0
+                ?<h2 className="social2__no_post_title">No Post</h2>
+                :<Posts profile={profile} post={post} />
+          }
+
+
+
           {/*end of status*/}
 
 

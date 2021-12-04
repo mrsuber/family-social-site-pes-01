@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux'
 
 
 const Following = ({ users,setShowFollowing}) => {
-  console.log(users)
+
   const { auth } = useSelector(state => state)
   return (
     <div className="social2__follower_container">

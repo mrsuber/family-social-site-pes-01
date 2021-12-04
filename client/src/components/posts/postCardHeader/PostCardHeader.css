@@ -1,0 +1,38 @@
+.social2__post_card_header{
+
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.social2__post_card_header .social2__post_card_name{
+  transform: translateY(3px);
+}
+
+.social2__post_card_header .social2__dropdown .social2__dropdown-content{
+  position: absolute;
+  left: inherit !important;
+  right: 0;
+}
+.social2__post_card_header .social2__dropdown .social2__dropdown-content .social2__post_card_nav_item_dropdown_item{
+  display: flex;
+  margin: 5px 0;
+
+}
+.social2__post_card_header_container{
+    display: flex;
+}
+
+.social2__post_card_name h6{
+  margin: 0;
+}
+
+.social2__post_card_name small{
+  color: gray;
+}
+
+.social2__post_card_nav_item_dropdown_item:hover{
+  background-color: #ddd;
+  cursor: pointer;
+}
