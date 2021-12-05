@@ -21,6 +21,7 @@ export {default as StatusModal} from './status/statusModal/StatusModal'
 export {default as PostCardHeader} from './posts/postCardHeader/PostCardHeader'
 export {default as PostCardBody} from './posts/postCardBody/PostCardBody'
 export {default as PostCardFooter} from './posts/postCardFooter/PostCardFooter'
+export {default as Carousel} from './carousel/Carousel'
 //porfolio components exports starts
 export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
 export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'

@@ -1,0 +1,130 @@
+.social2__caro_slider{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.social2__caro_slides{
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  top:0;
+  left: 0;
+  transition: 2s ease;
+}
+.social2__caro_slide{
+    width: 33.33%;
+    height: 100%;
+    position: relative;
+    float: left;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.social2__caro_slide::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.social2__caro_slide_data{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 0 20%;
+}
+
+.social2__caro_slide_data h1{
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 45px;
+}
+
+.social2__caro_slide_data p{
+  font-family: sans-serif;
+
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.social2__caro_slide_data button{
+  font-family: sans-serif;
+  background: none;
+  outline: none;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: bolder;
+  padding: 10px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: .4s linear;
+}
+
+.social2__caro_slide_data button:hover{
+  color: #000000;
+  background-color: #fff;
+}
+
+.social2__caro_arrows{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 60px;
+  color:#fff;
+  cursor: pointer;
+  transition: 0.4s linear;
+}
+
+.social2__caro_arrows:hover{
+  text-shadow: 0px 0px 10px black, 0px 0px 10px black !important;
+}
+
+.social2__caro_arrows_prev{
+  left: 3%;
+
+}
+
+.social2__caro_arrows_next{
+  right: 3%;
+
+}
+
+.social2__caro_dots{
+  position: absolute;
+  bottom: 1%;
+  width: 100%;
+  text-align: center;
+}
+
+.social2__caro_dots span{
+  width: 23px;
+  height: 23px;
+  border-radius: 100px;
+  background-color: #fff;
+  display: inline-block;
+  margin: 0 6px;
+  transition: 0.4s linear;
+}
+
+.social2__caro_dots span:hover{
+  background-color: #000;
+   border:2px solid #fff;
+}
+
+.social2__dot_active{
+  background-color: #000;
+   border:2px solid #fff;
+}
