@@ -4,6 +4,8 @@ import {useSelector, useDispatch} from 'react-redux'
 import {Avatar,EditProfile,FollowBtn,Following,Followers} from '../../components'
 import './Info.css'
 import {getProfileUsers} from '../../redux/actions/profileAction'
+import {GLOBALTYPES} from '../../redux/actions/globlaTypes'
+
 const Info = () => {
   const {id} = useParams()
   const {auth,profile} = useSelector(state => state)
@@ -24,6 +26,14 @@ const Info = () => {
       setUserData(newData)
     }
   },[id,auth,dispatch,profile.users])
+
+  useEffect(() =>{
+    if(showFollowing || showFollowing || onEdit){
+      dispatch({type:GLOBALTYPES.MODAL,payload:true})
+    }else{
+      dispatch({type:GLOBALTYPES.MODAL,payload:false})
+    }
+  },[showFollowing,showFollowing,onEdit])
 
   return (
 

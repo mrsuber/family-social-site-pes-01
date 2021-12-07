@@ -26,3 +26,9 @@
   transform: translate(5px, -5px) rotate(320deg);
 
 }
+
+.social2__mode{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
