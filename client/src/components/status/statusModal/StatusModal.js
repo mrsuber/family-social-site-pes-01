@@ -1,12 +1,12 @@
-import React , {useState,useRef} from 'react'
+import React , {useState,useRef, useEffect} from 'react'
 import './StatusModal.css'
 import { useSelector, useDispatch} from 'react-redux'
 import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
 import {CameraAlt,Image} from '@material-ui/icons'
-import {createPost} from '../../../redux/actions/postAction'
+import {createPost,updatePost} from '../../../redux/actions/postAction'
 
 const StatusModal = () => {
-  const {auth} = useSelector(state => state)
+  const {auth,theme,status} = useSelector(state => state)
   const dispatch = useDispatch()
   const [content, setContent] = useState('')
   const [images,setImages] = useState([])
@@ -14,6 +14,7 @@ const StatusModal = () => {
   const videoRef = useRef()
   const refCanvas = useRef()
   const [tracks, setTracks] = useState('')
+
 
   const handleChangeImages = e =>{
     const files = [...e.target.files]
@@ -75,13 +76,24 @@ const handleSubmit = (e) =>{
   if(images.length === 0){
     return dispatch({type:GLOBALTYPES.ALERT, payload:{error:"Please add your photo"}})
   }
+  if(status.onEdit){
+    dispatch(updatePost({content, images, auth, status}))
+  }else{
+    dispatch(createPost({content, images, auth}))
+  }
 
-  dispatch(createPost({content, images, auth}))
   setContent('')
   setImages([])
   if(tracks) tracks.stop()
   dispatch({type:GLOBALTYPES.STATUS,payload:false})
 }
+
+useEffect(()=>{
+  if(status.onEdit){
+    setContent(status.content)
+    setImages(status.images)
+  }
+},[status])
 
   return (
     <div className="social2__status_modal_wrapper">
@@ -100,7 +112,11 @@ const handleSubmit = (e) =>{
               {
                 images.map((img, index) =>(
                   <div key={index} id="file_img">
-                      <img src={img.camera? img.camera : URL.createObjectURL(img)} alt="images" className="social2__status_modal_img_thumbnail"/>
+                      <img src={
+                        img.camera
+                        ? img.camera
+                        : img.url? img.url : URL.createObjectURL(img)
+                      } alt="images" className="social2__status_modal_img_thumbnail"/>
                       <span  onClick={()=>deleteImages(index)}>&times;</span>
                   </div>
                 ))
