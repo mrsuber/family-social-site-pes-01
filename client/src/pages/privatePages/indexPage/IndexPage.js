@@ -2,6 +2,8 @@
 import './IndexPage.css'
 import {Link} from 'react-router-dom'
 import {MainHeader} from '../../../components'
+import bg from '../../../images/boxed-bg.jpg'
+
 
 const IndexPage = () => {
   const logoutHandler=()=>{
@@ -11,6 +13,7 @@ const IndexPage = () => {
   return (
 
     <>
+    <div className="index__main__wrapper" style={{backgroundImage:`url(${bg})`,backgroundAttachment:'fixed',backgroundPosition:'center'}}>
     <MainHeader/>
     <input type="checkbox" id="theme" />
     <div className="index-body">
@@ -26,6 +29,7 @@ const IndexPage = () => {
         <div className="index-box1"></div>
       </div>
 
+      </div>
       </div>
     </>
 

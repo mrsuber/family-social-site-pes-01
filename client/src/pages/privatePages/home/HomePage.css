@@ -22,7 +22,10 @@
 
 }
 
-
+.social2__link{
+  text-decoration: none !important;
+  color: inherit !important;
+}
 
 
 .social2__right-col{

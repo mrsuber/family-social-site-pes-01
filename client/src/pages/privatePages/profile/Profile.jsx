@@ -5,12 +5,14 @@ import { useSelector} from 'react-redux'
 import {CircularProgress} from "@material-ui/core"
 
 
+
+
 const Profile = () => {
   const {profile} = useSelector(state=>state)
   return (
     <>
     <Social2Header/>
-    <section className="social2__profile-section">
+    <section className="social2__profile-section" >
 
     {
       profile.loading

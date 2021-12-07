@@ -8,6 +8,7 @@ import {getPosts} from '../../../redux/actions/postAction'
 import {CircularProgress} from "@material-ui/core"
 
 
+
 const HomePage = () => {
   const {auth, homePosts} = useSelector(state=>state)
   const dispatch = useDispatch()
@@ -18,7 +19,7 @@ const HomePage = () => {
 
   return (
     <>
-    <div className="social2__homepage-body">
+    <div className="social2__homepage-body" >
     <Social2Header/>
     <section className="social2__main">
         <div className="social2__mainWrapper">

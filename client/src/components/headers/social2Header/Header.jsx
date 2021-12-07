@@ -12,11 +12,11 @@ const Header = () => {
     <header className="social2__headerWrapper">
     <nav className="social2__navbar">
       <div className="social2__nav-wrapper">
-      <Link to="/" className="social2__link">  <span className="social2__brand-wrapper">
-          <img src={logo} className="social2__brand-img" alt=""/>
-          <h1 className="social2_logoText">Geneasocial</h1>
+       <span className="social2__brand-wrapper">
+          <Link to="/" className="social2__link"> <img src={logo} className="social2__brand-img" alt=""/></Link>
+          <h1 className="social2_logoText" onClick={()=>window.scrollTo({top:0})}>Geneasocial</h1>
 
-        </span></Link>
+        </span>
         <Search/>
         <Menu/>
 

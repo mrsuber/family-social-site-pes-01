@@ -50,6 +50,7 @@ try{
     type:GLOBALTYPES.ALERT,
     payload:{error:err.response.data.msg}
   })
+  
 }
 }
 
@@ -76,6 +77,39 @@ export const updatePost =({content, images, auth, status}) => async (dispatch)=>
     dispatch({type:GLOBALTYPES.ALERT,payload:{success:res.data.msg}})
   }catch(err){
 
+    dispatch({
+      type:GLOBALTYPES.ALERT,
+      payload:{error:err.response.data.msg}
+    })
+  }
+}
+
+export const likePost = ({auth,post}) => async (dispatch) =>{
+
+  const newPost = {...post,likes:[...post.likes, auth.user]}
+
+  dispatch({type:POST_TYPES.UPDATE_POST, payload:newPost})
+  try{
+
+    await patchDataAPI(`post/${post._id}/like`,{},auth.token)
+  }catch(err){
+    dispatch({
+      type:GLOBALTYPES.ALERT,
+      payload:{error:err.response.data.msg}
+    })
+  }
+}
+
+
+export const unlikePost = ({auth,post}) => async (dispatch) =>{
+
+  const newPost = {...post,likes:post.likes.filter(like => like._id !== auth.user._id)}
+
+  dispatch({type:POST_TYPES.UPDATE_POST, payload:newPost})
+  try{
+
+    await patchDataAPI(`post/${post._id}/unlike`,{},auth.token)
+  }catch(err){
     dispatch({
       type:GLOBALTYPES.ALERT,
       payload:{error:err.response.data.msg}

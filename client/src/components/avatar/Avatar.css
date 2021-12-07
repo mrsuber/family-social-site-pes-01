@@ -29,6 +29,7 @@
   object-fit: cover;
   border-radius: 50%;
 
+
 }
 
 .social2__super-profileImage{
@@ -37,5 +38,5 @@
   width: 150px;
   object-fit: cover;
   border-radius: 50%;
-
+  border: 2px solid #fff;
 }

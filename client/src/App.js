@@ -8,6 +8,8 @@ import {Alert} from './components'
 import {useSelector,useDispatch} from 'react-redux'
 import {useEffect} from 'react'
 import {refreshToken} from './redux/actions/authAction'
+import bg from './images/boxed-bg.jpg'
+
 
 const App=()=> {
 
@@ -20,7 +22,7 @@ const App=()=> {
 
   return (
     <Router>
-      <div className='App'>
+      <div className='App' style={{backgroundImage:`url(${bg})`,backgroundAttachment:'fixed',backgroundPosition:'center',minHeight:'100vh'}}>
       <Alert />
 
         <Switch>

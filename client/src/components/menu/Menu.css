@@ -24,6 +24,7 @@
 .social2__dropdown{
   position: relative;
   display: inline-block;
+  margin-bottom: 6px;
 }
 
 .social2__dropdown-content{
