@@ -5,13 +5,15 @@ import { Link } from 'react-router-dom'
 import {useSelector , useDispatch} from 'react-redux'
 import moment from 'moment'
 import {MoreHoriz, Create,DeleteOutline,FileCopyOutlined} from '@material-ui/icons'
-
+import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
 
 const PostCardHeader = ({post}) => {
   const {auth} = useSelector(state => state)
   const dispatch = useDispatch()
+
   const handlseEditPost = ()=>{
-    console.log(post)
+  
+    dispatch({type:GLOBALTYPES.STATUS, payload:{...post,onEdit:true}})
   }
 
   return (

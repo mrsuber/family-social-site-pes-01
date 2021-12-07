@@ -18,7 +18,7 @@ const Profile = () => {
       :<Info />
     }
 
-      <Posts/>
+      Post
     </section>
 
     </>
