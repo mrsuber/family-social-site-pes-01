@@ -1,0 +1,10 @@
+.social2__post_card_body .sociail2__post_card_body_content{
+  padding: 0 25px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.sociail2__post_card_body_content .social2__readMore{
+  color: Crimson;
+  cursor: pointer;
+}

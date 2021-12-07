@@ -1,40 +1,53 @@
-import React from 'react'
-import './Carousel.css'
+import React, {useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import {faQuoteLeft, faQuoteRight,faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import img from '../../images/blog-1.jpg'
+import {faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import './Carousel.css'
+import img1 from '../../images/blog-1.jpg'
 import img2 from '../../images/project-2.png'
 import img3 from '../../images/project-3.png'
 
-const Carousel = () => {
+
+const Carousel = ({images, id}) => {
+  const isActive = index =>{
+    if(index ===0)return"active"
+  }
+
+
   return (
-    <div className="social2__caro_container">
+    <>
+    <div id={`image${id}`} className="carousel slide" data-ride="carousel">
+    <ol className="carousel-indicators">
+      {
+        images.map((img,index)=>(
+          <li key={index} data-target={`#image${id}`} data-slide-to={index} className={isActive(index)}></li>
 
+        ))
+      }
 
-    <div className="social2__caro_row">
-      <div className="social2__caro_testi_box">
-        <div className="social2__caro_testi_slider">
-          <div className="social2__caro_testi_slider_container">
-            {/*testi item starts*/}
-              <div className="social__caro_testi_item">
-              <FontAwesomeIcon icon={faQuoteLeft} className="social2__caro_left"/>
-              <FontAwesomeIcon icon={faQuoteRight} className="social2__caro_right"/>
-              <p>same technology used in my porfolio web</p>
-              <img src={img} alt="post_image"/>
-              <span>  mohamad siysinyuy</span>
-              </div>
-            {/*testi item ends*/}
-          </div>
+    </ol>
+    <div className="carousel-inner">
+    {
+      images.map((img, index) =>(
+        <div key={index} className={`carousel-item ${isActive(index)}`}>
+          <img src={img.url} className="d-block w-100" alt={img.url}/>
         </div>
-          <div className="social2__caro__testi_slider_nav">
-          <span className="social2__caro_prev"><FontAwesomeIcon icon={faAngleLeft} /></span>
-          <span className="social2__caro_next"><FontAwesomeIcon icon={faAngleRight} /></span>
-          </div>
-      </div>
-    </div>
 
+      ))
+    }
+    
     </div>
+    <a className="carousel-control-prev" href={`#image${id}`} role="button" data-slide="prev">
+      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span className="sr-only">Previous</span>
+    </a>
+    <a className="carousel-control-next" href={`#image${id}`} role="button" data-slide="next">
+      <span className="carousel-control-next-icon" aria-hidden="true"></span>
+      <span className="sr-only">Next</span>
+    </a>
+  </div>
+
+
+    </>
   )
 }
 
