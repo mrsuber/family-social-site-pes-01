@@ -41,6 +41,7 @@ try{
     dispatch({type:POST_TYPES.LOADING_POST,payload:false})
 
 }catch(err){
+  console.log(err)
   dispatch({
     type:GLOBALTYPES.ALERT,
     payload:{error:err.response.data.msg}

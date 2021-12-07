@@ -1,0 +1,28 @@
+.social2__post_card_footer_icon_menu{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.social2__post_card_footer_icon_menu{
+  font-size: 28px;
+  margin: 10px;
+}
+.social2__post_card_footer_foot{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.social2__post_card_footer_foot h6{
+  padding: 0 41px;
+  cursor: pointer;
+}
+.social2__send_icon_container svg{
+  margin: 0 10px;
+}
+.social2__send_icon{
+
+  transform: translate(5px, -5px) rotate(320deg);
+
+}

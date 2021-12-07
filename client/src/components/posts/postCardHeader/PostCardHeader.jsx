@@ -9,6 +9,11 @@ import {MoreHoriz, Create,DeleteOutline,FileCopyOutlined} from '@material-ui/ico
 
 const PostCardHeader = ({post}) => {
   const {auth} = useSelector(state => state)
+  const dispatch = useDispatch()
+  const handlseEditPost = ()=>{
+    console.log(post)
+  }
+
   return (
     <div className="social2__post_card_header">
     <div className="social2__post_card_header_container">
@@ -31,7 +36,7 @@ const PostCardHeader = ({post}) => {
           {
               auth.user._id === post.user._id &&
               <>
-              <div className="social2__post_card_nav_item_dropdown_item">
+              <div className="social2__post_card_nav_item_dropdown_item" onClick={handlseEditPost}>
                 <Create className="social2__post_card_icon" /> Edit Post
               </div>
               <div className="social2__post_card_nav_item_dropdown_item">
