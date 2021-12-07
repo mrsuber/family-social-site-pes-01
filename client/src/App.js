@@ -13,7 +13,7 @@ import bg from './images/boxed-bg.jpg'
 
 const App=()=> {
 
-  const {auth} = useSelector(state => state)
+  const {auth,modal,status} = useSelector(state => state)
   const dispatch = useDispatch()
 
   useEffect(()=>{
@@ -22,7 +22,7 @@ const App=()=> {
 
   return (
     <Router>
-      <div className='App' style={{backgroundImage:`url(${bg})`,backgroundAttachment:'fixed',backgroundPosition:'center',minHeight:'100vh'}}>
+      <div className={`App ${(status || modal) && 'social2__mode'}`} style={{backgroundImage:`url(${bg})`,backgroundAttachment:'fixed',backgroundPosition:'center',minHeight:'100vh'}}>
       <Alert />
 
         <Switch>

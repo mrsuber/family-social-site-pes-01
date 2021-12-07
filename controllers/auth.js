@@ -177,7 +177,7 @@ exports.generateAccessToken= async (req,res)=>{
          return next(new ErrorResponse("please login now",400))
        }
 
-       const user = await User.findById(result.id).select("-password")
+       const user = await User.findById(result.id).select("-password").populate("followers following")
 
        if (!user){
          res.status(400).json({msg:"This user does not exist"})
