@@ -115,6 +115,9 @@
   opacity: 0.5;
   cursor: pointer;
   transition: .4s;
+  /* outline: none !important; */
+  outline-color: var(--blue) !important;
+
 
 }
 .social2__comment-btn:hover,
@@ -147,4 +150,5 @@ opacity: 1;
    background: #fff;
    border: 1px solid #dfdfdf;
    border-radius: 2px;
+   margin-bottom: 8px;
  }

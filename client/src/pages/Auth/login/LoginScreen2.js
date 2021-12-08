@@ -27,7 +27,9 @@ const LoginScreen2 = () => {
 
   const loginHandler= (e)=>{
     e.preventDefault()
+    setIsFectching(true)
     dispatch(login(userData))
+    setIsFectching(false)
 
   }
 

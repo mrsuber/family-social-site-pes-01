@@ -1,0 +1,41 @@
+.social2__comment_form{
+  padding: .75rem 1.25rem;
+background-color: rgb(219 219 219 / 49%);
+border-top: 1px solid rgba(0,0,0,.125);
+border-bottom: 1px solid rgba(0,0,0,.125);
+display: flex;
+align-items: center;
+
+
+}
+
+
+
+
+.social2__comment_form:last-child {
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+}
+
+.social2__comment_form input{
+background: #ededed;
+border: none;
+outline: none;
+flex:1;
+overflow: auto;
+}
+
+.social2__comment_form .social2__comment_postBtn{
+  border: none;
+  outline: none;
+  background: #ededed;
+  color: var(--blue);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.4s;
+  font-weight: 600;
+
+}
+.social2__comment_form .social2__comment_postBtn:hover{
+opacity: 1;
+
+}

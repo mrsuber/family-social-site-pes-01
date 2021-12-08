@@ -13,8 +13,8 @@ const RegisterScreen = () => {
   const initialState = {fullname:'',username:'',email:'',password:'',cf_password:''}
   const[userData,setUserData]= useState(initialState)
 
-  const [confirmpassword,setConfirmpassword]=useState('')
-  const [error,setError]=useState('')
+  // const [confirmpassword,setConfirmpassword]=useState('')
+  // const [error,setError]=useState('')
   const [isFectching,setIsFectching]=useState(false)
   const {fullname,username,email,password,cf_password} = userData
 
@@ -37,8 +37,9 @@ const RegisterScreen = () => {
       //   },5000)
       //   return setError("Password do not match")
       // }
-
+      setIsFectching(true)
       dispatch(register(userData))
+      setIsFectching(false)
     }
 
   useEffect(()=>{
@@ -80,7 +81,7 @@ const RegisterScreen = () => {
 
     <form onSubmit={registerHandler} className="register-screen_form">
       <h3 className="register-screen_title">Register</h3>
-      {error && <span className="error-message">{error}</span>}
+      {/*error && <span className="error-message">{error}</span>*/}
 
       <div className="register-form-group">
         <label htmlFor="fullname">Full Name:</label>

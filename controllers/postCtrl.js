@@ -31,6 +31,13 @@ const postCtrl = {
     try{
 
         const posts = await Posts.find({user:[...req.user.following, req.user._id]}).sort('-createdAt').populate("user likes","profilePic username fullname")
+        .populate({
+          path:"comments",
+          populate:{
+            path: "user likes",
+            select:"-password"
+          }
+        })
         res.status(200).json({msg:'Success!', result:posts.length,posts})
     }catch(err){
       res.status(500).json({msg:err.message})

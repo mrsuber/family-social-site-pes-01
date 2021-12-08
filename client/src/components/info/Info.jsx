@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react'
-import {useParams, Link} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {Avatar,EditProfile,FollowBtn,Following,Followers} from '../../components'
 import './Info.css'
@@ -28,12 +28,12 @@ const Info = () => {
   },[id,auth,dispatch,profile.users])
 
   useEffect(() =>{
-    if(showFollowing || showFollowing || onEdit){
+    if(showFollowers || showFollowing || onEdit){
       dispatch({type:GLOBALTYPES.MODAL,payload:true})
     }else{
       dispatch({type:GLOBALTYPES.MODAL,payload:false})
     }
-  },[showFollowing,showFollowing,onEdit])
+  },[showFollowers,showFollowing,onEdit,dispatch])
 
   return (
 
