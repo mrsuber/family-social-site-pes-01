@@ -27,6 +27,8 @@ export {default as StatusModal} from './status/statusModal/StatusModal'
 export {default as Carousel} from './carousel/Carousel'
 export {default as Comments} from './comments/Comments'
 export {default as InputComments} from './comments/inputComments/InputComments'
+export {default as CommentDisplay} from './comments/commentDisplay/CommentDisplay'
+export {default as CommentCard} from './comments/commentCard/CommentCard'
 //porfolio components exports starts
 export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
 export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'

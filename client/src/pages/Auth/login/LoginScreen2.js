@@ -68,10 +68,11 @@ const LoginScreen2 = () => {
 
       <span className="login-screen_subtext">forgot your password? <Link to="/forgotpassword">Reset Now</Link></span>
       <span className="login-screen_subtext">Don't have an account? <Link to="/register">Create Now</Link></span>
+      <span className="login-screen_subtext pf__portforlio__visit">Visit my Portfolio site? <a href = '/porfolio/home' target="__blank">Clik Now</a></span>
 
     </form>
     </div>
-    <a href = '/porfolio/home' target="__blank" className="social2__link">
+    <a href = '/porfolio/home' target="__blank" className="social2__link pf__portforlio__visit2">
     <div className="animation_container">
     <div className="login-other-boxes">
     <a href = '/porfolio/home'  target="__blank" className="social2__link">

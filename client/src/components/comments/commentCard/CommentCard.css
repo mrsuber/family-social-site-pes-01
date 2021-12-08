@@ -1,0 +1,51 @@
+
+.social2__comment_card{
+  margin-top: .5rem;
+}
+.social2__comment_card .social2__comment_content{
+  background: #eee;
+  padding: 7px;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social2__comment_card .social2__comment_content .social2__readMore{
+  cursor: pointer;
+  color: crimson;
+}
+.social2__comment_card_username{
+  margin-left: .25rem;
+}
+
+.social2__comment_avatar_wrapper{
+  display: flex;
+}
+
+.social2__comment_content_item{
+  flex:1 1 auto;
+}
+
+.social2__comment_created_time{
+  color: #6c757d;
+  margin-right: 1rem;
+    cursor: pointer;
+}
+
+.social2__comment_created_likes{
+  font-weight: bold;
+  margin-right: 1rem;
+    cursor: pointer;
+}
+
+.social2__comment_created_reply{
+  font-weight: bold;
+  margin-right: 1rem;
+    cursor: pointer;
+}
+
+.social2__comment_item_container{
+
+}
