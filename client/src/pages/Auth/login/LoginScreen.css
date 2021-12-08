@@ -178,3 +178,17 @@
     bottom: 100%;
   }
 }
+
+
+.pf__portforlio__visit{
+  visibility: hidden;
+}
+
+@media(max-width:594px){
+  .pf__portforlio__visit{
+    visibility: visible;
+  }
+  .pf__portforlio__visit2{
+    display: none;
+  }
+}
