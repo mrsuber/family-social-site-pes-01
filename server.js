@@ -29,6 +29,7 @@ app.use('/api',require('./routes/auth'))
 app.use('/api',require('./routes/private'))
 app.use('/api',require('./routes/userRouter'))
 app.use('/api',require('./routes/postRouter'))
+app.use('/api',require('./routes/commentRouter'))
 
 if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join(__dirname,'/client/build')))

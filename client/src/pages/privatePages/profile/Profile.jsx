@@ -1,6 +1,6 @@
 import React from 'react'
 import './Profile.css'
-import {Social2Header, Info,Posts} from '../../../components'
+import {Social2Header, Info,ProfilePost} from '../../../components'
 import { useSelector} from 'react-redux'
 import {CircularProgress} from "@material-ui/core"
 
@@ -20,7 +20,7 @@ const Profile = () => {
       :<Info />
     }
 
-      Post
+      <ProfilePost/>
     </section>
 
     </>

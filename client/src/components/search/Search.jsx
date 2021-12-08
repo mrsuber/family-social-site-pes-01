@@ -1,5 +1,5 @@
 import './Search.css'
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 import {Search} from "@material-ui/icons"
 import {useSelector, useDispatch } from 'react-redux'
 import {getDataAPI} from '../../utils/fetchData'

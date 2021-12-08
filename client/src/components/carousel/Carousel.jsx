@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+// import React, {useEffect} from 'react'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import {faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import './Carousel.css'
-import img1 from '../../images/blog-1.jpg'
-import img2 from '../../images/project-2.png'
-import img3 from '../../images/project-3.png'
+// import img1 from '../../images/blog-1.jpg'
+// import img2 from '../../images/project-2.png'
+// import img3 from '../../images/project-3.png'
 
 
 const Carousel = ({images, id}) => {
@@ -34,7 +34,7 @@ const Carousel = ({images, id}) => {
 
       ))
     }
-    
+
     </div>
     <a className="carousel-control-prev" href={`#image${id}`} role="button" data-slide="prev">
       <span className="carousel-control-prev-icon" aria-hidden="true"></span>

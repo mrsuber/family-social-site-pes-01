@@ -26,7 +26,7 @@ const Popup = ({handlepopupDetails,handlePopupClose , handlePrevSlide,handleNext
                 <li>Date - <span>2020</span> </li>
                 <li>Client - <span>xyz</span> </li>
                 <li>Tools - <span>html, css, javascript</span> </li>
-                <li>Web - <span><a href="#">www.domain.com</a></span> </li>
+                <li>Web - <span><a href="www.domain.com">www.domain.com</a></span> </li>
                 <li>Date - <span>2020</span> </li>
 
               </ul>

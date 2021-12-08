@@ -6,7 +6,7 @@ import {CameraAlt,Image} from '@material-ui/icons'
 import {createPost,updatePost} from '../../../redux/actions/postAction'
 
 const StatusModal = () => {
-  const {auth,theme,status} = useSelector(state => state)
+  const {auth,status} = useSelector(state => state)
   const dispatch = useDispatch()
   const [content, setContent] = useState('')
   const [images,setImages] = useState([])
