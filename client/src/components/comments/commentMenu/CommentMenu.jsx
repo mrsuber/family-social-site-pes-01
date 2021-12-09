@@ -3,11 +3,11 @@ import './CommentMenu.css'
 import {MoreVert,DeleteOutline,Create} from '@material-ui/icons'
 
 
-const CommentMenu = ({post,comment,auth}) => {
+const CommentMenu = ({post,comment,auth,setOnEdit}) => {
    const MenuItem = () => {
      return(
        <>
-       <div className="sociall2__comment_dropdown_item dropdown-item">
+       <div className="sociall2__comment_dropdown_item dropdown-item" onClick={() => setOnEdit(true)}>
          <Create /> Edit
          </div>
 
