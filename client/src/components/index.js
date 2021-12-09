@@ -29,6 +29,7 @@ export {default as Comments} from './comments/Comments'
 export {default as InputComments} from './comments/inputComments/InputComments'
 export {default as CommentDisplay} from './comments/commentDisplay/CommentDisplay'
 export {default as CommentCard} from './comments/commentCard/CommentCard'
+export {default as CommentMenu} from './comments/commentMenu/CommentMenu'
 //porfolio components exports starts
 export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
 export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'

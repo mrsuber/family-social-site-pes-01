@@ -1,12 +1,17 @@
 import React,{useState,useEffect} from 'react'
 import './CommentCard.css'
-import {Avatar} from '../../../components'
+import {Avatar, LikeButton,CommentMenu} from '../../../components'
 import {Link} from 'react-router-dom'
 import moment from 'moment'
+import {useSelector, useDispatch} from 'react-redux'
+
+
 
 const CommentCard = ({comment, post}) => {
+  const {auth} = useSelector(state =>state)
   const [content,setContent] = useState('')
   const [readMore, setReadMore] = useState(false)
+  const [isLike, setIslike] = useState(false)
 
   useEffect(()=>{
     setContent(comment.content)
@@ -15,6 +20,13 @@ const CommentCard = ({comment, post}) => {
   const styleCard = {
     opacity:comment._id ? 1 : 0.5,
     PointerEvent:comment._id ? 'inherit' : 'none'
+  }
+
+  const handleLike = ()=>{
+
+  }
+  const handleUnLike = ()=>{
+
   }
   return (
     <div className="social2__comment_card " style={styleCard}>
@@ -51,6 +63,10 @@ const CommentCard = ({comment, post}) => {
           </small>
         </div>
 
+      </div>
+      <div className="social2__comment_response_icons">
+        <LikeButton isLike={isLike} handleLike={handleLike} handleUnLike={handleUnLike}/>
+        <CommentMenu post={post} comment={comment} auth={auth}/>
       </div>
     </div>
 

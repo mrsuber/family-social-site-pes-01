@@ -1,0 +1,10 @@
+.social2__dropdown{
+  position: relative;
+}
+.sociall2__comment_dropdown_item{
+  cursor: pointer;
+}
+.sociall2__comment_dropdown_item:hover{
+  background-color: #ddd;
+
+}

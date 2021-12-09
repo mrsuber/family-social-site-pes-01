@@ -19,6 +19,7 @@ const InputComments = ({children,post}) => {
 
     }
     dispatch(createComment(post,newComment,auth))
+    setContent('')
   }
   return (
     <form className=" social2__comment_form" onSubmit={handleSubmit}>

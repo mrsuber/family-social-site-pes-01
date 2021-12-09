@@ -1,6 +1,8 @@
 
 .social2__comment_card{
   margin-top: .5rem;
+  
+
 }
 .social2__comment_card .social2__comment_content{
   background: #eee;
@@ -26,7 +28,9 @@
 
 .social2__comment_content_item{
   flex:1 1 auto;
+
 }
+
 
 .social2__comment_created_time{
   color: #6c757d;
@@ -47,5 +51,12 @@
 }
 
 .social2__comment_item_container{
+
+}
+
+.social2__comment_response_icons{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 
 }

@@ -64,7 +64,7 @@ const LoginScreen2 = () => {
         </div>
 
 
-        <button className="btn btn-primary" type="submit" tabIndex={3} disabled={isFectching}>{isFectching ? <CircularProgress color="white" size="20px"/> : "Log In"}</button>
+        <button className="btn btn-primary social2_login_btn" type="submit" tabIndex={3} disabled={isFectching}>{isFectching ? <CircularProgress color="white" size="20px"/> : "Log In"}</button>
 
       <span className="login-screen_subtext">forgot your password? <Link to="/forgotpassword">Reset Now</Link></span>
       <span className="login-screen_subtext">Don't have an account? <Link to="/register">Create Now</Link></span>

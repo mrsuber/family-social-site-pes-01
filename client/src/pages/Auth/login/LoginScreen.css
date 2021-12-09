@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.social2_login_btn{
+  transition: 0.3s ease;
+}
+
 .login-screen_form{
   width: 300px;
   padding: 1.5rem;
