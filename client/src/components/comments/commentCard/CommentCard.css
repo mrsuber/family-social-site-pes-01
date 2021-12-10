@@ -32,6 +32,8 @@
 }
 
 
+
+
 .social2__comment_created_time{
   color: #6c757d;
   margin-right: 1rem;
@@ -68,4 +70,9 @@
   background: #eee;
   color: #8181da;
 
+}
+
+
+.social2__comment_username_link{
+  margin-right: 1rem;
 }

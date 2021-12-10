@@ -1,6 +1,6 @@
 .social2__comment_form{
   padding: .75rem 1.25rem;
-background-color: rgb(219 219 219 / 49%);
+background-color: #f8f7f7;
 border-top: 1px solid rgba(0,0,0,.125);
 border-bottom: 1px solid rgba(0,0,0,.125);
 display: flex;
@@ -17,7 +17,7 @@ align-items: center;
 }
 
 .social2__comment_form input{
-background: #ededed;
+background: #f8f7f7;
 border: none;
 outline: none;
 flex:1;
@@ -27,7 +27,7 @@ overflow: auto;
 .social2__comment_form .social2__comment_postBtn{
   border: none;
   outline: none;
-  background: #ededed;
+  background:#f8f7f7;
   color: var(--blue);
   cursor: pointer;
   opacity: 0.7;

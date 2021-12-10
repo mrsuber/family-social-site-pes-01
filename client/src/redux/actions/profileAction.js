@@ -47,7 +47,8 @@ export const updateProfileUser = ({userData,profilePic,auth}) =>async(dispatch)=
   if(userData.story.length >200){
     return dispatch({type:GLOBALTYPES.ALERT, payload:{error:"Your story is too long"}})
   }
-  if(profilePic) {
+
+
 
         let media;
 
@@ -82,7 +83,9 @@ export const updateProfileUser = ({userData,profilePic,auth}) =>async(dispatch)=
             payload:{error:err.response.data.msg}})
       }
   }
-}
+
+
+
 
 export const follow = ({users, user, auth}) => async (dispatch)=>{
 

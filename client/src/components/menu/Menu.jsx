@@ -40,7 +40,7 @@ const Menu = () => {
 
       <div className="social2__dropdown">
 
-      <Avatar src={auth.user.profilePic? auth.user.profilePic : profile} size="social2__normal-profileImage"/>
+      <Avatar src={ auth.user.profilePic} size="social2__normal-profileImage"/>
 
           <div className="social2__dropdown-content">
             <Link to={`/profile/${auth.user._id}`}>Profile</Link>

@@ -23,6 +23,7 @@
   border: 1px solid red;
   cursor: pointer;
   transition: .4s;
+  max-width: 100px;
 
 }
 .social2__unfollow_btn:hover{
