@@ -21,6 +21,8 @@ const CommentCard = ({children,comment, post,commentId}) => {
 
   useEffect(()=>{
     setContent(comment.content)
+    setIslike(false)
+    setOnReply(false)
     if(comment.likes.find(like => like._id === auth.user._id)){
       setIslike(true)
     }
@@ -74,6 +76,12 @@ const CommentCard = ({children,comment, post,commentId}) => {
         onEdit
         ? <textarea rows="5" value={content} onChange={e=>setContent(e.target.value)}/>
         :  <div>
+          {
+            comment.tag && comment.tag._id !== comment.user._id &&
+            <Link to={`/profile/${comment.tag._id}`} className="social2__comment_content_item_link">
+              @{comment.tag.username}
+            </Link>
+          }
           <span>
             {
               content.length < 100 ? content :

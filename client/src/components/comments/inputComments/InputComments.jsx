@@ -10,7 +10,14 @@ const InputComments = ({children,post,onReply,setOnReply}) => {
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    if(!content.trim())return
+    if(!content.trim()){
+        if(setOnReply)return setOnReply(false)
+        return
+    }
+
+    setContent('')
+
+
     const newComment ={
       content,
       likes:[],
@@ -20,10 +27,13 @@ const InputComments = ({children,post,onReply,setOnReply}) => {
       tag: onReply && onReply.user
 
     }
-    console.log(newComment)
+    // console.log(newComment)
     dispatch(createComment(post,newComment,auth))
-    setContent('')
+    if(setOnReply)return setOnReply(false)
+
   }
+
+
   return (
     <form className=" social2__comment_form" onSubmit={handleSubmit}>
       {children}
