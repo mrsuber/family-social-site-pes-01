@@ -15,8 +15,8 @@ export const createPost =({content, images, auth}) => async (dispatch)=>{
     dispatch({type:GLOBALTYPES.ALERT,payload:{loading:true}})
 
     if(images.length > 0){
-      media = await imageUpload(images)
-      // media = "someImage.jpg"
+      // media = await imageUpload(images)
+      media = "someImage.jpg"
     }
     const res = await postDataAPI('posts',{content,images:media},auth.token)
 

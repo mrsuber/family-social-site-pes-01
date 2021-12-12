@@ -12,4 +12,6 @@ router.patch('/comment/:id/like',auth,commentCtrl.likeComment)
 
 router.patch('/comment/:id/unlike',auth,commentCtrl.unlikeComment)
 
+router.delete('/comment/:id',auth,commentCtrl.deleteComment)
+
 module.exports = router

@@ -7,10 +7,10 @@ const ErrorResponse = require('../utils/errorResponse')
 const commentCtrl = {
   createComment: async (req,res) =>{
     try{
-      const {postId, content, tag, reply} = req.body
+      const {postId, content, tag, reply,postUserId} = req.body
 
       const newComment = new Comments({
-        user:req.user._id, content, tag, reply
+        user:req.user._id, content, tag, reply,postUserId,postId
       })
 
       await Posts.findOneAndUpdate({_id:postId},{
@@ -66,6 +66,26 @@ const commentCtrl = {
       return next(new ErrorResponse(err.message, 500))
     }
   },
+  deleteComment: async (req,res)=>{
+    try{
+      const comment = await Comments.findOneAndDelete({
+        _id:req.params.id,
+        $or:[
+          {user:req.user._id},
+          {postUserId:req.user._id}
+        ]
+      })
+
+      await Posts.findOneAndUpdate({_id:comment.postId},{
+        $pull:{comments:req.params.id}
+      })
+      res.status(200).json({msg:'Deleted Comment!'})
+
+    }catch(err){
+      res.status(500).json({msg:err.message})
+      return next(new ErrorResponse(err.message, 500))
+    }
+  }
 
 
 }

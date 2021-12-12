@@ -126,7 +126,7 @@ const CommentCard = ({children,comment, post,commentId}) => {
 
       <div className="social2__comment_response_icons">
         <LikeButton isLike={isLike} handleLike={handleLike} handleUnLike={handleUnLike}/>
-        <CommentMenu post={post} comment={comment} auth={auth} setOnEdit={setOnEdit}/>
+        <CommentMenu post={post} comment={comment} setOnEdit={setOnEdit}/>
       </div>
     </div>
 
