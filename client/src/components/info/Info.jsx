@@ -1,16 +1,13 @@
 import React, {useEffect,useState} from 'react'
-import {useParams} from 'react-router-dom'
-import {useSelector, useDispatch} from 'react-redux'
+
 import {Avatar,EditProfile,FollowBtn,Following,Followers} from '../../components'
 import './Info.css'
-import {getProfileUsers} from '../../redux/actions/profileAction'
 import {GLOBALTYPES} from '../../redux/actions/globlaTypes'
 
-const Info = () => {
-  const {id} = useParams()
-  const {auth,profile} = useSelector(state => state)
+const Info = ({auth, profile, dispatch, id}) => {
 
-  const dispatch = useDispatch()
+
+
 
   const [userData,setUserData] = useState([])
   const [onEdit,setOnEdit]= useState(false)
@@ -21,7 +18,6 @@ const Info = () => {
     if(id===auth.user._id){
       setUserData([auth.user])
     }else{
-      dispatch(getProfileUsers({users: profile.users, id,auth}))
       const newData = profile.users.filter(user => user._id=== id)
       setUserData(newData)
     }
@@ -35,7 +31,7 @@ const Info = () => {
     }
   },[showFollowers,showFollowing,onEdit,dispatch])
 
-  console.log(userData)
+  
 
   return (
 
@@ -64,7 +60,7 @@ const Info = () => {
                   {user.following.length} Following
                 </span>
                </div>
-               <h6>Username: {user.fullname}</h6>
+               <h6>Username: {user.username}</h6>
                 <h6 className="social2__info_text"> Contact Tel: {user.mobile}</h6>
                <p className="social2__address">Address: {user.address}</p>
                <p className="social2__address">Gender: {user.gender}</p>

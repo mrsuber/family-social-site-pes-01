@@ -1,12 +1,24 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import './ProfilePost.css'
-// import {PorfilePostCard} from '../../../components'
-const ProfilePost = () => {
+import {PostThumb} from '../../../components'
+const ProfilePost = ({auth,profile,dispatch,id}) => {
+
+  const [posts, setPosts] = useState([])
+
+  useEffect(()=>{
+    profile.userPosts.forEach(data => {
+      if((data._id)===id){
+        setPosts(data.posts)
+      }
+    });
+
+  },[  profile.userPosts,id])
+
   return (
 
     <>
 
-    Posts
+    <PostThumb posts={posts}/>
     </>
   )
 }

@@ -89,6 +89,18 @@ const postCtrl = {
       return next(new ErrorResponse(err.message, 500))
     }
   },
+  getUserPosts: async (req, res) =>{
+    try{
+      const posts = await Posts.find({user:req.params.id}).sort("-createdAt")
+      res.status(200).json({
+        posts,
+        result:posts.length
+      })
+      }catch(err){
+      res.status(500).json({msg:err.message})
+      return next(new ErrorResponse(err.message, 500))
+    }
+  }
 
 
 }
