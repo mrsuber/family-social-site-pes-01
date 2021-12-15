@@ -63,9 +63,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item" >
                     <p>Html</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(95% - 14px)"}}>
-                        <span className="pf__project_num">95%(70-projects)</span>
-                        <span className="pf__project_num1">95%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(100% - 14px)"}}>
+                        <span className="pf__project_num">100%(70-projects)</span>
+                        <span className="pf__project_num1">100%</span>
                       </div>
                     </div>
                 </div>
@@ -75,9 +75,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item" >
                     <p>Css</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(85% - 14px)"}}>
-                        <span className="pf__project_num">85%(60-projects)</span>
-                        <span className="pf__project_num1">85%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(100% - 14px)"}}>
+                        <span className="pf__project_num">100%(60-projects)</span>
+                        <span className="pf__project_num1">100%</span>
                       </div>
                     </div>
                 </div>
@@ -87,9 +87,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item">
                     <p>JavaScript</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(75% - 14px)"}}>
-                        <span className="pf__project_num">75%(65-projects)</span>
-                        <span className="pf__project_num1">75%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(100% - 14px)"}}>
+                        <span className="pf__project_num">100%(65-projects)</span>
+                        <span className="pf__project_num1">100%</span>
 
                       </div>
                     </div>
@@ -102,7 +102,7 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>bootstrap</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span className="pf__project_num">40%(5-projects)</span>
+                        <span className="pf__project_num">40%(8-projects)</span>
                         <span className="pf__project_num1">40%</span>
 
                       </div>
@@ -115,7 +115,7 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>jquery</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span className="pf__project_num">40%(2-projects)</span>
+                        <span className="pf__project_num">40%(8-projects)</span>
                         <span className="pf__project_num1">40%</span>
 
                       </div>
@@ -127,9 +127,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item">
                     <p>Git/Github</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(90% - 14px)"}}>
-                        <span className="pf__project_num">90%(80-projects)</span>
-                        <span className="pf__project_num1">90%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(100% - 14px)"}}>
+                        <span className="pf__project_num">100%(80-projects)</span>
+                        <span className="pf__project_num1">100%</span>
 
                       </div>
                     </div>
@@ -141,7 +141,7 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>Docker</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span className="pf__project_num">40%(2-projects)</span>
+                        <span className="pf__project_num">40%(8-projects)</span>
                         <span className="pf__project_num1">40%</span>
 
                       </div>
@@ -154,7 +154,7 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                     <p>angular</p>
                     <div className="pf__progress pf__inner_shadow">
                       <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span className="pf__project_num">40%(1-project)</span>
+                        <span className="pf__project_num">40%(8-project)</span>
                         <span className="pf__project_num1">40%</span>
 
                       </div>
@@ -166,9 +166,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item">
                     <p>react</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(95% - 14px)"}}>
-                        <span className="pf__project_num">95%(25-projects)</span>
-                        <span className="pf__project_num1">95%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(100% - 14px)"}}>
+                        <span className="pf__project_num">100%(25-projects)</span>
+                        <span className="pf__project_num1">100%</span>
 
                       </div>
                     </div>
@@ -179,9 +179,9 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
                 <div className="pf__skill_item">
                     <p>Nodejs</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(70% - 14px)"}}>
-                        <span className="pf__project_num">70%(15-projects)</span>
-                        <span className="pf__project_num1">70%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(75% - 14px)"}}>
+                        <span className="pf__project_num">75%(15-projects)</span>
+                        <span className="pf__project_num1">75%</span>
                       </div>
                     </div>
                 </div>

@@ -20,7 +20,7 @@ export const postDataAPI = async (url,data,token) =>{
       Authorization:`Bearer ${token}`
     }
   }
-  
+
   const res = await axios.post(`/api/${url}`,data,config)
 
   return res;
@@ -53,11 +53,11 @@ export const patchDataAPI = async (url,post,token) =>{
 }
 
 
-export const deleteDataAPI = async (url) =>{
+export const deleteDataAPI = async (url,token) =>{
   const config = {
     headers:{
       "Content-Type":"application/json",
-      Authorization:`Bearer ${localStorage.getItem("authToken")}`
+      Authorization:`Bearer ${token}`
     }
   }
   const res = await axios.delete(`/api/${url}`,config)

@@ -1,9 +1,20 @@
 import React from 'react'
 import './CommentMenu.css'
 import {MoreVert,DeleteOutline,Create} from '@material-ui/icons'
+import { useDispatch,useSelector} from 'react-redux'
+import {deleteComment} from '../../../redux/actions/commentAction'
 
 
-const CommentMenu = ({post,comment,auth,setOnEdit}) => {
+const CommentMenu = ({post,comment,setOnEdit}) => {
+  const {auth} = useSelector(state=>state)
+  const dispatch = useDispatch()
+
+  const handleRemove = () => {
+    if(post.user._id === auth.user._id || comment.user._id === auth.user._id){
+      dispatch(deleteComment({post, auth, comment}))
+
+    }
+  }
    const MenuItem = () => {
      return(
        <>
@@ -11,7 +22,7 @@ const CommentMenu = ({post,comment,auth,setOnEdit}) => {
          <Create /> Edit
          </div>
 
-       <div className="sociall2__comment_dropdown_item dropdown-item">
+       <div className="sociall2__comment_dropdown_item dropdown-item" onClick={handleRemove}>
          <DeleteOutline /> Remove
          </div>
 
@@ -32,7 +43,7 @@ const CommentMenu = ({post,comment,auth,setOnEdit}) => {
                 post.user._id === auth.user._id
                 ? comment.user._id === auth.user._id
                     ? MenuItem()
-                    : <div className="sociall2__comment_dropdown_item ">
+                    : <div className="sociall2__comment_dropdown_item " onClick={handleRemove}>
                       <DeleteOutline /> Remove
                       </div>
                     : comment.user._id === auth.user._id && MenuItem()

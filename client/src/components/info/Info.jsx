@@ -1,16 +1,13 @@
 import React, {useEffect,useState} from 'react'
-import {useParams} from 'react-router-dom'
-import {useSelector, useDispatch} from 'react-redux'
+
 import {Avatar,EditProfile,FollowBtn,Following,Followers} from '../../components'
 import './Info.css'
-import {getProfileUsers} from '../../redux/actions/profileAction'
 import {GLOBALTYPES} from '../../redux/actions/globlaTypes'
 
-const Info = () => {
-  const {id} = useParams()
-  const {auth,profile} = useSelector(state => state)
+const Info = ({auth, profile, dispatch, id}) => {
 
-  const dispatch = useDispatch()
+
+
 
   const [userData,setUserData] = useState([])
   const [onEdit,setOnEdit]= useState(false)
@@ -21,7 +18,6 @@ const Info = () => {
     if(id===auth.user._id){
       setUserData([auth.user])
     }else{
-      dispatch(getProfileUsers({users: profile.users, id,auth}))
       const newData = profile.users.filter(user => user._id=== id)
       setUserData(newData)
     }
@@ -35,6 +31,8 @@ const Info = () => {
     }
   },[showFollowers,showFollowing,onEdit,dispatch])
 
+  
+
   return (
 
     <div className="social2__info-wrapper">
@@ -45,7 +43,8 @@ const Info = () => {
             <Avatar src={user.profilePic} size="social2__super-profileImage" />
             <div className="social2__info_content">
               <div className="social2__info_content_title">
-                <h2>{user.username}</h2>
+              <h2>{user.fullname}</h2>
+
                 {
                   user._id === auth.user._id
                   ?<button className="social2__info_content_title_edit_btn" onClick={() => setOnEdit(true)}>Edit Profile</button>
@@ -61,12 +60,13 @@ const Info = () => {
                   {user.following.length} Following
                 </span>
                </div>
-
-               <h6>{user.fullname} <span className="social2__info_text">{user.mobile}</span></h6>
-               <p className="social2__address">{user.address}</p>
-               <h6>{user.email}</h6>
-               <a href={user.website} target="_blank" rel="noreferrer">{user.website}</a>
-               <p>{user.story}</p>
+               <h6>Username: {user.username}</h6>
+                <h6 className="social2__info_text"> Contact Tel: {user.mobile}</h6>
+               <p className="social2__address">Address: {user.address}</p>
+               <p className="social2__address">Gender: {user.gender}</p>
+               <h6>Contact Email: {user.email}</h6>
+               Website: <a href={user.website ? user.website : "#"} target="_blank" rel="noreferrer" className> {user.website ? user.website : "none"}</a>
+               <p>Story: {user.story}</p>
             </div>
 
             {onEdit && <EditProfile setOnEdit={setOnEdit}/>}

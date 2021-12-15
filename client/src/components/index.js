@@ -15,6 +15,7 @@ export {default as PorfilePostCard} from './posts/profilePost/porfilePostCard/Po
 export {default as PostCardHeader} from './posts/postCardHeader/PostCardHeader'
 export {default as PostCardBody} from './posts/postCardBody/PostCardBody'
 export {default as PostCardFooter} from './posts/postCardFooter/PostCardFooter'
+export {default as PostThumb} from './posts/postThumb/PostThumb'
 export {default as EditProfile} from './editprofile/EditProfile'
 export {default as FollowBtn} from './buttons/followbtn/FollowBtn'
 export {default as LikeButton} from './buttons/likeButton/LikeButton'

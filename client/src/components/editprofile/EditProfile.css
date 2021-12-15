@@ -8,7 +8,7 @@
   width: 100%;
   height: 100vh;
   background: #0008;
-  z-index: 1;
+  z-index: 26;
   overflow: auto;
 }
 .social2__edit_profile form{
