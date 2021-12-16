@@ -4,21 +4,23 @@ import {PostThumb} from '../../../components'
 const ProfilePost = ({auth,profile,dispatch,id}) => {
 
   const [posts, setPosts] = useState([])
+  const [result , setResult] = useState(9)
 
   useEffect(()=>{
-    profile.userPosts.forEach(data => {
+    profile.posts.forEach(data => {
       if((data._id)===id){
         setPosts(data.posts)
+        setResult(data.result)
       }
     });
 
-  },[  profile.userPosts,id])
+  },[  profile.posts,id])
 
   return (
 
     <>
 
-    <PostThumb posts={posts}/>
+    <PostThumb posts={posts} result={result}/>
     </>
   )
 }

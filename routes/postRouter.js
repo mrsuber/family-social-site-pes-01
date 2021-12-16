@@ -12,4 +12,6 @@ router.get('/user_posts/:id',auth,postCtrl.getUserPosts)
 router.patch('/posts/:id',auth,postCtrl.updatePost)
 router.patch('/post/:id/like',auth,postCtrl.likePost)
 router.patch('/post/:id/unlike',auth,postCtrl.unlikePost)
+router.get('/post/:id',auth,postCtrl.getPost)
+
 module.exports = router

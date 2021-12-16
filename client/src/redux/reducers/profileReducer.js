@@ -5,7 +5,7 @@ const initialState = {
   loading:false,
   ids:[],
   users:[],
-  userPosts:[]
+  posts:[]
 }
 
 const profileReducer = (state = initialState, action)=>{
@@ -45,7 +45,7 @@ const profileReducer = (state = initialState, action)=>{
 
         return{
           ...state,
-          userPosts:[...state.userPosts,action.payload]
+          posts:[...state.posts,action.payload]
         }
     default:
       return state;

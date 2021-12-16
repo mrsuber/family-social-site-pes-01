@@ -2,10 +2,10 @@
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import './Carousel.css'
-// import img1 from '../../images/blog-1.jpg'
+import {img1,img2,img3} from '../../images'
 // import img2 from '../../images/project-2.png'
 // import img3 from '../../images/project-3.png'
-
+let testimage = [img1,img2,img3]
 
 const Carousel = ({images, id}) => {
   const isActive = index =>{
@@ -18,7 +18,7 @@ const Carousel = ({images, id}) => {
     <div id={`image${id}`} className="carousel slide" data-ride="carousel">
     <ol className="carousel-indicators">
       {
-        images.map((img,index)=>(
+        testimage.map((img,index)=>(
           <li key={index} data-target={`#image${id}`} data-slide-to={index} className={isActive(index)}></li>
 
         ))
@@ -27,9 +27,10 @@ const Carousel = ({images, id}) => {
     </ol>
     <div className="carousel-inner">
     {
-      images.map((img, index) =>(
+      testimage.map((img, index) =>(
         <div key={index} className={`carousel-item ${isActive(index)}`}>
-          <img src={img.url} className="d-block w-100" alt={img.url}/>
+          {/*<img src={img.url} className="d-block w-100" alt={img.url}/>*/}
+          <img src={img} className="d-block w-100" alt={img}/>
         </div>
 
       ))

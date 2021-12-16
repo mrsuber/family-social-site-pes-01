@@ -100,6 +100,23 @@ const postCtrl = {
       res.status(500).json({msg:err.message})
       return next(new ErrorResponse(err.message, 500))
     }
+  },
+  getPost: async (req,res)=>{
+    try{
+      const post = await Posts.findById(req.params.id)
+      .populate("user likes","profilePic username fullname")
+      .populate({
+        path:"comments",
+        populate:{
+          path: "user likes",
+          select:"-password"
+        }
+      })
+      res.status(200).json({ post})
+      }catch(err){
+      res.status(500).json({msg:err.message})
+      return next(new ErrorResponse(err.message, 500))
+    }
   }
 
 
