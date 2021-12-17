@@ -6,14 +6,19 @@ import {useSelector , useDispatch} from 'react-redux'
 import moment from 'moment'
 import {MoreHoriz, Create,DeleteOutline,FileCopyOutlined} from '@material-ui/icons'
 import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
+import {deletePost} from '../../../redux/actions/postAction'
 
 const PostCardHeader = ({post}) => {
   const {auth} = useSelector(state => state)
   const dispatch = useDispatch()
 
-  const handlseEditPost = ()=>{
-  
+  const handleEditPost = ()=>{
+
     dispatch({type:GLOBALTYPES.STATUS, payload:{...post,onEdit:true}})
+  }
+
+  const handleDeletePost = ()=>{
+    dispatch(deletePost({post,auth}))
   }
 
   return (
@@ -38,10 +43,10 @@ const PostCardHeader = ({post}) => {
           {
               auth.user._id === post.user._id &&
               <>
-              <div className="social2__post_card_nav_item_dropdown_item" onClick={handlseEditPost}>
+              <div className="social2__post_card_nav_item_dropdown_item" onClick={handleEditPost}>
                 <Create className="social2__post_card_icon" /> Edit Post
               </div>
-              <div className="social2__post_card_nav_item_dropdown_item">
+              <div className="social2__post_card_nav_item_dropdown_item" onClick={handleDeletePost}>
                 <DeleteOutline className="social2__post_card_icon" /> Remove Post
               </div>
               </>

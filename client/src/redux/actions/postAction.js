@@ -1,5 +1,5 @@
 import {GLOBALTYPES} from './globlaTypes'
-import {postDataAPI,getDataAPI,patchDataAPI} from '../../utils/fetchData'
+import {postDataAPI,getDataAPI,patchDataAPI,deleteDataAPI} from '../../utils/fetchData'
 import {imageUpload} from '../../utils/imageUpload'
 
 export const POST_TYPES = {
@@ -7,7 +7,8 @@ export const POST_TYPES = {
   LOADING_POST:'LOADING_POST',
   GET_POSTS:'GET_POSTS',
   UPDATE_POST:'UPDATE_POST',
-  GET_POST:'GET_POST'
+  GET_POST:'GET_POST',
+  DELETE_POST:'DELETE_POST'
 }
 
 export const createPost =({content, images, auth}) => async (dispatch)=>{
@@ -131,4 +132,14 @@ export const getPost = ({detailPost, id,auth}) => async (dispatch) =>{
     }
   }
 
+}
+
+export const deletePost = ({post, auth}) => async (dispatch) =>{
+  console.log({post,auth})
+    dispatch({type:POST_TYPES.DELETE_POST, payload:post})
+  try{
+    deleteDataAPI(`post/${post._id}`, auth.token)
+  }catch(err){
+    dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
+  }
 }

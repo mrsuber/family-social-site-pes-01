@@ -14,4 +14,8 @@ router.patch('/post/:id/like',auth,postCtrl.likePost)
 router.patch('/post/:id/unlike',auth,postCtrl.unlikePost)
 router.get('/post/:id',auth,postCtrl.getPost)
 router.get('/post_discover',auth,postCtrl.getPostsDiscover)
+router.delete('/post/:id',auth,postCtrl.deletePost)
+
+
+
 module.exports = router

@@ -1,4 +1,5 @@
 const Posts = require('../models/postModel')
+const Comments = require('../models/commentModel')
 const ErrorResponse = require('../utils/errorResponse')
 
 class APIfeatures {
@@ -87,10 +88,15 @@ const postCtrl = {
         res.status(400).json({msg:"You liked this post."})
         return next(new ErrorResponse("You liked this post", 400))
       }
-    await Posts.findOneAndUpdate({_id:req.params.id},{
+    const like = await Posts.findOneAndUpdate({_id:req.params.id},{
       $push:{likes:req.user._id}
     }, {new:true})
-    res.json({msg:'Liked Post!'})
+
+    if(!like){
+      res.status(400).json({msg:"This post does not exist"})
+      return next(new ErrorResponse("This post does not exist", 400))
+    }
+    res.status(200).json({msg:'Liked Post!'})
     }catch(err){
       res.status(500).json({msg:err.message})
       return next(new ErrorResponse(err.message, 500))
@@ -98,15 +104,16 @@ const postCtrl = {
   },
   unlikePost: async (req,res) =>{
     try{
-      // const post = await Posts.find({_id:req.params.id, likes: req.user._id})
-      // if(post.length!==0){
-      //   res.status(400).json({msg:"You liked this post."})
-      //   return next(new ErrorResponse("You liked this post", 400))
-      // }
-    await Posts.findOneAndUpdate({_id:req.params.id},{
+
+    const like = await Posts.findOneAndUpdate({_id:req.params.id},{
       $pull:{likes:req.user._id}
     }, {new:true})
-    res.json({msg:'UnLiked Post!'})
+
+    if(!like){
+      res.status(400).json({msg:"This post does not exist"})
+      return next(new ErrorResponse("This post does not exist", 400))
+    }
+    res.status(200).json({msg:'UnLiked Post!'})
     }catch(err){
       res.status(500).json({msg:err.message})
       return next(new ErrorResponse(err.message, 500))
@@ -136,6 +143,12 @@ const postCtrl = {
           select:"-password"
         }
       })
+
+      if(!post){
+        res.status(400).json({msg:"This post does not exist"})
+        return next(new ErrorResponse("This post does not exist", 400))
+      }
+
       res.status(200).json({ post})
       }catch(err){
       res.status(500).json({msg:err.message})
@@ -152,7 +165,18 @@ const postCtrl = {
       res.status(500).json({msg:err.message})
       return next(new ErrorResponse(err.message, 500))
     }
-  }
+  },
+  deletePost: async (req, res) =>{
+    try{
+      const post = await Posts.findOneAndDelete({_id:req.params.id, user:req.user._id})
+      await Comments.deleteMany({_id:{$in:post.comments}})
+
+      res.status(200).json({msg:"Deleted Post!"})
+      }catch(err){
+      res.status(500).json({msg:err.message})
+      return next(new ErrorResponse(err.message, 500))
+    }
+  },
 
 
 }

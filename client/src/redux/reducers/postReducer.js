@@ -1,5 +1,5 @@
 import { POST_TYPES} from '../actions/postAction'
-import {EditData} from '../actions/globlaTypes'
+import {EditData,DeletData} from '../actions/globlaTypes'
 
 const initialState = {
   loading:false,
@@ -36,6 +36,12 @@ const postReducer = (state = initialState,action) => {
         return{
           ...state,
           posts:EditData(state.posts, action.payload._id, action.payload)
+        };
+      case POST_TYPES.DELETE_POST:
+
+        return{
+          ...state,
+          posts:DeletData(state.posts, action.payload._id, action.payload)
         };
     default:
       return state;
