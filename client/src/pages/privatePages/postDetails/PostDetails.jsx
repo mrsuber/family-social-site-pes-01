@@ -2,8 +2,10 @@ import React,{useState,useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import './PostDetails.css'
-import {Social2Header} from '../../../components'
+import {Social2Header,PorfilePostCard} from '../../../components'
 import {getPost} from '../../../redux/actions/postAction'
+import {CircularProgress} from "@material-ui/core"
+
 
 
 const PostDetails = () => {
@@ -24,9 +26,18 @@ const PostDetails = () => {
     <>
     <Social2Header/>
     <section className="social2__post_details-section" >
+    <div className="social2__post_details_wrapper">
+    {
+      post.length === 0 && <CircularProgress className="social2__profile_circularLoader" color="primary" size="15px"/>
 
-    PostDetails{id}
+    }
 
+    {
+      post.map(item =>(
+        <PorfilePostCard post={item} key={item._id}/>
+      ))
+    }
+    </div>
     </section>
     </>
   )
