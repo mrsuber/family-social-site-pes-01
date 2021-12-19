@@ -1,16 +1,19 @@
 import React from 'react'
 import './PostCardHeader.css'
 import {Avatar} from '../../../components'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import {useSelector , useDispatch} from 'react-redux'
 import moment from 'moment'
 import {MoreHoriz, Create,DeleteOutline,FileCopyOutlined} from '@material-ui/icons'
 import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
 import {deletePost} from '../../../redux/actions/postAction'
+import {BASE_URL} from '../../../utils/config'
 
 const PostCardHeader = ({post}) => {
   const {auth} = useSelector(state => state)
   const dispatch = useDispatch()
+
+  const history = useHistory()
 
   const handleEditPost = ()=>{
 
@@ -18,7 +21,17 @@ const PostCardHeader = ({post}) => {
   }
 
   const handleDeletePost = ()=>{
-    dispatch(deletePost({post,auth}))
+    if(window.confirm("Are you sure you want to delete this post?")){
+      dispatch(deletePost({post,auth}))
+      return history.push("/social_home")
+    }
+
+  }
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(`${BASE_URL}/post/${post._id}`)
+    dispatch({type:GLOBALTYPES.ALERT,payload:{success:"Copy Done!"}})
+
   }
 
   return (
@@ -51,7 +64,7 @@ const PostCardHeader = ({post}) => {
               </div>
               </>
           }
-          <div className="social2__post_card_nav_item_dropdown_item">
+          <div className="social2__post_card_nav_item_dropdown_item" onClick={handleCopyLink}>
             <FileCopyOutlined className="social2__post_card_icon" /> Copy Link
           </div>
         </div>

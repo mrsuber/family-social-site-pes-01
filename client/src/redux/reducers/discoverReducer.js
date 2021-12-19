@@ -15,17 +15,17 @@ const discoverReducer = (state = initialState, action) => {
         ...state,
         loading:action.payload
       }
-    case DISCOVER_TYPES.GET_POST:
+    case DISCOVER_TYPES.GET_POSTS:
       return{
         ...state,
-        post:action.payload.posts,
+        posts:action.payload.posts,
         result: action.payload.result,
         firstLoad: true
       }
     case DISCOVER_TYPES.UPDATE_POST:
       return{
         ...state,
-        post:action.payload.posts,
+        posts:action.payload.posts,
         result: action.payload.result,
         page: state.page + 1
       }

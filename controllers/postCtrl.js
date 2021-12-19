@@ -157,7 +157,10 @@ const postCtrl = {
   },
   getPostsDiscover:async (req, res) =>{
     try{
-      const features = new APIfeatures(Posts.find({user:{$nin: [...req.user.following, req.user._id]}}),req.query).paginating()
+      const features = new APIfeatures(Posts.find({
+        user:{$nin: [...req.user.following, req.user._id]}
+      }),req.query).paginating()
+
       const posts = await features.query.sort('-createdAt')
 
       res.status(200).json({msg:'Success!', result:posts.length,posts})

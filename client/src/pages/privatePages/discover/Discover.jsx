@@ -24,6 +24,7 @@ const Discover = () => {
   const handleloadMore = async()=>{
     setLoad(true)
     const res = await getDataAPI(`post_discover?limit=${discover.page * 9}`,auth.token)
+    console.log(res )
     dispatch({type: DISCOVER_TYPES.UPDATE_POST, payload:res.data})
     setLoad(false)
   }

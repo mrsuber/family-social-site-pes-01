@@ -4,13 +4,14 @@ import {Link} from 'react-router-dom'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {faHeart,faComment } from '@fortawesome/free-solid-svg-icons';
 import {ChatBubbleOutline,Send,BookmarkBorder} from '@material-ui/icons'
-import {LikeButton} from '../../../components'
+import {LikeButton,ShareModal} from '../../../components'
 import { useSelector, useDispatch } from 'react-redux'
 import {likePost,unlikePost} from '../../../redux/actions/postAction'
 
 const PostCardFooter = ({post}) => {
   const [isLike, setIsLike]=useState(false)
   const [loadLike, setLoadLike]=useState(false)
+  const [isShare, setIsShare] = useState(false)
 
   const {auth} = useSelector(state=>state)
   const dispatch = useDispatch()
@@ -52,7 +53,7 @@ const PostCardFooter = ({post}) => {
           <Link to={`/post/${post._id}`} className="social2__link">
             <ChatBubbleOutline/>
           </Link>
-          <Send className="social2__send_icon"/>
+          <Send className="social2__send_icon" onClick={()=> setIsShare(true)}/>
         </div>
 
         <BookmarkBorder/>
@@ -61,6 +62,9 @@ const PostCardFooter = ({post}) => {
     <h6> {post.likes.length} likes</h6>
     <h6> {post.comments.length} comments</h6>
     </div>
+    {
+      isShare && <ShareModal url="http://google.com"/>
+    }
     </div>
   )
 }
