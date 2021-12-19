@@ -2,7 +2,7 @@ import {useEffect} from 'react'
 import './IndexPage.css'
 import {Link} from 'react-router-dom'
 import {MainHeader} from '../../../components'
-import {img1,img2,img3,img4,logo} from '../../../images'
+import {gs1,gs2,gs3,gs4,gs5,gs6,logo} from '../../../images'
 
 
 const IndexPage = () => {
@@ -133,14 +133,13 @@ const IndexPage = () => {
           <div id="slider2__drag">
 
             <div id="slider2__spin">
-                <img src={img1} alt="" />
-                <img src={img2} alt="" />
-                <img src={img3} alt="" />
-                <img src={img4} alt="" />
-                <img src={img1} alt="" />
-                <img src={img2} alt="" />
-                <img src={img3} alt="" />
-                <img src={img4} alt="" />
+                <img src={gs1} alt="" />
+                <img src={gs2} alt="" />
+                <img src={gs3} alt="" />
+                <img src={gs4} alt="" />
+                <img src={gs5} alt="" />
+                <img src={gs6} alt="" />
+
 
             </div>
             <div id="slider2__ground"></div>
