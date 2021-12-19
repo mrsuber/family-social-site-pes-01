@@ -53,7 +53,7 @@ const PostCardFooter = ({post}) => {
           <Link to={`/post/${post._id}`} className="social2__link">
             <ChatBubbleOutline/>
           </Link>
-          <Send className="social2__send_icon" onClick={()=> setIsShare(true)}/>
+          <Send className="social2__send_icon" onClick={()=> setIsShare(!isShare)}/>
         </div>
 
         <BookmarkBorder/>

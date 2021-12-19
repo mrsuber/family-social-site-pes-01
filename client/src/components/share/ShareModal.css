@@ -1,0 +1,6 @@
+.social2__share_modal{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #f1f1f1;
+}
