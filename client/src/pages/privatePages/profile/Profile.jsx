@@ -14,22 +14,25 @@ const Profile = () => {
   const {id} = useParams()
   useEffect(()=>{
     if(profile.ids.every(item =>item !== id)){
-    dispatch(getProfileUsers({users: profile.users, id,auth}))
+    dispatch(getProfileUsers({ id,auth}))
   }
 
-},[profile.users, id,auth,dispatch,profile.ids])
+},[id,auth,dispatch,profile.ids])
   return (
     <>
     <Social2Header/>
     <section className="social2__profile-section" >
 
+    <Info auth={auth} profile={profile} dispatch={dispatch} id={id}/>
+
+
     {
       profile.loading
       ?<CircularProgress className="social2__profile_circularLoader" color="primary" size="15px"/>
-      :<Info auth={auth} profile={profile} dispatch={dispatch} id={id}/>
+      :<ProfilePost auth={auth} profile={profile} dispatch={dispatch} id={id} />
     }
 
-      <ProfilePost auth={auth} profile={profile} dispatch={dispatch} id={id} />
+
     </section>
 
     </>

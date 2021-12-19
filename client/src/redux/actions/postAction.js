@@ -1,12 +1,14 @@
 import {GLOBALTYPES} from './globlaTypes'
-import {postDataAPI,getDataAPI,patchDataAPI} from '../../utils/fetchData'
+import {postDataAPI,getDataAPI,patchDataAPI,deleteDataAPI} from '../../utils/fetchData'
 import {imageUpload} from '../../utils/imageUpload'
 
 export const POST_TYPES = {
   CREATE_POST : 'CREATE_POST',
   LOADING_POST:'LOADING_POST',
   GET_POSTS:'GET_POSTS',
-  UPDATE_POST:'UPDATE_POST'
+  UPDATE_POST:'UPDATE_POST',
+  GET_POST:'GET_POST',
+  DELETE_POST:'DELETE_POST'
 }
 
 export const createPost =({content, images, auth}) => async (dispatch)=>{
@@ -17,6 +19,7 @@ export const createPost =({content, images, auth}) => async (dispatch)=>{
     if(images.length > 0){
       media = await imageUpload(images)
       // media = "someImage.jpg"
+
     }
     const res = await postDataAPI('posts',{content,images:media},auth.token)
 
@@ -41,7 +44,7 @@ try{
 
   dispatch({
     type:POST_TYPES.GET_POSTS,
-    payload:res.data
+    payload:{...res.data, page:2}
   })
     dispatch({type:POST_TYPES.LOADING_POST,payload:false})
 
@@ -115,5 +118,28 @@ export const unlikePost = ({auth,post}) => async (dispatch) =>{
       type:GLOBALTYPES.ALERT,
       payload:{error:err.response.data.msg}
     })
+  }
+}
+
+export const getPost = ({detailPost, id,auth}) => async (dispatch) =>{
+  if(detailPost.every(post=>post._id !== id)){
+    try{
+      const res = await getDataAPI(`post/${id}`,auth.token)
+      dispatch({type:POST_TYPES.GET_POST, payload:res.data.post})
+    }catch(err){
+      dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}
+      })
+    }
+  }
+
+}
+
+export const deletePost = ({post, auth}) => async (dispatch) =>{
+  console.log({post,auth})
+    dispatch({type:POST_TYPES.DELETE_POST, payload:post})
+  try{
+    deleteDataAPI(`post/${post._id}`, auth.token)
+  }catch(err){
+    dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
   }
 }

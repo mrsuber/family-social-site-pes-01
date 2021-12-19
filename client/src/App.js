@@ -2,7 +2,7 @@ import {BrowserRouter as Router,Switch,Route } from 'react-router-dom'
 //Routing
 import PrivateRoute from './routing/privateRoute/PrivateRoute'
 // Pages
-import {RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,IndexPage,HomePage,LoginScreen2,Message,Discover,Notify,Profile,PorfolioHome} from './pages'
+import {PostDetails,RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,IndexPage,HomePage,LoginScreen2,Message,Discover,Notify,Profile,PorfolioHome} from './pages'
 //component
 import {Alert} from './components'
 import {useSelector,useDispatch} from 'react-redux'
@@ -37,6 +37,8 @@ const App=()=> {
             <PrivateRoute exact path="/discover" component={auth.token? Discover : LoginScreen2}/>
             <PrivateRoute exact path="/notify" component={auth.token? Notify : LoginScreen2}/>
             <PrivateRoute exact path="/profile/:id" component={auth.token? Profile : LoginScreen2}/>
+            <PrivateRoute exact path="/post/:id" component={auth.token? PostDetails : LoginScreen2}/>
+
         </Switch>
       </div>
     </Router>

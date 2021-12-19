@@ -1,11 +1,7 @@
-// import React, {useEffect} from 'react'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import {faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import './Carousel.css'
-// import img1 from '../../images/blog-1.jpg'
-// import img2 from '../../images/project-2.png'
-// import img3 from '../../images/project-3.png'
 
+import './Carousel.css'
+// import {img1,img2,img3} from '../../images'
+// let testimage = [img1,img2,img3]
 
 const Carousel = ({images, id}) => {
   const isActive = index =>{
@@ -30,6 +26,7 @@ const Carousel = ({images, id}) => {
       images.map((img, index) =>(
         <div key={index} className={`carousel-item ${isActive(index)}`}>
           <img src={img.url} className="d-block w-100" alt={img.url}/>
+          {/*<img src={img} className="d-block w-100" alt={img}/>*/}
         </div>
 
       ))
