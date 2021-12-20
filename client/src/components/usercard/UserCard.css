@@ -9,7 +9,7 @@
 
 }
 .social2__usercard-wrapper:hover{
-  background: #2451af40;
+  /* background: #2451af40; */
 }
 .social2__usercard-name{
   margin-left: 1rem;
@@ -17,10 +17,15 @@
 }
 .social2__usercard-username{
 display: block;
+
 }
 
 .social2__usercard-fullname{
 /* opacity: 0.7; */
+color: rgba(0,0,0,0.5);
+font-size: 12px;
+font-weight: 500;
+margin-top: 5px;
 }
 
 .social2__usercard_link{

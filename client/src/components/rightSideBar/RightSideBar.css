@@ -1,0 +1,40 @@
+.social2__suggestion_wrapper{
+  margin: 2rem;
+}
+
+.social2__suggestion{
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+
+}
+
+.social2__suggestion h5{
+  font-size: 14px;
+      color: rgba(0,0,0,0.5);
+      font-weight: 700;
+      margin: 20px 0;
+}
+
+.social2__suggestion svg{
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+  font-weight: bolder;
+
+}
+
+.social2__suggestion svg:hover{
+  color: var(--blue);
+}
+
+
+.social2__suggestion_footer{
+  display: block;
+}
+
+.social2__suggestion_footer_wrapper{
+  opacity: 0.5;
+  margin: 1rem;
+}

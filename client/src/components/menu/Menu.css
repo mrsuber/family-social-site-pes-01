@@ -92,6 +92,9 @@
   width: 90%;
   padding: 15px 0;
   }
+  .social2__menu svg{
+    padding: 10px 0;
+  }
 
     .social2__menu:last-child{
       margin-left: 10px;

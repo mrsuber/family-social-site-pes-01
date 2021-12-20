@@ -4,12 +4,14 @@
   width: 40px;
   object-fit: cover;
   border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
 
 }
 
 .social2__user-profileImage:hover{
-  border: 2px solid var(--blue);
-  cursor: pointer;
+  /* border: 2px solid var(--blue); */
+
 }
 
 

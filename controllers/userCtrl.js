@@ -18,7 +18,7 @@ const userCtrl = {
   getUser: async (req,res) => {
     try{
       const user = await Users.findById(req.params.id).select('-password').populate("followers following")
-      
+
       if(!user){
         res.status(400).json({msg:"User does not exist"})
         return next(new ErrorResponse({msg:"User does not exist"}, 400))
@@ -73,6 +73,29 @@ const userCtrl = {
 
       await Users.findOneAndUpdate({_id:req.user._id},{ $pull:{following:req.params.id }  },{new:true})
       res.status(200).json({msg:"UnFollow User."})
+    }catch(err){
+      res.status(500).json({msg:err.message})
+      return next(new ErrorResponse(err.message, 500))
+    }
+  },
+  suggestionsUser:async (req,res)=>{
+
+    try{
+      const newArr = [...req.user.following, req.user._id]
+
+      const num = req.query.num || 10
+
+      const users = await Users.aggregate([
+        {$match: {_id: { $nin: newArr }}},
+        {$sample: { size: Number(num) }},
+        {$lookup: { from: "users", localField: 'followers', foreignField: '_id', as: 'followers' }},
+        {$lookup: { from: "users", localField: 'following', foreignField: '_id', as: 'following' }},
+      ]).project("-password")
+
+      return res.status(200).json({
+        users,
+        result: users.length
+      })
     }catch(err){
       res.status(500).json({msg:err.message})
       return next(new ErrorResponse(err.message, 500))

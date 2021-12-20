@@ -32,12 +32,14 @@ const App=()=> {
             <Route exact path="/forgotpassword" component={ForgotPasswordScreen} />
             <Route exact path="/resetpassword" component={ResetPasswordScreen} />
             <Route exact path="/" component={auth.token? IndexPage : LoginScreen2} />
+
             <PrivateRoute exact path="/social_home" component={auth.token? HomePage : LoginScreen2}/>
             <PrivateRoute exact path="/message" component={auth.token? Message : LoginScreen2}/>
             <PrivateRoute exact path="/discover" component={auth.token? Discover : LoginScreen2}/>
             <PrivateRoute exact path="/notify" component={auth.token? Notify : LoginScreen2}/>
             <PrivateRoute exact path="/profile/:id" component={auth.token? Profile : LoginScreen2}/>
             <PrivateRoute exact path="/post/:id" component={auth.token? PostDetails : LoginScreen2}/>
+            
 
         </Switch>
       </div>
