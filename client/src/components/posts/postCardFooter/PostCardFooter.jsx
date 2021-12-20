@@ -7,7 +7,7 @@ import {ChatBubbleOutline,Send,BookmarkBorder} from '@material-ui/icons'
 import {LikeButton,ShareModal} from '../../../components'
 import { useSelector, useDispatch } from 'react-redux'
 import {likePost,unlikePost} from '../../../redux/actions/postAction'
-
+import {BASE_URL} from '../../../utils/config'
 const PostCardFooter = ({post}) => {
   const [isLike, setIsLike]=useState(false)
   const [loadLike, setLoadLike]=useState(false)
@@ -63,7 +63,7 @@ const PostCardFooter = ({post}) => {
     <h6> {post.comments.length} comments</h6>
     </div>
     {
-      isShare && <ShareModal url="http://google.com"/>
+      isShare && <ShareModal url={`${BASE_URL}/post/${post._id}`}/>
     }
     </div>
   )

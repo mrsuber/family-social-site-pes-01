@@ -18,6 +18,8 @@ export {default as PostCardFooter} from './posts/postCardFooter/PostCardFooter'
 export {default as PostThumb} from './posts/postThumb/PostThumb'
 export {default as EditProfile} from './editprofile/EditProfile'
 export {default as FollowBtn} from './buttons/followbtn/FollowBtn'
+export {default as FollowBtn2} from './buttons/followbtn/FollowBtn2'
+
 export {default as LikeButton} from './buttons/likeButton/LikeButton'
 export {default as LoadMoreBtn} from './buttons/loadMoreBtn/LoadMoreBtn'
 export {default as Followers} from './followers/Followers'
@@ -33,6 +35,7 @@ export {default as CommentDisplay} from './comments/commentDisplay/CommentDispla
 export {default as CommentCard} from './comments/commentCard/CommentCard'
 export {default as CommentMenu} from './comments/commentMenu/CommentMenu'
 export {default as ShareModal} from './share/ShareModal'
+export {default as RightSideBar} from './rightSideBar/RightSideBar'
 //porfolio components exports starts
 export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
 export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'

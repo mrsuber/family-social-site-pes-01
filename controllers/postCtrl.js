@@ -157,13 +157,24 @@ const postCtrl = {
   },
   getPostsDiscover:async (req, res) =>{
     try{
-      const features = new APIfeatures(Posts.find({
-        user:{$nin: [...req.user.following, req.user._id]}
-      }),req.query).paginating()
+      // const features = new APIfeatures(Posts.find({
+      //   user:{$nin: [...req.user.following, req.user._id]}
+      // }),req.query).paginating()
+      //
+      // const posts = await features.query.sort('-createdAt')
 
-      const posts = await features.query.sort('-createdAt')
+      const newArr = [...req.user.following, req.user._id]
 
-      res.status(200).json({msg:'Success!', result:posts.length,posts})
+      const num = req.query.num || 9
+
+      const posts = await Posts.aggregate([
+        {$match: {user: { $nin: newArr }}},
+        {$sample: { size: Number(num) }},
+      ])
+
+
+
+      return res.status(200).json({msg:'Success!', result:posts.length,posts})
       }catch(err){
       res.status(500).json({msg:err.message})
       return next(new ErrorResponse(err.message, 500))

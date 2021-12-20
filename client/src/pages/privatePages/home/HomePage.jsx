@@ -1,10 +1,12 @@
 import React,{useEffect} from 'react'
 import './HomePage.css'
-import {Social2Header,Status,Posts} from '../../../components'
+import {Social2Header,Status,Posts,RightSideBar} from '../../../components'
 import post from '../../../images/blog-1.jpg'
 import profile from '../../../images/me.webp'
 import {useSelector, useDispatch} from 'react-redux'
 import {getPosts} from '../../../redux/actions/postAction'
+import {getSuggestions} from '../../../redux/actions/suggestionsAction'
+
 import {CircularProgress} from "@material-ui/core"
 
 
@@ -14,7 +16,10 @@ const HomePage = () => {
   const dispatch = useDispatch()
 
   useEffect(()=>{
-    if(auth.token)dispatch(getPosts(auth.token))
+    if(auth.token){
+      dispatch(getPosts(auth.token))
+      dispatch(getSuggestions(auth.token))
+    }
   },[dispatch,auth.token])
 
   return (
@@ -34,7 +39,7 @@ const HomePage = () => {
           {
             homePosts.loading
             ?<CircularProgress className="social2__profile_circularLoader" color="primary" size="15px"/>
-            :homePosts.result ===0
+            :(homePosts.result ===0 && homePosts.posts.length===0)
                 ?<h2 className="social2__no_post_title">No Post</h2>
                 :<Posts profile={profile} post={post} />
           }
@@ -50,83 +55,7 @@ const HomePage = () => {
 
           </div>
           <div className="social2__right-col">
-
-
-              <div className="social2__profile-card">
-                <div className="social2__profile-pic">
-                  <img src={profile} alt="profile" />
-                </div>
-                <div>
-                    <p className='social2__username'>modern_web_channel</p>
-                    <p className="social2__sub-text">madara ouchiwa</p>
-                </div>
-                <button className="social2__action-btn">switch</button>
-              </div>
-
-              <p className="social2__suggestion-text">Suggestion for you</p>
-
-
-              <div className="social2__profile-card">
-                <div className="social2__profile-pic">
-                  <img src={profile} alt="profile" />
-                </div>
-                <div>
-                    <p className='social2__username'>modern_web_channel</p>
-                    <p className="social2__sub-text">followed bu user</p>
-                </div>
-                <button className="social2__action-btn">follow</button>
-              </div>
-
-
-              <div className="social2__profile-card">
-                <div className="social2__profile-pic">
-                  <img src={profile} alt="profile" />
-                </div>
-                <div>
-                    <p className='social2__username'>modern_web_channel</p>
-                    <p className="social2__sub-text">followed bu user</p>
-                </div>
-                <button className="social2__action-btn">follow</button>
-              </div>
-
-
-              <div className="social2__profile-card">
-                <div className="social2__profile-pic">
-                  <img src={profile} alt="profile" />
-                </div>
-                <div>
-                    <p className='social2__username'>modern_web_channel</p>
-                    <p className="social2__sub-text">followed bu user</p>
-                </div>
-                <button className="social2__action-btn">follow</button>
-              </div>
-
-
-
-              <div className="social2__profile-card">
-                <div className="social2__profile-pic">
-                  <img src={profile} alt="profile" />
-                </div>
-                <div>
-                    <p className='social2__username'>modern_web_channel</p>
-                    <p className="social2__sub-text">followed bu user</p>
-                </div>
-                <button className="social2__action-btn">follow</button>
-              </div>
-
-
-              <div className="social2__profile-card">
-                <div className="social2__profile-pic">
-                  <img src={profile} alt="profile" />
-                </div>
-                <div>
-                    <p className='social2__username'>modern_web_channel</p>
-                    <p className="social2__sub-text">followed bu user</p>
-                </div>
-                <button className="social2__action-btn">follow</button>
-              </div>
-
-
+            <RightSideBar />
 
 
 
