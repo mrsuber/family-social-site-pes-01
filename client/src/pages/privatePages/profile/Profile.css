@@ -9,3 +9,30 @@
   width: 50px !important;
 height: 50px !important;
 }
+
+.social2__porfile_tab{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #eee;
+
+  border-bottom: 1px solid #eee;
+}
+
+.social2__porfile_tab button{
+  outline: none;
+  border: none;
+  background: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 5px 20px;
+  margin: 0 25px;
+  opacity: 0.5;
+}
+
+.social2__porfile_tab button.social2__profile_active{
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  opacity: 0.8;
+}

@@ -3,10 +3,10 @@ import './PostCardFooter.css'
 import {Link} from 'react-router-dom'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {faHeart,faComment } from '@fortawesome/free-solid-svg-icons';
-import {ChatBubbleOutline,Send,BookmarkBorder} from '@material-ui/icons'
+import {ChatBubbleOutline,Send,BookmarkBorder,Bookmark} from '@material-ui/icons'
 import {LikeButton,ShareModal} from '../../../components'
 import { useSelector, useDispatch } from 'react-redux'
-import {likePost,unlikePost} from '../../../redux/actions/postAction'
+import {likePost,unlikePost,savePost,unsavePost} from '../../../redux/actions/postAction'
 import {BASE_URL} from '../../../utils/config'
 const PostCardFooter = ({post}) => {
   const [isLike, setIsLike]=useState(false)
@@ -15,10 +15,14 @@ const PostCardFooter = ({post}) => {
 
   const {auth} = useSelector(state=>state)
   const dispatch = useDispatch()
-
+  const [saved, setSaved] = useState(false)
+  const [saveLoad,setSaveLoad] = useState(false)
+//likes
   useEffect(()=>{
     if(post.likes.find(like => like._id === auth.user._id)){
       setIsLike(true)
+    }else{
+      setIsLike(false)
     }
   },[post.likes, auth.user._id])
 
@@ -41,6 +45,33 @@ const PostCardFooter = ({post}) => {
     setLoadLike(false)
   }
 
+  //saved
+
+  useEffect(()=>{
+    if(auth.user.saved.find(id => id === post._id)){
+      setSaved(true)
+    }else{
+      setSaved(false)
+    }
+  },[auth.user.saved, post._id])
+
+
+  const handleSavePost = async ()=>{
+    if(saveLoad) return
+
+    setSaveLoad(true)
+    await dispatch(savePost({post, auth}))
+    setSaveLoad(false)
+  }
+
+  const handleUnSavePost = async()=>{
+    if(saveLoad) return
+
+    setSaveLoad(true)
+    await dispatch(unsavePost({post, auth}))
+    setSaveLoad(false)
+  }
+
   return (
     <div className="social2__post_card_footer">
     <div className="social2__post_card_footer_icon_menu">
@@ -55,8 +86,12 @@ const PostCardFooter = ({post}) => {
           </Link>
           <Send className="social2__send_icon" onClick={()=> setIsShare(!isShare)}/>
         </div>
+        {
+          saved
+          ?    <Bookmark className="social2__bookmark"  onClick={handleUnSavePost}/>
+          :  <BookmarkBorder onClick={handleSavePost}/>
+        }
 
-        <BookmarkBorder/>
     </div>
     <div className="social2__post_card_footer_foot">
     <h6> {post.likes.length} likes</h6>

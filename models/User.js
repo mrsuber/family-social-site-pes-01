@@ -43,6 +43,12 @@ const UserSchema = new mongoose.Schema({
 
   },
   website:{type:String,default:''},
+  saved:[
+    {
+    type:mongoose.Types.ObjectId,
+    ref:'user'
+  }
+],
   followers:[
     {
     type:mongoose.Types.ObjectId,
@@ -56,6 +62,7 @@ const UserSchema = new mongoose.Schema({
     }
   ],
   isAdmin:{type:Boolean,default:false},
+  isSuperAdmin:{type:Boolean,default:false},
   resetPasswordToken: String,
   resetPasswordExpire:Date
 },

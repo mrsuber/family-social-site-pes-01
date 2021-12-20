@@ -135,11 +135,40 @@ export const getPost = ({detailPost, id,auth}) => async (dispatch) =>{
 }
 
 export const deletePost = ({post, auth}) => async (dispatch) =>{
-  console.log({post,auth})
+
     dispatch({type:POST_TYPES.DELETE_POST, payload:post})
   try{
-    deleteDataAPI(`post/${post._id}`, auth.token)
+    await deleteDataAPI(`post/${post._id}`, auth.token)
   }catch(err){
     dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
+  }
+}
+
+
+export const savePost = ({post, auth}) => async (dispatch)=>{
+  const newUser = {...auth.user, saved:[...auth.user.saved, post._id]}
+
+  dispatch({type:GLOBALTYPES.AUTH, payload:{...auth, user:newUser}})
+
+  try{
+    await patchDataAPI(`savePost/${post._id}`, {}, auth.token)
+
+  }catch(err){
+    dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
+
+  }
+}
+
+export const unsavePost = ({post, auth}) => async (dispatch)=>{
+  const newUser = {...auth.user, saved:auth.user.saved.filter(id => id !== post._id)}
+
+  dispatch({type:GLOBALTYPES.AUTH, payload:{...auth, user:newUser}})
+
+  try{
+    await patchDataAPI(`UnSavePost/${post._id}`, {}, auth.token)
+
+  }catch(err){
+    dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
+
   }
 }

@@ -1,6 +1,7 @@
 const Posts = require('../models/postModel')
 const Comments = require('../models/commentModel')
 const ErrorResponse = require('../utils/errorResponse')
+const Users = require('../models/User')
 
 class APIfeatures {
   constructor(query,queryString){
@@ -191,6 +192,62 @@ const postCtrl = {
       return next(new ErrorResponse(err.message, 500))
     }
   },
+  savePost: async (req,res) =>{
+    try{
+      const user = await Users.find({_id:req.user._id, saved: req.params.id})
+      if(user.length >0){
+        res.status(400).json({msg:"You saved this post."})
+        return next(new ErrorResponse("You saved this post", 400))
+      }
+    const save = await Users.findOneAndUpdate({_id:req.user._id},{
+      $push:{saved:req.params.id}
+    }, {new:true})
+
+    if(!save){
+      res.status(400).json({msg:"This user does not exist"})
+      return next(new ErrorResponse("This user does not exist", 400))
+    }
+    res.status(200).json({msg:'Saved Post!'})
+    }catch(err){
+      res.status(500).json({msg:err.message})
+      return next(new ErrorResponse(err.message, 500))
+    }
+  },
+  unSavePost: async (req,res) =>{
+    try{
+
+    const save = await Users.findOneAndUpdate({_id:req.user._id},{
+      $pull:{saved:req.params.id}
+    }, {new:true})
+
+    if(!save){
+      res.status(400).json({msg:"This user does not exist"})
+      return next(new ErrorResponse("This user does not exist", 400))
+    }
+    res.status(200).json({msg:'unSaved Post!'})
+    }catch(err){
+      res.status(500).json({msg:err.message})
+      return next(new ErrorResponse(err.message, 500))
+    }
+  },
+
+  getSavePosts: async (req,res) =>{
+    try{
+      const features = new APIfeatures(Posts.find({
+        _id:{$in:req.user.saved}
+      }),req.query).paginating()
+
+      const savePosts = await features.query.sort("-createdAt")
+
+      res.status(200).json({
+        savePosts,
+        result:savePosts.length
+      })
+    }catch(err){
+      res.status(500).json({msg:err.message})
+      return next(new ErrorResponse(err.message, 500))
+    }
+  }
 
 
 }
