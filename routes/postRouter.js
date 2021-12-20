@@ -16,6 +16,10 @@ router.get('/post/:id',auth,postCtrl.getPost)
 router.get('/post_discover',auth,postCtrl.getPostsDiscover)
 router.delete('/post/:id',auth,postCtrl.deletePost)
 
+router.patch('/savePost/:id',auth,postCtrl.savePost)
+router.patch('/unSavePost/:id',auth,postCtrl.unSavePost)
+router.get('/getSavePost',auth,postCtrl.getSavePosts)
+
 
 
 module.exports = router
