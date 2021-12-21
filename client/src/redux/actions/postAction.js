@@ -95,6 +95,8 @@ export const likePost = ({auth,post,socket}) => async (dispatch) =>{
   dispatch({type:POST_TYPES.UPDATE_POST, payload:newPost})
 
   socket.emit('likePost', newPost)
+
+  
   try{
 
     await patchDataAPI(`post/${post._id}/like`,{},auth.token)
@@ -114,7 +116,7 @@ export const unlikePost = ({auth,post,socket}) => async (dispatch) =>{
   dispatch({type:POST_TYPES.UPDATE_POST, payload:newPost})
 
   socket.emit('unLikePost', newPost)
-  
+
   try{
 
     await patchDataAPI(`post/${post._id}/unlike`,{},auth.token)

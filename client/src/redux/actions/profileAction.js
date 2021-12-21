@@ -96,7 +96,7 @@ export const updateProfileUser = ({userData,profilePic,auth}) =>async(dispatch)=
 
 
 
-export const follow = ({users, user, auth}) => async (dispatch)=>{
+export const follow = ({users, user, auth,socket}) => async (dispatch)=>{
 
     let newUser
     if(users.every(item => item._id !== user._id)){
@@ -119,6 +119,8 @@ export const follow = ({users, user, auth}) => async (dispatch)=>{
     }
   })
 
+  socket.emit('follow', newUser)
+
   try{
 
   await patchDataAPI(`user/${user._id}/follow`, {}, auth.token)
@@ -130,7 +132,7 @@ export const follow = ({users, user, auth}) => async (dispatch)=>{
   }
 }
 
-export const unfollow = ({users, user, auth}) => async (dispatch)=>{
+export const unfollow = ({users, user, auth,socket}) => async (dispatch)=>{
 
 
 
@@ -153,6 +155,7 @@ export const unfollow = ({users, user, auth}) => async (dispatch)=>{
     }
   })
 
+  socket.emit('unFollow', newUser)
   try{
 
    await patchDataAPI(`user/${user._id}/unfollow`, {}, auth.token)
