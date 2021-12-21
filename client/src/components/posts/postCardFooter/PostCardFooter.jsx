@@ -13,7 +13,7 @@ const PostCardFooter = ({post}) => {
   const [loadLike, setLoadLike]=useState(false)
   const [isShare, setIsShare] = useState(false)
 
-  const {auth} = useSelector(state=>state)
+  const {auth,socket} = useSelector(state=>state)
   const dispatch = useDispatch()
   const [saved, setSaved] = useState(false)
   const [saveLoad,setSaveLoad] = useState(false)
@@ -31,7 +31,7 @@ const PostCardFooter = ({post}) => {
     setIsLike(true)
 
     setLoadLike(true)
-    await dispatch(likePost({post, auth}))
+    await dispatch(likePost({post, auth,socket}))
     setLoadLike(false)
   }
 
@@ -41,7 +41,7 @@ const PostCardFooter = ({post}) => {
 
 
     setLoadLike(true)
-    await dispatch(unlikePost({post, auth}))
+    await dispatch(unlikePost({post, auth,socket}))
     setLoadLike(false)
   }
 

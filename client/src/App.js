@@ -9,7 +9,9 @@ import {useSelector,useDispatch} from 'react-redux'
 import {useEffect} from 'react'
 import {refreshToken} from './redux/actions/authAction'
 import bg from './images/boxed-bg.jpg'
-
+import io from 'socket.io-client'
+import {GLOBALTYPES} from './redux/actions/globlaTypes'
+import SocketClient from './SocketClient'
 
 const App=()=> {
 
@@ -18,13 +20,16 @@ const App=()=> {
 
   useEffect(()=>{
     dispatch(refreshToken())
+    const socket = io()
+    dispatch({type:GLOBALTYPES.SOCKET, payload:socket})
+    return () => socket.close()
   },[dispatch])
 
   return (
     <Router>
       <div className={`App ${(status || modal) && 'social2__mode'}`} style={{backgroundImage:`url(${bg})`,backgroundAttachment:'fixed',backgroundPosition:'center',minHeight:'100vh'}}>
       <Alert />
-
+            {auth.token && <SocketClient />}
         <Switch>
             <Route exact path="/porfolio/home" component={PorfolioHome} />
             <Route exact path="/login" component={LoginScreen2} />
@@ -39,7 +44,7 @@ const App=()=> {
             <PrivateRoute exact path="/notify" component={auth.token? Notify : LoginScreen2}/>
             <PrivateRoute exact path="/profile/:id" component={auth.token? Profile : LoginScreen2}/>
             <PrivateRoute exact path="/post/:id" component={auth.token? PostDetails : LoginScreen2}/>
-            
+
 
         </Switch>
       </div>

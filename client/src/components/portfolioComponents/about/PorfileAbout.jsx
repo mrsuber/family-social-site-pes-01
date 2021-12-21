@@ -28,13 +28,16 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
             {/*social links end*/}
           </div>
           <div className="pf__about_info">
-            <p><span>Hi! My name is Mohamad Siysinyuy. I am a Web Developer.</span>I was introduce to software development in my very first year in the university studying computer engineering which gave me a direct line to Web Development.
-</p>
-            <p>Due to personal research and following full-stack online curriculum, i learn about HTML and its evolution to HTML5, used tools like WAVE and W3C for accessibility, CSS3 ,Bootstrap, SASS, SCSS,for styling design and animations, then JavaScript, JQuery for logic and fetching data from REST APIs.</p>
-            <p>After a couple of projects with these languages for Front-End and UI Designs, i was introduce to frame works like React and Angular for building single web applications and proper use of props and components certainly made life easier. My new life into frame works lead me to being familiar npm for installing dependencies and tools such as WebPack which came loaded with tools necessary for minifying my code for accessibility, Babel for translating ES6 JavaScript code to ES5 JavaScript code for browser compatability.</p>
+        
 
-            <p>To complete my full stack journey as a full stack developer, i was introduce to back-end technologies such as Nodjs, Python frame work like Flask, Django and NoSQL database like MongoDB, SQL database like MYSQL, and Docker technologies.
-</p>
+            <p><span>Hi! My name is Mohamad Siysinyuy. I am a Web Developer.</span> I was introduced to software development in my very first year in the university studying computer engineering which gave me a direct line to Web Development.</p>
+
+            <p>Due to personal research and following a full-stack online curriculum, I learn about HTML and its evolution to HTML5, used tools like WAVE and W3C for accessibility, CSS3, Bootstrap, SASS, SCSS, for styling design and animations, then JavaScript, JQuery for logic and fetching data from REST APIs.</p>
+
+            <p>After a couple of projects with these languages for Front-End and UI Designs, I was introduced to frameworks like React and Angular for building single web applications, and proper use of props and components certainly made life easier. My new life into frameworks lead me to be familiar with npm for installing dependencies and tools such as WebPack which came loaded with tools necessary for minifying my code for accessibility, Babel for translating ES6 JavaScript code to ES5 JavaScript code for browser compatibility.</p>
+
+            <p>To complete my full stack journey as a full stack developer, I was introduced to back-end technologies such as Nodjs, Python frameworks like Flask, Django, and NoSQL databases like MongoDB, SQL database like MYSQL, and Docker technologies.</p>
+
             <p>To showcase my projects to the world, I had to host them with FireBase, Heroku, Github.</p>
 
             <a href={cv} className="pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1" >Download Cv</a>

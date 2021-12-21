@@ -24,6 +24,15 @@ const bodyParser=require('body-parser')
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/uploads',express.static(path.join(__dirname,'uploads')))
+//socket
+const http = require('http').createServer(app)
+const io = require('socket.io')(http)
+const SocketServer = require('./socketServer')
+
+
+io.on('connection', socket =>{
+  SocketServer(socket)
+})
 // end file upload
 app.use('/api',require('./routes/auth'))
 app.use('/api',require('./routes/private'))
@@ -46,7 +55,7 @@ if(process.env.NODE_ENV==="production"){
 
 const PORT = process.env.PORT || 5000;
 
-const server = app.listen(PORT, ()=>console.log(`Server running on port http://localhost:${PORT}`))
+const server = http.listen(PORT, ()=>console.log(`Server running on port http://localhost:${PORT}`))
 
 
 process.on('unhandleRejection', (err,promise) =>{
