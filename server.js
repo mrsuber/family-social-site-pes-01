@@ -39,7 +39,7 @@ app.use('/api',require('./routes/private'))
 app.use('/api',require('./routes/userRouter'))
 app.use('/api',require('./routes/postRouter'))
 app.use('/api',require('./routes/commentRouter'))
-
+app.use('/api',require('./routes/notifyRouter'))
 if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join(__dirname,'/client/build')))
   app.get('*',(req,res)=>{

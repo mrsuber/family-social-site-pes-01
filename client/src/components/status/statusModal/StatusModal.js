@@ -6,7 +6,7 @@ import {CameraAlt,Image} from '@material-ui/icons'
 import {createPost,updatePost} from '../../../redux/actions/postAction'
 
 const StatusModal = () => {
-  const {auth,status} = useSelector(state => state)
+  const {auth,status,socket} = useSelector(state => state)
   const dispatch = useDispatch()
   const [content, setContent] = useState('')
   const [images,setImages] = useState([])
@@ -35,7 +35,7 @@ const StatusModal = () => {
   }
 
   const deleteImages =(index)=>{
-    console.log(index)
+
     const newArr = [...images]
     newArr.splice(index,1)
     setImages(newArr)
@@ -79,7 +79,7 @@ const handleSubmit = (e) =>{
   if(status.onEdit){
     dispatch(updatePost({content, images, auth, status}))
   }else{
-    dispatch(createPost({content, images, auth}))
+    dispatch(createPost({content, images, auth,socket}))
   }
 
   setContent('')
