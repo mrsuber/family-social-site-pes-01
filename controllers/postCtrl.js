@@ -35,7 +35,10 @@ const postCtrl = {
       await newPost.save()
       res.json({
         msg:'Create Post!',
-        newPost
+        newPost:{
+          ...newPost._doc,
+          user: req.user
+        }
       })
     }catch(err){
       res.status(500).json({msg:err.message})
@@ -186,7 +189,13 @@ const postCtrl = {
       const post = await Posts.findOneAndDelete({_id:req.params.id, user:req.user._id})
       await Comments.deleteMany({_id:{$in:post.comments}})
 
-      res.status(200).json({msg:"Deleted Post!"})
+      res.status(200).json({
+        msg:"Deleted Post!",
+        newPost:{
+          ...post,
+          user:req.user
+        }
+      })
       }catch(err){
       res.status(500).json({msg:err.message})
       return next(new ErrorResponse(err.message, 500))

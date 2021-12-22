@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: center; */
   zoom:0.25;
+  
 }
 
  #slider2__spin{
@@ -170,7 +171,7 @@
 
 .index-box1:hover{
   box-shadow: 0 1rem 2rem rgb(0 0 0 / 58%);
-  
+
 }
 
 .index-box1_title{

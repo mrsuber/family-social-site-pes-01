@@ -6,7 +6,9 @@
   flex-direction: column;
   align-items: center;
   margin-right: 15px;
+  margin-top: 10px;
 }
+
 
 .social2__profile-pic{
   width: 70px;

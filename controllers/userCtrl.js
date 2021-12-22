@@ -54,10 +54,10 @@ const userCtrl = {
         res.status(400).json({msg:"You followed this user."})
         return next(new ErrorResponse("You followed this user", 400))
       }
-      await Users.findOneAndUpdate({_id:req.params.id},{ $push:{followers:req.user._id } },{new:true})
+      const newUser = await Users.findOneAndUpdate({_id:req.params.id},{ $push:{followers:req.user._id } },{new:true}).populate("followers following")
 
       await Users.findOneAndUpdate({_id:req.user._id},{$push:{following:req.params.id } },{new:true})
-      res.status(200).json({msg:"Followed User."})
+      res.status(200).json({newUser})
 
     }catch(err){
       res.status(500).json({msg:err.message})
@@ -69,10 +69,10 @@ const userCtrl = {
 
     try{
 
-      await Users.findOneAndUpdate({_id:req.params.id},{  $pull:{followers:req.user._id }   },{new:true})
+      const newUser = await Users.findOneAndUpdate({_id:req.params.id},{  $pull:{followers:req.user._id }   },{new:true}).populate("followers following")
 
       await Users.findOneAndUpdate({_id:req.user._id},{ $pull:{following:req.params.id }  },{new:true})
-      res.status(200).json({msg:"UnFollow User."})
+      res.status(200).json({newUser})
     }catch(err){
       res.status(500).json({msg:err.message})
       return next(new ErrorResponse(err.message, 500))

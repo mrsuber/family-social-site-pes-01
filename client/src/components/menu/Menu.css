@@ -82,7 +82,7 @@
     width: 100%;
     box-shadow: 0 0 10px #ddd;
     background: #ffffffc7;
-
+    height: 45px;
     z-index: 2;
   }
   .social2__menu{
@@ -92,9 +92,14 @@
   width: 90%;
   padding: 15px 0;
   }
-  .social2__menu svg{
+  .social2__menu a span svg{
     padding: 10px 0;
+    /* font-size: 20px; */
   }
+  .social2__dropdown{
+    margin: 10px 0;
+  }
+
 
     .social2__menu:last-child{
       margin-left: 10px;

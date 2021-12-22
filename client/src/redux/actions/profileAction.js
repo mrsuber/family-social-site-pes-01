@@ -119,12 +119,12 @@ export const follow = ({users, user, auth,socket}) => async (dispatch)=>{
     }
   })
 
-  socket.emit('follow', newUser)
+
 
   try{
 
-  await patchDataAPI(`user/${user._id}/follow`, {}, auth.token)
-
+  const res = await patchDataAPI(`user/${user._id}/follow`, {}, auth.token)
+    socket.emit('follow', res.data.newUser)
   }catch(err){
     dispatch({
       type:GLOBALTYPES.ALERT,
@@ -155,11 +155,11 @@ export const unfollow = ({users, user, auth,socket}) => async (dispatch)=>{
     }
   })
 
-  socket.emit('unFollow', newUser)
+
   try{
 
-   await patchDataAPI(`user/${user._id}/unfollow`, {}, auth.token)
-
+  const res = await patchDataAPI(`user/${user._id}/unfollow`, {}, auth.token)
+  socket.emit('unFollow', res.data.newUser)
   }catch(err){
     dispatch({
       type:GLOBALTYPES.ALERT,
