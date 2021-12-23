@@ -7,6 +7,8 @@ const notifyCtrl = {
       try{
         const { id, recipients, url, text, content, image } = req.body
 
+        if(recipients.includes(req.user._id.toString())) return
+
         const notify = new Notifies({
           id, recipients, url, text, content, image, user:req.user._id
         })
@@ -37,7 +39,7 @@ const notifyCtrl = {
 
       try{
         const notifies = await Notifies.find({recipients:req.user._id})
-        .sort('isRead').populate('user', 'profilePic username')
+        .sort('-createdAt').populate('user', 'profilePic username')
 
         return res.status(200).json({notifies})
       }catch(err){

@@ -116,6 +116,19 @@ export const likePost = ({auth,post,socket}) => async (dispatch) =>{
   try{
 
     await patchDataAPI(`post/${post._id}/like`,{},auth.token)
+
+    //Notify
+    const msg = {
+        id: auth.user._id,
+        text: 'like your post.',
+        recipients: [post.user._id],
+        url: `/post/${post._id}`,
+        content: post.content,
+        image:post.images[0].url
+
+      }
+
+      dispatch(createNotify({msg, auth,socket}))
   }catch(err){
     dispatch({
       type:GLOBALTYPES.ALERT,
@@ -136,6 +149,18 @@ export const unlikePost = ({auth,post,socket}) => async (dispatch) =>{
   try{
 
     await patchDataAPI(`post/${post._id}/unlike`,{},auth.token)
+
+    //notify
+
+    const msg = {
+        id: auth.user._id,
+        text: 'like your post.',
+        recipients: [post.user._id],
+        url: `/post/${post._id}`,
+
+
+      }
+      dispatch(removeNotify({msg, auth,socket}))
   }catch(err){
     dispatch({
       type:GLOBALTYPES.ALERT,
@@ -174,7 +199,7 @@ export const deletePost = ({post, auth,socket }) => async (dispatch) =>{
       }
 
       dispatch(removeNotify({msg, auth,socket}))
-      
+
   }catch(err){
     dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
   }
