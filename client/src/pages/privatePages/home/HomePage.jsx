@@ -6,6 +6,7 @@ import profile from '../../../images/me.webp'
 import {useSelector, useDispatch} from 'react-redux'
 import {getPosts} from '../../../redux/actions/postAction'
 import {getSuggestions} from '../../../redux/actions/suggestionsAction'
+import {getNotifies} from '../../../redux/actions/notifyAction'
 
 import {CircularProgress} from "@material-ui/core"
 
@@ -19,6 +20,7 @@ const HomePage = () => {
     if(auth.token){
       dispatch(getPosts(auth.token))
       dispatch(getSuggestions(auth.token))
+      dispatch(getNotifies(auth.token))
     }
   },[dispatch,auth.token])
 

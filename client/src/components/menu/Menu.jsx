@@ -2,7 +2,7 @@ import {Link,useLocation} from 'react-router-dom'
 import {Home,NearMe,Explore,Favorite} from '@material-ui/icons'
 import {logout} from '../../redux/actions/authAction'
 import {GLOBALTYPES} from '../../redux/actions/globlaTypes'
-import {Avatar} from '../../components'
+import {Avatar, NotifyModal} from '../../components'
 import './Menu.css'
 import profile from '../../images/me.webp'
 import {useDispatch,useSelector} from 'react-redux'
@@ -13,10 +13,10 @@ const Menu = () => {
     {label:'Home',icon:<Home/>,path:'/social_home'},
     {label:'Message',icon:<NearMe/>,path:'/message'},
     {label:'Discover',icon:<Explore/>,path:'/discover'},
-    {label:'Notify',icon:<Favorite/>,path:'/notify'},
+    // {label:'Notify',icon:<Favorite/>,path:'/notify'},
 
   ]
-  const {auth,theme} = useSelector(state => state)
+  const {auth,theme,notify} = useSelector(state => state)
 
   const dispatch = useDispatch()
   const{pathname} = useLocation()
@@ -36,12 +36,38 @@ const Menu = () => {
       <Link to={link.path} className="social2__link" key={index}><span  className={`${isActive(link.path)}`}>{link.icon}</span></Link>
     ))}
 </div>
+    {/*Notify dropdown*/}
+    <div className="nav-item dropdown">
+      <span className="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span className="social2__perent_fevorite" style={{color: notify.data.length >0 ? 'crimson' : ''}}><Favorite/><span className="social2__children_fevorite">{notify.data.length}</span></span>
+
+      </span>
+
+      <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+          <NotifyModal />
+      </div>
+    </div>
+
+    {/*Notify dropdown*/}
+
+        {/*Avatar dropdown*/}
+        <div className="nav-item dropdown">
+          <span className="nav-link social2__adjust_avatar" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span><Avatar src={ auth.user.profilePic} size="social2__normal-profileImage"/></span>
+          </span>
+          <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+          <Link to={`/profile/${auth.user._id}`} className="dropdown-item">Profile</Link>
+          <label htmlFor="theme" className=" dropdown-item" onClick={()=> dispatch({type:GLOBALTYPES.THEME,payload: !theme})}>{theme ? 'Light mode' : 'Dark mode'}</label>
+
+            <div className="dropdown-divider"></div>
+            <a href="/social_home" onClick={()=>dispatch(logout())} className="dropdown-item"> Logout </a>
+          </div>
+        </div>
+          {/*Avatar dropdown*/}
 
 
-      <div className="social2__dropdown">
-
+      {/*<div className="social2__dropdown">
       <Avatar src={ auth.user.profilePic} size="social2__normal-profileImage"/>
-
           <div className="social2__dropdown-content">
             <Link to={`/profile/${auth.user._id}`}>Profile</Link>
             <label htmlFor="theme" className="social2__dropdown-content-theme" onClick={()=> dispatch({type:GLOBALTYPES.THEME,payload: !theme})}>{theme ? 'Light mode' : 'Dark mode'}</label>
@@ -50,10 +76,16 @@ const Menu = () => {
             onClick={()=>dispatch(logout())}>
             Logout
             </a>
-        </div>
-</div>
+            </div>
+      </div>*/}
 
     </span>
+
+
+
+
+
+
     </>
   )
 }

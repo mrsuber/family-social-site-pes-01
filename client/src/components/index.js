@@ -36,6 +36,7 @@ export {default as CommentMenu} from './comments/commentMenu/CommentMenu'
 export {default as ShareModal} from './share/ShareModal'
 export {default as RightSideBar} from './rightSideBar/RightSideBar'
 export {default as Saved} from './save/Saved'
+export {default as NotifyModal} from './notify/notifyModal/NotifyModal'
 //porfolio components exports starts
 export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
 export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'
