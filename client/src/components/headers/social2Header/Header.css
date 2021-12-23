@@ -33,6 +33,8 @@
   padding: 5px 0;
 
   z-index: 26;
+  border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .social2__nav-wrapper{
   width: 70%;

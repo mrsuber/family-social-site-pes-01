@@ -1,0 +1,71 @@
+.social2__notification__modal_wrapper{
+  min-width: 280px;
+}
+.social2__notification__modal_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+.social2__notification__modal_container  h3{
+  font-size: 20px;
+  font-weight: 600;
+}
+.social2__notification__modal_bell_icon{
+  color:red;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.social2__notification__modal_img{
+  width: 100%;
+}
+
+.social2__notification__modal_items_wrapper{
+  max-height: calc(100vh - 200px);
+  overflow: auto;
+
+}
+.social2__notification__modal_items{
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social2__notification__modal_sub_items{
+  margin: 0 .5rem;
+  flex: 1 1 auto;
+}
+.social2__notification__modal_sub_item_username{
+  margin-right: .5rem;
+}
+
+.social2__notification__modal_link{
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.social2__notification__modal_sub_image{
+  width: 30px;
+}
+
+.social2__notification__modal_circle_icon{
+  color:var(--blue);
+}
+
+.social2__notification__modal_time_container{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  align-items: center;
+  color: #6c757d
+}
+
+.social2__notification__modal_delete_container{
+  color: #dc3545;
+  text-align: right;
+  margin-right: .5rem;
+  cursor: pointer;
+}

@@ -31,7 +31,21 @@ const notifyCtrl = {
         res.status(500).json({msg:err.message})
         return next(new ErrorResponse(err.message, 500))
       }
-    }
+    },
+
+    getNotifies:async (req,res) =>{
+
+      try{
+        const notifies = await Notifies.find({recipients:req.user._id})
+        .sort('isRead').populate('user', 'profilePic username')
+
+        return res.status(200).json({notifies})
+      }catch(err){
+        res.status(500).json({msg:err.message})
+        return next(new ErrorResponse(err.message, 500))
+      }
+    },
+
 
 }
 
