@@ -7,10 +7,27 @@ import img from '../../../images/geneosocial/notice.png'
 import {Link } from 'react-router-dom'
 import {Avatar} from '../../../components'
 import moment from 'moment'
+import {isReadNotify,NOTIFY_TYPES,deleteAllNotifies} from '../../../redux/actions/notifyAction'
 
 const NotifyModal = () => {
   const {auth,notify} = useSelector(state=>state)
   const dispatch = useDispatch()
+
+  const handleIsRead =(msg)=>{
+    dispatch(isReadNotify({msg,auth}))
+  }
+
+  const handleSound = ()=>{
+    dispatch({type:NOTIFY_TYPES.UPDATE_SOUND,payload:!notify.sound})
+  }
+
+  const handleDeleteAll = ()=>{
+    const newArr = notify.data.filter(item=> item.isRead === false)
+    if(newArr.length === 0) return  dispatch(deleteAllNotifies(auth.token))
+    if(window.confirm(`You have ${newArr.length} unread notices. Are you sure you want to delete all?`)){
+      return  dispatch(deleteAllNotifies(auth.token))
+    }
+  }
   return (
     <div className="social2__notification__modal_wrapper">
       <div className="social2__notification__modal_container">
@@ -18,8 +35,8 @@ const NotifyModal = () => {
 
         {
           notify.sound
-          ?<FontAwesomeIcon icon={faBell} className="social2__notification__modal_bell_icon"/>
-          :<FontAwesomeIcon icon={faBellSlash} className="social2__notification__modal_bell_icon"/>
+          ?<FontAwesomeIcon icon={faBell} className="social2__notification__modal_bell_icon" onClick={handleSound}/>
+          :<FontAwesomeIcon icon={faBellSlash} className="social2__notification__modal_bell_icon" onClick={handleSound}/>
         }
       </div>
       <hr/>
@@ -31,7 +48,7 @@ const NotifyModal = () => {
       <div className="social2__notification__modal_items_wrapper">
       {  notify.data.map((msg,index) =>(
         <div key={index} className="social2__notification__modal_items">
-            <Link to={`${msg.url}`} className="social2__notification__modal_link">
+            <Link to={`${msg.url}`} className="social2__notification__modal_link" onClick={()=> handleIsRead(msg)}>
               <Avatar src={msg.user.profilePic} size ="social2__normal-profileImage"/>
               <div className="social2__notification__modal_sub_items">
                 <div>
@@ -54,7 +71,7 @@ const NotifyModal = () => {
       ))}
       </div>
       <hr/>
-      <div className=" social2__notification__modal_delete_container">
+      <div className=" social2__notification__modal_delete_container" onClick={handleDeleteAll}>
         Delete All
       </div>
     </div>

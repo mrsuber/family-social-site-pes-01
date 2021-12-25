@@ -1,11 +1,14 @@
 import {GLOBALTYPES} from './globlaTypes'
 
-import {postDataAPI, deleteDataAPI, getDataAPI} from '../../utils/fetchData'
+import {postDataAPI, deleteDataAPI, getDataAPI,patchDataAPI} from '../../utils/fetchData'
 
 export const NOTIFY_TYPES = {
   GET_NOTIFIES:'GET_NOTIFIES',
   CREATE_NOTIFY:'CREATE_NOTIFY',
-  REMOVE_NOTIFY:'REMOVE_NOTIFY'
+  REMOVE_NOTIFY:'REMOVE_NOTIFY',
+  UPDATE_NOTIFY:'UPDATE_NOTIFY',
+  UPDATE_SOUND:'UPDATE_SOUND',
+  DELETE_ALL_NOTIFIES:'DELETE_ALL_NOTIFIES'
 
 }
 
@@ -47,4 +50,26 @@ export const getNotifies = (token) => async (dispatch) =>{
     dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
 
   }
+}
+
+export const isReadNotify = ({msg, auth}) =>async (dispatch)=>{
+  dispatch({type:NOTIFY_TYPES.UPDATE_NOTIFY, payload:{...msg, isRead:true}})
+
+  try{
+    await patchDataAPI(`isReadNotify/${msg._id}`, {}, auth.token)
+  }catch(err){
+    dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
+
+  }
+}
+
+
+export const deleteAllNotifies = (token) =>async (dispatch) =>{
+dispatch({type:NOTIFY_TYPES.DELETE_ALL_NOTIFIES, payload: []})
+try{
+  await deleteDataAPI('deleteAllNotifies',token)
+}catch(err){
+  dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
+
+}
 }

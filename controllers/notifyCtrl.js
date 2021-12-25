@@ -48,6 +48,30 @@ const notifyCtrl = {
       }
     },
 
+    isReadNotify:async (req,res) =>{
+
+      try{
+        const notifies = await Notifies.findOneAndUpdate({_id:req.params.id}, {isRead:true})
+
+        return res.status(200).json({notifies})
+      }catch(err){
+        res.status(500).json({msg:err.message})
+        return next(new ErrorResponse(err.message, 500))
+      }
+    },
+
+    deleteAllNotifies:async (req,res) =>{
+
+      try{
+        const notifies = await Notifies.deleteMany({recipients:req.user._id})
+
+        return res.status(200).json({notifies})
+      }catch(err){
+        res.status(500).json({msg:err.message})
+        return next(new ErrorResponse(err.message, 500))
+      }
+    },
+
 
 }
 
