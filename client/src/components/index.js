@@ -37,6 +37,7 @@ export {default as ShareModal} from './share/ShareModal'
 export {default as RightSideBar} from './rightSideBar/RightSideBar'
 export {default as Saved} from './save/Saved'
 export {default as NotifyModal} from './notify/notifyModal/NotifyModal'
+export {default as MessageLeftSide} from './message/messageLeftside/MessageLeftSide'
 //porfolio components exports starts
 export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
 export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'
