@@ -5,6 +5,7 @@ export {default as ResetPasswordScreen} from './Auth/resetPassword/ResetPassword
 export {default as IndexPage} from './privatePages/indexPage/IndexPage'
 export {default as HomePage} from './privatePages/home/HomePage'
 export {default as Message} from './privatePages/message/Message'
+export {default as MessageDetails} from './privatePages/message/messageDetails/MessageDetails'
 export {default as Discover} from './privatePages/discover/Discover'
 export {default as Notify} from './privatePages/notify/Notify'
 export {default as Profile} from './privatePages/profile/Profile'

@@ -21,5 +21,35 @@
 }
 
 .social2__message_user{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 5px 10px;
+border: 1px solid #f3f3f3;
+color:#555;
+cursor: pointer;
+}
+.social2__message_user:hover{
+  /* text-decoration: none; */
+  color: black;
 
+}
+.social2__message_user.active{
+  background: #eee;
+}
+.social2__online_dot{
+  font-size: 8px;
+  color: #aaa;
+}
+
+.social2__online_dot.active{
+  color:forestgreen;
+}
+
+.social2__message_chat_list{
+
+  width: 100%;
+  height: calc(100% - 60px);
+
+  overflow-y: auto;
 }

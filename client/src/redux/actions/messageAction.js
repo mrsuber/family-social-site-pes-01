@@ -3,7 +3,8 @@ export const MESS_TYPES = {
 }
 
 export const addUser = ({user,message}) => async(dispatch) =>{
-  if(message.user.every(item => item._id !== user._id)){
+
+  if(message.users.every(item => item._id !== user._id)){
     dispatch({type:MESS_TYPES.ADD_USER, payload:user})
   }
 }
