@@ -1,0 +1,48 @@
+.social2__message_section{
+  margin-top: 65px;
+  padding-bottom: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+      padding: 0 70px;
+
+
+}
+
+.social2__message__container{
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 100px);
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #fbfbfb;
+  opacity: .8;
+}
+.social2__message_leftside{
+  border-right: 1px solid #ddd;
+  flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+.social2__message_middle{
+flex:  0 0 66.666667%;
+     max-width: 66.666667%;
+}
+
+.social2__message_middle_item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+.social2__mesenger_icon{
+  /* background: var(--blue); */
+  color: var(--blue);
+   fill: currentColor;
+   display: inline-block;
+  width: 5rem;
+  height: 5rem;
+}
