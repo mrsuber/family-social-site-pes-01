@@ -4,6 +4,8 @@ import { useSelector, useDispatch} from 'react-redux'
 import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
 import {CameraAlt,Image} from '@material-ui/icons'
 import {createPost,updatePost} from '../../../redux/actions/postAction'
+import {Icons} from '../../../components'
+import {imageShow, videoShow} from '../../../utils/mediaShow'
 
 const StatusModal = () => {
   const {auth,status,socket} = useSelector(state => state)
@@ -23,13 +25,14 @@ const StatusModal = () => {
 
     files.forEach(file =>{
       if(!file) return err="File does not exist."
-      if(file.type !== 'image/jpeg' && file.type !== 'image/png'   ){
-        return err = "Image format is incorrect."
+      if(file.size > 1024 * 1024 * 5 ){
+        return err = "The image largest is 5mb."
       }
 
       return newImages.push(file)
 
     })
+
     if(err)dispatch({ type:GLOBALTYPES.ALERT,payload:{error:err} })
     setImages([...images, ...newImages])
   }
@@ -95,6 +98,17 @@ useEffect(()=>{
   }
 },[status])
 
+
+// const imageShow = (src) => {
+//   return(
+//     <img src={src} alt="images" className="social2__status_modal_img_thumbnail"/>)
+// }
+//
+// const videoShow = (src) => {
+//   return(
+//     <video controls src={src} alt="images" className="social2__status_modal_img_thumbnail"/>)
+// }
+
   return (
     <div className="social2__status_modal_wrapper">
       <form onSubmit={handleSubmit}>
@@ -108,15 +122,34 @@ useEffect(()=>{
             placeholder={`${auth.user.username}, what are you thinking?`}
             onChange={e =>setContent(e.target.value)}/>
 
+            <div className="social2__icons_container">
+              <div className="flex-fill"></div>
+              <Icons setContent={setContent} content={content}/>
+            </div>
+
             <div className="social2__status_modal_show_images">
               {
                 images.map((img, index) =>(
                   <div key={index} id="file_img">
-                      <img src={
-                        img.camera
-                        ? img.camera
-                        : img.url? img.url : URL.createObjectURL(img)
-                      } alt="images" className="social2__status_modal_img_thumbnail"/>
+                      {
+                        img.camera ? imageShow(img.camera)
+                        :img.url
+                            ?<>
+                                {
+                                  img.url.match(/video/i)
+                                  ? videoShow(img.url)
+                                  : imageShow(img.url)
+                                }
+                            </>
+                            :<>
+                                {
+                                  img.type.match(/video/i)
+                                  ? videoShow(URL.createObjectURL(img))
+                                  : imageShow(URL.createObjectURL(img))
+                                }
+                            </>
+                      }
+
                       <span  onClick={()=>deleteImages(index)}>&times;</span>
                   </div>
                 ))
@@ -140,7 +173,7 @@ useEffect(()=>{
               <CameraAlt onClick={handleStream}/>
               <div className="socail2__status_modal_file_upload">
               <Image/>
-              <input type="file" name="file" id="file" multiple accept="image/*" onChange={handleChangeImages}/>
+              <input type="file" name="file" id="file" multiple accept="image/*,video/*" onChange={handleChangeImages}/>
               </div>
               </>
             }

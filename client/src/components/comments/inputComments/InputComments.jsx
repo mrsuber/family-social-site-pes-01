@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import './InputComments.css'
 import {useSelector,useDispatch} from 'react-redux'
 import {createComment} from '../../../redux/actions/commentAction'
+import {Icons} from '../../../components'
 
 const InputComments = ({children,post,onReply,setOnReply}) => {
   const [content, setContent] = useState('')
@@ -38,6 +39,7 @@ const InputComments = ({children,post,onReply,setOnReply}) => {
     <form className=" social2__comment_form" onSubmit={handleSubmit}>
       {children}
       <input type="text" placeholder="Add your comments..." value={content} onChange={e=>setContent(e.target.value)}/>
+      <Icons setContent={setContent} content={content}/>
       <button type="submit" className="social2__comment_postBtn">post</button>
     </form>
 

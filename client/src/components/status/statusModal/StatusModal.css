@@ -121,6 +121,10 @@
 
 
 }
+.social2__status_modal_img_thumbnail{
+  width: 100%;
+  height: 100%;
+}
 
 .social2__status_modal_footer_btn{
   width: 100%;
@@ -134,4 +138,9 @@
 .social2__status_modal_footer_btn:hover{
   background: var(--blue);
   color: white;
+}
+
+.social2__icons_container{
+  display: flex;
+
 }

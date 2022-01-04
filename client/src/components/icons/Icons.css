@@ -1,0 +1,13 @@
+.social2__reactions{
+  display: grid;
+  grid-template-columns:repeat(4,50px);
+  text-align: center;
+  cursor: pointer;
+  max-height: 240px;
+  overflow-y: scroll;
+
+}
+
+.social2__reactions{
+  margin: 3px 0;
+}

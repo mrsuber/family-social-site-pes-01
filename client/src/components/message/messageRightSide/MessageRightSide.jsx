@@ -1,9 +1,10 @@
 import React,{useState, useEffect} from 'react'
 import './MessageRightSide.css'
-import {UserCard, MessageDisplay} from '../../../components'
+import {UserCard, MessageDisplay,Icons} from '../../../components'
 import {useSelector , useDispatch} from 'react-redux'
 import {useParams} from 'react-router-dom'
 import {NearMe} from '@material-ui/icons'
+import {CameraAlt,Image} from '@material-ui/icons'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -23,6 +24,10 @@ const MessageRightSide = () => {
       setUser(newUser)
     }
   },[message.users,id])
+
+  const handleChangeMedia = () =>{
+
+  }
   return (
     <>
     <div className="social2__righside_message_header">
@@ -48,6 +53,10 @@ const MessageRightSide = () => {
       <input type="text" placeholder="Enter you message... "
       value={text} onChange={e => setText(e.target.value)}
       />
+      <div className="social2__file_upload">
+        <Image/>
+        <input type="file" name="file" id="file" multiple accept="image/*,video/*" onChange={handleChangeMedia}/>
+      </div>
       <button disabled={text? false : true} type="submit">
         <NearMe/>
       </button>
