@@ -28,7 +28,7 @@ export const imageUpload = async(images) => {
     formData.append("upload_preset","msbGeanology")
     formData.append("cloud_name","msb-geneasocial")
 
-    const res = await fetch("https://api.cloudinary.com/v1_1/msb-geneasocial/image/upload",{
+    const res = await fetch("https://api.cloudinary.com/v1_1/msb-geneasocial/upload",{
       method:"POST",
       body:formData
   })

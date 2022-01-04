@@ -40,6 +40,7 @@ export {default as NotifyModal} from './notify/notifyModal/NotifyModal'
 export {default as MessageLeftSide} from './message/messageLeftside/MessageLeftSide'
 export {default as MessageRightSide} from './message/messageRightSide/MessageRightSide'
 export {default as MessageDisplay} from './message/messageDisplay/MessageDisplay'
+export {default as Icons} from './icons/Icons'
 //porfolio components exports starts
 export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
 export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'
