@@ -66,10 +66,10 @@ const Icons = ({setContent, content}) => {
   return (
 
     <div className="nav-item dropdown">
-      <span className="nav-link social2__adjust_avatar" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span className="nav-link social2__adjust_avatar px-0" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span style={{opacity:0.4}}>😀</span>
       </span>
-      <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+      <div className="dropdown-menu social2__emoji_dropdown" aria-labelledby="navbarDropdown">
         <div className="social2__reactions">
           {
             reactions.map(icon =>(
