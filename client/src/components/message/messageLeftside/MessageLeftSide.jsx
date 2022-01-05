@@ -1,13 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import './MessageLeftSide.css'
 import {UserCard} from '../../../components'
 import {useSelector, useDispatch} from 'react-redux'
 import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
 import {getDataAPI} from '../../../utils/fetchData'
 import {useHistory, useParams} from 'react-router-dom'
-import {addUser} from '../../../redux/actions/messageAction'
+import {addUser,getConversations} from '../../../redux/actions/messageAction'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCircle } from '@fortawesome/free-solid-svg-icons';
+
+
 
 const MessageLeftSide = () => {
   const [search, setSearch] = useState('')
@@ -46,11 +48,16 @@ const MessageLeftSide = () => {
   }
 
   const isActive = (user) => {
-    
+
     if(id === user._id)return 'active'
     return ''
 
   }
+
+  useEffect(() => {
+    if(message.firstLoad)return
+    dispatch(getConversations({auth}))
+  },[dispatch,auth,message.firstLoad ])
 
   return (
     <>
@@ -76,7 +83,7 @@ const MessageLeftSide = () => {
             {
               message.users.map(user => (
                 <div key={user._id} className={`social2__message_user ${isActive(user)}`} onClick={()=>handleAddUser(user)}>
-                    <UserCard user={user}>
+                    <UserCard user={user}  msg={true}>
                     <FontAwesomeIcon icon={faCircle} className="social2__online_dot"/>
                     </UserCard>
                 </div>

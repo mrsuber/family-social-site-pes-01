@@ -11,3 +11,7 @@
 .social2__reactions{
   margin: 3px 0;
 }
+
+.social2__emoji_dropdown{
+  left:-100px;
+}
