@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState, useEffect, useRef} from 'react'
 import './MessageRightSide.css'
 import {UserCard, MessageDisplay,Icons} from '../../../components'
 import {useSelector , useDispatch} from 'react-redux'
@@ -12,7 +12,7 @@ import {faTrash } from '@fortawesome/free-solid-svg-icons';
 import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
 import {imageShow, videoShow} from '../../../utils/mediaShow'
 import {imageUpload} from '../../../utils/imageUpload'
-import {addMessage,getMessages} from '../../../redux/actions/messageAction'
+import {addMessage,getMessages,loadMoreMessages} from '../../../redux/actions/messageAction'
 
 
 const MessageRightSide = () => {
@@ -26,11 +26,36 @@ const MessageRightSide = () => {
   const [loadMedia, setloadMedia] = useState(false)
 
 
+  const refDisplay = useRef()
+  const pageEnd = useRef()
+  const [page, setPage] = useState(0)
+
+  const [data, setData] = useState([])
+  const [result, setResult] = useState(9)
+  const [isLoadMore, setIsLoadMore] = useState(0)
+
   useEffect(()=>{
+    // const newData = message.data.filter(item => item.sender === auth.user._id || item.sender === id)
+    // setData(newData)
+    const newData = message.data.find( item => item._id === id)
+    if(newData){
+      setData(newData.messages)
+      setResult(newData.result)
+      setPage(newData.page)
+    }
+
+  },[message.data,id])
+
+  useEffect(()=>{
+    if(id && message.users.length > 0){
+      setTimeout(()=>{
+        refDisplay.current.scrollIntoView({behavior:'smooth', block:'end'})
+      },50)
     const newUser = message.users.find(user => user._id === id)
     if(newUser){
       setUser(newUser)
     }
+  }
   },[message.users,id])
 
   const handleChangeMedia = (e) =>{
@@ -81,18 +106,60 @@ const MessageRightSide = () => {
 
     setloadMedia(false)
     dispatch(addMessage({msg,auth,socket}))
-
+    if(refDisplay.current){
+      refDisplay.current.scrollIntoView({behavior: 'smooth', block:'end'})
+    }
   }
 
   useEffect(()=>{
     if(id){
       const getMessagesData = async () => {
+        if(message.data.every(item => item._id !== id)){
+
+
         await dispatch(getMessages({auth, id}))
+
+        setTimeout(()=>{
+          refDisplay.current.scrollIntoView({behavior:'smooth', block:'end'})
+        },50)
+      }
       }
 
       getMessagesData()
     }
-  },[id, dispatch,auth])
+  },[id, dispatch,auth,message.data])
+
+  //load more
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries =>{
+      if(entries[0].isIntersecting){
+        setIsLoadMore(p => p + 1)
+      }
+    },{
+      threshold: 0.1
+    })
+    observer.observe(pageEnd.current)
+  },[setIsLoadMore])
+
+  useEffect(() => {
+    if(isLoadMore > 1){
+      if(result >= page * 9 ){
+        dispatch(loadMoreMessages({auth, id, page:page + 1}))
+        setIsLoadMore(1)
+      }
+    }
+
+  },[isLoadMore])
+
+
+
+  // useEffect(() => {
+  //   if(refDisplay.current){
+  //     refDisplay.current.scrollIntoView({behavior: 'smooth', block:'end'})
+  //   }
+  // },[text])
+
   return (
     <>
     <div className="social2__righside_message_header">
@@ -105,10 +172,10 @@ const MessageRightSide = () => {
 
     </div>
     <div className="socials2__rightside_chat_container" style={{height: media.length > 0 ? 'calc(100% - 180px)' : '' }}>
-      <div className="social2__chat_display">
-
+      <div className="social2__chat_display" ref={refDisplay}>
+        <button className="social2__message_load_more_btn" ref={pageEnd}>Load more </button>
           {
-            message.data.map((msg, index)=>(
+            data.map((msg, index)=>(
               <div key={index}>
                   {
                     msg.sender !== auth.user._id &&
@@ -120,7 +187,7 @@ const MessageRightSide = () => {
                   {
                     msg.sender === auth.user._id &&
                     <div className="social2__chat_row social2__you_message">
-                        <MessageDisplay user={auth.user} msg={msg} />
+                        <MessageDisplay user={auth.user} msg={msg}  />
                     </div>
 
                   }
