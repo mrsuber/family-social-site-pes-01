@@ -18,8 +18,13 @@ const PostThumb = ({posts,result}) => {
         posts.map(post=>(
           <Link key={post._id} to={`/post/${post._id}`} className="social2__link_thumb">
             <div className="social2__post_thumb_display">
-              <img src={post.images[0].url} alt={post.images[0].url} />
-              {/*<img src={testImage} alt="testImage" />*/}
+            {
+              post.images[0].url.match(/video/i)
+              ?<video controls src={post.images[0].url} className="d-block w-100 h-100" alt={post.images[0].url}/>
+              :<img src={post.images[0].url} className="d-block w-100" alt={post.images[0].url}/>
+            }
+              {/*<img src={post.images[0].url} alt={post.images[0].url} />
+              <img src={testImage} alt="testImage" />*/}
               <div className="social2__post_thumb_menu">
               <span><FavoriteBorder />{post.likes.length}</span>
               <span><ChatBubbleOutline/>{post.comments.length}</span>

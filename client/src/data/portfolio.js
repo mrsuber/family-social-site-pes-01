@@ -14,6 +14,7 @@ import pf20 from '../images/porfolioImages/portfolio/thumb/project-20.png'
 import pf21 from '../images/porfolioImages/portfolio/thumb/project-21.png'
 import pf22 from '../images/porfolioImages/portfolio/thumb/project-22.png'
 import pf23 from '../images/porfolioImages/portfolio/thumb/project-23.png'
+import pf24 from '../images/porfolioImages/portfolio/thumb/project-24.png'
 
 //large
 import lg91 from "../images/porfolioImages/portfolio/large/project-9/1.png"
@@ -85,10 +86,39 @@ import lg233 from "../images/porfolioImages/portfolio/large/project-23/3.png"
 import lg234 from "../images/porfolioImages/portfolio/large/project-23/4.png"
 
 
+import lg241 from "../images/porfolioImages/portfolio/large/project-24/1.png"
+import lg242 from "../images/porfolioImages/portfolio/large/project-24/2.png"
+import lg243 from "../images/porfolioImages/portfolio/large/project-24/3.png"
+import lg244 from "../images/porfolioImages/portfolio/large/project-24/4.png"
+import lg245 from "../images/porfolioImages/portfolio/large/project-24/5.png"
+import lg246 from "../images/porfolioImages/portfolio/large/project-24/6.png"
+import lg247 from "../images/porfolioImages/portfolio/large/project-24/7.png"
+import lg248 from "../images/porfolioImages/portfolio/large/project-24/8.png"
+
+import lg249 from "../images/porfolioImages/portfolio/large/project-24/9.png"
+import lg2410 from "../images/porfolioImages/portfolio/large/project-24/10.png"
+import lg2411 from "../images/porfolioImages/portfolio/large/project-24/11.png"
+import lg2412 from "../images/porfolioImages/portfolio/large/project-24/12.png"
+
+
 
 
 
 const portfolio=[
+  {
+    id:7,
+    thumb:pf24,
+    larg:lg241+","+lg242+","+lg243+","+lg244+","+lg245+","+lg246+","+lg247+","+lg248+","+lg249+","+lg2410+","+lg2411+","+lg2412,
+    title:'Geneasocial',
+    category:'web-application',
+    tools:'html, css, javascript, React, Nodejs, MongoDB',
+    client:'personal project',
+    date:"Novermber 08 2021",
+    siteName:"www.geneasocial.com",
+    siteLink:"https://msb-geneasocial.herokuapp.com",
+    gitHubLink:"https://github.com/mrsuber/family-social-site-pes-01",
+    description:"This is a private social media site for family members. you can create a post , edit a post , delete a post, comment on a post, reply a comment on a post, like a post, comment with emojis, delete a comment , update a comment, all on real time and realtime notification, you can chat in the chat section uploading both pictures and video all in real time, you can discover post of family members you do not yet follow, you can follow a family member as well as unfollow, you can share post on other social media sites, you can edit you porfile and much more all in details in the prodject documentation."
+  },
   {
     id:8,
     thumb:pf23,
