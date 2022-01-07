@@ -97,7 +97,21 @@ const messageCtrl = {
       return res.status(500).json({msg:err.message})
       return next(new ErrorResponse(err.message, 500))
     }
+  },
+
+  deleteMessages: async(req,res) =>{
+    try{
+
+      await Messages.findOneAndDelete({_id:req.params.id, sender:req.user._id})
+
+      res.status(200).json({msg:'Delete Success!'})
+
+    }catch(err){
+      return res.status(500).json({msg:err.message})
+      return next(new ErrorResponse(err.message, 500))
+    }
   }
+
 }
 
 module.exports = messageCtrl

@@ -187,7 +187,7 @@ const MessageRightSide = () => {
                   {
                     msg.sender === auth.user._id &&
                     <div className="social2__chat_row social2__you_message">
-                        <MessageDisplay user={auth.user} msg={msg}  />
+                        <MessageDisplay user={auth.user} msg={msg}  data={data}/>
                     </div>
 
                   }

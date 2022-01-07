@@ -1,12 +1,13 @@
-import {GLOBALTYPES} from '../actions/globlaTypes'
-import {postDataAPI,getDataAPI} from '../../utils/fetchData'
+import {GLOBALTYPES, DeletData} from '../actions/globlaTypes'
+import {postDataAPI,getDataAPI,deleteDataAPI} from '../../utils/fetchData'
 
 export const MESS_TYPES = {
   ADD_USER:'ADD_USER',
   ADD_MESSAGE:'ADD_MESSAGE',
   GET_CONVERSATIONS:'GET_CONVERSATIONS',
   GET_MESSAGES:'GET_MESSAGES',
-  UPDATE_MESSAGES: 'UPDATE_MESSAGES'
+  UPDATE_MESSAGES: 'UPDATE_MESSAGES',
+  DELETE_MESSAGES: 'DELETE_MESSAGES'
 }
 
 export const addUser = ({user,message}) => async(dispatch) =>{
@@ -77,6 +78,18 @@ export const loadMoreMessages = ({auth, id, page}) => async (dispatch) => {
 
 
     dispatch({type: MESS_TYPES.UPDATE_MESSAGES, payload: {...newData, _id: id, page}})
+  }catch(err){
+    dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
+  }
+}
+
+export const deleteMessages = ({msg, data, auth}) => async (dispatch) =>{
+  const newData = DeletData(data,msg._id)
+
+  dispatch({type: MESS_TYPES.DELETE_MESSAGES, payload:{newData, _id: msg.recipient}})
+  try{
+    const res = await deleteDataAPI(`message/${msg._id}`, auth.token)
+
   }catch(err){
     dispatch({type:GLOBALTYPES.ALERT, payload:{error:err.response.data.msg}})
   }

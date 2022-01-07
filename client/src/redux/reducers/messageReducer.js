@@ -53,10 +53,23 @@ const messageReducer = (state= initialState, action) =>{
     }
 
   case MESS_TYPES.UPDATE_MESSAGES:
-  
+
     return {
       ...state,
       data:EditData( state.data, action.payload._id, action.payload)
+
+
+    }
+
+  case MESS_TYPES.DELETE_MESSAGES:
+
+    return {
+      ...state,
+      data: state.data.map(item =>
+         item._id === action.payload._id
+         ? {...item, messages:action.payload.newData}
+         :item
+       )
 
 
     }
