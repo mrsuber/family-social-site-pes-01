@@ -46,3 +46,13 @@ flex:  0 0 66.666667%;
   width: 5rem;
   height: 5rem;
 }
+
+@media(max-width: 765px){
+  .social2__message__container{
+
+    width: 100vw;}
+
+    .social2__navbar {
+      width: 100vw;
+    }
+}

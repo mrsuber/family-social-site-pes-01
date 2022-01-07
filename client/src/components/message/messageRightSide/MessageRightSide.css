@@ -138,3 +138,8 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.social2__message_load_more_btn{
+  margin-top: -25px;
+  opacity: 0;
+}

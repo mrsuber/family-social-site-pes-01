@@ -53,3 +53,8 @@ cursor: pointer;
 
   overflow-y: auto;
 }
+
+
+.social2__left_message_load_more_btn{
+  opacity: 0;
+}

@@ -11,3 +11,23 @@ margin-bottom: 5px;
 .social2__chat_title{
   margin-bottom: 8px;
 }
+
+
+.social2__you_content{
+position: relative;
+
+}
+
+.social2__you_content svg{
+  position: absolute;
+  top:50%;
+  left: -15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0;
+}
+
+.social2__you_content:hover svg{
+  opacity: 1;
+}
