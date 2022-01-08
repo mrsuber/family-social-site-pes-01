@@ -64,7 +64,7 @@ exports.login= async (req,res,next)=>{
 
   try{
 
-    const user = await User.findOne({email}).select('+password').populate("followers following")
+    const user = await User.findOne({email}).select('+password').populate("followers following", "profilePic username fullname followers following")
     if(!user){
       res.status(400).json({msg:"Invalid login credentialls"})
       return next(new ErrorResponse("Invalid credentials",400))
@@ -177,7 +177,7 @@ exports.generateAccessToken= async (req,res)=>{
          return next(new ErrorResponse("please login now",400))
        }
 
-       const user = await User.findById(result.id).select("-password").populate("followers following")
+       const user = await User.findById(result.id).select("-password").populate("followers following", "profilePic username fullname followers following")
 
        if (!user){
          res.status(400).json({msg:"This user does not exist"})
