@@ -1,5 +1,5 @@
 import {MESS_TYPES} from '../actions/messageAction'
-import {EditData} from '../actions/globlaTypes'
+import {EditData,DeletData} from '../actions/globlaTypes'
 
 const initialState = {
   users:[],
@@ -11,10 +11,13 @@ const initialState = {
 const messageReducer = (state= initialState, action) =>{
   switch (action.type){
     case MESS_TYPES.ADD_USER:
+    if(state.users.every(item => item._id !== action.payload._id)){
       return {
         ...state,
         users: [action.payload, ...state.users]
       }
+    }
+    return state
 
     case MESS_TYPES.ADD_MESSAGE:
       return {
@@ -73,6 +76,14 @@ const messageReducer = (state= initialState, action) =>{
 
 
     }
+
+    case MESS_TYPES.DELETE_CONVERSATION:
+
+      return {
+        ...state,
+        users: DeletData(state.users, action.payload ),
+        data: DeletData(state.data, action.payload )
+      }
     default:
       return state
   }

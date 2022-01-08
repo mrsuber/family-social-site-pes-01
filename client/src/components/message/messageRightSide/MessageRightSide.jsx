@@ -2,7 +2,7 @@ import React,{useState, useEffect, useRef} from 'react'
 import './MessageRightSide.css'
 import {UserCard, MessageDisplay,Icons} from '../../../components'
 import {useSelector , useDispatch} from 'react-redux'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory } from 'react-router-dom'
 import {NearMe} from '@material-ui/icons'
 import {Image} from '@material-ui/icons'
 import {CircularProgress} from "@material-ui/core"
@@ -12,7 +12,7 @@ import {faTrash } from '@fortawesome/free-solid-svg-icons';
 import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
 import {imageShow, videoShow} from '../../../utils/mediaShow'
 import {imageUpload} from '../../../utils/imageUpload'
-import {addMessage,getMessages,loadMoreMessages} from '../../../redux/actions/messageAction'
+import {addMessage,getMessages,loadMoreMessages,deleteConversation} from '../../../redux/actions/messageAction'
 
 
 const MessageRightSide = () => {
@@ -34,6 +34,7 @@ const MessageRightSide = () => {
   const [result, setResult] = useState(9)
   const [isLoadMore, setIsLoadMore] = useState(0)
 
+  const history = useHistory()
   useEffect(()=>{
     // const newData = message.data.filter(item => item.sender === auth.user._id || item.sender === id)
     // setData(newData)
@@ -160,13 +161,18 @@ const MessageRightSide = () => {
   //   }
   // },[text])
 
+  const handleDeleteConversation = () => {
+   dispatch(deleteConversation({auth, id}))
+   return history.push('/message')
+  }
+
   return (
     <>
     <div className="social2__righside_message_header">
       {
         user.length !== 0 &&
          <UserCard user={user}>
-            <FontAwesomeIcon icon={faTrash} className="social2__rightside_message_trash_icon"/>
+            <FontAwesomeIcon icon={faTrash} className="social2__rightside_message_trash_icon" onClick={handleDeleteConversation}/>
         </UserCard>
       }
 

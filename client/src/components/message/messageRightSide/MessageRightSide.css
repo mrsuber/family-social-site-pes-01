@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   background: #f8f8f8;
-
+  cursor: pointer;
 }
 
 .social2__rightside_message_trash_icon{

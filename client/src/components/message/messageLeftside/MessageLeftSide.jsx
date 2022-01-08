@@ -5,7 +5,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
 import {getDataAPI} from '../../../utils/fetchData'
 import {useHistory, useParams} from 'react-router-dom'
-import {addUser,getConversations} from '../../../redux/actions/messageAction'
+import {getConversations,MESS_TYPES} from '../../../redux/actions/messageAction'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -45,7 +45,11 @@ const MessageLeftSide = () => {
 
     setSearch('')
     setSearchUser([])
-    dispatch(addUser({user,message}))
+
+    dispatch({type:MESS_TYPES.ADD_USER, payload:{...user, text:'', media:[]}})
+
+
+    // dispatch(addUser({user,message}))
     return history.push(`/message/${user._id}`)
 
   }

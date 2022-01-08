@@ -98,6 +98,16 @@ socket.on('addMessage', msg =>{
 })
 
 
+// chec user online / offline
+
+  socket.on('checkUserOnline', user => {
+    console.log(user)
+  })
+
+
+
+
+
 }
 
 

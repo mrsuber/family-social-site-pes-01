@@ -118,11 +118,19 @@ const SocketClient = () => {
 useEffect(()=>{
   socket.on('addMessageToClient', msg =>{
     dispatch({type:MESS_TYPES.ADD_MESSAGE, payload:msg})
+    dispatch({type:MESS_TYPES.ADD_USER, payload:{...msg.user, text:msg.text, media:msg.media}})
+
 
   })
 
   return () => socket.off('addMessageToClient')
 },[socket,dispatch])
+
+// chec user online / offline
+useEffect(() => {
+  socket.emit('checkUserOnline', auth.user)
+},[socket, auth.user])
+
 
 
 

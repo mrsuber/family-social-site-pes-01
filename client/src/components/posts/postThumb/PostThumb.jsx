@@ -20,8 +20,8 @@ const PostThumb = ({posts,result}) => {
             <div className="social2__post_thumb_display">
             {
               post.images[0].url.match(/video/i)
-              ?<video controls src={post.images[0].url} className="d-block w-100 h-100" alt={post.images[0].url}/>
-              :<img src={post.images[0].url} className="d-block w-100" alt={post.images[0].url}/>
+              ?<video controls src={post.images[0].url}  alt={post.images[0].url}/>
+              :<img src={post.images[0].url}  alt={post.images[0].url}/>
             }
               {/*<img src={post.images[0].url} alt={post.images[0].url} />
               <img src={testImage} alt="testImage" />*/}
