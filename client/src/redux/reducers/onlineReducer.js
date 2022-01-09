@@ -1,8 +1,7 @@
 import {GLOBALTYPES} from '../actions/globlaTypes'
-const initialState = false
 
 
-const onlineReducer = (state = initialState, action) =>{
+const onlineReducer = (state = [], action) =>{
   switch (action.type){
     case GLOBALTYPES.ONLINE:
       return [...state, action.payload];
