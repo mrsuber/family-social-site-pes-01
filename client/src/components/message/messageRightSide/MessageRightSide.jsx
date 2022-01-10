@@ -8,7 +8,7 @@ import {Image} from '@material-ui/icons'
 import {CircularProgress} from "@material-ui/core"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faTrash } from '@fortawesome/free-solid-svg-icons';
+import {faTrash, faPhoneAlt, faVideo } from '@fortawesome/free-solid-svg-icons';
 import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
 import {imageShow, videoShow} from '../../../utils/mediaShow'
 import {imageUpload} from '../../../utils/imageUpload'
@@ -162,17 +162,46 @@ const MessageRightSide = () => {
   // },[text])
 
   const handleDeleteConversation = () => {
-   dispatch(deleteConversation({auth, id}))
-   return history.push('/message')
+    if(window.confirm('Do you want to delete?')){
+      dispatch(deleteConversation({auth, id}))
+      return history.push('/message')
+    }
+
   }
 
+  const caller = ({video})=>{
+    const {_id, profilePic, username, fullname} = user
+
+    const msg = {
+      sender: auth.user._id,
+      recipient: _id,
+      profilePic, username, fullname, video
+    }
+
+    dispatch({type:GLOBALTYPES.CALL, payload:msg})
+  }
+
+  const handleAudioCall =()=>{
+    caller({video: false})
+  }
+
+  const handleVideoCall = () =>{
+    caller({video: true})
+  }
   return (
     <>
     <div className="social2__righside_message_header">
       {
         user.length !== 0 &&
          <UserCard user={user}>
+            <div>
+            <FontAwesomeIcon icon={faPhoneAlt} className="social2__rightside_message_audio_phone_icon" onClick={handleAudioCall}/>
+
+            <FontAwesomeIcon icon={faVideo} className="social2__rightside_message_video_icon" onClick={handleVideoCall}/>
+
             <FontAwesomeIcon icon={faTrash} className="social2__rightside_message_trash_icon" onClick={handleDeleteConversation}/>
+
+            </div>
         </UserCard>
       }
 

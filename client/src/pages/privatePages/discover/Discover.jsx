@@ -5,7 +5,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {getDiscoverposts, DISCOVER_TYPES} from '../../../redux/actions/discoverAction'
 import {CircularProgress} from "@material-ui/core"
 import {getDataAPI} from '../../../utils/fetchData'
-
+import {getNotifies} from '../../../redux/actions/notifyAction'
 
 const Discover = () => {
   const {auth,discover} = useSelector(state => state)
@@ -17,6 +17,7 @@ const Discover = () => {
   useEffect(()=>{
     if(!discover.firstLoad){
       dispatch(getDiscoverposts(auth.token))
+      dispatch(getNotifies(auth.token))
     }
 
   },[dispatch,auth.token,discover.firstLoad])
@@ -24,7 +25,7 @@ const Discover = () => {
   const handleloadMore = async()=>{
     setLoad(true)
     const res = await getDataAPI(`post_discover?num=${discover.page * 9}`,auth.token)
-  
+
     dispatch({type: DISCOVER_TYPES.UPDATE_POST, payload:res.data})
     setLoad(false)
   }

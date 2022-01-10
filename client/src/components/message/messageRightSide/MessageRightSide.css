@@ -143,3 +143,13 @@
   margin-top: -25px;
   opacity: 0;
 }
+
+.social2__rightside_message_video_icon{
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  /* cursor: pointer; */
+}
+
+.social2__rightside_message_audio_phone_icon{
+  /* cursor: pointer; */
+}

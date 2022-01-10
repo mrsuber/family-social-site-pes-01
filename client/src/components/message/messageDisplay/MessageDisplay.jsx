@@ -13,9 +13,12 @@ const MessageDisplay = ({user,msg,data}) => {
   const dispatch = useDispatch()
 
   const handleDeleteMessage = () =>{
-    if(data){
-        dispatch(deleteMessages({msg, data, auth}))
+    if(!data)return
+    
+    if(window.confirm('Do you want to delete?')){
+      dispatch(deleteMessages({msg, data, auth}))
     }
+
 
   }
   return (
