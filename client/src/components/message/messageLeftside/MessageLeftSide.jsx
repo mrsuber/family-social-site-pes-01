@@ -14,7 +14,7 @@ import {faCircle } from '@fortawesome/free-solid-svg-icons';
 const MessageLeftSide = () => {
   const [search, setSearch] = useState('')
   const [searchUsers, setSearchUser] = useState([])
-  const {auth,message} = useSelector(state=>state)
+  const {auth,message,online} = useSelector(state=>state)
   const dispatch = useDispatch()
   const history = useHistory()
   const {id} = useParams()
@@ -47,7 +47,7 @@ const MessageLeftSide = () => {
     setSearchUser([])
 
     dispatch({type:MESS_TYPES.ADD_USER, payload:{...user, text:'', media:[]}})
-
+    dispatch({type: MESS_TYPES.CHECK_ONLINE_OFFLINE, payload: online})
 
     // dispatch(addUser({user,message}))
     return history.push(`/message/${user._id}`)
@@ -87,6 +87,13 @@ const MessageLeftSide = () => {
   },[message.resultUsers, page, auth, dispatch])
 
 
+  //check user online - offline
+  useEffect(()=>{
+    if(message.firstLoad){
+      dispatch({type: MESS_TYPES.CHECK_ONLINE_OFFLINE, payload: online})
+    }
+  },[online, dispatch,message.firstLoad])
+
   return (
     <>
       <form className="social2__message_header" onSubmit={handleSearch}>
@@ -112,7 +119,12 @@ const MessageLeftSide = () => {
               message.users.map(user => (
                 <div key={user._id} className={`social2__message_user ${isActive(user)}`} onClick={()=>handleAddUser(user)}>
                     <UserCard user={user}  msg={true}>
-                    <FontAwesomeIcon icon={faCircle} className="social2__online_dot"/>
+                    {
+                      user.online
+                      ?<FontAwesomeIcon icon={faCircle} className="social2__online_dot active"/>
+                      : auth.user.following.find(item => item._id === user._id) && <FontAwesomeIcon icon={faCircle} className="social2__online_dot"/>
+                    }
+
                     </UserCard>
                 </div>
               ))
