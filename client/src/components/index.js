@@ -41,6 +41,7 @@ export {default as MessageLeftSide} from './message/messageLeftside/MessageLeftS
 export {default as MessageRightSide} from './message/messageRightSide/MessageRightSide'
 export {default as MessageDisplay} from './message/messageDisplay/MessageDisplay'
 export {default as Icons} from './icons/Icons'
+export {default as CallModal} from './call/CallModal'
 //porfolio components exports starts
 export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
 export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'

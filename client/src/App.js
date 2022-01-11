@@ -4,7 +4,7 @@ import PrivateRoute from './routing/privateRoute/PrivateRoute'
 // Pages
 import {PostDetails,RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,IndexPage,HomePage,LoginScreen2,Message,Discover,Notify,Profile,PorfolioHome,MessageDetails} from './pages'
 //component
-import {Alert} from './components'
+import {Alert,CallModal} from './components'
 import {useSelector,useDispatch} from 'react-redux'
 import {useEffect} from 'react'
 import {refreshToken} from './redux/actions/authAction'
@@ -15,7 +15,7 @@ import SocketClient from './SocketClient'
 
 const App=()=> {
 
-  const {auth,modal,status} = useSelector(state => state)
+  const {auth,modal,status,call} = useSelector(state => state)
   const dispatch = useDispatch()
 
   useEffect(()=>{
@@ -30,6 +30,7 @@ const App=()=> {
       <div className={`App ${(status || modal) && 'social2__mode'}`} style={{backgroundImage:`url(${bg})`,backgroundAttachment:'fixed',backgroundPosition:'center',minHeight:'100vh'}}>
       <Alert />
             {auth.token && <SocketClient />}
+            {call && <CallModal/>}
         <Switch>
             <Route exact path="/porfolio/home" component={PorfolioHome} />
             <Route exact path="/login" component={LoginScreen2} />
