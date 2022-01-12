@@ -16,7 +16,7 @@ import {addMessage,getMessages,loadMoreMessages,deleteConversation} from '../../
 
 
 const MessageRightSide = () => {
-  const {auth, message, socket} = useSelector(state => state)
+  const {auth, message, socket, peer} = useSelector(state => state)
   const dispatch = useDispatch()
 
   const {id} = useParams()
@@ -169,6 +169,8 @@ const MessageRightSide = () => {
 
   }
 
+
+//call
   const caller = ({video})=>{
     const {_id, profilePic, username, fullname} = user
 
@@ -181,12 +183,29 @@ const MessageRightSide = () => {
     dispatch({type:GLOBALTYPES.CALL, payload:msg})
   }
 
+  const callUser = ({video})=>{
+    const {_id, profilePic, username, fullname} = auth.user
+
+    const msg = {
+      sender: _id,
+      recipient: user._id,
+      profilePic, username, fullname, video
+    }
+
+    if(peer._open) msg.peerId = peer._id
+
+    socket.emit('callUser', msg)
+  }
+
+
   const handleAudioCall =()=>{
     caller({video: false})
+    callUser({video:false})
   }
 
   const handleVideoCall = () =>{
     caller({video: true})
+    callUser({video:true})
   }
   return (
     <>

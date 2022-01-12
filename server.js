@@ -4,7 +4,8 @@ const connectDB = require('./config/db')
 const errorHandler = require('./middleware/error')
 const path = require('path')
 const cookieParser = require('cookie-parser')
-
+//for calls
+const {PeerServer} = require('peer')
 
 
 //connectDB
@@ -34,6 +35,12 @@ io.on('connection', socket =>{
   SocketServer(socket)
 })
 // end file upload
+
+//create peer Server
+PeerServer({port: 3001, path:'/'})
+
+
+
 app.use('/api',require('./routes/auth'))
 app.use('/api',require('./routes/private'))
 app.use('/api',require('./routes/userRouter'))
@@ -41,6 +48,10 @@ app.use('/api',require('./routes/postRouter'))
 app.use('/api',require('./routes/commentRouter'))
 app.use('/api',require('./routes/notifyRouter'))
 app.use('/api',require('./routes/messageRouter'))
+
+
+
+
 if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join(__dirname,'/client/build')))
   app.get('*',(req,res)=>{

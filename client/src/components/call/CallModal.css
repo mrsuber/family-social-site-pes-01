@@ -1,0 +1,65 @@
+.social2__end_call_icon{
+  color:red;
+}
+.social2__end_call2_icon{
+  color:#28a745;
+}
+
+.social2__call_modal{
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 29;
+  background: #0008;
+  width:100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.social2__call_box{
+  width: 100%;
+  max-width: 400px;
+  background: darkblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  padding: 50px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px darkblue;
+}
+.social2__call_box_inner{
+  text-align: center;
+  padding: 40px 0;
+}
+
+.social2__call_menu{
+  min-width: 280px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.social2__call_menu span{
+
+  background: #eee;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.social2__call_menu span svg{
+  font-size: 2rem;
+}
+
+.social2__call_box h4, .social2__call_box h6{
+  margin-top: 5px;
+
+}
+
+.social2__call_modal .social2__timer{
+  transform: translateY(-15px);
+}
