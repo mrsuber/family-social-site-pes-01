@@ -6,7 +6,7 @@ import {CallEnd,Videocam,Call} from '@material-ui/icons'
 import {GLOBALTYPES} from '../../redux/actions/globlaTypes'
 
 const CallModal = () => {
-  const {call} = useSelector(state => state)
+  const {call,auth,peer,socket} = useSelector(state => state)
   const dispatch = useDispatch()
 
 
@@ -35,18 +35,29 @@ const CallModal = () => {
 //end call
   const handleEndCall = ()=>{
     dispatch({type:GLOBALTYPES.CALL, payload:null})
+    socket.emit('endCall', call)
   }
 
   useEffect(()=>{
     if(answer){
       setTotal(0)
-    }
-    const timer = setTimeout(()=>{
-      dispatch({type:GLOBALTYPES.CALL, payload:null})
-    },15000)
+    }else{
+      const timer = setTimeout(()=>{
+        dispatch({type:GLOBALTYPES.CALL, payload:null})
+      },15000)
 
-    return () => clearTimeout(timer)
-  },[dispatch])
+      return () => clearTimeout(timer)
+    }
+
+  },[dispatch,answer])
+
+  useEffect(()=>{
+    socket.on('endCallToClient', data =>{
+      console.log("endcall data",data)
+      dispatch({ type:GLOBALTYPES.CALL, payload:null})
+    })
+    return () => socket.off('endCallToClient')
+  },[socket,dispatch])
 
   const handleAnswer = ()=>{
       setAnswer(true)
@@ -60,13 +71,22 @@ const CallModal = () => {
           <Avatar src={call.profilePic} size="social2__super-profileImage" />
           <h4>{call.username}</h4>
           <h6>{call.fullname}</h6>
-          <div>
-            {
-              call.video
-              ? <span>calling video...</span>
-              :<span>calling audio...</span>
-            }
-          </div>
+          {
+            answer
+            ?<div>
+                <span>{mins.toString().length < 2 ? '0' + mins : mins}</span>
+                <span>:</span>
+                <span>{second.toString().length < 2 ? '0' + second : second}</span>
+            </div>
+            :<div>
+              {
+                call.video
+                ? <span>calling video...</span>
+                :<span>calling audio...</span>
+              }
+            </div>
+          }
+
         </div>
 
         <div className="social2__timer">
@@ -79,14 +99,16 @@ const CallModal = () => {
         <span onClick={handleEndCall}>
             <CallEnd className="social2__end_call_icon" />
         </span>
+          {
+            (call.recipient === auth.user._id && !answer) &&   <>
+                {
+                  call.video
+                  ?<span onClick={handleAnswer}><Videocam className="social2__end_call2_icon" /></span>
+                  :<span onClick={handleAnswer}><Call className="social2__end_call2_icon "/></span>
+                }
+              </>
+          }
 
-          <>
-            {
-              call.video
-              ?<span onClick={handleAnswer}><Videocam className="social2__end_call2_icon" /></span>
-              :<span onClick={handleAnswer}><Call className="social2__end_call2_icon "/></span>
-            }
-          </>
         </div>
     </div>
 

@@ -12,6 +12,9 @@ import bg from './images/boxed-bg.jpg'
 import io from 'socket.io-client'
 import {GLOBALTYPES} from './redux/actions/globlaTypes'
 import SocketClient from './SocketClient'
+import Peer from 'peerjs'
+
+
 
 const App=()=> {
 
@@ -23,6 +26,14 @@ const App=()=> {
     const socket = io()
     dispatch({type:GLOBALTYPES.SOCKET, payload:socket})
     return () => socket.close()
+  },[dispatch])
+
+  useEffect(()=>{
+    const newPeer = new Peer(undefined, {
+      host: '/', port: '3001'
+
+    })
+    dispatch({type:GLOBALTYPES.PEER, payload:newPeer})
   },[dispatch])
 
   return (
