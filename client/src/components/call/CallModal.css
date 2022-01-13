@@ -63,3 +63,53 @@
 .social2__call_modal .social2__timer{
   transform: translateY(-15px);
 }
+
+.social2__call_modal .social2__show_video{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.social2__call_modal .social2__other_video{
+  width: 100%;
+  height: 100%;
+
+}
+
+.social2__call_modal .social2__you_video{
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid crimson;
+  z-index: 10;
+}
+
+
+
+.social2__call_modal .social__end_call2{
+  position: absolute;
+  bottom: 30px;
+  left:50%;
+  transform: translateX(-50%);
+  pointer-events: initial;
+  font-size: 2rem;
+  background: #eee;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+.social2__call_modal .social2__time_video{
+  position: absolute;
+  bottom:100px;
+  left: 50%;
+  transform: translateX(-50%);
+  color:white;
+}
