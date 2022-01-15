@@ -97,13 +97,16 @@
   left:50%;
   transform: translateX(-50%);
   pointer-events: initial;
-  font-size: 2rem;
+
   background: #eee;
   padding: 15px;
   border-radius: 50%;
   cursor: pointer;
 }
 
+.social2__call_modal .social__end_call2 svg{
+  font-size: 2rem;
+}
 
 
 .social2__call_modal .social2__time_video{
