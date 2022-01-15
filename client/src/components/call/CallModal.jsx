@@ -39,8 +39,10 @@ const CallModal = () => {
 
 //end call
   const handleEndCall = ()=>{
-    dispatch({type:GLOBALTYPES.CALL, payload:null})
+    tracks && tracks.forEach(track => track.stop())
+
     socket.emit('endCall', call)
+    dispatch({type:GLOBALTYPES.CALL, payload:null})
   }
 
   useEffect(()=>{
@@ -48,21 +50,26 @@ const CallModal = () => {
       setTotal(0)
     }else{
       const timer = setTimeout(()=>{
+        // tracks && tracks.forEach(track => track.stop())
+
+        socket.emit('endCall', call)
         dispatch({type:GLOBALTYPES.CALL, payload:null})
       },15000)
 
       return () => clearTimeout(timer)
     }
 
-  },[dispatch,answer])
+  },[dispatch,answer,call,socket])
 
   useEffect(()=>{
     socket.on('endCallToClient', data =>{
       console.log("endcall data",data)
+      tracks && tracks.forEach(track => track.stop())
+
       dispatch({ type:GLOBALTYPES.CALL, payload:null})
     })
     return () => socket.off('endCallToClient')
-  },[socket,dispatch])
+  },[socket,dispatch,tracks])
 
 //stream Media
 const openStream = (video) => {
@@ -118,9 +125,9 @@ const playStream = (tag, stream) =>{
   },[peer, call.video])
 
   return (
-    <div className="social2__call_modal">
+    <div className="social2__call_modal" >
 
-    <div className="social2__call_box">
+    <div className="social2__call_box" style={{ display: (answer && call.video) ? 'none' : 'flex' }}>
         <div className="social2__call_box_inner">
           <Avatar src={call.profilePic} size="social2__super-profileImage" />
           <h4>{call.username}</h4>
@@ -172,27 +179,27 @@ const playStream = (tag, stream) =>{
 
         </div>
 
-        <div className="social2__show_video" style={{
-          opacity: (answer && call.video) ? '1' : '0'
-        }}>
-          <video ref={youVideo} className="social2__you_video"/>
-          <video ref={otherVideo} className="social2__other_video" />
-
-          <div className="social2__time_video">
-              <span>{hours.toString().length < 2 ? '0' + mins : mins}</span>
-              <span>:</span>
-              <span>{mins.toString().length < 2 ? '0' + mins : mins}</span>
-              <span>:</span>
-              <span>{second.toString().length < 2 ? '0' + second : second}</span>
-          </div>
-
-          <span onClick={handleEndCall} className="social__end_call2">
-              <CallEnd className="social2__end_call_icon " />
-          </span>
-
-        </div>
 
       </div>
+
+      <div className="social2__show_video" style={{ opacity: (answer && call.video) ? '1' : '0' }}>
+        <video ref={youVideo} className="social2__you_video"/>
+        <video ref={otherVideo} className="social2__other_video" />
+
+        <div className="social2__time_video">
+            <span>{hours.toString().length < 2 ? '0' + mins : mins}</span>
+            <span>:</span>
+            <span>{mins.toString().length < 2 ? '0' + mins : mins}</span>
+            <span>:</span>
+            <span>{second.toString().length < 2 ? '0' + second : second}</span>
+        </div>
+
+        <span onClick={handleEndCall} className="social__end_call2">
+            <CallEnd className="social2__end_call_icon " />
+        </span>
+
+      </div>
+
 
     </div>
   )
