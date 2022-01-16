@@ -169,7 +169,7 @@ socket.on('addMessage', msg =>{
 
    socket.on('endCall', data =>{
      // console.log({old:users})
-
+     console.log(data)
     const client = users.find(user => user.id === data.sender)
 
     if(client){

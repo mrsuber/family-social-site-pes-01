@@ -45,7 +45,7 @@ const CallModal = () => {
   const handleEndCall = ()=>{
     tracks && tracks.forEach(track => track.stop())
     let times = answer ? total : 0
-    socket.emit('endCall', ...call,times)
+    socket.emit('endCall', {...call,times})
     dispatch({type:GLOBALTYPES.CALL, payload:null})
   }
 
