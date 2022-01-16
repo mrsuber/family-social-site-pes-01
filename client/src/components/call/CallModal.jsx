@@ -1,10 +1,12 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect, useRef,useCallback} from 'react'
 import "./CallModal.css"
 import {useSelector, useDispatch} from 'react-redux'
 import {Avatar} from '../../components'
 import {CallEnd,Videocam,Call} from '@material-ui/icons'
 import {GLOBALTYPES} from '../../redux/actions/globlaTypes'
 import {addMessage} from '../../redux/actions/messageAction'
+import {aud2} from "../../audio"
+
 
 const CallModal = () => {
   const {call,auth,peer,socket} = useSelector(state => state)
@@ -18,6 +20,7 @@ const CallModal = () => {
 
   const [answer, setAnswer] = useState(false)
   const [tracks, setTracks] = useState(null)
+  
 
   const youVideo = useRef()
   const otherVideo = useRef()
@@ -42,11 +45,30 @@ const CallModal = () => {
 
 
 //end call
+
+  const addCallMessage = useCallback((call, times, disconnect)=>{
+    if(call.recipient !== auth.user._id || disconnect){
+      const msg ={
+        sender:call.sender,
+        recipient:call.recipient,
+        text:'',
+        media:[],
+        call: {video: call.video, times},
+        createdAt:new Date().toISOString()
+      }
+      dispatch(addMessage({msg, auth, socket}))
+    }
+
+  },[auth, dispatch,socket])
+
   const handleEndCall = ()=>{
     tracks && tracks.forEach(track => track.stop())
     let times = answer ? total : 0
     socket.emit('endCall', {...call,times})
+
+    addCallMessage(call, times)
     dispatch({type:GLOBALTYPES.CALL, payload:null})
+
   }
 
   useEffect(()=>{
@@ -56,24 +78,25 @@ const CallModal = () => {
       const timer = setTimeout(()=>{
         // tracks && tracks.forEach(track => track.stop())
 
-        socket.emit('endCall', call)
+        socket.emit('endCall', {...call, times:0})
+        addCallMessage(call, 0)
         dispatch({type:GLOBALTYPES.CALL, payload:null})
       },15000)
 
       return () => clearTimeout(timer)
     }
 
-  },[dispatch,answer,call,socket])
+  },[dispatch,answer,call,socket,addCallMessage])
 
   useEffect(()=>{
     socket.on('endCallToClient', data =>{
-      console.log("endcall data",data)
-      tracks && tracks.forEach(track => track.stop())
 
+      tracks && tracks.forEach(track => track.stop())
+      addCallMessage(data, data.times)
       dispatch({ type:GLOBALTYPES.CALL, payload:null})
     })
     return () => socket.off('endCallToClient')
-  },[socket,dispatch,tracks])
+  },[socket,dispatch,tracks,addCallMessage])
 
 //stream Media
 const openStream = (video) => {
@@ -133,12 +156,39 @@ const playStream = (tag, stream) =>{
   useEffect(()=>{
     socket.on('callerDisconnect', () => {
       tracks && tracks.forEach(track => track.stop())
+        let times = answer ? total : 0
+        addCallMessage(call, times, true)
       dispatch({type:GLOBALTYPES.CALL, payload:null})
-      dispatch({type:GLOBALTYPES.ALERT, payload:{error:'The user disconnected'}})
+      dispatch({type:GLOBALTYPES.ALERT, payload:{error:`${call.username} disconnected`}})
     })
 
     return () => socket.off("callerDisconnect")
-  },[socket,tracks,dispatch])
+  },[socket,tracks,dispatch, call,addCallMessage,answer,total])
+
+
+//play pause audio
+  const playAudio = (newAudio) =>{
+    newAudio.play()
+  }
+
+  const pauseAudio = (newAudio) =>{
+    newAudio.pause()
+    newAudio.currentTime = 0
+  }
+
+//   useEffect(()=>{
+//   let newAudio = new Audio(aud2)
+//
+//
+//   if(answer){
+//     pauseAudio(newAudio)
+//   }else{
+//     playAudio(newAudio)
+//   }
+//
+//
+// },[answer])
+
 
   return (
     <div className="social2__call_modal" >

@@ -18,7 +18,7 @@ position: relative;
 
 }
 
-.social2__you_content svg{
+.social2__you_content .social2__trash_icon svg{
   position: absolute;
   top:50%;
   left: -15px;
@@ -28,6 +28,26 @@ position: relative;
   opacity: 0;
 }
 
-.social2__you_content:hover svg{
+.social2__you_content:hover .social2__trash_icon svg{
   opacity: 1;
 }
+
+ .social2__misscall_btn{
+  background: #eee;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+
+}
+
+.social2__misscall_btn svg{
+  /* margin-right: .5rem; */
+  font-size: 2.5rem;
+  font-weight: bold;
+
+
+}
+ .social2__misscall_btn:focus{
+   outline: none;
+ }
