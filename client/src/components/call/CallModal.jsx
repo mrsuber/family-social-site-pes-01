@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {Avatar} from '../../components'
 import {CallEnd,Videocam,Call} from '@material-ui/icons'
 import {GLOBALTYPES} from '../../redux/actions/globlaTypes'
+import {addMessage} from '../../redux/actions/messageAction'
 
 const CallModal = () => {
   const {call,auth,peer,socket} = useSelector(state => state)
@@ -37,11 +38,14 @@ const CallModal = () => {
     setHours(parseInt(total/3600))
   },[total])
 
+
+
+
 //end call
   const handleEndCall = ()=>{
     tracks && tracks.forEach(track => track.stop())
-
-    socket.emit('endCall', call)
+    let times = answer ? total : 0
+    socket.emit('endCall', {...call,times})
     dispatch({type:GLOBALTYPES.CALL, payload:null})
   }
 
@@ -124,6 +128,18 @@ const playStream = (tag, stream) =>{
     return () => peer.removeListener('call')
   },[peer, call.video])
 
+
+  //Disconnect
+  useEffect(()=>{
+    socket.on('callerDisconnect', () => {
+      tracks && tracks.forEach(track => track.stop())
+      dispatch({type:GLOBALTYPES.CALL, payload:null})
+      dispatch({type:GLOBALTYPES.ALERT, payload:{error:'The user disconnected'}})
+    })
+
+    return () => socket.off("callerDisconnect")
+  },[socket,tracks,dispatch])
+
   return (
     <div className="social2__call_modal" >
 
@@ -135,7 +151,7 @@ const playStream = (tag, stream) =>{
           {
             answer
             ?<div>
-                <span>{hours.toString().length < 2 ? '0' + mins : mins}</span>
+                <span>{hours.toString().length < 2 ? '0' + hours : hours}</span>
                 <span>:</span>
                 <span>{mins.toString().length < 2 ? '0' + mins : mins}</span>
                 <span>:</span>
@@ -187,7 +203,7 @@ const playStream = (tag, stream) =>{
         <video ref={otherVideo} className="social2__other_video" />
 
         <div className="social2__time_video">
-            <span>{hours.toString().length < 2 ? '0' + mins : mins}</span>
+            <span>{hours.toString().length < 2 ? '0' + hours : hours}</span>
             <span>:</span>
             <span>{mins.toString().length < 2 ? '0' + mins : mins}</span>
             <span>:</span>

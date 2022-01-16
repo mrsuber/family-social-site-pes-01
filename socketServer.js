@@ -27,6 +27,14 @@ socket.on('disconnect',() =>{
         socket.to(`${client.socketId}`).emit('CheckUserOffline', data.id)
       })
     }
+
+    if(data.call){
+      const callUser = users.find(user => user.id === data.call)
+      if(callUser){
+        users = EditData(users, callUser.id, null)
+        socket.to(`${callUser.socketId}`).emit('callerDisconnect')
+      }
+    }
   }
   users= users.filter(user=>user.socketId !==socket.id)
 
@@ -161,7 +169,7 @@ socket.on('addMessage', msg =>{
 
    socket.on('endCall', data =>{
      // console.log({old:users})
-
+     console.log(data)
     const client = users.find(user => user.id === data.sender)
 
     if(client){
