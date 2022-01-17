@@ -36,3 +36,7 @@
 .social2__bookmark{
   color: var(--blue);
 }
+
+.social2__bookmark_style{
+  margin-top: 10px;
+}

@@ -90,6 +90,9 @@
   background-color: #ddd;
   cursor: pointer;
 }
+.social2__translate_notification{
+transform: translate3d(-114px, 40px, 0px) !important;
+}
 /* #theme:checked ~ .index-body,.social2__homepage-body{
   filter: invert(1);
 
@@ -135,5 +138,9 @@
   .social2__dropdown-content{
     bottom: 100%;
     top:auto;
+  }
+
+  .social2__translate_notification{
+  transform: translate3d(-186px, -379px, 0px) !important;
   }
 }

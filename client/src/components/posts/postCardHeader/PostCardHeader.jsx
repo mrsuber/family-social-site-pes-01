@@ -49,10 +49,13 @@ const PostCardHeader = ({post}) => {
     </div>
 
     </div>
-    <div className="social2__post_card_nav_item  social2__dropdown">
-        <MoreHoriz id="moreLink" data-toggle="social2__post_card_nav_item_dropdown" className="social2__post_card_icon"/>
+    <div className="nav-item dropdown">
+    <span className="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-        <div className="social2__dropdown-content">
+        <MoreHoriz id="moreLink" data-toggle="social2__post_card_nav_item_dropdown" className="social2__post_card_icon"/>
+    </span>
+
+        <div className="dropdown-menu social2__translate_post_dropdown" aria-labelledby="navbarDropdown" >
           {
               auth.user._id === post.user._id &&
               <>

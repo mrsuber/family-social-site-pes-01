@@ -88,8 +88,8 @@ const PostCardFooter = ({post}) => {
         </div>
         {
           saved
-          ?    <Bookmark className="social2__bookmark"  onClick={handleUnSavePost}/>
-          :  <BookmarkBorder onClick={handleSavePost}/>
+          ?    <Bookmark className="social2__bookmark social2__bookmark_style"  onClick={handleUnSavePost}/>
+          :  <BookmarkBorder className="social2__bookmark_style" onClick={handleSavePost}/>
         }
 
     </div>

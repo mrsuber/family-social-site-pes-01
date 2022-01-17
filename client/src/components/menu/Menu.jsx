@@ -43,7 +43,7 @@ const Menu = () => {
 
       </span>
 
-      <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+      <div className="dropdown-menu social2__translate_notification" aria-labelledby="navbarDropdown"   style={{transform:'translate3d(-114px, 40px, 0px)'}}>
           <NotifyModal />
       </div>
     </div>

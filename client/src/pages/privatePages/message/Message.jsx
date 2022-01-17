@@ -11,7 +11,7 @@ const Message = () => {
     <Social2Header/>
     <section className="social2__message_section">
       <div className="social2__message__container">
-          <div className=" social2__message_leftside">
+          <div className=" social2__message_leftside1">
               <MessageLeftSide/>
           </div>
 

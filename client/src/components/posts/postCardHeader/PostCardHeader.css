@@ -36,3 +36,7 @@
   background-color: #ddd;
   cursor: pointer;
 }
+
+.social2__translate_post_dropdown{
+transform: translate3d(-79px, 40px, 0px) !important;
+}

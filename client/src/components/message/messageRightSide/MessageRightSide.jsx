@@ -6,6 +6,7 @@ import {useParams, useHistory } from 'react-router-dom'
 import {NearMe} from '@material-ui/icons'
 import {Image} from '@material-ui/icons'
 import {CircularProgress} from "@material-ui/core"
+import {MoreVert} from '@material-ui/icons'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faTrash, faPhoneAlt, faVideo } from '@fortawesome/free-solid-svg-icons';
@@ -213,7 +214,27 @@ const MessageRightSide = () => {
       {
         user.length !== 0 &&
          <UserCard user={user}>
-            <div>
+         {/*Notify dropdown*/}
+         <div className="nav-item dropdown social2__call_dropdown">
+           <span className="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <span><MoreVert/></span>
+
+           </span>
+
+           <div className="dropdown-menu social2__call_dropdown_items" aria-labelledby="navbarDropdown">
+           <FontAwesomeIcon icon={faPhoneAlt} className="social2__rightside_message_audio_phone_icon" onClick={handleAudioCall}/>
+
+           <FontAwesomeIcon icon={faVideo} className="social2__rightside_message_video_icon" onClick={handleVideoCall}/>
+
+           <FontAwesomeIcon icon={faTrash} className="social2__rightside_message_trash_icon" onClick={handleDeleteConversation}/>
+
+           </div>
+         </div>
+
+         {/*Notify dropdown*/}
+
+         
+            <div className="social2__call_dropdown2">
             <FontAwesomeIcon icon={faPhoneAlt} className="social2__rightside_message_audio_phone_icon" onClick={handleAudioCall}/>
 
             <FontAwesomeIcon icon={faVideo} className="social2__rightside_message_video_icon" onClick={handleVideoCall}/>
