@@ -36,9 +36,12 @@ const CommentMenu = ({post,comment,setOnEdit}) => {
       {
         (post.user._id === auth.user._id || comment.user._id === auth.user._id) &&
 
-        <div className=" social2__comment_dropdown social2__dropdown">
+        <div className=" nav-item dropdown">
+        <span className="nav-link social2__adjust_avatar" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
           <MoreVert id="social2__moreLink" data-toggle="social2__dropdown"/>
-          <div className="social2__comment_dropdown_menu social2__dropdown-content" aria-labelledby="social2__moreLink">
+          </span>
+          <div className="dropdown-menu social2__comment_dropdown_style" aria-labelledby="navbarDropdown">
               {
                 post.user._id === auth.user._id
                 ? comment.user._id === auth.user._id

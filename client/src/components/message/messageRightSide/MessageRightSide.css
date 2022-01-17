@@ -153,3 +153,23 @@
 .social2__rightside_message_audio_phone_icon{
   /* cursor: pointer; */
 }
+
+.social2__call_dropdown{
+  display: none;
+
+}
+
+.social2__call_dropdown_items{
+  transform: translate3d(-95px, 43px, 0px) !important;
+  /* display: flex;
+  align-items: center; */
+}
+
+@media(max-width: 300px){
+  .social2__call_dropdown{
+    display: block;
+  }
+  .social2__call_dropdown2{
+    display: none;
+  }
+}

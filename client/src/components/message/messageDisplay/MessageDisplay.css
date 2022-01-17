@@ -51,3 +51,10 @@ position: relative;
  .social2__misscall_btn:focus{
    outline: none;
  }
+
+
+ @media(max-width: 765px){
+  /* .social2__message_leftside{
+    display: none;
+  } */
+ }

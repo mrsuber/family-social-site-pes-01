@@ -20,7 +20,7 @@ const CallModal = () => {
 
   const [answer, setAnswer] = useState(false)
   const [tracks, setTracks] = useState(null)
-  
+
 
   const youVideo = useRef()
   const otherVideo = useRef()
@@ -249,8 +249,8 @@ const playStream = (tag, stream) =>{
       </div>
 
       <div className="social2__show_video" style={{ opacity: (answer && call.video) ? '1' : '0' }}>
-        <video ref={youVideo} className="social2__you_video"/>
-        <video ref={otherVideo} className="social2__other_video" />
+        <video ref={youVideo} className="social2__you_video" playsInline muted/>
+        <video ref={otherVideo} className="social2__other_video" playsInline/>
 
         <div className="social2__time_video">
             <span>{hours.toString().length < 2 ? '0' + hours : hours}</span>
