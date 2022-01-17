@@ -20,7 +20,7 @@ const Status = ({profile}) => {
       </button>
     </div>
 
-    <div className="social2__status-wrapper">
+    <div className="social2__status-wrapper" style={{display:'none'}}>
 
         <Avatar1 profile={profile} username="mrsuber1"/>
         <Avatar1 profile={profile} username="mrsuber2"/>
