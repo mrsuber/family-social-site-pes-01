@@ -84,6 +84,7 @@
   top:0;
   right: 0;
   width: 300px;
+  max-width: 250px;
   border-radius: 5px;
   border: 1px solid crimson;
   z-index: 10;
@@ -93,7 +94,7 @@
 
 .social2__call_modal .social__end_call2{
   position: absolute;
-  bottom: 30px;
+  bottom: 100px;
   left:50%;
   transform: translateX(-50%);
   pointer-events: initial;
@@ -111,7 +112,7 @@
 
 .social2__call_modal .social2__time_video{
   position: absolute;
-  bottom:100px;
+  bottom:170px;
   left: 50%;
   transform: translateX(-50%);
   color:white;

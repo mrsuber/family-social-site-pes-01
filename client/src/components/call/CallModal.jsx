@@ -21,6 +21,8 @@ const CallModal = () => {
   const [answer, setAnswer] = useState(false)
   const [tracks, setTracks] = useState(null)
 
+  const [newCall, setNewCall] = useState(null)
+
 
   const youVideo = useRef()
   const otherVideo = useRef()
@@ -61,8 +63,11 @@ const CallModal = () => {
 
   },[auth, dispatch,socket])
 
+
+
   const handleEndCall = ()=>{
     tracks && tracks.forEach(track => track.stop())
+    if(newCall) newCall.close()
     let times = answer ? total : 0
     socket.emit('endCall', {...call,times})
 
@@ -92,11 +97,12 @@ const CallModal = () => {
     socket.on('endCallToClient', data =>{
 
       tracks && tracks.forEach(track => track.stop())
+      if(newCall) newCall.close()
       addCallMessage(data, data.times)
       dispatch({ type:GLOBALTYPES.CALL, payload:null})
     })
     return () => socket.off('endCallToClient')
-  },[socket,dispatch,tracks,addCallMessage])
+  },[socket,dispatch,tracks,addCallMessage,newCall])
 
 //stream Media
 const openStream = (video) => {
@@ -109,6 +115,8 @@ const playStream = (tag, stream) =>{
   video.srcObject = stream;
   video.play()
 }
+
+
 //answer call
   const handleAnswer = ()=>{
       openStream(call.video).then(stream => {
@@ -121,6 +129,7 @@ const playStream = (tag, stream) =>{
           playStream(otherVideo.current, remoteStream)
         })
           setAnswer(true)
+          setNewCall(newCall)
       })
 
 
@@ -145,6 +154,7 @@ const playStream = (tag, stream) =>{
 
           })
             setAnswer(true)
+            setNewCall(newCall)
 
       })
     })
@@ -156,6 +166,7 @@ const playStream = (tag, stream) =>{
   useEffect(()=>{
     socket.on('callerDisconnect', () => {
       tracks && tracks.forEach(track => track.stop())
+        if(newCall) newCall.close()
         let times = answer ? total : 0
         addCallMessage(call, times, true)
       dispatch({type:GLOBALTYPES.CALL, payload:null})
@@ -163,7 +174,7 @@ const playStream = (tag, stream) =>{
     })
 
     return () => socket.off("callerDisconnect")
-  },[socket,tracks,dispatch, call,addCallMessage,answer,total])
+  },[socket,tracks,dispatch, call,addCallMessage,answer,total,newCall])
 
 
 //play pause audio
@@ -176,18 +187,18 @@ const playStream = (tag, stream) =>{
     newAudio.currentTime = 0
   }
 
-//   useEffect(()=>{
-//   let newAudio = new Audio(aud2)
-//
-//
-//   if(answer){
-//     pauseAudio(newAudio)
-//   }else{
-//     playAudio(newAudio)
-//   }
-//
-//
-// },[answer])
+  useEffect(()=>{
+  let newAudio = new Audio(aud2)
+
+
+  if(answer){
+    pauseAudio(newAudio)
+  }else{
+    playAudio(newAudio)
+  }
+
+  return () => pauseAudio(newAudio)
+},[answer])
 
 
   return (

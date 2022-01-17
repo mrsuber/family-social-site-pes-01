@@ -11,11 +11,23 @@ import {getNotifies} from '../../../redux/actions/notifyAction'
 import {CircularProgress} from "@material-ui/core"
 
 
-
+let scroll = 0;
 const HomePage = () => {
   const {auth, homePosts} = useSelector(state=>state)
   const dispatch = useDispatch()
 
+  window.addEventListener('scroll', () => {
+    if(window.location.pathname ==='/'){
+      scroll =window.pageYOffset
+      return scroll;
+    }
+  })
+
+  useEffect(()=>{
+    setTimeout(() => {
+      window.scrollTo({top: scroll, behavior:'smooth'})
+    },100)
+  },[])
   useEffect(()=>{
     if(auth.token){
       dispatch(getPosts(auth.token))

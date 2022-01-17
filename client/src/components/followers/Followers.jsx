@@ -11,7 +11,8 @@ const Followers = ({ users,setShowFollowers}) => {
     <div className="social2__follower_container">
     <div className="social2__follower_box">
       <h5 className="social2__follower_tittle">Followers</h5>
-
+      <hr/>
+      <div className="social2__follower_body">
       {
         users.map(user => (
 
@@ -22,6 +23,9 @@ const Followers = ({ users,setShowFollowers}) => {
           </UserCard>
         ))
       }
+      </div>
+
+
       <div className="social2__close" onClick={()=>setShowFollowers(false)}>&times;</div>
     </div>
     </div>

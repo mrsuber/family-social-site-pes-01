@@ -11,3 +11,10 @@
 .social2__post_details_wrapper{
   width: 70%;
 }
+
+
+@media(max-width: 765px){
+  .social2__post_details_wrapper{
+    width: 95%;
+  }
+}

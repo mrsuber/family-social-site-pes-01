@@ -5,7 +5,7 @@ const errorHandler = require('./middleware/error')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 //for calls
-const {PeerServer} = require('peer')
+const {ExpressPeerServer} = require('peer')
 
 
 //connectDB
@@ -37,7 +37,7 @@ io.on('connection', socket =>{
 // end file upload
 
 //create peer Server
-PeerServer({port: 3001, path:'/'})
+ExpressPeerServer(http, {path:'/'})
 
 
 

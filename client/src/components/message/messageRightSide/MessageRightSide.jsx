@@ -9,7 +9,7 @@ import {CircularProgress} from "@material-ui/core"
 import {MoreVert} from '@material-ui/icons'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faTrash, faPhoneAlt, faVideo } from '@fortawesome/free-solid-svg-icons';
+import {faTrash, faPhoneAlt, faVideo,faCircle } from '@fortawesome/free-solid-svg-icons';
 import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
 import {imageShow, videoShow} from '../../../utils/mediaShow'
 import {imageUpload} from '../../../utils/imageUpload'
@@ -214,6 +214,15 @@ const MessageRightSide = () => {
       {
         user.length !== 0 &&
          <UserCard user={user}>
+
+
+             {
+               user.online
+               ?<span className="social2__online_dot" style={{fontSize:'12px'}}>Online <FontAwesomeIcon icon={faCircle} className="social2__online_dot active"/></span>
+               : auth.user.following.find(item => item._id === user._id) && <span className="social2__online_dot" style={{fontSize:'12px'}}>Offline <FontAwesomeIcon icon={faCircle} className="social2__online_dot"/></span>
+             }
+
+
          {/*Notify dropdown*/}
          <div className="nav-item dropdown social2__call_dropdown">
            <span className="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -233,7 +242,7 @@ const MessageRightSide = () => {
 
          {/*Notify dropdown*/}
 
-         
+
             <div className="social2__call_dropdown2">
             <FontAwesomeIcon icon={faPhoneAlt} className="social2__rightside_message_audio_phone_icon" onClick={handleAudioCall}/>
 

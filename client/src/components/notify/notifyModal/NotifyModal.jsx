@@ -57,10 +57,16 @@ const NotifyModal = () => {
                 </div>
                 {msg.content && <small> {msg.content.slice(0,20)}...</small>}
               </div>
+              {
+                msg.image &&<div className="social2__notification__modal_sub_image">
+                  {
+                    msg.image.match(/video/i) 
+                    ? <video src={msg.image} width='100%'/>
+                    : <Avatar src={msg.image} size="social2__medium-profileImage"/>
+                  }
+                </div>
+              }
 
-              <div className="social2__notification__modal_sub_image">
-                {msg.image && <Avatar src={msg.image} size="social2__medium-profileImage"/>}
-              </div>
             </Link>
 
             <small className="social2__notification__modal_time_container">

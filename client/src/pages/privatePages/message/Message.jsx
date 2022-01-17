@@ -1,10 +1,36 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {Social2Header,MessageLeftSide,MessageRightSide} from '../../../components'
 import './Message.css'
 import {Facebook} from '@material-ui/icons'
 import { ReactComponent as FacebookMessagericon } from '../../../images/geneosocial/facebook_messenger_icon_136645.svg'
 
+
+import {useSelector, useDispatch} from 'react-redux'
+import {getNotifies} from '../../../redux/actions/notifyAction'
+
 const Message = () => {
+
+  const {auth} = useSelector(state=>state)
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    if(auth.token){
+
+      dispatch(getNotifies(auth.token))
+    }
+  },[dispatch,auth.token])
+
+  useEffect(()=>{
+    if (!("Notification" in window)) {
+      alert("This browser does not support desktop notification");
+    }
+    else if (Notification.permission === "granted") { }
+    else if (Notification.permission !== "denied") {
+      Notification.requestPermission().then(function (permission) {
+        if (permission === "granted") { }
+      });
+    }
+  },[])
 
   return (
     <>

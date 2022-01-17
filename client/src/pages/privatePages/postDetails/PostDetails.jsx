@@ -7,6 +7,9 @@ import {getPost} from '../../../redux/actions/postAction'
 import {CircularProgress} from "@material-ui/core"
 
 
+import {getNotifies} from '../../../redux/actions/notifyAction'
+
+
 
 const PostDetails = () => {
   const {auth, detailPost} = useSelector(state=>state)
@@ -22,6 +25,28 @@ const PostDetails = () => {
 
     }
   },[detailPost, dispatch, id,auth])
+
+
+
+
+  useEffect(()=>{
+    if(auth.token){
+
+      dispatch(getNotifies(auth.token))
+    }
+  },[dispatch,auth.token])
+
+  useEffect(()=>{
+    if (!("Notification" in window)) {
+      alert("This browser does not support desktop notification");
+    }
+    else if (Notification.permission === "granted") { }
+    else if (Notification.permission !== "denied") {
+      Notification.requestPermission().then(function (permission) {
+        if (permission === "granted") { }
+      });
+    }
+  },[])
   return (
     <>
     <Social2Header/>
