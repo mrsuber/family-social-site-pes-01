@@ -13,3 +13,12 @@ export {default as gs3} from './geneosocial/3.png'
 export {default as gs4} from './geneosocial/4.jpg'
 export {default as gs5} from './geneosocial/5.jpg'
 export {default as gs6} from './geneosocial/6.gif'
+
+//export for blog site
+
+export {default as gb1} from './geneosocial/info/1.jpg'
+export {default as gb2} from './geneosocial/info/2.jpg'
+export {default as gb3} from './geneosocial/info/3.jpg'
+export {default as gb4} from './geneosocial/info/4.jpg'
+export {default as gb5} from './geneosocial/info/5.jpg'
+export {default as gb6} from './geneosocial/info/6.jpg'

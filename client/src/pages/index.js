@@ -13,3 +13,7 @@ export {default as PostDetails} from './privatePages/postDetails/PostDetails'
 // porfolio pages
 
 export {default as PorfolioHome} from './myPorfolioSite/home/Home'
+
+//blog privatePages
+
+export {default as BlogHomePage} from './blogPages/homepage/HomePage'

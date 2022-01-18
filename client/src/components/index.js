@@ -43,6 +43,8 @@ export {default as MessageDisplay} from './message/messageDisplay/MessageDisplay
 export {default as Icons} from './icons/Icons'
 export {default as CallModal} from './call/CallModal'
 export {default as Times} from './times/Times'
+export {default as SelectFamilyCard} from './family/selectFamilyCard/SelectFamilyCard'
+export {default as DisplayCard} from './displayCard/DisplayCard'
 //porfolio components exports starts
 export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
 export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'

@@ -15,6 +15,9 @@ import message from './messageReducer'
 import online from './onlineReducer'
 import call from './callReducer'
 import peer from './peerReducer'
+import family from './familyReducer'
+
+
 export default combineReducers({
 auth,
 alert,
@@ -31,5 +34,6 @@ notify,
 message,
 online,
 call,
-peer
+peer,
+family
 })
