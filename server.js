@@ -7,6 +7,9 @@ const cookieParser = require('cookie-parser')
 //for calls
 const {ExpressPeerServer} = require('peer')
 
+//working for the blog
+const morgan = require('morgan')
+
 
 //connectDB
 connectDB();

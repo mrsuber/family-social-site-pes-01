@@ -19,7 +19,7 @@ const IndexPage = () => {
   }
 
   const redirectSocialHomePage = () =>{
-    history.push('/social_home')
+    dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:true})
   }
 
   return (
@@ -36,7 +36,7 @@ const IndexPage = () => {
         <span className="social2__index_card">
                 <DisplayCard
                 heading='Info'
-                dispatch={dispatch}
+
                 gs1={gb1}
                 gs2={gb2}
                 gs3={gb3}
@@ -44,7 +44,7 @@ const IndexPage = () => {
                 gs5={gb5}
                 gs6={gb6}
                 logo={logo}
-                family_type={FAMILY_TYPES}
+
                 text='Information center!!'
                 dislayCardId={1}
                 page='blog_home'
@@ -56,7 +56,7 @@ const IndexPage = () => {
         <span className="social2__index_card">
         <DisplayCard
         heading='Geneasocial'
-        dispatch={dispatch}
+
         gs1={gs1}
         gs2={gs2}
         gs3={gs3}
@@ -64,7 +64,7 @@ const IndexPage = () => {
         gs5={gs5}
         gs6={gs6}
         logo={logo}
-        family_type={FAMILY_TYPES}
+
         text='Socialize Here!!'
         dislayCardId={2}
         page='social_home'
