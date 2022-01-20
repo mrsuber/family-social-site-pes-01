@@ -33,3 +33,227 @@
  cursor: pointer;
  transform: translateY(-5px);
 }
+
+/* the form css */
+
+
+.social2__family_container {
+  min-height: 100%;
+  max-width: 100%;
+  margin: 40px auto;
+  background: #FFF;
+  border-radius: 2px;
+  /* box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2); */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  -webkit-animation: hi 0.5s;
+          animation: hi 0.5s;
+  -webkit-transform: translateZ(0px);
+}
+/* .container * {
+  box-sizing: border-box;
+} */
+
+.social2__family_pages {
+  flex: 1;
+  white-space: nowrap;
+  position: relative;
+  transition: all 0.4s;
+  display: flex;
+  margin-bottom: 45px;
+}
+.social2__family_pages .social2__family_page {
+  min-width: 100%;
+  padding: 20px 15px;
+  padding-top: 0px;
+  /* background: linear-gradient(to left, #955DFF, #6FAAFF); */
+}
+.social2__family_pages .social2__family_page:nth-of-type(1) .social2__family_input {
+  transform: translateX(-100%) scale(0.5);
+}
+.social2__family_pages .social2__family_page:nth-of-type(2) .social2__family_input {
+  transform: translateX(100%) scale(0.5);
+}
+.social2__family_pages .social2__family_page .social2__family_input {
+  transition: all 1s;
+  opacity: 0;
+  transition-delay: 0s;
+}
+.social2__family_pages .social2__family_page.social2__family_signup {
+  /* background: linear-gradient(to left, #6FAAFF, #955DFF); */
+}
+
+.social2__family_pages .social2__family_page.social2__family_create {
+  /* background: linear-gradient(to left, #6FAAFF, #955DFF); */
+}
+.social2__family_pages .social2__family_page .social2__family_title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  position: relative;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social2__family_pages .social2__family_page .social2__family_title i {
+  vertical-align: text-bottom;
+  font-size: 19px;
+}
+.social2__family_pages .social2__family_page .social2__family_input {
+  margin-top: 20px;
+}
+.social2__family_pages .social2__family_page input.social2__family_text {
+  background: #F6F7F9;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 10px;
+  color: rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+.social2__family_pages .social2__family_page button[type=submit] {
+  background: rgb(11 109 232 / 85%);;
+  color: #F6F7F9;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.social2__family_tabs {
+  max-height: 50px;
+  height: 50px;
+  display: flex;
+  background: #FFF;
+}
+.social2__family_tabs .social2__family_tab {
+  flex: 1;
+  color: #5D708A;
+  text-align: center;
+  line-height: 50px;
+  transition: all 0.2s;
+}
+.social2__family_tabs .social2__family_tab .social2__family_text {
+  font-size: 14px;
+  transform: scale(1);
+  transition: all 0.2s;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]:nth-of-type(1):checked ~ .social2__family_tabs .social2__family_tab:nth-of-type(1) {
+  box-shadow: inset -3px 2px 5px rgba(0, 0, 0, 0.25);
+  color: #3F4C7F;
+}
+input[type=radio]:nth-of-type(1):checked ~ .social2__family_tabs .social2__family_tab:nth-of-type(1) .text {
+  transform: scale(0.9);
+}
+input[type=radio]:nth-of-type(1):checked ~ .social2__family_pages {
+  transform: translateX(0%);
+}
+input[type=radio]:nth-of-type(1):checked ~ .social2__family_pages .social2__family_page:nth-of-type(1) .social2__family_input {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 0.5s;
+}
+input[type=radio]:nth-of-type(1):checked ~ .social2__family_pages .social2__family_page:nth-of-type(1) .social2__family_input:nth-child(1) {
+  transition-delay: 0.2s;
+}
+input[type=radio]:nth-of-type(1):checked ~ .social2__family_pages .social2__family_page:nth-of-type(1) .social2__family_input:nth-child(2) {
+  transition-delay: 0.4s;
+}
+input[type=radio]:nth-of-type(1):checked ~ .social2__family_pages .social2__family_page:nth-of-type(1) .social2__family_input:nth-child(3) {
+  transition-delay: 0.6s;
+}
+input[type=radio]:nth-of-type(1):checked ~ .social2__family_pages .social2__family_page:nth-of-type(1) .social2__family_input:nth-child(4) {
+  transition-delay: 0.8s;
+}
+input[type=radio]:nth-of-type(1):checked ~ .social2__family_pages .social2__family_page:nth-of-type(1) .social2__family_input:nth-child(5) {
+  transition-delay: 1s;
+}
+
+input[type=radio]:nth-of-type(2):checked ~ .social2__family_tabs .social2__family_tab:nth-of-type(2) {
+  box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25);
+  color: #3F4C7F;
+}
+input[type=radio]:nth-of-type(2):checked ~ .social2__family_tabs .social2__family_tab:nth-of-type(2) .social2__family_text {
+  transform: scale(0.9);
+}
+input[type=radio]:nth-of-type(2):checked ~ .social2__family_pages {
+  transform: translateX(-100%);
+}
+input[type=radio]:nth-of-type(2):checked ~ .social2__family_pages .social2__family_page:nth-of-type(2) .social2__family_input {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 0.5s;
+}
+input[type=radio]:nth-of-type(2):checked ~ .social2__family_pages .social2__family_page:nth-of-type(2) .social2__family_input:nth-child(1) {
+  transition-delay: 0.2s;
+}
+input[type=radio]:nth-of-type(2):checked ~ .social2__family_pages .social2__family_page:nth-of-type(2) .social2__family_input:nth-child(2) {
+  transition-delay: 0.4s;
+}
+input[type=radio]:nth-of-type(2):checked ~ .social2__family_pages .social2__family_page:nth-of-type(2) .social2__family_input:nth-child(3) {
+  transition-delay: 0.6s;
+}
+input[type=radio]:nth-of-type(2):checked ~ .social2__family_pages .social2__family_page:nth-of-type(2) .social2__family_input:nth-child(4) {
+  transition-delay: 0.8s;
+}
+input[type=radio]:nth-of-type(2):checked ~ .social2__family_pages .social2__family_page:nth-of-type(2) .social2__family_input:nth-child(5) {
+  transition-delay: 1s;
+}
+
+
+
+
+input[type=radio]:nth-of-type(3):checked ~ .social2__family_tabs .social2__family_tab:nth-of-type(3) {
+  box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25);
+  color: #3F4C7F;
+}
+input[type=radio]:nth-of-type(3):checked ~ .social2__family_tabs .social2__family_tab:nth-of-type(3) .social2__family_text {
+  transform: scale(0.9);
+}
+input[type=radio]:nth-of-type(3):checked ~ .social2__family_pages {
+  transform: translateX(-200%);
+}
+input[type=radio]:nth-of-type(3):checked ~ .social2__family_pages .social2__family_page:nth-of-type(3) .social2__family_input {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 0.5s;
+}
+input[type=radio]:nth-of-type(3):checked ~ .social2__family_pages .social2__family_page:nth-of-type(3) .social2__family_input:nth-child(1) {
+  transition-delay: 0.2s;
+}
+input[type=radio]:nth-of-type(3):checked ~ .social2__family_pages .social2__family_page:nth-of-type(3) .social2__family_input:nth-child(2) {
+  transition-delay: 0.4s;
+}
+input[type=radio]:nth-of-type(3):checked ~ .social2__family_pages .social2__family_page:nth-of-type(3) .social2__family_input:nth-child(3) {
+  transition-delay: 0.6s;
+}
+input[type=radio]:nth-of-type(3):checked ~ .social2__family_pages .social2__family_page:nth-of-type(3) .social2__family_input:nth-child(4) {
+  transition-delay: 0.8s;
+}
+input[type=radio]:nth-of-type(3):checked ~ .social2__family_pages .social2__family_page:nth-of-type(3) .social2__family_input:nth-child(5) {
+  transition-delay: 1s;
+}
+
+@-webkit-keyframes hi {
+  from {
+    transform: translateY(50%) scale(0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes hi {
+  from {
+    transform: translateY(50%) scale(0, 0);
+    opacity: 0;
+  }
+}

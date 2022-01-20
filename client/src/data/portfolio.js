@@ -108,7 +108,7 @@ const portfolio=[
   {
     id:7,
     thumb:pf24,
-    larg:lg241+","+lg242+","+lg243+","+lg244+","+lg245+","+lg246+","+lg247+","+lg248+","+lg249+","+lg2410+","+lg2411+","+lg2412,
+    larg:lg242+","+lg241+","+lg243+","+lg244+","+lg245+","+lg246+","+lg247+","+lg248+","+lg249+","+lg2410+","+lg2411+","+lg2412,
     title:'Geneasocial',
     category:'web-application',
     tools:'html, css, javascript, React, Nodejs, MongoDB',
