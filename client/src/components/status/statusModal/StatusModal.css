@@ -15,6 +15,7 @@
   margin: 30px auto;
   padding: 20px;
   border-radius: 5px;
+  z-index: 30;
 }
 
  .social2__status_modal_header{

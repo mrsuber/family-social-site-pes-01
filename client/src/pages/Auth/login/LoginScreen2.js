@@ -47,7 +47,7 @@ const LoginScreen2 = () => {
 
     <div className="login-form login-screen_form">
     <form onSubmit={loginHandler} >
-      <h3 className="login-screen_title" >Login Now</h3>
+      <h3 className="login-screen_title" >Login To Geneasocial</h3>
 
       <div className="login-form-group">
         <label htmlFor="email">Email:</label>

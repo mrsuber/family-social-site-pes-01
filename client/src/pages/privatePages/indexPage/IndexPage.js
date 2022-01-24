@@ -19,7 +19,13 @@ const IndexPage = () => {
   }
 
   const redirectSocialHomePage = () =>{
-    dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:true})
+    if(auth.token){
+      history.push('/social_home');
+    }else{
+      history.push('/login');
+    }
+
+    // dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:true})
   }
 
   return (

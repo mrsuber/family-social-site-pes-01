@@ -52,13 +52,13 @@ const LoginScreen = ({history}) => {
 
       <div className="login-form-group">
         <label htmlFor="email">Email:</label>
-        <input  type="email" required id="email" placeholder="Enter email" value={email} onChange={handleChangeInput} name="email" tabIndex={1}/>
+        <input  type="email" required id="email" placeholder="Enter email" defaultValue={email} onChange={handleChangeInput} name="email" tabIndex={1}/>
         </div>
 
 
         <div className="login-form-group">
           <label htmlFor="password">Password:</label>
-          <input type={typePass? "text":"password"} required id="password" placeholder="Enter Password" value={password} onChange={handleChangeInput} name="password"/>
+          <input type={typePass? "text":"password"} required id="password" placeholder="Enter Password" defaultValue={password} onChange={handleChangeInput} name="password"/>
           <small onClick={()=>setTypePass(!typePass)}>
           {typePass? 'Hide':'Show'}
           </small>

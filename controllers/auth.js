@@ -56,6 +56,7 @@ exports.register= async (req,res,next)=>{
 
 //login user
 exports.login= async (req,res,next)=>{
+  console.log(req.body)
   const {email,password} = req.body;
   if(!email || !password){
     res.status(400).json({msg:"please provide an email and password"})
