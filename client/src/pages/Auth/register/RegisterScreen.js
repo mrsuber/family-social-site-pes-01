@@ -80,7 +80,7 @@ const RegisterScreen = () => {
     <div className="register-screen">
 
     <form onSubmit={registerHandler} className="register-screen_form">
-      <h3 className="register-screen_title">Register</h3>
+      <h3 className="register-screen_title">Register To Geneasocial</h3>
       {/*error && <span className="error-message">{error}</span>*/}
 
       <div className="register-form-group">

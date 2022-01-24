@@ -19,6 +19,8 @@
 .login-screen_title{
   text-align: center;
   margin-bottom: 1rem;
+  font-size: 20px;
+    color: #007bff;
 }
 
 .login-screen_subtext{

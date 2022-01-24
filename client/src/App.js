@@ -54,7 +54,7 @@ const App=()=> {
             <Route exact path="/register" component={RegisterScreen} />
             <Route exact path="/forgotpassword" component={ForgotPasswordScreen} />
             <Route exact path="/resetpassword" component={ResetPasswordScreen} />
-            <Route exact path="/" component={auth.token? IndexPage : LoginScreen2} />
+            <Route exact path="/" component={ IndexPage} />
 
             <PrivateRoute exact path="/social_home" component={auth.token? HomePage : LoginScreen2}/>
             <PrivateRoute exact path="/message" component={auth.token? Message : LoginScreen2}/>

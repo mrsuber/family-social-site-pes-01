@@ -23,11 +23,11 @@ const DisplayCard = ({gs1,gs2,gs3,gs4,gs5,gs6,logo,heading,dispatch, text,family
     // end selection of tag1
 
     // declearing variables
-    var radius = 340;
+    var radius = 110;
     var autoRotate = true;
     var rotateSpeed = -60;
-    var imgWidth = 190;
-    var imgHeight = 230;
+    var imgWidth = 60;
+    var imgHeight = 90;
     var aEle = [...aImg];
     var sX, sY, nX, nY, desX = 0,
     desY = 0,
@@ -36,6 +36,7 @@ const DisplayCard = ({gs1,gs2,gs3,gs4,gs5,gs6,logo,heading,dispatch, text,family
     // end of declearing variables
 
     // using ids selected
+
     ospin.style.width = imgWidth + "px";
     ospin.style.height = imgHeight + "px";
     ground.style.width = radius * 3 + "px";
