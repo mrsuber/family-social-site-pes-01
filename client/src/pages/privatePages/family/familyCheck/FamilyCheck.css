@@ -16,3 +16,12 @@
 .social2_pointer{
   cursor: pointer;
 }
+
+.social2__family_textarea{
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+}
+.social2__family_textarea:focus{
+  outline: none;
+}

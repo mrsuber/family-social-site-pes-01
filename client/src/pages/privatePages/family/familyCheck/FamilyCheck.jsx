@@ -82,6 +82,7 @@ setTimeout(function(){ createFamily.checked = true}, 2000)
                                           Jion A Family
                                       </div>
                                       <input class="social2__family_text" type="text" value={name} placeholder="Enter Family Name"/>
+                                      <textarea class="social2__family_textarea" type="text" placeholder="How do you relate to this family"/>
 
                                   </div>
                                   <div class="social2__family_input">
