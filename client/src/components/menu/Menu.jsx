@@ -1,5 +1,5 @@
 import {Link,useLocation} from 'react-router-dom'
-import {Home,NearMe,Explore,Favorite} from '@material-ui/icons'
+import {Home,NearMe,Explore,Favorite,Group} from '@material-ui/icons'
 import {logout} from '../../redux/actions/authAction'
 import {GLOBALTYPES} from '../../redux/actions/globlaTypes'
 import {Avatar, NotifyModal} from '../../components'
@@ -13,7 +13,7 @@ const Menu = () => {
     {label:'Home',icon:<Home/>,path:'/social_home'},
     {label:'Message',icon:<NearMe/>,path:'/message'},
     {label:'Discover',icon:<Explore/>,path:'/discover'},
-    // {label:'Notify',icon:<Favorite/>,path:'/notify'},
+    {label:'Family',icon:<Group/>,path:'/family_home'},
 
   ]
   const {auth,theme,notify} = useSelector(state => state)

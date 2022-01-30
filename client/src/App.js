@@ -5,7 +5,7 @@ import PrivateRoute from './routing/privateRoute/PrivateRoute'
 import {
   IndexPage,
   RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,LoginScreen2,
-  PostDetails,HomePage,Message,Discover,Notify,Profile,PorfolioHome,MessageDetails,FamilyCheck,
+  PostDetails,HomePage,Message,Discover,Notify,Profile,PorfolioHome,MessageDetails,FamilyCheck,FamilyHome,
   BlogHomePage
 
 } from './pages'
@@ -65,6 +65,7 @@ const App=()=> {
             <PrivateRoute exact path="/notify" component={auth.token && family.selectFamily===false? Notify : LoginScreen2}/>
             <PrivateRoute exact path="/profile/:id" component={auth.token && family.selectFamily===false? Profile : LoginScreen2}/>
             <PrivateRoute exact path="/post/:id" component={auth.token && family.selectFamily===false? PostDetails : LoginScreen2}/>
+            <PrivateRoute exact path="/family_home" component={auth.token && family.selectFamily===false? FamilyHome : LoginScreen2}/>
 
 
 
