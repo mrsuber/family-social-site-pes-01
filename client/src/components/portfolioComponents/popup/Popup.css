@@ -240,10 +240,12 @@ transition: all 0.3s ease;
   margin-top:7px;
   line-height: 40px !important;
   color:var(--skin-color);
+  font-size: 100px;
 }
 
 .pf__portfolio_popup .pf__pp_prev svg{
   transform: rotate(180deg);
+
 }
 .pf__portfolio_popup .pf__pp_prev{
    left: 15px;
