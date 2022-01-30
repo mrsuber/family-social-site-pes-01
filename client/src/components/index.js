@@ -45,6 +45,7 @@ export {default as CallModal} from './call/CallModal'
 export {default as Times} from './times/Times'
 export {default as SelectFamilyCard} from './family/selectFamilyCard/SelectFamilyCard'
 export {default as DisplayCard} from './displayCard/DisplayCard'
+export {default as Input} from './helperInput/Input'
 //porfolio components exports starts
 export {default as ProfileNavbar} from './portfolioComponents/navbar/ProfileNavbar'
 export {default as ProfileHeader} from './portfolioComponents/header/ProfileHeader'

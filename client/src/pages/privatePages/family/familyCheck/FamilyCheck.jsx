@@ -1,12 +1,12 @@
 import React,{useEffect,useState} from 'react'
-import './SelectFamilyCard.css'
-import {FAMILY_TYPES} from '../../../redux/actions/familyAction'
+import './FamilyCheck.css'
+import {FAMILY_TYPES} from '../../../../redux/actions/familyAction'
 import {useSelector,useDispatch} from 'react-redux'
-import {logout} from '../../../redux/actions/authAction'
+import {logout} from '../../../../redux/actions/authAction'
+import { Field, reduxForm } from 'redux-form'
 
 
-
-const SelectFamilyCard = () => {
+const FamilyCheck = () => {
   const {family} = useSelector(state=>state)
   const dispatch = useDispatch()
 
@@ -21,6 +21,12 @@ const SelectFamilyCard = () => {
   const handleJionFamily=(e)=>{
     e.preventDefault()
     console.log("the name is",name)
+  }
+
+  const handleContinueToFamily=(e)=>{
+      e.preventDefault()
+    dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:false})
+    window.location.pathname ='/social_home'
   }
 
   useEffect(() =>{
@@ -41,7 +47,6 @@ setTimeout(function(){ createFamily.checked = true}, 2000)
 
               <div className="social2__family_modal_header">
                   <h5 className="social2__family_modal_title">Select Family Obtion</h5>
-                  <span onClick={() => dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:false})}>&times;</span>
               </div>
               {/* sample code begin*/}
               <div class="social2__family_container">
@@ -55,7 +60,7 @@ setTimeout(function(){ createFamily.checked = true}, 2000)
 
                         {/* start of go to family */}
                         <div class="social2__family_page">
-                        <form>
+                        <form onSubmit={handleContinueToFamily}>
                             <div class="social2__family_input">
                                 <div class="social2__family_title">
                                     Continue to Family
@@ -77,6 +82,7 @@ setTimeout(function(){ createFamily.checked = true}, 2000)
                                           Jion A Family
                                       </div>
                                       <input class="social2__family_text" type="text" value={name} placeholder="Enter Family Name"/>
+
                                   </div>
                                   <div class="social2__family_input">
                                           <button type="submit" >JION OLD FAMILY</button>
@@ -110,22 +116,22 @@ setTimeout(function(){ createFamily.checked = true}, 2000)
 
                   <div class="social2__family_tabs">
                       <label class="social2__family_tab" for="gotoFamily">
-                        <div class="social2__family_text">Go To Family</div>
+                        <div class="social2__family_text social2_pointer">Go To Family</div>
                       </label>
                       <label class="social2__family_tab" for="jionFamily">
-                        <div class="social2__family_text">Jion An Old Family</div>
+                        <div class="social2__family_text social2_pointer">Jion An Old Family</div>
                       </label>
                       <label class="social2__family_tab" for="createFamily">
-                        <div class="social2__family_text">Create New Family</div>
+                        <div class="social2__family_text social2_pointer">Create New Family</div>
                       </label>
                   </div>
         </div>
     {/* sample code end*/}
-            <a href="/social_home" onClick={()=>dispatch(logout())} className="dropdown-item"> Logout </a>
+            <a href="/social_home" onClick={()=>dispatch(logout())} className="dropdown-item social2__family_check_logout"> Logout </a>
           </div>
 
     </div>
   )
 }
 
-export default SelectFamilyCard
+export default FamilyCheck
