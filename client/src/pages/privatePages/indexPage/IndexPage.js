@@ -1,6 +1,6 @@
 import {useEffect} from 'react'
 import './IndexPage.css'
-import {MainHeader,SelectFamilyCard,DisplayCard} from '../../../components'
+import {SelectFamilyCard,DisplayCard} from '../../../components'
 import {
   gs1,gs2,gs3,gs4,gs5,gs6,logo,
   gb1,gb2,gb3,gb4,gb5,gb6
@@ -20,12 +20,14 @@ const IndexPage = () => {
 
   const redirectSocialHomePage = () =>{
     if(auth.token){
-      history.push('/social_home');
+      // history.push('/social_home');
+      dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:true})
+      history.push('/family');
     }else{
-      history.push('/login');
+      window.location.pathname ='/login';
     }
 
-    // dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:true})
+
   }
 
   return (
@@ -33,11 +35,10 @@ const IndexPage = () => {
     <>
 
 
-        <MainHeader/>
         {
           family.selectFamily && <SelectFamilyCard/>
         }
-        <div className="index__card_wrapper">
+        <div className="index__card_wrapper" >
 
         <span className="social2__index_card">
                 <DisplayCard
