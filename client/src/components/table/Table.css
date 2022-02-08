@@ -1,0 +1,17 @@
+.social2__family_list_group{
+  display: flex;
+    margin-bottom: 1.5rem;
+    flex-direction: column;
+    padding-left: 0;
+
+    border-radius: .25rem;
+}
+
+
+.social2__list_group_item{
+  position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+}

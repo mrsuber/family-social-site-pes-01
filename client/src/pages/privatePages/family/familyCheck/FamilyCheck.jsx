@@ -76,7 +76,7 @@ setTimeout(function(){ createFamily.checked = true}, 2000)
 
                             {/* start to jion family */}
                           <div class="social2__family_page social2__family_signup">
-                            <form onSubmit={handleJionFamily}>
+                            <form onSubmit={handleContinueToFamily}>
                                 <div class="social2__family_input">
                                       <div class="social2__family_title">
                                           Jion A Family
@@ -96,7 +96,7 @@ setTimeout(function(){ createFamily.checked = true}, 2000)
 
                           {/* start to create family */}
                         <div class="social2__family_page social2__family_create">
-                          <form>
+                          <form onSubmit={handleContinueToFamily}>
                               <div class="social2__family_input">
                                     <div class="social2__family_title">
                                         Create A Family

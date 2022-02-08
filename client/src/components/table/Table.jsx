@@ -1,4 +1,6 @@
 import React from 'react'
+import './Table.css'
+
 
 const Table = ({posts,loading}) => {
   if(loading){
@@ -6,9 +8,10 @@ const Table = ({posts,loading}) => {
   }
 
   return (
-    <ul className="list-group mb-4">
+    <ul className=" social2__family_list_group">
     {posts.map(post =>(
-      <li key={post.id} className="list-group-item">
+      <li key={post.id} className="social2__list_group_item">
+
       {post.title}
       </li>
     ))}

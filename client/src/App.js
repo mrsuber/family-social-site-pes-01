@@ -55,6 +55,7 @@ const App=()=> {
             <Route exact path="/forgotpassword" component={ForgotPasswordScreen} />
             <Route exact path="/resetpassword" component={ResetPasswordScreen} />
             <Route exact path="/" component={IndexPage} />
+            // <Route exact path="/fam" component={FamilyHome} />
               <Route exact path="/family" component={ auth.token? FamilyCheck: LoginScreen2} />
               <PrivateRoute exact path="/blog_home" component={ BlogHomePage}/>
 

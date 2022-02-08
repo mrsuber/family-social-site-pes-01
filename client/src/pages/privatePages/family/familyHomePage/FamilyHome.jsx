@@ -2,27 +2,39 @@ import React,{useEffect, useState} from 'react'
 import {Social2Header,Pagination,Table} from '../../../../components'
 import './FamilyHome.css'
 import axios from 'axios'
-
+import portfolio from '../../../../data/portfolio'
 
 const FamilyHome = () => {
   const [posts, setPosts] = useState([]);
   const [loading,setLoading] = useState(false)
   const [currentPage,setCurrentPage] =useState(1)
-  const [postsPerPage] = useState(10)
+  const [postsPerPage] = useState(5)
 
 
 
-  useEffect(() =>{
-    const fetchPost = async () => {
-      setLoading(true);
-      const res = await axios.get('https://jsonplaceholder.typicode.com/posts')
+  // useEffect(() =>{
+  //   const fetchPost = async () => {
+  //     setLoading(true);
+  //     const res = await axios.get('https://jsonplaceholder.typicode.com/posts')
+  //
+  //     setPosts(res.data)
+  //     setLoading(false);
+  //   }
+  //
+  //   fetchPost()
+  // },[])
 
-      setPosts(res.data)
+
+
+// mark up
+useEffect(()=>{
+  setLoading(true);
+
+
+      setPosts(portfolio)
       setLoading(false);
-    }
 
-    fetchPost()
-  },[])
+},[])
 
 
 
@@ -39,7 +51,7 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
   return (
     <>
-    <Social2Header/>
+
     <section className="social2__main_family">
 
 
