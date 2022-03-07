@@ -15,7 +15,7 @@ import pf21 from '../images/porfolioImages/portfolio/thumb/project-21.png'
 import pf22 from '../images/porfolioImages/portfolio/thumb/project-22.png'
 import pf23 from '../images/porfolioImages/portfolio/thumb/project-23.png'
 import pf24 from '../images/porfolioImages/portfolio/thumb/project-24.png'
-
+import pf25 from '../images/porfolioImages/portfolio/thumb/project-25.png'
 //large
 import lg91 from "../images/porfolioImages/portfolio/large/project-9/1.png"
 import lg92 from "../images/porfolioImages/portfolio/large/project-9/2.png"
@@ -100,11 +100,38 @@ import lg2410 from "../images/porfolioImages/portfolio/large/project-24/10.png"
 import lg2411 from "../images/porfolioImages/portfolio/large/project-24/11.png"
 import lg2412 from "../images/porfolioImages/portfolio/large/project-24/12.png"
 
+import lg251 from "../images/porfolioImages/portfolio/large/project-25/1.png"
+import lg252 from "../images/porfolioImages/portfolio/large/project-25/2.png"
+import lg253 from "../images/porfolioImages/portfolio/large/project-25/3.png"
+import lg254 from "../images/porfolioImages/portfolio/large/project-25/4.png"
+import lg255 from "../images/porfolioImages/portfolio/large/project-25/5.png"
+import lg256 from "../images/porfolioImages/portfolio/large/project-25/6.png"
+import lg257 from "../images/porfolioImages/portfolio/large/project-25/7.png"
+import lg258 from "../images/porfolioImages/portfolio/large/project-25/8.png"
+import lg259 from "../images/porfolioImages/portfolio/large/project-25/9.png"
+
+import lg2510 from "../images/porfolioImages/portfolio/large/project-25/a1.png"
+import lg2511 from "../images/porfolioImages/portfolio/large/project-25/a2.png"
+import lg2512 from "../images/porfolioImages/portfolio/large/project-25/a3.png"
 
 
 
 
 const portfolio=[
+  {
+    id:7,
+    thumb:pf25,
+    larg:lg252+","+lg251+","+lg253+","+lg254+","+lg255+","+lg256+","+lg257+","+lg258+","+lg259+","+lg2510+","+lg2511+","+lg2512,
+    title:'Geneasocial',
+    category:'web-application',
+    tools:'html, css, javascript, React, Nodejs, MongoDB, React-native',
+    client:'client project',
+    date:"March 01 2022",
+    siteName:"www.digitalExpert.com",
+    siteLink:"https://digital-experts-app.herokuapp.com",
+    gitHubLink:"https://github.com/mrsuber",
+    description:"This was a client project so the link to github is mask. it dealt with user authentication app, snap Identity card and take passport and upload to the server. The server when admin log into, he can create new users, print the users information, export the entire database in either excel or pdf, view the details about any user and change admin password and mobile responsive"
+  },
   {
     id:7,
     thumb:pf24,

@@ -240,7 +240,7 @@ transition: all 0.3s ease;
   margin-top:7px;
   line-height: 40px !important;
   color:var(--skin-color);
-  font-size: 100px;
+  font-size: 7rem;
 }
 
 .pf__portfolio_popup .pf__pp_prev svg{
