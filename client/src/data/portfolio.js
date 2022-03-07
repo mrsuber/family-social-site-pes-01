@@ -118,20 +118,20 @@ import lg2512 from "../images/porfolioImages/portfolio/large/project-25/a3.png"
 
 
 const portfolio=[
-  {
-    id:6,
-    thumb:pf25,
-    larg:lg252+","+lg251+","+lg253+","+lg254+","+lg255+","+lg256+","+lg257+","+lg258+","+lg259+","+lg2510+","+lg2511+","+lg2512,
-    title:'Geneasocial',
-    category:'web-application',
-    tools:'html, css, javascript, React, Nodejs, MongoDB, React-native',
-    client:'client project',
-    date:"March 01 2022",
-    siteName:"www.digitalExpert.com",
-    siteLink:"https://digital-experts-app.herokuapp.com",
-    gitHubLink:"https://github.com/mrsuber",
-    description:"This was a client project so the link to github is mask. it dealt with user authentication app, snap Identity card and take passport and upload to the server. The server when admin log into, he can create new users, print the users information, export the entire database in either excel or pdf, view the details about any user and change admin password and mobile responsive"
-  },
+  // {
+  //   id:6,
+  //   thumb:pf25,
+  //   larg:lg252+","+lg251+","+lg253+","+lg254+","+lg255+","+lg256+","+lg257+","+lg258+","+lg259+","+lg2510+","+lg2511+","+lg2512,
+  //   title:'Geneasocial',
+  //   category:'web-application',
+  //   tools:'html, css, javascript, React, Nodejs, MongoDB, React-native',
+  //   client:'client project',
+  //   date:"March 01 2022",
+  //   siteName:"www.digitalExpert.com",
+  //   siteLink:"https://digital-experts-app.herokuapp.com",
+  //   gitHubLink:"https://github.com/mrsuber",
+  //   description:"This was a client project so the link to github is mask. it dealt with user authentication app, snap Identity card and take passport and upload to the server. The server when admin log into, he can create new users, print the users information, export the entire database in either excel or pdf, view the details about any user and change admin password and mobile responsive"
+  // },
   {
     id:7,
     thumb:pf24,
