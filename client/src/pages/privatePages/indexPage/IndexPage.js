@@ -22,7 +22,7 @@ const IndexPage = () => {
     if(auth.token){
       // history.push('/social_home');
       dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:true})
-      history.push('/family');
+      history.push('/social_home');
     }else{
       window.location.pathname ='/login';
     }

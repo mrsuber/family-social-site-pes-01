@@ -13,7 +13,7 @@ const Menu = () => {
     {label:'Home',icon:<Home/>,path:'/social_home'},
     {label:'Message',icon:<NearMe/>,path:'/message'},
     {label:'Discover',icon:<Explore/>,path:'/discover'},
-    {label:'Family',icon:<Group/>,path:'/family_home'},
+    // {label:'Family',icon:<Group/>,path:'/family_home'},
 
   ]
   const {auth,theme,notify} = useSelector(state => state)

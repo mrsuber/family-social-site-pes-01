@@ -5,7 +5,7 @@ import PrivateRoute from './routing/privateRoute/PrivateRoute'
 import {
   IndexPage,
   RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,LoginScreen2,
-  PostDetails,HomePage,Message,Discover,Notify,Profile,PorfolioHome,MessageDetails,FamilyCheck,FamilyHome,
+  PostDetails,HomePage,Message,Discover,Notify,Profile,PorfolioHome,MessageDetails,
   BlogHomePage
 
 } from './pages'
@@ -55,8 +55,6 @@ const App=()=> {
             <Route exact path="/forgotpassword" component={ForgotPasswordScreen} />
             <Route exact path="/resetpassword" component={ResetPasswordScreen} />
             <Route exact path="/" component={IndexPage} />
-            // <Route exact path="/fam" component={FamilyHome} />
-              <Route exact path="/family" component={ auth.token? FamilyCheck: LoginScreen2} />
               <PrivateRoute exact path="/blog_home" component={ BlogHomePage}/>
 
             <PrivateRoute exact path="/social_home" component={auth.token && family.selectFamily===false? HomePage : LoginScreen2}/>
@@ -66,7 +64,6 @@ const App=()=> {
             <PrivateRoute exact path="/notify" component={auth.token && family.selectFamily===false? Notify : LoginScreen2}/>
             <PrivateRoute exact path="/profile/:id" component={auth.token && family.selectFamily===false? Profile : LoginScreen2}/>
             <PrivateRoute exact path="/post/:id" component={auth.token && family.selectFamily===false? PostDetails : LoginScreen2}/>
-            <PrivateRoute exact path="/family_home" component={auth.token && family.selectFamily===false? FamilyHome : LoginScreen2}/>
 
 
 

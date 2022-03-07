@@ -38,7 +38,8 @@ const LoginScreen2 = () => {
 
 
   useEffect(()=>{
-    if(auth.token)history.push("/family")
+    if(auth.token)window.location.href = "/social_home"
+
   },[auth.token , history])
 
 
