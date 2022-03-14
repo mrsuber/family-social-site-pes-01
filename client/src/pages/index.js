@@ -19,3 +19,6 @@ export {default as PorfolioHome} from './myPorfolioSite/home/Home'
 //blog privatePages
 
 export {default as BlogHomePage} from './blogPages/homepage/HomePage'
+
+//admin dashboard
+export {default as AdminHome} from './admin/home/AdminHome'

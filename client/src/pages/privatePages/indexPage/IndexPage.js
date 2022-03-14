@@ -15,7 +15,7 @@ const IndexPage = () => {
 
   const history = useHistory()
   const redirectBlogHomePage = () => {
-    history.push('/blog_home');
+    history.push('/porfolio/home');
   }
 
   const redirectSocialHomePage = () =>{
@@ -42,7 +42,7 @@ const IndexPage = () => {
 
         <span className="social2__index_card">
                 <DisplayCard
-                heading='Info'
+                heading='Portfolio'
 
                 gs1={gb1}
                 gs2={gb2}
@@ -52,7 +52,7 @@ const IndexPage = () => {
                 gs6={gb6}
                 logo={logo}
 
-                text='Information center!!'
+                text='About Mohamad S.B'
                 dislayCardId={1}
                 page='blog_home'
                 link={redirectBlogHomePage}

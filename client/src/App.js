@@ -6,7 +6,9 @@ import {
   IndexPage,
   RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,LoginScreen2,
   PostDetails,HomePage,Message,Discover,Notify,Profile,PorfolioHome,MessageDetails,
-  BlogHomePage
+  BlogHomePage,
+  AdminHome
+
 
 } from './pages'
 //component
@@ -55,6 +57,7 @@ const App=()=> {
             <Route exact path="/forgotpassword" component={ForgotPasswordScreen} />
             <Route exact path="/resetpassword" component={ResetPasswordScreen} />
             <Route exact path="/" component={IndexPage} />
+            <Route exact path="/admin" component={AdminHome} />
               <PrivateRoute exact path="/blog_home" component={ BlogHomePage}/>
 
             <PrivateRoute exact path="/social_home" component={auth.token && family.selectFamily===false? HomePage : LoginScreen2}/>
