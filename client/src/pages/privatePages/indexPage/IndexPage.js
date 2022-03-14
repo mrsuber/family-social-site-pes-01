@@ -15,7 +15,11 @@ const IndexPage = () => {
 
   const history = useHistory()
   const redirectBlogHomePage = () => {
-    history.push('/porfolio/home');
+    window.location.href = "/porfolio/home"
+  }
+
+  const redirectAdmonHomePage = () => {
+    window.location.href = "/admin"
   }
 
   const redirectSocialHomePage = () =>{

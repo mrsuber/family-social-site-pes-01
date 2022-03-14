@@ -63,3 +63,7 @@ export {default as Contact} from './portfolioComponents/contact/Contact'
 export {default as Switcher} from './portfolioComponents/switcher/Switcher'
 export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 //porfolio components exports end
+
+
+//admin
+export {default as AdminSideBar} from './admin/adminSideBar/AdminSideBar'
