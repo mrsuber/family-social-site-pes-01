@@ -1,17 +1,17 @@
 import React from 'react'
 import './AdminSideBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCalendar,faShoppingCart,faUser,faArrowDown,faAdjust,faVideo,faChartBar} from '@fortawesome/free-solid-svg-icons';
+import {faCalendar,faCog,faUser,faArrowDown,faAdjust,faVideo,faChartBar} from '@fortawesome/free-solid-svg-icons';
 
 
 
-const AdminSideBar = ({img}) => {
+const AdminSideBar = ({img,logo,pic}) => {
   return (
     <div className="admin__sidebar">
       <div className="admin__sidebar-container">
         <div className="admin__sidebar-brand">
           <h2>
-              <span className="admin__lab admin__la-staylinked"><FontAwesomeIcon icon={faShoppingCart} /></span>
+              <span className="admin__lab admin__la-staylinked"><img className="admin__logo" src={logo} alt="logo" /></span>
               Suber
           </h2>
         </div>
@@ -22,7 +22,7 @@ const AdminSideBar = ({img}) => {
           <div className="admin__avartar-info">
             <div className="admin__avartar-text">
               <h4>Mohamad Siysinyuy</h4>
-              <small>+237 653-255-547</small>
+              <small>Demo Account</small>
             </div>
             <span className="admin__las admin__la-arrow-down"><FontAwesomeIcon icon={faArrowDown} /></span>
 
@@ -31,7 +31,7 @@ const AdminSideBar = ({img}) => {
         <div className="admin__sidebar-menu">
           <ul>
             <li>
-              <a href="">
+              <a href="" className="admin__active">
                 <span className="admin__las admin__la-adjust"><FontAwesomeIcon icon={faAdjust} /></span>
                 <span>Dashboard</span>
               </a>
@@ -45,7 +45,7 @@ const AdminSideBar = ({img}) => {
             </li>
 
             <li>
-              <a href="" className="admin__active">
+              <a href="" >
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
                 <span>Analytics</span>
               </a>
@@ -68,12 +68,15 @@ const AdminSideBar = ({img}) => {
         </div>
 
         <div className="admin__sidebar-card">
-            <img src="" alt=""/>
+            {/*<img src={pic} alt="" className="admin__pic"/>
+            */}<div className="admin__side-card-icon">
+              <span className="admin__lab admin__la-codiepie"><FontAwesomeIcon icon={faCog} /></span>
+            </div>
             <div>
               <h4>Make AdSense</h4>
               <p>Add ads to your videos to earn money</p>
             </div>
-            <button className="admin__btn admin__btn-main"> Create Now</button>
+            <button className="admin__btn admin__btn-main admin__btn-block"> Create Now</button>
         </div>
       </div>
     </div>

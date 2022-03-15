@@ -22,3 +22,5 @@ export {default as gb3} from './geneosocial/info/3.jpg'
 export {default as gb4} from './geneosocial/info/4.jpg'
 export {default as gb5} from './geneosocial/info/5.jpg'
 export {default as gb6} from './geneosocial/info/6.jpg'
+//admin images
+export {default as pic} from './project-23.png'
