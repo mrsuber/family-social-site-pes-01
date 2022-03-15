@@ -88,3 +88,17 @@ font-size: .9rem;
   padding: .85rem 2rem;
   font-size: 1rem;
 }
+.admin__main{
+padding-top: 2.5rem;
+
+}
+
+.admin__analytics{
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-gap: 2rem 2rem;
+  box-shadow: var(--shadow); */
+  /* padding:1.5rem; */
+  grid-gap: 0rem 2rem;
+}
