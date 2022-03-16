@@ -89,16 +89,84 @@ font-size: .9rem;
   font-size: 1rem;
 }
 .admin__main{
-padding-top: 2.5rem;
+padding-top: 3rem;
 
 }
 
+
+/*------------------------------analytics------------------------------*/
 .admin__analytics{
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   /* grid-gap: 2rem 2rem;
   box-shadow: var(--shadow); */
   /* padding:1.5rem; */
   grid-gap: 0rem 2rem;
+}
+
+.admin__analytic{
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  padding-left: 2rem;
+}
+
+.admin__analytic:first-child .admin__analytic-icon{
+   background: #dce5ff;
+   color: #6883db;
+}
+.admin__analytic:nth-child(2) .admin__analytic-icon{
+   background: #ebf7f5;
+   color: red;
+}
+
+.admin__analytic:nth-child(3) .admin__analytic-icon{
+   background: #ebf7f5;
+   color: #2ec3a3;
+}
+
+.admin__analytic:nth-child(4) .admin__analytic-icon{
+   background: var(--main-accent);
+   color: var(--color-main);
+}
+.admin__analytic-info h4{
+  font-weight: 500;
+  color:#555;
+  font-size: .98rem;
+}
+
+.admin__analytic-info h1{
+
+color: var(--main-text);
+font-weight: 600;
+font-size: 2rem;
+
+}
+
+.admin__analytic-info h1 small{
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.admin__text-danger{
+  color:red;
+}
+
+.admin__text-success{
+  color:#2ec3a3;
+}
+
+.admin__analytic-icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items:center;
+  margin-right: .5rem;
+}
+
+.admin__accent-main{
+
 }

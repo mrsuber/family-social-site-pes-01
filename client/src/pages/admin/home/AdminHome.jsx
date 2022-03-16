@@ -32,51 +32,69 @@ const AdminHome = () => {
       </header>
 
       <main className="admin__main">
-          <div className="admin__analytics">
-              <div className="admin__analytic">
-                <div className="analytic-icon">
-                  <span className="admin__las admin_la-eye"><FontAwesomeIcon icon={faEye} /></span>
+          <section>
+            <h3 className="admin__section-head"></h3>
+            <div className="admin__analytics">
+                <div className="admin__analytic">
+                  <div className="admin__analytic-icon admin__accent-main">
+                    <span className="admin__las admin_la-eye"><FontAwesomeIcon icon={faEye} /></span>
+                  </div>
+                  <div className="admin__analytic-info">
+                      <h4>Total views</h4>
+                      <h1>10.3M</h1>
+                  </div>
                 </div>
-                <div className="admin__analytic-info">
-                    <h4>Total views</h4>
-                    <h1>10.3M</h1>
+
+                <div className="admin__analytic">
+                  <div className="admin__analytic-icon">
+                    <span className="admin__las admin_la-eye"><FontAwesomeIcon icon={faClock} /></span>
+                  </div>
+                  <div className="admin__analytic-info">
+                      <h4>Watch Times (hrs)</h4>
+                      <h1>20.9k <small className="admin__text-danger">5%</small></h1>
+                  </div>
+                </div>
+
+
+                <div className="admin__analytic">
+                  <div className="admin__analytic-icon">
+                    <span className="admin__las admin_la-eye"><FontAwesomeIcon icon={faUsers} /></span>
+                  </div>
+                  <div className="admin__analytic-info">
+                      <h4>Subscribers</h4>
+                      <h1>1.3k <small className="admin__text-success">25%</small></h1>
+                  </div>
+                </div>
+
+
+                <div className="admin__analytic">
+                  <div className="admin__analytic-icon">
+                    <span className="admin__las admin_la-eye"><FontAwesomeIcon icon={faHeart} /></span>
+                  </div>
+                  <div className="admin__analytic-info">
+                      <h4>Total likes</h4>
+                      <h1>3.4M</h1>
+                  </div>
+                </div>
+            </div>
+          </section>
+
+          <section>
+              <h3 className="admin__section-head"></h3>
+              <div className="admin__block-grid">
+                <div  className="admin__revenue-card">
+                  <img src={profile} alt="j" />
+                  <div className="admin__rev-info">
+                    <h3>Mohamad Siysinyuy</h3>
+                    <h1>3.5M <small>Subscribers</small></h1>
+                  </div>
+                  <div className="admin__rev-sum">
+                    <h4>Total income</h4>
+                    <h2>$70,859</h2>
+                  </div>
                 </div>
               </div>
-
-              <div className="admin__analytic">
-                <div className="analytic-icon">
-                  <span className="admin__las admin_la-eye"><FontAwesomeIcon icon={faClock} /></span>
-                </div>
-                <div className="admin__analytic-info">
-                    <h4>Watch Times (hrs)</h4>
-                    <h1>20.9k <small className="admin__text-danger">5%</small></h1>
-                </div>
-              </div>
-
-
-              <div className="admin__analytic">
-                <div className="analytic-icon">
-                  <span className="admin__las admin_la-eye"><FontAwesomeIcon icon={faUsers} /></span>
-                </div>
-                <div className="admin__analytic-info">
-                    <h4>Subscribers</h4>
-                    <h1>1.3k <small className="admin__text-success">25%</small></h1>
-                </div>
-              </div>
-
-
-              <div className="admin__analytic">
-                <div className="analytic-icon">
-                  <span className="admin__las admin_la-eye"><FontAwesomeIcon icon={faHeart} /></span>
-                </div>
-                <div className="admin__analytic-info">
-                    <h4>Total likes</h4>
-                    <h1>3.4M</h1>
-                </div>
-              </div>
-
-
-          </div>
+          </section>
       </main>
     </div>
 
