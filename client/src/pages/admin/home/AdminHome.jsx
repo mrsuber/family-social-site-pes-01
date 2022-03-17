@@ -33,7 +33,7 @@ const AdminHome = () => {
 
       <main className="admin__main">
           <section>
-            <h3 className="admin__section-head"></h3>
+            <h3 className="admin__section-head">Overview</h3>
             <div className="admin__analytics">
                 <div className="admin__analytic">
                   <div className="admin__analytic-icon admin__accent-main">
@@ -80,18 +80,25 @@ const AdminHome = () => {
           </section>
 
           <section>
-              <h3 className="admin__section-head"></h3>
+
               <div className="admin__block-grid">
                 <div  className="admin__revenue-card">
-                  <img src={profile} alt="j" />
-                  <div className="admin__rev-info">
-                    <h3>Mohamad Siysinyuy</h3>
-                    <h1>3.5M <small>Subscribers</small></h1>
-                  </div>
-                  <div className="admin__rev-sum">
-                    <h4>Total income</h4>
-                    <h2>$70,859</h2>
-                  </div>
+                  <h3 className="admin__section-head">Total Revenue</h3>
+                    <div className="admin__rev-content">
+                        <img src={profile} alt="j" />
+                        <div className="admin__rev-info">
+                          <h3>Mohamad Siysinyuy</h3>
+                          <h1>3.5M <small>Subscribers</small></h1>
+                        </div>
+                        <div className="admin__rev-sum">
+                          <h4>Total income</h4>
+                          <h2>$70,859</h2>
+                        </div>
+                    </div>
+
+                </div>
+                <div className="admin__graph-card">
+                    <h3 className="admin__section-head">Graph</h3>
                 </div>
               </div>
           </section>
