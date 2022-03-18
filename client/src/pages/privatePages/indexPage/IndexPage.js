@@ -3,7 +3,8 @@ import './IndexPage.css'
 import {SelectFamilyCard,DisplayCard} from '../../../components'
 import {
   gs1,gs2,gs3,gs4,gs5,gs6,logo,
-  gb1,gb2,gb3,gb4,gb5,gb6
+  gb1,gb2,gb3,gb4,gb5,gb6,
+  ad1,ad2,ad3,ad4,ad5,
 } from '../../../images'
 import {useSelector,useDispatch} from 'react-redux'
 import {FAMILY_TYPES} from '../../../redux/actions/familyAction'
@@ -18,7 +19,9 @@ const IndexPage = () => {
     window.location.href = "/porfolio/home"
   }
 
-  const redirectAdmonHomePage = () => {
+
+
+  const redirectAdminHome = () =>{
     window.location.href = "/admin"
   }
 
@@ -80,6 +83,26 @@ const IndexPage = () => {
         dislayCardId={2}
         page='social_home'
         link={redirectSocialHomePage}
+        />
+        </span>
+
+
+        <span className="social2__index_card">
+        <DisplayCard
+        heading='Dashboard'
+
+        gs1={ad1}
+        gs2={ad2}
+        gs3={ad3}
+        gs4={ad4}
+        gs5={ad5}
+        gs6={ad1}
+        logo={logo}
+
+        text='Manage All'
+        dislayCardId={3}
+        page='admin'
+        link={redirectAdminHome}
         />
         </span>
 

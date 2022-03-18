@@ -1,12 +1,19 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './AdminHome.css'
 import {profile,logo,pic} from '../../../images'
 import {AdminSideBar} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faVideo,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
-
+import axios from 'axios'
 
 const AdminHome = () => {
+  useEffect(()=>{
+    const getVisitorsInfo = async()=>{
+      const res = await axios.get("/api/welcomeUser")
+      console.log(res.data)
+    }
+    getVisitorsInfo()
+  },[])
 
   return (
     <div className="admin__body">
@@ -24,7 +31,7 @@ const AdminHome = () => {
           </label>
           <div className="admin__header-title">
           <h1>Analytics</h1>
-          <p>Display analytics about your Channel <span className="admin__las admin__la-chart-line"><FontAwesomeIcon icon={faChartLine} /></span></p>
+          <p>Display analytics about any and everything I engage with. <span className="admin__las admin__la-chart-line"><FontAwesomeIcon icon={faChartLine} /></span></p>
           </div>
         </div>
         <div className="admin__header-action">

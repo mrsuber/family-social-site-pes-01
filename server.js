@@ -52,7 +52,7 @@ app.use('/api',require('./routes/postRouter'))
 app.use('/api',require('./routes/commentRouter'))
 app.use('/api',require('./routes/notifyRouter'))
 app.use('/api',require('./routes/messageRouter'))
-
+app.use('/api',require('./routes/welcomeRouter'))
 
 
 
