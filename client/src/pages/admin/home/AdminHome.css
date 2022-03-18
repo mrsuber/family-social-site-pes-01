@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 :root{
   --color-main:#396aff;
-  --bg: #fbfefd;
-  --bg2:#dce5ff;
+  --success:#2ec3a3;
+  --love:#ee3e5c;
+  --danger:#ff0000;
+  --bg: #0d1117;
+  --bg2:#0a172b;
+  --hover:#0d1117;
   --main-accent:#e9eefd;
-  --main-text:#4b5876;
+  --main-text:#346fe9;
+  --normal-text:#f0f6fc;
+  --button-bg:#2d88ee33;
   --shadow: rgba(17,17,26,0.1) 2px 2px 16px;
 
 
@@ -16,6 +22,7 @@
   box-sizing: border-box;
   outline: none;
   background-color: var(--bg);
+  color:var(--normal-text);
   text-decoration: none;
   font-family: 'Poppins',sans-serif;
   list-style-type: none;
@@ -72,13 +79,13 @@ font-weight: 600;
 }
 
 .admin__header-title p{
-color: #666;
+color: var(--normal-text);
 font-size: .9rem;
 
 }
 
 .admin__header-title p span{
-  color:red;
+  color:var(--danger);
   font-size: 1.2rem;
   display: inline-block;
   margin-left: .5rem;
@@ -116,29 +123,36 @@ padding-bottom: 2.5rem;
   border-radius: 10px;
   display: flex;
   padding-left: 2rem;
+  background: var(--bg2);
 }
 
 .admin__analytic:first-child .admin__analytic-icon{
-   background: #dce5ff;
-   color: #6883db;
+   background: var(--bg);
+   color: var(--color-main);
+   border: 1px solid var(--main-text);
+
 }
 .admin__analytic:nth-child(2) .admin__analytic-icon{
-   background: rgba(255,0,0,0.1);
-   color: red;
+   /* background: rgba(255,0,0,0.1); */
+   background: var(--bg);
+   color: var(--danger);
+   border: 1px solid var(--main-text);
 }
 
 .admin__analytic:nth-child(3) .admin__analytic-icon{
-   background: #ebf7f5;
-   color: #2ec3a3;
+  background: var(--bg);
+  color: var(--success);
+  border: 1px solid var(--main-text);
 }
 
 .admin__analytic:nth-child(4) .admin__analytic-icon{
-   background: var(--main-accent);
-   color: var(--color-main);
+  background: var(--bg);
+  color: var(--love);
+  border: 1px solid var(--main-text);
 }
 .admin__analytic-info h4{
   font-weight: 500;
-  color:#555;
+  color:var(--normal-text);
   font-size: .98rem;
 }
 
@@ -156,7 +170,7 @@ font-size: 1.5rem;
 }
 
 .admin__text-danger{
-  color:red;
+  color:var(--danger);
 }
 
 .admin__text-success{
@@ -182,7 +196,7 @@ font-size: 1.5rem;
   grid-gap: 3rem;
 }
 .admin__rev-content{
-  background: #fff;
+  background: var(--bg2);
   box-shadow: var(--shadow);
   border-radius: 15px;
   padding: 1rem 2rem;
@@ -220,11 +234,11 @@ text-align: center;
 .admin__rev-info h1{
   font-size: 1rem;
   margin-top: .2rem;
-  color: #555;
+  color: var(--normal-text);
 }
 
 .admin__rev-sum{
-  background: var(--main-accent);
+  background: var(--bg);
   border:1px solid var(--color-main);
   padding: 1rem;
   border-radius: 10px;
@@ -241,7 +255,7 @@ text-align: center;
 
 .admin__rev-sum h4{
 font-size: 1.2rem;
-color: #555;
+color: var(--normal-text);
 font-weight: 400;
 margin-bottom: .5rem;
 }
@@ -250,7 +264,7 @@ margin-bottom: .5rem;
   border-radius: 12px;
   box-shadow: var(--shadow);
   padding: 1rem;
-  background: #fff;
+  background: var(--bg2);
 
 }
 
@@ -269,18 +283,22 @@ margin-bottom: .5rem;
   height: 40px;
   width: 40px;
   border-radius: 7px;
-  background: #eee;
+  background: var(--bg);
+
+  border: 1px solid var(--main-text);
   display: grid;
   place-items:center;
   font-size: 1.2rem;
   margin-right: .8rem;
 }
 .admin__graph-head select{
-  background: #eee;
+  background: var(--bg);
+  color: var(--color-main);
+  border: 1px solid var(--main-text);
   border-radius: 10px;
   height: 35px;
   padding: .5rem 1rem;
-  border: none;
+
   outline: none;
 }
 
@@ -292,7 +310,7 @@ margin-bottom: .5rem;
   top:0;
   z-index: 10;
   display: none;
-  background: rgba(255,255,255,0.5);
+  background: var(--button-bg);
 }
 
 .admin__overlay label{

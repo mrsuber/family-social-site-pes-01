@@ -3,7 +3,7 @@ import './AdminHome.css'
 import {profile,logo,pic} from '../../../images'
 import {AdminSideBar} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faBars,faChartLine,faVideo,faEye, faClock,faUsers,faHeart} from '@fortawesome/free-solid-svg-icons';
+import {faBars,faChartLine,faVideo,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 
 
 const AdminHome = () => {
@@ -29,8 +29,8 @@ const AdminHome = () => {
         </div>
         <div className="admin__header-action">
           <button className="admin__btn admin__btn-main">
-              <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faVideo} /></span>
-              Upload
+              <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faSignInAlt} /></span>
+              Log In
           </button>
         </div>
       </header>
