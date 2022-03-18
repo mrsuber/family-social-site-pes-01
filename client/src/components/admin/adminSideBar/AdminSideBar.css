@@ -17,6 +17,18 @@
   font-size: 1rem;
 }
 
+#admin__menu-toggle{
+  display: none;
+}
+#admin__menu-toggle:checked ~ .admin__sidebar{
+  left:-345px;
+}
+
+#admin__menu-toggle:checked ~ .admin__main-content{
+  margin-left:0;
+  width: 100vw;
+}
+
 .admin__sidebar-menu ul li {
   list-style-type: none;
   text-decoration: none;
@@ -36,6 +48,7 @@
   left: 0;
   bottom: 0;
   padding: 1rem 1.5rem;
+  transition: left 300ms;
 
 }
 .admin__sidebar-container{
@@ -153,7 +166,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  
+
 }
 
 .admin__btn-block{

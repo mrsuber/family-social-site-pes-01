@@ -7,15 +7,19 @@ import {faBars,faChartLine,faVideo,faEye, faClock,faUsers,faHeart} from '@fortaw
 
 
 const AdminHome = () => {
+
   return (
     <div className="admin__body">
-    <input type="checkbox" name="" id="menu-toggle"/>
-
+    <input type="checkbox" name="admin__menu-toggle" id="admin__menu-toggle"/>
+    <div className="admin__overlay">
+    <label for="admin__menu-toggle">
+      </label>
+    </div>
     <AdminSideBar img={profile} logo={logo} pic={pic}/>
     <div className="admin__main-content">
       <header className="admin__header">
         <div className="admin__header-title-wrapper">
-          <label for="">
+          <label for="admin__menu-toggle">
             <span className="admin__las admin_la-bars"><FontAwesomeIcon icon={faBars} /></span>
           </label>
           <div className="admin__header-title">
@@ -85,7 +89,7 @@ const AdminHome = () => {
                 <div  className="admin__revenue-card">
                   <h3 className="admin__section-head">Total Revenue</h3>
                     <div className="admin__rev-content">
-                        <img src={profile} alt="j" />
+                        <img className="admin__img_rev" src={profile} alt="j" />
                         <div className="admin__rev-info">
                           <h3>Mohamad Siysinyuy</h3>
                           <h1>3.5M <small>Subscribers</small></h1>
@@ -99,6 +103,29 @@ const AdminHome = () => {
                 </div>
                 <div className="admin__graph-card">
                     <h3 className="admin__section-head">Graph</h3>
+                    <div className="admin__graph-content">
+                      <div className="admin__graph-head">
+                        <div className="admin__icons-wrapper">
+                            <div className="admin__icon">
+                              <span className="admin__las admin__la-eye admin__text-main"><FontAwesomeIcon icon={faEye} /></span>
+                            </div>
+
+                            <div className="admin__icon">
+                              <span className="admin__las admin__la-eye admin__text-success"><FontAwesomeIcon icon={faClock} /></span>
+                            </div>
+                        </div>
+                        <div className="admin__graph-select">
+                          <select name="" id="">
+                              <option value="">September</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="admin__graph-board">
+                        <canvas id="admin__revenueChart" width="100%" height="50px">
+
+                        </canvas>
+                      </div>
+                    </div>
                 </div>
               </div>
           </section>
