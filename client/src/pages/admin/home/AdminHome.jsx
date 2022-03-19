@@ -1,19 +1,30 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import './AdminHome.css'
 import {profile,logo,pic} from '../../../images'
-import {AdminSideBar} from '../../../components'
+import {AdminSideBar,DisplayCssColorsPie,DisplayCssColorsHis,AdminRevenueCard,AdminSalariesVSJobs} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faVideo,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios'
+import { csv } from 'd3'
 
+const CSSurl = "https://raw.githubusercontent.com/mrsuber/SVG-css-colors/master/CSS%20Named%20Colors%20-%20Sheet.csv"
+const UN_pop_url="https://raw.githubusercontent.com/mrsuber/SVG-css-colors/master/population_2019_2020.csv"
 const AdminHome = () => {
+  const [data,setData]=useState([])
+    const [data1,setData1]=useState([])
+
   useEffect(()=>{
-    const getVisitorsInfo = async()=>{
-      const res = await axios.get("/api/welcomeUser")
-      console.log(res.data)
+    csv(CSSurl).then(setData)
+    const row = d =>{
+      d.Population = +d['2020']
+      return d
     }
-    getVisitorsInfo()
+    csv(UN_pop_url, row).then(data => {
+      setData1(data.slice(0,10))
+    })
   },[])
+
+
 
   return (
     <div className="admin__body">
@@ -93,48 +104,18 @@ const AdminHome = () => {
           <section>
 
               <div className="admin__block-grid">
-                <div  className="admin__revenue-card">
-                  <h3 className="admin__section-head">Total Revenue</h3>
-                    <div className="admin__rev-content">
-                        <img className="admin__img_rev" src={profile} alt="j" />
-                        <div className="admin__rev-info">
-                          <h3>Mohamad Siysinyuy</h3>
-                          <h1>3.5M <small>Subscribers</small></h1>
-                        </div>
-                        <div className="admin__rev-sum">
-                          <h4>Total income</h4>
-                          <h2>$70,859</h2>
-                        </div>
-                    </div>
-
-                </div>
-                <div className="admin__graph-card">
-                    <h3 className="admin__section-head">Graph</h3>
-                    <div className="admin__graph-content">
-                      <div className="admin__graph-head">
-                        <div className="admin__icons-wrapper">
-                            <div className="admin__icon">
-                              <span className="admin__las admin__la-eye admin__text-main"><FontAwesomeIcon icon={faEye} /></span>
-                            </div>
-
-                            <div className="admin__icon">
-                              <span className="admin__las admin__la-eye admin__text-success"><FontAwesomeIcon icon={faClock} /></span>
-                            </div>
-                        </div>
-                        <div className="admin__graph-select">
-                          <select name="" id="">
-                              <option value="">September</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div className="admin__graph-board">
-                        <canvas id="admin__revenueChart" width="100%" height="50px">
-
-                        </canvas>
-                      </div>
-                    </div>
-                </div>
+                <AdminRevenueCard profile={profile}/>
+                <AdminSalariesVSJobs />
               </div>
+          </section>
+          <section>
+            {data? <DisplayCssColorsPie data={data}/>:'Loding Data'}
+          {data1? <DisplayCssColorsHis data={data1}/>:'Loding Data'}
+
+          <div className="admin__block-grid2">
+          {/*data? <DisplayCssColorsPie data={data}/>:'Loding Data'*/}
+
+          </div>
           </section>
       </main>
     </div>

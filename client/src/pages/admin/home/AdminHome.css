@@ -195,6 +195,11 @@ font-size: 1.5rem;
   grid-template-columns: 30% auto;
   grid-gap: 3rem;
 }
+.admin__block-grid2{
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-gap: 3rem;
+}
 .admin__rev-content{
   background: var(--bg2);
   box-shadow: var(--shadow);
@@ -353,6 +358,10 @@ margin-bottom: .5rem;
     grid-template-columns: repeat(2,1fr);
   }
   .admin__block-grid{
+    grid-template-columns: 100%;
+
+  }
+  .admin__block-grid2{
     grid-template-columns: 100%;
 
   }

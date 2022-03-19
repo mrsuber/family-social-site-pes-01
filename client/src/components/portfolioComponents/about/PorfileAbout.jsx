@@ -28,17 +28,58 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
             {/*social links end*/}
           </div>
           <div className="pf__about_info">
-        
 
-            <p><span>Hi! My name is Mohamad Siysinyuy. I am a Web Developer.</span> I was introduced to software development in my very first year in the university studying computer engineering which gave me a direct line to Web Development.</p>
 
-            <p>Due to personal research and following a full-stack online curriculum, I learn about HTML and its evolution to HTML5, used tools like WAVE and W3C for accessibility, CSS3, Bootstrap, SASS, SCSS, for styling design and animations, then JavaScript, JQuery for logic and fetching data from REST APIs.</p>
+            <p><span>Hi! My name is Mohamad Siysinyuy. I am a Web Developer.</span>
 
-            <p>After a couple of projects with these languages for Front-End and UI Designs, I was introduced to frameworks like React and Angular for building single web applications, and proper use of props and components certainly made life easier. My new life into frameworks lead me to be familiar with npm for installing dependencies and tools such as WebPack which came loaded with tools necessary for minifying my code for accessibility, Babel for translating ES6 JavaScript code to ES5 JavaScript code for browser compatibility.</p>
+If you are to know about me, you have to understand my background story, what drives me to be who I am.</p>
 
-            <p>To complete my full stack journey as a full stack developer, I was introduced to back-end technologies such as Nodjs, Python frameworks like Flask, Django, and NoSQL databases like MongoDB, SQL database like MYSQL, and Docker technologies.</p>
+<p>I will at my level best try to be brief as much as possible.</p>
 
-            <p>To showcase my projects to the world, I had to host them with FireBase, Heroku, Github.</p>
+<p>My father was a farmer when I was in class four, Understand he is a farmer currently and he was probably a farmer long before I was born. but I choose to coin when I was in class four because that was when the farming truly got to me, this was when I truly developed a love for farming.</p>
+
+<p>My father's specialty was both crop and animal farming, dung from the cow was put in a hole, for it to mature(as he called it), and then after a while, it was transported to the crops which did excessively well, dark green in color and the produce was high.</p>
+
+<p>I use to help him on the farm so often, we will sell products to customers together and use pesticides chemicals to treat crops like cabbages, tomatoes, and more.</p>
+
+<p>This is when I noticed that no business in the world made profit literally as farming, example, you plant one seed of corn and you harvest 500 seeds, products from cows like milk was an expensive gain on its own, not to talk of the butter gotten from it, as well as the yogurt made from milk that some butter has been extracted from.</p>
+
+<p>My father also introduced me to some of his friends in the business only one of them outshine all, I use to call him Ndiz, he had finished the school of agriculture he says and from what he could do confirms his story strongly.</p>
+
+<p>His specialty was also crop farming but he was also into bird and fish farming. His farm was amazing to look at, all partitioned, all in very stright lines as if he told the crops what height to take and what lines not to cross as they grew.</p>
+
+<p>The chicken he kept were “layers” he called them because they were not for consumption but for laying eggs. I have never seen so many eggs in one place to this day. I used to help him pick some of those eggs, some very normal, other funny-looking.</p>
+<p> His fish pond was never of so much interest to me at first because you only see fish when he feeds them but during an Agro-Pastoral show, I saw what they describe a fish, the kind you see only on TV and in a book, a fish with whiskers so calm, so confident in the water as if it knew it was the star of the show.</p>
+
+<p>when I finished class seven and went into secondary school, my dad advised me to study science, because it will tell me more about the chemicals he used and he was right, chemistry and biology did a thorough job in that.</p>
+
+<p>But it did not just explain and end there. very much more than my expectation I was introduced to computer science and went on a field trip to Ndawara Tea Plantation.
+This was the biggest piece of land I ever saw and I learned two very important things that day.</p>
+<p>First and most important was that machines did most of the work on the farm, either it was tractors in working the farm or the machines that help process tea right to sealing it in bags,</p>
+<p>secondly I also learn that these machines were controlled by computers</p>
+<p>Thirdly I learn that certain aspects of farming will always need a human touch, for example, harvesting tea, human hands needed to pick the soft shoot part of the plant, and normally machines will just harvest uniformly and lastly I learn that such labor in Cameroon was cheap.</p>
+
+<p>Labour has always been cheap and that is why colonial masters came to Africa according to African history thought in school. </p>
+
+<p>For the first time I researched something, how do I get a computer to do all that as well as how do I build machines to do that, this lead me  to three fields of study,<br/>
+computer engineering,<br/>
+mechanical engineering, and agriculture<br/>
+when I was done with the ordinary level and had to go to high school, I decided to study something that will expose me in any of the there fields above, that was chemistry, biology, physics, pure maths, and further maths,</p>
+
+<p>while in high school we went for another field trip to Tadu Dairy Cooperative. This was a trip to teach us about cross-breeding and the different products of milk,
+in addition to normal school learning, I saw for the first time an entire building can be made into a refrigerator, you can probably guess what ran in my head if such technology was applied to the whole farming process.
+I also learn that we gave our milk out for free compared to Tardu Dairy price and we never extracted half of the products that can be harvested from milk.</p>
+
+<p>After high school, I had to make a choice how to further my education and my choice was computer engineering because it cuts across all fields of studies, a doctor needs a computer system to manage drug prescriptions as much as a farmer to manage accounts.
+I dived into computer engineering and as you know my specialty was software engineering, in the university I was introduced to the accounting and business part.
+I understood knowing about farming was not enough if I intended to lead in business, I had to see it from the business perspective, I am talking about investment, shares, shareholders, partnership, balance sheet, and all the complicated business terms you can read about. This was necessary to understand if not, my government will shut me down themselves.</p>
+
+<p>immediately after graduation, I did a demo, wrote a business plan, and move around talking to business investors, this took about 6 months of travel and presentations and I notice that business investors are more likely to invest in something solid, some part of this project can be traced, ether proper documentation or some portion of the land has produced the product and is flourishing,</p>
+
+<p>I quickly knew that the initial capital for such will be raised by me, and the second most paying job is engineering, software engineering at the very top of the list.</p>
+
+<p>I decided that to sharpen my skills and for me to  compete with the world I have to be truly good with computers, I took on The Odin Project which teaches and shapes you into a web developer, I have done this in school before but this was another level in the specialty, with lost of links to read and lots of assignments, I am currently on the last chapter of The Odin Project which is "Getting Hired"
+</p>
 
             <a href={cv} className="pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1" >Download Cv</a>
             <a href="#contact" className=" pf__link_item pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1">Hire Me</a>

@@ -67,3 +67,7 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 //admin
 export {default as AdminSideBar} from './admin/adminSideBar/AdminSideBar'
+export {default as DisplayCssColorsPie} from './admin/svg/DisplayCssColorsPie/DisplayCssColorsPie'
+export {default as AdminRevenueCard} from './admin/revenueCard/RevenueCard'
+export {default as AdminSalariesVSJobs} from './admin/salaryVSjobs/SalariesVSJobs'
+export {default as DisplayCssColorsHis} from './admin/DisplayCssColorsHis/DisplayCssColorsHis'
