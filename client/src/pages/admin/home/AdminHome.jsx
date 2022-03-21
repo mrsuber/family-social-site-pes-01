@@ -4,26 +4,15 @@ import {profile,logo,pic} from '../../../images'
 import {AdminSideBar,DisplayCssColorsPie,DisplayCssColorsHis,AdminRevenueCard,AdminSalariesVSJobs} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faVideo,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios'
-import { csv } from 'd3'
+import {useCountryData,useCssColorData} from '../../../utils/adminUseData'
 
-const CSSurl = "https://raw.githubusercontent.com/mrsuber/SVG-css-colors/master/CSS%20Named%20Colors%20-%20Sheet.csv"
-const UN_pop_url="https://raw.githubusercontent.com/mrsuber/SVG-css-colors/master/population_2019_2020.csv"
+
+
+
 const AdminHome = () => {
-  const [data,setData]=useState([])
-    const [data1,setData1]=useState([])
 
-  useEffect(()=>{
-    csv(CSSurl).then(setData)
-    const row = d =>{
-      d.Population = +d['2020']
-      return d
-    }
-    csv(UN_pop_url, row).then(data => {
-      setData1(data.slice(0,10))
-    })
-  },[])
-
+  const countryData = useCountryData();
+  const cssColorData = useCssColorData()
 
 
   return (
@@ -109,8 +98,8 @@ const AdminHome = () => {
               </div>
           </section>
           <section>
-            {data? <DisplayCssColorsPie data={data}/>:'Loding Data'}
-          {data1? <DisplayCssColorsHis data={data1}/>:'Loding Data'}
+            {cssColorData? <DisplayCssColorsPie data={cssColorData}/>:'Loding Data'}
+          {countryData? <DisplayCssColorsHis data={countryData}/>:'Loding Data'}
 
           <div className="admin__block-grid2">
           {/*data? <DisplayCssColorsPie data={data}/>:'Loding Data'*/}

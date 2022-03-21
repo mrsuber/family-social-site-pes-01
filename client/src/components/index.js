@@ -71,3 +71,6 @@ export {default as DisplayCssColorsPie} from './admin/svg/DisplayCssColorsPie/Di
 export {default as AdminRevenueCard} from './admin/revenueCard/RevenueCard'
 export {default as AdminSalariesVSJobs} from './admin/salaryVSjobs/SalariesVSJobs'
 export {default as DisplayCssColorsHis} from './admin/DisplayCssColorsHis/DisplayCssColorsHis'
+export {default as AxisBottom} from './admin/DisplayCssColorsHis/AxisBottom'
+export {default as AxisLeft} from './admin/DisplayCssColorsHis/AxisLeft'
+export {default as Marks} from './admin/DisplayCssColorsHis/Marks'

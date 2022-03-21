@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEye, faClock} from '@fortawesome/free-solid-svg-icons';
 import {scaleBand, scaleLinear,max} from 'd3'
 import './DisplayCssColorsHis.css'
+import {AxisBottom, AxisLeft,Marks} from '../../../components'
 
 const DisplayCssColorsHis = ({data}) => {
 
@@ -11,13 +12,14 @@ const DisplayCssColorsHis = ({data}) => {
   const margin = {top: 20, right: 20, bottom: 20, left: 200}
   const innerHeight = height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right
+  const yValue = d=> d.Country
+  const xValue = d=>d.Population
   const yScale = scaleBand()
-    .domain(data.map(d=> d.Country))
+    .domain(data.map(yValue))
     .range([0,innerHeight])
-
-  const xScale = scaleLinear()
-    .domain([0, max(data, d=>d.Population)])
-    .range([0, innerWidth])
+    const xScale = scaleLinear()
+      .domain([0, max(data, xValue)])
+      .range([0, innerWidth])
 
 
   return (
@@ -43,17 +45,10 @@ const DisplayCssColorsHis = ({data}) => {
           <div className="admin__graph-board admin__svg-pop">
             <svg width={width} height={height}>
             <g transform={`translate(${margin.left},${margin.top})`}>
-            {xScale.ticks().map(tickValue =>(
-              <g transform={`translate(${xScale(tickValue)},${0})`}>
-              <line y2={innerHeight} stroke="white" />
-              <text dy=".71em" style={{textAnchor:'middle'}} y={innerHeight + 3} >{tickValue}</text>
-              </g>
-            ))}
 
-            {yScale.domain().map(tickValue =>(
-            <text style={{textAnchor:'end'}} x={-3} dy=".32em" y={yScale(tickValue) + yScale.bandwidth() / 2}> {tickValue}</text>
-            ))}
-              {data.map(d => <rect x={0} y={yScale(d.Country)} width={xScale(d.Population)} height={yScale.bandwidth()}/>)}
+            <AxisBottom  innerHeight={innerHeight} xScale={xScale}/>
+            <AxisLeft yScale={yScale}/>
+              <Marks xScale={xScale} yScale={yScale} data={data} xValue={xValue} yValue={yValue} />
               </g>
             </svg>
           </div>
