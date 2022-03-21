@@ -94,11 +94,11 @@ const AdminHome = () => {
 
               <div className="admin__block-grid">
                 <AdminRevenueCard profile={profile}/>
-                <AdminSalariesVSJobs />
+                {countryData? <DisplayCssColorsHis data={countryData}/>:'Loding Data'}
               </div>
           </section>
           <section>
-            {cssColorData? <DisplayCssColorsPie data={cssColorData}/>:'Loding Data'}
+            {/*cssColorData? <DisplayCssColorsPie data={cssColorData}/>:'Loding Data'*/}
           {countryData? <DisplayCssColorsHis data={countryData}/>:'Loding Data'}
 
           <div className="admin__block-grid2">
