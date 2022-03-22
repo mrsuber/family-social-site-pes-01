@@ -1,0 +1,12 @@
+.admin__his-tick line{
+  stroke: #396aff45;
+}
+
+.admin__his-tick text{
+  fill:var(--color-main);
+  font-size: 12px;
+  /* fill : red; */
+}
+.admin__his-marks{
+  fill: #137880;
+}

@@ -1,10 +1,10 @@
 import React,{useEffect,useState} from 'react'
 import './AdminHome.css'
 import {profile,logo,pic} from '../../../images'
-import {AdminSideBar,DisplayCssColorsPie,DisplayCssColorsHis,AdminRevenueCard,AdminSalariesVSJobs} from '../../../components'
+import {AdminSideBar,DisplayCssColorsPie,DisplayCssColorsHis,AdminRevenueCard,AdminSalariesVSJobs,IrishFlower} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faVideo,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
-import {useCountryData,useCssColorData} from '../../../utils/adminUseData'
+import {useCountryData,useCssColorData,useIrisFlowerData} from '../../../utils/adminUseData'
 
 
 
@@ -13,6 +13,7 @@ const AdminHome = () => {
 
   const countryData = useCountryData();
   const cssColorData = useCssColorData()
+  const irishFlowerData = useIrisFlowerData()
 
 
   return (
@@ -98,12 +99,13 @@ const AdminHome = () => {
               </div>
           </section>
           <section>
-            {/*cssColorData? <DisplayCssColorsPie data={cssColorData}/>:'Loding Data'*/}
-          {countryData? <DisplayCssColorsHis data={countryData}/>:'Loding Data'}
+
+
+
 
           <div className="admin__block-grid2">
-          {/*data? <DisplayCssColorsPie data={data}/>:'Loding Data'*/}
-
+          {irishFlowerData? <IrishFlower data={irishFlowerData}/>:'Loding Data'}
+          {countryData? <DisplayCssColorsHis data={countryData}/>:'Loding Data'}
           </div>
           </section>
       </main>
