@@ -13,7 +13,7 @@ const GlobalTemp = ({data}) => {
   const innerHeight = height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right
   const tickOffset = 5;
-  const circleRadius = 7;
+  const circleRadius = 2;
 
 
   const xAxisTickFormat = timeFormat("%a")
@@ -22,8 +22,8 @@ const GlobalTemp = ({data}) => {
   const yAxisLabelOfset = 30
 
 
-  const xAxisLabel = "Time"
-  const yAxisLabel = "Temperature"
+  const xAxisLabel = "Time in day"
+  const yAxisLabel = "Temperature in °C"
 
   const xValue = d=>d.timestamp
   const yValue = d=> d.temperature
@@ -38,12 +38,13 @@ const GlobalTemp = ({data}) => {
 
     .domain(extent(data,yValue))
     .range([innerHeight,0])
-
+    .nice()
+    
 
 
   return (
     <div className="admin__graph-card admin__Irishhis-container">
-        <h3 className="admin__section-head">Analytics of Iris Flower</h3>
+        <h3 className="admin__section-head">Analytics of Global Temperature</h3>
         <div className="admin__graph-content_his ">
           <div className="admin__graph-head">
 

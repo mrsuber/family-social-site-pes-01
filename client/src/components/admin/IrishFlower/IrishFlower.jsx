@@ -39,7 +39,8 @@ const IrishFlower = ({data}) => {
 
     .domain(extent(data,yValue))
     .range([0,innerHeight])
-
+    .nice()
+    
 
 
   return (

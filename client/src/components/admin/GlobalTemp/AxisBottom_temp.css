@@ -10,3 +10,16 @@
 .admin__his-marks{
   fill: #137880;
 }
+
+.admin__tem-marks circle{
+  fill: var(--color-main);
+}
+
+.admin__tem-marks path{
+  stroke: #137880;
+  stroke-width:3;
+  fill: none;
+  stroke-linejoin:round;
+  stroke-linecap:round;
+
+}
