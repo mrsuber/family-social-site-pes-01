@@ -1,0 +1,37 @@
+/* .admin__svg-pop svg{
+  width: 100%;
+  height: 100%;
+} */
+
+  .admin__Irishhis-container::-webkit-scrollbar{
+    width: 6px;
+  }
+  .admin__Irishhis-container::::-webkit-scrollbar-track{
+    background: #f1f1f1;
+  }
+  .admin__Irishhis-container::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 10px;
+  }
+    .admin__Irishhis-container::::-webkit-scrollbar-thumb:hover{
+    background: var(--normal-text);
+  }
+  .admin__Irishhis-container{
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+.admin__graph-content_his{
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  background: var(--bg2);
+}
+
+.admin__his-text-label{
+  fill:var(--normal-text);
+  font-size: 15px;
+}

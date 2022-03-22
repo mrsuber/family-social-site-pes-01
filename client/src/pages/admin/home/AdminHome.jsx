@@ -1,10 +1,10 @@
 import React,{useEffect,useState} from 'react'
 import './AdminHome.css'
 import {profile,logo,pic} from '../../../images'
-import {AdminSideBar,DisplayCssColorsPie,DisplayCssColorsHis,AdminRevenueCard,AdminSalariesVSJobs,IrishFlower} from '../../../components'
+import {AdminSideBar,DisplayCssColorsPie,DisplayCssColorsHis,AdminRevenueCard,AdminSalariesVSJobs,IrishFlower,GlobalTemp} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faVideo,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
-import {useCountryData,useCssColorData,useIrisFlowerData} from '../../../utils/adminUseData'
+import {useCountryData,useCssColorData,useIrisFlowerData,useTempData} from '../../../utils/adminUseData'
 
 
 
@@ -14,6 +14,7 @@ const AdminHome = () => {
   const countryData = useCountryData();
   const cssColorData = useCssColorData()
   const irishFlowerData = useIrisFlowerData()
+  const tempData = useTempData()
 
 
   return (
@@ -105,7 +106,7 @@ const AdminHome = () => {
 
           <div className="admin__block-grid2">
           {irishFlowerData? <IrishFlower data={irishFlowerData}/>:'Loding Data'}
-          {countryData? <DisplayCssColorsHis data={countryData}/>:'Loding Data'}
+          {tempData? <GlobalTemp data={tempData}/>:'Loding Data'}
           </div>
           </section>
       </main>

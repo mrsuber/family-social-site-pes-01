@@ -74,8 +74,13 @@ export {default as DisplayCssColorsHis} from './admin/DisplayCssColorsHis/Displa
 export {default as AxisBottom} from './admin/DisplayCssColorsHis/AxisBottom'
 export {default as AxisLeft} from './admin/DisplayCssColorsHis/AxisLeft'
 export {default as Marks} from './admin/DisplayCssColorsHis/Marks'
-export {default as IrishFlower} from './admin/IrishFlower/IrishFlower'
 
+export {default as IrishFlower} from './admin/IrishFlower/IrishFlower'
 export {default as AxisBottomIrish} from './admin/IrishFlower/AxisBottom_irish'
 export {default as AxisLeftIrish} from './admin/IrishFlower/AxisLeft_irish'
 export {default as MarksIrish} from './admin/IrishFlower/Marks_irish'
+
+export {default as GlobalTemp} from './admin/GlobalTemp/GlobalTemp'
+export {default as AxisBottomTemp} from './admin/GlobalTemp/AxisBottom_temp'
+export {default as AxisLeftTemp} from './admin/GlobalTemp/AxisLeft_temp'
+export {default as MarksTemp} from './admin/GlobalTemp/Marks_temp'
