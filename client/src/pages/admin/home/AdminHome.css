@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 :root{
   --color-main:#396aff;
+  --color-main-light2:#396aff21;
+  --color-main-light:#396aff1f;
   --success:#2ec3a3;
   --love:#ee3e5c;
   --danger:#ff0000;
@@ -10,6 +12,7 @@
   --main-accent:#e9eefd;
   --main-text:#346fe9;
   --normal-text:#f0f6fc;
+  --normal-text-light:#f0f6fc66;
   --button-bg:#2d88ee33;
   --shadow: rgba(17,17,26,0.1) 2px 2px 16px;
 
@@ -200,6 +203,11 @@ font-size: 1.5rem;
   grid-template-columns: 50% auto;
   grid-gap: 3rem;
 }
+
+.admin__block-grid3{
+  grid-template-columns: 100%;
+
+}
 .admin__rev-content{
   background: var(--bg2);
   box-shadow: var(--shadow);
@@ -366,6 +374,8 @@ margin-bottom: .5rem;
     grid-template-columns: 100%;
 
   }
+
+
 
   .admin__revenue-card{
     order:2;

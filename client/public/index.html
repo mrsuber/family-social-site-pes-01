@@ -23,42 +23,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js">
-
-    </script>
-    <script>
-      let ctx = document.querySelector("#admin__revenueChart");
-      ctx.height = 150;
-      let revChart = new Chart(ctx, {
-        type:"line",
-        data:{
-          labels:["Sept 1","Sept 3","Sept 6","Sept 9","Sept 12","Sept 15","Sept 18","Sept 21","Sept 24","Sept 27","Sept 30"],
-          datasets:[
-            {
-              label:"Views",
-              borderColor:"green",
-              borderWidth: "3",
-              backgroundColor:"rgba(235,247,245,0.5)",
-              data:[0,30,60,25,60,25,50,10,50,90,120]
-            },
-            {
-              label:"Watch time",
-              borderColor:"blue",
-              borderWidth: "3",
-              backgroundColor:"rgba(233,238,253,0.5)",
-              data:[0,60,8,25,100,20,75,30,55,20,60,20]
-            },
-          ]
-        },
-        options: {
-          responsive:true,
-          tooltips:{
-            intersect:false,
-            node:"index",
-          }
-        }
-      })
-    </script>
+  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   </body>

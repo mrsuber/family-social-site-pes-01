@@ -84,3 +84,8 @@ export {default as GlobalTemp} from './admin/GlobalTemp/GlobalTemp'
 export {default as AxisBottomTemp} from './admin/GlobalTemp/AxisBottom_temp'
 export {default as AxisLeftTemp} from './admin/GlobalTemp/AxisLeft_temp'
 export {default as MarksTemp} from './admin/GlobalTemp/Marks_temp'
+
+export {default as WorldMap} from './admin/WorldMap/WorldMap'
+export {default as AxisBottomMap} from './admin/WorldMap/AxisBottom_map'
+export {default as AxisLeftMap} from './admin/WorldMap/AxisLeft_map'
+export {default as MarksMap} from './admin/WorldMap/Marks_map'
