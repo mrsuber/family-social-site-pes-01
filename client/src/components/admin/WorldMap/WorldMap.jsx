@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEye, faClock} from '@fortawesome/free-solid-svg-icons';
-// import { } from 'd3'
+import {scaleSqrt,max } from 'd3'
 import './WorldMap.css'
 import {MarksMap,Dropdown} from '../../../components'
 
@@ -9,6 +9,12 @@ const WorldMap = ({worldAtlas,cities}) => {
 
   const width = 890;
   const height = 490;
+
+  const sizeValue = d => d.population
+  const maxRadius = 15;
+  const sizeScale = scaleSqrt()
+    .domain([0,max(cities,sizeValue)])
+    .range([0, maxRadius])
 
 
 
@@ -26,7 +32,7 @@ const WorldMap = ({worldAtlas,cities}) => {
           <div className="admin__graph-board admin__svg-pop">
             <svg width={width} height={height} viewBox="0 0 960 490" style={{display: 'block'}}>
 
-              <MarksMap worldAtlas={worldAtlas} cities={cities}/>
+              <MarksMap worldAtlas={worldAtlas} cities={cities} sizeScale={sizeScale}sizeValue={sizeValue}/>
 
             </svg>
           </div>

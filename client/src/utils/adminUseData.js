@@ -27,6 +27,7 @@ export const usePointsOnMapData = ()=>{
   const row = d=>{
     d.lat = +d.lat
     d.lng = +d.lng
+    d.population = +d.population
     return d
   }
   useEffect(()=>{
