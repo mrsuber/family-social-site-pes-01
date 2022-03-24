@@ -21,8 +21,8 @@ const getLabel = value => {
 }
 
 const width = 440;
-const height = 390;
-const margin = {top: -10, right: 65, bottom: 30, left: 40}
+const height = 420;
+const margin = {top: -20, right: 65, bottom: 45, left: 40}
 const innerHeight = height - margin.top - margin.bottom;
 const innerWidth = width - margin.left - margin.right
 const tickOffset = 5;
@@ -31,6 +31,8 @@ const circleRadius = 4;
 const tickSpacing = 20;
 const tickSize = 7
 const tickTextOffset = 20
+
+const fadeOpacity = 0.2
 
 const xAxisLabelOfset = 70
 const yAxisLabelOfset = 30
@@ -45,6 +47,7 @@ const xAxisTickFormat = tickValue => siFormat(tickValue).replace('G','B')
 
 
 const IrishFlower = ({data}) => {
+  const [hoveredValue, setHoveredValue] = useState(null)
 
 
   const initialxAttribute = 'sepal_length'
@@ -76,6 +79,8 @@ const IrishFlower = ({data}) => {
   const colorScale = scaleOrdinal()
     .domain(data.map(colorValue))
     .range(['#E6842A','#137B80','#8E6C8A'])
+
+    const filteredData = data.filter(d => hoveredValue === colorValue(d))
 
 
 
@@ -111,13 +116,36 @@ const IrishFlower = ({data}) => {
                 tickSpacing={tickSpacing}
                 tickSize={tickSize}
                 tickTextOffset={tickTextOffset}
+                onHover={setHoveredValue}
+                hoveredValue={hoveredValue}
+                fadeOpacity={fadeOpacity}
               />
               </g>
+              <g opacity={hoveredValue? fadeOpacity : 1}>
               <MarksIrish
               xScale={xScale}
               yScale={yScale}
 
               data={data}
+
+              xValue={xValue}
+              yValue={yValue}
+
+              colorScale={colorScale}
+              colorValue={colorValue}
+
+
+
+              circleRadius={circleRadius}
+              tooltipFormate={xAxisTickFormat}
+              />
+              </g>
+
+              <MarksIrish
+              xScale={xScale}
+              yScale={yScale}
+
+              data={filteredData}
 
               xValue={xValue}
               yValue={yValue}

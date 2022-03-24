@@ -13,7 +13,10 @@
 .admin__plot-marks{
 
 }
-
+.admin__colorlegend-circle{
+  cursor: pointer;
+}
 .admin__colorlegend-text{
   fill:var(--color-main);
+  cursor: pointer;
 }
