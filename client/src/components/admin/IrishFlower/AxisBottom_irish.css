@@ -10,3 +10,10 @@
 .admin__his-marks{
   fill: #137880;
 }
+.admin__plot-marks{
+
+}
+
+.admin__colorlegend-text{
+  fill:var(--color-main);
+}

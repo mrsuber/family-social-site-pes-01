@@ -67,6 +67,7 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 //admin
 export {default as Dropdown} from './admin/dropDown/Dropdown'
+export {default as ColorLegend} from './admin/colorLegend/ColorLegend'
 export {default as AdminSideBar} from './admin/adminSideBar/AdminSideBar'
 export {default as DisplayCssColorsPie} from './admin/svg/DisplayCssColorsPie/DisplayCssColorsPie'
 export {default as AdminRevenueCard} from './admin/revenueCard/RevenueCard'

@@ -35,6 +35,10 @@
   fill:var(--normal-text);
   font-size: 15px;
 }
+.admin__flower-text-label{
+  fill:var(--normal-text);
+  font-size: 20px;
+}
 
 .admin__irisFlower{
   margin-left: 65px;

@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEye, faClock} from '@fortawesome/free-solid-svg-icons';
-import { scaleLinear,max,format,extent} from 'd3'
+import { scaleLinear,max,format,extent,scaleOrdinal} from 'd3'
 import './IrishFlower.css'
-import {AxisBottomIrish, AxisLeftIrish,MarksIrish,Dropdown} from '../../../components'
+import {AxisBottomIrish, AxisLeftIrish,MarksIrish,Dropdown,ColorLegend} from '../../../components'
 const attributes = [
   {value:"sepal_length", label:"Sepal Length"},
   {value:"sepal_width", label: "Sepal Width"},
@@ -22,11 +22,15 @@ const getLabel = value => {
 
 const width = 440;
 const height = 390;
-const margin = {top: 20, right: 0, bottom: 30, left: 50}
+const margin = {top: -10, right: 65, bottom: 30, left: 40}
 const innerHeight = height - margin.top - margin.bottom;
 const innerWidth = width - margin.left - margin.right
 const tickOffset = 5;
-const circleRadius = 7;
+const circleRadius = 4;
+
+const tickSpacing = 20;
+const tickSize = 7
+const tickTextOffset = 20
 
 const xAxisLabelOfset = 70
 const yAxisLabelOfset = 30
@@ -51,6 +55,10 @@ const IrishFlower = ({data}) => {
   const xValue = d=>d[xAttribute]
   const yValue = d=>d[yAttribute]
 
+
+  const colorValue = d=>d.species
+  const colorLegendLabel = 'Species'
+
   const xAxisLabel = getLabel(xAttribute)
   const yAxisLabel = getLabel(yAttribute)
 
@@ -65,6 +73,12 @@ const IrishFlower = ({data}) => {
     .range([0,innerHeight])
     .nice()
 
+  const colorScale = scaleOrdinal()
+    .domain(data.map(colorValue))
+    .range(['#E6842A','#137B80','#8E6C8A'])
+
+
+
   return (
     <div className="admin__graph-card admin__Irishhis-container">
         <h3 className="admin__section-head">Analytics of Iris Flower</h3>
@@ -72,12 +86,13 @@ const IrishFlower = ({data}) => {
         <div className="admin__graph-content_his ">
           <div className="admin__graph-head">
           <div className="admin__graph-select">
-            <Dropdown options={attributes} id="x-select" AxisLabel="X-axis:" onSelectedValueChange={setXAttribute} selectedValue={xAttribute} classLabel="admin__irisFlower" />
+            <Dropdown options={attributes} id="y-select" AxisLabel="Y" onSelectedValueChange={setYAttribute} selectedValue={yAttribute} classLabel="admin__irisFlowery" />
+          </div>
+          <div className="admin__graph-select">
+            <Dropdown options={attributes} id="x-select" AxisLabel="X" onSelectedValueChange={setXAttribute} selectedValue={xAttribute} classLabel="admin__irisFlower" />
           </div>
 
-          <div className="admin__graph-select">
-            <Dropdown options={attributes} id="y-select" AxisLabel="Y-axis:" onSelectedValueChange={setYAttribute} selectedValue={yAttribute} classLabel="admin__irisFlowery" />
-          </div>
+
           </div>
           <div className="admin__graph-board admin__svg-pop">
             <svg width={width} height={height} viewBox="0 0 500 348" style={{display: 'block'}}>
@@ -88,12 +103,30 @@ const IrishFlower = ({data}) => {
 
             <AxisLeftIrish yScale={yScale} innerWidth={innerWidth} tickOffset={tickOffset}/>
               <text x={innerWidth/2 - xAxisLabelOfset} y={innerHeight + yAxisLabelOfset} extAnchor="middle" className='admin__his-text-label'>{xAxisLabel}</text>
+              <g transform={`translate(${innerWidth + 20},60)`}>
+              <text x={20} y={-30}  extAnchor="middle" className='admin__flower-text-label'>{colorLegendLabel}</text>
+
+              <ColorLegend
+                colorScale={colorScale}
+                tickSpacing={tickSpacing}
+                tickSize={tickSize}
+                tickTextOffset={tickTextOffset}
+              />
+              </g>
               <MarksIrish
               xScale={xScale}
               yScale={yScale}
+
               data={data}
+
               xValue={xValue}
               yValue={yValue}
+
+              colorScale={colorScale}
+              colorValue={colorValue}
+
+
+
               circleRadius={circleRadius}
               tooltipFormate={xAxisTickFormat}
               />
