@@ -32,3 +32,8 @@
     margin: 5px;
     margin-right: 5px;
 }
+
+.admin__map-cities{
+  fill:#00ffa4;
+  opacity: 0.5;
+}

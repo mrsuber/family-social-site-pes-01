@@ -4,7 +4,7 @@ import {profile,logo,pic} from '../../../images'
 import {AdminSideBar,DisplayCssColorsPie,DisplayCssColorsHis,AdminRevenueCard,AdminSalariesVSJobs,IrishFlower,GlobalTemp,WorldMap} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faVideo,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
-import {useCountryData,useCssColorData,useIrisFlowerData,useTempData,useWorldMapData} from '../../../utils/adminUseData'
+import {useCountryData,useCssColorData,useIrisFlowerData,useTempData,useWorldMapData,usePointsOnMapData} from '../../../utils/adminUseData'
 
 
 
@@ -16,6 +16,7 @@ const AdminHome = () => {
   const irishFlowerData = useIrisFlowerData()
   const tempData = useTempData()
   const worldMapData=useWorldMapData()
+  const pointsOnMapData= usePointsOnMapData()
 
 
   return (
@@ -113,7 +114,7 @@ const AdminHome = () => {
 
           <section>
             <div className="admin__block-grid3">
-          {worldMapData.length===0? 'Loding Data':<WorldMap data={worldMapData}/>}
+          {worldMapData.length===0 || pointsOnMapData.length===0? 'Loding Data':<WorldMap worldAtlas={worldMapData} cities={pointsOnMapData}/>}
           </div>
           </section>
       </main>

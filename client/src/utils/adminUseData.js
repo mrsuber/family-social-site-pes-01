@@ -18,6 +18,28 @@ const GlobalTempUrl = "https://gist.githubusercontent.com/curran/90240a6d88bdb14
 const WorldMapUrl = "https://unpkg.com/world-atlas@2.0.2/countries-50m.json"
 // Jason url
 
+const PointsOnMap = "https://gist.githubusercontent.com/curran/13d30e855d48cdd6f22acdf0afe27286/raw/0635f14817ec634833bb904a47594cc2f5f9dbf8/worldcities_clean.csv"
+//csvurs
+
+//points on wordMap data
+export const usePointsOnMapData = ()=>{
+  const [data5,setData5]=useState([])
+  const row = d=>{
+    d.lat = +d.lat
+    d.lng = +d.lng
+    return d
+  }
+  useEffect(()=>{
+
+    csv(PointsOnMap,row).then(setData5)
+
+
+  },[])
+
+  return data5;
+}
+
+
 //iris wordMap data
 export const useWorldMapData = ()=>{
   const [data4,setData4]=useState([])
