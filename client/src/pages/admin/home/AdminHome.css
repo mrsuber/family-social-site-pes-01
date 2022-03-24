@@ -311,7 +311,8 @@ margin-bottom: .5rem;
   border: 1px solid var(--main-text);
   border-radius: 10px;
   height: 35px;
-  padding: .5rem 1rem;
+  padding: 0 1rem;
+  cursor: pointer;
 
   outline: none;
 }

@@ -21,7 +21,7 @@ const WorldMapUrl = "https://unpkg.com/world-atlas@2.0.2/countries-50m.json"
 //iris wordMap data
 export const useWorldMapData = ()=>{
   const [data4,setData4]=useState([])
-  console.log(data4)
+
   useEffect(()=>{
 
     json(WorldMapUrl).then(topology => {

@@ -34,7 +34,7 @@ const AdminHome = () => {
           </label>
           <div className="admin__header-title">
           <h1>Analytics</h1>
-          <p>Display analytics about any and everything I engage with. <span className="admin__las admin__la-chart-line"><FontAwesomeIcon icon={faChartLine} /></span></p>
+          <p>This is Demo Account. To see real data, please login.. <span className="admin__las admin__la-chart-line"><FontAwesomeIcon icon={faChartLine} /></span></p>
           </div>
         </div>
         <div className="admin__header-action">

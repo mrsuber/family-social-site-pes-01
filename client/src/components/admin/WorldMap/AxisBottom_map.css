@@ -27,3 +27,8 @@
   fill:none;
   stroke:var(--color-main-light2);
 }
+
+.admin__graph-board.admin__svg-pop svg{
+    margin: 5px;
+    margin-right: 5px;
+}

@@ -35,3 +35,13 @@
   fill:var(--normal-text);
   font-size: 15px;
 }
+
+.admin__irisFlower{
+  margin-left: 65px;
+  padding: 0 5px;
+}
+
+.admin__irisFlowery{
+  /* margin-left: 65px; */
+  padding: 0 5px;
+}

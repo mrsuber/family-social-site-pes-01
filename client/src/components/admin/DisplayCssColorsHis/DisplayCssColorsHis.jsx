@@ -7,9 +7,9 @@ import {AxisBottom, AxisLeft,Marks} from '../../../components'
 
 const DisplayCssColorsHis = ({data}) => {
 
-  const width = 600;
+  const width = 500;
   const height = 448;
-  const margin = {top: 20, right: 20, bottom: 35, left: 150}
+  const margin = {top: -10, right: -90, bottom: 15, left: 155}
   const innerHeight = height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right
   const xAxisLabelOfset = 70
@@ -35,7 +35,7 @@ const DisplayCssColorsHis = ({data}) => {
 
           </div>
           <div className="admin__graph-board admin__svg-pop">
-            <svg width={width} height={height} style={{display: 'block'}}>
+            <svg width={width} height={height}  viewBox="0 0 600 448" style={{display: 'block'}}>
             <g transform={`translate(${margin.left},${margin.top})`}>
 
             <AxisBottom  innerHeight={innerHeight} xScale={xScale} tickformat={xAxisTickFormat}/>

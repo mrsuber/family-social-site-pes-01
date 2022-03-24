@@ -7,9 +7,13 @@ import {AxisBottomTemp, AxisLeftTemp,MarksTemp} from '../../../components'
 
 const GlobalTemp = ({data}) => {
 
-  const width = 600;
-  const height = 448;
-  const margin = {top: 20, right: 20, bottom: 35, left: 150}
+  // const width = 600;
+  // const height = 448;
+    // const margin = {top: 20, right: 20, bottom: 35, left: 150}
+  const width = 390;
+  const height = 458;
+  const margin = {top: 20, right: -160, bottom: -50, left: 50}
+
   const innerHeight = height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right
   const tickOffset = 5;
@@ -39,7 +43,7 @@ const GlobalTemp = ({data}) => {
     .domain(extent(data,yValue))
     .range([innerHeight,0])
     .nice()
-    
+
 
 
   return (
@@ -50,7 +54,7 @@ const GlobalTemp = ({data}) => {
 
           </div>
           <div className="admin__graph-board admin__svg-pop">
-            <svg width={width} height={height} style={{display: 'block'}}>
+            <svg width={width} height={height} viewBox="0 0 600 448" style={{display: 'block'}}>
             <g transform={`translate(${margin.left},${margin.top})`}>
 
             <AxisBottomTemp  innerHeight={innerHeight} xScale={xScale} tickformat={xAxisTickFormat} tickOffset={tickOffset}/>
