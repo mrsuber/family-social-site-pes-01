@@ -21,6 +21,10 @@ const WorldMapUrl = "https://unpkg.com/world-atlas@2.0.2/countries-50m.json"
 const PointsOnMap = "https://gist.githubusercontent.com/curran/13d30e855d48cdd6f22acdf0afe27286/raw/0635f14817ec634833bb904a47594cc2f5f9dbf8/worldcities_clean.csv"
 //csvurs
 
+const MissingMigrants = "https://raw.githubusercontent.com/mrsuber/SVG-css-colors/master/MissingMigrants-Global-2022-03-24--04_40_16.csv"
+//csvUrl
+
+
 //points on wordMap data
 export const usePointsOnMapData = ()=>{
   const [data5,setData5]=useState([])
