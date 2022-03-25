@@ -122,7 +122,7 @@ const portfolio=[
     id:6,
     thumb:pf25,
     larg:lg252+","+lg251+","+lg253+","+lg254+","+lg255+","+lg256+","+lg257+","+lg258+","+lg259+","+lg2510+","+lg2511+","+lg2512,
-    title:'Geneasocial',
+    title:'Digital Experts',
     category:'web-application',
     tools:'html, css, javascript, React, Nodejs, MongoDB, React-native',
     client:'client project',
