@@ -10,11 +10,12 @@ const xValue = d=>d['Incident Date']
 
 const WorldMap_mig = ({worldAtlas,data}) => {
 
+
   const [brushExtent, setBrushExtent] = useState()
 
   const filteredData = brushExtent ? data.filter(d => {
     const date = xValue(d)
-    return data > brushExtent[0] && date < brushExtent[1]
+    return date > brushExtent[0] && date < brushExtent[1]
   }): data
 
 
