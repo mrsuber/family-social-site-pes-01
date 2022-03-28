@@ -1,12 +1,12 @@
 import React from 'react'
 import { scaleLinear,scaleTime,max,extent,timeFormat, bin, timeMonths,sum} from 'd3'
 import {AxisBottomMig,AxisLeftMig,MarksMig} from '../../../components'
-const width = 890;
-const height = 290;
-const margin = {top: 60, right: -10, bottom: -50, left: -30}
+
+const margin = {top: 5, right: 30, bottom: 0, left: 150}
+// const height = 100;
 
 
-const DateHistogram = ({data}) => {
+const DateHistogram = ({data,height,width}) => {
 
   const xAxisLabel = "Time"
   const yAxisLabel = "Total Number of Dead and Missing"
@@ -52,21 +52,25 @@ const DateHistogram = ({data}) => {
       .nice()
 
     return (
+      <>
+      <rect width={width+50} height={height+22} className="admin__mig_background"/>
       <g transform={`translate(${margin.left},${margin.top})`}>
 
       <AxisBottomMig  innerHeight={innerHeight} xScale={xScale} tickformat={xAxisTickFormat} tickOffset={tickOffset}/>
-      <text transform={`translate(${-yAxisLabelOfset - 10 }, ${innerHeight/2 + 100} ) rotate(-90) `} extAnchor="middle" className='admin__his-text-label'>{yAxisLabel}</text>
+      <text transform={`translate(${-yAxisLabelOfset - 10 }, ${innerHeight/2 + 60} ) rotate(-90) `} extAnchor="middle" className='admin__his2-text-label'>{yAxisLabel}</text>
 
       <AxisLeftMig yScale={yScale} innerWidth={innerWidth} tickOffset={tickOffset}/>
-        <text x={innerWidth/2 - xAxisLabelOfset } y={innerHeight + yAxisLabelOfset } extAnchor="middle" className='admin__his-text-label'>{xAxisLabel}</text>
+        <text x={innerWidth/2 - xAxisLabelOfset } y={innerHeight + yAxisLabelOfset } extAnchor="middle" className='admin__his2-text-label'>{xAxisLabel}</text>
         <MarksMig
         xScale={xScale}
         yScale={yScale}
         binnedData={binnedData}
         innerHeight={innerHeight}
         tooltipFormate={d=>d}
+        color='admin__his2-color'
         />
         </g>
+        </>
     )
 }
 

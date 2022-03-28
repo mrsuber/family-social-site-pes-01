@@ -1,5 +1,6 @@
 .admin__his-tick line{
-  stroke: #396aff45;
+
+    stroke: var(--color-main-light2);
 }
 
 .admin__his-tick text{
