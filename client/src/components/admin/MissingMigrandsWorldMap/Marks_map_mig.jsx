@@ -11,15 +11,15 @@ const Marks_map_mig = ({worldAtlas:{land, interiors}, data,sizeScale,sizeValue})
     <path className="admin__map-shere" d={path({type:'Sphere'})}/>
     <path className="admin__map-graticule" d={path(graticule())} />
 
-      {land.features.map(feature => (
-        <path className="admin__map-feature" d={path(feature)} />
+      {land.features.map((feature, i) => (
+        <path  key={i} className="admin__map-feature" d={path(feature)} />
       ))
     }
       <path className="admin__map-interior" d={path(interiors)} />
 
-      {data.map(d => {
+      {data.map((d,i) => {
         const [x,y] = projection(d.coords);
-        return <circle cx={x} cy={y} r={sizeScale(sizeValue(d))} className="admin__map-cities"/>
+        return <circle key={i} cx={x? x: 0} cy={y? y: 0} r={sizeScale(sizeValue(d))} className="admin__map-cities"/>
       })}
 
 

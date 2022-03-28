@@ -5,8 +5,8 @@ const Dropdown = ({options,id,onSelectedValueChange,selectedValue,classLabel,Axi
     <label for={id} className={classLabel} >{AxisLabel} </label>
     <select id ={id} onChange={event=> onSelectedValueChange(event.target.value)} >
 
-    {options.map(({value,label}) =>(
-        <option value={value} selected={value===selectedValue}>
+    {options.map(({value,label},i) =>(
+        <option key={i} value={value} selected={value===selectedValue}>
         {label}
         </option>
     ))}

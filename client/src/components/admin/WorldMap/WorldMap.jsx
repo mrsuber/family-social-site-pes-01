@@ -1,9 +1,7 @@
-import React,{useState} from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faEye, faClock} from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
 import {scaleSqrt,max } from 'd3'
 import './WorldMap.css'
-import {MarksMap,Dropdown} from '../../../components'
+import {MarksMap} from '../../../components'
 
 const WorldMap = ({worldAtlas,cities}) => {
 

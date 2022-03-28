@@ -1,7 +1,5 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faEye, faClock} from '@fortawesome/free-solid-svg-icons';
-import { scaleLinear,scaleTime,max,format,extent,timeFormat} from 'd3'
+import { scaleLinear,scaleTime,extent,timeFormat} from 'd3'
 import './GlobalTemp.css'
 import {AxisBottomTemp, AxisLeftTemp,MarksTemp} from '../../../components'
 

@@ -1,7 +1,5 @@
 import React,{useState} from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faEye, faClock} from '@fortawesome/free-solid-svg-icons';
-import { scaleLinear,max,format,extent,scaleOrdinal} from 'd3'
+import { scaleLinear,format,extent,scaleOrdinal} from 'd3'
 import './IrishFlower.css'
 import {AxisBottomIrish, AxisLeftIrish,MarksIrish,Dropdown,ColorLegend} from '../../../components'
 const attributes = [

@@ -1,17 +1,17 @@
-import React from 'react'
-import { scaleLinear,scaleTime,max,extent,timeFormat, bin, timeMonths,sum} from 'd3'
+import React,{useRef,useEffect} from 'react'
+import { scaleLinear,scaleTime,max,extent,timeFormat, bin, timeMonths,sum,brushX,select} from 'd3'
 import {AxisBottomMig,AxisLeftMig,MarksMig} from '../../../components'
 
 const margin = {top: 5, right: 30, bottom: 0, left: 150}
 // const height = 100;
 
 
-const DateHistogram = ({data,height,width}) => {
-
+const DateHistogram = ({data,height,width,setBrushExtent,xValue}) => {
+  const brushRef = useRef();
   const xAxisLabel = "Time"
   const yAxisLabel = "Total Number of Dead and Missing"
 
-  const xValue = d=>d['Incident Date']
+
   const yValue = d=> d['Total Number of Dead and Missing']
 
   const innerHeight = height - margin.top - margin.bottom;
@@ -51,6 +51,15 @@ const DateHistogram = ({data,height,width}) => {
       .range([innerHeight,0])
       .nice()
 
+    useEffect(()=>{
+      const brush = brushX().extent([[0,0],[innerWidth,innerHeight]])
+      brush(select(brushRef.current))
+      brush.on('brush', (event) => {
+      // setBrushExtent(event.selection.map(xScale.invert))
+      console.log(event.selection.map(xScale.invert))
+      })
+    },[innerWidth,innerHeight,xScale])
+
     return (
       <>
       <rect width={width+50} height={height+22} className="admin__mig_background"/>
@@ -69,6 +78,7 @@ const DateHistogram = ({data,height,width}) => {
         tooltipFormate={d=>d}
         color='admin__his2-color'
         />
+        <g ref={brushRef} />
         </g>
         </>
     )

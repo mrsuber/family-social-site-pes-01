@@ -1,6 +1,4 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faEye, faClock} from '@fortawesome/free-solid-svg-icons';
 import {scaleBand, scaleLinear,max,format} from 'd3'
 import './DisplayCssColorsHis.css'
 import {AxisBottom, AxisLeft,Marks} from '../../../components'

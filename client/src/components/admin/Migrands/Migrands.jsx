@@ -1,7 +1,5 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faEye, faClock} from '@fortawesome/free-solid-svg-icons';
-import { scaleLinear,scaleTime,max,format,extent,timeFormat, bin, timeMonths,sum} from 'd3'
+import { scaleLinear,scaleTime,max,extent,timeFormat, bin, timeMonths,sum} from 'd3'
 import './Migrands.css'
 import {AxisBottomMig, AxisLeftMig,MarksMig} from '../../../components'
 

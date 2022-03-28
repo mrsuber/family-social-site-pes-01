@@ -1,5 +1,4 @@
 import React from 'react'
-import {scaleBand, scaleLinear,max} from 'd3'
 import './AxisBottom_map_mig.css'
 
 
