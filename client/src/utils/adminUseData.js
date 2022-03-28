@@ -21,9 +21,47 @@ const WorldMapUrl = "https://unpkg.com/world-atlas@2.0.2/countries-50m.json"
 const PointsOnMap = "https://gist.githubusercontent.com/curran/13d30e855d48cdd6f22acdf0afe27286/raw/0635f14817ec634833bb904a47594cc2f5f9dbf8/worldcities_clean.csv"
 //csvurs
 
-const MissingMigrants = "https://raw.githubusercontent.com/mrsuber/SVG-css-colors/master/MissingMigrants-Global-2022-03-24--04_40_16.csv"
+const MissingMigrants = "https://raw.githubusercontent.com/mrsuber/SVG-css-colors/master/Missing_Migrants_Global_Figures_a.csv"
 //csvUrl
 
+
+//points on wordMapMig points data
+export const useMigrandsMissPointsData = ()=>{
+  const [data7,setData7]=useState([])
+
+  const row = d=>{
+    d.coords = d.Coordinates.split(",").map(d =>+d)
+    d["Total Number of Dead and Missing"] = +d["Total, Number, of, Dead, and, Missing"]
+    d['Incident Date'] = new Date(d['Incident, Date'])
+    return d
+  }
+  useEffect(()=>{
+
+    csv(MissingMigrants,row).then(setData7)
+
+
+  },[])
+
+  return data7;
+}
+
+
+//iris temperature data
+export const useMigrandsData = ()=>{
+  const [data6,setData6]=useState([])
+
+  useEffect(()=>{
+
+    const row = d =>{
+      d['Total Number of Dead and Missing'] = +d['Total, Number, of, Dead, and, Missing']
+      d['Incident Date'] = new Date(d['Incident, Date'])
+      return d
+    }
+    csv(MissingMigrants, row).then(setData6)
+  },[])
+
+  return data6;
+}
 
 //points on wordMap data
 export const usePointsOnMapData = ()=>{

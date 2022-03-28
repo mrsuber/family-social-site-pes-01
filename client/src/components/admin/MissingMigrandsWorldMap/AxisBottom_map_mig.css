@@ -1,0 +1,39 @@
+
+
+
+.admin__map-marks .admin__map-feature{
+  fill: #137880;
+
+  /* stroke-width:3; */
+  /* fill: none; */
+  /* stroke-linejoin:round;
+  stroke-linecap:round; */
+
+}
+
+.admin__map-marks .admin__map-shere{
+  fill: var(--color-main-light);
+
+
+}
+
+.admin__map-interior{
+  fill:none;
+  stroke:var(--normal-text-light);
+}
+
+
+.admin__map-graticule{
+  fill:none;
+  stroke:var(--color-main-light2);
+}
+
+.admin__graph-board.admin__svg-pop svg{
+    margin: 5px;
+    margin-right: 5px;
+}
+
+.admin__map-cities{
+  fill:#00ffa4;
+  opacity: 0.5;
+}

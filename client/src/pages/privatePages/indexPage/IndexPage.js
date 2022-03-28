@@ -42,9 +42,7 @@ const IndexPage = () => {
     <>
 
 
-        {
-          family.selectFamily && <SelectFamilyCard/>
-        }
+      
         <div className="index__card_wrapper" >
 
         <span className="social2__index_card">

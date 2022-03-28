@@ -46,7 +46,7 @@ const App=()=> {
 
   return (
     <Router>
-      <div className={`App ${(status || modal) && 'social2__mode'}`} style={{backgroundImage:`url(${bg})`,backgroundAttachment:'fixed',backgroundPosition:'center',minHeight:'100vh'}}>
+      <div className={`App ${(status || modal) && 'social2__mode'}`} >
       <Alert />
             {auth.token && <SocketClient />}
             {call && <CallModal/>}

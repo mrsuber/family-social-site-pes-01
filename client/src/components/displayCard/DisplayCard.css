@@ -16,7 +16,10 @@
   /* transform: scale(0.7) */
 
 }
-
+.display-card{
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
 
 
 
@@ -224,11 +227,7 @@ margin-top: 10px;
   transition: 0.4s linear;
 }
 
-.index__card_wrapper{
-  display: flex;
-  margin-left: 10px;
-  margin-top: 10px;
-}
+
 
 .social2__click_btn{
   background: white;

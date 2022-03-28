@@ -1,4 +1,26 @@
 
 .social2__index_card{
   margin: 10px;
+  margin-bottom: 20px;
+}
+.index__card_wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(150deg,#070716 56%,#2e69ab 67%,#00f8ea 88%);
+   min-height: 100vh;
+   background-size: 300% 300%;
+     animation: gradient 15s ease infinite;
+
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

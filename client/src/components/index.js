@@ -66,6 +66,8 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 
 //admin
+export {default as DateHistogram} from './admin/dateHistogram/DateHistogram'
+export {default as BubbleMap} from './admin/bubbleMap/BubbleMap'
 export {default as Dropdown} from './admin/dropDown/Dropdown'
 export {default as ColorLegend} from './admin/colorLegend/ColorLegend'
 export {default as AdminSideBar} from './admin/adminSideBar/AdminSideBar'
@@ -91,3 +93,14 @@ export {default as WorldMap} from './admin/WorldMap/WorldMap'
 export {default as AxisBottomMap} from './admin/WorldMap/AxisBottom_map'
 export {default as AxisLeftMap} from './admin/WorldMap/AxisLeft_map'
 export {default as MarksMap} from './admin/WorldMap/Marks_map'
+
+export {default as Migrands} from './admin/Migrands/Migrands'
+export {default as AxisBottomMig} from './admin/Migrands/AxisBottom_mig'
+export {default as AxisLeftMig} from './admin/Migrands/AxisLeft_mig'
+export {default as MarksMig} from './admin/Migrands/Marks_mig'
+
+
+export {default as WorldMapMig} from './admin/MissingMigrandsWorldMap/WorldMap_mig'
+export {default as AxisBottomMigMap} from './admin/MissingMigrandsWorldMap/AxisBottom_map_mig'
+export {default as AxisLeftMigMap} from './admin/MissingMigrandsWorldMap/AxisLeft_map_mig'
+export {default as MarksMigMap} from './admin/MissingMigrandsWorldMap/Marks_map_mig'

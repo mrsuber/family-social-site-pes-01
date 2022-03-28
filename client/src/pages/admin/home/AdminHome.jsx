@@ -1,10 +1,10 @@
 import React,{useEffect,useState} from 'react'
 import './AdminHome.css'
 import {profile,logo,pic} from '../../../images'
-import {AdminSideBar,DisplayCssColorsPie,DisplayCssColorsHis,AdminRevenueCard,AdminSalariesVSJobs,IrishFlower,GlobalTemp,WorldMap} from '../../../components'
+import {AdminSideBar,DisplayCssColorsPie,DisplayCssColorsHis,AdminRevenueCard,AdminSalariesVSJobs,IrishFlower,GlobalTemp,WorldMap,Migrands,WorldMapMig} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faVideo,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
-import {useCountryData,useCssColorData,useIrisFlowerData,useTempData,useWorldMapData,usePointsOnMapData} from '../../../utils/adminUseData'
+import {useCountryData,useCssColorData,useIrisFlowerData,useTempData,useWorldMapData,usePointsOnMapData,useMigrandsData,useMigrandsMissPointsData} from '../../../utils/adminUseData'
 
 
 
@@ -17,6 +17,8 @@ const AdminHome = () => {
   const tempData = useTempData()
   const worldMapData=useWorldMapData()
   const pointsOnMapData= usePointsOnMapData()
+  const migrandsData = useMigrandsData()
+  const migrandsMissPointsData = useMigrandsMissPointsData()
 
 
   return (
@@ -115,6 +117,18 @@ const AdminHome = () => {
           <section>
             <div className="admin__block-grid3">
           {worldMapData.length===0 || pointsOnMapData.length===0? 'Loding Data':<WorldMap worldAtlas={worldMapData} cities={pointsOnMapData}/>}
+          </div>
+          </section>
+
+          <section>
+            <div className="admin__block-grid3">
+          {worldMapData.length===0 || migrandsMissPointsData.length===0? 'Loding Data':<WorldMapMig worldAtlas={worldMapData} data={migrandsMissPointsData}/>}
+          </div>
+          </section>
+
+          <section>
+            <div className="admin__block-grid3">
+          {migrandsData.length===0? 'Loding Data':<Migrands data={migrandsData}/>}
           </div>
           </section>
       </main>
