@@ -66,6 +66,8 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 
 //admin
+export {default as AdminExpenseMain} from './admin/expense/AdminExpenseMain/AdminExpenseMain'
+export {default as AdminExpenseDetails} from './admin/expense/AdminExpenseDetails/AdminExpenseDetails'
 export {default as AdminToast} from './admin/toast/Toast'
 export {default as DateHistogram} from './admin/dateHistogram/DateHistogram'
 export {default as BubbleMap} from './admin/bubbleMap/BubbleMap'

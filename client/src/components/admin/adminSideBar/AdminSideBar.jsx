@@ -3,9 +3,11 @@ import './AdminSideBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCalendar,faCog,faUser,faArrowDown,faAdjust,faVideo,faChartBar,faChartLine} from '@fortawesome/free-solid-svg-icons';
 import {Link} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 
-const AdminSideBar = ({img,logo,pic,activeLink,activeLink2}) => {
+const AdminSideBar = ({img,logo,activeLink,activeLink2, fullname,username}) => {
+  const {auth} = useSelector(state => state)
   return (
     <div className="admin__sidebar">
       <div className="admin__sidebar-container">
@@ -21,8 +23,8 @@ const AdminSideBar = ({img,logo,pic,activeLink,activeLink2}) => {
           </div>
           <div className="admin__avartar-info">
             <div className="admin__avartar-text">
-              <h4>Mohamad Siysinyuy</h4>
-              <small>Demo Account</small>
+              <h4>{fullname}</h4>
+              <small>{username}</small>
             </div>
             <span className="admin__las admin__la-arrow-down"><FontAwesomeIcon icon={faArrowDown} /></span>
 
