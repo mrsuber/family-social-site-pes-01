@@ -32,7 +32,7 @@ const WorldMap_mig = ({worldAtlas,data}) => {
           </div>
           <div className="admin__graph-board admin__svg-pop">
             <svg width={width} height={height} viewBox="0 0 960 490" style={{display: 'block'}}>
-              <BubbleMap data={filteredData} worldAtlas={worldAtlas} />
+              <BubbleMap data={data} worldAtlas={worldAtlas} filteredData={filteredData}/>
               <g transform={`translate(0,${height - dateHistogramSize * height})`}>
             <DateHistogram data={data} height={ dateHistogramSize * height} width={width} setBrushExtent={setBrushExtent} xValue={xValue}/>
               </g>

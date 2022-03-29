@@ -38,6 +38,11 @@
   opacity: 0.5;
 }
 
+.admin__map_mig-cities{
+  fill:#00ffa4;
+  opacity: 0.5;
+}
+
 .admin__his2-text-label{
   fill:var(--normal-text);
   font-size: 6px;
