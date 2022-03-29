@@ -41,7 +41,7 @@ const AdminHome = () => {
           </div>
         </div>
         <div className="admin__header-action">
-          <button className="admin__btn admin__btn-main">
+          <button className="admin__btn admin__btn-main" onClick={()=>{window.location.href = "/admin/login"}}>
               <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faSignInAlt} /></span>
               Log In
           </button>

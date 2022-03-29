@@ -3,9 +3,22 @@ import {AdminSideBar} from '../../../components'
 import {profile,logo,pic} from '../../../images'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faHome,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
+import {useSelector,useDispatch} from 'react-redux'
 
+import {logout} from '../../../redux/actions/authAction'
 import './AdminErrorScreen.css'
 const AdminErrorScreen = () => {
+
+  const {auth} = useSelector(state => state)
+    const dispatch = useDispatch()
+
+  const logoutnow =()=>{
+    dispatch(logout())
+  }
+  const longinnow = ()=>{
+    window.location.href = "/admin/login"
+  }
+
   return (
     <div className="admin__body">
     <input type="checkbox" name="admin__menu-toggle" id="admin__menu-toggle"/>
@@ -40,9 +53,9 @@ const AdminErrorScreen = () => {
       <h3 >You dont have permission to view this site.</h3>
       <h3>🚫🚫🚫🚫</h3>
       <h6 >error code:403 forbidden</h6>
-      <button className="admin__btn admin__btn-main admin__btn-error" onClick={()=>{window.location.href = "/admin/login"}}>
+      <button className="admin__btn admin__btn-main admin__btn-error" onClick={ auth.token? logoutnow : longinnow}>
           <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faSignInAlt} /></span>
-          Log In
+          {auth.token? `Log Out` : 'Log In'}
       </button>
         </div>
 

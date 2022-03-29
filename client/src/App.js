@@ -69,7 +69,7 @@ const App=()=> {
             <PrivateRoute exact path="/profile/:id" component={auth.token && family.selectFamily===false? Profile : LoginScreen2}/>
             <PrivateRoute exact path="/post/:id" component={auth.token && family.selectFamily===false? PostDetails : LoginScreen2}/>
 
-            <Route exact path="/admin/expense" component={auth.token? AdminExpenseScreen : AdminErrorScreen}/>
+            <Route exact path="/admin/expense" component={auth.token && auth.user.isSuperAdmin===true? AdminExpenseScreen : AdminErrorScreen}/>
 
 
 
