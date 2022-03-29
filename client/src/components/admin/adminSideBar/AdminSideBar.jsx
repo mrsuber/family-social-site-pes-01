@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
 
-const AdminSideBar = ({img,logo,activeLink,activeLink2, fullname,username}) => {
+const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, fullname,username}) => {
   const {auth} = useSelector(state => state)
   return (
     <div className="admin__sidebar">
@@ -47,24 +47,24 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2, fullname,username}) => {
             </li>
 
             <li>
-              <a href="" >
+              <Link to="/admin/expense" className={activeLink2}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
                 <span>Analytics</span>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="">
+              <Link to="/admin/expense" className={activeLink2}>
                 <span className="admin__las admin__la-calendar"><FontAwesomeIcon icon={faCalendar} /></span>
                 <span>Schedule</span>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="">
+              <Link to="/admin/expense" className={activeLink2}>
                 <span className="admin__las admin__la-user"><FontAwesomeIcon icon={faUser} /></span>
                 <span>Account</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
