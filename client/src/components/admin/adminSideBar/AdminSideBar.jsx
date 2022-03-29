@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
 
-const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, fullname,username}) => {
+const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, fullname='Mohamad Demo',username='Demo User',activeLink4,activeLink5}) => {
   const {auth} = useSelector(state => state)
   return (
     <div className="admin__sidebar">
@@ -24,7 +24,7 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, fullname,use
           <div className="admin__avartar-info">
             <div className="admin__avartar-text">
               <h4>{fullname}</h4>
-              <small>{username}</small>
+              <small>{`Welcome ${username}`}</small>
             </div>
             <span className="admin__las admin__la-arrow-down"><FontAwesomeIcon icon={faArrowDown} /></span>
 
@@ -47,21 +47,21 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, fullname,use
             </li>
 
             <li>
-              <Link to="/admin/expense" className={activeLink2}>
+              <Link to="/admin/application" className={activeLink3}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
-                <span>Analytics</span>
+                <span>Track Applications</span>
               </Link>
             </li>
 
             <li>
-              <Link to="/admin/expense" className={activeLink2}>
+              <Link to="/admin/expense" className={activeLink4}>
                 <span className="admin__las admin__la-calendar"><FontAwesomeIcon icon={faCalendar} /></span>
                 <span>Schedule</span>
               </Link>
             </li>
 
             <li>
-              <Link to="/admin/expense" className={activeLink2}>
+              <Link to="/admin/expense" className={activeLink5}>
                 <span className="admin__las admin__la-user"><FontAwesomeIcon icon={faUser} /></span>
                 <span>Account</span>
               </Link>

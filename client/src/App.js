@@ -7,7 +7,7 @@ import {
   RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,LoginScreen2,
   PostDetails,HomePage,Message,Discover,Notify,Profile,PorfolioHome,MessageDetails,
   BlogHomePage,
-  AdminHome,AdminLoginScreen,AdminErrorScreen,AdminExpenseScreen
+  AdminHome,AdminLoginScreen,AdminErrorScreen,AdminExpenseScreen,AdminApplicationScreen
 
 
 } from './pages'
@@ -70,6 +70,8 @@ const App=()=> {
             <PrivateRoute exact path="/post/:id" component={auth.token && family.selectFamily===false? PostDetails : LoginScreen2}/>
 
             <Route exact path="/admin/expense" component={auth.token && auth.user.isSuperAdmin===true? AdminExpenseScreen : AdminErrorScreen}/>
+            <Route exact path="/admin/application" component={auth.token && auth.user.isSuperAdmin===true? AdminApplicationScreen : AdminErrorScreen}/>
+
 
 
 

@@ -1,0 +1,157 @@
+.admin__main-application{
+  height: 100%;
+  display: grid;
+  align-items: center;
+  /* min-width: 100vw; */
+  /* background: #1160a47a; */
+}
+
+.admin__graph-content_apply {
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    /* background: var(--bg2); */
+    width: 25rem;
+}
+
+.admin__graph-board_apply {
+    width: 89rem;
+}
+
+
+.admin__app_tree{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* .admin__app_tree::-webkit-scrollbar{
+  width: 6px;
+}
+.admin__app_tree::::-webkit-scrollbar-track{
+  background: #f1f1f1;
+}
+.admin__app_tree::-webkit-scrollbar-thumb{
+  background: #888;
+  border-radius: 10px;
+}
+  .admin__app_tree::::-webkit-scrollbar-thumb:hover{
+  background: var(--normal-text);
+} */
+
+.admin__app_tree ul{
+
+  padding-top: 20px;
+  position: relative;
+  transition: .5s;
+
+}
+
+
+.admin__app_tree li{
+
+  display: inline-table;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 10px;
+  width: auto;
+  transition: .5s;
+
+}
+
+.admin__app_tree li:before, .admin__app_tree li:after{
+  content: '';
+  position:absolute;
+  top:0;
+  right: 50%;
+  border-top: 1px solid var(--main-text);
+  width: 51%;
+  height: 10px;
+}
+
+.admin__app_tree li:after{
+  right: auto;
+  left:50%;
+  border-left: 1px solid var(--main-text);
+}
+
+.admin__app_tree li:only-child:after, .admin__app_tree li:only-child:before{
+  display: none;
+
+}
+
+.admin__app_tree li:only-child{
+  padding-top: 0;
+
+}
+
+
+.admin__app_tree li:first-child:before, .admin__app_tree li:last-child:after{
+  border:0 none;
+}
+
+.admin__app_tree li:last-child:before{
+  border-right: 1px solid var(--main-text);
+  border-radius: 0px 5px 0px 0px;
+}
+
+.admin__app_tree li:first-child:after{
+
+  border-radius: 5px 0px 0px 0px;
+}
+
+.admin__app_tree ul ul:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid var(--main-text);
+  width: 0;
+  height: 20px;
+}
+
+.admin__app_tree a{
+  border:1px solid var(--main-text);
+  padding: 10px;
+  display: inline-grid;
+  border-radius: 5px;
+  text-decoration-line: none;
+  border-radius: 5px;
+  transition: .5s;
+    background: var(--bg2);
+
+}
+
+.admin__app_tree a img{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px !important;
+  border-radius: 100px;
+  margin: auto;
+}
+
+.admin__app_tree a span{
+  border: 1px solid var(--main-text);
+  border-radius: 5px;
+  color: var(--normal-text);
+  padding: 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* hover section */
+
+.admin__app_tree li a:hover, .admin__app_tree li a:hover img, .admin__app_tree li a:hover span, .admin__app_tree li a:hover+ul li a {
+  background: #137880;
+  color: var(--normal-text);
+  border:1px solid #00ffa4;
+  box-shadow:0px 0px 8px -5px #5f5f5f;
+}
+
+.admin__app_tree li a:hover+ul li:after, .admin__app_tree li a:hover+ul li:before, .admin__app_tree li a:hover+ul:before, .admin__app_tree li a:hover+ul ul:before{
+  /* background-color: #94a0b4; */
+}
