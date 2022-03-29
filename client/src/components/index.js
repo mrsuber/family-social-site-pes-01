@@ -66,6 +66,7 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 
 //admin
+export {default as AdminToast} from './admin/toast/Toast'
 export {default as DateHistogram} from './admin/dateHistogram/DateHistogram'
 export {default as BubbleMap} from './admin/bubbleMap/BubbleMap'
 export {default as Dropdown} from './admin/dropDown/Dropdown'

@@ -1,9 +1,9 @@
-import React,{useEffect,useState} from 'react'
+import React from 'react'
 import './AdminHome.css'
 import {profile,logo,pic} from '../../../images'
-import {AdminSideBar,DisplayCssColorsPie,DisplayCssColorsHis,AdminRevenueCard,AdminSalariesVSJobs,IrishFlower,GlobalTemp,WorldMap,Migrands,WorldMapMig} from '../../../components'
+import {AdminSideBar,DisplayCssColorsHis,AdminRevenueCard,IrishFlower,GlobalTemp,WorldMap,Migrands,WorldMapMig} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faBars,faChartLine,faVideo,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
+import {faBars,faChartLine,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import {useCountryData,useCssColorData,useIrisFlowerData,useTempData,useWorldMapData,usePointsOnMapData,useMigrandsData,useMigrandsMissPointsData} from '../../../utils/adminUseData'
 
 
@@ -28,7 +28,7 @@ const AdminHome = () => {
     <label for="admin__menu-toggle">
       </label>
     </div>
-    <AdminSideBar img={profile} logo={logo} pic={pic}/>
+    <AdminSideBar img={profile} logo={logo} pic={pic} activeLink="admin__active"/>
     <div className="admin__main-content">
       <header className="admin__header">
         <div className="admin__header-title-wrapper">

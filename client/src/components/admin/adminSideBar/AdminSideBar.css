@@ -17,6 +17,12 @@
   font-size: 1rem;
 }
 
+.admin__sidebar-menu ul li:hover{
+  background: var(--hover);
+  padding: .2rem;
+  border-radius: 7px;
+}
+
 #admin__menu-toggle{
   display: none;
 }

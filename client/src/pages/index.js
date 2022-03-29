@@ -22,3 +22,6 @@ export {default as BlogHomePage} from './blogPages/homepage/HomePage'
 
 //admin dashboard
 export {default as AdminHome} from './admin/home/AdminHome'
+export {default as AdminLoginScreen} from './admin/login/AdminLoginScreen'
+export {default as AdminExpenseScreen} from './admin/expense/AdminExpenseScreen'
+export {default as AdminErrorScreen} from './admin/error/AdminErrorScreen'

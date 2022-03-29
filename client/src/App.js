@@ -7,7 +7,7 @@ import {
   RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,LoginScreen2,
   PostDetails,HomePage,Message,Discover,Notify,Profile,PorfolioHome,MessageDetails,
   BlogHomePage,
-  AdminHome
+  AdminHome,AdminLoginScreen,AdminErrorScreen,AdminExpenseScreen
 
 
 } from './pages'
@@ -58,6 +58,7 @@ const App=()=> {
             <Route exact path="/resetpassword" component={ResetPasswordScreen} />
             <Route exact path="/" component={IndexPage} />
             <Route exact path="/admin" component={AdminHome} />
+            <Route exact path="/admin/login" component={AdminLoginScreen} />
               <PrivateRoute exact path="/blog_home" component={ BlogHomePage}/>
 
             <PrivateRoute exact path="/social_home" component={auth.token && family.selectFamily===false? HomePage : LoginScreen2}/>
@@ -67,6 +68,9 @@ const App=()=> {
             <PrivateRoute exact path="/notify" component={auth.token && family.selectFamily===false? Notify : LoginScreen2}/>
             <PrivateRoute exact path="/profile/:id" component={auth.token && family.selectFamily===false? Profile : LoginScreen2}/>
             <PrivateRoute exact path="/post/:id" component={auth.token && family.selectFamily===false? PostDetails : LoginScreen2}/>
+
+            <Route exact path="/admin/expense" component={auth.token? AdminExpenseScreen : AdminErrorScreen}/>
+
 
 
 

@@ -1,0 +1,40 @@
+.admin__main-error{
+  min-height: 100vh;
+}
+
+.admin__las{
+  cursor: pointer;
+}
+
+.admin__main-error div {
+
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+
+background: var(--bg);
+text-align: center;
+padding: 1rem;
+border-radius: 15px;
+margin-top: 6rem;
+border: 1px solid var(--main-text);
+box-shadow: var(--shadow);
+
+}
+
+.admin__btn-error{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.admin__access-denied {
+color: red;
+}
+
+.admin__main-error h6{
+color: red;
+text-decoration: underline;
+}

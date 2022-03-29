@@ -1,11 +1,11 @@
 import React from 'react'
 import './AdminSideBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCalendar,faCog,faUser,faArrowDown,faAdjust,faVideo,faChartBar} from '@fortawesome/free-solid-svg-icons';
+import {faCalendar,faCog,faUser,faArrowDown,faAdjust,faVideo,faChartBar,faChartLine} from '@fortawesome/free-solid-svg-icons';
+import {Link} from 'react-router-dom'
 
 
-
-const AdminSideBar = ({img,logo,pic}) => {
+const AdminSideBar = ({img,logo,pic,activeLink,activeLink2}) => {
   return (
     <div className="admin__sidebar">
       <div className="admin__sidebar-container">
@@ -31,17 +31,17 @@ const AdminSideBar = ({img,logo,pic}) => {
         <div className="admin__sidebar-menu">
           <ul>
             <li>
-              <a href="" className="admin__active">
+              <a href="/admin" className={activeLink}>
                 <span className="admin__las admin__la-adjust"><FontAwesomeIcon icon={faAdjust} /></span>
                 <span>Dashboard</span>
               </a>
             </li>
 
             <li>
-              <a href="" >
-                <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faVideo} /></span>
-                <span>Videos</span>
-              </a>
+              <Link to="/admin/expense" className={activeLink2}>
+                <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faChartLine} /></span>
+                <span>Track Expense</span>
+              </Link>
             </li>
 
             <li>
