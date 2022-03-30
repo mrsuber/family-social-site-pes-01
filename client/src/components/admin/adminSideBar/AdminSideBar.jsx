@@ -33,10 +33,10 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, fullname='Mo
         <div className="admin__sidebar-menu">
           <ul>
             <li>
-              <a href="/admin" className={activeLink}>
+              <Link to="/admin" className={activeLink}>
                 <span className="admin__las admin__la-adjust"><FontAwesomeIcon icon={faAdjust} /></span>
                 <span>Dashboard</span>
-              </a>
+              </Link>
             </li>
 
             <li>

@@ -66,6 +66,10 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 
 //admin
+export {default as AdminApplicationProfileView} from './admin/application/ProfileView'
+export {default as AdminApplicationProfileEdit} from './admin/application/ProfileEdit'
+export {default as AdminApplicationCard} from './admin/application/Cards'
+export {default as AdminApplicationStructure} from './admin/application/Structure'
 export {default as AdminExpenseMain} from './admin/expense/AdminExpenseMain/AdminExpenseMain'
 export {default as AdminExpenseDetails} from './admin/expense/AdminExpenseDetails/AdminExpenseDetails'
 export {default as AdminToast} from './admin/toast/Toast'

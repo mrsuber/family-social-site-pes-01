@@ -1,0 +1,117 @@
+.admin__profileOnveiw-container {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--button-bg);
+    z-index: 26;
+    overflow: auto;
+}
+
+.admin__profileOnveiw-close-btn {
+  margin: 0 10px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--normal-text);
+  border: 1px solid var(--color-main);
+  background: var(--bg);
+
+}
+.admin__profileOnView-btn-container{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  padding: 5px;
+  /* background-color: red; */
+  border: none;
+}
+
+.admin__profileOnveiw-content{
+    max-width: 450px;
+    width: 100%;
+    background: var(--bg);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    border: 1px solid var(--color-main);
+}
+
+.admin__profileOnveiw-avatar {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    margin: 15px auto;
+    border: 2px solid var(--color-main);
+    cursor: pointer;
+}
+
+.admin__profileOnveiw-avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.admin__profileOnView-item{
+
+}
+
+.admin__profileOnView-item h3{
+  font-size: 16px;
+  color: var(--color-main);
+}
+
+.admin__profileOnView-item h3 span{
+  font-size: 14px;
+  color: #00ffa4;
+  margin: 0 0 0 10px;
+}
+
+.admin__profileOnView-item  p{
+  font-size: 14px;
+  color: #00ffa4;
+  margin: 0 0 0 10px;
+}
+
+.admin__profileOnView-item  p span{
+  margin: 0 0 0 10px;
+}
+.admin__profileOnView-item  small{
+  color: var(--normal-text);
+
+}
+
+.admin__profileOnView-item  small a{
+  text-decoration: none;
+  color: #00ffa4;
+  cursor: pointer;
+}
+
+.admin__profileOnView-sturctur-btn{
+  background: var(--bg);
+  border: 1px solid var(--color-main);
+  padding: .5rem;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: .5s;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--normal-text);
+}
+
+.admin__profileOnView-sturctur-btn h4{
+  font-size: 16px;
+}
+
+.admin__profileOnView-sturctur-btn:hover, .admin__profileOnveiw-close-btn:hover{
+  border:1px solid #00ffa4;
+  background: #137880 ;
+}

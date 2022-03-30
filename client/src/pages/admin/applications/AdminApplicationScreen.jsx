@@ -1,21 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './AdminApplicationScreen.css'
 
-import {AdminSideBar, AdminExpenseDetails, AdminExpenseMain} from '../../../components'
+import {AdminSideBar,AdminApplicationStructure,AdminApplicationCard} from '../../../components'
 import {profile,logo,pic} from '../../../images'
+import logo2 from '../../../images/admin/google_logo.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faHome} from '@fortawesome/free-solid-svg-icons';
 import {useDispatch,useSelector} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
-import {Grid} from '@material-ui/core'
-import useStyles from './styles'
+
+
 
 
 
 const AdminApplicationScreen = () => {
     const {auth} = useSelector(state=>state)
+    const [onStructuralDetail,setOnStructuralDetail] = useState(false)
     const dispatch = useDispatch()
-    const classes = useStyles()
+
   return (
     <div className="admin__body">
     <input type="checkbox" name="admin__menu-toggle" id="admin__menu-toggle"/>
@@ -50,47 +52,29 @@ const AdminApplicationScreen = () => {
         </div>
       </header>
 
-      <main className="admin__main-application">
-      <section>
-        <div className="admin__block-grid3">
-        <div className="admin__graph-card admin__Irishhis-container">
-            <h3 className="admin__section-head">Research before application</h3>
-            <div className="admin__graph-content_apply ">
+        {
+          onStructuralDetail===false
+          ?<>
+          <main className="admin__main">
+          <section>
 
-        <div className="admin__graph-board_apply">
-
-        <div className="admin__app_tree">
-            <ul>
-                <li><a href=""><img src={profile} alt="imgchild"/><span>child</span></a>
-                    <ul>
-                        <li><a href=""><img src={profile} alt="imggrandchild"/><span>Grand Child</span></a>
-                          <ul>
-                            <li><a href=""><img src={profile} alt="imggrandchild"/><span>Great Grand Child</span></a></li>
-                            <li><a href=""><img src={profile} alt="imggrandchild"/><span>Great Grand Child</span></a></li>
-                          </ul>
-                        </li>
-                        <li><a href=""><img src={profile} alt="imggrandchild"/><span>Grand Child</span></a>
-                          <ul>
-                            <li><a href=""><img src={profile} alt="imggrandchild"/><span>Great Grand Child</span></a></li>
-                            <li><a href=""><img src={profile} alt="imggrandchild"/><span>Great Grand Child</span></a></li>
-                            <li><a href=""><img src={profile} alt="imggrandchild"/><span>Great Grand Child</span></a></li>
-                          </ul>
-                        </li>
-                        <li><a href=""><img src={profile} alt="imggrandchild"/><span>Grand Child</span></a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+              <div className="admin__block-grid-apply">
+                <AdminApplicationCard logo={logo2} setOnStructuralDetail={setOnStructuralDetail}/>
+                 <AdminApplicationCard logo={logo2} setOnStructuralDetail={setOnStructuralDetail}/>
+                 <AdminApplicationCard logo={logo2} setOnStructuralDetail={setOnStructuralDetail}/>
+                 <AdminApplicationCard logo={logo2} setOnStructuralDetail={setOnStructuralDetail}/>
+              </div>
+          </section>
+          </main>
+          </>
+          :<><AdminApplicationStructure logo={logo2} setOnStructuralDetail={setOnStructuralDetail}/></>
+        }
 
 
-        </div>
-        </div>
-        </div>
-      </div>
-      </section>
 
 
-      </main>
+
+
     </div>
 
     </div>
