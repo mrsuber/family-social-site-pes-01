@@ -4,13 +4,36 @@ import './AdminApplicationScreen.css'
 import {AdminSideBar,AdminApplicationStructure,AdminApplicationCard} from '../../../components'
 import {profile,logo,pic} from '../../../images'
 import logo2 from '../../../images/admin/google_logo.jpg'
+import logo3 from '../../../images/admin/Oracle_Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faHome} from '@fortawesome/free-solid-svg-icons';
 import {useDispatch,useSelector} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
 
 
+const companyData = [
+  {
+    companyName:"Google",
+    logo:logo2,
+    about:"Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include a search engine, online advertising technologies, cloud computing, software, and hardware. It has been referred to as the 'most powerful company in the world' and one of the world's most valuable brands due to its market dominance, data collection, and technological advantages in the area of artificial intelligence. It is considered one of the Big Five American information technology companies, alongside Amazon, Apple, Meta and Microsoft.",
+    aboutSourceTitle:"wikipedia",
+    aboutSourceLink:"https://en.wikipedia.org/wiki/Google",
+    fulltimeEmployee:[
+      {
+        year:"2020",
+        numberOfEmployee:"135,301"
+    },
+    {
+      year:"2021",
+      numberOfEmployee:"156,500"
+  },
 
+],
+    FulltimeEmployeeSourceTitle:"statista.com",
+    FulltimeEmployeeSourceLink:"https://www.statista.com/statistics/273744/number-of-full-time-google-employees/"
+
+  }
+]
 
 
 const AdminApplicationScreen = () => {
@@ -60,7 +83,7 @@ const AdminApplicationScreen = () => {
 
               <div className="admin__block-grid-apply">
                 <AdminApplicationCard logo={logo2} setOnStructuralDetail={setOnStructuralDetail}/>
-                 <AdminApplicationCard logo={logo2} setOnStructuralDetail={setOnStructuralDetail}/>
+                 <AdminApplicationCard logo={logo3} setOnStructuralDetail={setOnStructuralDetail}/>
                  <AdminApplicationCard logo={logo2} setOnStructuralDetail={setOnStructuralDetail}/>
                  <AdminApplicationCard logo={logo2} setOnStructuralDetail={setOnStructuralDetail}/>
               </div>

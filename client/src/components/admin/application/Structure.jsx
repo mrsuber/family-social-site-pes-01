@@ -14,7 +14,7 @@ const Structure = ({logo,setOnStructuralDetail}) => {
 
       <div className="admin__app_tree">
           <ul>
-              <li><a href=""><img src={logo} alt="imgchild"/><span>child</span></a>
+              <li><a href=""><img src={logo} alt="imgchild"/><span>Google</span></a>
                   <ul>
                       <li><a href=""><img src={logo} alt="imggrandchild"/><span>Grand Child</span></a>
                         <ul>

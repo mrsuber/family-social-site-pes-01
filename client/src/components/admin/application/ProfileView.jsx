@@ -62,15 +62,15 @@ Google LLC is an American multinational technology company that specializes in I
 
         <div className="admin__profileOnView-item">
           <h3>Departments/Teams/Jobs</h3>
-          <p>Engineering & Technology</p>
-          <p>Sales, Service & Support</p>
-          <p>Marketing & Communications</p>
-          <p>Design</p>
-          <p>Business Strategy</p>
-          <p>Finance</p>
-          <p>Legal</p>
-          <p>People</p>
-          <p>Facilities</p>
+          <p>1.) Engineering & Technology</p>
+          <p>2.) Sales, Service & Support</p>
+          <p>3.) Marketing & Communications</p>
+          <p>4.) Design</p>
+          <p>5.) Business Strategy</p>
+          <p>6.) Finance</p>
+          <p>7.) Legal</p>
+          <p>8.) People</p>
+          <p>9.) Facilities</p>
           <small>source: <a href="https://careers.google.com/teams/" target="__blank">careers.google.com</a></small>
         </div>
 
