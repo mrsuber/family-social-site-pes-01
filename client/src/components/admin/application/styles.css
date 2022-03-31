@@ -259,9 +259,28 @@
   font-weight: 500;
 }
 
+.AdminStructure__company-mainItem h3{
+  font-size: 18px;
+}
+
+.AdminStructure__a-first{
+  width: 400px;
+
+
+
+}
+.AdminStructure__company-mainItem h3{
+  color: var(--color-main);
+}
+.AdminStructure__company-mainItem h3 span{
+  color: #00ffa4;
+  border: none;
+  pointer-events: none;
+}
+
 /* hover section */
 
-.admin__app_tree li a:hover, .admin__app_tree li a:hover img, .admin__app_tree li a:hover span, .admin__app_tree li a:hover+ul li a {
+.admin__app_tree li a:hover, .admin__app_tree li a:hover img, .admin__app_tree li a:hover .AdminStructure__hoverSpan, .admin__app_tree li a:hover+ul li a {
   background: #137880;
   color: var(--normal-text);
   border:1px solid #00ffa4;

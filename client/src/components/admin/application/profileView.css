@@ -115,3 +115,17 @@
   border:1px solid #00ffa4;
   background: #137880 ;
 }
+
+
+li a {text-decoration : none; color : #2d2f31;}
+
+.admin__profileOnView-more{
+  font-size: 10px;
+  color: var(--color-main);
+  cursor: pointer;
+}
+.admin__profileOnView-more:hover{
+
+  color: var(--danger);
+  text-decoration: underline;
+}

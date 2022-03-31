@@ -1,16 +1,17 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import './profileView.css'
-import {useSelector , useDispatch} from 'react-redux'
-import {CameraAlt} from '@material-ui/icons'
-import {GLOBALTYPES} from '../../../redux/actions/globlaTypes'
-import {checkImage} from '../../../utils/imageUpload'
+import {AdminSources} from '../../../components'
 
-const ProfileEdit = ({setOnView,onView=false, logo, setOnStructuralDetail}) => {
+const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCompanyName}) => {
+
+
 
 
       const structural = ()=>{
         setOnView(false)
+        setCompanyName(data.companyName)
         setOnStructuralDetail(true)
+
       }
 
   return (
@@ -32,46 +33,75 @@ const ProfileEdit = ({setOnView,onView=false, logo, setOnStructuralDetail}) => {
 
       <div className="admin__profileOnveiw-content">
         <div className="admin__profileOnveiw-avatar">
-          <img src={logo} alt="profilePic"/>
+          <img src={data.logo} alt="profilePic"/>
 
         </div>
         <div className="admin__profileOnView-item">
-          <h3> Name:<span>Google</span></h3>
+          <h3> Name:<span>{data.companyName}</span></h3>
         </div>
 
         <div className="admin__profileOnView-item">
-          <h3>About Google:</h3>
-          <p>
-Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include a search engine, online advertising technologies, cloud computing, software, and hardware. It has been referred to as the "most powerful company in the world" and one of the world's most valuable brands due to its market dominance, data collection, and technological advantages in the area of artificial intelligence. It is considered one of the Big Five American information technology companies, alongside Amazon, Apple, Meta and Microsoft.</p>
-          <small>source: <a href="https://en.wikipedia.org/wiki/Google" target="__blank">wikipedia</a></small>
+          <h3>{`About ${data.companyName}`}:</h3>
+          <p>{data.about}</p>
+          <AdminSources source={data.aboutSource} name="about " id="touch"/>
+
         </div>
 
         <div className="admin__profileOnView-item">
-          <h3>Full-time Employee:</h3>
-          <p>2020:<span>135,301</span></p>
-          <p>2021:<span>156,500</span></p>
-          <small>source: <a href="https://www.statista.com/statistics/273744/number-of-full-time-google-employees/" target="__blank">statista.com</a></small>
+        <h3> Main Location (Head Office):<span>{data.MainLocation}</span></h3>
+          <h3>Other Locations:</h3>
+          {data.OtherLocations.map((d,i)=>(
+            <p key={i}>{d.name}<span className="admin__profileOnView-more"> <a href={d.link} target="_blank" rel="noreferrer">more</a></span></p>
+          ))}
+
+            <AdminSources source={data.LocationSources} name="location " id="touch1"/>
         </div>
 
         <div className="admin__profileOnView-item">
-          <h3>Revenue in million U.S. dollars</h3>
-          <p>2020:<span>181.69</span></p>
-          <p>2021:<span>256.74</span></p>
-          <small>source: <a href="https://www.statista.com/statistics/266206/googles-annual-global-revenue/" target="__blank">statista.com</a></small>
+        {
+          data.JobPost.map((item)=>(
+            <>
+            <h3>Job Post:<span>{item.name}</span></h3>
+            <h3>Job Location:<span>{item.location}</span></h3>
+            <h3>Job Analysis:</h3>
+            <p >{item.analysisStatus} <span className="admin__profileOnView-more"> more</span></p>
+
+            </>
+          ))
+        }
+
+
+
+            <AdminSources source={data.JobPostSources} name="jop post location " id="touch5"/>
+        </div>
+
+        <div className="admin__profileOnView-item">
+          <h3>{data.EmployeeType}</h3>
+          {data.Employee.map((d,i)=>(
+            <p key={i}>{`Year: ${d.year}`}<span>{`Number: ${d.numberOfEmployee}`}</span></p>
+          ))}
+
+            <AdminSources source={data.EmployeeSource} name="employee " id="touch2"/>
+        </div>
+
+        <div className="admin__profileOnView-item">
+          <h3>{data.RevenueType}</h3>
+          {
+            data.Revenue.map((d,i)=>(
+              <p key={i}>{`Year: ${d.year}`}:<span>{`Amount: ${d.amount}`}</span></p>
+            ))}
+
+              <AdminSources source={data.RevenueSource} name="revenue " id="touch3"/>
         </div>
 
         <div className="admin__profileOnView-item">
           <h3>Departments/Teams/Jobs</h3>
-          <p>1.) Engineering & Technology</p>
-          <p>2.) Sales, Service & Support</p>
-          <p>3.) Marketing & Communications</p>
-          <p>4.) Design</p>
-          <p>5.) Business Strategy</p>
-          <p>6.) Finance</p>
-          <p>7.) Legal</p>
-          <p>8.) People</p>
-          <p>9.) Facilities</p>
-          <small>source: <a href="https://careers.google.com/teams/" target="__blank">careers.google.com</a></small>
+          {data.Departments.map((d,i)=>(
+            <p key={i} >{d.DepartmentName} <span className="admin__profileOnView-more"> more</span></p>
+
+          ))}
+
+          <AdminSources source={data.DepartmentSource} name="departments " id="touch4"/>
         </div>
 
         <button className="admin__profileOnView-sturctur-btn" onClick={structural}>

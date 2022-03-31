@@ -2,25 +2,31 @@ import React,{useState} from 'react'
 import './styles.css'
 import {AdminApplicationProfileEdit, AdminApplicationProfileView} from '../../../components'
 
-const Cards = ({profile,company_name,setOnStructuralDetail,logo}) => {
+const Cards = ({setOnStructuralDetail,data,setCompanyName}) => {
 
     const [onEdit,setOnEdit] = useState(false)
     const [onView,setOnView] = useState(false)
+
+    const structural = ()=>{
+
+      setOnStructuralDetail(true)
+      setCompanyName(data.companyName)
+    }
 
   return (
     <>
 
     <div  className="admin__revenue-card-apply">
     <AdminApplicationProfileEdit setOnEdit={setOnEdit} onEdit={onEdit}/>
-  <AdminApplicationProfileView setOnView={setOnView} onView={onView} logo={logo} setOnStructuralDetail={setOnStructuralDetail}/>
+  <AdminApplicationProfileView setOnView={setOnView} onView={onView} data={data} setOnStructuralDetail={setOnStructuralDetail} setCompanyName={setCompanyName}/>
         <div className="admin__rev-content-apply">
 
             <div className="admin__revenue-card-apply-avatar">
-              <img src={logo} alt="profilePic" className="admin__revenue-card-apply-avatarimg"/>
+              <img src={data.logo} alt="profilePic" className="admin__revenue-card-apply-avatarimg"/>
 
             </div>
             <div className="admin__rev-info-apply">
-              <h3>{company_name} Google</h3>
+              <h3>{data.companyName}</h3>
 
             </div>
             <button className="admin__rev-sum-apply" onClick={()=>setOnView(true)}>
@@ -28,7 +34,7 @@ const Cards = ({profile,company_name,setOnStructuralDetail,logo}) => {
 
             </button>
 
-            <button className="admin__rev-sum-apply">
+            <button className="admin__rev-sum-apply"  onClick={structural}>
               <h4>Sturcture Details</h4>
 
             </button>

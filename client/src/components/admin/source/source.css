@@ -1,0 +1,43 @@
+.admin__profileOnView-nav {
+  width: 100%;
+    background: #132942;
+    margin: 0px auto;
+}
+.admin__profileOnView-nav label{
+  display: block;
+}
+
+.admin__profileOnView-nav span {
+  padding: 8px;
+  background: #132942;
+  color : white;
+  font-size : 1.2em;
+  font-variant : small-caps;
+  cursor : pointer;
+  display: block;
+}
+
+.admin__profileOnView-nav span::after {
+  float: right;
+  right: 10%;
+  content: "+";
+}
+
+.admin__profileOnView-nav .slide {
+  clear:both;
+  width:100%;
+  height:0px;
+  overflow: hidden;
+  text-align: center;
+  transition: height .4s ease;
+}
+
+.admin__profileOnView-nav .slide li {
+  padding : 2px;
+
+}
+
+.admin__profileOnView-nav .slide li a{
+
+  color: #6ffaa4
+}
