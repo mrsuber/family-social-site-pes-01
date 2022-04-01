@@ -1,7 +1,7 @@
 import React from 'react'
 import './AdminSideBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCalendar,faCog,faUser,faArrowDown,faAdjust,faVideo,faChartBar,faChartLine} from '@fortawesome/free-solid-svg-icons';
+import {faCalendar,faCog,faUser,faArrowDown,faAdjust,faChartBar,faChartLine} from '@fortawesome/free-solid-svg-icons';
 import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 

@@ -1,6 +1,12 @@
 import React,{useEffect,useState} from 'react'
 import './styles.css'
 import {AdminSturcturalPeoplePopUpDetail} from '../../../components'
+import {ZoomIn,ZoomOut,Refresh} from '@material-ui/icons';
+
+
+
+
+
 const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) => {
 
     const[filteredCardData, setfilteredCardData] = useState([])
@@ -9,6 +15,8 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
       const [onView,setOnView] = useState(false)
       const [people,setPeople] = useState(null)
       const [position,setPosition]= useState(null)
+
+      const [zoom, setZoom]=useState(1)
 
   useEffect(()=>{
     const data = (cardData)=>{
@@ -82,6 +90,10 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
 
   return (
     <main className="admin__main-application">
+    <div class="admin__stucture_btn admin__stucture_btn-zoom" onClick={()=>setZoom(zoom+0.1)}>  <ZoomIn /></div>
+    <div class="admin__stucture_btn admin__stucture_btn-zoom-out" onClick={()=>setZoom(zoom-0.1)}><ZoomOut/></div>
+    <div class="admin__stucture_btn admin__stucture_btn-zoom-init" onClick={()=>setZoom(1)}><Refresh/></div>
+
     {
       onView===true
       && <AdminSturcturalPeoplePopUpDetail setOnView={setOnView} onView={onView} data={people} position={position} setOnStructuralDetail={setOnStructuralDetail}/>
@@ -89,13 +101,17 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
     }
     <section>
       <button className="admin__structural-back-btn" onClick={()=>setOnStructuralDetail(false)}>Back</button>
+
+
+
       <div className="admin__block-grid3">
       <div className="admin__graph-card admin__Irishhis-container">
           <h3 className="admin__section-head">Research before application</h3>
-          <div className="admin__graph-content_apply ">
+          <div className="admin__graph-content_apply " style={{transform: `scale(${zoom})`}}>
 
-      <div className="admin__graph-board_apply" style={{width:`${lenght}rem`}}>
-data
+      <div className="admin__graph-board_apply" style={{width:`${lenght}rem`}} >
+
+
       <div className="admin__app_tree">
           <ul className="ul">
               <li className="li"><nav className="AdminStructure__a-first">
