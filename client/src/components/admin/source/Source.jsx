@@ -5,12 +5,12 @@ const Source = ({source, name,id}) => {
   const [open, setOpen]= useState(false)
 
   const getChckeboxValue = ()=> {
-  
+
     setOpen(!open)
 }
 
   return (
-    <nav className="admin__profileOnView-nav">
+    <div className="admin__profileOnView-nav">
 
     <label htmlFor={id}><span>{name} sources</span></label>
     <input type="checkbox" onClick={getChckeboxValue} id={id} style={{position:'absolute', opacity:0 , height:'0px'}} />
@@ -24,7 +24,7 @@ const Source = ({source, name,id}) => {
 
     </ul>
 
-    </nav>
+    </div>
   )
 }
 

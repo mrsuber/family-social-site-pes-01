@@ -1,10 +1,14 @@
 import React,{useEffect,useState} from 'react'
 import './styles.css'
+import {AdminSturcturalPeoplePopUpDetail} from '../../../components'
 const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) => {
 
     const[filteredCardData, setfilteredCardData] = useState([])
     const[filteredStructuralData,setFilteredStructuralData] = useState(null)
       const [lenght,setLenth] = useState(50)
+      const [onView,setOnView] = useState(false)
+      const [people,setPeople] = useState(null)
+      const [position,setPosition]= useState(null)
 
   useEffect(()=>{
     const data = (cardData)=>{
@@ -38,8 +42,7 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
     }
 
     const filteredStructuralDataCompanyLevel1PeopleLenght =(data)=>{
-        console.log("i see hear")
-        console.log(data)
+
       if(data!==null){
 
         for(let i=0;i<data.companyLevel1.length; i++){
@@ -65,7 +68,11 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
   },[companyName,cardData,filteredCardData,filteredStructuralData,strutureData,lenght])
 
 
-console.log(lenght)
+  const displayPopup =(item,data)=>{
+    setPeople(item)
+    setPosition(data)
+    setOnView(true)
+  }
 
 
 
@@ -75,6 +82,11 @@ console.log(lenght)
 
   return (
     <main className="admin__main-application">
+    {
+      onView===true
+      && <AdminSturcturalPeoplePopUpDetail setOnView={setOnView} onView={onView} data={people} position={position} setOnStructuralDetail={setOnStructuralDetail}/>
+
+    }
     <section>
       <button className="admin__structural-back-btn" onClick={()=>setOnStructuralDetail(false)}>Back</button>
       <div className="admin__block-grid3">
@@ -85,8 +97,8 @@ console.log(lenght)
       <div className="admin__graph-board_apply" style={{width:`${lenght}rem`}}>
 data
       <div className="admin__app_tree">
-          <ul>
-              <li ><a href="" className="AdminStructure__a-first">
+          <ul className="ul">
+              <li className="li"><nav className="AdminStructure__a-first">
                         <div className="AdminStructure__company-logo">
                           <img src={filteredCardData.logo} alt="imgchild"/>
                         </div>
@@ -96,15 +108,15 @@ data
                           <h3>Location: <span>{  filteredStructuralData && filteredStructuralData.companyHeadOfficeLocation}</span></h3>
 
                         </div>
-                        <span className="AdminStructure__hoverSpan">more...</span>
+                        <span className="AdminStructure__hoverSpan"style={{cursor:'pointer'}} >more...</span>
 
-                  </a>
+                  </nav>
 
-                  <ul>
+                  <ul className="ul">
                     {
                       filteredStructuralData && filteredStructuralData.companyLevel1.map((data,i)=>(
-                        <li key={i}>
-                            <a href="">
+                        <li key={i} className="li">
+                            <nav>
 
                                 <div className="AdminStructure__company-logo">
                                   <img src={filteredCardData.logo} alt="imgchild"/>
@@ -114,14 +126,16 @@ data
                                   <h3>Name: <span>{data.name}</span></h3>
 
                                 </div>
-                                <span className="AdminStructure__hoverSpan">more...</span>
+                                <span className="AdminStructure__hoverSpan" style={{cursor:'pointer'}}>more...</span>
 
-                            </a>
-                          <ul>
+                            </nav>
+                          <ul className="ul">
                           {
                             data.people.map((item,i2)=>(
-                              <li key={i2}>
-                                <a href="">
+                              <li key={i2} className="li">
+
+
+                                <nav>
                                 <div className="AdminStructure__company-logo">
                                   <img src={item.photo} alt="imgchild"/>
                                 </div>
@@ -131,8 +145,8 @@ data
 
 
                                 </div>
-                                <span className="AdminStructure__hoverSpan">more...</span>
-                                </a></li>
+                                <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(item,data)} style={{cursor:'pointer'}}>more...</span>
+                                </nav></li>
 
                             ))
                           }

@@ -156,7 +156,7 @@
   background: var(--normal-text);
 } */
 
-.admin__app_tree ul{
+.admin__app_tree .ul{
 
   padding-top: 20px;
   position: relative;
@@ -165,7 +165,7 @@
 }
 
 
-.admin__app_tree li{
+.admin__app_tree .li{
 
   display: inline-table;
   text-align: center;
@@ -177,7 +177,7 @@
 
 }
 
-.admin__app_tree li:before, .admin__app_tree li:after{
+.admin__app_tree .li:before, .admin__app_tree .li:after{
   content: '';
   position:absolute;
   top:0;
@@ -187,38 +187,38 @@
   height: 10px;
 }
 
-.admin__app_tree li:after{
+.admin__app_tree .li:after{
   right: auto;
   left:50%;
   border-left: 1px solid var(--main-text);
 }
 
-.admin__app_tree li:only-child:after, .admin__app_tree li:only-child:before{
+.admin__app_tree .li:only-child:after, .admin__app_tree .li:only-child:before{
   display: none;
 
 }
 
-.admin__app_tree li:only-child{
+.admin__app_tree .li:only-child{
   padding-top: 0;
 
 }
 
 
-.admin__app_tree li:first-child:before, .admin__app_tree li:last-child:after{
+.admin__app_tree .li:first-child:before, .admin__app_tree .li:last-child:after{
   border:0 none;
 }
 
-.admin__app_tree li:last-child:before{
+.admin__app_tree .li:last-child:before{
   border-right: 1px solid var(--main-text);
   border-radius: 0px 5px 0px 0px;
 }
 
-.admin__app_tree li:first-child:after{
+.admin__app_tree .li:first-child:after{
 
   border-radius: 5px 0px 0px 0px;
 }
 
-.admin__app_tree ul ul:before{
+.admin__app_tree .ul .ul:before{
   content: '';
   position: absolute;
   top: 0;
@@ -228,7 +228,7 @@
   height: 20px;
 }
 
-.admin__app_tree a{
+.admin__app_tree nav{
   border:1px solid var(--main-text);
   padding: 10px;
   display: inline-grid;
@@ -240,7 +240,7 @@
 
 }
 
-.admin__app_tree a img{
+.admin__app_tree nav img{
   width: 50px;
   height: 50px;
   margin-bottom: 10px !important;
@@ -248,7 +248,7 @@
   margin: auto;
 }
 
-.admin__app_tree a span{
+.admin__app_tree nav span{
   border: 1px solid var(--main-text);
   border-radius: 5px;
   color: var(--normal-text);
@@ -280,7 +280,7 @@
 
 /* hover section */
 
-.admin__app_tree li a:hover, .admin__app_tree li a:hover img, .admin__app_tree li a:hover .AdminStructure__hoverSpan, .admin__app_tree li a:hover+ul li a {
+.admin__app_tree .li nav:hover, .admin__app_tree .li nav:hover img, .admin__app_tree .li nav:hover .AdminStructure__hoverSpan, .admin__app_tree .li nav:hover+.ul .li nav {
   background: #137880;
   color: var(--normal-text);
   border:1px solid #00ffa4;
