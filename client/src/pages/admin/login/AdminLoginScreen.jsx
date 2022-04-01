@@ -8,7 +8,7 @@ import {faBars,faChartLine,faHome} from '@fortawesome/free-solid-svg-icons';
 import {useDispatch,useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import {login} from '../../../redux/actions/authAction'
-
+import {Link} from 'react-router-dom'
 
 const AdminLoginScreen = () => {
   const {auth} = useSelector(state => state)
@@ -70,10 +70,10 @@ const AdminLoginScreen = () => {
           </div>
         </div>
         <div className="admin__header-action">
-          <button className="admin__btn admin__btn-main" onClick={()=>{window.location.href = "/admin"}}>
+          <Link to="/admin" className="admin__btn admin__btn-main " style={{textDecoration: "none",color: "inherit"}}>
               <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faHome} /></span>
               Home
-          </button>
+          </Link>
         </div>
       </header>
 

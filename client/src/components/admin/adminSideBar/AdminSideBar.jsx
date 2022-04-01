@@ -42,28 +42,28 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, fullname='Mo
             <li>
               <Link to="/admin/expense" className={activeLink2}>
                 <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faChartLine} /></span>
-                <span>Track Expense</span>
+                <span>Track Expense</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li>
 
             <li>
               <Link to="/admin/application" className={activeLink3}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
-                <span>Track Applications</span>
+                <span>Track Applications</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li>
 
             <li>
               <Link to="/admin/expense" className={activeLink4}>
                 <span className="admin__las admin__la-calendar"><FontAwesomeIcon icon={faCalendar} /></span>
-                <span>Schedule</span>
+                <span>Schedule</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li>
 
             <li>
               <Link to="/admin/expense" className={activeLink5}>
                 <span className="admin__las admin__la-user"><FontAwesomeIcon icon={faUser} /></span>
-                <span>Account</span>
+                <span>Account</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li>
           </ul>

@@ -30,7 +30,7 @@
   top: 45%;
   left: 50%;
   min-width: 400px;
-  
+
   padding: 40px;
   transform: translate(-50%, -50%);
   background: var(--bg);
@@ -118,6 +118,7 @@
   background: linear-gradient(90deg, transparent, var(--main-text));
   animation: btn-anim1 1s linear infinite;
 }
+
 
 @keyframes btn-anim1 {
   0% {

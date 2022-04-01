@@ -342,6 +342,10 @@ margin-bottom: .5rem;
   color: var(--text-main) */
 }
 
+/* .admin__link  .admin__link:hover, .admin__link:focus, .admin__link:active {
+
+} */
+
 /* -----------------------------------------media screens------------------------------ */
 @media only screen and (max-width:1224px){
   .admin__sidebar{

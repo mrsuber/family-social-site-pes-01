@@ -193,3 +193,11 @@
   display: inline-block;
   margin-right: .7rem;
 }
+
+
+.admin__sidebar-restricted{
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 10px;
+}

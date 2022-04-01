@@ -5,7 +5,7 @@ import {AdminSideBar,DisplayCssColorsHis,AdminRevenueCard,IrishFlower,GlobalTemp
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import {useCountryData,useCssColorData,useIrisFlowerData,useTempData,useWorldMapData,usePointsOnMapData,useMigrandsData,useMigrandsMissPointsData} from '../../../utils/adminUseData'
-
+import {Link} from 'react-router-dom'
 
 
 
@@ -41,10 +41,10 @@ const AdminHome = () => {
           </div>
         </div>
         <div className="admin__header-action">
-          <button className="admin__btn admin__btn-main" onClick={()=>{window.location.href = "/admin/login"}}>
+          <Link to="/admin/login" className="admin__btn admin__btn-main" style={{textDecoration: "none",color: "inherit"}} >
               <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faSignInAlt} /></span>
               Log In
-          </button>
+          </Link>
         </div>
       </header>
 
