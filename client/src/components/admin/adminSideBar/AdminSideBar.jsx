@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
 
-const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, fullname='Mohamad Demo',username='Demo User',activeLink4,activeLink5}) => {
+const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3,activeLink6, fullname='Mohamad Demo',username='Demo User',activeLink4,activeLink5}) => {
   const {auth} = useSelector(state => state)
   return (
     <div className="admin__sidebar">
@@ -39,12 +39,19 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, fullname='Mo
               </Link>
             </li>
 
-            <li>
+            {/*<li>
               <Link to="/admin/expense" className={activeLink2}>
                 <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faChartLine} /></span>
                 <span>Track Expense</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
-            </li>
+            </li>*/}
+
+            {auth.token &&  auth.user.isAdmin===true? <li>
+              <Link to="/admin/application/oracle" className={activeLink6}>
+                <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
+                <span>Oracle Applications</span>{auth.token && auth.user.isAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
+              </Link>
+            </li> :<></>}
 
             <li>
               <Link to="/admin/application" className={activeLink3}>
@@ -53,12 +60,12 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, fullname='Mo
               </Link>
             </li>
 
-            <li>
+            {/*<li>
               <Link to="/admin/expense" className={activeLink4}>
                 <span className="admin__las admin__la-calendar"><FontAwesomeIcon icon={faCalendar} /></span>
                 <span>Schedule</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
-            </li>
+            </li>*/}
 
             <li>
               <Link to="/admin/expense" className={activeLink5}>

@@ -41,7 +41,10 @@ const AdminLoginScreen = () => {
     }
 
     useEffect(()=>{
-      if(auth.token)window.location.href = "/admin/expense"
+      if(auth.token && auth.user.isSuperAdmin===true){
+        window.location.href = "/admin/application"}else if(auth.token && auth.user.isAdmin===true){
+            window.location.href = "/admin/application/oracle"
+        }
 
     },[auth.token , history])
 

@@ -12,18 +12,7 @@ export const companyStructuralData = [
       {
         name:"Oracle Executive Leadership",
         people:[
-          {
-            name:'Larry Ellison',
-            photo:'https://customsitesmedia.usc.edu/wp-content/uploads/sites/59/2016/02/16125644/Ellison_1200x800-824x549.jpg',
-            title:'Chairman of the Board and Chief Technology Officer',
-            Biography:'Larry Ellison is chairman of Oracle Corporation and chief technology officer. He founded the company in 1977 and served as CEO until September 2014. He also races sailboats, flies planes, and plays tennis and guitar.',
-            source:[
-              {
-                name:"Oracle",
-                link:"https://www.oracle.com/sa/corporate/executives/"
-              }
-            ]
-          },
+
           {
             name:'Safra A. Catz',
             photo:'https://www.gsb.stanford.edu/sites/default/files/styles/270_x_270/public/person_photos/catz-safra-a_0.jpg?itok=obMspJYv',
@@ -34,33 +23,141 @@ export const companyStructuralData = [
                 name:"Oracle",
                 link:"https://www.oracle.com/sa/corporate/executives/"
               }
-            ]
-          },
-          {
-            name:'Dorian Daley',
-            photo:'https://s3.amazonaws.com/spoke-profiles-prod-assets/avatars/210x210h/9d95919f5e9b7504dff44ab99a2d37ac0463cfbb.png',
-            title:'Executive Vice President and General Counsel',
-            Biography:'Dorian Daley serves as executive vice president and general counsel of Oracle Corporation. She began her career at Oracle in 1992 after spending five years with the commercial litigation group of Landels, Ripley & Diamond in San Francisco. She is a 1986 graduate of the Santa Clara University School of Law and a 1981 graduate of Stanford University. Prior to her appointment as general counsel, Daley was a vice president and associate general counsel for Oracle.',
-            source:[
+            ],
+            report1:[
               {
-                name:"Oracle",
-                link:"https://www.oracle.com/sa/corporate/executives/"
-              }
+                name:'Joyce Westerdahl',
+                photo:'https://cdn.theorg.com/49d4941e-b5ca-43cb-8cad-2f7f495c498a_medium.png',
+                title:'EVP, Human Resources',
+                Biography:"Joyce Westerdahl is leading Oracle HR’s cloud transformation to ensure that business leaders and more than 135,000 employees are enabled to achieve Oracle’s mission to be the number one cloud company in the world. Since taking the lead of Oracle HR in 2000, she has continuously implemented a roadmap of progressive HR modernization initiatives intended to keep Oracle at the leading edge of technology innovation.",
+                source:[
+                  {
+                    name:"theorg",
+                    link:"https://theorg.com/org/oracle/org-chart/joyce-westerdahl"
+                  }
+                ],
+                report2:[
+                  {
+                    name:'Anje Dodson',
+                    photo:'https://cdn.theorg.com/d607ce51-3681-4bfa-b0a8-a76e081ead0b_medium.jpg',
+                    title:'SVP, HR',
+                    Biography:'No Biography',
+                    source:[
+                      {
+                        name:"Oracle",
+                        link:"https://www.oracle.com/sa/corporate/executives/"
+                      }
+                    ]
+                  },
+
+                  {
+                    name:'Christie Book',
+                    photo:'https://cdn.theorg.com/302d4511-4084-43fb-aa2e-16fe6345795f_medium.jpg',
+                    title:'SVP, Global Executive Recruiting',
+                    Biography:'No Biography',
+                    source:[
+                      {
+                        name:"Oracle",
+                        link:"https://www.oracle.com/sa/corporate/executives/"
+                      }
+                    ]
+                  },
+
+                  {
+                    name:'Peter Shott',
+                    photo:'https://cdn.theorg.com/76f5eab5-e896-4334-b95b-c32a8d0f8549_medium.jpg',
+                    title:'SVP,HR',
+                    Biography:'No Biography',
+                    source:[
+                      {
+                        name:"Oracle",
+                        link:"https://www.oracle.com/sa/corporate/executives/"
+                      }
+                    ]
+                  },
+                  {
+                    name:'Vickie Thrasher',
+                    photo:'https://cdn.theorg.com/7faa5a5d-f33c-45e9-9331-e53e5f3e5241_medium.jpg',
+                    title:'SVP,HR, Organization and People Capability',
+                    Biography:'No Biography',
+                    source:[
+                      {
+                        name:"Oracle",
+                        link:"https://www.oracle.com/sa/corporate/executives/"
+                      }
+                    ]
+                  },
+                  {
+                    name:'Vance Kearney',
+                    photo:'https://www.hrmagazine.co.uk/media/ro4dtsbz/article-images-2f95526-2fvancekearney.jpg',
+                    title:'SVP, HR EMEA',
+                    Biography:'No Biography',
+                    source:[
+                      {
+                        name:"Oracle",
+                        link:"https://www.oracle.com/sa/corporate/executives/"
+                      }
+                    ],
+                    report3:[
+                      {
+                        name:'Claire Bennett',
+                        photo:'https://cdn.theorg.com/6ab278e8-00fa-4b34-b2f4-2910cfd86211_medium.jpg',
+                        title:'VP, HR - EMEA',
+                        Biography:'No Biography',
+                        source:[
+                          {
+                            name:"Oracle",
+                            link:"https://www.oracle.com/sa/corporate/executives/"
+                          }
+                        ]
+                      },
+                    ]
+                  },
+                ]
+              },
+
+
+              {
+                name:'Larry Ellison',
+                photo:'https://customsitesmedia.usc.edu/wp-content/uploads/sites/59/2016/02/16125644/Ellison_1200x800-824x549.jpg',
+                title:'Chairman of the Board and Chief Technology Officer',
+                Biography:'Larry Ellison is chairman of Oracle Corporation and chief technology officer. He founded the company in 1977 and served as CEO until September 2014. He also races sailboats, flies planes, and plays tennis and guitar.',
+                source:[
+                  {
+                    name:"Oracle",
+                    link:"https://www.oracle.com/sa/corporate/executives/"
+                  }
+                ]
+              },
+              {
+                name:'Dorian Daley',
+                photo:'https://s3.amazonaws.com/spoke-profiles-prod-assets/avatars/210x210h/9d95919f5e9b7504dff44ab99a2d37ac0463cfbb.png',
+                title:'Executive Vice President and General Counsel',
+                Biography:'Dorian Daley serves as executive vice president and general counsel of Oracle Corporation. She began her career at Oracle in 1992 after spending five years with the commercial litigation group of Landels, Ripley & Diamond in San Francisco. She is a 1986 graduate of the Santa Clara University School of Law and a 1981 graduate of Stanford University. Prior to her appointment as general counsel, Daley was a vice president and associate general counsel for Oracle.',
+                source:[
+                  {
+                    name:"Oracle",
+                    link:"https://www.oracle.com/sa/corporate/executives/"
+                  }
+                ]
+              },
+
+              {
+                name:'Edward Screven',
+                photo:'https://cdn.theorg.com/120898f1-4e9e-48da-bb00-34c99c6a01be_medium.png',
+                title:'Chief Corporate Architect',
+                Biography:"Edward Screven is chief corporate architect at Oracle. Reporting to Executive Chairman and Chief Technical Officer Larry Ellison, he drives technology and architecture decisions across all Oracle products to ensure that product development is consistent with Oracle's overall strategy. An Oracle veteran since 1986, he is responsible for Oracle's open-source businesses, including Linux, virtualization, and MySQL. Screven also leads company-wide strategic initiatives, including industry standards and security.",
+                source:[
+                  {
+                    name:"Oracle",
+                    link:"https://www.oracle.com/sa/corporate/executives/"
+                  }
+                ]
+              },
+
             ]
           },
 
-          {
-            name:'Edward Screven',
-            photo:'https://cdn.theorg.com/120898f1-4e9e-48da-bb00-34c99c6a01be_medium.png',
-            title:'Chief Corporate Architect',
-            Biography:"Edward Screven is chief corporate architect at Oracle. Reporting to Executive Chairman and Chief Technical Officer Larry Ellison, he drives technology and architecture decisions across all Oracle products to ensure that product development is consistent with Oracle's overall strategy. An Oracle veteran since 1986, he is responsible for Oracle's open-source businesses, including Linux, virtualization, and MySQL. Screven also leads company-wide strategic initiatives, including industry standards and security.",
-            source:[
-              {
-                name:"Oracle",
-                link:"https://www.oracle.com/sa/corporate/executives/"
-              }
-            ]
-          },
 
         ]
       },

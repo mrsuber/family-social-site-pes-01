@@ -26,7 +26,11 @@ const AdminErrorScreen = () => {
     <label for="admin__menu-toggle">
       </label>
     </div>
-    <AdminSideBar img={profile} logo={logo} pic={pic}/>
+    <AdminSideBar
+    img={profile}
+    logo={logo}
+    pic={pic}
+    />
     <div className="admin__main-content">
       <header className="admin__header">
         <div className="admin__header-title-wrapper">

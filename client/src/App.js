@@ -7,7 +7,7 @@ import {
   RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,LoginScreen2,
   PostDetails,HomePage,Message,Discover,Notify,Profile,PorfolioHome,MessageDetails,
   BlogHomePage,
-  AdminHome,AdminLoginScreen,AdminErrorScreen,AdminExpenseScreen,AdminApplicationScreen
+  AdminHome,AdminLoginScreen,AdminErrorScreen,AdminExpenseScreen,AdminApplicationScreen,AdminApplicationScreen2
 
 
 } from './pages'
@@ -71,6 +71,7 @@ const App=()=> {
 
             <Route exact path="/admin/expense" component={auth.token && auth.user.isSuperAdmin===true? AdminExpenseScreen : AdminErrorScreen}/>
             <Route exact path="/admin/application" component={auth.token && auth.user.isSuperAdmin===true? AdminApplicationScreen : AdminErrorScreen}/>
+            <Route exact path="/admin/application/oracle" component={auth.token && auth.user.isAdmin===true? AdminApplicationScreen2 : AdminErrorScreen}/>
 
 
 

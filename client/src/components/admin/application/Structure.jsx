@@ -19,7 +19,12 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
       const [zoom, setZoom]=useState(1)
 
   useEffect(()=>{
-    const data = (cardData)=>{
+
+
+
+
+
+  const data = (cardData)=>{
 
       for(let i=0;i<cardData.length; i++){
         if(cardData[i].companyName === companyName){
@@ -44,8 +49,8 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
     }
 
     const filteredStructuralDataCompanyLevel1Lenght =(data)=>{
-      if((data && data.companyLevel1.length *20)> lenght ){
-        setLenth(data.companyLevel1.length *20)
+      if((data && data.companyLevel1.length *30)> lenght ){
+        setLenth(data.companyLevel1.length *30)
       }
     }
 
@@ -55,8 +60,8 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
 
         for(let i=0;i<data.companyLevel1.length; i++){
 
-          if((data.companyLevel1[i].people.length*20)>lenght){
-            setLenth(data.companyLevel1[i].people.length*20)
+          if((data.companyLevel1[i].people.length*30)>lenght){
+            setLenth(data.companyLevel1[i].people.length*30)
 
           }
         }
@@ -106,7 +111,7 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
 
       <div className="admin__block-grid3">
       <div className="admin__graph-card admin__Irishhis-container">
-          <h3 className="admin__section-head">Research before application</h3>
+          <h3 className="admin__section-head">Research before application.(move around with mouse to find tree)</h3>
           <div className="admin__graph-content_apply " style={{transform: `scale(${zoom})`}}>
 
       <div className="admin__graph-board_apply" style={{width:`${lenght}rem`}} >
@@ -114,7 +119,9 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
 
       <div className="admin__app_tree">
           <ul className="ul">
-              <li className="li"><nav className="AdminStructure__a-first">
+          {/*company name*/}
+              <li className="li"><nav className="AdminStructure__a-first" >
+
                         <div className="AdminStructure__company-logo">
                           <img src={filteredCardData.logo} alt="imgchild"/>
                         </div>
@@ -128,9 +135,10 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
 
                   </nav>
 
-                  <ul className="ul">
+                  {filteredStructuralData &&<ul className="ul">
+                  {/*EXECUTIVE and bourd of directors*/}
                     {
-                      filteredStructuralData && filteredStructuralData.companyLevel1.map((data,i)=>(
+                       filteredStructuralData.companyLevel1.map((data,i)=>(
                         <li key={i} className="li">
                             <nav>
 
@@ -145,7 +153,8 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
                                 <span className="AdminStructure__hoverSpan" style={{cursor:'pointer'}}>more...</span>
 
                             </nav>
-                          <ul className="ul">
+                          {data.people && <ul className="ul">
+                          {/*CEO and people of the bourd of dirctor*/}
                           {
                             data.people.map((item,i2)=>(
                               <li key={i2} className="li">
@@ -162,15 +171,86 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
 
                                 </div>
                                 <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(item,data)} style={{cursor:'pointer'}}>more...</span>
-                                </nav></li>
+                                </nav>
+                                    {item.report1 && <ul className="ul">
+                                    {/*report to the CEO and Bourd of directors*/}
+
+                                      {
+                                         item.report1.map((rep1)=>(
+                                          <li className="li">
+                                          <nav>
+                                          <div className="AdminStructure__company-logo">
+                                            <img src={rep1.photo} alt="imgchild"/>
+                                          </div>
+
+                                          <div className="AdminStructure__company-mainItem">
+                                            <h3>Name: <span>{rep1.name}</span></h3>
+
+
+                                          </div>
+                                          <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(rep1,item)} style={{cursor:'pointer'}}>more...</span>
+                                          </nav>
+                                          {rep1.report2 && <ul className="ul">
+                                          {/*report to the CEO and Bourd of directors*/}
+
+                                            {
+                                               rep1.report2.map((rep2)=>(
+                                                <li className="li">
+                                                <nav>
+                                                <div className="AdminStructure__company-logo">
+                                                  <img src={rep2.photo} alt="imgchild"/>
+                                                </div>
+
+                                                <div className="AdminStructure__company-mainItem">
+                                                  <h3>Name: <span>{rep2.name}</span></h3>
+
+
+                                                </div>
+                                                <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(rep2,rep1)} style={{cursor:'pointer'}}>more...</span>
+                                                </nav>
+
+                                                {rep2.report3 && <ul className="ul">
+                                                {/*report to the CEO and Bourd of directors*/}
+
+                                                  {
+                                                     rep2.report3.map((rep3)=>(
+                                                      <li className="li">
+                                                      <nav>
+                                                      <div className="AdminStructure__company-logo">
+                                                        <img src={rep3.photo} alt="imgchild"/>
+                                                      </div>
+
+                                                      <div className="AdminStructure__company-mainItem">
+                                                        <h3>Name: <span>{rep3.name}</span></h3>
+
+
+                                                      </div>
+                                                      <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(rep3,rep2)} style={{cursor:'pointer'}}>more...</span>
+                                                      </nav>
+                                                      </li>
+                                                    ))
+                                                  }
+
+                                                </ul>}
+                                                </li>
+                                              ))
+                                            }
+
+                                          </ul>}
+                                          </li>
+                                        ))
+                                      }
+
+                                    </ul>}
+                                </li>
 
                             ))
                           }
-                            </ul>
+                            </ul>}
                         </li>
                       ))
                     }
-                    </ul>
+                    </ul>}
               </li>
           </ul>
       </div>
