@@ -155,6 +155,7 @@ export const companyData = [
       },
     ],
     MainLocation:"Austin, Texas",
+    TotalNumberOfBranches:"47",
     OtherLocations:[
       {
         name:"Oracle Building 15",
@@ -182,7 +183,15 @@ export const companyData = [
         name:"JavaScript Developer-220005B3",
         location:"Hungary",
         link:"https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=220005B3&tz=GMT-05%3A00&tzname=America%2FChicago",
-        analysisStatus:"Unclear",
+        analysis:{
+          status:"unclear",
+          jobLocation:"Hungary",
+          currentOfficeLocation:"Hungary is not one",
+          details1:"Employee number keeps droping form 2019 to 2021 a total number of drop of 4,000 employees",
+          details2:"Oracle annual revenue for 2021 was $40.479B, a 3.61% increase from 2020.",
+          details3:"Oracle annual revenue for 2020 was $39.068B, a 1.11% decline from 2019",
+          details4:"Oracle annual revenue for 2019 was $39.506B, a 0.31% increase from 2018"
+        },
         reasonForAnalysis:"Oracle Branch not located in Hungary. closest name by google search engin and adress is Oracle Hungary Kft with location unNamed",
         analysisSource:[
           {name:"Google maps",
@@ -198,83 +207,88 @@ export const companyData = [
   ],
     Employee:[
       {
+        year:"2019",
+        numberOfEmployee:"136"
+    },
+      {
         year:"2020",
-        numberOfEmployee:"135,301"
+        numberOfEmployee:"135"
     },
     {
       year:"2021",
-      numberOfEmployee:"156,500"
+      numberOfEmployee:"132"
   },
 
 ],
-    EmployeeType:'Full-time Employee',
+    EmployeeType:'Full-time Employee in thousands',
     EmployeeSource:[
       {
         name:"statista.com",
-        link:"https://www.statista.com/statistics/273744/number-of-full-time-google-employees/",
+        link:"https://www.statista.com/statistics/236999/number-of-employees-at-oracle-worldwide/",
 
       }
     ],
     Revenue:[
       {
+        year:'2019',
+        amount:'39.506'
+      },
+      {
         year:'2020',
-        amount:'181.69'
+        amount:'39.068'
       },
       {
         year:'2021',
-        amount:'256.74'
+        amount:'40.479'
 
       }
     ],
-    RevenueType:'Revenue in Million U.S dollars',
+    RevenueType:'Revenue in Billions U.S dollars',
     RevenueSource:[
-      {name:"statista.com",
-      link:"https://www.statista.com/statistics/266206/googles-annual-global-revenue/",
+      {name:"macrotrends.com",
+      link:"https://www.macrotrends.net/stocks/charts/ORCL/oracle/revenue",
       }
     ],
     Departments:[
       {
-        DepartmentName:'Engineering & Technology',
-        DepartmentDesc:''
+        DepartmentName:'Product Development',
+        DepartmentDesc:{
+          details1:""
+        }
       },
 
       {
-        DepartmentName:'Sales, Service & Support',
-        DepartmentDesc:''
+        DepartmentName:'Sales',
+        DepartmentDesc:{
+          details1:""
+        }
       },
       {
-        DepartmentName:'Marketing & Communications',
-        DepartmentDesc:''
+        DepartmentName:'Consulting',
+        DepartmentDesc:{
+          details1:""
+        }
       },
       {
-        DepartmentName:'Design',
-        DepartmentDesc:''
+        DepartmentName:'Pre Sales',
+        DepartmentDesc:{
+          details1:""
+        }
       },
       {
-        DepartmentName:'Business Strategy',
-        DepartmentDesc:''
+        DepartmentName:'Support',
+        DepartmentDesc:{
+          title:"Support Department",
+          role:"To help ....",
+          details1:""
+        }
       },
-      {
-        DepartmentName:'Finance',
-        DepartmentDesc:''
-      },
-      {
-        DepartmentName:'Legal',
-        DepartmentDesc:''
-      },
-      {
-        DepartmentName:'People',
-        DepartmentDesc:''
-      },
-      {
-        DepartmentName:'Facilities',
-        DepartmentDesc:''
-      },
+
     ],
     DepartmentSource:[
       {
-        name:"careers.google.com",
-        link:"https://careers.google.com/teams/",
+        name:"oracle",
+        link:"https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions?lastSelectedFacet=CATEGORIES&location=United+States&locationId=300000000149325&selectedCategoriesFacet=300000001917358%3B300000001917354",
       }
     ]
 

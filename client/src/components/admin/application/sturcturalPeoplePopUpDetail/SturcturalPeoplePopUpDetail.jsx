@@ -19,28 +19,8 @@ const SturcturalPeoplePopUpDetail = ({setOnView,onView=false, data,position}) =>
 
 
 
-      <div className="admin__profileOnveiw-content">
-      { /* <>
-        <div className="admin__profileOnveiw-avatar">
-          <img src={data.photo} alt="profilePic"/>
+      <div className="admin__profileOnveiw-content2">
 
-        </div>
-        <div className="admin__profileOnView-item">
-          <h3 style={{textAlign:'center'}}> {position.name}</h3>
-          <h3> Name:<span>{data.name}</span></h3>
-          <h3> title:<span>{data.title}</span></h3>
-        </div>
-
-        <div className="admin__profileOnView-item">
-          <h3>{`Biography `}:</h3>
-          <p>{data.Biography}</p>
-          <AdminSources source={data.source} name="about " id="s1"/>
-
-        </div>
-        </>*/
-
-
-      }
       <div className="admin__main-resume-container">
       <div className="admin__resume__left-side">
         <div className="admin__resume__profileText">
@@ -74,7 +54,7 @@ const SturcturalPeoplePopUpDetail = ({setOnView,onView=false, data,position}) =>
 
             <li>
               <span className="admin__resume__icon"><FontAwesomeIcon icon={faMapMarker}/></span>
-              <span className="admin__resume__text">{data.adress? data.adress:<span className="admin__worning-update">Update Adress</span>}</span>
+              <span className="admin__resume__text">{data.address? data.address:<span className="admin__worning-update">Update Address</span>}</span>
             </li>
           </ul>
         </div>

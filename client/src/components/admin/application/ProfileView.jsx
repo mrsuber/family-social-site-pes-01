@@ -1,11 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './profileView.css'
-import {AdminSources} from '../../../components'
+import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup} from '../../../components'
 
 const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCompanyName}) => {
-
-
-
+    const [unclearPopup,setUnclearPopup] = useState(false)
+    const [analysisData,setAnalysisData]=useState(null)
+    const[depPopup, setDepPopup] = useState(false)
+    const[depData,setDepData] = useState(null)
 
       const structural = ()=>{
         setOnView(false)
@@ -14,11 +15,29 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
 
       }
 
+      const showStatus = (data)=>{
+        setAnalysisData(data)
+        setUnclearPopup(true)
+      }
+
+      const showDepInfo = (data)=>{
+        setDepData(data)
+        setDepPopup(true)
+      }
+
   return (
     <>{
       onView===false
       ? <></>
       : <>
+      {unclearPopup
+        ?<AdminUnclearPopup data={analysisData} setUnclearPopup={setUnclearPopup} />
+        :<></>
+}
+    {depPopup
+      ?<DepartmentInfoPopup data={depData} setDepPopup={setDepPopup} />
+      :<></>
+}
       <div className="admin__profileOnveiw-container">
       <div className="admin__profileOnView-btn-container">
       <button className="admin__profileOnveiw-close-btn" onClick={()=>setOnView(false)}>
@@ -49,9 +68,10 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
 
         <div className="admin__profileOnView-item">
         <h3> Main Location (Head Office):<span>{data.MainLocation}</span></h3>
+          <h3>Total Number Of Office/Branches:<span>{data.TotalNumberOfBranches}</span></h3>
           <h3>Other Locations:</h3>
           {data.OtherLocations.map((d,i)=>(
-            <p key={i}>{d.name}<span className="admin__profileOnView-more"> <a href={d.link} target="_blank" rel="noreferrer">more</a></span></p>
+            <p key={i}>{d.name}<span className="admin__profileOnView-more"> <a href={d.link} target="_blank" rel="noreferrer">more link</a></span></p>
           ))}
 
             <AdminSources source={data.LocationSources} name="location " id="touch1"/>
@@ -64,7 +84,11 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
             <h3>Job Post:<span>{item.name}</span></h3>
             <h3>Job Location:<span>{item.location}</span></h3>
             <h3>Job Analysis:</h3>
-            <p >{item.analysisStatus} <span className="admin__profileOnView-more"> more</span></p>
+            {item.analysis.status
+              ?<p >{ item.analysis.status} <span className="admin__profileOnView-more" onClick={()=>showStatus(item.analysis)}> more popup</span></p>
+              :<></>
+
+            }
 
             </>
           ))
@@ -97,7 +121,7 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
         <div className="admin__profileOnView-item">
           <h3>Departments/Teams/Jobs</h3>
           {data.Departments.map((d,i)=>(
-            <p key={i} >{d.DepartmentName} <span className="admin__profileOnView-more"> more</span></p>
+            <p key={i} >{d.DepartmentName} <span className="admin__profileOnView-more" onClick={()=>showDepInfo(d.DepartmentDesc)}> more popup</span></p>
 
           ))}
 

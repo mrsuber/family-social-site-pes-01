@@ -103,12 +103,194 @@ export const companyStructuralData = [
                         name:'Claire Bennett',
                         photo:'https://cdn.theorg.com/6ab278e8-00fa-4b34-b2f4-2910cfd86211_medium.jpg',
                         title:'VP, HR - EMEA',
-                        BiographyP1:'No BiographyP1',
+                        phoneNumber:'',
+                        email:"",
+                        website:"",
+                        address:"United Kingdom",
+                        linkedIn:"linkedin.com/in/claire-bennett-461478",
+                        Education:[
+                          {
+
+                            year:"2002 - 2003",
+                            certificateName:"MSC, Human Resources ManagementMSC, Human Resources Management",
+                            certificatePoints:"Distinction",
+                            institutionName:"University of Portsmouth",
+                          },
+                          {
+                            year:"1996 - 1998",
+                            certificateName:"IPD Qualification",
+                            certificatePoints:"unknown points",
+                            institutionName:"University of Portsmouth",
+                          },
+                          {
+                            year:"1991 - 1994",
+                            certificateName:"BSC - English & Classics",
+                            certificatePoints:"unknown points",
+                            institutionName:"Keele University",
+                          },
+
+
+
+                        ],
+                        languages:[
+                          {
+                            languageName:"English",
+                            languagesPercent:"95%"
+                          }
+                        ],
+                        BiographyP1:'Executive level HR Professional with extensive International knowledge & Overseas experience. Results driven & able to respond to complex and challenging business situations with complimentary HR strategies',
+                        BiographyP2:"Specialties: HR Strategy, HR Business Partnering, Organisation Design, Business Transformation, Global Project & Programme Management, Leadership, Consultancy, Trusted Advisor",
+                        BiographyP3:"",
+                        BiographyP4:"",
+                        BiographyP5:"",
+                        Experience:[
+                          {
+                            yearsOfExperience:"Dec 2017 - Present 2022",
+                            placeOfExperience:"Oracle",
+                            locationOfExperience:"location unknown!!!",
+                            areaOfExpertise:"Vice President, EMEA Human Resources",
+                            descOfWorkDoneInAreaOfExpertise:"HR Leader, focused on providing strategic HR Partnering to Executive Vice President Applications, EMEA & JAPAC. Focused on Optimising Business Performance, Executive Leadership, Organisation Design and Transformation. Responsible for leading a team of Senior HRBPs who align with EMEA based Executives (Senior Vice Presidents / Vice Presidents) within the License Organisation,",
+                          },
+                          {
+                            yearsOfExperience:"Apr 2015 - Present 2022",
+                            placeOfExperience:"Oracle",
+                            locationOfExperience:"United Kingdom",
+                            areaOfExpertise:"Senior Director, Human Resources, EMEA",
+                            descOfWorkDoneInAreaOfExpertise:"- Determination of strategic HR direction for Oracle Applications Business across all EMEA countries, including Cloud transformation across all SaaS product lines - Leadership responsibility for a team of Snr HR Business Partners, supporting multiple License Sales Organisations (inc. Apps, Tech, Alliances & Channels) across EMEA countries - Trusted Advisor & Exec level engagement with Oracle EMEA Senior Vice Presidents - Experienced in managing complex Change Management activities, Organisation Design, Business Transformation, Sales Compensation, Consultation, Workforce Planning, Exec Talent Management - Skilled in integrating Acquired Companies into both new & existing Lines of Business",
+                          },
+
+                          {
+                            yearsOfExperience:"Mar 2010 - May 2013",
+                            placeOfExperience:"Oracle",
+                            locationOfExperience:"location unknown",
+                            areaOfExpertise:" Senior HR Business Partner, EMEA",
+                            descOfWorkDoneInAreaOfExpertise:"Partnering with SVP's & Executive Leadership teams to deliver strategic HR initiatives across Western Europe Applications Responsible for organisation design, change management, business transformation, executive coaching, strategic projects, restructuring across EMEA region Global Project Leadership : Employee Insight Survey, HR Analytics",
+                          },
+                          {
+                            yearsOfExperience:"1994 - 1998",
+                            placeOfExperience:"Southern Water",
+                            locationOfExperience:"location unknown",
+                            areaOfExpertise:"Senior HR Officer",
+                            descOfWorkDoneInAreaOfExpertise:"",
+                          },
+                          {
+                            yearsOfExperience:"1998 - 2000",
+                            placeOfExperience:"Scottish Power",
+                            locationOfExperience:"location unknown",
+                            areaOfExpertise:"HR Manager ",
+                            descOfWorkDoneInAreaOfExpertise:"HR responsibility for 400 employees on multiple sites within the Engineering &amp; Technical Division",
+                          },
+                          {
+                            yearsOfExperience:"May 2013 - Apr 2015",
+                            placeOfExperience:"Oracle",
+                            locationOfExperience:"location unknown",
+                            areaOfExpertise:"Director, Human Resources, EMEA",
+                            descOfWorkDoneInAreaOfExpertise:"Leadership responsibility for a team of Snr HR Business Partners, supporting Oracle's License Sales Organisation Executive level engagement & provision of strategic HRBP support across multiple lines of business Results oriented, focusing on strong collaboration & engagement with stakeholders Interested in process & programme transformation to improve delivery & reduce complexity",
+                          },
+                          {
+                            yearsOfExperience:"May 2007 - Mar 2010",
+                            placeOfExperience:"Sun Microsystems",
+                            locationOfExperience:"location unknown",
+                            areaOfExpertise:"Global HR Operations & Programme Manager",
+                            descOfWorkDoneInAreaOfExpertise:"Member of HR Leadership team, focused on driving functional operational efficiencies and global standardisation of programme design, implementation & delivery across 52 countries Budget responsibility for HR spend, including Sun's global outsourced Shared Services contract HR Leader of Reduction in Force programme across International countries Formation of HR business plan & strategic organisational objectives Member of Shared Services project team, including developing next generation HR Systems & Service Delivery Completion of career development assignment; leadership responsibility for 6 country HR teams across Latin America",
+                          },
+
+                          {
+                            yearsOfExperience:"2006 -  2007",
+                            placeOfExperience:"Sun Microsystems",
+                            locationOfExperience:"location unknown",
+                            areaOfExpertise:"Senior HR Manager; Service Delivery Project Manger",
+                            descOfWorkDoneInAreaOfExpertise:"Member of Management team responsible for the implementation of HR BPO project with Hewitt Associates across EMEA countries Partnered with outsourced provider to jointly manage the operational set up of the Regional Service Centre in Krakow Development of change management and change acceptance techniques for stakeholders",
+                          },
+                          {
+                            yearsOfExperience:"Apr 2004 - May 2006",
+                            placeOfExperience:"Sun Microsystems",
+                            locationOfExperience:"location unknown",
+                            areaOfExpertise:"Head of HR, Asia SouthHead of HR, Asia South",
+                            descOfWorkDoneInAreaOfExpertise:"Assignment to Singapore to manage the HR function across Asia South countries Member of Asia South Leadership team, providing strategic HR Business Partnering to executives &amp; directors; Change Management, HR strategy, Succession planning, Coaching Leader of HR Shared Services function responsible for; Mergers &amp; Acquisitions, Outsourcing, Employee Relations, Workforce planning,Country HR representative for media &amp; government enquiries Re-design of flexible benefits programme",
+                          },
+
+                          {
+                            yearsOfExperience:"Oct 2000 - Apr 2004",
+                            placeOfExperience:"Sun Microsystems",
+                            locationOfExperience:"location unknown",
+                            areaOfExpertise:"HR Business Partner, Global Sales, UKHR Business Partner, Global Sales, UK",
+                            descOfWorkDoneInAreaOfExpertise:"Worked with UK Vice President &amp; Global Sales Directors to ensure HR responds to business priorities, adds value &amp; delivers appropriate solutions Focused on Talent management, Organisational competitiveness, Performance Management, Employee Relations",
+                          },
+
+
+
+                        ],
+                        professionalSkills:[
+                          {
+
+                            nameOfSkill:"Strategy",
+                            persentageOfSkills:"95%",
+                          },
+                          {
+                            nameOfSkill:"Human Resources",
+                            persentageOfSkills:"95%",
+                          },
+                          {
+                            nameOfSkill:"Talent Management",
+                            persentageOfSkills:"95%",
+                          },
+                          {
+                            nameOfSkill:"Change Management",
+                            persentageOfSkills:"95%",
+                          },
+                          {
+                            nameOfSkill:"Outsourcing",
+                            persentageOfSkills:"95%",
+                          },
+                          {
+                            nameOfSkill:"Performance Management",
+                            persentageOfSkills:"95%",
+                          },
+                          {
+                            nameOfSkill:"Employee Relations",
+                            persentageOfSkills:"95%",
+                          },
+                          {
+                            nameOfSkill:"HR Policies",
+                            persentageOfSkills:"95%",
+                          },
+                          {
+                            nameOfSkill:"Shared Services",
+                            persentageOfSkills:"95%",
+                          },
+                          {
+                            nameOfSkill:"Training",
+                            persentageOfSkills:"95%",
+                          },
+                          {
+                            nameOfSkill:"Succession Planning",
+                            persentageOfSkills:"95%",
+                          },
+
+                        ],
+                        Interest:[
+                          {
+                            // iconOfInterest:"",
+                            // nameOfInterest:"",
+                          }
+                        ],
                         source:[
                           {
                             name:"Oracle",
                             link:"https://www.oracle.com/sa/corporate/executives/"
-                          }
+                          },
+
+                          {
+                            name:"contactout.com",
+                            link:"https://contactout.com/Claire-Bennett-607265"
+                          },
+
+                          {
+                            name:"linkedin.com",
+                            link:"https://www.linkedin.com/in/claire-bennett-461478/"
+                          },
+
                         ]
                       },
                     ]

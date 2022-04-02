@@ -7,6 +7,7 @@ const Cards = ({setOnStructuralDetail,data,setCompanyName}) => {
     const [onEdit,setOnEdit] = useState(false)
     const [onView,setOnView] = useState(false)
 
+
     const structural = ()=>{
 
       setOnStructuralDetail(true)
