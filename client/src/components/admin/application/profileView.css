@@ -3,6 +3,7 @@
     top: 0px;
     left: 0;
     width: 100%;
+
     height: 100vh;
     background: var(--button-bg);
     /* background: #2d88ee08; */
@@ -11,7 +12,7 @@
 }
 
 .admin__profileOnveiw-close-btn {
-  margin: 0 10px;
+  margin: 0 8px;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -31,13 +32,25 @@
 }
 
 .admin__profileOnveiw-content{
-    max-width: 450px;
+    /* max-width: 450px; */
+
     width: 100%;
     background: var(--bg);
     padding: 20px;
     border-radius: 5px;
     margin: 20px auto;
     border: 1px solid var(--color-main);
+
+    /* new code */
+    max-width: 1000px;
+    min-height: 1000px;
+
+}
+
+.admin__main-resume-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
 .admin__profileOnveiw-avatar {
@@ -101,7 +114,7 @@
   width: 100%;
   cursor: pointer;
   transition: .5s;
-  margin-bottom: 5px;
+  margin: 10px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,4 +142,261 @@ li a {text-decoration : none; color : #2d2f31;}
 
   color: var(--danger);
   text-decoration: underline;
+}
+
+
+/* admin resume css */
+
+.admin__resume__container .admin__resume__left-side{
+  position: relative;
+  background: #003147;
+  padding: 40px;
+}
+.admin__resume__profileText{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.admin__resume__profileText .admin__resume__img-box{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.admin__resume__profileText .admin__resume__img-box img{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.admin__resume__profileText h2{
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.4;
+
+}
+.admin__resume__profileText h2 span{
+  font-size: 0.8em;
+  font-weight:300;
+}
+.admin__resume__contactInfo{
+  padding-top: 40px;
+}
+.admin__resume__title{
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.admin__resume__contactInfo ul{
+  position: relative;
+
+}
+.admin__resume__contactInfo ul li{
+  position: relative;
+  list-style: none;
+  margin: 10px 0;
+}
+.admin__resume__contactInfo ul li .admin__resume__icon{
+  display: inline-block;
+  width: 30px;
+  font-size: 18px;
+  color:#03a9f4;
+}
+.admin__resume__contactInfo ul li span{
+  color: #fff;
+  font-weight: 300;
+  font-size: 10px;
+}
+
+ .admin__resume__right-side{
+  position: relative;
+  background: var(--bg2);
+  padding: 40px;
+
+}
+
+ .admin__resume__education ul li{
+    margin-bottom: 15px;
+}
+
+.admin__resume__education ul li h5{
+    color:#03a9f4;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.admin__resume__education ul li h4:nth-child(2){
+    color:#fff;
+    font-weight: 500;
+}
+
+.admin__resume__education ul li h4{
+    color:#fff;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.admin__resume__language .admin__resume__percent{
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: #232424;
+  display: block;
+  margin-top: 5px;
+}
+.admin__resume__language .admin__resume__percent div{
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #03a9f4;
+}
+.admin__resume__percent-score{
+  width: 95%;
+}
+.admin__resume__percent-score1{
+  width: 1%;
+}
+
+.admin__resume__about{
+  margin-bottom: 50px;
+
+}
+
+.admin__resume__about:last-child{
+  margin-bottom: 0;
+
+}
+
+.admin__resume__right-title{
+  color:var(--normal-text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.admin__resume__right-par{
+  color: #00ffa4;
+}
+
+
+.admin__resume__right-box{
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+
+}
+
+.admin__resume__right-box .admin__resume__year-company{
+  min-width: 150px;
+
+}
+
+.admin__resume__right-box .admin__resume__year-company h5{
+  text-transform: uppercase;
+  color:#00b5f7;
+  font-weight: 600;
+
+}
+
+.admin__resume__right-box .admin__resume__text h4{
+  text-transform: uppercase;
+  color:#2a7da2;
+  font-size: 16px;
+}
+
+.admin__resume__right-box .admin__resume__text p{
+  color: #00ffa4;
+}
+
+
+
+.admin__resume__skills .admin__resume__right-box{
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.admin__resume__skills .admin__resume__right-box h4{
+  text-transform: uppercase;
+  color: #00b5f7;
+  font-weight: 500;
+}
+
+.admin__resume__skills .admin__resume__right-box .admin__resume__righ-percent{
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background:#f0f0f0;
+}
+
+.admin__resume__skills .admin__resume__right-box .admin__resume__righ-percent div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #03a9f4;
+}
+
+.admin__resume__interest ul{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+
+.admin__resume__interest ul li{
+  list-style: none;
+  color: #00ffa4;
+  font-weight: 500;
+  margin:10px 0;
+}
+
+.admin__resume__interest ul li svg{
+  color:#03a9f4;
+  font-size: 18px;
+  width: 20px;
+}
+
+@media(max-width:1000px) {
+  .admin__resume__container{
+    margin:10px;
+    grid-template-columns: repeat(1,1fr);
+  }
+  .admin__resume__interest ul{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px) {
+  .admin__resume__about .admin__resume__right-box {
+    flex-direction: column;
+  }
+
+    .admin__resume__about .admin__resume__right-box .admin__resume__year-company{
+
+      margin-bottom: 5px;
+    }
+
+    .admin__resume__interest ul{
+      grid-template-columns: repeat(1,1fr);
+    }
+
+    .admin__resume__skills .admin__resume__right-box{
+      grid-template-columns: repeat(1,1fr);
+    }
 }

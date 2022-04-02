@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import './styles.css'
-import {AdminSturcturalPeoplePopUpDetail} from '../../../components'
+import {AdminSturcturalPeoplePopUpDetail,AdminResume} from '../../../components'
 import {ZoomIn,ZoomOut,Refresh} from '@material-ui/icons';
 
 
@@ -101,6 +101,7 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
 
     {
       onView===true
+      /*&& <AdminResume/>*/
       && <AdminSturcturalPeoplePopUpDetail setOnView={setOnView} onView={onView} data={people} position={position} setOnStructuralDetail={setOnStructuralDetail}/>
 
     }
@@ -114,7 +115,7 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
           <h3 className="admin__section-head">Research before application.(move around with mouse to find tree)</h3>
           <div className="admin__graph-content_apply " style={{transform: `scale(${zoom})`}}>
 
-      <div className="admin__graph-board_apply" style={{width:`${lenght}rem`}} >
+      <div className="admin__graph-board_apply" style={{width:`${lenght}rem`, backgroundColor:'#1364884f'}} >
 
 
       <div className="admin__app_tree">
