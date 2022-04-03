@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import {useCountryData,useCssColorData,useIrisFlowerData,useTempData,useWorldMapData,usePointsOnMapData,useMigrandsData,useMigrandsMissPointsData} from '../../../utils/adminUseData'
 import {Link} from 'react-router-dom'
-
-
+import {useSelector,useDispatch} from 'react-redux'
+import {logout} from '../../../redux/actions/authAction'
 
 const AdminHome = () => {
 
@@ -20,6 +20,15 @@ const AdminHome = () => {
   const migrandsData = useMigrandsData()
   const migrandsMissPointsData = useMigrandsMissPointsData()
 
+  const {auth} = useSelector(state => state)
+    const dispatch = useDispatch()
+
+  const logoutnow =()=>{
+    dispatch(logout())
+  }
+  const longinnow = ()=>{
+    window.location.href = "/admin/login"
+  }
 
   return (
     <div className="admin__body">
@@ -41,10 +50,18 @@ const AdminHome = () => {
           </div>
         </div>
         <div className="admin__header-action">
-          <Link to="/admin/login" className="admin__btn admin__btn-main" style={{textDecoration: "none",color: "inherit"}} >
+          {auth.token?
+            <button className="admin__btn admin__btn-main admin__btn-error" onClick={logoutnow}>
+              <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faSignInAlt} /></span>
+            Log Out
+          </button>
+          :
+          <Link to="/admin/login" className="admin__btn admin__btn-main admin__btn-error" style={{textDecoration: "none",color: "inherit"}} >
               <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faSignInAlt} /></span>
               Log In
           </Link>
+
+        }
         </div>
       </header>
 

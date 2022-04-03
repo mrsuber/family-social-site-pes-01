@@ -4,7 +4,7 @@ import {profile,logo,pic} from '../../../images'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faHome,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import {useSelector,useDispatch} from 'react-redux'
-
+import {Link} from 'react-router-dom'
 import {logout} from '../../../redux/actions/authAction'
 import './AdminErrorScreen.css'
 const AdminErrorScreen = () => {
@@ -57,10 +57,19 @@ const AdminErrorScreen = () => {
       <h3 >You dont have permission to view this site.</h3>
       <h3>🚫🚫🚫🚫</h3>
       <h6 >error code:403 forbidden</h6>
-      <button className="admin__btn admin__btn-main admin__btn-error" onClick={ auth.token? logoutnow : longinnow}>
+
+      {auth.token?
+        <button className="admin__btn admin__btn-main admin__btn-error" onClick={logoutnow}>
           <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faSignInAlt} /></span>
-          {auth.token? `Log Out` : 'Log In'}
+        Log Out
       </button>
+      :
+      <Link to="/admin/login" className="admin__btn admin__btn-main admin__btn-error" style={{textDecoration: "none",color: "inherit"}} >
+          <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faSignInAlt} /></span>
+          Log In
+      </Link>
+
+    }
         </div>
 
 
