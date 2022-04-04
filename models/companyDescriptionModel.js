@@ -1,0 +1,83 @@
+const mongoose = require("mongoose")
+
+const CompanyDescription = new mongoose.Schema(
+  {
+    companyName:{type:String,required:true},
+    logo:{type:String},
+    about:{type:String},
+    aboutSource:[
+      {
+          name:{type:String},
+          link:{type:String}
+      }
+    ],
+    MainLocation:{type:String},
+    TotalNumberOfBranches:{type:String},
+    OtherLocations:[
+      {
+        name:{type:String},
+        link:{type:String}
+      }
+    ],
+    LocationSources:[
+      {
+        name:{type:String},
+        link:{type:String}
+      }
+    ],
+    JobPost:[
+      {
+        name:{type:String},
+        location:{type:String},
+        link:{type:String},
+        analysis:{
+          status:{type:String},
+          jobLocation:{type:String},
+          currentOfficeLocation:{type:String},
+          details1:{type:String},
+          details2:{type:String},
+          details3:{type:String},
+          details4:{type:String},
+        },
+        reasonForAnalysis:{type:String},
+        analysisSource:[
+          {
+            name:{type:String},
+            link:{type:String}
+          }
+        ],
+
+      },
+    ],
+    JobPostSources:[
+      {
+        name:{type:String},
+        link:{type:String}
+      }
+    ],
+    Employee:[
+      {
+        year:{type:String},
+        numberOfEmployee:{type:String}
+
+      }
+    ],
+    EmployeeType:{type:String},
+    EmployeeSource:[
+      {
+        name:{type:String},
+        link:{type:String}
+      }
+    ],
+    Revenue:[
+      {
+        year:{type:String},
+        amount:{type:String}
+      }
+    ],
+    RevenueType:{type:String}
+  },
+  {timestamps:true}
+  );
+
+  module.exports = mongoose.model("companyDescription",CompanyDescription)
