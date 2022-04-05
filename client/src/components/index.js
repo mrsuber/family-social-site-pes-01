@@ -66,6 +66,8 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 
 //admin
+export {default as AdminSchoolPreviewPopup} from './admin/adminSchoolPreviewPopup/AdminSchoolPreviewPopup'
+export {default as AdminSchoolCards} from './admin/adminSchoolCard/AdminSchoolCards'
 export {default as DepartmentInfoPopup} from './admin/application/departmentInfoPopup/DepartmentInfoPopup'
 export {default as AdminUnclearPopup} from './admin/application/unclearPopup/UnclearPopup'
 export {default as AdminResume}from './admin/resume/Resume'

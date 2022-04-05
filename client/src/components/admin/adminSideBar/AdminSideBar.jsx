@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
 
-const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3,activeLink6, fullname='Mohamad Demo',username='Demo User',activeLink4,activeLink5}) => {
+const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,activeLink5,activeLink6,activeLink7, fullname='Mohamad Demo',username='Demo User'}) => {
   const {auth} = useSelector(state => state)
   return (
     <div className="admin__sidebar">
@@ -46,10 +46,10 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3,activeLink6, 
               </Link>
             </li>*/}
 
-            {auth.token &&  auth.user.isAdmin===true? <li>
+            {auth.token &&  (auth.user.isApplication1===true || auth.user.isSuperAdmin===true)? <li>
               <Link to="/admin/application/oracle" className={activeLink6}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
-                <span>Oracle Applications</span>{auth.token && auth.user.isAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
+                <span>Oracle Applications</span>{auth.token && (auth.user.isApplication1===true || auth.user.isSuperAdmin===true)?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li> :<></>}
 
@@ -57,6 +57,13 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3,activeLink6, 
               <Link to="/admin/application" className={activeLink3}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
                 <span>Track Applications</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/admin/student" className={activeLink7}>
+                <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
+                <span>Track Students</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li>
 

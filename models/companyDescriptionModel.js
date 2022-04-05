@@ -2,6 +2,8 @@ const mongoose = require("mongoose")
 
 const CompanyDescription = new mongoose.Schema(
   {
+  // { userId:{type:String,required:true},
+    user:{type:mongoose.Types.ObjectId, ref:'user'},
     companyName:{type:String,required:true},
     logo:{type:String},
     about:{type:String},
@@ -75,7 +77,25 @@ const CompanyDescription = new mongoose.Schema(
         amount:{type:String}
       }
     ],
-    RevenueType:{type:String}
+    RevenueType:{type:String},
+    RevenueSource:[
+      {
+        name:{type:String},
+        link:{type:String}
+      },
+    ],
+    Departments:[
+      {
+        DepartmentName:{type:String},
+        DepartmentDesc:{type:String}
+      },
+    ],
+    DepartmentSource:[
+      {
+        name:{type:String},
+        link:{type:String}
+      }
+    ]
   },
   {timestamps:true}
   );

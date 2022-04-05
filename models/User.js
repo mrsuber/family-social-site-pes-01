@@ -61,6 +61,11 @@ const UserSchema = new mongoose.Schema({
       ref:'user'
     }
   ],
+  isApplication1:{type:Boolean,default:false},
+  isApplication2:{type:Boolean,default:false},
+  isApplication3:{type:Boolean,default:false},
+  isStudentTech:{type:Boolean,default:false},
+  isStudentRel:{type:Boolean,default:false},
   isAdmin:{type:Boolean,default:false},
   isSuperAdmin:{type:Boolean,default:false},
   resetPasswordToken: String,
