@@ -7,7 +7,7 @@ import {
   RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,LoginScreen2,
   PostDetails,HomePage,Message,Discover,Notify,Profile,PorfolioHome,MessageDetails,
   BlogHomePage,
-  AdminHome,AdminLoginScreen,AdminErrorScreen,AdminExpenseScreen,AdminApplicationScreen,AdminApplicationScreen2,AdminStudent
+  AdminHome,AdminLoginScreen,AdminErrorScreen,AdminExpenseScreen,AdminApplicationScreen,AdminApplicationScreen2,AdminStudent,AdminCourse
 
 
 } from './pages'
@@ -73,6 +73,7 @@ const App=()=> {
             <Route exact path="/admin/application" component={auth.token && auth.user.isSuperAdmin===true? AdminApplicationScreen : AdminErrorScreen}/>
             <Route exact path="/admin/application/oracle" component={auth.token && (auth.user.isApplication1===true || auth.user.isSuperAdmin===true)? AdminApplicationScreen2 : AdminErrorScreen}/>
             <Route exact path="/admin/student" component={auth.token && auth.user.isSuperAdmin===true? AdminStudent : AdminErrorScreen}/>
+            <Route exact path="/admin/devcourse" component={auth.token && auth.user.isSuperAdmin===true? AdminCourse : AdminErrorScreen}/>
 
 
 

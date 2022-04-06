@@ -1,8 +1,8 @@
 import React,{useState} from 'react'
-import './AdminSchoolPreviewPopup.css'
+import './AdminCoursePreviewPopup.css'
 import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup} from '../../../components'
 
-const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralDetail,setCompanyName}) => {
+const AdminCoursePreviewPopup = ({setOnView,onView=false, data, setOnStructuralDetail,setCompanyName}) => {
     const [unclearPopup,setUnclearPopup] = useState(false)
     const [analysisData,setAnalysisData]=useState(null)
     const[depPopup, setDepPopup] = useState(false)
@@ -59,6 +59,7 @@ const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
 
         </div>
         <div className="admin__profileOnView-item">
+
           <h3> Name:{data.path? <span>{data.path}</span> : <span className="admin__worning-update">update study path name</span>}</h3>
         </div>
 
@@ -68,50 +69,16 @@ const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
         </div>
 
         <div className="admin__profileOnView-item">
-        <h3> Main Location (Head Office):<span>{data.MainLocation ? data.MainLocation :<span className="admin__worning-update">update head Office location</span>}</span></h3>
-          <h3>Total Number Of Office/Branches:<span>{data.TotalNumberOfBranches ? data.TotalNumberOfBranches : <span className="admin__worning-update">update number of Branches</span>}</span></h3>
-          <h3>Other Locations:</h3>
-          {data.OtherLocations && data.OtherLocations.length!==0? data.OtherLocations.map((d,i)=>(
-            <p key={i}>{d.name}<span className="admin__profileOnView-more"> <a href={d.link} target="_blank" rel="noreferrer">more link</a></span></p>
+          <h3>Total Number of Lessons:<span>{data.TotalNumberOfBranches ? data.TotalNumberOfBranches : <span className="admin__worning-update">update number of Branches</span>}</span></h3>
+          <h3>Lessons Tittle:</h3>
+          {data.LessonTittle && data.LessonTittle.length!==0? data.LessonTittle.map((d,i)=>(
+            <p key={i}>{i+1}.) {d.title}</p>
           )):<p><span className="admin__worning-update">update other Locations</span></p>}
 
 
         </div>
 
-        <div className="admin__profileOnView-item">
-        {
-          data.JobPost && data.JobPost!==0? data.JobPost.map((item)=>(
-            <div style={{borderTop:"1px solid blue",marginBottom:"15px", marginTop:"15px"}}>
-            <h3>Job Post:<span>{item.name && item.name}</span></h3>
-            <h3>Job Location:<span>{item.location && item.location}</span></h3>
-            <h3>Job Details:</h3>
-                <p>{item.details && item.details }</p>
-            <h3>Job Analysis:</h3>
-            {item.analysis
-              ?<p >{ item.analysis.status? item.analysis.status:<span className="admin__worning-update">update Analysis status</span>} <span className="admin__profileOnView-more" onClick={()=>showStatus(item.analysis)}> more popup</span></p>
-              :<></>
-
-            }
-
-            </div>
-          )):<>
-          <h3>Job Post:<span className="admin__worning-update">update Job Post:</span></h3>
-          <h3>Job Location:<span className="admin__worning-update">update Job Location</span></h3>
-          <h3>Job Analysis:<span className="admin__worning-update">update Job Analysis</span></h3>
-          </>
-        }
-
-
-
-
-            {data.JobPostSources && data.JobPostSources.length!==0? <AdminSources source={ data.JobPostSources} name="about " id="touch5"/>:<span className="admin__worning-update">update Job post source</span>}
-
-        </div>
-
-
-
-
-
+    
 
 
         <button className="admin__profileOnView-sturctur-btn" onClick={structural}>
@@ -128,4 +95,4 @@ const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
   )
 }
 
-export default AdminSchoolPreviewPopup
+export default AdminCoursePreviewPopup

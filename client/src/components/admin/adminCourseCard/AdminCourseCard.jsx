@@ -1,11 +1,10 @@
 import React,{useState} from 'react'
-import './AdminSchoolCards.css'
-import {Link} from 'react-router-dom'
+import './AdminCourseCard.css'
 // import {AdminApplicationProfileEdit, AdminApplicationProfileView} from '../../../components'
-import {AdminSchoolPreviewPopup} from '../../../components'
+import {AdminCoursePreviewPopup} from '../../../components'
 import {useDispatch,useSelector} from 'react-redux'
 
-const Cards = ({data,logo}) => {
+const AdminCourseCard = ({data,logo}) => {
 
     const {auth} = useSelector(state=>state)
     const [onEdit,setOnEdit] = useState(false)
@@ -22,13 +21,15 @@ const Cards = ({data,logo}) => {
     <>
 
     <div  className="admin__revenue-card-apply">
+
   { /* <AdminApplicationProfileEdit setOnEdit={setOnEdit} onEdit={onEdit}/>
   <AdminApplicationProfileView setOnView={setOnView} onView={onView} data={data} setOnStructuralDetail={setOnStructuralDetail} setCompanyName={setCompanyName}/>
 
       */}
-      <AdminSchoolPreviewPopup setOnView={setOnView} onView={onView} data={data} />
+      <AdminCoursePreviewPopup setOnView={setOnView} onView={onView} data={data} />
 
       <div className="admin__rev-content-apply">
+
 
             <div className="admin__revenue-card-apply-avatar">
               <img src={logo} alt="profilePic" className="admin__revenue-card-apply-avatarimg"/>
@@ -39,15 +40,14 @@ const Cards = ({data,logo}) => {
 
             </div>
             <button className="admin__rev-sum-apply" onClick={()=>setOnView(true)}>
-              <h4>Profile</h4>
+              <h4>Profile({data.TotalNumberCompleted? data.TotalNumberCompleted :"0"} - {data.TotalNumberOfBranches?data.TotalNumberOfBranches:"0"})</h4>
 
             </button>
 
+            <button className="admin__rev-sum-apply">
+              <h4>Sturcture Details</h4>
 
-            <Link to={data.courseLink?data.courseLink:'/admin/student'} className="admin__rev-sum-apply" style={{textDecoration: "none",color: "inherit"}}>
-              <h4>Details</h4>
-
-            </Link>
+            </button>
 
         </div>
 
@@ -56,4 +56,4 @@ const Cards = ({data,logo}) => {
   )
 }
 
-export default Cards
+export default AdminCourseCard

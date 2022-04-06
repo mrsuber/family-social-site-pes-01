@@ -29,3 +29,5 @@ export {default as AdminApplicationScreen} from './admin/applications/AdminAppli
 export {default as AdminApplicationScreen2} from './admin/applications/AdminApplicationScreen2'
 export {default as AdminStudent} from './admin/students/StudentScreen'
 export {default as AdminStudent2} from './admin/students/StudentScreen2'
+export {default as AdminCourse} from './admin/coures/CourseScreen'
+export {default as AdminCourse2} from './admin/coures/CourseScreen2'

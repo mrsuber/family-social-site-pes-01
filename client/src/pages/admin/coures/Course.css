@@ -1,0 +1,30 @@
+.admin__block-grid-apply {
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* margin: 0 10px; */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* grid-gap: 3rem; */
+}
+
+
+@media only screen and (max-width: 980px){
+  .admin__block-grid-apply{
+    grid-template-columns: repeat(3,1fr);
+  }
+
+}
+
+@media only screen and (max-width: 735px){
+  .admin__block-grid-apply{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+@media only screen and (max-width: 510px){
+  .admin__block-grid-apply{
+    grid-template-columns: 100%;
+  }
+
+}
