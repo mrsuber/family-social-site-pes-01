@@ -4,18 +4,18 @@ import './AdminCourseCard.css'
 import {AdminCoursePreviewPopup} from '../../../components'
 import {useDispatch,useSelector} from 'react-redux'
 
-const AdminCourseCard = ({data,logo}) => {
+const AdminCourseCard = ({data,logo,setOnStructuralDetail,setCourseName}) => {
 
     const {auth} = useSelector(state=>state)
     const [onEdit,setOnEdit] = useState(false)
     const [onView,setOnView] = useState(false)
 
 
-    // const structural = ()=>{
-    //
-    //   setOnStructuralDetail(true)
-    //   setCompanyName(data.companyName)
-    // }
+    const structural = ()=>{
+
+      setOnStructuralDetail(true)
+      setCourseName(data.learningTitle)
+    }
 
   return (
     <>
@@ -44,7 +44,7 @@ const AdminCourseCard = ({data,logo}) => {
 
             </button>
 
-            <button className="admin__rev-sum-apply">
+            <button className="admin__rev-sum-apply"  onClick={structural}>
               <h4>Sturcture Details</h4>
 
             </button>

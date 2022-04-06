@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './Course.css'
 
-import {AdminCourseCard,AdminSideBar} from '../../../components'
+import {AdminCourseCard,AdminSideBar,AdminCourseStructureDetails} from '../../../components'
 import {profile,logo,pic} from '../../../images'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,15 +9,18 @@ import {faBars,faChartLine,faHome} from '@fortawesome/free-solid-svg-icons';
 import {useDispatch,useSelector} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
 import {devCourseData} from '../../../data/courseData'
+import {courseStructuralData} from '../../../data/courseStructuralData'
 
 const CourseScreen = () => {
     const {auth} = useSelector(state=>state)
-    const [school,setSchool]=useState(devCourseData)
 
-    const [companyName, setCompanyName]=useState(null)
+    const [cardData,setCardData]=useState(devCourseData)
+    const [sturtureData,setSturtureData] = useState(courseStructuralData)
+
+    const [courseName, setCourseName]=useState(null)
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
     const dispatch = useDispatch()
-
+    console.log(sturtureData)
 
 
   return (
@@ -61,10 +64,10 @@ const CourseScreen = () => {
           <section>
 
               <div className="admin__block-grid-apply">
-            
+
               {
-                school && school.map((data,index)=>(
-                  <AdminCourseCard data={data} logo={logo} setOnStructuralDetail={setOnStructuralDetail} setCompanyName={setCompanyName} key={index}/>
+                cardData && cardData.map((data,index)=>(
+                  <AdminCourseCard data={data} logo={logo} setOnStructuralDetail={setOnStructuralDetail} setCourseName={setCourseName} key={index}/>
                 ))
 
               }
@@ -74,7 +77,7 @@ const CourseScreen = () => {
           </section>
           </main>
           </>
-          :<>{/*<AdminApplicationStructure companyName={companyName} cardData={cardData} strutureData={sturtureData} setOnStructuralDetail={setOnStructuralDetail}/>*/}</>
+          :<><AdminCourseStructureDetails courseName={courseName} cardData={cardData} strutureData={sturtureData} setOnStructuralDetail={setOnStructuralDetail}/></>
         }
 
 
