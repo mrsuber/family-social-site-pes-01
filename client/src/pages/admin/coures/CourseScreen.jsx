@@ -20,7 +20,7 @@ const CourseScreen = () => {
     const [courseName, setCourseName]=useState(null)
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
     const dispatch = useDispatch()
-    console.log(sturtureData)
+    
 
 
   return (

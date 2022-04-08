@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
 
-const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,activeLink5,activeLink6,activeLink7, fullname='Mohamad Demo',username='Demo User'}) => {
+const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,activeLink5,activeLink6,activeLink7,activeLink8, fullname='Mohamad Demo',username='Demo User'}) => {
   const {auth} = useSelector(state => state)
   return (
     <div className="admin__sidebar">
@@ -50,6 +50,12 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,
               <Link to="/admin/application/oracle" className={activeLink6}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
                 <span>Oracle Applications</span>{auth.token && (auth.user.isApplication1===true || auth.user.isSuperAdmin===true)?"":<span className="admin__sidebar-restricted">🚫</span>}
+              </Link>
+            </li> :<></>}
+            {auth.token &&  (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? <li>
+              <Link to="/admin/application/webstudent" className={activeLink8}>
+                <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
+                <span>Web Developement</span>{auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li> :<></>}
 

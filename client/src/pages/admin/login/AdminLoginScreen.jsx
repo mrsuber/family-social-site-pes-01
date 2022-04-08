@@ -42,11 +42,14 @@ const AdminLoginScreen = () => {
 
     useEffect(()=>{
       if(auth.token && auth.user.isSuperAdmin===true){
-        window.location.href = "/admin/application"}else if(auth.token && auth.user.isAdmin===true){
+        window.location.href = "/admin/application"
+      }else if(auth.token && auth.user.isAdmin===true){
             window.location.href = "/admin/application/oracle"
+        }else if(auth.token && auth.user.isStudentTech===true){
+            window.location.href = "/admin/devcourse/webstudent"
         }
 
-    },[auth.token , history])
+    },[auth.token , history,auth.user.isAdmin, auth.user.isSuperAdmin,auth.user.isStudentTech])
 
 
 

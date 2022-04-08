@@ -1,25 +1,25 @@
 import React,{useState} from 'react'
 import './Course.css'
 
-import {AdminSideBar,AdminApplicationStructure,AdminApplicationCard} from '../../../components'
+import {AdminCourseCard,AdminSideBar,AdminCourseStructureDetails} from '../../../components'
 import {profile,logo,pic} from '../../../images'
-import logo2 from '../../../images/admin/google_logo.jpg'
-import logo3 from '../../../images/admin/Oracle_Logo.png'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faHome} from '@fortawesome/free-solid-svg-icons';
 import {useDispatch,useSelector} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
-import {companyData} from '../../../data/companyData'
-import {companyStructuralData} from '../../../data/companySturcturalData'
+import {devCourseData} from '../../../data/courseData'
+import {courseStructuralData} from '../../../data/courseStructuralData'
 
-const CourseScreen2 = () => {
+const CourseScreen = () => {
     const {auth} = useSelector(state=>state)
-    const [cardData,setCardData]=useState(companyData)
-    const [sturtureData,setSturtureData] = useState(companyStructuralData)
-    const [companyName, setCompanyName]=useState(null)
+
+    const [cardData,setCardData]=useState(devCourseData)
+    const [sturtureData,setSturtureData] = useState(courseStructuralData)
+
+    const [courseName, setCourseName]=useState(null)
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
     const dispatch = useDispatch()
-
 
 
   return (
@@ -33,7 +33,7 @@ const CourseScreen2 = () => {
     img={ auth.user.profilePic ? auth.user.profilePic :profile}
     logo={logo}
     pic={pic}
-    activeLink6="admin__active"
+    activeLink8="admin__active"
     fullname={auth.user.fullname }
     username={auth.user.username}
     />
@@ -44,7 +44,7 @@ const CourseScreen2 = () => {
             <span className="admin__las admin_la-bars"><FontAwesomeIcon icon={faBars} /></span>
           </label>
           <div className="admin__header-title">
-          <h1>Welcome To Applications Tracking</h1>
+          <h1>Welcome To Course Tracking</h1>
           <p>This is sensitive Data<span className="admin__las admin__la-chart-line"><FontAwesomeIcon icon={faChartLine} /></span></p>
           </div>
         </div>
@@ -64,14 +64,16 @@ const CourseScreen2 = () => {
 
               <div className="admin__block-grid-apply">
 
-                  <AdminApplicationCard data={cardData[1]} setOnStructuralDetail={setOnStructuralDetail} setCompanyName={setCompanyName}/>
+
+                  <AdminCourseCard data={cardData[0]} logo={logo} setOnStructuralDetail={setOnStructuralDetail} setCourseName={setCourseName}/>
+
 
 
               </div>
           </section>
           </main>
           </>
-          :<><AdminApplicationStructure companyName={companyName} cardData={cardData} strutureData={sturtureData} setOnStructuralDetail={setOnStructuralDetail}/></>
+          :<><AdminCourseStructureDetails courseName={courseName} cardData={cardData} strutureData={sturtureData} setOnStructuralDetail={setOnStructuralDetail}/></>
         }
 
 
@@ -85,4 +87,4 @@ const CourseScreen2 = () => {
   )
 }
 
-export default CourseScreen2
+export default CourseScreen

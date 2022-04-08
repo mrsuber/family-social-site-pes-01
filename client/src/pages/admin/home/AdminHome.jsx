@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './AdminHome.css'
 import {profile,logo,pic} from '../../../images'
 import {AdminSideBar,DisplayCssColorsHis,AdminRevenueCard,IrishFlower,GlobalTemp,WorldMap,Migrands,WorldMapMig} from '../../../components'
@@ -29,6 +29,17 @@ const AdminHome = () => {
   const longinnow = ()=>{
     window.location.href = "/admin/login"
   }
+
+  useEffect(()=>{
+    if(auth.token && auth.user.isSuperAdmin===true){
+      window.location.href = "/admin/application"
+    }else if(auth.token && auth.user.isAdmin===true){
+          window.location.href = "/admin/application/oracle"
+      }else if(auth.token && auth.user.isStudentTech===true){
+          window.location.href = "/admin/devcourse/webstudent"
+      }
+
+  },[auth.token,auth.user.isAdmin, auth.user.isSuperAdmin,auth.user.isStudentTech])
 
   return (
     <div className="admin__body">
