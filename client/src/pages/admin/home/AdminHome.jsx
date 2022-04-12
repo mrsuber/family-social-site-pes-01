@@ -39,7 +39,7 @@ const AdminHome = () => {
           window.location.href = "/admin/devcourse/webstudent"
       }
 
-  },[auth.token,auth.user.isAdmin, auth.user.isSuperAdmin,auth.user.isStudentTech])
+  },[])
 
   return (
     <div className="admin__body">

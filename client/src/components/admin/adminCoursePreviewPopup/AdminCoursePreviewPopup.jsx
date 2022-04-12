@@ -10,7 +10,7 @@ const AdminCoursePreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
 
       const structural = ()=>{
         setOnView(false)
-        setCompanyName(data.companyName)
+        setCompanyName(data.learningTitle)
         setOnStructuralDetail(true)
 
       }
@@ -78,7 +78,7 @@ const AdminCoursePreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
 
         </div>
 
-    
+
 
 
         <button className="admin__profileOnView-sturctur-btn" onClick={structural}>

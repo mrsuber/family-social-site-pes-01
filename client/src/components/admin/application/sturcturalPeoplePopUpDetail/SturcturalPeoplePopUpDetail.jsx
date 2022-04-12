@@ -112,12 +112,21 @@ const SturcturalPeoplePopUpDetail = ({setOnView,onView=false, data,position}) =>
       <div className="admin__resume__right-side">
         <div className="admin__resume__about">
         <h2 className="admin__resume__right-title">Profile</h2>
-            <p className="admin__resume__right-par">
+          {
+            data.knowmore? <p className="admin__resume__right-par">
+            {data.BiographyP1? data.BiographyP1 : <span className="admin__worning-update">update Paragraph 1</span>}<br/><br/>
+            <br/>
+            <span><a href={data.knowmore} target="_blank" rel="noreferrer">know more...</a></span>
+            </p>:<p className="admin__resume__right-par">
              {data.BiographyP1? data.BiographyP1 : <span className="admin__worning-update">update Paragraph 1</span>}<br/><br/>
              {data.BiographyP2? data.BiographyP2 : <span className="admin__worning-update">update Paragraph 2</span>}<br/><br/>
              {data.BiographyP3? data.BiographyP3 : <span className="admin__worning-update">update Paragraph 3</span>}<br/><br/>
              {data.BiographyP4? data.BiographyP4 : <span className="admin__worning-update">update Paragraph 4</span>}<br/><br/>
-             {data.BiographyP5? data.BiographyP5 : <span className="admin__worning-update">update Paragraph 5</span>}</p>
+             {data.BiographyP5? data.BiographyP5 : <span className="admin__worning-update">update Paragraph 5</span>}
+             </p>
+
+          }
+
         </div>
 
         <div className="admin__resume__about">
