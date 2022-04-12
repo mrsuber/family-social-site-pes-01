@@ -75,70 +75,10 @@ console.log("data",data)
 
         </div>
 
-        <div className="admin__resume__about">
-        <h2 className="admin__resume__right-title">Experience</h2>
-        {data.Experience && data.Experience.length!==0 ? data.Experience.map((ex)=>(
-          <div className="admin__resume__right-box">
 
-            <div className="admin__resume__year-company">
-              <h5>{ex.yearsOfExperience}</h5>
-              <h5>{ex.placeOfExperience}</h5>
-              <h5>{ex.locationOfExperience}</h5>
 
-            </div>
-            <div className="admin__resume__text">
-              <h4>{ex.areaOfExpertise}</h4>
-              <p>{ex.descOfWorkDoneInAreaOfExpertise}</p>
-            </div>
-          </div>
-        )) : <div className="admin__resume__right-box">
 
-          <div className="admin__resume__year-company">
-            <h5><span className="admin__worning-update">update Year of Experience</span></h5>
-            <h5><span className="admin__worning-update">update place of Experience</span></h5>
-            <h5><span className="admin__worning-update">Location of Experience</span></h5>
-
-          </div>
-          <div className="admin__resume__text">
-            <h4><span className="admin__worning-update">update area of Expertise</span></h4>
-            <p><span className="admin__worning-update">update desc of work done in area of expertise</span></p>
-          </div>
-        </div>
-      }
-
-        </div>
-
-        <div className="admin__resume__about admin__resume__skills">
-        <h2 className="admin__resume__right-title">Professional Skills</h2>
-        {data.professionalSkills && data.professionalSkills.length!==0? data.professionalSkills.map((skills)=>(
-          <div className="admin__resume__right-box">
-            <h4>{skills.nameOfSkill}</h4>
-            <div className="admin__resume__righ-percent"><div style={{width:`${skills.persentageOfSkills}`}}></div></div>
-          </div>
-        ))
-        :<div className="admin__resume__right-box">
-          <h4><span className="admin__worning-update">update Name of Skill</span></h4>
-          <div className="admin__resume__righ-percent"><div style={{width:`0%`}} ></div></div>
-        </div>
-      }
-
-        </div>
-        <div className="admin__resume__about admin__resume__interest">
-          <h2 className="admin__resume__right-title">Interest</h2>
-          <ul>
-            {data.Interest && data.Interest.length!==0? data.Interest.map((int)=>(
-              <li><FontAwesomeIcon icon={int.iconOfInterest}/> {int.nameOfInterest}</li>
-            ))
-            :<>
-            <li><FontAwesomeIcon icon={faCookie}/><span className="admin__worning-update">update name and Icon</span></li>
-            <li><FontAwesomeIcon icon={faCookie}/><span className="admin__worning-update">update name and Icon</span></li>
-            <li><FontAwesomeIcon icon={faCookie}/><span className="admin__worning-update">update name and Icon</span></li>
-            <li><FontAwesomeIcon icon={faCookie}/><span className="admin__worning-update">update name and Icon</span></li>
-            </>
-          }
-
-          </ul>
-        </div>
+      
       </div>
 
 

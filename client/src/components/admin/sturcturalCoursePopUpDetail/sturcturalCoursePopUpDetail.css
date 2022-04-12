@@ -6,6 +6,7 @@
 
 .admin__popup-sidemenu{
   transition: 0.4s ease-in-out;
+  font-size: 20px;
   cursor: pointer;
 }
 
