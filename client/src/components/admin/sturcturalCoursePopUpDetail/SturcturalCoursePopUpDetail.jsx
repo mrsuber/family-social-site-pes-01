@@ -37,7 +37,7 @@ console.log("data",data)
             ?data.menu.map((item)=>(
               <li className="admin__popup-sidemenu">
 
-                <span className="admin__resume__text">{item.name}</span>
+                <a href={`#${item.ancorName}`} style={{textDecoration:"none"}}><span className="admin__resume__text">{item.name}</span></a>
               </li>
             ))
             :<li>
@@ -51,26 +51,27 @@ console.log("data",data)
         </div>
 
 
-      
+
       </div>
 
       <div className="admin__resume__right-side">
         <div className="admin__resume__about">
-        <h2 className="admin__resume__right-title">Profile</h2>
-          {
-            data.knowmore? <p className="admin__resume__right-par">
-            {data.BiographyP1? data.BiographyP1 : <span className="admin__worning-update">update Paragraph 1</span>}<br/><br/>
-            <br/>
-            <span><a href={data.knowmore} target="_blank" rel="noreferrer">know more...</a></span>
-            </p>:<p className="admin__resume__right-par">
-             {data.BiographyP1? data.BiographyP1 : <span className="admin__worning-update">update Paragraph 1</span>}<br/><br/>
-             {data.BiographyP2? data.BiographyP2 : <span className="admin__worning-update">update Paragraph 2</span>}<br/><br/>
-             {data.BiographyP3? data.BiographyP3 : <span className="admin__worning-update">update Paragraph 3</span>}<br/><br/>
-             {data.BiographyP4? data.BiographyP4 : <span className="admin__worning-update">update Paragraph 4</span>}<br/><br/>
-             {data.BiographyP5? data.BiographyP5 : <span className="admin__worning-update">update Paragraph 5</span>}
-             </p>
 
+          {
+            data.menu && data.menu.length!==0
+            ?data.menu.map((item)=>(
+              <>
+              <a id={item.ancorName} style={{textDecoration:"none"}}>
+              <h2 className="admin__resume__right-title">{item.name}</h2>
+              </a>
+              <p className="admin__resume__right-par">
+                {item.detail}
+              </p>
+              </>
+            ))
+            :<span className="admin__worning-update">update Details</span>
           }
+
 
         </div>
 
