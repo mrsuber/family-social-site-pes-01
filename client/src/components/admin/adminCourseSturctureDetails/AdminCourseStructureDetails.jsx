@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 
-import {AdminSturcturalPeoplePopUpDetail,AdminResume} from '../../../components'
+import {AdminSturcturalCoursePopUpDetail,AdminResume} from '../../../components'
 import {ZoomIn,ZoomOut,Refresh} from '@material-ui/icons';
 
 
@@ -102,7 +102,7 @@ const AdminCourseStructureDetails = ({courseName,cardData,strutureData,setOnStru
     {
       onView===true
       /*&& <AdminResume/>*/
-      && <AdminSturcturalPeoplePopUpDetail setOnView={setOnView} onView={onView} data={people} position={position} setOnStructuralDetail={setOnStructuralDetail}/>
+      && <AdminSturcturalCoursePopUpDetail setOnView={setOnView} onView={onView} data={people} position={position} setOnStructuralDetail={setOnStructuralDetail}/>
 
     }
     <section>
@@ -151,13 +151,13 @@ const AdminCourseStructureDetails = ({courseName,cardData,strutureData,setOnStru
                                   <h3>Name: <span>{data.name}</span></h3>
 
                                 </div>
-                                <span className="AdminStructure__hoverSpan" style={{cursor:'pointer'}}>more...</span>
+                                <span className="AdminStructure__hoverSpan" style={{cursor:'pointer'}} onClick={()=>displayPopup(data,filteredStructuralData)}>more...</span>
 
                             </nav>
-                          {data.people && <ul className="ul">
+                          {(data.people && data.people.length!==0)?<ul className="ul">
                           {/*CEO and people of the bourd of dirctor*/}
                           {
-                            data.people.map((item,i2)=>(
+                        data.people.map((item,i2)=>(
                               <li key={i2} className="li">
 
 
@@ -247,7 +247,7 @@ const AdminCourseStructureDetails = ({courseName,cardData,strutureData,setOnStru
 
                             ))
                           }
-                            </ul>}
+                            </ul>:<></>}
                         </li>
                       ))
                     }

@@ -1,4 +1,4 @@
-
+import {logo} from '../images'
 export const courseStructuralData = [
   // {
   //   companyName:"Google",
@@ -8,12 +8,49 @@ export const courseStructuralData = [
   {
     learningTitle:"Foundations",
     companyHeadOfficeLocation:"Cameroon | Buea",
-
+    logo:logo,
 
     companyLevel1:[
       {
         name:"How this Course Will Work",
-        courseStatus:"incomplete",
+        courseStatus:"Incomplete",
+
+        courseNumber:"001",
+        logo:logo,
+        menu:[
+          {
+            name:'Welcome',
+            detail:"",
+            ancorName:"welcome"
+          },
+          {
+            name:'Introduction',
+            detail:"",
+            ancorName:"introduction"
+          },
+          {
+            name:'How It Works',
+            detail:"",
+            ancorName:"howItWorks"
+          },
+          {
+            name:'A Note About Language',
+            detail:"",
+            ancorName:"language"
+          },
+          {
+            name:'What Comes Next',
+            detail:"",
+            ancorName:"whatComesNext"
+          }
+
+        ],
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-how-this-course-will-work"
+          }
+        ],
         people:[ ]
       },
 

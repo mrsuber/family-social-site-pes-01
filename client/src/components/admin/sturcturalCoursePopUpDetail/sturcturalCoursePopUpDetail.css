@@ -1,0 +1,17 @@
+.admin__worning-update{
+  color:red !important;
+  /* font-weight: bolder !important; */
+  font-size: inherit !important;
+}
+
+.admin__popup-sidemenu{
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.admin__popup-sidemenu:hover{
+  font-weight: 600 !important;
+  background: rgba(45, 136, 238, 0.05);
+
+
+}
