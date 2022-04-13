@@ -49,7 +49,7 @@ const AdminLoginScreen = () => {
             window.location.href = "/admin/devcourse/webstudent"
         }
 
-    },[auth.token , history,auth.user.isAdmin, auth.user.isSuperAdmin,auth.user.isStudentTech])
+    },[])
 
 
 
