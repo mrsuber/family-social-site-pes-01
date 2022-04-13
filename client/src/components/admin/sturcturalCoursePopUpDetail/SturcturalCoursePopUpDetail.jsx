@@ -1,5 +1,5 @@
-import React from 'react'
-import {AdminSources} from '../../../components'
+import React,{useState} from 'react'
+import {AdminSources,AdminCourseImagePopUp} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPhone,faEnvelope,faGlobe,faMapMarker,faFilm,faCookie,faPaintBrush,faMapMarkedAlt} from '@fortawesome/free-solid-svg-icons';
 
@@ -8,7 +8,7 @@ import {LinkedIn} from '@material-ui/icons'
 import './sturcturalCoursePopUpDetail.css'
 
 const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) => {
-console.log("data",data)
+const [imagePopup,setImagePopup]=useState(false)
 
   return (
     <>{
@@ -67,6 +67,13 @@ console.log("data",data)
               <p className="admin__resume__right-par">
                 {item.detail}
               </p>
+              {item.popup1
+                ?<>
+                <span onClick={()=>setImagePopup(true)} className="courseImageReadMorePopUp">Read more...</span>
+                {imagePopup?<AdminCourseImagePopUp img={item.popup1} setImagePopup={setImagePopup} imagePopup={imagePopup} />:<></>}
+                </>
+                :<></>
+              }
               </>
             ))
             :<span className="admin__worning-update">update Details</span>
@@ -78,7 +85,7 @@ console.log("data",data)
 
 
 
-      
+
       </div>
 
 

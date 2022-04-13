@@ -16,3 +16,13 @@
 
 
 }
+
+.courseImageReadMorePopUp{
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+
+}
+
+.courseImageReadMorePopUp:hover{
+  text-decoration: underline;
+}

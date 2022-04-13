@@ -29,3 +29,8 @@ export {default as ad2} from './admin/2.jpg'
 export {default as ad3} from './admin/3.png'
 export {default as ad4} from './admin/4.png'
 export {default as ad5} from './admin/5.jpg'
+//export course images
+export {default as wiki1} from './course/wiki1.png'
+export {default as fvbvf} from './course/frontVsBackVsfullStack.png'
+export {default as computer} from './course/computer.png'
+export {default as google} from './course/google.png'
