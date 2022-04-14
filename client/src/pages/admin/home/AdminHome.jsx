@@ -34,18 +34,18 @@ const AdminHome = () => {
   useEffect(()=>{
     if(auth.token && auth.user.isSuperAdmin===true){
       window.location.href = "/admin/application"
-      setReload(!reload)
+
     }else if(auth.token && auth.user.isAdmin===true){
 
           window.location.href = "/admin/application/oracle"
-          setReload(!reload)
+
       }else if(auth.token && auth.user.isStudentTech===true){
 
             window.location.href = "/admin/devcourse/"
-            setReload(!reload)
+
       }
 
-  },[reload])
+  },[auth])
 
   return (
     <div className="admin__body">

@@ -11,7 +11,7 @@ const Source = ({source, name,id}) => {
 }
 useEffect(()=>{
   const settingHight = ()=>{
-    if(source.length*35 > size){
+    if(source && source.length*35 > size){
       setSize(source.length*35)
     }
   }

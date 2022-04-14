@@ -67,9 +67,9 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,
             </li>
 
             <li>
-              <Link to="/admin/student" className={activeLink7}>
+              <Link to="/admin/school" className={activeLink7}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
-                <span>Track Students</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
+                <span>School</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li>
 
