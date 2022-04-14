@@ -1,4 +1,4 @@
-import {logo,wiki1,fvbvf,computer,google} from '../images'
+import {logo,wiki1,fvbvf,computer,google,multivation,whysoHard} from '../images'
 export const courseStructuralData = [
   // {
   //   companyName:"Google",
@@ -64,13 +64,13 @@ export const courseStructuralData = [
             name:'What Do Web Developers Do?',
             detail:"In short, web developers build and maintain websites.\nWeb developers often work for clients who are trying to get their product or service onto the web. The work is typically very project focused and involves collaborating with a team that helps to coordinate the client’s needs into the end product. The client could be a tech company, an organization, or a government. The work could involve front-end, back-end, or full-stack web development.\nWeb development could be a good profession for you if you like solving logical problems, building useful things, and experimenting with new technologies. Web developers are in high demand, generally have a good work/life balance, and command comfortable salaries. Google your specific location to get a better sense of your local web development job opportunities.\n For more details, Wikipedia describes the breadth of the web development profession in their entry on web design.",
             ancorName:"WhatDoWebDevelopersDo",
-            // popup1:wiki1
+            popup1:wiki1
           },
           {
             name:'Types of Web Developers',
             detail:"Earlier, we mentioned that web development work could be in the front end, the back end, or the full stack. What exactly do these terms mean?\n The front end is the stuff you see on the website in your browser, including the presentation of content and user interface elements like the navigation bar. Front-end developers use HTML, CSS, JavaScript, and their relevant frameworks to ensure that content is presented effectively and that users have an excellent experience.\n The back end refers to the guts of the application, which live on the server. The back end stores and serves program data to ensure that the front end has what it needs. This process can become very complicated when a website has millions of users. Back-end developers use programming languages like Java, Python, and Ruby to work with data.\n Full-stack developers are comfortable working with both the front and back ends. At The Odin Project, we focus on teaching you full-stack development, covering all aspects of web development.\n For more detail, Udacity has a great blog post on this topic: 3 Web Dev Careers Decoded: Front-End vs Back-End vs Full Stack",
             ancorName:"TypesofWebDevelopers",
-            // popup1:fvbvf
+            popup1:fvbvf
 
           },
           {
@@ -93,7 +93,7 @@ export const courseStructuralData = [
             name:'Google',
             detail:"Google is a fully-automated search engine that uses software known as web crawlers that explore the web on a regular basis to find sites to add to our index. In fact, the vast majority of sites listed in our results aren't manually submitted for inclusion, but are found and added automatically when our web crawlers crawl the web.\n Google Search works in essentially three stages:\nCrawling: Google searches the web with automated programs called crawlers, looking for pages that are new or updated. Google stores those page addresses (or page URLs) in a big list to look at later. We find pages by many different methods, but the main method is following links from pages that we already know about.\nIndexing: Google visits the pages that it has learned about by crawling, and tries to analyze what each page is about. Google analyzes the content, images, and video files in the page, trying to understand what the page is about. This information is stored in the Google index, a huge database that is stored on many computers.\n Serving search results: When a user searches on Google, Google tries to determine the highest quality results. The 'best' results have many factors, including things such as the user's location, language, device (desktop or phone), and previous queries. For example, searching for 'bicycle repair shops' would show different answers to a user in Paris than it would to a user in Hong Kong. Google doesn't accept payment to rank pages higher, and ranking is done algorithmically.",
             ancorName:"google",
-            // popup1:google
+            popup1:google
           },
           {
             name:'Text Editor',
@@ -121,10 +121,56 @@ export const courseStructuralData = [
           },
           {
             name:'GitHub',
-            details:"GitHub, Inc. is a provider of Internet hosting for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.",
+            detail:"GitHub, Inc. is a provider of Internet hosting for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.",
             ancorName:"GitHub",
+          },
+          {
+            name:'Motivation',
+            detail:"Learning to code is incredibly rewarding but can also be difficult and frustrating. The strongest assets you can have as a student are a desire to build, a problem-solving mind, and persistence in the face of setbacks.\n The web development industry has a long history of successful developers with varying backgrounds, so people tend to care more about what you’ve actually built than how you got there.",
+            ancorName:"Motivation",
+            popup1:multivation
+          },
+          {
+            name:'Conclusion',
+            detail:"Hopefully, you’ve gained a better idea of what a web developer actually does and what your life might look like if you decided to take it on as a career. This has only been a teaser into the world of web development.\nIn this course, “Foundations” you’ll take a journey through the entire spectrum of topics that you will eventually need to know. This course jumps around to a variety of topics that you may be totally unfamiliar with, providing you a small taste of each and then moving on.\nThe following courses will dive deep into these topics. You will build dozens of scripts, projects, and websites to cement those skills that will get you hired. Getting all the way there is going to be challenging. In fact, you should check out the post “Why Learning to Code is So Damn Hard” so you have a good idea of what the journey ahead is like. But what worthwhile thing is truly easy?",
+            ancorName:"Conclusion",
+            popup1:whysoHard
           }
 
+
+        ],
+        additionalRead:[
+          {
+            title:"Quora: How can I Become a Really Good Web Developer?",
+            url:"https://www.quora.com/Computer-Programming/How-can-I-become-a-really-good-web-developer-starting-from-now-at-age-20-before-age-25"
+          },
+
+          {
+            title:"Quora: What makes a great web developer?",
+            url:"https://blog.bitsrc.io/best-practices-in-using-iframes-with-react-6193feaa1e08"
+          },
+          {
+            title:"Jared the Nerd: What makes a good web developer?",
+            url:"https://jaredthenerd.com/2013/05/what-makes-a-good-developer/"
+          },
+          {
+            title:"FreeCodeCamp: Things I Wish Someone Had Told Me When I Was Learning How To Code",
+            url:"https://www.freecodecamp.org/news/things-i-wish-someone-had-told-me-when-i-was-learning-how-to-code-565fc9dcb329/"
+          },
+          {
+            title:"TechCrunch: Don’t Believe Anyone who Tells you Learning to Code is Easy",
+            url:"https://techcrunch.com/2014/05/24/dont-believe-anyone-who-tells-you-learning-to-code-is-easy/"
+          },
+          {
+            title:"Code Quizzes: Deliberate Programming Practice",
+            url:"https://codequizzes.wordpress.com/2013/04/28/deliberate-programming-practice/"
+          },
+          {
+            title:"Roadmap to becoming a web developer in 2022",
+            url:"https://github.com/kamranahmedse/developer-roadmap"
+          },
+
+          
         ],
         source:[
           {
@@ -163,6 +209,11 @@ export const courseStructuralData = [
           {
             name:"github",
             link:"https://github.com/"
+          }
+          ,
+          {
+            name:"Thinkful",
+            link:"https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/"
           }
         ],
         people:[]

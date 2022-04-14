@@ -15,6 +15,7 @@ const AdminLoginScreen = () => {
   const history = useHistory()
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
+  const [reload,setReload] = useState(false)
   // const initialState = {email:email,password:password}
   // const[userData,setUserData]= useState(initialState)
   const [isFectching,setIsFectching]=useState(false)
@@ -43,13 +44,18 @@ const AdminLoginScreen = () => {
     useEffect(()=>{
       if(auth.token && auth.user.isSuperAdmin===true){
         window.location.href = "/admin/application"
+        setReload(!reload)
       }else if(auth.token && auth.user.isAdmin===true){
+
             window.location.href = "/admin/application/oracle"
+            setReload(!reload)
         }else if(auth.token && auth.user.isStudentTech===true){
-            window.location.href = "/admin/devcourse/webstudent"
+
+              window.location.href = "/admin/devcourse/"
+              setReload(!reload)
         }
 
-    },[])
+    },[reload])
 
 
 

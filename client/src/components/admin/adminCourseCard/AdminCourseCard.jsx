@@ -26,7 +26,7 @@ const AdminCourseCard = ({data,logo,setOnStructuralDetail,setCourseName}) => {
   <AdminApplicationProfileView setOnView={setOnView} onView={onView} data={data} setOnStructuralDetail={setOnStructuralDetail} setCompanyName={setCompanyName}/>
 
       */}
-      <AdminCoursePreviewPopup setOnView={setOnView} onView={onView} data={data} />
+      <AdminCoursePreviewPopup setOnView={setOnView} onView={onView} data={data} structural={structural}/>
 
       <div className="admin__rev-content-apply">
 

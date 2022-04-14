@@ -53,7 +53,7 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,
               </Link>
             </li> :<></>}
             {auth.token &&  (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? <li>
-              <Link to="/admin/devcourse/webstudent" className={activeLink8}>
+              <Link to="/admin/devcourse" className={activeLink8}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
                 <span>Web Developement</span>{auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>

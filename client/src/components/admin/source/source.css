@@ -26,7 +26,7 @@
 .admin__profileOnView-nav .slide {
   clear:both;
   width:100%;
-  height:0px;
+  height:10px;
   overflow: hidden;
   text-align: center;
   transition: height .4s ease;

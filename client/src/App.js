@@ -73,8 +73,8 @@ const App=()=> {
             <Route exact path="/admin/application" component={auth.token && auth.user.isSuperAdmin===true? AdminApplicationScreen : AdminErrorScreen}/>
             <Route exact path="/admin/application/oracle" component={auth.token && (auth.user.isApplication1===true || auth.user.isSuperAdmin===true)? AdminApplicationScreen2 : AdminErrorScreen}/>
             <Route exact path="/admin/student" component={auth.token && auth.user.isSuperAdmin===true? AdminStudent : AdminErrorScreen}/>
-            <Route exact path="/admin/devcourse" component={auth.token && auth.user.isSuperAdmin===true? AdminCourse : AdminErrorScreen}/>
-            <Route exact path="/admin/devcourse/webstudent" component={auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? AdminCourse2 : AdminErrorScreen}/>
+            <Route exact path="/admin/devcourse" component={auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? AdminCourse : AdminErrorScreen}/>
+            <Route exact path="/admin/devcourse/webstuden" component={auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? AdminCourse2 : AdminErrorScreen}/>
 
 
 

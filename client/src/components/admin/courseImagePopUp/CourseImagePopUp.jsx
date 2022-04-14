@@ -1,26 +1,43 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './CourseImagePopUp.css'
 
-const CourseImagePopUp = ({img,setImagePopup}) => {
+const CourseImagePopUp = ({img}) => {
+  const [imagePopup,setImagePopup]=useState(false)
   return (
-    <div className="admin__Unclear-container">
-      <div className="admin__Unclear-content2">
-      <div className="admin__Unclear-btn-container">
-      <button className="admin__Unclear-close-btn" onClick={()=>setImagePopup(false)}>
-      Okay
-      </button>
-      </div>
+    <>
+    <span onClick={()=>setImagePopup(true)} className="courseImageReadMorePopUp">Read more...</span>
+    {
+      imagePopup
+      ?  <div className="admin__Unclear-container">
+          <div className="admin__Unclear-content2">
+          <div className="admin__Unclear-btn-container">
+          <button className="admin__Unclear-close-btn" onClick={()=>setImagePopup(false)}>
+          Okay
+          </button>
+          </div>
 
-      <div className="admin__profileOnView-item">
-          <img src={img} alt="popup"/>
-      </div>
+          <div className="admin__profileOnView-item">
+              {/*<img src={img} alt="popup"/>*/}
+              <embed
+                src={img}
+                type="application/pdf"
+                frameBorder="0"
+                scrolling="auto"
+                height="400px"
+                width="100%"
+                ></embed>
+          </div>
 
 
 
-      </div>
+          </div>
 
 
-    </div>
+        </div>
+        :<></>
+    }
+
+    </>
   )
 }
 

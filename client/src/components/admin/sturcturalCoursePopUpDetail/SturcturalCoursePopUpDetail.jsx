@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {AdminSources,AdminCourseImagePopUp} from '../../../components'
+import {AdminSources,AdminCourseImagePopUp,AdminCourseUrlPopUp} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPhone,faEnvelope,faGlobe,faMapMarker,faFilm,faCookie,faPaintBrush,faMapMarkedAlt} from '@fortawesome/free-solid-svg-icons';
 
@@ -8,7 +8,7 @@ import {LinkedIn} from '@material-ui/icons'
 import './sturcturalCoursePopUpDetail.css'
 
 const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) => {
-const [imagePopup,setImagePopup]=useState(false)
+
 
   return (
     <>{
@@ -69,14 +69,24 @@ const [imagePopup,setImagePopup]=useState(false)
               </p>
               {item.popup1
                 ?<>
-                <span onClick={()=>setImagePopup(true)} className="courseImageReadMorePopUp">Read more...</span>
-                {imagePopup?<AdminCourseImagePopUp img={item.popup1} setImagePopup={setImagePopup} imagePopup={imagePopup} />:<></>}
+
+                <AdminCourseImagePopUp img={item.popup1}  />
                 </>
                 :<></>
               }
               </>
             ))
             :<span className="admin__worning-update">update Details</span>
+          }
+          <h2 className="admin__resume__right-title">Additional Resources</h2>
+
+          {
+
+            data.additionalRead && data.additionalRead.length!==0
+            ?data.additionalRead.map((item)=>(
+              <AdminCourseUrlPopUp title={item.title} url={item.url} />
+            ))
+            :<></>
           }
 
 

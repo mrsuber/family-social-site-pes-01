@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import './AdminHome.css'
 import {profile,logo,pic} from '../../../images'
 import {AdminSideBar,DisplayCssColorsHis,AdminRevenueCard,IrishFlower,GlobalTemp,WorldMap,Migrands,WorldMapMig} from '../../../components'
@@ -22,6 +22,7 @@ const AdminHome = () => {
 
   const {auth} = useSelector(state => state)
     const dispatch = useDispatch()
+    const [reload, setReload] = useState(false)
 
   const logoutnow =()=>{
     dispatch(logout())
@@ -33,13 +34,18 @@ const AdminHome = () => {
   useEffect(()=>{
     if(auth.token && auth.user.isSuperAdmin===true){
       window.location.href = "/admin/application"
+      setReload(!reload)
     }else if(auth.token && auth.user.isAdmin===true){
+
           window.location.href = "/admin/application/oracle"
+          setReload(!reload)
       }else if(auth.token && auth.user.isStudentTech===true){
-          window.location.href = "/admin/devcourse/webstudent"
+
+            window.location.href = "/admin/devcourse/"
+            setReload(!reload)
       }
 
-  },[])
+  },[reload])
 
   return (
     <div className="admin__body">
