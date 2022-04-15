@@ -13,17 +13,17 @@ import {getSchools} from '../../../redux/actions/schoolAction'
 
 const StudentScreen = () => {
     const {auth,school} = useSelector(state=>state)
-    const [schools,setSchools]=useState(school.schools)
+    const [schools,setSchools]=useState(schoolData)
 
     const [companyName, setCompanyName]=useState(null)
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
     const dispatch = useDispatch()
 
-    useEffect(()=>{
-      dispatch(getSchools(auth.token))
-      setSchools(school.schools)
-      
-    },[school.schools])
+    // useEffect(()=>{
+    //   dispatch(getSchools(auth.token))
+    //   setSchools(school.schools)
+    //
+    // },[school.schools])
 
 
 

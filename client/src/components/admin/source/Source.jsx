@@ -1,5 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import './source.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
+
 const Source = ({source, name,id}) => {
 
   const [open, setOpen]= useState(false)
@@ -31,7 +34,7 @@ useEffect(()=>{
           <li key={i}><a href={d.link} target="_blank" rel="noreferrer">{d.name}</a></li>
         ))
       }
-
+    
     </ul>
 
     </div>

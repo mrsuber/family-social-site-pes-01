@@ -1,5 +1,8 @@
 import React,{useState} from 'react'
 import './AdminSchoolPreviewPopup.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
+
 import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup} from '../../../components'
 
 const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralDetail,setCompanyName}) => {
@@ -44,38 +47,36 @@ const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
       Close
       </button>
 
-      <button className="admin__profileOnveiw-close-btn" onClick={()=>setOnView(false)}>
-      Edit
-      </button>
       </div>
 
 
       <div className="admin__profileOnveiw-content">
         <div className="admin__profileOnveiw-avatar">
           {data.logo
-            ? <img src={data.logo} alt="profilePic"/>
-            :<span className="admin__worning-update">update logo</span>
+            ?<> <img src={data.logo} alt="profilePic"/><div><span className="adminEditButton"><FontAwesomeIcon icon={faPlus}/>Add source</span></div></>
+            :<><span className="admin__worning-update">update logo</span><span className="adminEditButton"><FontAwesomeIcon icon={faPlus}/>Add source</span></>
           }
-
-        </div>
-        <div className="admin__profileOnView-item">
-        <h3> Name:{data.learningTitle? <span>{data.learningTitle}</span> : <span className="admin__worning-update">update learning Title</span>}</h3>
-
-          <h3> Path:{data.path? <span>{data.path}</span> : <span className="admin__worning-update">update study path name</span>}</h3>
-
         </div>
 
+
         <div className="admin__profileOnView-item">
-          <h3>{`About ${data.path ? data.path:<span className="admin__worning-update">update path name</span>}`}:</h3>
-          <p>{data.about?data.about : <span className="admin__worning-update">update about content</span>}</p>
+        <h3> Name:{data.learningTitle? <span>{data.learningTitle}</span> : <span className="admin__worning-update">update learning Title</span>}<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
+
+          <h3> Path:{data.path? <span>{data.path}</span> : <span className="admin__worning-update">update study path name</span>}<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
+
         </div>
 
         <div className="admin__profileOnView-item">
-        <h3> Main Location (Head Office):<span>{data.MainLocation ? data.MainLocation :<span className="admin__worning-update">update head Office location</span>}</span></h3>
-          <h3>Total Number Of Office/Branches:<span>{data.TotalNumberOfBranches ? data.TotalNumberOfBranches : <span className="admin__worning-update">update number of Branches</span>}</span></h3>
-          <h3>Other Locations:</h3>
+          <h3>{`About ${data.path ? data.path:<span className="admin__worning-update">update path name</span>}`}:<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
+          <p>{data.about?data.about : <span className="admin__worning-update">update about content</span>}<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></p>
+        </div>
+
+        <div className="admin__profileOnView-item">
+        <h3> Main Location (Head Office):<span>{data.MainLocation ? data.MainLocation :<span className="admin__worning-update">update head Office location</span>}</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
+          <h3>Total Number Of Office/Branches:<span>{data.TotalNumberOfBranches ? data.TotalNumberOfBranches : <span className="admin__worning-update">update number of Branches</span>}</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
+          <h3>Other Locations:<span className="adminEditButton"><FontAwesomeIcon icon={faPlus}/></span></h3>
           {data.OtherLocations && data.OtherLocations.length!==0? data.OtherLocations.map((d,i)=>(
-            <p key={i}>{d.name}<span className="admin__profileOnView-more"> <a href={d.link} target="_blank" rel="noreferrer">more link</a></span></p>
+            <p key={i}>{d.name}<span className="admin__profileOnView-more"> <a href={d.link} target="_blank" rel="noreferrer">more link</a></span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></p>
           )):<p><span className="admin__worning-update">update other Locations</span></p>}
 
 
@@ -85,30 +86,41 @@ const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
         {
           data.JobPost && data.JobPost!==0? data.JobPost.map((item)=>(
             <div style={{borderTop:"1px solid blue",marginBottom:"15px", marginTop:"15px"}}>
-            <h3>Job Post:<span>{item.name && item.name}</span></h3>
-            <h3>Job Location:<span>{item.location && item.location}</span></h3>
+            <h3>Job Post:<span>{item.name && item.name}</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
+            <h3>Job Location:<span>{item.location && item.location}</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
             <h3>Job Details:</h3>
-                <p>{item.details && item.details }</p>
+                <p>{item.details && item.details }<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></p>
             <h3>Job Analysis:</h3>
             {item.analysis
-              ?<p >{ item.analysis.status? item.analysis.status:<span className="admin__worning-update">update Analysis status</span>} <span className="admin__profileOnView-more" onClick={()=>showStatus(item.analysis)}> more popup</span></p>
+              ?<p >
+                    { item.analysis.status
+                        ? item.analysis.status
+                        :<span className="admin__worning-update">update Analysis status</span>
+                    }
+                    <span className="admin__profileOnView-more" onClick={()=>showStatus(item.analysis)}>
+                    more popup
+                    </span>
+                    <span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span>
+                </p>
+
+
               :<></>
 
             }
 
             </div>
           )):<>
-          <h3>Job Post:<span className="admin__worning-update">update Job Post:</span></h3>
-          <h3>Job Location:<span className="admin__worning-update">update Job Location</span></h3>
-          <h3>Job Analysis:<span className="admin__worning-update">update Job Analysis</span></h3>
+          <h3>Job Post:<span className="admin__worning-update">update Job Post:</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
+          <h3>Job Location:<span className="admin__worning-update">update Job Location</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
+          <h3>Job Analysis:<span className="admin__worning-update">update Job Analysis</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
           </>
         }
 
 
 
 
-            {data.JobPostSources && data.JobPostSources.length!==0? <AdminSources source={ data.JobPostSources} name="about " id="touch5"/>:<span className="admin__worning-update">update Job post source</span>}
-
+            {data.JobPostSources && data.JobPostSources.length!==0? <AdminSources source={ data.JobPostSources} name="about " id="touch5"/>:<><span className="admin__worning-update">Add Job post source</span><span className="adminEditButton"><FontAwesomeIcon icon={faPlus}/></span></>}
+            <span className="adminEditButton"><FontAwesomeIcon icon={faPlus}/>{'  '}Add source</span>
         </div>
 
 
@@ -117,8 +129,8 @@ const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
 
 
 
-        <button className="admin__profileOnView-sturctur-btn" onClick={structural}>
-          <h4>Structural Details</h4>
+        <button className="admin__profileOnView-sturctur-btn" onClick={()=>setOnView(false)}>
+          <h4>Back</h4>
 
         </button>
       </div>
