@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const schoolSchema = new mongoose.Schema({
-  computerEngineering:{type: mongoose.Types.ObjectId, ref:'computerEngineering' },
-  religiousStuties:{type: mongoose.Types.ObjectId, ref:'religiousStuties' },
+  // computerEngineering:{type: mongoose.Types.ObjectId, ref:'computerEngineering' },
+  // religiousStuties:{type: mongoose.Types.ObjectId, ref:'religiousStuties' },
   name:{type:String,required:true},
   learningTitle:{type:String,required:true},
   logo:{type:String,default:"https://github.com/mrsuber/family-social-site-pes-01/blob/master/client/src/images/suber_logo1.png?raw=true"},

@@ -59,7 +59,10 @@ const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
 
         </div>
         <div className="admin__profileOnView-item">
-          <h3> Name:{data.path? <span>{data.path}</span> : <span className="admin__worning-update">update study path name</span>}</h3>
+        <h3> Name:{data.learningTitle? <span>{data.learningTitle}</span> : <span className="admin__worning-update">update learning Title</span>}</h3>
+
+          <h3> Path:{data.path? <span>{data.path}</span> : <span className="admin__worning-update">update study path name</span>}</h3>
+
         </div>
 
         <div className="admin__profileOnView-item">

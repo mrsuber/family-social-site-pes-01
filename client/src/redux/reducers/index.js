@@ -16,6 +16,7 @@ import online from './onlineReducer'
 import call from './callReducer'
 import peer from './peerReducer'
 import family from './familyReducer'
+import school from './schoolReducer'
 
 
 export default combineReducers({
@@ -35,5 +36,6 @@ message,
 online,
 call,
 peer,
-family
+family,
+school
 })
