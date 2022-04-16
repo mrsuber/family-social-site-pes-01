@@ -3,7 +3,7 @@ import './AdminSchoolPreviewPopup.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
 
-import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup} from '../../../components'
+import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit} from '../../../components'
 
 const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralDetail,setCompanyName}) => {
     const [unclearPopup,setUnclearPopup] = useState(false)
@@ -41,6 +41,7 @@ const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
       ?<DepartmentInfoPopup data={depData} setDepPopup={setDepPopup} />
       :<></>
 }
+
       <div className="admin__profileOnveiw-container">
       <div className="admin__profileOnView-btn-container">
       <button className="admin__profileOnveiw-close-btn" onClick={()=>setOnView(false)}>
@@ -49,7 +50,7 @@ const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
 
       </div>
 
-
+      <AdminInpuEdit/>
       <div className="admin__profileOnveiw-content">
         <div className="admin__profileOnveiw-avatar">
           {data.logo

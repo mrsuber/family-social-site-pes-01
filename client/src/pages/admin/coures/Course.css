@@ -7,6 +7,16 @@
     /* grid-gap: 3rem; */
 }
 
+.AdminSchoolAndHomeButtonContainer{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.admin__btn_school{
+  margin: 5px !important;
+  padding: 10px !important;
+}
 
 @media only screen and (max-width: 980px){
   .admin__block-grid-apply{

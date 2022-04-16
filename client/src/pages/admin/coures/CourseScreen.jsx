@@ -5,7 +5,7 @@ import {AdminCourseCard,AdminSideBar,AdminCourseStructureDetails} from '../../..
 import {profile,logo,pic} from '../../../images'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faBars,faChartLine,faHome} from '@fortawesome/free-solid-svg-icons';
+import {faBars,faChartLine,faHome,faPlus} from '@fortawesome/free-solid-svg-icons';
 import {useDispatch,useSelector} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
 import {devCourseData} from '../../../data/courseData'
@@ -20,7 +20,7 @@ const CourseScreen = () => {
     const [courseName, setCourseName]=useState(null)
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
     const dispatch = useDispatch()
-    
+
 
 
   return (
@@ -49,10 +49,14 @@ const CourseScreen = () => {
           <p>This is sensitive Data<span className="admin__las admin__la-chart-line"><FontAwesomeIcon icon={faChartLine} /></span></p>
           </div>
         </div>
-        <div className="admin__header-action">
-          <button className="admin__btn admin__btn-main" onClick={()=>dispatch(logout())}>
+        <div className="admin__header-action AdminSchoolAndHomeButtonContainer">
+          <button className="admin__btn admin__btn-main admin__btn_school" onClick={()=>dispatch(logout())}>
               <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faHome} /></span>
               Log Out
+          </button>
+          <button className="admin__btn admin__btn-main admin__btn_school">
+              <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faPlus} /></span>
+              Add Course
           </button>
         </div>
       </header>

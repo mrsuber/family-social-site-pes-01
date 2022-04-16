@@ -5,7 +5,7 @@ import {AdminSchoolCards,AdminSideBar} from '../../../components'
 import {profile,logo,pic} from '../../../images'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faBars,faChartLine,faHome} from '@fortawesome/free-solid-svg-icons';
+import {faBars,faChartLine,faHome,faPlus} from '@fortawesome/free-solid-svg-icons';
 import {useDispatch,useSelector} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
 import {schoolData} from '../../../data/learningData'
@@ -13,17 +13,17 @@ import {getSchools} from '../../../redux/actions/schoolAction'
 
 const StudentScreen = () => {
     const {auth,school} = useSelector(state=>state)
-    const [schools,setSchools]=useState(schoolData)
+    const [schools,setSchools]=useState(school.schools)
 
     const [companyName, setCompanyName]=useState(null)
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
     const dispatch = useDispatch()
 
-    // useEffect(()=>{
-    //   dispatch(getSchools(auth.token))
-    //   setSchools(school.schools)
-    //
-    // },[school.schools])
+    useEffect(()=>{
+      dispatch(getSchools(auth.token))
+      setSchools(school.schools)
+
+    },[school.schools])
 
 
 
@@ -53,10 +53,14 @@ const StudentScreen = () => {
           <p>This is sensitive Data<span className="admin__las admin__la-chart-line"><FontAwesomeIcon icon={faChartLine} /></span></p>
           </div>
         </div>
-        <div className="admin__header-action">
-          <button className="admin__btn admin__btn-main" onClick={()=>dispatch(logout())}>
+        <div className="admin__header-action AdminSchoolAndHomeButtonContainer">
+          <button className="admin__btn admin__btn-main admin__btn_school" onClick={()=>dispatch(logout())}>
               <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faHome} /></span>
               Log Out
+          </button>
+          <button className="admin__btn admin__btn-main admin__btn_school">
+              <span className="admin__las admin__la-video"><FontAwesomeIcon icon={faPlus} /></span>
+              Add School
           </button>
         </div>
       </header>

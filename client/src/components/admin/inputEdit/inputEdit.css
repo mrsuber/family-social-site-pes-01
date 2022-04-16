@@ -1,0 +1,63 @@
+.InputWrapper__edit_profile {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--button-bg);
+  /* background: #2d88ee08; */
+  z-index: 27;
+  overflow: auto;
+}
+
+.Input_edit_close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    padding: 5px;
+    background-color: red;
+    border: none;
+}
+
+.input__form_input_wrapper {
+  position: relative;
+  max-width: 450px;
+  width: 100%;
+  background: var(--bg);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 165px auto;
+  border: 1px solid var(--color-main);
+}
+
+.input__form_control {
+    width: 100%;
+    height: 30px;
+    border: 1px solid gray;
+    padding-left: 10px;
+}
+
+.input__edit_save_btn {
+  background: var(--bg);
+  border: 1px solid var(--color-main);
+  padding: .5rem;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: .5s;
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--normal-text);
+}
+
+.input__edit_save_btn:hover{
+  border:1px solid #00ffa4;
+  background: #137880 ;
+}
+
+.input__form_wrapper {
+    width: 240px;
+}
