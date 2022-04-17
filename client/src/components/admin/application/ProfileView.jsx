@@ -78,7 +78,7 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
           )):<p><span className="admin__worning-update">update other Locations</span></p>}
 
             {/*data.LocationSources && <AdminSources source={data.LocationSources} name="location " id="touch1"/>*/}
-            {data.LocationSources && data.LocationSources.length!==0? <AdminSources source={ data.LocationSources} name="about " id="touch1"/>:<span className="admin__worning-update">update About Location</span>}
+            {data.LocationSources && data.LocationSources.length!==0? <AdminSources source={ data.LocationSources} name="other location " id="touch1"/>:<span className="admin__worning-update">update About Location</span>}
 
         </div>
 
@@ -106,7 +106,7 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
 
 
 
-            {data.JobPostSources && data.JobPostSources.length!==0? <AdminSources source={ data.JobPostSources} name="about " id="touch5"/>:<span className="admin__worning-update">update Job post source</span>}
+            {data.JobPostSources && data.JobPostSources.length!==0? <AdminSources source={ data.JobPostSources} name="job post " id="touch5"/>:<span className="admin__worning-update">update Job post source</span>}
 
         </div>
 
@@ -117,7 +117,7 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
           )):<p>{`Year: ${<span className="admin__worning-update">update Year</span>}`}<span>{`Number: ${<span className="admin__worning-update">update Number</span>}`}</span></p>}
 
 
-            {data.EmployeeSource && data.EmployeeSource.length!==0? <AdminSources source={ data.EmployeeSource} name="about " id="touch2"/>:<span className="admin__worning-update">update Employee source</span>}
+            {data.EmployeeSource && data.EmployeeSource.length!==0? <AdminSources source={ data.EmployeeSource} name="employee  " id="touch2"/>:<span className="admin__worning-update">update Employee source</span>}
 
         </div>
 
@@ -129,7 +129,7 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
             )):<p>{`Year: ${<span className="admin__worning-update">update Year</span>}`}:<span>{`Amount: ${<span className="admin__worning-update">update Amount</span>}`}</span></p>}
 
 
-              {data.RevenueSource && data.RevenueSource.length!==0? <AdminSources source={ data.RevenueSource} name="about " id="touch3"/>:<span className="admin__worning-update">update Revenue source</span>}
+              {data.RevenueSource && data.RevenueSource.length!==0? <AdminSources source={ data.RevenueSource} name="revenue " id="touch3"/>:<span className="admin__worning-update">update Revenue source</span>}
 
         </div>
 
@@ -142,7 +142,7 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
 }
 
 
-          {data.DepartmentSource && data.DepartmentSource.length!==0? <AdminSources source={ data.DepartmentSource} name="about " id="touch4"/>:<span className="admin__worning-update">update Department source</span>}
+          {data.DepartmentSource && data.DepartmentSource.length!==0? <AdminSources source={ data.DepartmentSource} name="department " id="touch4"/>:<span className="admin__worning-update">update Department source</span>}
 
         </div>
 

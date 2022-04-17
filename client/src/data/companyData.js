@@ -295,5 +295,125 @@ export const companyData = [
 
 
   },
+  {
+    companyName:"Hippo Education",
+    logo:"https://media.glassdoor.com/sqll/965722/hippo-education-squarelogo-1566514260455.png",
+    about:"Hippo Education provides medical educational programs online. Aaron Bright founded it in 2011.Hippo Education is a new-school web based medical education company specializing in exceptional content and entertaining delivery. We are backed by a deep bench of talent and experience in the medical education arena.",
+    aboutSource:[
+      {
+        name:"Crunchbase",
+        link:"https://www.crunchbase.com/organization/hippo-education",
+
+      },
+      {
+        name:"linkedin",
+        link:"https://www.linkedin.com/company/hippo-education-inc-/about/",
+
+      },
+    ],
+    MainLocation:"California | Los Angeles, CA",
+    TotalNumberOfBranches:"1",
+    OtherLocations:[
+      {
+        name:"Just one at Los Angeles, CA",
+        link:"http://www.hippoeducation.com/"
+
+      },
+    ],
+    LocationSources:[
+      {
+        name:'foursquare',
+        link:"https://foursquare.com/sdiedericks/list/oracle-offices-around-the-world"
+      }
+    ],
+
+    JobPost:[
+      {
+        name:"Frontend React Developer",
+        location:"Los Angeles",
+        link:"https://www.careers.hippoed.com/frontend-react-developer",
+        analysis:{
+          status:"clear",
+          jobLocation:"Los Angeles or Remote",
+          currentOfficeLocation:"Los Angeles",
+          details1:"2+ years experience with React / React Native =>4+ years frontend/ui mobile-first development =>Rich web animation skills (Html5, Css3, Svg, etc)=> Experience using CSS preprocessors (sass / less) => Familiarity with Typescript =>Experience using REST API, GraphQL, and/or Firestore data sources =>Proficient with GitHub =>A portfolio of projects utilizing the above skills =>Excellent communication skills=>A great sense of humor, optimism, and collaboration",
+          details2:"Full time with remote / telecommute option",
+          details3:"Competitive salary, vacation, 401(k) match, health, vision, and dental insurance",
+          details4:"https://careered.referrals.selectminds.com/jobs/frontend-react-developer-hippo-education-8711 and provide links to relevant examples of recent work (your GitHub or equivalent profile would be a great way to start)."
+        },
+        reasonForAnalysis:"It is a fit, all requires are checked and with evidence, plus it is medical giving the ability to extend studies the human biology plus the pay is good",
+        analysisSource:[
+          {name:"Hippo Education",
+          link:"https://www.careers.hippoed.com/frontend-react-developer"},
+        ],
+      },
+    ],
+    JobPostSources:[
+      {
+        name:"Hippo Education",
+        link:"https://www.careers.hippoed.com/frontend-react-developer"
+    }
+  ],
+
+  Employee:[
+    {
+      year:"2019",
+      numberOfEmployee:"31"
+  },
+
+  {
+    year:"2021",
+    numberOfEmployee:"61"
+},
+
+],
+EmployeeType:'Full-time Employee',
+EmployeeSource:[
+  {
+    name:"linkedin.com",
+    link:"https://www.linkedin.com/company/hippo-education-inc-/people/",
+
+  },
+  {
+    name:"federal pay",
+    link:"https://www.federalpay.org/paycheck-protection-program/hippo-education-llc-woodland-hills-ca",
+  }
+],
+Revenue:[
+  {
+    year:'2019',
+    amount:'6'
+  },
+  {
+    year:'2020',
+    amount:'unknown'
+  },
+  {
+    year:'2021',
+    amount:'Unknown'
+
+  }
+],
+RevenueType:'Revenue in Millions U.S dollars',
+RevenueSource:[
+  {name:"zoominfo",
+  link:"https://www.zoominfo.com/c/hippo-education-llc/357830893",
+  }
+],
+Departments:[
+  {
+    DepartmentName:'Unknown',
+    DepartmentDesc:{
+      details1:"Department number:Unknown, Name:Unknown, "
+    }
+  },
+],
+DepartmentSource:[
+  {
+    name:"",
+    link:"",
+  }
+]
+  }
 
 ]
