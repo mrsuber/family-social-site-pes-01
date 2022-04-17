@@ -541,7 +541,7 @@ export const companyStructuralData = [
     companyHeadOfficeLocation:"California | Los Angeles, CA",
     companyLevel1:[
       {
-        name:"Oracle Executive Leadership",
+        name:"Hippo Education Executive Leadership",
         people:[
 
           {
