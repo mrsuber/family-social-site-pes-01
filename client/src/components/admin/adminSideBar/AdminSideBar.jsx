@@ -52,6 +52,12 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,
                 <span>Oracle Applications</span>{auth.token && (auth.user.isApplication1===true || auth.user.isSuperAdmin===true)?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li> :<></>}
+            {auth.token &&  (auth.user.isApplication2===true || auth.user.isSuperAdmin===true)? <li>
+              <Link to="/admin/application/hippo" className={activeLink6}>
+                <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
+                <span>Hippo Education Appl...</span>{auth.token && (auth.user.isApplication2===true || auth.user.isSuperAdmin===true)?"":<span className="admin__sidebar-restricted">🚫</span>}
+              </Link>
+            </li> :<></>}
             {auth.token &&  (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? <li>
               <Link to="/admin/devcourse" className={activeLink8}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>

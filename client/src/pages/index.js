@@ -27,6 +27,8 @@ export {default as AdminExpenseScreen} from './admin/expense/AdminExpenseScreen'
 export {default as AdminErrorScreen} from './admin/error/AdminErrorScreen'
 export {default as AdminApplicationScreen} from './admin/applications/AdminApplicationScreen'
 export {default as AdminApplicationScreen2} from './admin/applications/AdminApplicationScreen2'
+export {default as AdminApplicationScreen3} from './admin/applications/AdminApplicationScreen3'
+
 export {default as AdminStudent} from './admin/students/StudentScreen'
 export {default as AdminStudent2} from './admin/students/StudentScreen2'
 export {default as AdminCourse} from './admin/coures/CourseScreen'

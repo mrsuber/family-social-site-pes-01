@@ -7,7 +7,9 @@ import {
   RegisterScreen,ForgotPasswordScreen,ResetPasswordScreen,LoginScreen2,
   PostDetails,HomePage,Message,Discover,Notify,Profile,PorfolioHome,MessageDetails,
   BlogHomePage,
-  AdminHome,AdminLoginScreen,AdminErrorScreen,AdminExpenseScreen,AdminApplicationScreen,AdminApplicationScreen2,AdminStudent,AdminCourse,AdminCourse2
+  AdminHome,AdminLoginScreen,AdminErrorScreen,AdminExpenseScreen,
+  AdminApplicationScreen,AdminApplicationScreen2,AdminApplicationScreen3,
+  AdminStudent,AdminCourse,AdminCourse2
 
 
 } from './pages'
@@ -70,8 +72,15 @@ const App=()=> {
             <PrivateRoute exact path="/post/:id" component={auth.token && family.selectFamily===false? PostDetails : LoginScreen2}/>
 
             <Route exact path="/admin/expense" component={auth.token && auth.user.isSuperAdmin===true? AdminExpenseScreen : AdminErrorScreen}/>
+
+
             <Route exact path="/admin/application" component={auth.token && auth.user.isSuperAdmin===true? AdminApplicationScreen : AdminErrorScreen}/>
             <Route exact path="/admin/application/oracle" component={auth.token && (auth.user.isApplication1===true || auth.user.isSuperAdmin===true)? AdminApplicationScreen2 : AdminErrorScreen}/>
+            <Route exact path="/admin/application/hippo" component={auth.token && (auth.user.isApplication2===true || auth.user.isSuperAdmin===true)? AdminApplicationScreen3 : AdminErrorScreen}/>
+
+
+
+
             <Route exact path="/admin/school" component={auth.token && auth.user.isSuperAdmin===true? AdminStudent : AdminErrorScreen}/>
             <Route exact path="/admin/devcourse" component={auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? AdminCourse : AdminErrorScreen}/>
             <Route exact path="/admin/devcourse/webstuden" component={auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? AdminCourse2 : AdminErrorScreen}/>

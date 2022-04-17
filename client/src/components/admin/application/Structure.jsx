@@ -49,8 +49,8 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
     }
 
     const filteredStructuralDataCompanyLevel1Lenght =(data)=>{
-      if((data && data.companyLevel1.length *30)> lenght ){
-        setLenth(data.companyLevel1.length *30)
+      if((data && data.companyLevel1.length *80)> lenght ){
+        setLenth(data.companyLevel1.length *80)
       }
     }
 
@@ -60,8 +60,8 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
 
         for(let i=0;i<data.companyLevel1.length; i++){
 
-          if((data.companyLevel1[i].people.length*30)>lenght){
-            setLenth(data.companyLevel1[i].people.length*30)
+          if((data.companyLevel1[i].people.length*80)>lenght){
+            setLenth(data.companyLevel1[i].people.length*80)
 
           }
         }
