@@ -16,6 +16,9 @@ export const devCourseData = [
         title:"Introduction to Web Development"
       },
       {
+        title:"Motivation and Mindset"
+      },
+      {
         title:"Asking For Help"
       },
       {

@@ -1,11 +1,11 @@
 import React,{useState} from 'react'
 import './CourseImagePopUp.css'
 
-const CourseImagePopUp = ({img}) => {
+const CourseImagePopUp = ({img,name}) => {
   const [imagePopup,setImagePopup]=useState(false)
   return (
     <>
-    <span onClick={()=>setImagePopup(true)} className="courseImageReadMorePopUp">Read more...</span>
+    <span onClick={()=>setImagePopup(true)} className="courseImageReadMorePopUp">{name}</span>
     {
       imagePopup
       ?  <div className="admin__Unclear-container">

@@ -70,7 +70,14 @@ const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) =>
               {item.popup1
                 ?<>
 
-                <AdminCourseImagePopUp img={item.popup1}  />
+                <AdminCourseImagePopUp img={item.popup1} name={item.popup1Name?item.popup1Name:'Read More...'}  />
+                </>
+                :<></>
+              }
+              {item.popup2
+                ?<>
+
+                <AdminCourseImagePopUp img={item.popup2} name={item.popup2Name?item.popup2Name:'Read More...'} />
                 </>
                 :<></>
               }

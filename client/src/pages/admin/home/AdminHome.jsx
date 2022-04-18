@@ -43,7 +43,11 @@ const AdminHome = () => {
 
             window.location.href = "/admin/devcourse/"
 
-      }
+      }else if(auth.token && auth.user.isApplication2===true){
+
+            window.location.href = "/admin/application/hippo"
+
+              }
 
   },[auth])
 

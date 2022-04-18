@@ -33,7 +33,7 @@ const AdminApplicationScreen = () => {
     img={ auth.user.profilePic ? auth.user.profilePic :profile}
     logo={logo}
     pic={pic}
-    activeLink6="admin__active"
+    activeLink9="admin__active"
     fullname={auth.user.fullname }
     username={auth.user.username}
     />

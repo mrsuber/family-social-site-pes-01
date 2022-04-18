@@ -56,7 +56,7 @@ export const courseStructuralData = [
 
       {
         name:"Introduction to Web Development",
-        courseStatus:"Incomplete",
+        courseStatus:"incomplete",
         courseNumber:"002",
         logo:logo,
         menu:[
@@ -170,7 +170,7 @@ export const courseStructuralData = [
             url:"https://github.com/kamranahmedse/developer-roadmap"
           },
 
-          
+
         ],
         source:[
           {
@@ -215,6 +215,111 @@ export const courseStructuralData = [
             name:"Thinkful",
             link:"https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/"
           }
+        ],
+        people:[]
+      },
+
+      {
+        name:"Motivation and Mindset",
+        courseStatus:"incomplete",
+        courseNumber:"003",
+        logo:logo,
+        menu:[
+          {
+            name:'Introduction',
+            detail:"Learning to code is incredibly rewarding but can also be difficult and frustrating. Like any skill worth knowing, it takes time to acquire, and it can’t be learned in a weekend or even a month. With that said, we believe anyone can learn how to program as long as they are willing to put in the time and effort.\nSo before we get into the meat of the curriculum, we’re going to go over the following to help you get the most out of This curriculum: the things that will help you succeed in your goal of learning to code and the pitfalls that you should try to avoid.",
+            ancorName:"Introduction",
+
+          },
+
+          {
+            name:'Motivation',
+            detail:"Take a moment to think about why you have decided to learn programming.==>Do you want to have a fulfilling career that pays well?==>Are you excited by the creative outlet programming provides? ==>Are you determined to develop the skills and abilities to build any app you can think of? ==>Do you want to start your own company by turning an app idea into reality?.\nYour motivation could be a combination of these reasons or something else entirely. Whatever it is, hold on tightly to your motivation - this will be what pulls you through to the end of this journey, giving you a definitive goal to aim towards.To give your motivation a bit of a boost, you can read about the success of others:",
+            ancorName:"Motivation",
+            popup1Name:"A woman who taught herself enough to land a job in 5 months",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
+
+            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
+            // popup2:"",
+          },
+
+          {
+            name:'Growth Mindset',
+            detail:"Your mindset is very important when teaching yourself any new skills, not just programming. Your mindset will have more of an impact on your chances of success than just about anything else.Someone with the fixed mindset believes if they don’t get something on their first attempt, they never will. They believe that they simply aren’t smart enough to be able to do or understand some things.\nHowever, there is a wide body of research showing that intelligence is not fixed but can instead be developed. Someone with the growth mindset believes they can get better at anything with effort and persistence.What does this mean for you? It means you can learn new skills and develop new talents with persistence and grit.\nThere will be many times throughout The Project that you will get stuck on a concept or a programming problem and may find yourself questioning your ability to learn programming. When you find yourself in this position, remind yourself that you may not get it yet but that with persistence and grit you will. Struggling with something is growth. It doesn’t matter how long you struggle with a concept or project; all that matters is that you have the grit and tenacity to see it through. That’s how real learning happens.While you’re working through the curriculum, embrace the struggles you encounter with difficult concepts and complex projects. Be sure to celebrate your persistence at overcoming those struggles!\nWhen you find yourself questioning your abilities, reflect on the successes you have already achieved while learning to program: the projects you have completed and the concepts you once didn’t understand but now do. This is all the proof you need that you can do it.\nTo learn more about the growth mindset, check out these resources:",
+            ancorName:"GrowthMindset",
+            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
+
+            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
+            // popup2:"",
+          },
+
+          {
+            name:'The Learning Process',
+            detail:"Learning concepts and then practicing them will help you to more fully understand how things work and fit together. Projects are the ultimate method for ensuring that your theoretical understanding aligns with how the programming concepts and techniques actually operate.\nWhen learning, your mind will consistently switch between focus mode and diffuse mode. Focus mode occurs when you are consciously focusing on learning, reading, watching videos, or working on a project. Diffuse mode occurs subconsciously, at times when you are not actively learning, such as when you’re doing the dishes, exercising, or sleeping. In this state, your mind goes about the business of connecting what you have been learning to the other things you know. This is where breakthroughs happen.\nIt’s important to know that your mind goes through these two states when learning because you can utilise this to make your learning more efficient. When stuck on a concept or project, taking a break to refresh and let your subconscious work on making connections more often than not yields a solution to your problem. The trick is to put effort into solving the problem first and then take a break.\nIn short, understand it, practice it, and finally teach it.\nTeaching what you know to others is a great way to solidify what you have learned and can often reveal holes in your knowledge that you wouldn’t have identified otherwise.\nYou can practice this method of learning by helping others in our community.(the odin project community)",
+            ancorName:"TheLearningProcess",
+            popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
+
+            // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
+            // popup2:"",
+          },
+          {
+            name:'What To Do When You’re Stuck',
+            detail:"You will inevitably get stuck at some point in the curriculum, perhaps due to a concept that you are having difficulty understanding or perhaps due to something not working correctly in a project. Whatever it is, use the following tools to get unstuck:\n==>Google it: You can be certain someone else out there has encountered the same problem as you at some point. A quick Google search can often lead to a solution.\n==>Take a break: Allow your diffuse learning state to work on the problem.\n==>Come prepared with your research on Developer Chats. People will be more willing to help you when they can see you have already put effort into trying to figure out the solution on your own",
+            ancorName:"WhatToDoWhenYou’reStuck",
+            // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
+
+            // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
+            // popup2:"",
+          },
+          {
+            name:'Managing Your Study Time',
+            detail:"You will have more success with Odin by putting consistent time into it rather than working on it once a week. Building a habit of studying every day at a specific time and with a specific goal will ensure that you make consistent progress.\nIt may take you longer than others to grasp concepts, or it may take you less time. This doesn’t mean you’re smarter or dumber than others, it means you’ve had differing life experiences that may or may not have prepared you for learning this stuff. Someone who grew up around an engineer may have some advantages over someone who didn’t, but it doesn’t mean you can’t learn those skills.\nThe Odin Project isn’t like college or university, it is self paced and allows you to get a really solid grasp of concepts before moving on. In school, you’re forced to keep up or you will fail. The difference here is that coming into The Odin Project, you’re not expected to have much knowledge; there are no prerequisites. We’ve had people be successful coming through here that only knew how to check their email with a computer. We’ve also seen success from computer science degree holders. Treating The Odin Project like a static timeline is understandable, but is a sign of misplaced expectations. You simply don’t know what you don’t know yet, and that’s OK! There’s no due-dates on things in The Odin Project so you can spend the time to do it right and discuss the topics.\nDeadlines cause un-needed stress. Since The Odin Project is a free and open platform, you are not beholden to a deadline. Creating your own deadlines is a good way to rush concepts that should not be rushed. This course is very research based, meaning you will have to do research to complete tasks and projects. There’s no telling if you can find the article or post that helps you in the right way, quickly to meet your deadlines, but I bet you learned a TON along the way that you can use in the future. People that do this kind of research and strive to write better solutions tend to become better developers in the future. There’s no knowing how long it could take you to learn how to query stuff to find your answers. There are no solid guidelines on that. If you’re doing The Odin Project because you need a high paying job right-now, you’re not going to become a solid developer within the timeframe you have set. Stress and anxiety absolutely do not help you learn either. Relax and just enjoy the ride.\nLong story short: Don’t worry, just go learn",
+            ancorName:"ManagingYourStudyTime",
+            // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
+
+            // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
+            // popup2:"",
+          },
+        ],
+        additionalRead:[
+          {
+            title:"A woman who taught herself enough to land a job in 5 months",
+            url:"https://newcodegirl.blogspot.com/2015/04/i-made-it-job-contract-signed.html"
+          },
+          {
+            title:"A 32 year old who taught himself programming using The Odin Project",
+            url:"https://www.reddit.com/r/learnprogramming/comments/34r807/im_32_years_old_and_just_started_my_first/",
+          },
+          {
+            title:"Believe you can get better",
+            url:"https://www.ted.com/talks/carol_dweck_the_power_of_believing_that_you_can_improve",
+          },
+          {
+            title:"Grit",
+            url:"https://www.ted.com/talks/angela_lee_duckworth_grit_the_power_of_passion_and_perseverance"
+          },
+          {
+            title:"You can learn anything",
+            url:"https://www.khanacademy.org/college-careers-more/talks-and-interviews/talks-and-interviews-unit/conversations-with-sal/a/the-learning-myth-why-ill-never-tell-my-son-hes-smart"
+          },
+          {
+            title:"coursera learn how to learn",
+            url:"https://www.coursera.org/learn/learning-how-to-learn"
+          },
+          {
+            title:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
+            url:"https://web.archive.org/web/20211129082738/https://devchat.tv/ruby-rogues/131-rr-how-to-learn/"
+          },
+        ],
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
         ],
         people:[]
       },

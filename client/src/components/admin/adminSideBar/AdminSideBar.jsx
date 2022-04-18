@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
 
-const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,activeLink5,activeLink6,activeLink7,activeLink8, fullname='Mohamad Demo',username='Demo User'}) => {
+const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,activeLink5,activeLink6,activeLink7,activeLink8,activeLink9, fullname='Mohamad Demo',username='Demo User'}) => {
   const {auth} = useSelector(state => state)
   return (
     <div className="admin__sidebar">
@@ -53,7 +53,7 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,
               </Link>
             </li> :<></>}
             {auth.token &&  (auth.user.isApplication2===true || auth.user.isSuperAdmin===true)? <li>
-              <Link to="/admin/application/hippo" className={activeLink6}>
+              <Link to="/admin/application/hippo" className={activeLink9}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
                 <span>Hippo Education Appl...</span>{auth.token && (auth.user.isApplication2===true || auth.user.isSuperAdmin===true)?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
