@@ -284,6 +284,83 @@ export const courseStructuralData = [
             // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
             // popup2:"",
           },
+
+          {
+            name:'Pitfalls to Avoid',
+            detail:"The following are some of the pitfalls that beginners often encounter when learning how to program. Try your best to avoid these.\n==>Procrastination::Procrastination will be your biggest enemy when trying to make progress.==>Solution:: The Pomodoro Technique(The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s.[1] It uses a timer to break work into intervals, typically 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for tomato, after the tomato-shaped kitchen timer Cirillo used as a university student.) is a way of managing your time in order to stay focused. The idea is to set a timer for 25 minutes and to work on a task until the timer goes off. If you get distracted or interrupted during the 25 minutes, start the 25 minutes of work over again. Once you’ve successfully focused on work for 25 minutes, take a 5 minute break. When your break is over, repeat the 25 minutes of work and 5 minute break. After you’ve completed four 25 minute blocks of work, take a longer 15-30 minute break.\nThe Pomodoro technique is great for avoiding procrastination as it forces you to work without distractions. Since the work time only lasts 25 minutes before taking a break, it’s not overwhelming, making it harder to rationalize procrastination.",
+            ancorName:"PitfallstoAvoid",
+            // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
+
+            // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
+            // popup2:"",
+          },
+
+          {
+            name:'Not Taking Breaks',
+            detail:"As you get into the material, you may feel compelled to continuously study for long periods of time. It might seem like you are getting more work done at first, but this often leads to burnout, which consequently results in lower productivity.\nIt may seem counterintuitive, but you will actually get more done if you regularly step back to recharge your brain and body. Studies show that performance increases after breaks of all durations: from extended vacations down to microbreaks of 30 seconds. John Trougakos, Associate Professor of Management at the University of Toronto, says that mental concentration is similar to a muscle. Our focus becomes fatigued after sustained use and needs a rest period to recover, just like a bodybuilder resting between sets at the gym.\n==>Solution: Use the previously mentioned Pomodoro Technique to time how often and how long to take your well-deserved breaks. Feel free to play around and experiment with different frequencies and durations of breaks.\nWhat to do during your break: ==>1 listen to music ==>2 journal ==>3 doodle ==>4 meditate ==>5 play a quick game ==>3 go for a short walk outside",
+            ancorName:"NotTakingBreaks",
+            // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
+
+            // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
+            // popup2:"",
+          },
+
+          {
+            name:'Digital Distractions',
+            detail:"Digital distractions are email and Facebook notifications and time-wasting websites, such as social media. These distractions break your focus and make procrastination tempting. Therefore, they should be avoided during study time.\n==>Solution: Turn off notifications and add a blocker to your internet to limit your time on distracting sites.",
+            ancorName:"DigitalDistractions",
+            // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
+
+            // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
+            // popup2:"",
+          },
+          {
+          name:'Physical Distractions',
+          detail:"Physical distractions are distractions from your environment, like a TV in the background or other people talking. These distractions can be just as damaging to your focus as digital distractions.\n==>Solution: Find a quiet place to study where you can go to focus in your home. If that’s not an option, you can use noise cancelling headphones to block out noisy distractions in your environment.",
+          ancorName:"PhysicalDistractions",
+          // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
+          // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
+
+          // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
+          // popup2:"",
+        },
+
+        {
+        name:'Rabbit Holes',
+        detail:"Because we cover so much material on The Odin Project and link to so many high quality courses and tools, it is easy for students to get pulled into rabbit holes by spending time trying to learn all there is to know about a subject that they aren’t ready for or won’t benefit them much. We have put a lot of effort into structuring the curriculum so that all of the important things that you need to know about web development are covered exactly when you need to know them.\n==>Solution: Stick to the path laid out as much as possible. Try to limit time spent going down rabbit holes as these sidetracks can really ruin your momentum.",
+        ancorName:"RabbitHoles",
+        // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
+        // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
+
+        // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
+        // popup2:"",
+      },
+
+      {
+      name:'Comparing Yourself to Others',
+      detail:"Students often compare themselves to others who are farther along in their coding journey or have more experience. This is a recipe for depression and frustration.\nSolution: Only compare yourself to your past self. Have your abilities and knowledge improved from where you were last week, last month, or last year? Be proud of the progress that you’ve made!",
+      ancorName:"ComparingYourselftoOthers",
+      // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
+      // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
+
+      // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
+      // popup2:"",
+    },
+
+    {
+    name:'Conclusion',
+    detail:"Learning any new skill is a journey full of speed bumps and obstacles to be overcome. We hope that the principles laid out here will put you in a much better position to succeed and to get the most out of The Odin Project.\nWithout further ado, let’s jump in to learning web development!",
+    ancorName:"Conclusion",
+    // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
+    // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
+
+    // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
+    // popup2:"",
+  },
+
         ],
         additionalRead:[
           {
@@ -314,6 +391,49 @@ export const courseStructuralData = [
             title:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
             url:"https://web.archive.org/web/20211129082738/https://devchat.tv/ruby-rogues/131-rr-how-to-learn/"
           },
+
+          {
+            title:"To learn more about the Pomodoro Technique, read this great article.",
+            url:"https://medium.com/life-hacks/more-productivity-with-the-pomodoro-technique-d7ce8926ec0c#.hcqsv37u4"
+          },
+
+          {
+            title:"If you want to try it out, TomatoTimer is an easy-to-use Pomodoro timer.",
+            url:"https://www.toptal.com/project-managers/tomato-timer"
+          },
+
+
+          {
+            title:"Read this article for more information on breaks & productivity.",
+            url:"https://simpleprogrammer.com/taking-breaks-will-boost-productivity/"
+          },
+
+          {
+            title:"Managing inspiration and motivation",
+            url:"https://markmanson.net/how-to-get-motivated"
+          },
+
+          {
+            title:"Learning to code when it gets dark",
+            url:"https://www.freecodecamp.org/news/learning-to-code-when-it-gets-dark-e485edfb58fd#.yjh0fehje"
+          },
+
+          {
+            title:"Improve your typing skills with Keybr.com Use this keyboard trainer if you find your typing speed is holding you back. We recommend to spend 5 mins everyday after you start your PC.",
+            url:"https://www.keybr.com/"
+          },
+
+          {
+            title:"Practice typing with Monkeytype! A minimalistic, customisable typing website. Test yourself in various modes, track your progress and improve your typing speed. It has a great community and frequently receives new features. Even though it has so many features, the experience is still very polished.",
+            url:"https://monkeytype.com/"
+          },
+
+          {
+            title:"Why Procrastinators Procrastinate Learn about the Instant Gratification Monkey, Rational Decision Maker, Panic Monster, and how to navigate the Dark Playground.",
+            url:"https://waitbutwhy.com/2013/10/why-procrastinators-procrastinate.html"
+          },
+
+
         ],
         source:[
           {
