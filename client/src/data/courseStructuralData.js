@@ -447,6 +447,53 @@ export const courseStructuralData = [
       {
         name:"Asking For Help",
         courseStatus:"incomplete",
+        courseNumber:"004",
+        logo:logo,
+        menu:[
+          {
+            name:'Introduction',
+            detail:"Along your programming journey, you will inevitably need to ask questions in an online coding community like ours, or in conversations with your colleagues. While asking questions may seem rather simple, in a programming environment it is essential to ask well formed questions with as much context as needed so you can get the most out of asking for help. In essence, “help others help you!” This lesson will provide you with the tools to effectively ask questions in communities such as our Discord chat, Stack Overflow, and in the workplace!",
+            ancorName:"Introduction",
+            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
+
+            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
+            // popup2:"",
+          },
+
+          {
+            name:'Lesson Overview',
+            detail:"This section contains a general overview of topics that you will learn in this lesson.==>1.)Explain techniques for asking programming questions. ==>2.)Explain and avoid qualities of “bad” questions. ==>3.)Ask effective and well formed questions",
+            ancorName:"lessonOvervie",
+            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
+
+            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
+            // popup2:"",
+          },
+
+          {
+            name:'Tips for Getting The Best Help Possible. 1.)Always provide your code and the surrounding context.',
+            detail:"You can ask theoretical, vague questions, but you’re going to get theoretical, vague answers that probably won’t be helpful to you and cause frustration on both ends as you and the person helping you dance around the real issue. The only time code doesn’t need to be provided is if you are asking a purely conceptual question outside of a specific project or code snippet. Additionally, provide as much context as is necessary, and zero in on the specific problem, such as pointing people to a specific function or line number in your code so people can give you the most relevant answers and quickly assist you.",
+            ancorName:"tips1",
+            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
+
+            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
+            // popup2:"",
+          },
+
+          {
+            name:'Ask about the problem at hand, not the solution itself.',
+            detail:'A lot of learners ask exactly how to approach a given task or assignment in this curriculum, such as the below:“How do I complete Step 5 of the Rock Paper Scissors Assignment”? Keep in mind that you’re actually supposed to figure out how to solve the assignments yourself, and figuring out an approach is essential to your learning journey. A much better question might look like this:“Hey, I’m trying to return a string that displays the winner in Rock Paper Scissors, but I’m getting a syntax error on line 12. How can I fix this? Here’s my code.”  In sharing your attempt, people know what you’ve tried and won’t suggest things that might not have worked out for you. It also allows them to debug your current iteration of code, rather than sending you down a path that has you start all over again when you might be very close to a solution. Now, if you’re completely stuck with where to start, it’s completely fine to let people know that you’re stuck. Asking where you can start and what you can research to get on the right track empowers you to be able to resolve issues largely on your own in the future, and might even empower you to help others with the same issue later on. It is also recommended that you share your pseudo code so people can nudge you in the right direction or correct any misunderstandings you may have.',
+            ancorName:"tips1",
+            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
+
+            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
+            // popup2:"",
+          },
+        ],
         people:[]
       },
 
