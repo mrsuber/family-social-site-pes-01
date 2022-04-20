@@ -1,4 +1,4 @@
-import {logo,wiki1,fvbvf,computer,google,multivation,whysoHard} from '../images'
+import {logo} from '../images'
 export const courseStructuralData = [
   // {
   //   companyName:"Google",
@@ -64,13 +64,13 @@ export const courseStructuralData = [
             name:'What Do Web Developers Do?',
             detail:"In short, web developers build and maintain websites.\nWeb developers often work for clients who are trying to get their product or service onto the web. The work is typically very project focused and involves collaborating with a team that helps to coordinate the client’s needs into the end product. The client could be a tech company, an organization, or a government. The work could involve front-end, back-end, or full-stack web development.\nWeb development could be a good profession for you if you like solving logical problems, building useful things, and experimenting with new technologies. Web developers are in high demand, generally have a good work/life balance, and command comfortable salaries. Google your specific location to get a better sense of your local web development job opportunities.\n For more details, Wikipedia describes the breadth of the web development profession in their entry on web design.",
             ancorName:"WhatDoWebDevelopersDo",
-            popup1:wiki1
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650456852/msbGeanologyProfilePics/wiki1_gwa5pf.png"
           },
           {
             name:'Types of Web Developers',
             detail:"Earlier, we mentioned that web development work could be in the front end, the back end, or the full stack. What exactly do these terms mean?\n The front end is the stuff you see on the website in your browser, including the presentation of content and user interface elements like the navigation bar. Front-end developers use HTML, CSS, JavaScript, and their relevant frameworks to ensure that content is presented effectively and that users have an excellent experience.\n The back end refers to the guts of the application, which live on the server. The back end stores and serves program data to ensure that the front end has what it needs. This process can become very complicated when a website has millions of users. Back-end developers use programming languages like Java, Python, and Ruby to work with data.\n Full-stack developers are comfortable working with both the front and back ends. At The Odin Project, we focus on teaching you full-stack development, covering all aspects of web development.\n For more detail, Udacity has a great blog post on this topic: 3 Web Dev Careers Decoded: Front-End vs Back-End vs Full Stack",
             ancorName:"TypesofWebDevelopers",
-            popup1:fvbvf
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650456962/msbGeanologyProfilePics/frontVsBackVsfullStack_o2ap9k.png"
 
           },
           {
@@ -87,13 +87,13 @@ export const courseStructuralData = [
             name:'Computer',
             detail:"A computer is an electronic device that manipulates information, or data. It has the ability to store, retrieve, and process data. You may already know that you can use a computer to type documents, send email, play games, and browse the Web. You can also use it to edit or create spreadsheets, presentations, and even videos.",
             ancorName:"whatComesNext",
-            popup1:computer
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650457042/msbGeanologyProfilePics/computer_j4qktk.png"
           },
           {
             name:'Google',
             detail:"Google is a fully-automated search engine that uses software known as web crawlers that explore the web on a regular basis to find sites to add to our index. In fact, the vast majority of sites listed in our results aren't manually submitted for inclusion, but are found and added automatically when our web crawlers crawl the web.\n Google Search works in essentially three stages:\nCrawling: Google searches the web with automated programs called crawlers, looking for pages that are new or updated. Google stores those page addresses (or page URLs) in a big list to look at later. We find pages by many different methods, but the main method is following links from pages that we already know about.\nIndexing: Google visits the pages that it has learned about by crawling, and tries to analyze what each page is about. Google analyzes the content, images, and video files in the page, trying to understand what the page is about. This information is stored in the Google index, a huge database that is stored on many computers.\n Serving search results: When a user searches on Google, Google tries to determine the highest quality results. The 'best' results have many factors, including things such as the user's location, language, device (desktop or phone), and previous queries. For example, searching for 'bicycle repair shops' would show different answers to a user in Paris than it would to a user in Hong Kong. Google doesn't accept payment to rank pages higher, and ranking is done algorithmically.",
             ancorName:"google",
-            popup1:google
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650457279/msbGeanologyProfilePics/google_jaw3vq.png"
           },
           {
             name:'Text Editor',
@@ -128,13 +128,13 @@ export const courseStructuralData = [
             name:'Motivation',
             detail:"Learning to code is incredibly rewarding but can also be difficult and frustrating. The strongest assets you can have as a student are a desire to build, a problem-solving mind, and persistence in the face of setbacks.\n The web development industry has a long history of successful developers with varying backgrounds, so people tend to care more about what you’ve actually built than how you got there.",
             ancorName:"Motivation",
-            popup1:multivation
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650457765/msbGeanologyProfilePics/multivation_qc9xlq.png"
           },
           {
             name:'Conclusion',
             detail:"Hopefully, you’ve gained a better idea of what a web developer actually does and what your life might look like if you decided to take it on as a career. This has only been a teaser into the world of web development.\nIn this course, “Foundations” you’ll take a journey through the entire spectrum of topics that you will eventually need to know. This course jumps around to a variety of topics that you may be totally unfamiliar with, providing you a small taste of each and then moving on.\nThe following courses will dive deep into these topics. You will build dozens of scripts, projects, and websites to cement those skills that will get you hired. Getting all the way there is going to be challenging. In fact, you should check out the post “Why Learning to Code is So Damn Hard” so you have a good idea of what the journey ahead is like. But what worthwhile thing is truly easy?",
             ancorName:"Conclusion",
-            popup1:whysoHard
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
           }
 
 
@@ -237,7 +237,7 @@ export const courseStructuralData = [
             detail:"Take a moment to think about why you have decided to learn programming.==>Do you want to have a fulfilling career that pays well?==>Are you excited by the creative outlet programming provides? ==>Are you determined to develop the skills and abilities to build any app you can think of? ==>Do you want to start your own company by turning an app idea into reality?.\nYour motivation could be a combination of these reasons or something else entirely. Whatever it is, hold on tightly to your motivation - this will be what pulls you through to the end of this journey, giving you a definitive goal to aim towards.To give your motivation a bit of a boost, you can read about the success of others:",
             ancorName:"Motivation",
             popup1Name:"A woman who taught herself enough to land a job in 5 months",
-            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650455934/msbGeanologyProfilePics/woman_that_learn_cooding_ccguen.png",
 
             // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
             // popup2:"",
@@ -247,11 +247,7 @@ export const courseStructuralData = [
             name:'Growth Mindset',
             detail:"Your mindset is very important when teaching yourself any new skills, not just programming. Your mindset will have more of an impact on your chances of success than just about anything else.Someone with the fixed mindset believes if they don’t get something on their first attempt, they never will. They believe that they simply aren’t smart enough to be able to do or understand some things.\nHowever, there is a wide body of research showing that intelligence is not fixed but can instead be developed. Someone with the growth mindset believes they can get better at anything with effort and persistence.What does this mean for you? It means you can learn new skills and develop new talents with persistence and grit.\nThere will be many times throughout The Project that you will get stuck on a concept or a programming problem and may find yourself questioning your ability to learn programming. When you find yourself in this position, remind yourself that you may not get it yet but that with persistence and grit you will. Struggling with something is growth. It doesn’t matter how long you struggle with a concept or project; all that matters is that you have the grit and tenacity to see it through. That’s how real learning happens.While you’re working through the curriculum, embrace the struggles you encounter with difficult concepts and complex projects. Be sure to celebrate your persistence at overcoming those struggles!\nWhen you find yourself questioning your abilities, reflect on the successes you have already achieved while learning to program: the projects you have completed and the concepts you once didn’t understand but now do. This is all the proof you need that you can do it.\nTo learn more about the growth mindset, check out these resources:",
             ancorName:"GrowthMindset",
-            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
 
-            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
-            // popup2:"",
           },
 
           {
@@ -259,7 +255,7 @@ export const courseStructuralData = [
             detail:"Learning concepts and then practicing them will help you to more fully understand how things work and fit together. Projects are the ultimate method for ensuring that your theoretical understanding aligns with how the programming concepts and techniques actually operate.\nWhen learning, your mind will consistently switch between focus mode and diffuse mode. Focus mode occurs when you are consciously focusing on learning, reading, watching videos, or working on a project. Diffuse mode occurs subconsciously, at times when you are not actively learning, such as when you’re doing the dishes, exercising, or sleeping. In this state, your mind goes about the business of connecting what you have been learning to the other things you know. This is where breakthroughs happen.\nIt’s important to know that your mind goes through these two states when learning because you can utilise this to make your learning more efficient. When stuck on a concept or project, taking a break to refresh and let your subconscious work on making connections more often than not yields a solution to your problem. The trick is to put effort into solving the problem first and then take a break.\nIn short, understand it, practice it, and finally teach it.\nTeaching what you know to others is a great way to solidify what you have learned and can often reveal holes in your knowledge that you wouldn’t have identified otherwise.\nYou can practice this method of learning by helping others in our community.(the odin project community)",
             ancorName:"TheLearningProcess",
             popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
-            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650455929/msbGeanologyProfilePics/corsera_learn_howtolearn_i8dv86.png",
 
             // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
             // popup2:"",
@@ -268,97 +264,61 @@ export const courseStructuralData = [
             name:'What To Do When You’re Stuck',
             detail:"You will inevitably get stuck at some point in the curriculum, perhaps due to a concept that you are having difficulty understanding or perhaps due to something not working correctly in a project. Whatever it is, use the following tools to get unstuck:\n==>Google it: You can be certain someone else out there has encountered the same problem as you at some point. A quick Google search can often lead to a solution.\n==>Take a break: Allow your diffuse learning state to work on the problem.\n==>Come prepared with your research on Developer Chats. People will be more willing to help you when they can see you have already put effort into trying to figure out the solution on your own",
             ancorName:"WhatToDoWhenYou’reStuck",
-            // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
 
-            // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
-            // popup2:"",
           },
           {
             name:'Managing Your Study Time',
             detail:"You will have more success with Odin by putting consistent time into it rather than working on it once a week. Building a habit of studying every day at a specific time and with a specific goal will ensure that you make consistent progress.\nIt may take you longer than others to grasp concepts, or it may take you less time. This doesn’t mean you’re smarter or dumber than others, it means you’ve had differing life experiences that may or may not have prepared you for learning this stuff. Someone who grew up around an engineer may have some advantages over someone who didn’t, but it doesn’t mean you can’t learn those skills.\nThe Odin Project isn’t like college or university, it is self paced and allows you to get a really solid grasp of concepts before moving on. In school, you’re forced to keep up or you will fail. The difference here is that coming into The Odin Project, you’re not expected to have much knowledge; there are no prerequisites. We’ve had people be successful coming through here that only knew how to check their email with a computer. We’ve also seen success from computer science degree holders. Treating The Odin Project like a static timeline is understandable, but is a sign of misplaced expectations. You simply don’t know what you don’t know yet, and that’s OK! There’s no due-dates on things in The Odin Project so you can spend the time to do it right and discuss the topics.\nDeadlines cause un-needed stress. Since The Odin Project is a free and open platform, you are not beholden to a deadline. Creating your own deadlines is a good way to rush concepts that should not be rushed. This course is very research based, meaning you will have to do research to complete tasks and projects. There’s no telling if you can find the article or post that helps you in the right way, quickly to meet your deadlines, but I bet you learned a TON along the way that you can use in the future. People that do this kind of research and strive to write better solutions tend to become better developers in the future. There’s no knowing how long it could take you to learn how to query stuff to find your answers. There are no solid guidelines on that. If you’re doing The Odin Project because you need a high paying job right-now, you’re not going to become a solid developer within the timeframe you have set. Stress and anxiety absolutely do not help you learn either. Relax and just enjoy the ride.\nLong story short: Don’t worry, just go learn",
             ancorName:"ManagingYourStudyTime",
-            // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
 
-            // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
-            // popup2:"",
           },
 
           {
             name:'Pitfalls to Avoid',
             detail:"The following are some of the pitfalls that beginners often encounter when learning how to program. Try your best to avoid these.\n==>Procrastination::Procrastination will be your biggest enemy when trying to make progress.==>Solution:: The Pomodoro Technique(The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s.[1] It uses a timer to break work into intervals, typically 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for tomato, after the tomato-shaped kitchen timer Cirillo used as a university student.) is a way of managing your time in order to stay focused. The idea is to set a timer for 25 minutes and to work on a task until the timer goes off. If you get distracted or interrupted during the 25 minutes, start the 25 minutes of work over again. Once you’ve successfully focused on work for 25 minutes, take a 5 minute break. When your break is over, repeat the 25 minutes of work and 5 minute break. After you’ve completed four 25 minute blocks of work, take a longer 15-30 minute break.\nThe Pomodoro technique is great for avoiding procrastination as it forces you to work without distractions. Since the work time only lasts 25 minutes before taking a break, it’s not overwhelming, making it harder to rationalize procrastination.",
             ancorName:"PitfallstoAvoid",
-            // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
 
-            // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
-            // popup2:"",
           },
 
           {
             name:'Not Taking Breaks',
             detail:"As you get into the material, you may feel compelled to continuously study for long periods of time. It might seem like you are getting more work done at first, but this often leads to burnout, which consequently results in lower productivity.\nIt may seem counterintuitive, but you will actually get more done if you regularly step back to recharge your brain and body. Studies show that performance increases after breaks of all durations: from extended vacations down to microbreaks of 30 seconds. John Trougakos, Associate Professor of Management at the University of Toronto, says that mental concentration is similar to a muscle. Our focus becomes fatigued after sustained use and needs a rest period to recover, just like a bodybuilder resting between sets at the gym.\n==>Solution: Use the previously mentioned Pomodoro Technique to time how often and how long to take your well-deserved breaks. Feel free to play around and experiment with different frequencies and durations of breaks.\nWhat to do during your break: ==>1 listen to music ==>2 journal ==>3 doodle ==>4 meditate ==>5 play a quick game ==>3 go for a short walk outside",
             ancorName:"NotTakingBreaks",
-            // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
 
-            // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
-            // popup2:"",
           },
 
           {
             name:'Digital Distractions',
             detail:"Digital distractions are email and Facebook notifications and time-wasting websites, such as social media. These distractions break your focus and make procrastination tempting. Therefore, they should be avoided during study time.\n==>Solution: Turn off notifications and add a blocker to your internet to limit your time on distracting sites.",
             ancorName:"DigitalDistractions",
-            // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
 
-            // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
-            // popup2:"",
           },
           {
           name:'Physical Distractions',
           detail:"Physical distractions are distractions from your environment, like a TV in the background or other people talking. These distractions can be just as damaging to your focus as digital distractions.\n==>Solution: Find a quiet place to study where you can go to focus in your home. If that’s not an option, you can use noise cancelling headphones to block out noisy distractions in your environment.",
           ancorName:"PhysicalDistractions",
-          // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
-          // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
 
-          // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
-          // popup2:"",
         },
 
         {
         name:'Rabbit Holes',
         detail:"Because we cover so much material on The Odin Project and link to so many high quality courses and tools, it is easy for students to get pulled into rabbit holes by spending time trying to learn all there is to know about a subject that they aren’t ready for or won’t benefit them much. We have put a lot of effort into structuring the curriculum so that all of the important things that you need to know about web development are covered exactly when you need to know them.\n==>Solution: Stick to the path laid out as much as possible. Try to limit time spent going down rabbit holes as these sidetracks can really ruin your momentum.",
         ancorName:"RabbitHoles",
-        // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
-        // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
 
-        // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
-        // popup2:"",
       },
 
       {
       name:'Comparing Yourself to Others',
       detail:"Students often compare themselves to others who are farther along in their coding journey or have more experience. This is a recipe for depression and frustration.\nSolution: Only compare yourself to your past self. Have your abilities and knowledge improved from where you were last week, last month, or last year? Be proud of the progress that you’ve made!",
       ancorName:"ComparingYourselftoOthers",
-      // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
-      // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
 
-      // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
-      // popup2:"",
     },
 
     {
     name:'Conclusion',
     detail:"Learning any new skill is a journey full of speed bumps and obstacles to be overcome. We hope that the principles laid out here will put you in a much better position to succeed and to get the most out of The Odin Project.\nWithout further ado, let’s jump in to learning web development!",
     ancorName:"Conclusion",
-    // popup1Name:"To learn more about the best ways to learn, learning how to learn on Coursera is highly recommended",
-    // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650261074/msbGeanologyProfilePics/corsera_learn_howtolearn_id4dpo.png",
 
-    // popup2Name:"The Ruby Rogues have a podcast on How to Learn, which should be motivational and useful to you, so check it out for some useful thoughts on learning.",
-    // popup2:"",
   },
 
         ],
@@ -454,55 +414,35 @@ export const courseStructuralData = [
             name:'Introduction',
             detail:"Along your programming journey, you will inevitably need to ask questions in an online coding community like ours, or in conversations with your colleagues. While asking questions may seem rather simple, in a programming environment it is essential to ask well formed questions with as much context as needed so you can get the most out of asking for help. In essence, “help others help you!” This lesson will provide you with the tools to effectively ask questions in communities such as our Discord chat, Stack Overflow, and in the workplace!",
             ancorName:"Introduction",
-            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
 
-            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
-            // popup2:"",
           },
 
           {
             name:'Lesson Overview',
             detail:"This section contains a general overview of topics that you will learn in this lesson.==>1.)Explain techniques for asking programming questions. ==>2.)Explain and avoid qualities of “bad” questions. ==>3.)Ask effective and well formed questions",
             ancorName:"lessonOvervie",
-            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
 
-            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
-            // popup2:"",
           },
 
           {
             name:'Tips for Getting The Best Help Possible. 1.)Always provide your code and the surrounding context.',
             detail:"You can ask theoretical, vague questions, but you’re going to get theoretical, vague answers that probably won’t be helpful to you and cause frustration on both ends as you and the person helping you dance around the real issue. The only time code doesn’t need to be provided is if you are asking a purely conceptual question outside of a specific project or code snippet. Additionally, provide as much context as is necessary, and zero in on the specific problem, such as pointing people to a specific function or line number in your code so people can give you the most relevant answers and quickly assist you.",
             ancorName:"tips1",
-            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
 
-            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
-            // popup2:"",
           },
 
           {
             name:'Ask about the problem at hand, not the solution itself.',
             detail:'A lot of learners ask exactly how to approach a given task or assignment in this curriculum, such as the below:“How do I complete Step 5 of the Rock Paper Scissors Assignment”? Keep in mind that you’re actually supposed to figure out how to solve the assignments yourself, and figuring out an approach is essential to your learning journey. A much better question might look like this:“Hey, I’m trying to return a string that displays the winner in Rock Paper Scissors, but I’m getting a syntax error on line 12. How can I fix this? Here’s my code.”  In sharing your attempt, people know what you’ve tried and won’t suggest things that might not have worked out for you. It also allows them to debug your current iteration of code, rather than sending you down a path that has you start all over again when you might be very close to a solution. Now, if you’re completely stuck with where to start, it’s completely fine to let people know that you’re stuck. Asking where you can start and what you can research to get on the right track empowers you to be able to resolve issues largely on your own in the future, and might even empower you to help others with the same issue later on. It is also recommended that you share your pseudo code so people can nudge you in the right direction or correct any misunderstandings you may have.',
             ancorName:"tips2",
-            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
 
-            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
-            // popup2:"",
           },
 
           {
             name:'Don’t take asking for more context to heart!',
             detail:'People who volunteer in coding communities are here to help! But a question you may feel is coherent and “obvious” probably isn’t if you are being asked for more context. While something may seem “obvious” to a beginner, it’s sometimes nowhere near “obvious” to an expert. An expert knows about many, many more situations that could cause an issue someone is experiencing, and would want to refrain from sending a learner down the wrong path. People take time out of their day to help, so make it as easy as possible for them to help you! There’s probably a good reason why they need more information, so trust their judgement and experience when they ask. Many people who help in coding chats are unpaid volunteers, and are in no way obligated to answer your query. But because they truly do want to help you, they will ask for more information when needed!',
             ancorName:"tips3",
-            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
 
-            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
-            // popup2:"",
           },
 
           {
