@@ -40,7 +40,7 @@ const EditProfile = ({setOnEdit}) => {
     e.preventDefault()
 
     dispatch(updateProfileUser({userData,profilePic,auth}))
-
+    setOnEdit(false)
   }
 
   useEffect(()=>{
