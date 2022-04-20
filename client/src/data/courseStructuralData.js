@@ -446,14 +446,54 @@ export const courseStructuralData = [
           },
 
           {
-            name:'Assignment',
+            name:'Assignment 1',
             detail:'Read and bookmark this amazing article by Gordon Zhu. It is a great reference to refer to whenever you find yourself needing to ask for help, and you might find yourself solving your own problem as you think about the points listed in the article. The video linked in this article is no longer available but that is not an issue since we explain debugging in detail later in the curriculum.',
-            ancorName:"Assignment",
-            // popup1Name:"A woman who taught herself enough to land a job in 5 months",
-            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650258945/msbGeanologyProfilePics/woman_that_learn_cooding_ozbjrk.png",
+            ancorName:"Assignment1",
+            popup1Name:"How to be great at asking coding questions",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650455921/msbGeanologyProfilePics/ask_right_questions_gditlv.png",
 
-            // popup2Name:"A 32 year old who taught himself programming using The Odin Project",
-            // popup2:"",
+            popup2Name:"Read about the “XY Problem”, which is a common pitfall programmers new or experienced alike fall into when asking questions.",
+            popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650462433/msbGeanologyProfilePics/xyproblem_wnm8y4.png",
+          },
+
+          {
+            name:'Assignment 2',
+            detail:'While asking for help is encouraged, it’s important to avoid becoming a “help vampire” and be respectful of the communities or persons you are asking for help. This resource goes in depth to identify what a “help vampire” is, gives those who help others the tools to empower folks to ask questions effectively, and help the “help vampire” effectively.',
+            ancorName:"Assignment2",
+            popup1Name:"Help Vampires",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650464104/msbGeanologyProfilePics/helpVampire_iulvxj.png",
+
+            popup2Name:"Check out this article from the world’s most popular programming help resource, Stack Overflow.",
+            popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650463759/msbGeanologyProfilePics/stackoverflow_t8k37v.png",
+
+            },
+
+
+        ],
+        additionalRead:[
+          {
+            title:"amazing article by Gordon Zhu.",
+            url:"https://medium.com/@gordon_zhu/how-to-be-great-at-asking-questions-e37be04d0603"
+            },
+
+        {
+          title:"XY Problem",
+          url:"https://xyproblem.info/"
+          },
+          {
+            title:"How do I ask a good question?",
+            url:"https://stackoverflow.com/help/how-to-ask"
+            },
+            {
+              title:"Help Vampires",
+              url:"https://slash7.com/2006/12/22/vampires/"
+              },
+        ],
+
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/"
           },
         ],
         people:[]

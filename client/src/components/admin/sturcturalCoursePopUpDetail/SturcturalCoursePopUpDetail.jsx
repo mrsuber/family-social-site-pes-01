@@ -76,7 +76,7 @@ const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) =>
               }
               {item.popup2
                 ?<>
-
+                <hr className="admin__hr_break"/>
                 <AdminCourseImagePopUp img={item.popup2} name={item.popup2Name?item.popup2Name:'Read More...'} />
                 </>
                 :<></>
@@ -85,7 +85,11 @@ const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) =>
             ))
             :<span className="admin__worning-update">update Details</span>
           }
-          <h2 className="admin__resume__right-title">Additional Resources</h2>
+          {!data.additionalRead || data.additionalRead.length===0
+            ?<></>
+            :<h2 className="admin__resume__right-title">Additional Resources</h2>
+
+          }
 
           {
 

@@ -26,3 +26,7 @@
 .courseImageReadMorePopUp:hover{
   text-decoration: underline;
 }
+
+.admin__hr_break{
+  margin: 10px 0;
+}
