@@ -502,7 +502,7 @@ export const courseStructuralData = [
       {
         name:"Join the developer Communities",
         courseStatus:"incomplete",
-        courseNumber:"004",
+        courseNumber:"005",
         logo:logo,
         menu:[
           {
@@ -804,15 +804,218 @@ export const courseStructuralData = [
         people:[]
       },
 
-      {
-        name:"Introduction to Web Development",
-        courseStatus:"incomplete",
-        people:[]
-      },
 
       {
         name:"How Does the Web Work?",
         courseStatus:"incomplete",
+        courseNumber:"006",
+        logo:logo,
+        menu:[
+          {
+            name:'Introduction',
+            detail:"Before you can understand how to program the web, you need a more rigorous understanding of the web itself than you likely have now. These concepts provide a more holistic understanding of the ecosystem in which you will be working and will enable you to talk intelligently with other developers about your work.",
+            ancorName:"Introduction",
+
+          },
+
+          {
+            name:'Lesson Overview',
+            detail:"This section contains a general overview of topics that you will learn in this lesson.==>1)Describe what the internet is. ==>2)Describe what packets are and how they are used to transfer data. ==>3)Understand the differences between a web page, web server, web browser and search engine. ==>4)Briefly explain what a client is. ==>5)Briefly explain what a server is. ==>6)Explain what IP addresses are. ==>7)Explain what DNS servers are.",
+            ancorName:"Lesson Overview",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+          {
+            name:'Assignment1',
+            detail:"This article from Mozilla on “How does the Internet work?” . ",
+            ancorName:"Assignment1",
+            popup1Name:"How the web works",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650524569/msbGeanologyProfilePics/how_the_web_works_mozila_keype7.png",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'',
+            detail:"",
+            ancorName:"",
+            popup1Name:"",
+            popup1:"",
+            popup2Name:"",
+            popup2:"",
+
+
+          },
+        ],
+        additionalRead:[
+          {
+            title:"Watch this BBC short for an overview of how the internet works.",
+            url:"https://github.com/"
+          },
+
+          {
+            title:"Watch How the Internet Works in 5 Minutes",
+            url:"https://www.youtube.com/watch?t=46s&v=7_LPdttKXPc&feature=youtu.be"
+          },
+
+          {
+            title:"difference between webpage, website, web server, and search engine",
+            url:"https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Pages_sites_servers_and_search_engines"
+          },
+
+          {
+            title:"How the Web works",
+            url:"https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works#clients_and_servers"
+          },
+          {
+            title:"If you’re in for a bit more reading, you can check out the Introduction to HTTP online book at LaunchSchool. This book also touches on some topics covered later in the curriculum, such as developer tools and security. Additionally, you can learn about HTTP tools, which you may find helpful in the future.",
+            url:"https://launchschool.com/books/http"
+          },
+        ],
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+          {
+            name:"How does the Internet work?",
+            link:"https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work"
+          },
+        ],
+        people:[]
+      },
+
+      {
+        name:"Installation overview",
+        courseStatus:"incomplete",
+        courseNumber:"006",
+        logo:logo,
+        menu:[
+
+          {
+            name:'Introduction',
+            detail:"The first step for building any website is having the right tools. For us, that means setting up a development environment for writing good code.\n Many online development courses use in-browser code editors or “sandboxes,” which give you the tools and programs needed to accomplish the task at hand and nothing else. You’ll use some of these sandboxes throughout the early stages of this project since they’re great for getting started quickly. However, the best way to set yourself up for long-term success is to operate in a real development environment.\nWe won’t lie to you: installing packages, editors, and even entire operating systems can be very frustrating. However, having the experience of setting up a development environment to run the code you’ll write is an invaluable, real-world skill you’ll carry with you for the rest of your career.",
+            ancorName:"introduction",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+          {
+            name:'The Installation Plan',
+            detail:"In the following sections, we’ll go over the steps for setting up your environment. There is no need to install anything in this lesson, this is an informative lesson. These sections are the most important steps in the entire curriculum. Please take the extra time to double check what you’re typing or you may cause more headaches for yourself down the road.In the next few lessons, we will walk through these installation steps together:\nIn the next few lessons, we will walk through these installation steps together: ==>Installing a supported operating system (OS). ==>Installing Google Chrome web browser. ==>Installing a code editor. ==>Creating an SSH key (a personal “password” that will identify you to GitHub, Heroku, and many other sites you’ll be using). At the end of the next lesson, you’ll be up and running with many of the tools you need to write and run code! It may seem like a lot of steps, but we’ll get through it as painlessly as possible together! If anything goes wrong, remember to use these steps: ==>Examine the terminal output for the actual error. ==>Google, Google, Google. ==>Never be afraid to ask for help! \n For Chromebook users, your OS choice has effectively been made for you. However, if your device supports the Linux Beta, there are instructions in the next lesson on how to set this up on your device.",
+            ancorName:"The Installation Plan",
+            popup1Name:"operating System",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650541937/msbGeanologyProfilePics/operatingsystem_g3zzxq.png"
+
+          },
+
+          {
+            name:'OS Options macOS',
+            detail:"If you’re using a Mac, you’re in great shape. The instructions assume a Unix-based system. By installing just a few programs, you will be up and running with your education in no time!",
+            ancorName:"OS Options macOS",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+          {
+            name:'Linux (Official Ubuntu Flavors)',
+            detail:"Linux is a free and open-source operating system that works well with all programming languages. Most development tools are written to work natively with Linux. Your tools will likely be updated more often, have more information available for troubleshooting, and just plain run better on Linux. We’ll be using Ubuntu, one of the most popular and user-friendly distributions available, or the lighter weight alternative Xubuntu. if you don’t use a Mac, we recommend that you use Linux. It’s that simple.",
+            ancorName:"linux",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+
+          {
+            name:'Windows',
+            detail:"Windows is not natively supported by The Odin Project, or on our Discord server; however, if you’re currently using Windows you can use either a virtual machine or dual boot to keep your Windows install while creating your development environment in Linux.A virtual machine is an emulation of a computer that runs within your existing OS. It allows you to use another operating system inside of a program on your current operating system (e.g. Running Linux inside of Windows). Virtual machines are as simple to install as any other program and are risk free. If you don’t like Linux, you can easily remove the virtual machine. Virtual machines are a great way for new developers to get started quickly.",
+            ancorName:"windows",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+
+          {
+            name:'Dual-booting',
+            detail:"Dual-booting means installing two operating systems on your computer, which can give you the option to boot either Linux or Windows when your computer first starts up. The advantage of dual-booting over a virtual machine is that the OS can use all of your computer’s resources, resulting in much faster operation. There is some risk to installing a dual-boot system because you’re changing your hard drive partitions, but you’ll be okay as long as you take your time and read the instructions.Dual-booting can be as easy as inserting a flash drive and clicking a few buttons. The benefits of dual-booting cannot be overstated. You will allow Linux to access the full capabilities of your hardware, have a clean and distraction-free environment for coding, and learn the platform used by many senior developers and servers around the world.",
+            ancorName:"dual-booting",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+          {
+            name:'NOTICE FOR WINDOWS 11 USERS:',
+            detail:"Windows 11 released in October 2021. VirtualBox (the program that runs your Virtual Machine) does not currently support Windows 11 as a host operating system. This means that VirtualBox may not properly install or run on Windows 11, or that you could face serious bugs that hinder performance or cause crashes.If you are using Windows 11 on the computer that you will be installing a Linux environment to, it is recommended that you install Linux via Dual-Booting, rather than installing via a virtual machine.You can see the currently supported operating systems for VirtualBox hosting in this section of their documentation.",
+            ancorName:"notice for wind",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+
+          {
+            name:'Concerned About Installing A New OS?',
+            detail:"“Woah, woah, woah! I like my OS just fine the way it is!” If you don’t have an Apple computer, you are likely using Windows. Don’t worry! The options above don’t mean you need to get rid of Windows. Linux will gladly share the hard drive with Windows. We know you’ve probably learned a lot of tips and tricks for your favorite OS and don’t want to lose everything you have on your computer. However, most OSs are developed with non-technical folks in mind, so they hide or make it difficult to use many of the languages and frameworks we’ll need to install. Having to work around these difficulties causes many new developers to give up before they’ve even started their journey to full-stack nirvana.\nModifying or dual booting a computer to work with the tools you’ll need will make it much easier to start programming, can help create a distraction-free environment, and will look good on your resume. Take a deep breath, and let’s look at your options.",
+            ancorName:"new os",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+          {
+            name:'Here are a few great reasons to install Linux:Tested',
+            detail:"Tested - We’ve tested our directions with macOS, Ubuntu, and official Ubuntu flavors. We did the research so that you can get tools installed with as few issues as possible, getting you to coding sooner. Time spent wrestling with your operating system is time taken from learning how to code.",
+            ancorName:"tested",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+
+          {
+            name:'Here are a few great reasons to install Linux:Community Support',
+            detail:"Community Support - Using the tools we recommend makes it easier for us to help when you run into trouble.",
+            ancorName:"Community Support",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+          {
+            name:'Here are a few great reasons to install Linux:Work Like The Pros ',
+            detail:"Work Like The Pros - Many developers use a Unix-based operating system.",
+            ancorName:"pros",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+
+          {
+            name:'Here are a few great reasons to install Linux:Performance ',
+            detail:"Performance - You are worried about installing Linux because your machine is slow/older and has limited space? When performance is a priority, Linux is a great choice. It uses fewer system resources than Windows and will occupy less hard drive space.",
+            ancorName:"pros",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+
+          {
+            name:'We can only support what is provided within the scope of our curriculum. We do not support native Windows or any version of Windows Subsystem for Linux (WSL) as a development environment.',
+            detail:"Using Windows and WSL has been discussed many times and it is not feasible to do so at this time. Please do not ask us to support Windows, and please do not bring it up in the Discord. We are constantly evaluating our curriculum to keep content as fresh and accessible as possible, and Windows/WSL has not proven to be a path of low resistance.With that out of the way, we need to set up an appropriate development environment!",
+            ancorName:"pros",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+        ],
+        additionalRead:[
+          {
+            title:"VirtualBox",
+            url:"https://www.virtualbox.org/manual/UserManual.html#hostossupport"
+          },
+        ],
         people:[]
       },
 
