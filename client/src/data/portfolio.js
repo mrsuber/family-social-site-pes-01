@@ -144,7 +144,7 @@ const portfolio=[
     siteName:"www.geneasocial.com",
     siteLink:"https://msb-geneasocial.herokuapp.com",
     gitHubLink:"https://github.com/mrsuber/family-social-site-pes-01",
-    description:"This is a private social media site for family members. you can create a post , edit a post , delete a post, comment on a post, reply a comment on a post, like a post, comment with emojis, delete a comment , update a comment, all on real time and realtime notification, you can chat in the chat section uploading both pictures and video all in real time, you can discover post of family members you do not yet follow, you can follow a family member as well as unfollow, you can share post on other social media sites, you can edit you porfile and much more all in details in the prodject documentation."
+    description:"This is a private social media platform for socialization of students under Geneo tutoring. Here, students can ask quesions and interact directly with instructors like coworkers making learning more fun"
   },
   {
     id:8,
