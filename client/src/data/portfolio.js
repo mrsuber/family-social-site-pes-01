@@ -144,7 +144,7 @@ const portfolio=[
     siteName:"www.geneasocial.com",
     siteLink:"https://msb-geneasocial.herokuapp.com",
     gitHubLink:"https://github.com/mrsuber/family-social-site-pes-01",
-    description:"This is a private social media platform for socialization of students under Geneo tutoring. Here, students can ask quesions and interact directly with instructors like coworkers making learning more fun"
+    description:"Geneasocial is a secure social media site tailored only for Geneo students. This way students and instructors can privately socialize without the whole public being part of it making learning fun."
   },
   {
     id:8,
