@@ -480,14 +480,14 @@ export const courseStructuralData = [
           title:"XY Problem",
           url:"https://xyproblem.info/"
           },
-          {
-            title:"How do I ask a good question?",
-            url:"https://stackoverflow.com/help/how-to-ask"
-            },
-            {
-              title:"Help Vampires",
-              url:"https://slash7.com/2006/12/22/vampires/"
-              },
+        {
+          title:"How do I ask a good question?",
+          url:"https://stackoverflow.com/help/how-to-ask"
+          },
+        {
+          title:"Help Vampires",
+          url:"https://slash7.com/2006/12/22/vampires/"
+          },
         ],
 
         source:[
@@ -502,6 +502,305 @@ export const courseStructuralData = [
       {
         name:"Join the developer Communities",
         courseStatus:"incomplete",
+        courseNumber:"004",
+        logo:logo,
+        menu:[
+          {
+            name:'Introduction',
+            detail:"Working and collaborating with other people is an important part of working as a web developer. In addition to other communities you will be introduce in like the The Odin Project developer Community which involve following on facebook for socializing, on discord for chatting and more, this program have its own private social media platform for socializing and comunicating directly with the instructor and other students in the programe with its own chat system and more features to be worked on and upgraded giving you a place with lots of room to improve practicing your skills as a new web developer.",
+            ancorName:"Introduction",
+
+          },
+
+          {
+            name:'Why a community is awesome for you',
+            detail:"Learning web development will be a long and arduous journey, but you can make the marathon a lot more fun by getting involved in communities. No matter what pace you are doing our curriculum, there will always be people a few steps ahead of you that are willing to help. Furthermore, helping others that are a few steps behind you is a great way to deepen your own understanding and make your learning stick.When you’re slogging through the desert of despair, where your code doesn’t work or even make sense to you anymore, you can find an oasis of knowledge and encouragement in our community. Veterans at The Odin Project love to help fill in knowledge gaps and provide new insights and perspectives on how to improve your code. We’ve all been there before!.Remember that project you struggled so hard to figure out and that you’re so proud of finishing? Through our community, you will get to share your work and progress with those who fully appreciate how much hard work went into it.",
+            ancorName:"Whyacommunityisawesome",
+            popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+
+          {
+            name:'Why a community is awesome for this Program',
+            detail:"We are working hard to update existing lessons and produce new content,make the website more rubust for learning, so we would love to hear your feedback on the lessons and projects. We hope you find the lessons fun, engaging, and informative and find the projects challenging but achievable. So please let us work together like on big happy family",
+            ancorName:"WhyacommunityisawesomeForthisprogram",
+            // popup1Name:"hope you remember Why Learning to Code is So Damn Hard",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650458160/msbGeanologyProfilePics/whysohard_hisblw.png"
+
+          },
+
+          {
+            name:'Before asking for help',
+            detail:"As most of the projects are designed to push you to your limit, please remember that there is always a community to turn to! You don’t need to know how to solve every problem straight away, BUT you do need to have a general idea of where you are going. This becomes really important when asking your questions because sometimes the problem is your approach and not your code.If you’re feeling stuck, it’s a good time to pause and take a breather. Break the problem down into little pieces and then decide what is really holding you back. We call this technique rubber duck debugging.\nYou should also do a Google search to find relevant information for your problem. Read about how to use Google to solve your programming questions. You can also look back at previous lessons for tools that you can apply to the current task.\nIf these methods don’t yield a solution for you, then it’s time to reach out to the communities and ask for help.",
+            ancorName:"Before asking for help",
+            popup1Name:"rubber duck debugging",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518495/msbGeanologyProfilePics/rubber_debubing_duck_ltwsp7.png",
+            popup2Name:"How to use google",
+            popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'Asking for help',
+            detail:"So you’ve spent some time struggling to solve the problem on your own, and now it’s time to fire up the Odin Discord and ask for help. The first thing to keep in mind is don’t ask to ask. While this is a simple idea (with a pretty catchy motto!), it can help you get answers to your questions much faster and will make it easier to others to feel comfortable offering you help.In addition, when you ask your questions, you should help the community help you by putting together a great question.\nWhen asking your question, please remember to include the context: ==>1.)What do you think the problem is? ==>2.)What exactly do you want to happen? ==>3.)What is actually happening? ==>4.)How did you get there? ==>5.)What have you tried so far?\nIf you can’t pinpoint the problem, you can share a screenshot. This is especially useful for showing the output of commands in the command line. In Discord, drag and drop your screenshot image file into the chat box to upload it or simply use the PrtScn and paste keyboard shortcuts. If you don’t know how to take a screenshot on your computer, this is a good time to ask Google.\nScreenshots are great for showing the output of commands or error messages in the command line. Screenshots are also great for showing the output from your code such as how the output looks visually on a webpage or console outputs in the browser. However, you should always include the corresponding files containing the error. Even if it is a short amount of code, providing it in the discord server in the proper format along with a screenshot of the output is helpful to those debugging it rather than just a screenshot. When you do share a screenshot of the output or how it looks visually make sure to push your project to GitHub or put your corresponding code in a replit so that others can comb through and debug the code. The screenshot of the output and the correlating code that can recreate the problem will help make it easier to understand the problem for people helping you. You’ll learn all about GitHub very soon. \nSometimes there might be no one around to help you with your issue. That is the ideal time to get familiar with the Discord search function. Search for specific keywords or error messages to see if anyone else had a similar issue before and how they solved it!",
+            ancorName:"Asking for help",
+            popup1Name:"Don't ask to ask, just ask",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'Formatting your questions',
+            detail:"Asking your questions in a readable format helps everyone debug them better. Here are some ways to go about that:\nIf you’re having trouble on the command line, make sure to include both your input and the error message you’re getting.\nIn the chat rooms, code can be displayed differently from normal sentences by using backticks (``), which can be found above the Tab key on US and UK keyboards. Backticks are not the same as single quotation marks (‘’), which are found to the left of the Enter key.\nFor a single line of code: use one backtick before and after your code.`Your Code`For multiple lines of code: use three backticks on a separate line above and below your code.```Your Multiple Lines of Code``` You can also use code highlighting to add color to your multi-line code by specifying the language: ```JavaScript Your Cod ```",
+            ancorName:"Formatting your questions",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'Formatting your questions',
+            detail:"1.) Have fun with giphys: type /giphy hi to say hi to everyone. 2.)Type !help for more information on chat commands. 3.)Show your appreciation to those who help you with @username ++. 4.)Don’t forget to visit all the available rooms!",
+            ancorName:"Formatting your questions",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'How to Help Others Solve Coding Problems',
+            detail:"Not only is it important to know how to ask an effective question, it is also important to know how to help others effectively. Please take a moment to review these guidelines so that you will have proper expectations of the help you will receive in our Discord community. In addition, come back and review these guidelines when you are ready to start helping others.",
+            ancorName:"How to Help Others Solve Coding Problems",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'1. Instead of answering the question, guide them to the answer',
+            detail:"Unless the problem is a simple typo or syntax error, it is more beneficial to guide them to find their own answer. This approach will teach good debugging skills and will increase their ability to solve future problems.\nStart by asking probing questions, such as “What have you already tried?”, “What do you expect this function to do?”, or “What do you think that error means?”.",
+            ancorName:"Instead of answering the question",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'2. Help only when you are certain of the answer',
+            detail:"If you are not 100% certain of the answer, you may end up doing more harm than good, so please let someone else answer it.\nDo not worry about how long someone has to wait for an answer. The right answer is worth the wait.",
+            ancorName:"Help only when you are certain",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'3. Help only when no one else is currently helping',
+            detail:"If somebody is already getting help, do not jump in the middle of the conversation. We know you mean well, but it is overwhelming for the person receiving help to follow multiple conversations.",
+            ancorName:"Help only when no one else is currently",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'4. Help only when you have plenty of time',
+            detail:"If you do not have much time to help, please let someone else answer the question.",
+            ancorName:"Help only when you have plenty of time",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'5. Adjust your expectations to their level',
+            detail:"If the question does not reveal where they are in the curriculum, ask them so that you can adjust your expectations to their knowledge level.",
+            ancorName:"Adjust your expectations",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'6. Ask for clarifications',
+            detail:"If the question seems confusing or ambiguous, ask for more clarity, or politely link them to our bot command !question, which links to the How to be great at asking coding questions article.",
+            ancorName:"Ask for clarifications",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'7. Ask for live code',
+            detail:"If the question needs to have live code to fully understand or debug, ask them to use replit to provide it. If the problem is difficult to isolate, they should recreate the problem with isolated code.",
+            ancorName:"Ask for live code",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'8. Do not answer googleable questions',
+            detail:"Learning how to research these questions is a very important skill for developers, so we need to empower them to find their own answer. When we answer these questions, it hinders their personal growth and makes them codependent on our community.\nInstead of answering these questions, politely ask them to google their question or use our bot command !google with the search terms.",
+            ancorName:"Do not answer googleable",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'9. Do not answer questions covered in our curriculum.',
+            detail:"If you know that the answer is provided in our curriculum, ask them where they are at in the curriculum.\nIf they have not reached that portion of the curriculum, let them know they will learn it in the future.\nIf they have already been through that portion of the curriculum, politely direct to review that lesson.",
+            ancorName:"Do not answer questions",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'10. Answer the question before pointing out other problems',
+            detail:"When helping someone it can be easy to spot other problems in their code. Resolve the original question, before pointing out any other problems that need attention.",
+            ancorName:"nswer the question before",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'11. Encourage students to use a debugger',
+            detail:"It is common for students to not understand the importance of using a debugger to look at the values of their variables at different points in their program. When students are getting unexpected values, politely encourage them to use a debugger with our bot command !debug.",
+            ancorName:"Encourage student",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'12. Watch for students that need to take a step back',
+            detail:"It is common for students to focus too hard on a problem and not be able to clearly see everything. When this situation arises, politely encourage them to step back from the problem and take a break. Often times, stepping away from a problem will help them see the bigger picture and how to solve it.",
+            ancorName:"Watch for students",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'13. Watch for students that are in over their head',
+            detail:"It is common for students to skip a lesson/project or think they know more than they actually do. When this situation arises, politely encourage them to go back and reread a section of the curriculum for more understanding.",
+            ancorName:"Watch for students that are in over",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'14. Admit when the problem goes beyond your current knowledge',
+            detail:"It is common for the actual issue to go beyond the initial question. If it goes beyond your current knowledge, it is important to admit that you are unsure of the correct answer and let someone else help.\nAfter digging deeper into the problem, they might be able to continue troubleshooting on their own or they can wait for someone more experienced to help.",
+            ancorName:"Admit when the problem",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'15. Be patient',
+            detail:"Helping others solve a problem is not always easy. Remember to be patient as they struggle through the problem.",
+            ancorName:"Be patient",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'16. Duck out of the conversation if you get frustrated',
+            detail:"Sometimes there are misunderstandings and interactions go poorly. You are a volunteer and are not obligated to help when things get out of hand. Politely duck out of the conversation and let someone else step up.",
+            ancorName:" Duck out of the conversation",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'',
+            detail:"",
+            ancorName:"",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'Assignment1',
+            detail:"First, create a free GitHub account. As you will discover, GitHub is an integral part of the development workflow.",
+            ancorName:"Assignment1",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+
+          {
+            name:'Assignment2',
+            detail:"Finally, sign in to our Discord server. Pop in and say hello! We’ve created an introductions room which is a great place to introduce yourself and we’re always happy to welcome new community members. We have chat rooms for every development topic covered in our curriculum. Log into the chat and start exploring!",
+            ancorName:"Assignment1",
+            // popup1Name:"Don't ask to ask, just ask",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650519401/msbGeanologyProfilePics/Dont_askto_ask_jwz7aj.png",
+            // popup2Name:"How to use google",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650518731/msbGeanologyProfilePics/how_to_use_google_ysgags.png"
+          },
+        ],
+        additionalRead:[
+          {
+            title:"GitHub account.",
+            url:"https://github.com/"
+          },
+          {
+            title:"Discord account.",
+            url:"https://discord.com/invite/fbFCkYabZB"
+          },
+
+          {
+            title:"Replit account.",
+            url:"https://replit.com/"
+          },
+
+        ],
+
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+          {
+            name:"Don't ask to ask, just ask",
+            link:"https://dontasktoask.com/"
+          },
+          {
+            name:"How to be great at asking coding questions",
+            link:"https://medium.com/@gordon_zhu/how-to-be-great-at-asking-questions-e37be04d0603"
+          },
+        ],
         people:[]
       },
 
