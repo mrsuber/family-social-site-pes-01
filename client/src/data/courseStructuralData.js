@@ -841,17 +841,7 @@ export const courseStructuralData = [
 
           },
 
-          {
-            name:'',
-            detail:"",
-            ancorName:"",
-            popup1Name:"",
-            popup1:"",
-            popup2Name:"",
-            popup2:"",
 
-
-          },
         ],
         additionalRead:[
           {
@@ -1016,42 +1006,361 @@ export const courseStructuralData = [
             url:"https://www.virtualbox.org/manual/UserManual.html#hostossupport"
           },
         ],
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+        ],
         people:[]
       },
 
       {
         name:"Prerequisites",
         courseStatus:"incomplete",
+        courseNumber:"007",
+        logo:logo,
+        menu:[
+          {
+            name:'Introduction',
+            detail:"If you are already using MacOS, Ubuntu, or an official flavor of Ubuntu as your operating system and have Google Chrome as an installed browser, you can skip this section. Otherwise Continue reading.Please Note: We can only support the operating systems indicated above. Our instructions have been tested with MacOS, Ubuntu, and official flavors of Ubuntu. We do not recommend installing an OS that is only based on Ubuntu (like Mint, Pop!_OS, ElementaryOS, etc).",
+            ancorName:"Introduction",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+          {
+            name:'OS Installation',
+            detail:"This curriculum only supports using a laptop, desktop or supported Chromebook. We cannot help you set up a developer environment on a RaspberryPi or any other device.",
+            ancorName:"OS Installation",
+            popup1Name:"Virtual Machine (Recommended)",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603154/msbGeanologyProfilePics/vm_gjep3e.png",
+            popup2Name:"Ubuntu/Windows Dual-Boot",
+            popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603351/msbGeanologyProfilePics/ubuntu_and_windows_dsxryl.png",
+            popup3Name:"Chrome OS/CloudReady",
+            popup3:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603515/msbGeanologyProfilePics/chromeos_wcg1ss.png",
+
+
+          },
+          {
+            name:'Linux - Step 1: Download Google Chrome',
+            detail:"==>Open your Terminal ==>Run the following command to download latest Google Chrome .deb package, ```wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb```",
+            ancorName:"Step 1: Download Google Chrome",
+            // popup1Name:"Virtual Machine (Recommended)",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603154/msbGeanologyProfilePics/vm_gjep3e.png",
+            // popup2Name:"Ubuntu/Windows Dual-Boot",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603351/msbGeanologyProfilePics/ubuntu_and_windows_dsxryl.png",
+            // popup3Name:"Chrome OS/CloudReady",
+            // popup3:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603515/msbGeanologyProfilePics/chromeos_wcg1ss.png",
+
+
+          },
+          {
+            name:'Linux - Step 2: Install Google Chrome',
+            detail:" ==>Enter the following command in your terminal to install Google Chrome .deb package, ```sudo apt install ./google-chrome-stable_current_amd64.deb``` ==>Enter your password, if needed",
+            ancorName:"Step 2: Download Google Chrome",
+            // popup1Name:"Virtual Machine (Recommended)",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603154/msbGeanologyProfilePics/vm_gjep3e.png",
+            // popup2Name:"Ubuntu/Windows Dual-Boot",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603351/msbGeanologyProfilePics/ubuntu_and_windows_dsxryl.png",
+            // popup3Name:"Chrome OS/CloudReady",
+            // popup3:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603515/msbGeanologyProfilePics/chromeos_wcg1ss.png",
+
+
+          },
+
+          {
+            name:'Linux - Step 3: Delete the installer file',
+            detail:"==> ```rm google-chrome-stable_current_amd64.deb``` ==>Enter your password, if needed",
+            ancorName:"Step 3: Download Google Chrome",
+            // popup1Name:"Virtual Machine (Recommended)",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603154/msbGeanologyProfilePics/vm_gjep3e.png",
+            // popup2Name:"Ubuntu/Windows Dual-Boot",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603351/msbGeanologyProfilePics/ubuntu_and_windows_dsxryl.png",
+            // popup3Name:"Chrome OS/CloudReady",
+            // popup3:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603515/msbGeanologyProfilePics/chromeos_wcg1ss.png",
+
+
+          },
+          {
+            name:'Linux - Step 4: Using Google Chrome',
+            detail:"You can start chrome in two ways, ==> use the ```google-chrome``` command from the terminal (Don’t worry about the messages printed in the terminal) ==>Click Google Chrome from the Applications menu",
+            ancorName:"Step 4: Download Google Chrome",
+            // popup1Name:"Virtual Machine (Recommended)",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603154/msbGeanologyProfilePics/vm_gjep3e.png",
+            // popup2Name:"Ubuntu/Windows Dual-Boot",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603351/msbGeanologyProfilePics/ubuntu_and_windows_dsxryl.png",
+            // popup3Name:"Chrome OS/CloudReady",
+            // popup3:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603515/msbGeanologyProfilePics/chromeos_wcg1ss.png",
+
+
+          },
+
+          {
+            name:'MacOS - Step 1: Download Google Chrome',
+            detail:"Visit Google Chrome download page, ==> Click Download Chrome for Mac",
+            ancorName:"Step 1: Download Google Chromea",
+            // popup1Name:"Virtual Machine (Recommended)",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603154/msbGeanologyProfilePics/vm_gjep3e.png",
+            // popup2Name:"Ubuntu/Windows Dual-Boot",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603351/msbGeanologyProfilePics/ubuntu_and_windows_dsxryl.png",
+            // popup3Name:"Chrome OS/CloudReady",
+            // popup3:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603515/msbGeanologyProfilePics/chromeos_wcg1ss.png",
+
+
+          },
+
+          {
+            name:'MacOS - Step 2: Install Google Chrome',
+            detail:"Open the Downloads folder, Double click the file googlechrome.dmg, Drag the Google Chrome icon to the Applications folder icon",
+            ancorName:"Step 2: Download Google Chromea",
+            // popup1Name:"Virtual Machine (Recommended)",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603154/msbGeanologyProfilePics/vm_gjep3e.png",
+            // popup2Name:"Ubuntu/Windows Dual-Boot",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603351/msbGeanologyProfilePics/ubuntu_and_windows_dsxryl.png",
+            // popup3Name:"Chrome OS/CloudReady",
+            // popup3:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603515/msbGeanologyProfilePics/chromeos_wcg1ss.png",
+
+
+          },
+
+          {
+            name:'MacOS - Step 3: Delete the installer file',
+            detail:"Open Finder,==>Click the arrow next to Google Chrome in the sidebar==>Go to the Downloads folder==>Drag googlechrome.dmg to the trash",
+            ancorName:"Step 3: Download Google Chromea",
+            // popup1Name:"Virtual Machine (Recommended)",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603154/msbGeanologyProfilePics/vm_gjep3e.png",
+            // popup2Name:"Ubuntu/Windows Dual-Boot",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603351/msbGeanologyProfilePics/ubuntu_and_windows_dsxryl.png",
+            // popup3Name:"Chrome OS/CloudReady",
+            // popup3:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603515/msbGeanologyProfilePics/chromeos_wcg1ss.png",
+
+
+          },
+
+          {
+            name:'MacOS - Step 4: Using Google Chrome',
+            detail:"Go to your Applications folder==>Double click Google Chrome",
+            ancorName:"Step 4: Download Google Chromea",
+            // popup1Name:"Virtual Machine (Recommended)",
+            // popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603154/msbGeanologyProfilePics/vm_gjep3e.png",
+            // popup2Name:"Ubuntu/Windows Dual-Boot",
+            // popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603351/msbGeanologyProfilePics/ubuntu_and_windows_dsxryl.png",
+            // popup3Name:"Chrome OS/CloudReady",
+            // popup3:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650603515/msbGeanologyProfilePics/chromeos_wcg1ss.png",
+
+
+          },
+        ],
+        additionalRead:[
+          {
+            title:"UbuntuFlavors",
+            url:"https://wiki.ubuntu.com/UbuntuFlavors"
+          },
+          {
+            title:"About Oracle VM",
+            url:"https://www.virtualbox.org/manual/UserManual.html#hostossupport"
+          },
+          {
+            title:"Download VirtualBox",
+            url:"https://www.virtualbox.org/wiki/Downloads"
+          },
+          {
+            title:"Download Ubuntu",
+            url:"https://releases.ubuntu.com/20.04/"
+          },
+
+          {
+            title:"Create Ubuntu Live USB",
+            url:"https://itsfoss.com/create-live-usb-of-ubuntu-in-windows/"
+          },
+          {
+            title:" installation guide",
+            url:"https://ubuntu.com/tutorials/install-ubuntu-desktop#0"
+          },
+          {
+            title:"Workaround to Install Ubuntu 20.04 with Intel RST systems",
+            url:"https://askubuntu.com/questions/1233623/workaround-to-install-ubuntu-20-04-with-intel-rst-systems/1233644#1233644"
+          },
+          {
+            title:"Download Chrome",
+            url:"https://www.google.com/chrome/"
+          },
+        ],
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+        ],
         people:[]
       },
 
       {
         name:"Text Editors",
         courseStatus:"incomplete",
+        courseNumber:"008",
+        logo:logo,
+        menu:[
+          {
+            name:'',
+            detail:"",
+            ancorName:"",
+            popup1Name:"",
+            popup1:"",
+            popup2Name:"",
+            popup2:"",
+
+
+          },
+        ],
+        additionalRead:[
+          {
+            title:"",
+            url:""
+          },
+        ],
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+        ],
         people:[]
       },
 
       {
         name:"Command Line Basics",
         courseStatus:"incomplete",
+        courseNumber:"009",
+        logo:logo,
+        menu:[
+          {
+            name:'',
+            detail:"",
+            ancorName:"",
+            popup1Name:"",
+            popup1:"",
+            popup2Name:"",
+            popup2:"",
+
+
+          },
+        ],
+        additionalRead:[
+          {
+            title:"",
+            url:""
+          },
+        ],
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+        ],
         people:[]
       },
 
       {
         name:"Setting Up Git",
         courseStatus:"incomplete",
+        courseNumber:"010",
+        logo:logo,
+        menu:[
+          {
+            name:'',
+            detail:"",
+            ancorName:"",
+            popup1Name:"",
+            popup1:"",
+            popup2Name:"",
+            popup2:"",
+
+
+          },
+        ],
+        additionalRead:[
+          {
+            title:"",
+            url:""
+          },
+        ],
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+        ],
         people:[]
       },
 
       {
         name:"Introduction to Git",
         courseStatus:"incomplete",
+        courseNumber:"011",
+        logo:logo,
+        menu:[
+          {
+            name:'',
+            detail:"",
+            ancorName:"",
+            popup1Name:"",
+            popup1:"",
+            popup2Name:"",
+            popup2:"",
+
+
+          },
+        ],
+        additionalRead:[
+          {
+            title:"",
+            url:""
+          },
+        ],
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+        ],
         people:[]
       },
 
       {
         name:"Git Basics",
         courseStatus:"incomplete",
+        courseNumber:"012",
+        logo:logo,
+        menu:[
+          {
+            name:'',
+            detail:"",
+            ancorName:"",
+            popup1Name:"",
+            popup1:"",
+            popup2Name:"",
+            popup2:"",
+
+
+          },
+        ],
+        additionalRead:[
+          {
+            title:"",
+            url:""
+          },
+        ],
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+        ],
         people:[]
       }
 

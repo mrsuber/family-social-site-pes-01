@@ -81,6 +81,14 @@ const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) =>
                 </>
                 :<></>
               }
+
+              {item.popup3
+                ?<>
+                <hr className="admin__hr_break"/>
+                <AdminCourseImagePopUp img={item.popup3} name={item.popup3Name?item.popup3Name:'Read More...'} />
+                </>
+                :<></>
+              }
               </>
             ))
             :<span className="admin__worning-update">update Details</span>
