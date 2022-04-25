@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 import './IndexPage.css'
 import {SelectFamilyCard,DisplayCard} from '../../../components'
 import {
@@ -9,18 +9,40 @@ import {
 import {useSelector,useDispatch} from 'react-redux'
 import {FAMILY_TYPES} from '../../../redux/actions/familyAction'
 import {useHistory} from 'react-router-dom'
+import {indexData} from '../../../data/indexPageDisplayData'
 
 const IndexPage = () => {
   const{family,auth} = useSelector(state=>state)
+  const [data,setData] = useState([])
   const dispatch = useDispatch()
 
   const history = useHistory()
+
+  // const redirect = (address) =>{
+  //   if(address === "redirectBlogHomePage"){
+  //     window.location.href = "/porfolio/home"
+  //   }else if(address === "redirectAdminHome"){
+  //     window.location.href = "/admin"
+  //   }else if (address === "redirectSocialHomePage"){
+  //     if(auth.token){
+  //       // history.push('/social_home');
+  //       dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:true})
+  //       history.push('/social_home');
+  //     }else{
+  //       window.location.pathname ='/login';
+  //     }
+  //   }
+  // }
+  // useEffect(()=>{
+  //   if(indexData){
+  //     setData(indexData)
+  //   }
+  // },[data])
+
+
   const redirectBlogHomePage = () => {
     window.location.href = "/porfolio/home"
   }
-
-
-
   const redirectAdminHome = () =>{
     window.location.href = "/admin"
   }
@@ -42,8 +64,33 @@ const IndexPage = () => {
     <>
 
 
-      
+
         <div className="index__card_wrapper" >
+        {/*
+          data
+          ? data.map((index,item)=>(
+            <span className="social2__index_card" key={index}>
+                    <DisplayCard
+                    heading={item.heading}
+
+                    gs1={item.gs1}
+                    gs2={item.gs2}
+                    gs3={item.gs3}
+                    gs4={item.gs4}
+                    gs5={item.gs5}
+                    gs6={item.gs6}
+                    logo={item.logo}
+
+                    text={item.text}
+                    dislayCardId={item.id}
+                    page={item.page}
+                    link={redirect(item.link)}
+                    />
+
+                    </span>
+          ))
+          :<span>Loading....</span>
+        */}
 
         <span className="social2__index_card">
                 <DisplayCard
