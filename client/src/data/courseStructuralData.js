@@ -1384,27 +1384,141 @@ export const courseStructuralData = [
         logo:logo,
         menu:[
           {
-            name:'',
-            detail:"",
-            ancorName:"",
-            popup1Name:"",
-            popup1:"",
-            popup2Name:"",
-            popup2:"",
+            name:'Introduction',
+            detail:"Feeling scared of the command line? You’re not alone. We have this image of developers staring intently at a black screen with white or green text flashing across as they wildly enter incomprehensible commands to hack into the corporate mainframe (no doubt while guzzling soda and wiping neon orange Cheetos dust off their keyboard).\nThat black screen or window is the command line interface (CLI), where you’re able to enter commands that your computer will run for you. While there’s no need for you to reenact the scene above, working with the command line is a critical skill for you to learn as a developer. The command line is like our base of operations, from which we can launch other programs and interact with them. It has a syntax of its own to learn, but since you’ll be entering the same commands dozens of times, you’ll quickly pick up the commands you need most.\nIn this introductory lesson to the command line, you’ll learn how to navigate around your computer and how to manipulate files and directories (also known as folders) directly from the comfort of the command line. You’ll soon see that this isn’t as difficult as you may think. The commands you will learn in this lesson are very straightforward. So don’t let the prospect of using the command line for the first time intimidate you.",
+            ancorName:"Introduction",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
 
 
           },
+          {
+            name:'Test Drive Your Terminal',
+            detail:"Open a terminal on your computer.\nLinux: open the programs menu and search for “Terminal”. You can also open the terminal by pressing CTRL + ALT + T on your keyboard.\nBefore we do anything, take a look at the following text: $ whoami This is a terminal command because it begins with a $. The $ is saying “Hey! Enter what follows in your terminal.” This means that we must exclude the $ when entering any command. In the example above, we would only enter whoami in our terminal. This is a common indicator so make sure that you aren’t entering $ before a command. Now that you are aware of what $ does, take your terminal for a test run! Make sure your terminal is open, type the command mentioned above, and press enter on your keyboard.==>It returns your username. Cool!",
+            ancorName:"Test Drive Your Terminal",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+          {
+            name:'Why learn this now?',
+            detail:"You will be making heavy use of the command line throughout this curriculum, and the upcoming installations project will need you to install many different software programs using the command line. Additionally, you will primarily be using Git within the command line (more on this later). As part of the bigger picture, you may well be using the command line on a daily basis in your career as a software developer, making it an indispensable skill in your toolset.",
+            ancorName:"Why learn this now?",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Lesson Overview',
+            detail:"This section contains a general overview of topics that you will learn in this lesson.==>1Describe what the command line is.==>2Open the command line on your computer.==>3Use the command line to navigate directories and display directory contents.==>4Use the command line to create a new directory and a new file.==>5Use the command line to rename or destroy a directory and a file.==>6Use the command line to open a file or folder in a program.==>Where will cd on its own navigate you to? ==>Where will cd .. navigate you to?==>How do you display the name of the directory you are currently in?==>How do you display the contents of the directory you are currently in?",
+            ancorName:"Lesson Overview",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Assignment',
+            detail:"Note: Many of these resources assume you’re using a Mac or Linux environment. If you did our previous installation lesson, you should already have Linux installed in dual-boot or a virtual machine. Or, you might be using MacOS. If you don’t have MacOS, or any version of Linux installed, please return to the operating system installation guide.\nBefore diving into the command line lesson, you’ll want to know how to create a file. You can do so with the ```touch``` command. Open your terminal and enter ```ls``` (the ```l``` is a lowercase ```L```). ls will show you the files and folders in the current directory (or will show nothing if the current directory is empty). Create a file called ```test.txt``` by entering this in your terminal: ```touch test.txt```. Now enter ls once again. You should see ```test.txt``` listed in the output. You can also create more than one file at once using the ```touch``` command. Enter ```touch index.html script.js style.css``` and press the enter. Then enter ```ls``` once more. You should see the files in the output. Here is a small way that the terminal reveals its power. How long would it have taken to create all three of those files with your mouse? Thanks, terminal.",
+            ancorName:"Assignment",
+            popup1Name:"Command line basics",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650886744/msbGeanologyProfilePics/command_line_basics_eooxdq.png",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Use the Command Line Like a Pro',
+            detail:"There’s something important that you need to know about programmers. Programmers are lazy. Like, really lazy. When forced to do something over and over again, the odds are good that they’ll figure out a way to automate it instead. The good news is that you get to take advantage of the many shortcuts they’ve created along the way. It’s time to learn how to use the command line like a pro (which is to say, in a really lazy way).\nFirst, you might have already noticed that copying and pasting inside the command line doesn’t work the way that you’d expect. When you’re inside the command line, you’ll need to use ```Ctrl+Shift+C``` (Mac: ```Cmd+C```) to copy and ```Ctrl+Shift+V``` (Mac: ```Cmd+V```) to paste. For example, to copy and paste commands from your browser into the command line, you’ll highlight the command text and use ```Ctrl+C``` as usual and then paste it in your terminal using ```Ctrl+Shift+V```. Test it out!\n Second, you need to learn about ```tab``` completion. Seriously, this tip will save you so much time and frustration. Let’s say that you’re in the command line and that you need to move into a folder that’s far away, something like ```~/Documents/Odin-Project/foundations/javascript/calculator/```. That’s a long command to type out, and everything needs to be exactly right in order for it to work. Nope, we’re way too lazy for that! Basically, by hitting Tab, the command line will automatically complete commands that you’ve started typing once there’s only one option. For example, it’s pretty common to have a ```Documents``` folder and a ```Downloads``` folder in the ```home``` directory. If you’ve typed ```cd D``` and then press Tab, the command line will let you know that it’s not sure which one you want by showing you the different options that match what you’ve typed so far: ```bash $ cd D Documents/ Downloads/ $ cd D``` But once you’ve typed in a little bit more, it will complete the name for you, making it possible to write out the full file path above by typing as little as cd ```Doc[tab]O[tab]f[tab]j[tab]cal[tab]``` (depending on what other folders exist on your computer). Test it out, and get comfortable with how this works. You’re gonna love it. \n Third, there’s a really handy shortcut for opening everything within a project directory: . Once you’ve installed a text editor, you can use this shortcut to open up an entire project and all its files in one go. This shortcut is also commonly used with Git (later on it’s covered in detail) with commands like ```git add .``` to add all the files inside of a directory into Git’s staging area. For example, if you have VS Code installed, you can cd into the project directory and then type ```code .``` (with the period) to open up all the project files. See the next section of this lesson for a more detailed example.",
+            ancorName:"Use the Command Line Like a Pro",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'A Note on typing passwords',
+            detail:"A Note on typing passwords: When using a command in the terminal that requires you to enter your password for authentication (such as ```sudo```), the characters should not be visible to you as you type them. While you might think the terminal isn’t responding, don’t worry! This is a security feature to protect confidential information, like how password fields on websites use asterisks or dots. By not displaying the characters you write, the Terminal keeps your password secure.",
+            ancorName:"A Note on typing passwords",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Opening files in VSCode from the Command Line',
+            detail:"On Windows and Linux, you can open VSCode from the command line by typing ```code```, and you can open folders or files by adding the name of the location after it: ```code my_awesome_project/.``` \nMacOS can do this too, but you need to set it up. After installing VSCode, launch it any way you’re comfortable with. Once it’s running, open the Command Palette with ```CMD + Shift + P```. In the little dialog that appears, type ```shell``` command. One of the choices that appears will be Shell Command: Install 'code' command in PATH. Select that option, and restart the terminal if you have it open.",
+            ancorName:"Opening files in VSCode from the Command Line",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+          {
+            name:'Exercise',
+            detail:"In this exercise, you will practice creating files and directories and deleting them. You’ll need to enter the commands for this exercise in your terminal. If you can’t recall how to open a terminal, scroll up for a reminder.==>1Create a new directory in your home directory with the name test.==>Navigate to the test directory.==>Create a new file called test.txt. Hint: use the touch or echo command.==>4Create a new file called test.txt. Hint: use the touch or echo command.==>5Navigate back out of the test directory. ==>6Delete the test directory.\nThat’s it–you’re done with command line basics! If you commit to doing most things from the command line from here on out, these commands will become second nature to you. Moving and copying files is much more efficiently done through the command line, even if it feels like more of a hassle at this point.",
+            ancorName:"Exercise",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+
         ],
         additionalRead:[
           {
-            title:"",
-            url:""
+            title:"The Art of Command Line",
+            url:"https://github.com/jlevy/the-art-of-command-line#readme"
+          },
+
+          {
+            title:"Unix/Linux Command Cheat Sheet contains a list of important commands that you can refer to regularly as you become familiar with using Linux. You can print it out so you can have a physical copy with you when you’re not at your computer.",
+            url:"https://files.fosswire.com/2007/08/fwunixref.pdf"
+          },
+
+          {
+            title:"Command Line Flashcards by flashcards.github.io.",
+            url:"https://flashcards.github.io/command_line/introduction.html"
+          },
+
+          {
+            title:"Video Series from LearnLinuxTv contains 24 videos explaining the basics of the command line. Videos are brief enough for beginners but, at the same time, detailed enough to get you started and light your inner curiosity.",
+            url:"https://www.youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ"
           },
         ],
         source:[
           {
             name:"TheodinProject",
             link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+          {
+            name:"command line basics",
+            link:"https://www.softcover.io/read/fc6c09de/unix_commands/basics"
           },
         ],
         people:[]
@@ -1417,16 +1531,54 @@ export const courseStructuralData = [
         logo:logo,
         menu:[
           {
-            name:'',
-            detail:"",
-            ancorName:"",
-            popup1Name:"",
-            popup1:"",
-            popup2Name:"",
-            popup2:"",
+            name:'Introduction',
+            detail:"Git is a very popular version control system. You’ll become very familiar with this piece of software throughout TOP, so don’t worry too much about understanding it at this point. There are many lessons focused on Git later in the curriculum.\n GitHub is a service that allows you to upload your code using Git and to manage your code with a nice web interface. GitHub and Git are not the same thing or even the same company.",
+            ancorName:"Introduction",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
 
 
           },
+
+          {
+            name:'Step 1: Install Git on linux',
+            detail:"Open the popup and follow instructions",
+            ancorName:"Step 1: Install Git on linux",
+            popup1Name:"instaling git",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650888541/msbGeanologyProfilePics/install_git_jd0icr.png",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Step 2.1: Setup Git',
+            detail:"This is the first step in configuring git and github",
+            ancorName:"Setup Git",
+            popup1Name:"Setup Git",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650889082/msbGeanologyProfilePics/setting_up_git_rjsjuv.png",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Step 3: Let us know how it went!',
+            detail:"You’ve completed the basic installations section, good job! As you progress through the Paths there will be other tools to install, so keep an eye out! \nYou probably felt like you were way in over your head, and you probably didn’t understand much of what you were doing. That’s 100% normal. Hang in there. You can do this! And we’ve got your back.",
+            ancorName:"Step 3: Let us know how it went!",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+
         ],
         additionalRead:[
           {
