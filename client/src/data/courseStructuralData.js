@@ -1206,27 +1206,172 @@ export const courseStructuralData = [
         logo:logo,
         menu:[
           {
-            name:'',
-            detail:"",
-            ancorName:"",
-            popup1Name:"",
-            popup1:"",
-            popup2Name:"",
-            popup2:"",
+            name:'Introduction',
+            detail:"A text editor is by far the most used developer tool regardless of what type of developer you are. A good text editor can help you write better code with real-time code checking, syntax highlighting, and automatic formatting.",
+            ancorName:"Introduction",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
 
 
           },
+
+          {
+            name:'Why can’t I use Microsoft Word?',
+            detail:"Rich text editors, such as Microsoft Word and Libre-Office Writer, are great for writing a paper, but the features that make them good at creating nicely formatted documents make them unsuitable for writing code. A document created with these rich text editors has more than just text embedded in the file. These files also contain information on how to display the text on the screen and data on how to display graphics embedded into the document. In contrast, plain text editors, such as VSCode and Sublime, don’t save any additional information. Saving only the text allows other programs, like Ruby’s interpreter, to read and execute the file as code.",
+            ancorName:"Why can’t I use Microsoft Word?",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+          {
+            name:'Code Editors',
+            detail:"You can think of code editors as specialized web development tools. They are highly customizable and offer many features that will make your life easier. There is nothing worse than spending 2 hours trying to figure out why your program isn’t working only to realize that you missed a closing bracket. Plugins, syntax highlighting, auto-closing of brackets and braces, and linting are just a few of the benefits of using a code editor. There are many text editors out there to choose from, but we suggest starting with Visual Studio Code.",
+            ancorName:"Code Editors",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Visual Studio Code or atom',
+            detail:"Atom and Visual Studio Code, or just VSCode as it’s commonly referred to, is an excellent free code editor. It has outstanding add-on support and great Git integration. VSCode is the most popular code editor among Odin’s students and moderators, so support is easy to find in the community.\nWhich editor you use is generally a matter of preference, but for the purposes of this course, we are going to assume you’re using VSCode, mainly because it’s free, it’s easy to use, and it works pretty much the same on every operating system. Keep in mind that this means you will not be able to get help if you are using a different text editor other than VSCode or Atom for the curriculum.\nAs a reminder, if you’re using a virtual machine, you should install VSCode on your VM. You’re welcome to also install it on your host (i.e., your Windows main OS), but you’ll want to be sure that you have this critical tool inside your VM.",
+            ancorName:"Visual Studio Code",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'VSCode Installation on linux Step 1: Download VSCode',
+            detail:"Open your Terminal.==>Run the following command to download the latest VSCode .deb package ==> ``` wget -O code-latest.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64' ```",
+            ancorName:"VSCode Installation",
+            // popup1Name:"VSCode Installation",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Step 2: Install VSCode',
+            detail:"Enter the following command in your terminal to install the VSCode .deb package ==> ``` sudo apt install ./code-latest.deb ```==>If prompted, enter your password",
+            ancorName:"Step 2: Install VSCode",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Step 3: Delete the installer file',
+            detail:" ``` rm code-latest.deb ``` ",
+            ancorName:"Step 3: Delete",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+          {
+            name:'Step 4: Using VSCode',
+            detail:"You can start VSCode in two ways,==>Click Visual Studio Code from the Applications menu ==>use the code command from the terminal ```code```",
+            ancorName:"Step 4: Using VSCode",
+            // popup1Name:"Alternative Installation of VSCode",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+
+          {
+            name:'Atom Installation on linux Step 1 : Add repository from official Atom Site',
+            detail:"==> ``` wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add - ``` ==> ``` sudo sh -c 'echo 'deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main' > /etc/apt/sources.list.d/atom.list' ``` ==>Press Enter if it ask your permission.",
+            ancorName:"Atom Installation",
+            // popup1Name:"VSCode Installation",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Step 2 : Update the Ubuntu System',
+            detail:"==> ``` sudo apt-get update ``` ==> It will take some time. Be patient.",
+            ancorName:"update system",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Step 3 : Install Atom Editor',
+            detail:" ``` sudo apt-get install atom ``` ==> It will download and install the Atom editor on your Ubuntu 14.04. ",
+            ancorName:"Step 3: install",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+          {
+            name:'Step 4: Using Atom',
+            detail:"==>Click Atom from the Applications menu ",
+            ancorName:"Step 4: Using VSCode",
+            // popYou can then install extensions to enhance the functionalities of Atom editor. Here are top 5 packages you should consider to install in Atom.up1Name:"Alternative Installation of VSCode",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
         ],
         additionalRead:[
           {
-            title:"",
-            url:""
+            title:"You can then install extensions to enhance the functionalities of Atom editor. Here are top 5 packages you should consider to install in Atom.",
+            url:"https://codeforgeek.com/5-mhttps://codeforgeek.com/5-must-have-packages-atom-editor/ust-have-packages-atom-editor/"
+          },
+
+          {
+            title:"These handy little PDFs on VSCode’s shortcuts for linux",
+            url:"https://go.microsoft.com/fwlink/?linkid=832144"
+          },
+
+          {
+            title:"Getting started with VSCode video",
+            url:"https://code.visualstudio.com/docs/introvideos/basics"
           },
         ],
         source:[
           {
             name:"TheodinProject",
             link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+          {
+            name:"Install Atom",
+            link:"https://codeforgeek.com/install-atom-editor-ubuntu-14-04/"
           },
         ],
         people:[]
