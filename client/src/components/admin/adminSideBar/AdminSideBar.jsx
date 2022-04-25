@@ -98,7 +98,7 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,
               <li>
               <Link to="/admin/expense" className={activeLink5}>
                 <span className="admin__las admin__la-user"><FontAwesomeIcon icon={faUser} /></span>
-                <span>Account</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
+                <span>Expense</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li>
           :<></>}

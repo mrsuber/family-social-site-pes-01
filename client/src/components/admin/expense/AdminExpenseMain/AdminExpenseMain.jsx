@@ -7,7 +7,7 @@ import useStyles from './styles'
 const AdminExpenseMain = () => {
   const classes = useStyles()
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} style={{margin:"10px 0",width:"100%"}}>
       <CardHeader title="Expense Tracker" subheader="Powered by Speechly"/>
       <CardContent>
         <Typography align="center" variant="h5">Total Balance $100 </Typography>

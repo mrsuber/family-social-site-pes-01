@@ -27,7 +27,7 @@ const AdminExpenseScreen = () => {
     img={ auth.user.profilePic ? auth.user.profilePic :profile}
     logo={logo}
     pic={pic}
-    activeLink2="admin__active"
+    activeLink5="admin__active"
     fullname={auth.user.fullname ? auth.user.fullname:'Mohamad Demo'}
     username={auth.user.username ?`Welcome ${auth.user.username}` :`Welcom to Demo Account`}
     />
