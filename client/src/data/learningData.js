@@ -83,7 +83,7 @@ export const schoolData = [
         link:"https://kinsta.com/blog/full-stack-developers-salary/"
       }
     ],
-    courseLink:"/admin/devcourse"
+    courseLink:"/school/devcourse"
 
   },
   {

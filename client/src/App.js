@@ -81,9 +81,11 @@ const App=()=> {
 
 
 
-            <Route exact path="/admin/school" component={auth.token && auth.user.isSuperAdmin===true? AdminStudent : AdminErrorScreen}/>
-            <Route exact path="/admin/devcourse" component={auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? AdminCourse : AdminErrorScreen}/>
-            <Route exact path="/admin/devcourse/webstuden" component={auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? AdminCourse2 : AdminErrorScreen}/>
+
+            <Route exact path="/school/devcourse" component={auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? AdminCourse : AdminErrorScreen}/>
+            <Route exact path="/school/devcourse/webstuden" component={auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? AdminCourse2 : AdminErrorScreen}/>
+
+            <Route exact path="/school" component={auth.token && auth.user.isSuperAdmin===true? AdminStudent : AdminErrorScreen}/>
 
 
 

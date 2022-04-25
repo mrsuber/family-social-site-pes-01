@@ -44,7 +44,7 @@ const StudentScreen2 = () => {
             <span className="admin__las admin_la-bars"><FontAwesomeIcon icon={faBars} /></span>
           </label>
           <div className="admin__header-title">
-          <h1>Welcome To Applications Tracking</h1>
+          <h1>Welcome To School</h1>
           <p>This is sensitive Data<span className="admin__las admin__la-chart-line"><FontAwesomeIcon icon={faChartLine} /></span></p>
           </div>
         </div>

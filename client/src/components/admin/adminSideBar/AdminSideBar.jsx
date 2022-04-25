@@ -32,12 +32,15 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,
         </div>
         <div className="admin__sidebar-menu">
           <ul>
-            <li>
+            {auth.token &&  (auth.user.isStudentTech===true)?
+              <></>
+              :
+              <li>
               <Link to="/admin" className={activeLink}>
                 <span className="admin__las admin__la-adjust"><FontAwesomeIcon icon={faAdjust} /></span>
                 <span>Dashboard</span>
               </Link>
-            </li>
+            </li>}
 
             {/*<li>
               <Link to="/admin/expense" className={activeLink2}>
@@ -59,25 +62,30 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,
               </Link>
             </li> :<></>}
             {auth.token &&  (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)? <li>
-              <Link to="/admin/devcourse" className={activeLink8}>
+              <Link to="/school/devcourse" className={activeLink8}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
                 <span>Web Developement</span>{auth.token && (auth.user.isStudentTech===true || auth.user.isSuperAdmin===true)?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li> :<></>}
 
-            <li>
+          {auth.token && auth.user.isSuperAdmin===true?
+              <li>
               <Link to="/admin/application" className={activeLink3}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
                 <span>Track Applications</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li>
+          :<></>}
 
-            <li>
-              <Link to="/admin/school" className={activeLink7}>
+            {auth.token && auth.user.isSuperAdmin===true?
+              <li>
+              <Link to="/school" className={activeLink7}>
                 <span className="admin__las admin__la-chart-bar"><FontAwesomeIcon icon={faChartBar} /></span>
                 <span>School</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li>
+            :<></>
+          }
 
             {/*<li>
               <Link to="/admin/expense" className={activeLink4}>
@@ -86,12 +94,14 @@ const AdminSideBar = ({img,logo,activeLink,activeLink2,activeLink3, activeLink4,
               </Link>
             </li>*/}
 
-            <li>
+            {auth.token && auth.user.isSuperAdmin===true?
+              <li>
               <Link to="/admin/expense" className={activeLink5}>
                 <span className="admin__las admin__la-user"><FontAwesomeIcon icon={faUser} /></span>
                 <span>Account</span>{auth.token && auth.user.isSuperAdmin===true?"":<span className="admin__sidebar-restricted">🚫</span>}
               </Link>
             </li>
+          :<></>}
           </ul>
         </div>
 

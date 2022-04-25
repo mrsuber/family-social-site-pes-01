@@ -22,7 +22,7 @@ const AdminHome = () => {
 
   const {auth} = useSelector(state => state)
     const dispatch = useDispatch()
-    const [reload, setReload] = useState(false)
+    const [data, setData] = useState(null)
 
   const logoutnow =()=>{
     dispatch(logout())
@@ -32,16 +32,19 @@ const AdminHome = () => {
   }
 
   useEffect(()=>{
-    if(auth.token && auth.user.isSuperAdmin===true){
-      window.location.href = "/admin/application"
 
-    }else if(auth.token && auth.user.isAdmin===true){
+    if(auth.token){
+
+      setData(auth.user)
+    }
+
+     if(auth.token && auth.user.isAdmin===true){
 
           window.location.href = "/admin/application/oracle"
 
       }else if(auth.token && auth.user.isStudentTech===true){
 
-            window.location.href = "/admin/devcourse/"
+            window.location.href = "/school/devcourse/"
 
       }else if(auth.token && auth.user.isApplication2===true){
 
@@ -49,8 +52,8 @@ const AdminHome = () => {
 
               }
 
-  },[auth])
-
+  },[auth,data])
+  
   return (
     <div className="admin__body">
     <input type="checkbox" name="admin__menu-toggle" id="admin__menu-toggle"/>
@@ -58,7 +61,19 @@ const AdminHome = () => {
     <label for="admin__menu-toggle">
       </label>
     </div>
-    <AdminSideBar img={profile} logo={logo} pic={pic} activeLink="admin__active"/>
+    {data?
+      <AdminSideBar
+        img={ data.profilePic}
+        logo={logo}
+        pic={pic}
+        activeLink="admin__active"
+        fullname={data.fullname }
+        username={data.username}
+        />
+      :
+      <AdminSideBar img={profile} logo={logo} pic={pic} activeLink="admin__active"/>
+  }
+
     <div className="admin__main-content">
       <header className="admin__header">
         <div className="admin__header-title-wrapper">
