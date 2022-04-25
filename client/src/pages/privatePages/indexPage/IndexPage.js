@@ -4,6 +4,7 @@ import {SelectFamilyCard,DisplayCard} from '../../../components'
 import {
   gs1,gs2,gs3,gs4,gs5,gs6,logo,
   gb1,gb2,gb3,gb4,gb5,gb6,
+  sc1,sc2,sc3,sc4,sc5,sc6,
   ad1,ad2,ad3,ad4,ad5,
 } from '../../../images'
 import {useSelector,useDispatch} from 'react-redux'
@@ -46,6 +47,9 @@ const IndexPage = () => {
   const redirectAdminHome = () =>{
     window.location.href = "/admin"
   }
+  const redirectSchool = () =>{
+    window.location.href = "/school"
+  }
 
   const redirectSocialHomePage = () =>{
     if(auth.token){
@@ -55,8 +59,6 @@ const IndexPage = () => {
     }else{
       window.location.pathname ='/login';
     }
-
-
   }
 
   return (
@@ -131,6 +133,25 @@ const IndexPage = () => {
         />
         </span>
 
+        <span className="social2__index_card">
+        <DisplayCard
+        heading='School'
+
+        gs1={sc1}
+        gs2={sc2}
+        gs3={sc3}
+        gs4={sc4}
+        gs5={sc5}
+        gs6={sc6}
+        logo={logo}
+
+        text='Studies'
+        dislayCardId={3}
+        page='school'
+        link={redirectSchool}
+        />
+        </span>
+
 
         <span className="social2__index_card">
         <DisplayCard
@@ -145,7 +166,7 @@ const IndexPage = () => {
         logo={logo}
 
         text='Manage All'
-        dislayCardId={3}
+        dislayCardId={4}
         page='admin'
         link={redirectAdminHome}
         />

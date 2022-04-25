@@ -43,7 +43,7 @@ const AdminLoginScreen = () => {
 
     useEffect(()=>{
       if(auth.token && auth.user.isSuperAdmin===true){
-        window.location.href = "/admin/application"
+        window.location.href = "/admin"
 
       }else if(auth.token && auth.user.isAdmin===true){
 
@@ -51,7 +51,7 @@ const AdminLoginScreen = () => {
 
         }else if(auth.token && auth.user.isStudentTech===true){
 
-              window.location.href = "/admin/devcourse/"
+              window.location.href = "/school/devcourse/"
 
         }
         else if(auth.token && auth.user.isApplication2===true){

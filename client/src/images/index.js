@@ -30,3 +30,11 @@ export {default as ad3} from './admin/3.png'
 export {default as ad4} from './admin/4.png'
 export {default as ad5} from './admin/5.jpg'
 //export course images
+
+//school
+export {default as sc1} from './school/1.jpg'
+export {default as sc2} from './school/2.jpg'
+export {default as sc3} from './school/3.jpg'
+export {default as sc4} from './school/4.jpg'
+export {default as sc5} from './school/5.jpeg'
+export {default as sc6} from './school/6.jpg'
