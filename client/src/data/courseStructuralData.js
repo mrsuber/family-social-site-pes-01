@@ -1675,23 +1675,7 @@ export const courseStructuralData = [
 
           },
 
-          {
-            name:'',
-            detail:"",
-            detail1:"",
-            detail2:"",
-            detail3:"",
-            detail4:"",
-            detail5:"",
-            detail6:"",
-            ancorName:"",
-            popup1Name:"",
-            popup1:"",
-            popup2Name:"",
-            popup2:"",
 
-
-          },
         ],
         additionalRead:[
           {
@@ -1740,9 +1724,90 @@ export const courseStructuralData = [
         logo:logo,
         menu:[
           {
-            name:'',
-            detail:"",
-            ancorName:"",
+            name:'Introduction',
+            detail:"In this lesson, we’ll cover common Git commands used to manage your projects and to upload your work onto GitHub. We refer to these commands as the basic Git workflow. When you’re using Git, these are the commands that you’ll use 70-80% of the time. So if you can get these down, you’ll be more than halfway done mastering Git!",
+            // detail1:"",
+            // detail2:"",
+            // detail3:"",
+            // detail4:"",
+            // detail5:"",
+            // detail6:"",
+
+            ancorName:"Introduction",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Lesson Overview',
+            detail:"This section contains a general overview of topics that you will learn in this lesson.",
+            detail1:"How to create a repository on GitHub",
+            detail2:"How to get files to and from GitHub",
+            detail3:"How to take “snapshots” of your code",
+            detail4:"How do you create a new repository on GitHub?",
+            detail5:"Explain the two-stage system that Git uses to save files.",
+            detail6:"How do you add files to the staging area in git?How do you commit the files in the staging area and add a descriptive message? and How do you look at the history of your previous commits?",
+
+            ancorName:"Lesson Overview",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Assignment',
+            detail:"Before you start!",
+            detail1:"Github recently updated the way it names the default branch. This means you need to make sure you are using a recent version of git (2.28 or later). You can check your version by running: ```git --version```",
+            detail2:"If you haven’t already, set your local default git branch to ```main```. You can do so by running: ```git config --global init.defaultBranch main```",
+            detail3:"",
+            detail4:"",
+            detail5:"",
+            detail6:"",
+
+            ancorName:"Assignment",
+            popup1Name:"creating a repository",
+            popup1:"For more information on the change from master to main see GitHub’s Renaming Repository.",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+          {
+            name:'Git Best Practices',
+            detail:"There’s a lot to learn about using Git. But it is worth taking the time to highlight some best practices so that you can be a better collaborator. Git is not only helpful when collaborating with others. It’s also useful when working independently. You will be relying more and more on your own commit history in the future when revisiting old code.",
+            detail1:"Two helpful best practices to consider are atomic commits and leveraging those atomic commits to make your commit messages more useful to future collaborators.",
+            detail2:"An atomic commit is a commit that includes changes related to only one feature or task of your program. There are two main reasons for doing this: first, if something you change turns out to cause some problems, it is easy to revert the specific change without losing other changes; and second, it enables you to write better commit messages.",
+            // detail3:"",
+            // detail4:"",
+            // detail5:"",
+            // detail6:"",
+
+            ancorName:"Git Best Practices",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+          {
+            name:'Conclusion',
+            detail:"You may not feel completely comfortable with Git at this point, which is normal. It’s a skill that you will get more comfortable with as you use it.",
+            detail1:"The main thing to take away from this lesson is the basic workflow. The commands you’ve learned here are the ones you will be using the most often with Git.",
+            detail2:"Don’t worry if you don’t know all the commands yet or if they aren’t quite sticking in your memory yet. They will soon be seared into your brain as you use them over and over in future projects.",
+            detail3:"In later Git lessons, we will cover some of the more advanced Git features, such as branches. They will further expand your abilities and make you more productive.",
+            detail4:"For now, concentrate on using the basics of Git that you’ve learned here for all of your projects from now on. You will soon know each of the basic Git commands from memory!",
+            detail5:"",
+            detail6:"",
+
+            ancorName:"Conclusion",
             popup1Name:"",
             popup1:"",
             popup2Name:"",
@@ -1750,11 +1815,29 @@ export const courseStructuralData = [
 
 
           },
+          {
+            name:'Bonus: Changing the Git Commit Message Editor',
+            detail:"As a bonus to this section, if you are using Visual Studio Code (and you should be if you’re following this curriculum) and you don’t want to get stuck writing a commit message in Vim because you accidentally used git commit without the message flag (-m), this command will make Visual Studio Code open a new tab with the ability to write your commit message and an optional description below it: git config --global core.editor 'code --wait'.",
+            detail1:"There will be no confirmation or any output on the terminal after entering this command. To make a commit with Visual Studio Code as the text editor, make sure to use the git commit command without the -m flag. Just type git commit and no message after that. Once you do this, a new tab will open. Now you can write your message, and provide more information if you want, right below it. After typing your commit message, save it and exit the tab.",
+            detail2:"With that out of the way, now you can choose to use either git commit -m <your message here> or git commit and enter your message with Visual Studio Code!",
+            // detail3:"",
+            // detail4:"",
+            // detail5:"",
+            // detail6:"",
+            ancorName:"Bonus: Changing the Git Commit Message Editor",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
         ],
         additionalRead:[
           {
-            title:"",
-            url:""
+            title:"For more information on the change from master to main see GitHub’s Renaming Repository.",
+            url:"https://github.com/github/renaming"
           },
         ],
         source:[
@@ -1764,7 +1847,49 @@ export const courseStructuralData = [
           },
         ],
         people:[]
-      }
+      },
+
+      //
+      // {
+      //   name:"Git Basics",
+      //   courseStatus:"incomplete",
+      //   courseNumber:"012",
+      //   logo:logo,
+      //   menu:[
+      //     {
+      //       name:'',
+      //       detail:"",
+      //       detail1:"",
+      //       detail2:"",
+      //       detail3:"",
+      //       detail4:"",
+      //       detail5:"",
+      //       detail6:"",
+      //       ancorName:"",
+      //       popup1Name:"",
+      //       popup1:"",
+      //       popup2Name:"",
+      //       popup2:"",
+      //
+      //
+      //     },
+      //
+      //
+      //   ],
+      //   additionalRead:[
+      //     {
+      //       title:"",
+      //       url:""
+      //     },
+      //   ],
+      //   source:[
+      //     {
+      //       name:"TheodinProject",
+      //       link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+      //     },
+      //   ],
+      //   people:[]
+      // }
 
 
     ],
