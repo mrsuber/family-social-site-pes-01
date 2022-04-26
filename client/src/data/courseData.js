@@ -55,15 +55,37 @@ export const devCourseData = [
     learningTitle:"HTML",
     logo:logo,
     path:"HTML",
-    about:"This path takes you through our entire JavaScript curriculum. You'll learn everything you need to know to create beautiful responsive websites from scratch using Html, Css, JavaScript, NodeJs and MongoDb.",
+    about:"HTML is the universal markup language for the Web. HTML lets you format text, add graphics, create links, input forms, frames and tables, etc., and save it all in a text file that any browser can read and display.",
     MainLocation:"Cameroon || southwest || Buea",
-    TotalNumberOfBranches:"2",
+    TotalNumberOfBranches:"8",
 
-    TotalNumberCompleted:"0.0",
+    TotalNumberCompleted:"0",
     LessonTittle:[
       {
-        title:"How this Course Will Work"
+        title:"Introduction to HTML and CSS"
       },
+      {
+        title:"Elements and Tags"
+      },
+      {
+        title:"HTML Boilerplate"
+      },
+      {
+        title:"Working with Text"
+      },
+      {
+        title:"Lists"
+      },
+      {
+        title:" Links and Images"
+      },
+      {
+        title:"Commit Messages"
+      },
+      {
+        title:"Project: Recipes"
+      },
+
     ],
 
   },
