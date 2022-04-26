@@ -48,7 +48,7 @@ const IndexPage = () => {
     window.location.href = "/admin"
   }
   const redirectSchool = () =>{
-    window.location.href = "/school"
+    window.location.href = "/school/devcourse/"
   }
 
   const redirectSocialHomePage = () =>{

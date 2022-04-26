@@ -1602,8 +1602,88 @@ export const courseStructuralData = [
         logo:logo,
         menu:[
           {
+            name:'Introduction',
+            detail:"Git is like a really epic save button for your files and directories. Officially, Git is a version control system.\n",
+            detail1:"A save in a text editor records all of the words in a document as a single file. You are only ever given one record of the file, such as ```essay.doc```, unless you make duplicate copies (which is difficult to remember to do and keep track of):```essay-draft1.doc, essay-draft2.doc, essay-final.doc```",
+            detail2:"However, a save in Git records differences in the files and folders AND keeps a historical record of each save. This feature is a game changer. As an individual developer, Git enables you to review how your project grows and to easily look at or restore file states from the past. Once connected to a network, Git allows you to push your project to GitHub or other alternatives such as: Bitbucket, Beanstalk, or GitLab for sharing and collaborating with other developers.",
+            detail3:"Please note, we only support GitHub within our curriculum, and will not help troubleshoot the alternatives.",
+            detail4:"While Git works on your local machine, GitHub is a remote storage facility on the web for all your coding projects. This means that by learning Git, you will get to showcase your portfolio on GitHub! This is really important because almost all software development companies consider using Git to be an essential skill for modern web developers. Having a GitHub portfolio will provide proof to future potential employers as to what you are capable of.",
+            detail5:"In this lesson, we will briefly explore the history of Git, what it is, and what it’s useful for.\n In the next lesson, we will go over the basic workflow for using Git, which should enhance your understanding and demonstrate why Git is so useful.Finally, you will set up a project with Git that will serve as a template for your future projects.",
+            detail6:"For now, let’s learn what Git is and why it’s so powerful!",
+            ancorName:"Introduction",
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+
+          {
+            name:'Lesson Overview:',
+            ancorName:"Lesson Overview:",
+            detail:"This section contains a general overview of topics that you will learn in this lesson.",
+            detail1:"Explain what Git and GitHub are and the differences between the two.",
+            detail2:"Describe the differences between Git and a text editor in terms of what they save and their record keeping.",
+            detail3:"Describe why Git is useful for an individual developer and a team of developers.",
+            detail4:"Does Git work at a local or remote level? What about GitHub",
+            detail5:"",
+            detail6:"",
+            popup1Name:"",
+            popup1:"",
+            popup2Name:"",
+            popup2:"",
+
+
+          },
+
+          {
+            name:'Assignment',
+            ancorName:"Assignment",
+            detail:"Read Chapter 1.1 through 1.4 to learn the differences between local, centralized, and distributed version control systems.",
+            detail1:"If you haven’t yet installed Git, visit the Setting Up Git lesson.",
+            detail2:"",
+            detail3:"",
+            detail4:"",
+            detail5:"",
+            detail6:"",
+            popup1Name:"1.1 Getting Started - About Version Control ",
+            popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650976729/msbGeanologyProfilePics/1.1getting_started_about_git_wqxaol.png",
+            popup2Name:"1.2 Getting Started - A Short History of Git",
+            popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650977107/msbGeanologyProfilePics/git2_abq1fv.png",
+            popup3Name:"Getting Started - What is Git?",
+            popup3:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650977345/msbGeanologyProfilePics/git_3_qspcar.png",
+
+
+          },
+
+          {
             name:'',
             detail:"",
+            detail1:"",
+            detail2:"",
+            detail3:"",
+            detail4:"",
+            detail5:"",
+            detail6:"",
+            ancorName:"",
+            popup1Name:"",
+            popup1:"",
+            popup2Name:"",
+            popup2:"",
+
+
+          },
+
+          {
+            name:'',
+            detail:"",
+            detail1:"",
+            detail2:"",
+            detail3:"",
+            detail4:"",
+            detail5:"",
+            detail6:"",
             ancorName:"",
             popup1Name:"",
             popup1:"",
@@ -1615,14 +1695,39 @@ export const courseStructuralData = [
         ],
         additionalRead:[
           {
-            title:"",
-            url:""
+            title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+            url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+          },
+          {
+            title:"Watch this video for some history on Git and GitHub, and make sure you know the difference between the two. Git is a technology used in the command line while GitHub is a website you can visit.",
+            url:"https://www.youtube.com/watch?v=1h9_cB9mPT8&feature=youtu.be&t=13s"
+          },
+          {
+            title:"Take a look at The Odin Project’s very own GitHub repository. This is where all the lessons are stored! While you’re there, look at all our contributors to gain an appreciation for how Git records all collaborative efforts and how GitHub visually represents this.",
+            url:"https://github.com/TheOdinProject/curriculum"
+          },
+          {
+            title:"Git and GitHub in plain English",
+            url:"https://blog.red-badger.com/2016/11/29/gitgithub-in-plain-english"
           },
         ],
         source:[
           {
             name:"TheodinProject",
             link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+          {
+            name:"Book of version contorl",
+            link:"https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"
+          },
+          {
+            name:"What is version control?",
+            link:"https://www.atlassian.com/git/tutorials/what-is-version-control"
+          },
+
+          {
+            name:"What is Git",
+            link:"https://www.atlassian.com/git/tutorials/what-is-git"
           },
         ],
         people:[]

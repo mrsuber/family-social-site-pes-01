@@ -67,6 +67,30 @@ const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) =>
               <p className="admin__resume__right-par">
                 {item.detail}
               </p>
+              {item.detail1 &&<p className="admin__resume__right-par">
+                {item.detail1}
+              </p>}
+
+              {item.detail2 &&<p className="admin__resume__right-par">
+                {item.detail2}
+              </p>}
+
+              {item.detail3 &&<p className="admin__resume__right-par">
+                {item.detail3}
+              </p>}
+
+              {item.detail4 &&<p className="admin__resume__right-par">
+                {item.detail4}
+              </p>}
+
+              {item.detail5 &&<p className="admin__resume__right-par">
+                {item.detail5}
+              </p>}
+
+              {item.detail6 &&<p className="admin__resume__right-par">
+                {item.detail6}
+              </p>}
+
               {item.popup1
                 ?<>
 
