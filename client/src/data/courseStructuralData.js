@@ -1895,6 +1895,1266 @@ export const courseStructuralData = [
     ],
 
 
-  }
+  },
+  {
+    learningTitle:"HTML Foundations",
+    companyHeadOfficeLocation:"Cameroon | Buea",
+    logo:logo,
+    companyLevel1:[
+      {
+        name:"Introduction to HTML and CSS",
+        courseStatus:"Incomplete",
+
+        courseNumber:"001",
+        logo:logo,
+        menu:[
+          {
+            name:'',
+            detail:"",
+            detail1:"",
+            detail2:"",
+            detail3:"",
+            detail4:"",
+            detail5:"",
+            detail6:"",
+            ancorName:"",
+            popup1Name:"",
+            popup1:"",
+            popup2Name:"",
+            popup2:"",
+          },
+        ],
+        additionalRead:[
+          {
+            title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+            url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+          },
+        ],
+        source:[
+          {
+            name:"TheodinProject",
+            link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+          },
+        ],
+      people:[]
+    },
+
+    {
+      name:"Elements and Tags",
+      courseStatus:"Incomplete",
+
+      courseNumber:"002",
+      logo:logo,
+      menu:[
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+      ],
+      additionalRead:[
+        {
+          title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+          url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+        },
+      ],
+      source:[
+        {
+          name:"TheodinProject",
+          link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+        },
+      ],
+    people:[]
+  },
+    {
+    name:"HTML Boilerplate",
+    courseStatus:"Incomplete",
+
+    courseNumber:"003",
+    logo:logo,
+    menu:[
+      {
+        name:'',
+        detail:"",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+    ],
+    additionalRead:[
+      {
+        title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+        url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+      },
+    ],
+    source:[
+      {
+        name:"TheodinProject",
+        link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+      },
+    ],
+  people:[]
+},
+    {
+  name:"Working with Text",
+  courseStatus:"Incomplete",
+
+  courseNumber:"004",
+  logo:logo,
+  menu:[
+    {
+      name:'',
+      detail:"",
+      detail1:"",
+      detail2:"",
+      detail3:"",
+      detail4:"",
+      detail5:"",
+      detail6:"",
+      ancorName:"",
+      popup1Name:"",
+      popup1:"",
+      popup2Name:"",
+      popup2:"",
+    },
+  ],
+  additionalRead:[
+    {
+      title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+      url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+    },
+  ],
+  source:[
+    {
+      name:"TheodinProject",
+      link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+    },
+  ],
+people:[]
+},
+    {
+name:"Lists",
+courseStatus:"Incomplete",
+
+courseNumber:"005",
+logo:logo,
+menu:[
+{
+  name:'',
+  detail:"",
+  detail1:"",
+  detail2:"",
+  detail3:"",
+  detail4:"",
+  detail5:"",
+  detail6:"",
+  ancorName:"",
+  popup1Name:"",
+  popup1:"",
+  popup2Name:"",
+  popup2:"",
+},
+],
+additionalRead:[
+{
+  title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+  url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+  name:"TheodinProject",
+  link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+    {
+name:"Links and Images",
+courseStatus:"Incomplete",
+
+courseNumber:"006",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+    {
+name:"Commit Messages",
+courseStatus:"Incomplete",
+
+courseNumber:"007",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+    {
+name:"Project: Recipes",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+
+
+    ]
+},
+
+
+{
+  learningTitle:"CSS Foundations",
+  companyHeadOfficeLocation:"Cameroon | Buea",
+  logo:logo,
+  companyLevel1:[
+    {
+      name:"CSS Foundations",
+      courseStatus:"Incomplete",
+
+      courseNumber:"001",
+      logo:logo,
+      menu:[
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+      ],
+      additionalRead:[
+        {
+          title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+          url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+        },
+      ],
+      source:[
+        {
+          name:"TheodinProject",
+          link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+        },
+      ],
+    people:[]
+  },
+
+  {
+    name:"Inspecting HTML and CSS",
+    courseStatus:"Incomplete",
+
+    courseNumber:"002",
+    logo:logo,
+    menu:[
+      {
+        name:'',
+        detail:"",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+    ],
+    additionalRead:[
+      {
+        title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+        url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+      },
+    ],
+    source:[
+      {
+        name:"TheodinProject",
+        link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+      },
+    ],
+  people:[]
+},
+  {
+  name:"The Box Model",
+  courseStatus:"Incomplete",
+
+  courseNumber:"003",
+  logo:logo,
+  menu:[
+    {
+      name:'',
+      detail:"",
+      detail1:"",
+      detail2:"",
+      detail3:"",
+      detail4:"",
+      detail5:"",
+      detail6:"",
+      ancorName:"",
+      popup1Name:"",
+      popup1:"",
+      popup2Name:"",
+      popup2:"",
+    },
+  ],
+  additionalRead:[
+    {
+      title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+      url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+    },
+  ],
+  source:[
+    {
+      name:"TheodinProject",
+      link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+    },
+  ],
+people:[]
+},
+  {
+name:"Block and Inline",
+courseStatus:"Incomplete",
+
+courseNumber:"004",
+logo:logo,
+menu:[
+  {
+    name:'',
+    detail:"",
+    detail1:"",
+    detail2:"",
+    detail3:"",
+    detail4:"",
+    detail5:"",
+    detail6:"",
+    ancorName:"",
+    popup1Name:"",
+    popup1:"",
+    popup2Name:"",
+    popup2:"",
+  },
+],
+additionalRead:[
+  {
+    title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+    url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+  },
+],
+source:[
+  {
+    name:"TheodinProject",
+    link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+  },
+],
+people:[]
+},
+  {
+name:"Introduction to Flexbox",
+courseStatus:"Incomplete",
+
+courseNumber:"005",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+  {
+name:"Growing and Shrinking",
+courseStatus:"Incomplete",
+
+courseNumber:"006",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+  {
+name:"Axes",
+courseStatus:"Incomplete",
+
+courseNumber:"007",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+  {
+name:"Alignment",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+{
+name:"Project: Landing Page",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+
+
+  ]
+},
+
+{
+  learningTitle:"JavaScript Basics",
+  companyHeadOfficeLocation:"Cameroon | Buea",
+  logo:logo,
+  companyLevel1:[
+    {
+      name:"Fundamentals Part 1",
+      courseStatus:"Incomplete",
+
+      courseNumber:"001",
+      logo:logo,
+      menu:[
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+      ],
+      additionalRead:[
+        {
+          title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+          url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+        },
+      ],
+      source:[
+        {
+          name:"TheodinProject",
+          link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+        },
+      ],
+    people:[]
+  },
+
+  {
+    name:"Fundamentals Part 2",
+    courseStatus:"Incomplete",
+
+    courseNumber:"002",
+    logo:logo,
+    menu:[
+      {
+        name:'',
+        detail:"",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+    ],
+    additionalRead:[
+      {
+        title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+        url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+      },
+    ],
+    source:[
+      {
+        name:"TheodinProject",
+        link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+      },
+    ],
+  people:[]
+},
+  {
+  name:"JavaScript Developer Tools",
+  courseStatus:"Incomplete",
+
+  courseNumber:"003",
+  logo:logo,
+  menu:[
+    {
+      name:'',
+      detail:"",
+      detail1:"",
+      detail2:"",
+      detail3:"",
+      detail4:"",
+      detail5:"",
+      detail6:"",
+      ancorName:"",
+      popup1Name:"",
+      popup1:"",
+      popup2Name:"",
+      popup2:"",
+    },
+  ],
+  additionalRead:[
+    {
+      title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+      url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+    },
+  ],
+  source:[
+    {
+      name:"TheodinProject",
+      link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+    },
+  ],
+people:[]
+},
+  {
+name:"Fundamentals Part 3",
+courseStatus:"Incomplete",
+
+courseNumber:"004",
+logo:logo,
+menu:[
+  {
+    name:'',
+    detail:"",
+    detail1:"",
+    detail2:"",
+    detail3:"",
+    detail4:"",
+    detail5:"",
+    detail6:"",
+    ancorName:"",
+    popup1Name:"",
+    popup1:"",
+    popup2Name:"",
+    popup2:"",
+  },
+],
+additionalRead:[
+  {
+    title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+    url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+  },
+],
+source:[
+  {
+    name:"TheodinProject",
+    link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+  },
+],
+people:[]
+},
+  {
+name:"Problem Solving",
+courseStatus:"Incomplete",
+
+courseNumber:"005",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+  {
+name:"Understanding Errors",
+courseStatus:"Incomplete",
+
+courseNumber:"006",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+  {
+name:"Project: Rock Paper Scissors",
+courseStatus:"Incomplete",
+
+courseNumber:"007",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+  {
+name:"Clean Code",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+{
+name:"Installing Node.js",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+{
+name:"Fundamentals Part 4",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+
+{
+name:"DOM Manipulation and Events",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+
+{
+name:"Revisiting Rock Paper Scissors",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+
+{
+name:"Project: Etch-a-Sketch",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+
+{
+name:"Fundamentals Part 5",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+
+{
+name:"Project: Calculator",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+{
+name:"Conclusion: Choose Your Path Forward",
+courseStatus:"Incomplete",
+
+courseNumber:"008",
+logo:logo,
+menu:[
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+],
+additionalRead:[
+{
+title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+},
+],
+source:[
+{
+name:"TheodinProject",
+link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+},
+],
+people:[]
+},
+
+
+  ]
+}
+
 
 ]
