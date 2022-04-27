@@ -2891,29 +2891,133 @@ people:[]
 name:"Fundamentals Part 4",
 courseStatus:"Incomplete",
 
-courseNumber:"008",
+courseNumber:"010",
 logo:logo,
 menu:[
-{
-name:'',
-detail:"",
-detail1:"",
-detail2:"",
-detail3:"",
-detail4:"",
-detail5:"",
-detail6:"",
-ancorName:"",
-popup1Name:"",
-popup1:"",
-popup2Name:"",
-popup2:"",
-},
-],
+        {
+        name:'Lesson Overview',
+        detail:"This section contains a general overview of topics that you will learn in this lesson.",
+        detail1:"1.) Using arrays.",
+        detail2:"2.) Using built-in array methods.",
+        detail3:"3.) Using loops.",
+        detail4:"4.) Getting your hands dirty with TDD exercises.",
+        detail5:"",
+        detail6:"",
+        ancorName:"Lesson Overview",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+
+        {
+        name:'Arrays',
+        detail:"Strings and numbers may be our building blocks, but as your scripts get more complex, you’re going to need a way to deal with large quantities of them. Luckily, JavaScript has a couple of data types that are used for just that. An Array is simply an ordered collection of items (Strings, numbers, or other things).",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Arrays",
+        popup1Name:"This tutorial is a great introduction.",
+        popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651061833/msbGeanologyProfilePics/arrays_k4slb6.png",
+        popup2Name:"This article covers some of the most useful built-in array methods. These fundamentals are something you’ll use every day, so don’t rush too much and miss out!",
+        popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651062197/msbGeanologyProfilePics/arraymethods_g7bybk.png",
+        },
+
+        {
+        name:'Loops',
+        detail:"Computers don’t get tired, and they’re really, really fast! For that reason, they are well suited to solving problems that involve doing calculations multiple times. In some cases, a computer will be able to repeat a task thousands or even millions of times in just a few short seconds where it might take a human many hours. (Obviously, speed here depends on the complexity of the calculation and the speed of the computer itself). One way to make a computer do a repetitive task is using a loop.",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Loops",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+
+        {
+        name:'Test Driven Development',
+        detail:"Test Driven Development (TDD) is a phrase you often hear in the dev world. It refers to the practice of writing automated tests that describe how your code should work before you actually write the code. For example, if you want to write a function that adds a couple of numbers, you would first write a test that uses the function and supplies the expected output. The test will fail before you write your code, and you should be able to know that your code works correctly when the test passes.",
+        detail1:"In many ways, TDD is much more productive than writing code without tests. If we didn’t have the test for the adding function above, we would have to run the code ourselves over and over, plugging in different numbers until we were sure that it was working… not a big deal for a simple ```add(2, 2)```, but imagine having to do that for more complicated functions, like checking whether or not someone has won a game of tic tac toe: (game_win(['o', null,'x',null,'x',null,'x', 'o', 'o'])). If you didn’t do TDD, then you might actually have to play multiple games against yourself just to test if the function was working correctly!",
+        detail2:"We will teach you the art of actually writing these tests later in the course. The following practice has the tests already written out for you. All you have to do is set up the testing environment, read the specs, and write the code that makes them pass!",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Test Driven Development",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+
+        {
+        name:'Practice',
+        detail:"Follow the steps below to get started. Once you complete Step 1, be sure to use the README for each individual exercise in order to do them correctly.",
+        detail1:"step 1 Read setting up files and jest in the additional resources",
+        detail2:"Now that you have cloned the repository and run npm install to install Jest, complete these exercises in the following order:",
+        detail3:"helloWorld (This exercise is intentionally very simple to ensure that you have set up everything properly!)",
+        detail4:"repeatString ==> reverseString ==> removeFromArray ==>  sumAll ==>  leapYears ==> tempConversion",
+        detail5:"Once you have a working solution, see how it compares to the exercise’s given solution. Solutions for the exercises can be found on the ‘solutions’ branch of the repo.",
+        detail6:"",
+        ancorName:"Practice",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+
+        {
+        name:'',
+        detail:"",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+
+        {
+        name:'',
+        detail:"",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+    ],
 additionalRead:[
+  {
+    title:"setting up file and jest",
+    url:"https://github.com/TheOdinProject/javascript-exercises#readme"
+  },
 {
-title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
-url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+title:"Read this MDN article. It’s a longer one, but make sure you tackle the ‘Active Learning’ sections at the bottom of the page.",
+url:"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code"
+},
+{
+title:"Once again, same info, slightly different context from JavaScript.info. (Skim the info if you think you know it all, but don’t forget the tasks at the end of the page. You learn best by doing.)",
+url:"https://javascript.info/while-for"
 },
 ],
 source:[
@@ -2921,6 +3025,14 @@ source:[
 name:"TheodinProject",
 link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
 },
+{
+  name:"w3schools",
+  link:"https://www.w3schools.com/js/js_array_methods.asp"
+},
+{
+  name:"looping",
+  link:"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code"
+}
 ],
 people:[]
 },
