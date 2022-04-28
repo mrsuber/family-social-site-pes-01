@@ -125,3 +125,7 @@ export {default as WorldMapMig} from './admin/MissingMigrandsWorldMap/WorldMap_m
 export {default as AxisBottomMigMap} from './admin/MissingMigrandsWorldMap/AxisBottom_map_mig'
 export {default as AxisLeftMigMap} from './admin/MissingMigrandsWorldMap/AxisLeft_map_mig'
 export {default as MarksMigMap} from './admin/MissingMigrandsWorldMap/Marks_map_mig'
+
+
+// exporting expense components
+export {default as AdminExpensForm} from './admin/expense/AdminExpenseForm/AdminExpenseForm'
