@@ -117,6 +117,26 @@ const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) =>
             ))
             :<span className="admin__worning-update">update Details</span>
           }
+          {!data.KnowledgeCheck || data.KnowledgeCheck.length===0
+            ?<></>
+
+            :<>
+            <h2 className="admin__resume__right-title">Knowledge Check</h2>
+            <p className="admin__resume__right-par" style={{color:"#00ffe5"}}>This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, Go back and study again.</p>
+            </>
+
+          }
+          {
+
+            data.KnowledgeCheck && data.KnowledgeCheck.length!==0
+            ?data.KnowledgeCheck.map((item,index)=>(
+              <p className="admin__resume__right-par" key={index} style={{color:"#00ffe5"}}>
+                {`${index+1}.) `}{item.check}
+              </p>
+            ))
+            :<></>
+          }
+
           {!data.additionalRead || data.additionalRead.length===0
             ?<></>
             :<h2 className="admin__resume__right-title">Additional Resources</h2>
@@ -126,8 +146,8 @@ const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) =>
           {
 
             data.additionalRead && data.additionalRead.length!==0
-            ?data.additionalRead.map((item)=>(
-              <AdminCourseUrlPopUp title={item.title} url={item.url} />
+            ?data.additionalRead.map((item,i)=>(
+              <AdminCourseUrlPopUp title={item.title} url={item.url} index={i}/>
             ))
             :<></>
           }

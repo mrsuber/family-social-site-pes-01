@@ -2891,29 +2891,133 @@ people:[]
 name:"Fundamentals Part 4",
 courseStatus:"Incomplete",
 
-courseNumber:"008",
+courseNumber:"010",
 logo:logo,
 menu:[
-{
-name:'',
-detail:"",
-detail1:"",
-detail2:"",
-detail3:"",
-detail4:"",
-detail5:"",
-detail6:"",
-ancorName:"",
-popup1Name:"",
-popup1:"",
-popup2Name:"",
-popup2:"",
-},
-],
+        {
+        name:'Lesson Overview',
+        detail:"This section contains a general overview of topics that you will learn in this lesson.",
+        detail1:"1.) Using arrays.",
+        detail2:"2.) Using built-in array methods.",
+        detail3:"3.) Using loops.",
+        detail4:"4.) Getting your hands dirty with TDD exercises.",
+        detail5:"",
+        detail6:"",
+        ancorName:"Lesson Overview",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+
+        {
+        name:'Arrays',
+        detail:"Strings and numbers may be our building blocks, but as your scripts get more complex, you’re going to need a way to deal with large quantities of them. Luckily, JavaScript has a couple of data types that are used for just that. An Array is simply an ordered collection of items (Strings, numbers, or other things).",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Arrays",
+        popup1Name:"This tutorial is a great introduction.",
+        popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651061833/msbGeanologyProfilePics/arrays_k4slb6.png",
+        popup2Name:"This article covers some of the most useful built-in array methods. These fundamentals are something you’ll use every day, so don’t rush too much and miss out!",
+        popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651062197/msbGeanologyProfilePics/arraymethods_g7bybk.png",
+        },
+
+        {
+        name:'Loops',
+        detail:"Computers don’t get tired, and they’re really, really fast! For that reason, they are well suited to solving problems that involve doing calculations multiple times. In some cases, a computer will be able to repeat a task thousands or even millions of times in just a few short seconds where it might take a human many hours. (Obviously, speed here depends on the complexity of the calculation and the speed of the computer itself). One way to make a computer do a repetitive task is using a loop.",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Loops",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+
+        {
+        name:'Test Driven Development',
+        detail:"Test Driven Development (TDD) is a phrase you often hear in the dev world. It refers to the practice of writing automated tests that describe how your code should work before you actually write the code. For example, if you want to write a function that adds a couple of numbers, you would first write a test that uses the function and supplies the expected output. The test will fail before you write your code, and you should be able to know that your code works correctly when the test passes.",
+        detail1:"In many ways, TDD is much more productive than writing code without tests. If we didn’t have the test for the adding function above, we would have to run the code ourselves over and over, plugging in different numbers until we were sure that it was working… not a big deal for a simple ```add(2, 2)```, but imagine having to do that for more complicated functions, like checking whether or not someone has won a game of tic tac toe: (game_win(['o', null,'x',null,'x',null,'x', 'o', 'o'])). If you didn’t do TDD, then you might actually have to play multiple games against yourself just to test if the function was working correctly!",
+        detail2:"We will teach you the art of actually writing these tests later in the course. The following practice has the tests already written out for you. All you have to do is set up the testing environment, read the specs, and write the code that makes them pass!",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Test Driven Development",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+
+        {
+        name:'Practice',
+        detail:"Follow the steps below to get started. Once you complete Step 1, be sure to use the README for each individual exercise in order to do them correctly.",
+        detail1:"step 1 Read setting up files and jest in the additional resources",
+        detail2:"Now that you have cloned the repository and run npm install to install Jest, complete these exercises in the following order:",
+        detail3:"helloWorld (This exercise is intentionally very simple to ensure that you have set up everything properly!)",
+        detail4:"repeatString ==> reverseString ==> removeFromArray ==>  sumAll ==>  leapYears ==> tempConversion",
+        detail5:"Once you have a working solution, see how it compares to the exercise’s given solution. Solutions for the exercises can be found on the ‘solutions’ branch of the repo.",
+        detail6:"",
+        ancorName:"Practice",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+
+        {
+        name:'',
+        detail:"",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+
+        {
+        name:'',
+        detail:"",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+    ],
 additionalRead:[
+  {
+    title:"setting up file and jest",
+    url:"https://github.com/TheOdinProject/javascript-exercises#readme"
+  },
 {
-title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
-url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+title:"Read this MDN article. It’s a longer one, but make sure you tackle the ‘Active Learning’ sections at the bottom of the page.",
+url:"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code"
+},
+{
+title:"Once again, same info, slightly different context from JavaScript.info. (Skim the info if you think you know it all, but don’t forget the tasks at the end of the page. You learn best by doing.)",
+url:"https://javascript.info/while-for"
 },
 ],
 source:[
@@ -2921,6 +3025,14 @@ source:[
 name:"TheodinProject",
 link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
 },
+{
+  name:"w3schools",
+  link:"https://www.w3schools.com/js/js_array_methods.asp"
+},
+{
+  name:"looping",
+  link:"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code"
+}
 ],
 people:[]
 },
@@ -2929,9 +3041,159 @@ people:[]
 name:"DOM Manipulation and Events",
 courseStatus:"Incomplete",
 
-courseNumber:"008",
+courseNumber:"011",
 logo:logo,
 menu:[
+{
+name:'Introduction',
+detail:"One of the most unique and useful abilities of JavaScript is its ability to manipulate the DOM. But what is the DOM, and how do we go about changing it? Let’s jump right in…",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"Introduction",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'Lesson Overview',
+detail:"This section contains a general overview of topics that you will learn in this lesson.",
+detail1:"1.) Explain the difference between a “node” and an “element”.",
+detail2:"2.) Explain how to target nodes with “selectors”.",
+detail3:"3.) Explain the basic methods for finding/adding/removing and altering DOM nodes.",
+detail4:"4.) Explain the difference between a “nodelist” and an “array of nodes”.",
+detail5:"5.) Explain what “bubbling” is and how it works.",
+detail6:"",
+ancorName:"Lesson Overview",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'DOM - Document Object Model',
+detail:"The DOM (or Document Object Model) is a tree-like representation of the contents of a webpage - a tree of “nodes” with different relationships depending on how they’re arranged in the HTML document.",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"DOM - Document Object Model",
+popup1Name:"DOM sample code",
+popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651144787/msbGeanologyProfilePics/Domcode_s1mpqn.png",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'Targeting Nodes with Selectors',
+detail:"When working with the DOM, you use “selectors” to target the nodes you want to work with. You can use a combination of CSS-style selectors and relationship properties to target the nodes you want. Let’s start with CSS-style selectors. In the above example, you could use the following selectors to refer to",
+detail1:'<div class="display"></div>:',
+detail2:"div.display",
+detail3:".display",
+detail4:"#container > .display",
+detail5:"div#container > div.display",
+detail6:"",
+ancorName:"Targeting Nodes with Selectors",
+popup1Name:"code sample",
+popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651145379/msbGeanologyProfilePics/code_sample1_jgmoie.png",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'DOM methods',
+detail:"When your HTML code is parsed by a web browser, it is converted to the DOM as was mentioned above. One of the primary differences is that these nodes are objects that have many properties and methods attached to them. These properties and methods are the primary tools we are going to use to manipulate our webpage with JavaScript. We’ll start with the query selectors - those that help you target nodes.",
+detail1:"Query Selectors:",
+detail2:"element.querySelector(selector) returns a reference to the first match of selector",
+detail3:"element.querySelectorAll(selectors) returns a “nodelist” containing references to all of the matches of the selectors",
+detail4:"*There are several other, more specific queries, that offer potential (marginal) performance benefits, but we won’t be going over them now.",
+detail5:"It’s important to note that when using querySelectorAll, the return value is not an array. It looks like an array, and it somewhat acts like an array, but it’s really a “nodelist”. The big distinction is that several array methods are missing from nodelists. One solution, if problems arise, is to convert the nodelist into an array. You can do this with Array.from() or the spread operator.",
+detail6:"",
+ancorName:"DOM methods",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'Element Creation',
+detail:"document.createElement(tagName, [options]) creates a new element of tag type tagName. [options] in this case means you can add some optional parameters to the function. Don’t worry about these at this point.",
+detail1:"const div = document.createElement('div');",
+detail2:"This function does NOT put your new element into the DOM - it simply creates it in memory. This is so that you can manipulate the element (by adding styles, classes, ids, text, etc.) before placing it on the page. You can place the element into the DOM with one of the following methods.",
+detail3:"Append Elements: ==>parentNode.appendChild(childNode) appends childNode as the last child of parentNode",
+detail4:"Append Elements: ==>parentNode.insertBefore(newNode, referenceNode) inserts newNode into parentNode before referenceNode",
+detail5:"Remove Elements: ==>parentNode.removeChild(child) removes child from parentNode on the DOM and returns a reference to child",
+detail6:"",
+ancorName:"Element Creation",
+popup1Name:"More on Elements",
+popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651149315/msbGeanologyProfilePics/moreonalternatingelement_g99bbc.png",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'Important note:',
+detail:"Your JavaScript, for the most part, is run whenever the JS file is run, or when the script tag is encountered in the HTML. If you are including your JavaScript at the top of your file, many of these DOM manipulation methods will not work because the JS code is being run before the nodes are created in the DOM. The simplest way to fix this is to include your JavaScript at the bottom of your HTML file so that it gets run after the DOM nodes are parsed and created.",
+detail1:"Alternatively, you can link the JavaScript file in the <head> of your HTML document. Use the <script> tag with the src attribute containing the path to the JS file, and include the defer keyword to load the file after the HTML is parsed, as such:",
+detail2:"```<head>",
+detail3:'<script src="js-file.js" defer></script>',
+detail4:"</head>```",
+detail5:"",
+detail6:"",
+ancorName:"Important note:",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'Exercise',
+detail:"Copy the example above into files on your own computer. To make it work you’ll need to supply the rest of the HTML skeleton and either link your JavaScript file, or put the JavaScript into a script tag on the page. Make sure everything is working before moving on!",
+detail1:"Add the following elements to the container using ONLY JavaScript and the DOM methods shown above.",
+detail2:"1) a <p> with red text that says “Hey I’m red!”",
+detail3:"2) an <h3> with blue text that says “I’m a blue h3!”",
+detail4:"3) a <div> with a black border and pink background color with the following elements inside of it: ==>a) another <h1> that says “I’m in a div” ==>b) a <p> that says “ME TOO!” ==>c)Hint for this one: after creating the <div> with createElement, append the <h1> and <p> to it before adding it to the container.",
+detail5:"",
+detail6:"",
+ancorName:"Exercise",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'Events',
+detail:"Now that we have a handle on manipulating the DOM with JavaScript, the next step is learning how to make that happen dynamically, or on demand! Events are how you make that magic happen on your pages. Events are actions that occur on your webpage such as mouse-clicks or keypresses, and using JavaScript we can make our webpage listen and react to these events.",
+detail1:"There are three primary ways to go about this: you can attach functions’ attributes directly on your HTML elements, you can set the “on_event_” property on the DOM object in your JavaScript, or you can attach event listeners to the nodes in your JavaScript. Event listeners are definitely the preferred method, but you will regularly see the others in use, so we’re going to cover all three.",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"Events",
+popup1Name:"We’re going to create 3 buttons that all alert “Hello World” when clicked. Try them all out using your own HTML file, or using something like CodePen.",
+popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651151359/msbGeanologyProfilePics/practice_wct0vl.png",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'Practice',
+detail:"Manipulating web pages is the primary benefit of the JavaScript language! These techniques are things that you are likely to be messing with every day as a front-end developer, so let’s practice!",
+detail1:"Follow the practice links in the additional resource",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"Practice",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
 {
 name:'',
 detail:"",
@@ -2947,11 +3209,227 @@ popup1:"",
 popup2Name:"",
 popup2:"",
 },
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+
+],
+KnowledgeCheck:[
+  {
+    check:"What is the DOM?"
+  },
+  {
+    check:"How do you target the nodes you want to work with?"
+  },
+  {
+    check:"How do you create an element in the DOM?"
+  },
+  {
+    check:"How do you add an element to the DOM?"
+  },
+  {
+    check:"How do you remove an element from the DOM?"
+  },
+  {
+    check:"How can you alter an element in the DOM?"
+  },
+  {
+    check:"When adding text to a DOM element, should you use textContent or innerHTML? Why?"
+  },
+  {
+    check:"Where should you include your JavaScript tag in your HTML file when working with DOM nodes?"
+  },
+  {
+    check:"How do “events” and “listeners” work?"
+  },
+  {
+    check:"What are three ways to use events in your code?"
+  },
+  {
+    check:"Why are event listeners the preferred way to handle events?"
+  },
+  {
+    check:"What are the benefits of using named functions in your listeners?"
+  },
+  {
+    check:"How do you attach listeners to groups of nodes?"
+  },
+  {
+    check:"What is the difference between the return values of querySelector and querySelectorAll?"
+  },
+  {
+    check:"What does a “nodelist” contain?"
+  },
+  {
+    check:"Explain the difference between “capture” and “bubbling”."
+  },
+
 ],
 additionalRead:[
 {
-title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
-url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+title:"Read about spread operator.",
+url:"https://developer.mozilla.org/en-US/docs/web/javascript/reference/operators/spread_syntax"
+},
+{
+  title:"Applying CSS and JavaScript to HTML",
+  url:"https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#applying_css_and_javascript_to_html"
+},
+{
+  title:"Grab the first exercise in Wes Bos’s JavaScript30 program by cloning the repo at https://github.com/wesbos/JavaScript30.",
+  url:"https://github.com/wesbos/JavaScript30"
+},
+{
+  title:"Code along with the Video Tutorial to build the rest of the exercise.",
+  url:"https://www.youtube.com/watch?v=VuN8qwZoego"
+},
+{
+  title:"Watch the Event Capture, Propagation and Bubbling video from Wes Bos’s JavaScript30 program. If you want to code along with the video, you can use the contents of folder #25 from the repo you cloned above.",
+  url:"https://www.youtube.com/watch?v=F1anRyL37lE"
+},
+{
+  title:"Eloquent JS - DOM",
+  url:"https://eloquentjavascript.net/14_dom.html"
+},
+{
+  title:"Eloquent JS - Handling Events",
+  url:"https://eloquentjavascript.net/15_event.html"
+},
+{
+  title:"DOM Enlightenment",
+  url:"http://domenlightenment.com/"
+},
+{
+  title:"Plain JavaScript is a reference of JavaScript code snippets and explanations involving the DOM, as well as other aspects of JS. If you’ve already learned jQuery, it will help you figure out how to do things without it.",
+  url:"https://plainjs.com/javascript/"
+},
+{
+  title:"This W3Schools article offers simple and easy-to-understand lessons on the DOM.",
+  url:"https://www.w3schools.com/js/js_htmldom.asp"
+},
+{
+  title:"JS DOM Crash Course is an extensive and well explained 4 part video series on the DOM by Traversy Media.",
+  url:"https://www.youtube.com/watch?v=0ik6X4DJKCc&list=PLillGF-RfqbYE6Ik_EuXA2iZFcE082B3s"
+},
+{
+  url:"https://www.digitalocean.com/community/tutorial_series/understanding-the-dom-document-object-model",
+  title:"Understanding The Dom is an aptly named article-based tutorial series by DigitalOcean."
 },
 ],
 source:[

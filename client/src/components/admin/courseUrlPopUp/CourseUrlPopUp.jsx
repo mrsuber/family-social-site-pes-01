@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './CourseImagePopUp.css'
 
-const CourseUrlPopUp = ({url,title}) => {
+const CourseUrlPopUp = ({url,title,index}) => {
   const [imagePopup,setImagePopup]=useState(false)
   return (
     <>
@@ -33,7 +33,7 @@ const CourseUrlPopUp = ({url,title}) => {
     }
     */}
     <div>
-      <a href={url} target="_blank" rel="noreferrer">{title}</a>
+      <a href={url} target="_blank" rel="noreferrer">{`${index+1}.) `}{title}</a>
     </div>
     </>
   )
