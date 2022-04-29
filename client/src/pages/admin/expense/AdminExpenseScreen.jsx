@@ -9,7 +9,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
 import {Grid} from '@material-ui/core'
 import useStyles from './styles'
-
+import {Provider} from '../../../context/context'
 
 
 const AdminExpenseScreen = () => {
@@ -17,6 +17,7 @@ const AdminExpenseScreen = () => {
     const dispatch = useDispatch()
     const classes = useStyles()
   return (
+    <Provider>
     <div className="admin__body">
     <input type="checkbox" name="admin__menu-toggle" id="admin__menu-toggle"/>
     <div className="admin__overlay">
@@ -69,6 +70,7 @@ const AdminExpenseScreen = () => {
     </div>
 
     </div>
+    </Provider>
   )
 }
 
