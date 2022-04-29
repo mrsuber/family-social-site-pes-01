@@ -1,7 +1,8 @@
 import React from 'react'
-import {AdminExpensForm} from '../../../../components'
+import {AdminExpensForm,AdminExpenseList} from '../../../../components'
 import {Card, CardHeader,CardContent,Typography,Grid,Divider} from '@material-ui/core'
 import useStyles from './styles'
+
 
 
 const AdminExpenseMain = () => {
@@ -21,7 +22,7 @@ const AdminExpenseMain = () => {
       <CardContent className={classes.cartContent}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            {/*<List/> */}
+            <AdminExpenseList />
           </Grid>
 
         </Grid>
