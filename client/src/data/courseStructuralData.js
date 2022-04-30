@@ -1569,8 +1569,8 @@ export const courseStructuralData = [
             ancorName:"Setup Git",
             popup1Name:"Setup Git",
             popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1650889082/msbGeanologyProfilePics/setting_up_git_rjsjuv.png",
-            // popup2Name:"",
-            // popup2:"",
+            popup2Name:"setup Git and Github",
+            popup2:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651294332/msbGeanologyProfilePics/ssh_key_for_github_niq3zn.png",
 
 
           },
