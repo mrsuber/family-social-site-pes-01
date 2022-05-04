@@ -120,6 +120,34 @@ import lg2512 from "../images/porfolioImages/portfolio/large/project-25/a3.png"
 const portfolio=[
   {
     id:6,
+    thumb:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651678239/msbGeanologyProfilePics/applicationTracker1_ypxctj.png",
+    larg:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651678239/msbGeanologyProfilePics/applicationTracker1_ypxctj.png"+","+"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651678296/msbGeanologyProfilePics/applicationTracker3_yj0bg6.png"+","+"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651678284/msbGeanologyProfilePics/applicationTracker2_owmr9k.png",
+    title:'Application Tracker',
+    category:'web-application',
+    tools:'html, css, javascript, React, Nodejs, MongoDB',
+    client:'personal project',
+    date:"April 01 2022",
+    siteName:"https://msb-geneasocial.herokuapp.com/admin/application",
+    siteLink:"https://msb-geneasocial.herokuapp.com/admin/application",
+    gitHubLink:"https://github.com/mrsuber/family-social-site-pes-01",
+    description:"This is an application for tracking aplications and scaning a company exicutive members, know about the vision of the company and more"
+  },
+  {
+    id:6.8,
+    thumb:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651676188/msbGeanologyProfilePics/expenseTracker2_cnqslb.png",
+    larg:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651676188/msbGeanologyProfilePics/expenseTracker2_cnqslb.png"+","+"https://res.cloudinary.com/msb-geneasocial/image/upload/v1651676194/msbGeanologyProfilePics/expenseTracker1_xamosq.png",
+    title:'Expense Tracker',
+    category:'web-application',
+    tools:'html, css, javascript, React, Nodejs, MongoDB',
+    client:'personal project',
+    date:"may 01 2022",
+    siteName:"https://msb-geneasocial.herokuapp.com/admin/expense",
+    siteLink:"https://msb-geneasocial.herokuapp.com/admin/expense",
+    gitHubLink:"https://github.com/mrsuber/family-social-site-pes-01",
+    description:"This is an expense tracker that track you income and expenditures and plot carts with respect to your finance"
+  },
+  {
+    id:6.9,
     thumb:pf25,
     larg:lg252+","+lg251+","+lg253+","+lg254+","+lg255+","+lg256+","+lg257+","+lg258+","+lg259+","+lg2510+","+lg2511+","+lg2512,
     title:'Digital Experts',
