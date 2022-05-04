@@ -9,7 +9,6 @@ import useStyles from './styles'
 const AdminExpenseDetails = ({title}) => {
   const classes = useStyles();
   const {total, chartData} = useTransactions(title)
-  console.log("chartData",chartData)
   return (
     <Card className={title === 'Income' ? classes.income : classes.expense}>
       <CardHeader title={title}/>
