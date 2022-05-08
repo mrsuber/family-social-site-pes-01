@@ -2056,6 +2056,52 @@ export const courseStructuralData = [
       logo:logo,
       menu:[
         {
+          name:'Introduction',
+          detail:"HTML (HyperText Markup Language) defines the structure and content of webpages. We use HTML elements to create all of the paragraphs, headings, lists, images, and links that make up a typical webpage. In this lesson, we will explore how HTML elements work.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Introduction",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Lesson Overview',
+          detail:"This section contains a general overview of topics that you will learn in this lesson.",
+          detail1:"Explain what HTML Tags are",
+          detail2:"Explain what HTML elements are",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Lesson Overview",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Elements and Tags',
+          detail:"Almost all elements on an HTML page are just pieces of content wrapped in opening and closing HTML tags.",
+          detail1:"Opening tags tell the browser this is the start of an HTML element. They are comprised of a keyword enclosed in angle brackets <>. For example, an opening paragraph tag looks like this: <p>.",
+          detail2:"Closing tags tell the browser where an element ends. They are almost the same as opening tags; the only difference is that they have a forward slash before the keyword. For example, a closing paragraph tag looks like this: </p>.",
+          detail3:"You can think of elements as containers for content. The opening and closing tags tell the browser what content the element contains. The browser can then use that information to determine how it should interpret and format the content.",
+          detail4:"There are some HTML elements that do not have a closing tag. These are known as empty elements because they don’t wrap any content. We will encounter a few of these in later lessons, but for the most part, elements will have both opening and closing tags.",
+          detail5:"HTML has a vast list of predefined tags that you can use to create all kinds of different elements. It is important to use the correct tags for content. Using the correct tags can have a big impact on two aspects of your sites: how they are ranked in search engines; and how accessible they are to users who rely on assistive technologies, like screen readers, to use the internet.",
+          detail6:"Using the correct elements for content is called semantic HTML. We will explore this in much more depth later on in the curriculum.",
+          ancorName:"Elements and Tags",
+          popup1Name:"A full paragraph element looks like this:",
+          popup1:"https://cdn.statically.io/gh/TheOdinProject/curriculum/5e4a39cf0c23dd96f988bbf8197a9370a50dc2c4/html_css/v2/foundations/html-foundations/imgs/element-diagram.png",
+          popup2Name:"",
+          popup2:"",
+        },
+
+        {
           name:'',
           detail:"",
           detail1:"",
@@ -2070,11 +2116,29 @@ export const courseStructuralData = [
           popup2Name:"",
           popup2:"",
         },
+
       ],
+
       additionalRead:[
         {
-          title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
-          url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+          title:"vast list of predefined tags",
+          url:"https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
+        },
+        {
+          title:"Watch Kevin Powell’s Introduction to HTML Video",
+          url:"https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-"
+        },
+        {
+          title:"Don’t Fear the Internet’s video about HTML",
+          url:"http://www.dontfeartheinternet.com/02-html/"
+        },
+      ],
+      KnowledgeCheck:[
+        {
+          check:"What is an HTML tag?"
+        },
+        {
+          check:"What are the three parts of an HTML element?"
         },
       ],
       source:[
@@ -2093,6 +2157,172 @@ export const courseStructuralData = [
     logo:logo,
     menu:[
       {
+        name:'Introduction',
+        detail:"All HTML documents have the same basic structure or boilerplate that needs to be in place before anything useful can be done. In this lesson, we will explore the different parts of this boilerplate and see how it all fits together.",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Introduction",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'Lesson Overview',
+        detail:"This section contains a general overview of topics that you will learn in this lesson.",
+        detail1:"How to write the basic boilerplate for an HTML document",
+        detail2:"How to open HTML documents in your browser",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Lesson Overview",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'Creating an HTML File',
+        detail:"To demonstrate HTML boilerplate, we first need an HTML file to work with.",
+        detail1:"Create a new folder on your computer and name it html-boilerplate. Within that folder create a new file and name it index.html.",
+        detail2:"You’re probably already familiar with a lot of different types of files, for example doc, pdf, and image files.",
+        detail3:"To let the computer know we want to create an HTML file, we need to append the filename with the .html extension as we have done when creating the index.html file.",
+        detail4:"It is worth noting that we named our HTML file index. We should always name the HTML file that will contain the homepage of our websites index.html. This is because web servers will by default look for an index.html page when users land on our websites - and not having one will cause big problems.",
+        detail5:"",
+        detail6:"",
+        ancorName:"Creating an HTML File",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'The DOCTYPE',
+        detail:"Every HTML page starts with a doctype declaration. The doctype’s purpose is to tell the browser what version of HTML it should use to render the document. The latest version of HTML is HTML5, and the doctype for that version is simply <!DOCTYPE html>.",
+        detail1:"The doctypes for older versions of HTML were a bit more complicated. For example, this is the doctype declaration for HTML4:",
+        detail2:'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">',
+        detail3:"However, we probably won’t ever want to be using an older version of HTML, and so we’ll always use <!DOCTYPE html>.",
+        detail4:"Open the index.html file created earlier in your text editor and add <!DOCTYPE html> to the very first line.",
+        detail5:"",
+        detail6:"",
+        ancorName:"The DOCTYPE",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'HTML Element',
+        detail:"After we declare the doctype, we need to provide an <html> element. This is what’s known as the root element of the document, meaning that every other element in the document will be a descendant of it.",
+        detail1:"This becomes more important later on when we learn about manipulating HTML with JavaScript. For now, just know that the HTML element should be included on every HTML document.",
+        detail2:"Back in the index.html file, let’s add the <html> element by typing out its opening and closing tags, like so:",
+        detail3:'<!DOCTYPE html><html lang="en"></html>',
+        detail4:"What is the lang attribute?",
+        detail5:"lang specifies the language of the text content in that element. This attribute is primarily used for improving accessibility of the webpage. It allows assistive technologies, for example screen readers, to adapt according to the language and invoke correct pronunciation.",
+        detail6:"",
+        ancorName:"HTML Element",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+
+      {
+        name:'Head Element',
+        detail:"The <head> element is where we put important meta-information about our webpages, and stuff required for our webpages to render correctly in the browser. Inside the <head>, we should not use any element that displays content on the webpage.",
+        detail1:"",
+        detail2:'',
+        detail3:'',
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Head Element",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'The Charset Meta Element',
+        detail:'We should always have the meta tag for the charset encoding of the webpage in the head element: <meta charset="utf-8">.',
+        detail1:"Setting the encoding is very important because it ensures that the webpage will display special symbols and characters from different languages correctly in the browser.",
+        detail2:"There are many more elements that can go within the head of an HTML document. However, for now it’s only crucial to know about the two elements we have covered here. We will introduce more elements that go into the head throughout the rest of the curriculum.",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"The Charset Meta Element",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'Title Element',
+        detail:"Another element we should always include in the head of an HTML document is the title element:",
+        detail1:"<title>My First Webpage</title>",
+        detail2:"The title element is used to give webpages a human-readable title which is displayed in our webpage’s browser tab.",
+        detail3:"If we didn’t include a title element, the webpage’s title would default to its file name. In our case that would be index.html, which isn’t very meaningful for users; this would make it very difficult to find our webpage if the user has many browser tabs open.",
+        detail4:"Back in our index.html file, let’s add a head element with a charset meta element and a title within it. The head element goes within the HTML element and should always be the first element under the opening <html> tag:",
+        detail5:'<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>My First Webpage</title></head></html>',
+        detail6:"",
+        ancorName:"Title Element",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'Body Element',
+        detail:"The final element needed to complete the HTML boilerplate is the <body> element. This is where all the content that will be displayed to users will go - the text, images, lists, links, and so on.",
+        detail1:"To complete the boilerplate, add a body element to the index.html file. The body element also goes within the HTML element and is always below the head element, like so:",
+        detail2:'<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>My First Webpage</title></head><body></body></html>',
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Body Element",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'Viewing HTML Files in the Browser',
+        detail:"The HTML boilerplate in the index.html file is complete at this point, but how do you view it in the browser? There are a couple of different options:",
+        detail1:"A note: In order to avoid branching our lesson’s instructions to accommodate for all of the differences between browsers, we are going to be using Google Chrome as our primary browser for the remainder of this course. All references to the browser will pertain specifically to Google Chrome. We strongly suggest that you use Google Chrome for all of your testing going forward.",
+        detail2:"1. You can drag and drop an HTML file from your text editor into the address bar of your browser.",
+        detail3:"2. You can find the HTML file in your file system and then double click it. This will open up the file in the default browser your system uses.",
+        detail4:"3.You can use the terminal to open the file in your browser.==>Ubuntu - Navigate to the directory containing the file and use google-chrome index.html ==>macOS - Navigate to the directory containing the file and use open ./index.html",
+        detail5:"Using one of the methods above, open up the index.html file we have been working on. You’ll notice the screen is blank. This is because we don’t have anything in our body to display.",
+        detail6:'Back in the index.html file, let’s add a heading (more on these later) to the body, and save the file: ``` <!DOCTYPE html><html lang="en"> <head>  <meta charset="UTF-8">  <title>My First Webpage</title> </head> <body>   <h1>Hello World!</h1>  </body></html>``` Now, if you refresh the page in the browser, you should see the changes take effect, and the heading “Hello World!” will be displayed.',
+        ancorName:"Viewing HTML Files in the Browser",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'Assignment',
+        detail:"Build some muscle memory by deleting the contents of the index.html file and trying to write out all the boilerplate again from memory. Don’t worry if you have to peek at the lesson content the first few times if you get stuck. Just keep going until you can do it a couple of times from memory.",
+        detail1:"Run your boilerplate through an HTML validator. Validators ensure your markup is correct and are an excellent learning tool, as they provide feedback on syntax errors you may be making often and aren’t aware of, such as missing closing tags and extra spaces in your HTML.",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Assignment",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
         name:'',
         detail:"",
         detail1:"",
@@ -2110,8 +2340,34 @@ export const courseStructuralData = [
     ],
     additionalRead:[
       {
-        title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
-        url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+        title:"Watch and follow along to Kevin Powell’s brilliant Building Your First Web Page video",
+        url:"https://www.youtube.com/watch?list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-&t=93&v=V8UAEoOvqFg&feature=youtu.be"
+      },
+      {
+        title:" HTML validator",
+        url:"https://validator.w3.org/"
+      },
+      {
+        title:" Read through this article about what charsets you should use with your HTML pages.",
+        url:"https://www.bitdegree.org/learn/html-encoding"
+      },
+      {
+        title:" If you wish, you can add the lang attribute to individual elements throughout the webpage. Read through this doc for a better understanding of the lang attribute.",
+        url:"https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang"
+      },
+    ],
+    KnowledgeCheck:[
+      {
+        check:"What is the purpose of the doctype declaration?"
+      },
+      {
+        check:"What is the HTML element?"
+      },
+      {
+        check:"What is the purpose of the head element?"
+      },
+      {
+        check:"What is the purpose of the body element?"
       },
     ],
     source:[
@@ -2130,6 +2386,126 @@ export const courseStructuralData = [
   logo:logo,
   menu:[
     {
+      name:'Introduction',
+      detail:"Most content on the web is text-based, so you will find yourself needing to work with HTML text elements quite a bit.",
+      detail1:"In this lesson, we will learn about the text-based elements you are likely to use the most.",
+      detail2:"",
+      detail3:"",
+      detail4:"",
+      detail5:"",
+      detail6:"",
+      ancorName:"Introduction",
+      popup1Name:"",
+      popup1:"",
+      popup2Name:"",
+      popup2:"",
+    },
+    {
+      name:'Lesson Overview',
+      detail:"This section contains a general overview of topics that you will learn in this lesson.",
+      detail1:"How to create paragraphs",
+      detail2:"How to create headings",
+      detail3:"How to create bold text",
+      detail4:"How to create italicized text",
+      detail5:"The relationships between nested elements",
+      detail6:"How to create HTML comments",
+      ancorName:"Lesson Overview",
+      popup1Name:"",
+      popup1:"",
+      popup2Name:"",
+      popup2:"",
+    },
+    {
+      name:'Paragraphs',
+      detail:"When the browser encounters new lines like this in your HTML, it will compress them down into one single space. The result of this compression is that all of the text is clumped together into one long line.",
+      detail1:"If we want to create paragraphs in HTML, we need to use the paragraph element, which will add a newline after each of our paragraphs. A paragraph element is defined by wrapping text content with a <p> tag.",
+      detail2:"",
+      detail3:"",
+      detail4:"",
+      detail5:"",
+      detail6:"",
+      ancorName:"Paragraphs",
+      popup1Name:"",
+      popup1:"",
+      popup2Name:"",
+      popup2:"",
+    },
+    {
+      name:'Headings',
+      detail:"Headings are different from other HTML text elements: they are displayed larger and bolder than other text to signify that they are headings.",
+      detail1:"There are 6 different levels of headings starting from <h1> to <h6>. The number within a heading tag represents that heading’s level. h1 is the most important and is larger than the other headings, and h6 is the lowest level and therefore the smallest of the headings.",
+      detail2:"Headings are defined much like paragraphs. For example, to create an h1 heading, we wrap our heading text in a <h1> tag.",
+      detail3:"Using the correct level of heading is important as levels provide a hierarchy to the content. An h1 heading should always be used for the heading of the overall page, and the lower level headings should be used as the headings for content in smaller sections of the page.",
+      detail4:"",
+      detail5:"",
+      detail6:"",
+      ancorName:"Headings",
+      popup1Name:"",
+      popup1:"",
+      popup2Name:"",
+      popup2:"",
+    },
+    {
+      name:'Strong Element',
+      detail:"The <strong> element makes text bold. It also semantically marks text as important; this affects tools, like screen readers, that users with visual impairments will rely on to use your website. The tone of voice on a screen reader will change to communicate the importance of the text within a strong element. To define a strong element we wrap text content in a <strong> tag.",
+      detail1:"You can use strong on its own:<strong>Lorem ipsum dolor</strong>",
+      detail2:"But you will probably find yourself using the strong element much more in combination with other text elements, like this:  <p>Lorem ipsum <strong>dolor sit</strong> amet, consectetur adipiscing elit.</p>",
+      detail3:"Sometimes you will want to make text bold without giving it an important meaning. You’ll learn how to do that in the CSS lessons later in the curriculum.",
+      detail4:"",
+      detail5:"",
+      detail6:"",
+      ancorName:"Strong Element",
+      popup1Name:"",
+      popup1:"",
+      popup2Name:"",
+      popup2:"",
+    },
+    {
+      name:'Em Element',
+      detail:"The em element makes text italic. It also semantically places emphasis on the text, which again affects things like screen readers. To define an emphasised element we wrap text content in a <em> tag.",
+      detail1:"To use em on its own:<em>Some emphasized text</em>",
+      detail2:"Again, like the strong element, you will find yourself mostly using the em element with other text elements:<p>Lorem ipsum <em>dolor sit</em> amet, consectetur adipiscing elit.</p>",
+      detail3:"",
+      detail4:"",
+      detail5:"",
+      detail6:"",
+      ancorName:"Em Element",
+      popup1Name:"",
+      popup1:"",
+      popup2Name:"",
+      popup2:"",
+    },
+    {
+      name:'Nesting and Indentation',
+      detail:"You may have noticed that in all the examples in this lesson we indent any elements that are within other elements. This is known as nesting elements.",
+      detail1:"When we nest elements within other elements, we create a parent and child relationship between them. The nested elements are the children and the element they are nested within is the parent.",
+      detail2:"In the following example, the body element is the parent and the paragraph is the child:<body><p>Lorem ipsum dolor sit amet.</p></body>",
+      detail3:"Just as in human relationships, HTML parent elements can have many children. Elements at the same level of nesting are considered to be siblings.",
+      detail4:"For example, the two paragraphs in the following code are siblings, since they are both children of the body tag and are at the same level of nesting as each other:<body> <p>Lorem ipsum dolor sit amet.</p> <p>Ut enim ad minim veniam.</p> </body>",
+      detail5:"We use indentation to make the level of nesting clear and readable for ourselves and other developers who will work with our HTML in the future. It is recommended to indent any child elements by two spaces.",
+      detail6:"The parent, child, and sibling relationships between elements will become much more important later when we start styling our HTML with CSS and adding behavior with JavaScript. For now, however, it is just important to know the distinction between how elements are related and the terminology used to describe their relationships.",
+      ancorName:"Nesting and Indentation",
+      popup1Name:"",
+      popup1:"",
+      popup2Name:"",
+      popup2:"",
+    },
+    {
+      name:'HTML Comments',
+      detail:"HTML comments are not visible to the browser; they allow us to comment on our code so that other developers or our future selves can read them and get some context about something that might not be clear in the code.",
+      detail1:"Writing an HTML comment is simple: We just enclose the comment with <!-- and --> tags. For example:<!-- I am a html comment -->",
+      detail2:"",
+      detail3:"",
+      detail4:"",
+      detail5:"",
+      detail6:"",
+      ancorName:"HTML Comments",
+      popup1Name:"",
+      popup1:"",
+      popup2Name:"",
+      popup2:"",
+    },
+    {
       name:'',
       detail:"",
       detail1:"",
@@ -2147,9 +2523,44 @@ export const courseStructuralData = [
   ],
   additionalRead:[
     {
-      title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
-      url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+      title:"Watch Kevin Powell’s HTML Paragraph and Headings Video",
+      url:"https://www.youtube.com/watch?v=yqcd-XkxZNM&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-&index=3"
     },
+    {
+      title:"Watch Kevin Powell’s HTML Bold and Italic Text Video",
+      url:"https://www.youtube.com/watch?v=gW6cBZLUk6M&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-&index=4"
+    },
+    {
+      title:"To get some practice working with text in HTML, create a plain blog article page which uses different headings, uses paragraphs, and has some text in the paragraphs bolded and italicized. You can use Lorem Ipsum to generate dummy text, in place of real text as you build your sites.",
+      url:"https://loremipsum.io/"
+    }
+  ],
+  KnowledgeCheck:[
+    {
+      check:"How do you create a paragraph in HTML?"
+    },
+    {
+      check:"How do you create a heading in HTML?"
+    },
+    {
+      check:"How many different levels of headings are there and what is the difference between them?"
+    },
+    {
+      check:"What element should you use to make text bold and important?"
+    },
+    {
+      check:"What element should you use to make text italicized to add emphasis to it?"
+    },
+    {
+      check:"What relationship does an element have with any nested elements within it?"
+    },
+    {
+      check:"What relationship do two elements have if they are at the same level of nesting?"
+    },
+    {
+      check:"How do you create HTML comments?"
+    },
+
   ],
   source:[
     {
