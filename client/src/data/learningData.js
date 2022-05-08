@@ -88,6 +88,37 @@ export const schoolData = [
   },
   {
       learningTitle:"Rel Studies",
-      logo:logo
+      logo:logo,
+      path:"Study of comparative religion",
+      about:"This will start with the study of Islam, the latest and largest religion in the world then Christainity, the Jewdaism and so on.",
+      MainLocation:"Cameroon || southwest || Buea",
+      TotalNumberOfBranches:"1",
+      OtherLocations:[
+        {
+          name:"Remote",
+          link:"https://msb-geneasocial.herokuapp.com/"
+        }
+      ],
+
+      JobPost:[
+        {
+          name:"Religion Teacher",
+          location:"Remote/US",
+          details:" The average Religion Teacher in the US makes $69,675. Religion Teachers make the most in Dallas at $71,050, averaging total compensation 2% greater than the US average.",
+          analysis:{
+
+              status:"Dynamic",
+              jobLocation:"Remote/Us",
+              details1:"According to https://www.comparably.com/salaries/salaries-for-religion-teacher, The salaries of Religion Teachers in the US range from $22,800 to $125,050 , with a median salary of $66,380 . The middle 60% of Religion Teachers makes $66,380, with the top 80% making $125,050.",
+                },
+        },
+      ],
+      JobPostSources:[
+        {
+          name:"comparably.com",
+          link:"https://www.comparably.com/salaries/salaries-for-religion-teacher"
+        },
+      ],
+      courseLink:"/school/religion"
   }
 ]

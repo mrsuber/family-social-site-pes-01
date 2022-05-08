@@ -66,6 +66,8 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 
 //admin
+export {default as AdminProjectExpansionPreviewPopup} from './admin/adminProjectExpansionPreviewPopup/AdminProjectExpansionPreviewPopup'
+export {default as AdminProjectExpansionCard} from './admin/adminProjectExpansionCard/AdminProjectExpansionCard'
 export {default as AdminInpuEdit} from './admin/inputEdit/InputEdit'
 export {default as AdminCourseUrlPopUp} from './admin/courseUrlPopUp/CourseUrlPopUp'
 export {default as AdminCourseImagePopUp} from './admin/courseImagePopUp/CourseImagePopUp'
