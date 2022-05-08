@@ -1,7 +1,7 @@
 import React, {useReducer, createContext} from 'react'
 import contextReducer from './contextReducer'
-
-const initialState = []
+import {allExpenseData} from '../data/expenseData'
+const initialState = allExpenseData
 export const AdminExpenseTrackerContext = createContext(initialState)
 
 export const Provider = ({children}) =>{
