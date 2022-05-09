@@ -11,7 +11,7 @@ const AdminExpenseMain = () => {
     <Card className={classes.root} style={{margin:"10px 0",width:"100%"}}>
       <CardHeader title="Expense Tracker" subheader="Powered by Speechly"/>
       <CardContent>
-        <Typography align="center" variant="h5" style={{fontSize:'16px'}}>Total Balance $27.7675(17200CFA) </Typography>
+        <Typography align="center" variant="h5" style={{fontSize:'16px'}}>Total Balance $27.7675(17450CFA) </Typography>
         <Typography  variant="subtitle1" style={{lineHeight:'1.5em', marginTop:'20px'}}>
         {/* info card...*/}
           Try saying : Add Income for $100 in Category Salary fro monday ...
