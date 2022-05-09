@@ -12,6 +12,14 @@ export const allExpenseData = [
     type:'Expense',
     details:'bought potatoes for 500frs or $0.81',
     date: '05-08-2022',
-  }
+  },
+  {
+    amount:'0.40',
+    category:'Gifts',
+    type:'Income',
+    details:'Gift form Mr Mosses to pay taxi, this was the change',
+    date: '05-09-2022',
+  },
+
 
 ]
