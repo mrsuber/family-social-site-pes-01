@@ -20,6 +20,14 @@ export const allExpenseData = [
     details:'Gift form Mr Mosses to pay taxi, this was the change',
     date: '05-09-2022',
   },
+  {
+    amount:'0.97',
+    category:'Food',
+    type:'Expense',
+    details:'bought bread for 600frs or $0.97',
+    date: '05-11-2022',
+  }
+
 
 
 ]

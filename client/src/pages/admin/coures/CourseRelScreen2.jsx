@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './Course.css'
 
-import {AdminCourseCard,AdminSideBar,AdminCourseStructureDetails} from '../../../components'
+import {AdminCourseCard,AdminSideBar,AdminRelCourseStructureDetails} from '../../../components'
 import {profile,logo,pic} from '../../../images'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,13 +9,13 @@ import {faBars,faChartLine,faHome} from '@fortawesome/free-solid-svg-icons';
 import {useDispatch,useSelector} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
 import {relData} from '../../../data/courseRelData'
-import {courseStructuralData} from '../../../data/courseStructuralData'
+import {courseRelStructuralData} from '../../../data/corseRelStructuralData'
 
 const CourseRelScreen2 = () => {
     const {auth} = useSelector(state=>state)
 
     const [cardData,setCardData]=useState(relData)
-    const [sturtureData,setSturtureData] = useState(courseStructuralData)
+    const [sturtureData,setSturtureData] = useState(courseRelStructuralData)
 
     const [courseName, setCourseName]=useState(null)
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
@@ -44,7 +44,7 @@ const CourseRelScreen2 = () => {
             <span className="admin__las admin_la-bars"><FontAwesomeIcon icon={faBars} /></span>
           </label>
           <div className="admin__header-title">
-          <h1>Welcome To Course Tracking</h1>
+          <h2 style={{color:'#346fe9', fontWeight:'600'}}>Welcome To Course Religious education </h2>
           <p>This is sensitive Data<span className="admin__las admin__la-chart-line"><FontAwesomeIcon icon={faChartLine} /></span></p>
           </div>
         </div>
@@ -79,7 +79,7 @@ const CourseRelScreen2 = () => {
           </section>
           </main>
           </>
-          :<><AdminCourseStructureDetails courseName={courseName} cardData={cardData} strutureData={sturtureData} setOnStructuralDetail={setOnStructuralDetail}/></>
+          :<><AdminRelCourseStructureDetails courseName={courseName} cardData={cardData} strutureData={sturtureData} setOnStructuralDetail={setOnStructuralDetail}/></>
         }
 
 
