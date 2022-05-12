@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './Course.css'
 
-import {AdminCourseCard,AdminSideBar,AdminRelCourseStructureDetails} from '../../../components'
+import {AdminRelCourseCard,AdminSideBar,AdminRelCourseStructureDetails} from '../../../components'
 import {profile,logo,pic} from '../../../images'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -67,7 +67,7 @@ const CourseRelScreen2 = () => {
               {
                 cardData?
                 cardData.map((data,index)=>(
-                  <AdminCourseCard data={data} logo={logo} setOnStructuralDetail={setOnStructuralDetail} setCourseName={setCourseName} key={index}/>
+                  <AdminRelCourseCard data={data} logo={logo} setOnStructuralDetail={setOnStructuralDetail} setCourseName={setCourseName} key={index}/>
 
                 ))
                 :<></>
