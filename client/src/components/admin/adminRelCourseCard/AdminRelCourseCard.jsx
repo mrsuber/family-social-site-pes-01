@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './AdminRelCourseCard.css'
 // import {AdminApplicationProfileEdit, AdminApplicationProfileView} from '../../../components'
-import {AdminCourseRelPreviewPopup} from '../../../components'
+import {AdminRelCoursePreviewPopup} from '../../../components'
 import {useDispatch,useSelector} from 'react-redux'
 
 const AdminRelCourseCard = ({data,logo,setOnStructuralDetail,setCourseName}) => {

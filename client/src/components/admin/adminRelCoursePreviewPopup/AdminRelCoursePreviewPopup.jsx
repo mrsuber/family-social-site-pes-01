@@ -65,7 +65,9 @@ const AdminRelCoursePreviewPopup = ({setOnView,onView=false, data, structural}) 
 
         <div className="admin__profileOnView-item">
           <h3>{`About ${data.path ? data.path:<span className="admin__worning-update">update path name</span>}`}:</h3>
-          <p>{data.about?data.about : <span className="admin__worning-update">update about content</span>}</p>
+          <p style={{marginBottom:'20px'}}>{data.about?data.about : <span className="admin__worning-update">update about content</span>}</p>
+          <p style={{marginBottom:'20px'}}>{data.about2?data.about2 : <span className="admin__worning-update">update about content</span>}</p>
+
         </div>
 
         <div className="admin__profileOnView-item">
