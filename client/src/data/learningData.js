@@ -90,7 +90,23 @@ export const schoolData = [
       learningTitle:"Rel Studies",
       logo:logo,
       path:"Study of comparative religion",
-      about:"This will start with the study of Islam, the latest and largest religion in the world then Christainity, the Jewdaism and so on.",
+      about:"According to Wikipedia, Religion is usually defined as a social-cultural system of designated behaviors and practices, morals, beliefs, worldviews, texts, sanctified places, prophecies, ethics, or organizations, that generally relates humanity to supernatural, transcendental, and spiritual elements however, there is no scholarly consensus over what precisely constitutes a religion",
+      aboutPopUp:[
+        {
+          name:"social-cultural",
+          detail1:"This is a combination of but sociology or Social system and In sociology, social system is the patterned network of relationships constituting a coherent whole that exist between individuals, groups, and institutions. It is the formal structure of role and status that can form in a small, stable group. ",
+          detail2:"A cultural system is the interaction of different elements in culture. While a cultural system is very different from a social system, sometimes both systems together are referred to as the sociocultural system.",
+          sourceLink:"https://en.wikipedia.org/wiki/Religion",
+          //
+          // status:"",
+          // jobLocation:"",
+
+        }
+      ],
+      aboutSourceLink:{
+                        name:"Read more",
+                        link:"https://en.wikipedia.org/wiki/Religion"
+                      },
       MainLocation:"Cameroon || southwest || Buea",
       TotalNumberOfBranches:"1",
       OtherLocations:[
