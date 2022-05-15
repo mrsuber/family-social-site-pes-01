@@ -5,6 +5,25 @@ export const schoolData = [
     logo:logo,
     path:"Full Stack JavaScript",
     about:"This path takes you through our entire JavaScript curriculum. You'll learn everything you need to know to create beautiful responsive websites from scratch using Html, Css, JavaScript, NodeJs and MongoDb.",
+    aboutPopUp:[
+      {
+        name:"social-cultural",
+        details1:"This is a combination of but sociology or Social system and In sociology, social system is the patterned network of relationships constituting a coherent whole that exist between individuals, groups, and institutions. It is the formal structure of role and status that can form in a small, stable group. ",
+        details2:"A cultural system is the interaction of different elements in culture. While a cultural system is very different from a social system, sometimes both systems together are referred to as the sociocultural system.",
+        // details3:"PayScale reports the average salary at $75,310 per year, with a low of $50K and a high of $90K. PayScale’s numbers are based on 4,206 salary profiles submitted by frontend developers.",
+        // details4:"ZipRecruiter says that the average frontend developer salary is $94,639 per year, with a low of $37K and a high of $147K.",
+        // details5:"Bas
+        sourceLink:"https://en.wikipedia.org/wiki/Religion",
+        //
+        // status:"",
+        // jobLocation:"",
+
+      }
+    ],
+    aboutSourceLink:{
+                      name:"Read more",
+                      link:"https://en.wikipedia.org/wiki/Religion"
+                    },
     MainLocation:"Cameroon || southwest || Buea",
     TotalNumberOfBranches:"2",
     OtherLocations:[
@@ -94,9 +113,15 @@ export const schoolData = [
       aboutPopUp:[
         {
           name:"social-cultural",
-          detail1:"This is a combination of but sociology or Social system and In sociology, social system is the patterned network of relationships constituting a coherent whole that exist between individuals, groups, and institutions. It is the formal structure of role and status that can form in a small, stable group. ",
-          detail2:"A cultural system is the interaction of different elements in culture. While a cultural system is very different from a social system, sometimes both systems together are referred to as the sociocultural system.",
-          sourceLink:"https://en.wikipedia.org/wiki/Religion",
+          details1:"This is a combination of but sociology or Social system and In sociology, social system is the patterned network of relationships constituting a coherent whole that exist between individuals, groups, and institutions. It is the formal structure of role and status that can form in a small, stable group. ",
+          details2:"A cultural system is the interaction of different elements in culture. While a cultural system is very different from a social system, sometimes both systems together are referred to as the sociocultural system.",
+          popUpSources:[
+            {
+              name:"social-cultural",
+              link:"https://en.wikipedia.org/wiki/Religion",
+            },
+          ],
+
           //
           // status:"",
           // jobLocation:"",

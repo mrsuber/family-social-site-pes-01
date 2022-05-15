@@ -71,7 +71,7 @@ const AdminSchoolPreviewPopup = ({setOnView,onView=false, data, setOnStructuralD
           <h3>{`About ${data.path ? data.path:<span className="admin__worning-update">update path name</span>}`}:<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
           <p>{data.about?data.about : <span className="admin__worning-update">update about content</span>}<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></p>
           {data.aboutPopUp.length >0
-            ? data.aboutPopUp.map((item)=>(<span className="admin__profileOnView-more" onClick={()=>showStatus(item.aboutPopUp)}>
+            ? data.aboutPopUp.map((item)=>(<span className="admin__profileOnView-more" onClick={()=>showStatus(item)}>
           {`${item.name} pop`}
           </span>))
           :<></>
