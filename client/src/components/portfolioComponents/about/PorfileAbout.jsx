@@ -1,7 +1,7 @@
 import React from 'react'
 import {Facebook,YouTube, GitHub,LinkedIn,BusinessCenter,School} from '@material-ui/icons'
 import './ProfileAbout.css'
-import cv from '../../../images/cv.pdf'
+import cv from '../../../images/Resume.pdf'
 
 const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
   return (
@@ -48,7 +48,7 @@ If you are to know about me, you have to understand my background story, what dr
 
 <p>His specialty was also crop farming but he was also into bird and fish farming. His farm was amazing to look at, all partitioned, all in very stright lines as if he told the crops what height to take and what lines not to cross as they grew.</p>
 
-<p>The chicken he kept were “layers” he called them because they were not for consumption but for laying eggs. I have never seen so many eggs in one place to this day. I used to help him pick some of those eggs, some very normal, other funny-looking.</p>
+<p>The chicken he kept were “layers” he called them so because they were not for consumption but for laying eggs. I have never seen so many eggs in one place to this day. I used to help him pick some of those eggs, some very normal, other funny-looking.</p>
 <p> His fish pond was never of so much interest to me at first because you only see fish when he feeds them but during an Agro-Pastoral show, I saw what they describe a fish, the kind you see only on TV and in a book, a fish with whiskers so calm, so confident in the water as if it knew it was the star of the show.</p>
 
 <p>when I finished class seven and went into secondary school, my dad advised me to study science, because it will tell me more about the chemicals he used and he was right, chemistry and biology did a thorough job in that.</p>
@@ -74,7 +74,7 @@ I also learn that we gave our milk out for free compared to Tardu Dairy price an
 I dived into computer engineering and as you know my specialty was software engineering, in the university I was introduced to the accounting and business part.
 I understood knowing about farming was not enough if I intended to lead in business, I had to see it from the business perspective, I am talking about investment, shares, shareholders, partnership, balance sheet, and all the complicated business terms you can read about. This was necessary to understand if not, my government will shut me down themselves.</p>
 
-<p>immediately after graduation, I did a demo, wrote a business plan, and move around talking to business investors, this took about 6 months of travel and presentations and I notice that business investors are more likely to invest in something solid, some part of this project can be traced, ether proper documentation or some portion of the land has produced the product and is flourishing,</p>
+<p>immediately after graduation, I did a demo, wrote a business plan, and move around talking to business investors, this took about 6 months of travel and presentations and I notice that business investors are more likely to invest in something solid, some part of this project can be traced, either proper documentation or some portion of the land has produced the product and is flourishing,</p>
 
 <p>I quickly knew that the initial capital for such will be raised by me, and the second most paying job is engineering, software engineering at the very top of the list.</p>
 

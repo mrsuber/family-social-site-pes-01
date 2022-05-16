@@ -153,11 +153,17 @@ li a {text-decoration : none; color : #2d2f31;}
   font-size: 10px;
   color: var(--color-main);
   cursor: pointer;
+  background: var(--button-bg);
+  margin: 5px;
+    padding: 5px;
+    border-radius: 30px;
+    transition: 0.4s ease;
 }
 .admin__profileOnView-more:hover{
 
-  color: var(--danger);
-  text-decoration: underline;
+  color: #fff;
+
+  /* text-decoration: underline; */
 }
 
 
