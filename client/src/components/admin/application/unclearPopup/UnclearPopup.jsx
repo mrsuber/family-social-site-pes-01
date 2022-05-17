@@ -29,7 +29,7 @@ const UnclearPopup = ({data,setUnclearPopup}) => {
         <p style={{marginBottom:"15px"}}>{data.details5 ? data.details5 :''}</p>
         <p style={{marginBottom:"15px"}}>{data.details6 ? data.details6 :''}</p>
 
-        {data.popUpSources.length>0 && <AdminSources source={data.popUpSources} name="social-cultural" id="pop1"/>}
+        {data.popUpSources && data.popUpSources.length>0 ? <AdminSources source={data.popUpSources} name="social-cultural" id="pop1"/>:<p>no refrence link</p>}
 
       </div>
 
