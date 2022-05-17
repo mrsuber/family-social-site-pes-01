@@ -24,7 +24,7 @@ export const relData = [
   {
     learningTitle:"Christainity",
     logo:logo,
-    path:"HTML",
+    path:"Christainity",
     about:"HTML is the universal markup language for the Web. HTML lets you format text, add graphics, create links, input forms, frames and tables, etc., and save it all in a text file that any browser can read and display.",
     MainLocation:"Cameroon || southwest || Buea",
     TotalNumberOfBranches:"8",

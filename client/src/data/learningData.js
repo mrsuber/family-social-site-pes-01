@@ -177,7 +177,7 @@ export const schoolData = [
           name:"Worldview",
           details1:"A worldview or world-view is the fundamental cognitive orientation of an individual or society encompassing the whole of the individual's or society's knowledge and point of view.",
           details2:'A worldview can include natural philosophy; fundamental, existential, and normative postulates; or themes, values, emotions, and ethics.',
-            details3:"The term worldview is a calque of the German word Weltanschauung [ˈvɛltʔanˌʃaʊ.ʊŋ] (listen), composed of Welt ('world') and Anschauung ('perception' or 'view').[6] The German word is also used in English.",
+            details3:"The term worldview is a calque of the German word Weltanschauung [ˈvɛltʔanˌʃaʊ.ʊŋ] (listen), composed of Welt ('world') and Anschauung ('perception' or 'view'). The German word is also used in English.",
            details4:"It is a concept fundamental to German philosophy, especially epistemology and refers to a wide world perception. Additionally, it refers to the framework of ideas and beliefs forming a global description through which an individual, group or culture watches and interprets the world and interacts with it.",
           // details5:"Bas
           popUpSources:[
@@ -208,7 +208,7 @@ export const schoolData = [
         {
           name:"Sacred space",
           details1:"Sacred site, sacred ground, sacred space, holy ground, or holy place refers to a location which is deemed to be sacred or hallowed.",
-          details2:'"The sacredness of a natural feature may accrue through tradition or be granted through a blessing. One or more religions may consider sacred locations to be of special significance. Often, such locations either are or become the home of sanctuaries, shrines, places of worship, or locations conducive to meditation.',
+          details2:'The sacredness of a natural feature may accrue through tradition or be granted through a blessing. One or more religions may consider sacred locations to be of special significance. Often, such locations either are or become the home of sanctuaries, shrines, places of worship, or locations conducive to meditation.',
             details3:"Regardless of construction or use, these areas may have a variety of ritual or taboo associations - including limitations on visitors or on allowed actions within the space. Such places may become the focus of pilgrimage, drawing pilgrims from great distances, or simply locations of significance for the local populace.",
           //  details4:'Many religious texts, in contrast, are simply narratives or discussions pertaining to the general themes, interpretations, practices, or important figures of the specific religion. In others (Christianity), the canonical texts include a particular text (Bible) but is "an unsettled question", according to Eugene Nida. In yet others (Hinduism, Buddhism), there "has never been a definitive canon".',
           // details5:'While the term scripture is derived from the Latin scriptura, meaning "writing", most sacred scriptures of the world\'s major religions were originally a part of their oral tradition, and were "passed down through memorization from generation to generation until they were finally committed to writing", according to the Encyclopaedia Britannica.',
@@ -256,8 +256,8 @@ export const schoolData = [
         {
           name:"Religious organization",
           details1:"Religious activities generally need some infrastructure to be conducted. For this reason, there generally exist religion-supporting organizations, which are some form of organization that manage:",
-          details2:'1.) the upkeep of places of worship, such as mosques, churches, temples, synagogues, chapels and other buildings or meeting places.',
-            details3:"2.) the payment of salaries to religious leaders, such as Roman Catholic priests, Hindu priests, Protestant ministers, imams and rabbis.",
+          details2:'1.) The upkeep of places of worship, such as mosques, churches, temples, synagogues, chapels and other buildings or meeting places.',
+            details3:"2.) The payment of salaries to religious leaders, such as Roman Catholic priests, Hindu priests, Protestant ministers, imams and rabbis.",
            // details4:'Simon Blackburn states that there are those who "would say that we can only flourish under the umbrella of a strong social order, cemented by common adherence to a particular religious tradition".',
           // details5:'While the term scripture is derived from the Latin scriptura, meaning "writing", most sacred scriptures of the world\'s major religions were originally a part of their oral tradition, and were "passed down through memorization from generation to generation until they were finally committed to writing", according to the Encyclopaedia Britannica.',
           popUpSources:[
@@ -272,7 +272,7 @@ export const schoolData = [
         {
           name:"Supernatural",
           details1:"The supernatural is phenomena or entities that are not subject to the laws of nature.",
-          details2:'It is derived from Medieval Latin supernaturalis, from Latin super- (above, beyond, or outside of) + natura (nature)[1] Though the corollary term "nature", has had multiple meanings since the ancient world, the term "supernatural" emerged in the medieval period[2] and did not exist in the ancient world',
+          details2:'It is derived from Medieval Latin supernaturalis, from Latin super- (above, beyond, or outside of) + natura (nature) Though the corollary term "nature", has had multiple meanings since the ancient world, the term "supernatural" emerged in the medieval period and did not exist in the ancient world',
             // details3:"2.) the payment of salaries to religious leaders, such as Roman Catholic priests, Hindu priests, Protestant ministers, imams and rabbis.",
            // details4:'Simon Blackburn states that there are those who "would say that we can only flourish under the umbrella of a strong social order, cemented by common adherence to a particular religious tradition".',
           // details5:'While the term scripture is derived from the Latin scriptura, meaning "writing", most sacred scriptures of the world\'s major religions were originally a part of their oral tradition, and were "passed down through memorization from generation to generation until they were finally committed to writing", according to the Encyclopaedia Britannica.',
@@ -339,7 +339,13 @@ export const schoolData = [
 
               status:"Dynamic",
               jobLocation:"Remote/Us",
-              details1:"According to https://www.comparably.com/salaries/salaries-for-religion-teacher, The salaries of Religion Teachers in the US range from $22,800 to $125,050 , with a median salary of $66,380 . The middle 60% of Religion Teachers makes $66,380, with the top 80% making $125,050.",
+              details1:"The salaries of Religion Teachers in the US range from $22,800 to $125,050 , with a median salary of $66,380 . The middle 60% of Religion Teachers makes $66,380, with the top 80% making $125,050.",
+              popUpSources:[
+                {
+                  name:"www.comparably.com",
+                  link:"https://www.comparably.com/salaries/salaries-for-religion-teacher",
+                }
+              ]
                 },
         },
       ],
