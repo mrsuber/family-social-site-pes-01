@@ -415,5 +415,133 @@ DepartmentSource:[
   }
 ]
   }
+  ,
+  {
+    companyName:"Red Acre",
+    logo:"https://redacreltd.com/wp-content/uploads/2020/01/redacre-logo.svg",
+    about:"From fintech to blockchain technology, Red Acre has worked across multiple cutting-edge industries to offer world-class business solutions and alternatives to make your life easier. We aim to ease the pressure of running a business and build sustainable platforms that support and enable your business to leap to the next level.",
+    about2:"Leading the way with innovative back office services. We offer bespoke solutions to all your business needs - covering compliance, payments, general support and bespoke office systems.",
+    about3:"Red Acre provides back office solutions and services to improve business processes. It offers online customer support assistance and give choices for compliance and payment providers. Red Acre is based in Valletta, Malta.",
+    aboutSource:[
+      {
+        name:"Red Acre",
+        link:"https://redacreltd.com/",
+
+      },
+      {
+        name:"linkedin",
+        link:"https://www.linkedin.com/company/red-acre-ltd/?originalSubdomain=ie",
+
+      },
+      {
+        name:"facebook",
+        link:"https://www.facebook.com/redacreltd/",
+
+      },
+    ],
+    MainLocation:"Valletta, Malta. Time zone in Malta (GMT+2)",
+    TotalNumberOfBranches:"!!!!!!!Unknown!!!!!!!",
+    OtherLocations:[
+      {
+        name:"!!!!!!!Unknown!!!!!!!",
+        link:"https://redacreltd.com/"
+
+      },
+    ],
+    LocationSources:[
+      {
+        name:"Red Acre",
+        link:"https://redacreltd.com/",
+      }
+    ],
+
+    JobPost:[
+      {
+        name:"Full-Stack Developer",
+        location:"Los Angeles",
+        link:"https://careers.redacreltd.com/jobs/8r1ch-_it9ZI/full-stack-developer",
+        analysis:{
+          status:"clear",
+          jobLocation:"Los Angeles or Remote",
+          currentOfficeLocation:"Los Angeles",
+          details1:"2+ years experience with React / React Native =>4+ years frontend/ui mobile-first development =>Rich web animation skills (Html5, Css3, Svg, etc)=> Experience using CSS preprocessors (sass / less) => Familiarity with Typescript =>Experience using REST API, GraphQL, and/or Firestore data sources =>Proficient with GitHub =>A portfolio of projects utilizing the above skills =>Excellent communication skills=>A great sense of humor, optimism, and collaboration",
+          details2:"Full time with remote / telecommute option",
+          details3:"Competitive salary, vacation, 401(k) match, health, vision, and dental insurance",
+          details4:"https://careered.referrals.selectminds.com/jobs/frontend-react-developer-hippo-education-8711 and provide links to relevant examples of recent work (your GitHub or equivalent profile would be a great way to start)."
+        },
+        reasonForAnalysis:"It is a fit, all requires are checked and with evidence, plus it is medical giving the ability to extend studies the human biology plus the pay is good",
+        analysisSource:[
+          {name:"Hippo Education",
+          link:"https://www.careers.hippoed.com/frontend-react-developer"},
+        ],
+      },
+    ],
+    JobPostSources:[
+      {
+        name:"Hippo Education",
+        link:"https://www.careers.hippoed.com/frontend-react-developer"
+    }
+  ],
+
+  Employee:[
+    {
+      year:"2019",
+      numberOfEmployee:"31"
+  },
+
+  {
+    year:"2021",
+    numberOfEmployee:"61"
+},
+
+],
+EmployeeType:'Full-time Employee',
+EmployeeSource:[
+  {
+    name:"linkedin.com",
+    link:"https://www.linkedin.com/company/hippo-education-inc-/people/",
+
+  },
+  {
+    name:"federal pay",
+    link:"https://www.federalpay.org/paycheck-protection-program/hippo-education-llc-woodland-hills-ca",
+  }
+],
+Revenue:[
+  {
+    year:'2019',
+    amount:'6'
+  },
+  {
+    year:'2020',
+    amount:'unknown'
+  },
+  {
+    year:'2021',
+    amount:'Unknown'
+
+  }
+],
+RevenueType:'Revenue in Millions U.S dollars',
+RevenueSource:[
+  {name:"zoominfo",
+  link:"https://www.zoominfo.com/c/hippo-education-llc/357830893",
+  }
+],
+Departments:[
+  {
+    DepartmentName:'Unknown',
+    DepartmentDesc:{
+      details1:"Department number:Unknown, Name:Unknown, "
+    }
+  },
+],
+DepartmentSource:[
+  {
+    name:"",
+    link:"",
+  }
+]
+  }
 
 ]
