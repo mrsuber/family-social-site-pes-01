@@ -64,7 +64,10 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
 
         <div className="admin__profileOnView-item">
           <h3>{`About ${data.companyName ? data.companyName:<span className="admin__worning-update">update company</span>}`}:</h3>
-          <p>{data.about?data.about : <span className="admin__worning-update">update about content</span>}</p>
+          <p className="admin__about_paragraph">{data.about?data.about : <span className="admin__worning-update">update about content</span>}</p>
+          {data.about2 && <p className="admin__about_paragraph">{data.about2}</p>}
+          {data.about3 && <p className="admin__about_paragraph">{data.about3}</p>}
+
           {data.aboutSource && data.aboutSource.length!==0? <AdminSources source={ data.aboutSource} name="about " id="touch"/>:<span className="admin__worning-update">update About sources</span>}
 
         </div>

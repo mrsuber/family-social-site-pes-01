@@ -105,7 +105,8 @@
 .admin__profileOnView-item  p{
   font-size: 14px;
   color: #00ffa4;
-  margin: 0 0 0 10px;
+  margin:20px 0;
+  text-align: justify;
 }
 
 .admin__profileOnView-item  p span{
