@@ -458,16 +458,37 @@ DepartmentSource:[
     JobPost:[
       {
         name:"Full-Stack Developer",
-        location:"Los Angeles",
+        location:"Dublin, Limassol and Tallin, with headquarters in Malta",
         link:"https://careers.redacreltd.com/jobs/8r1ch-_it9ZI/full-stack-developer",
         analysis:{
-          status:"clear",
-          jobLocation:"Los Angeles or Remote",
-          currentOfficeLocation:"Los Angeles",
-          details1:"2+ years experience with React / React Native =>4+ years frontend/ui mobile-first development =>Rich web animation skills (Html5, Css3, Svg, etc)=> Experience using CSS preprocessors (sass / less) => Familiarity with Typescript =>Experience using REST API, GraphQL, and/or Firestore data sources =>Proficient with GitHub =>A portfolio of projects utilizing the above skills =>Excellent communication skills=>A great sense of humor, optimism, and collaboration",
-          details2:"Full time with remote / telecommute option",
-          details3:"Competitive salary, vacation, 401(k) match, health, vision, and dental insurance",
-          details4:"https://careered.referrals.selectminds.com/jobs/frontend-react-developer-hippo-education-8711 and provide links to relevant examples of recent work (your GitHub or equivalent profile would be a great way to start)."
+          status:"Unclear",
+          jobLocation:"Malta",
+          currentOfficeLocation:"Valletta, Malta",
+          details1:"Type: Platform ?????????? what does this mean?????????",
+          details2:"Technology : JavaScript, NodeJS, MongoDB",
+          details3:"The Red Acre Goal:  Here at Red Acre, we are expanding our team! We are looking for Full-stack Developers with experience in JavaScript, to help us deliver great products and services to our users. You will join one of our agile development teams to help improve the capabilities of our products by making sure each feature works at its best. You’ll be working across the stack of our API-centric platform to solve complex problems. As a full-stack developer, you focus on solid engineering practices. We are a global company based in Dublin, Limassol and Tallin, with headquarters in Malta, empowering businesses through Software as a Service solution.",
+          details4:"What you’ll do: Solve challenges with creativity and initiative && Design, develop and deploy both backend and frontend services that support high traffic, focusing on low latency, scalability, and high availability &&  Collaborate and work closely with other developers, becoming a valued member of a self-managing and self-organising, cross-functional team && Continuously improve the products and architecture by participating in code reviews and innovating on the services && Write clean, readable, and maintainable code with unit and integration tests, making continuous improvements to the codebase, creating proper documentation, including API documentation && Participate and support the Agile methods and frameworks by taking part in quarterly planning events, daily stand-ups, planning sessions, code reviews and other discussions and events && Follow and take part in all agile practices, work as a team and ensure timely delivery.",
+          details5:"Our current tech stack: ==> Front-End: JavaScript, Typescript, ReactJS, Html5, SCSS",
+          details6:"Our current tech stack: ==> Back-End: JavaScript, NodeJS, Express, MongoDB, PostgreSQL, REST API, Python, Golang",
+          details7:"Other: Gitlab, Gitlab CI, Jenkins, Docker, AWS, VS Code",
+          details8:"About you: You architect, design, develop and maintain JavaScript code with a handful of other languages && You are interested in keeping up with current standard methodologies && You know and care about engineering practices like CI/CD and automated testing && You have working knowledge in Agile methodologies && You have excellent analytical and problem-solving skills and can communicate your ideas to both technical and non-technical audiences && You enjoy sharing knowledge with others && You are motivated and love working in fast-paced environments",
+          details9:"Question 1 !!!!!!!: under your careerpage in the full-stack developer job post, you mension the``` type: platform```. can you please elaburate",
+          details10:"Question 2 !!!!!!!: In the ```why us``` page, This was one of the first reason i applied for the position, ==>under the topic ```Be part of an ever-expanding team of the brightest talent.```, you mensioned ```!!! We want to be not just a workplace for our employees - we want to be a place to develop and grow.!!!```: . can you please elaburate",
+
+          popUpSources:[
+            {
+              name:"careers at red acre",
+              link:"https://careers.redacreltd.com/jobs",
+            },
+            {
+              name:"full-stack developer",
+              link:"https://careers.redacreltd.com/jobs/8r1ch-_it9ZI/full-stack-developer",
+            },
+            {
+              name:"Ever expanding team",
+              link:"https://redacreltd.com/why-us/"
+            }
+          ],
         },
         reasonForAnalysis:"It is a fit, all requires are checked and with evidence, plus it is medical giving the ability to extend studies the human biology plus the pay is good",
         analysisSource:[
