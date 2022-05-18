@@ -28,8 +28,13 @@ const UnclearPopup = ({data,setUnclearPopup}) => {
         <p style={{marginBottom:"15px"}}>{data.details4 ? data.details4 :''}</p>
         <p style={{marginBottom:"15px"}}>{data.details5 ? data.details5 :''}</p>
         <p style={{marginBottom:"15px"}}>{data.details6 ? data.details6 :''}</p>
+        <p style={{marginBottom:"15px"}}>{data.details7 ? data.details7 :''}</p>
+        <p style={{marginBottom:"15px"}}>{data.details8 ? data.details8 :''}</p>
+        <p style={{marginBottom:"15px"}}>{data.details9 ? data.details9 :''}</p>
+        <p style={{marginBottom:"15px"}}>{data.details10 ? data.details10 :''}</p>
+        <p style={{marginBottom:"15px"}}>{data.details11 ? data.details11 :''}</p>
 
-        {data.popUpSources && data.popUpSources.length>0 ? <AdminSources source={data.popUpSources} name="social-cultural" id="pop1"/>:<p>no refrence link</p>}
+        {data.popUpSources && data.popUpSources.length>0 ? <AdminSources source={data.popUpSources} name={data.popUpSources[0].name} id="pop1"/>:<p>no refrence link</p>}
 
       </div>
 

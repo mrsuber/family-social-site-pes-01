@@ -67,7 +67,14 @@ const AdminRelCoursePreviewPopup = ({setOnView,onView=false, data, structural}) 
           <h3>{`About ${data.path ? data.path:<span className="admin__worning-update">update path name</span>}`}:</h3>
           <p style={{marginBottom:'20px'}}>{data.about?data.about : <span className="admin__worning-update">update about content</span>}</p>
           <p style={{marginBottom:'20px'}}>{data.about2?data.about2 : <span className="admin__worning-update">update about content</span>}</p>
-
+          <div>
+          {data.aboutPopUp.length >0
+            ? data.aboutPopUp.map((item)=>(<span className="admin__profileOnView-more decorating_pop" onClick={()=>showStatus(item)}>
+          {`${item.name} pop`}
+          </span>))
+          :<></>
+        }
+        </div>
         </div>
 
         <div className="admin__profileOnView-item">
@@ -79,7 +86,7 @@ const AdminRelCoursePreviewPopup = ({setOnView,onView=false, data, structural}) 
 
 
         </div>
-
+        {data.aboutSource && data.aboutSource.length!==0? <AdminSources source={ data.aboutSource} name="about " id="islamRel"/>:<><span className="admin__worning-update">Add Job post source</span></>}
 
 
 
