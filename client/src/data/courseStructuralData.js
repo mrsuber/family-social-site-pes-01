@@ -3968,26 +3968,76 @@ courseStatus:"Incomplete",
 courseNumber:"008",
 logo:logo,
 menu:[
-{
-name:'',
-detail:"",
-detail1:"",
-detail2:"",
-detail3:"",
-detail4:"",
-detail5:"",
-detail6:"",
-ancorName:"",
-popup1Name:"",
-popup1:"",
-popup2Name:"",
-popup2:"",
-},
+        {
+        name:'Introduction',
+        detail:"Now that we can manipulate the DOM, it’s time to revisit Rock Paper Scissors Project and add a simple UI to it.",
+        detail1:"Before you start making changes to your Rock Paper Scissors project, you need to learn about a concept in Git called branching so that you can make your changes without having to worry about breaking what you have now.",
+        detail2:"Branches in Git allow your repository to hold multiple alternate reality versions of your files at the same time. You’ve actually (sort of) been using branches since you made your first commit, you just might not have known it! Back in the setting up Git lesson when you ran git config ```--global init.defaultBranch main``` you were setting the name of what’s called the default branch for your repos. The default branch is just what we call the branch that is created when you make your first commit on a project, and in that command we set the name to be ```main``` as is the current standard.",
+        detail3:"Like the branches in a tree (hence the name), all of the branches for a project stem off of a “trunk” (the main branch) or off of other branches.",
+        detail4:"When you make commits on a specific branch those changes only exist on that branch, leaving all of your other branches exactly as they were when you branched off of them.",
+        detail5:"This means that you can keep your main branch as a place for only finished features that you know are working properly, and add each feature to your project using dedicated branches which we call feature branches.",
+        detail6:"",
+        ancorName:"Introduction",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+        {
+        name:'Using Branches',
+        detail:"You can make new branches by using the command ```git branch <branch_name>```. You can then change to your new branch using ```git checkout <branch_name>```. You can also create a new branch and change to it in a single command by using the ```-b``` flag with ```checkout```, in the form ```git checkout -b <branch_name>```.",
+        detail1:"You can see all of your current branches using ```git branch``` with no other arguments. The branch that you’re currently on will be indicated with an asterisk. If you want to change back to ```main``` from any other branch, you can do so just like changing to any other branch using ```git checkout main```.",
+        detail2:"Once you’re done working on your feature branch and you’re ready to bring the commits that you’ve made on it to your main branch, you need to perform what is known as a ```merge```.",
+        detail3:"Merges are done by using the command ```git merge <branch_name>``` which will take the changes you’ve committed in ```branch_name``` and add them to the branch that you’re currently on.",
+        detail4:"Sometimes the same lines in a file will have been changed by two different branches. When this happens you will have a merge conflict when you try and merge those branches together. In order to finish merging the branches you will have to first resolve the conflict, which will be covered in a future lesson.",
+        detail5:"When you don’t need a branch anymore it can be deleted using git ```branch -d <branch_name>``` if the branch has already been merged into ```main```, or with ```git branch -D <branch_name>``` if it hasn’t. You will usually want to delete branches when you’re done with them, otherwise they can pile up and make it more difficult to find the branch you’re looking for when you need it.",
+        detail6:"",
+        ancorName:"Using Branches",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+        {
+        name:'Sharing Code',
+        detail:"Another great use case for branches is to share code with others that you might not want to commit to your main branch (or feature branch) at all.",
+        detail1:"For example: if you have a bug in a new feature you’re working on that you can’t figure out, and it causes your code to break, you don’t want to commit that broken code and have it in your project’s “permanent record”. Thankfully, branches make it easy to share code on GitHub without having to commit problematic code where it can be seen in the future!",
+        detail2:"1.) Make a new branch (called temp) and change to it with git checkout -b temp",
+        detail3:"2.) Commit the current state of your code to your temp branch like you normally would",
+        detail4:"3.) Push your temp branch to your GitHub repo with git push origin temp",
+        detail5:"4.) You (or anyone else with the link to your repo!) can now select your temp branch using the branch selector dropdown.",
+        detail6:"",
+        ancorName:"Sharing Code",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+        },
+
+        {
+        name:'Assignment',
+        detail:"1.) Set up a new branch on your previous Rock Paper Scissors repo and complete the assignment",
+
+        ancorName:"Assignment",
+        popup1Name:"complete asignment",
+        popup1:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1652865247/msbGeanologyProfilePics/rockpapersisorassignment_uyldj3.png",
+        popup2Name:"",
+        popup2:"",
+        },
+],
+KnowledgeCheck:[
+  {
+    check:"In your own words decribe how to work as a team with other developers"
+  },
 ],
 additionalRead:[
 {
-title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
-url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+title:"Actively learn the Git workflows discussed in this lesson with this interactive Visual Git Cheatsheet by Andrew Peterson. It’s okay to be unfamiliar with the variety of commands you’ll interact with. You’ll learn about the ones you’re unfamiliar with later in the curriculum.",
+url:"https://ndpsoftware.com/git-cheatsheet.html#loc=index;"
+},
+{
+title:"Make pushing your local commits to remote branches easier with the command git push -u origin <branch>. It automatically links the local branch you push with the remote one. Read this educative.io article by Talha Ashar and commit faster to a remote branch with a simple git push command.",
+url:"https://www.educative.io/edpresso/what-is-the-git-push--u-remote-branch-name-command"
 },
 ],
 source:[
