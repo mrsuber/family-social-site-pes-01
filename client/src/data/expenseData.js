@@ -56,6 +56,20 @@ export const allExpenseData = [
     type:'Expense',
     details:'1000 on data creadit',
     date: '05-15-2022',
+  },
+  {
+    amount:10000,
+    category:'Gifts',
+    type:'Expense',
+    details:'10000 to mom',
+    date: '05-17-2022',
+  },
+  {
+    amount:5000,
+    category:'Extra income',
+    type:'Income',
+    details:'5000 form rearanging Mr Moh office and cleaning it',
+    date: '05-17-2022',
   }
 
 

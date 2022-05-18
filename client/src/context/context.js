@@ -2,7 +2,7 @@ import React, {useReducer, createContext} from 'react'
 import contextReducer from './contextReducer'
 import {allExpenseData} from '../data/expenseData'
 console.log(allExpenseData)
-const initialState = allExpenseData
+const initialState = allExpenseData.reverse() 
 export const AdminExpenseTrackerContext = createContext(initialState)
 
 export const Provider = ({children}) =>{
