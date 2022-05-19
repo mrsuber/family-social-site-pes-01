@@ -895,5 +895,253 @@ export const companyStructuralData = [
     ],
 
   },
+  {
+    companyName:"Red Acre",
+    companyHeadOfficeLocation:"Valletta, Malta. Time zone in Malta (GMT+2)",
+    companyLevel1:[
+      {
+        name:"Red Acre Executive Leadership",
+        people:[
+
+
+          {
+            name:'Shane Morton',
+            photo:'https://media-exp1.licdn.com/dms/image/C4D03AQGkqLwk0OD4Ug/profile-displayphoto-shrink_200_200/0/1594113508686?e=1658361600&v=beta&t=VygdggQNq4DpNVU8TRwMG5T-94Aqd-z6rWq1ja19aFI',
+            title:'Chief Executive Officer',
+            BiographyP1:'',
+            source:[
+              {
+                name:"linkedin",
+                link:"https://www.linkedin.com/in/shane-morton-56a613179/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=mt"
+              }
+            ],
+            report1:[
+              {
+                name:'Whitney Sciberras ',
+                photo:'https://media-exp1.licdn.com/dms/image/C4D03AQH9jwuCrwBI_w/profile-displayphoto-shrink_200_200/0/1641580951272?e=1658361600&v=beta&t=0CZFe_Vi3_RrSlFwNRnc-cmU6kegc8I7s7FnAvimmlg',
+                title:'Human Resources Coordinator at Red Acre Ltd.',
+                BiographyP1:"",
+                source:[
+                  {
+                    name:"linkedin",
+                    link:"https://www.linkedin.com/in/whitney-sciberras-a1319834/"
+                  }
+                ],
+                report2:[
+                  {
+                    name:'Serena R. Lacerenza',
+                    photo:'https://media-exp1.licdn.com/dms/image/C4E03AQEDGl5sP9VAFg/profile-displayphoto-shrink_200_200/0/1626518174029?e=1658361600&v=beta&t=viA4X2RobOHvt1T10JKIhq3e2UjX5e72xIiM29KKvfI',
+                    title:'Talent Acquisition - Information Technology | Digital Marketing |',
+                    BiographyP1:"Experienced Talent Acquisition Specialist with a demonstrated history of working in the information technology and digital marketing industries, with a solid understanding of the iGaming, Information Technology, Marketing, Legal, Banking, Finance, FinTech, Forex, and Crypto industries. ",
+                    BiographyP2:"Able to work on multiple searches at the same time, while understanding priorities; to communicate with hiring managers from different departments, understanding their requirements, advising and supporting them throughout the whole recruitment process. ",
+                    BiographyP3:"Skilled in employees onboarding and offboarding processes.",
+
+                    phoneNumber:'',
+                    email:"careers@redacreltd.freshteam.com",
+                    website:"redacreltd.com/  (Company Website)",
+                    address:"",
+                    linkedIn:"https://www.linkedin.com/in/serena-r-lacerenza-51b53928/?originalSubdomain=mt",
+
+                    Experience:[
+                      {
+                        yearsOfExperience:"May 2021 - Present",
+                        placeOfExperience:"Red Acre Ltd · Full-time",
+                        locationOfExperience:"Sliema, Malta",
+                        areaOfExpertise:"Talent Acquisition",
+                        descOfWorkDoneInAreaOfExpertise:"Red Acre Ltd. is a global organization and SaaS company that provides services to FinTech companies, predominantly within the Forex and Crypto industries.I am responsible for recruiting in Malta, Dublin and Limassol-based offices. 1=>Manage the full recruitment life cycle (technology, digital marketing, finance and legal departments). 2=>Communicate with the hiring managers and support them throughout the whole recruitment process. 3=>Headhunting in the EMEA and LATAM markets 4=>Employer branding 5=>Onboarding and Offboarding 6=>Conduct skip-level meetings for the marketing, finance, trade and administration departments. 6=>Schedule and follow up on performance assessment meetings. ",
+                      },
+                      {
+                        yearsOfExperience:"Jan 2019 - May 2021",
+                        placeOfExperience:"Archer - The IT Recruitment Consultancy",
+                        locationOfExperience:"Xbiex, Malta",
+                        areaOfExpertise:"Associate Recruitment Manager",
+                        descOfWorkDoneInAreaOfExpertise:"Archer is a Dublin and Malta-based IT recruitment agency. I joined the company when it was a startup and developed my role together with the company’s growth. 1==>Hands-on recruitment of IT professionals in the EMEA space. ==>Business Development – look for new business opportunities and negotiate terms and conditions. 3==>Account Management – manage a large portfolio of clients in order to deliver high standards and to improve the business relationships.4==>Internal Recruitment 5==> Training and coaching junior recruiters 6==> Team performance assessment and KPIs management 7==>Keeping records of the weekly and monthly report 8==>Attending board meetings 9==> Report to the Managing Director based in Dublin. ",
+                      },
+                      {
+                        yearsOfExperience:"Jan 2017 - Dec 2018",
+                        placeOfExperience:"Archer - The IT Recruitment Consultancy",
+                        locationOfExperience:"Malta",
+                        areaOfExpertise:"Lead Consultant",
+                        descOfWorkDoneInAreaOfExpertise:"Responsible for growing and managing the Malta based office. Successfully grew the team, achieved team targets, and managed a team of 6-8 people. •	360 consultant (business development, account management and recruitment)•	Internal recruitment•	Team leading•	KPIs management•	Keeping records of the weekly and monthly report•	Report to the Managing Director based in Dublin",
+                      },
+                      {
+                        yearsOfExperience:"Sep 2016 - Dec 2016",
+                        placeOfExperience:"Archer - The IT Recruitment Consultancy",
+                        locationOfExperience:"Sliema, Malta",
+                        areaOfExpertise:"Senior IT Recruitment Consultant | IT Infrastructure | DevOps",
+                        descOfWorkDoneInAreaOfExpertise:"•	Business development, account management and recruitment.",
+                      },
+                    ],
+                    professionalSkills:[
+                      {
+
+                        nameOfSkill:"",
+                        persentageOfSkills:"",
+                      },
+
+
+                    ],
+                    Interest:[
+                      {
+                        // iconOfInterest:"",
+                        // nameOfInterest:"",
+                      }
+                    ],
+                    source:[
+                      {
+                        name:"linkedin",
+                        link:"https://www.linkedin.com/in/serena-r-lacerenza-51b53928/?originalSubdomain=mt"
+                      }
+                    ],
+
+
+                  },
+                ],
+
+              },
+
+              {
+                name:'Ian Tabone',
+                photo:'https://media-exp1.licdn.com/dms/image/C4D03AQFotaTaeAmNOw/profile-displayphoto-shrink_200_200/0/1568407161717?e=1658361600&v=beta&t=NlZZ4bbOwRzj7P2tJFm81r3S04gKvSpX5yGAr0oUWmE',
+                title:'Head of Technology at Red Acre Ltd',
+                BiographyP1:"",
+                source:[
+                  {
+                    name:"linkedin",
+                    link:"https://www.linkedin.com/company/red-acre-ltd/people/"
+                  }
+                ],
+                report2:[
+                  {
+                    name:'Burak KÖSE',
+                    photo:'https://media-exp1.licdn.com/dms/image/C5603AQGclk5ies-Xtg/profile-displayphoto-shrink_200_200/0/1566082547390?e=1658361600&v=beta&t=Mo606GPv1dEwt-gZMBd5gQkqDC24TWZ24mbHx8cMcRw',
+                    title:'Senior DevOps Engineer at Red Acre Ltd',
+                    BiographyP1:"",
+                    source:[
+                      {
+                        name:"linkedin",
+                        link:"https://www.linkedin.com/company/red-acre-ltd/people/"
+                      }
+                    ],
+
+                  },
+
+
+                  {
+                    name:'Derli Campos',
+                    photo:'https://media-exp1.licdn.com/dms/image/C4D03AQECyHHea9pp9Q/profile-displayphoto-shrink_200_200/0/1592571338731?e=1658361600&v=beta&t=sqXG0WuOFqqGhcUbuH1602fMj6ZbDtt7sgjKCGsF5oI',
+                    title:'Senior Systems Administrator',
+                    BiographyP1:'',
+                    source:[
+                      {
+                        name:"linkedin",
+                        link:"https://www.linkedin.com/company/red-acre-ltd/people/"
+                      }
+                    ]
+                  },
+                  {
+                    name:'!!!Unknown!!!',
+                    photo:'https://media-exp1.licdn.com/dms/image/C4D03AQEG2RkkLUE8SQ/profile-displayphoto-shrink_200_200/0/1571083183902?e=1658361600&v=beta&t=zfh4-ZkGkcmJe-Nn6mudSNqc8kWzdNK5u5k11fPqRPA',
+                    title:'Senior Software Developer',
+                    BiographyP1:'',
+                    source:[
+                      {
+                        name:"linkedin",
+                        link:"https://www.linkedin.com/company/red-acre-ltd/people/"
+                      }
+                    ],
+                    report3:[
+                      {
+                        name:'Emmanuel Odongo',
+                        photo:'https://media-exp1.licdn.com/dms/image/C4E03AQHY8m9NF6krIQ/profile-displayphoto-shrink_200_200/0/1608407608106?e=1658361600&v=beta&t=k8inM7gD-gOkKrgL_RACUERHZC4s17RhTEp8un-DsLI',
+                        title:'Full Stack Developer at Red Acre Ltd',
+
+                        phoneNumber:'',
+                        email:"",
+                        website:"",
+                        address:"",
+                        linkedIn:"",
+                        BiographyP1:'No BiographyP1',
+                        Experience:[
+                          {
+                            yearsOfExperience:"",
+                            placeOfExperience:"",
+                            locationOfExperience:"",
+                            areaOfExpertise:"",
+                            descOfWorkDoneInAreaOfExpertise:"",
+                          },
+                        ],
+                        professionalSkills:[
+                          {
+
+                            nameOfSkill:"",
+                            persentageOfSkills:"",
+                          },
+
+
+                        ],
+                        Interest:[
+                          {
+                            // iconOfInterest:"",
+                            // nameOfInterest:"",
+                          }
+                        ],
+
+                        source:[
+                          {
+                            name:"linkedin",
+                            link:"https://www.linkedin.com/in/emmanuelodongo/"
+                          }
+                        ],
+                        Education:[
+                          {
+
+                            year:"",
+                            certificateName:"",
+                            certificatePoints:"",
+                            institutionName:"",
+                          },
+
+
+                        ],
+                        languages:[
+                          {
+                            languageName:"",
+                            languagesPercent:""
+                          }
+                        ],
+
+
+                      },
+                    ]
+
+                  },
+
+
+                ]
+
+              },
+
+
+
+            ]
+          },
+
+
+        ]
+      },
+
+      {
+        name:"Red Acre Board of Directors",
+        people:[
+
+        ]
+      }
+
+
+    ],
+
+
+  },
 
 ]
