@@ -70,7 +70,21 @@ export const allExpenseData = [
     type:'Income',
     details:'5000 form rearanging Mr Moh office and cleaning it',
     date: '05-17-2022',
-  }
+  },
+  {
+    amount:250,
+    category:'Gifts',
+    type:'Income',
+    details:'Gift form me,money i had befor tracking',
+    date: '05-18-2022',
+  },
+  {
+    amount:1250,
+    category:'Food',
+    type:'Expense',
+    details:'1250 francs to buy milk',
+    date: '05-18-2022',
+  },
 
 
 

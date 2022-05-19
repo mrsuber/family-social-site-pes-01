@@ -91,7 +91,64 @@ export const relData = [
     learningTitle:"Christainity",
     logo:logo,
     path:"Christainity",
-    about:"HTML is the universal markup language for the Web. HTML lets you format text, add graphics, create links, input forms, frames and tables, etc., and save it all in a text file that any browser can read and display.",
+    about:"Christianity is an Abrahamic monotheistic religion based on the life and teachings of Jesus of Nazareth. It is the world's largest religion, with about 2.6 billion followers as of 2020 estimation.Its adherents, known as Christians, make up a majority of the population in 157 countries and territories,[3] and believe that Jesus is the Son of God, whose coming as the messiah was prophesied in the Hebrew Bible (called the Old Testament in Christianity) and chronicled in the New Testament.",
+    about2:'Christianity remains culturally diverse in its Western and Eastern branches, as well as in its doctrines concerning justification and the nature of salvation, ecclesiology, ordination, and Christology. The creeds of various Christian denominations generally hold in common Jesus as the Son of God—the Logos incarnated—who ministered, suffered, and died on a cross, but rose from the dead for the salvation of mankind; and referred to as the gospel, meaning the "good news". Describing Jesus\' life and teachings are the four canonical gospels of Matthew, Mark, Luke and John, with the Old Testament as the gospel\'s respected background.',
+    aboutPopUp:[
+      {
+        name:"Abrahamic religions",
+        details1:"Abrahamic religions are those that worship the God of Abraham, including Judaism, Christianity, and Islam.",
+        details2:"Abraham, a Hebrew patriarch and prophet, is extensively mentioned in Abrahamic scriptures such as the Bible and Quran.",
+        details3:"Jewish tradition claims that the Twelve Tribes of Israel are descended from Abraham through his son Isaac and grandson Jacob, whose sons formed the nation of the Israelites in Canaan; Islamic tradition claims that twelve Arab tribes known as the Ishmaelites are descended from Abraham through his son Ishmael in Arabia",
+        details4:"When people refer to the Abrahamic religions they are usually thinking of Judaism, Christianity and Islam. There are, in fact,  more Abrahamic religions, such as the Baha’i Faith, Yezidi, Druze, Samaritan and Rastafari, but this article will focus on the main three aforementioned. The term ‘Abrahamic’ highlights the hugely important role which the figure of Abraham plays in each of these traditions. Jews, Christians and Muslims look to their sacred texts to find the history of Abraham and how it has been interpreted through the ages.",
+        details5:"For Jews, the central text is the Hebrew Bible consisting of the Torah (the first five books or Pentateuch), the Prophets (Nevi’im) and the Writings (Ketuvim). Abraham’s story unfolds in Genesis, the first book of the Torah. Abraham is referred to over and over again throughout the Hebrew Bible as well as in post-biblical rabbinical materials interpreting the biblical narrative (Midrash).",
+        details6:"For Christians, the Hebrew Bible is the Old Testament, the precursor of the New Testament that narrates the birth, ministry, death and Resurrection of Jesus Christ as well as the life and preaching of the earliest followers of Jesus. For Christian understandings of Abraham the Letters of St Paul are of particular importance.",
+        details7:"Muslims engage with the figure of Abraham/Ibrāhīm in their holy book, the Qur’an, as well as in the Hadith, the body of writings which transmit the sayings and actions of the Prophet Muhammad.",
+        details8:"Let us turn to Genesis to map out the story of Abraham, which is shared by Jews and Christians. In Genesis 12: 1–3 Abraham (at that stage his name is still Abram) is called by God to: ‘Go from your country and your kindred and your father’s house to the land that I will show you. I will make of you a great nation, and I will bless you, and make your name great, so that you will be a blessing … and in you all the families of the earth shall be blessed’ (NRVS).",
+        details9:"Because Abraham’s wife Sarai (later Sarah) remains childless, Abraham has a son with Sarah’s slave Hagar. The child is called Ishmael. At this stage (Genesis 17) Abraham receives the commandment of circumcision of all males when they are eight days old. At the same time he is told Sarah will bear a son as well. This is Isaac. Trouble brews between Sarah and Hagar as their sons grow up, and Sarah persuades Abraham to send Hagar and Ishmael away (Genesis 21). God promises Hagar that Ishmael too will be made into a great nation. God then tests Abraham’s faith by commanding him to sacrifice Isaac (Genesis 22). But when Abraham is about to sacrifice Isaac on Mount Moriah, an angel stops him and directs his gaze to a ram caught in the thicket. The ram is sacrificed instead of Isaac.",
+        details10:"",
+        details11:"read more from the link",
+        images:[
+          {
+            imageName:"Abrahamic Religion",
+            imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1652978987/msbGeanologyProfilePics/religion/Abrahamaic_religion_ssippq.png",
+          }
+        ],
+        popUpSources:[
+          {
+            name:"Abrahamic religions",
+            link:"https://en.wikipedia.org/wiki/Abrahamic_religions",
+          },
+          {
+            name:"Abrahamic religions",
+            link:"https://www.bl.uk/sacred-texts/articles/the-abrahamic-religions",
+          }
+        ],
+
+
+      },
+      {
+        name:"Abrahamic religions",
+        details1:"",
+        details2:"",
+        details3:"",
+        details4:"",
+        details5:"",
+        details6:"",
+        details7:"",
+        details8:"",
+        details9:"",
+        details10:"",
+        details11:"",
+        popUpSources:[
+          {
+            name:"Abrahamic religions",
+            link:"https://en.wikipedia.org/wiki/Abrahamic_religions",
+          },
+        ],
+
+
+      },
+    ],
     MainLocation:"Cameroon || southwest || Buea",
     TotalNumberOfBranches:"8",
 
