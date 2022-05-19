@@ -941,14 +941,35 @@ export const companyStructuralData = [
                     website:"redacreltd.com/  (Company Website)",
                     address:"",
                     linkedIn:"https://www.linkedin.com/in/serena-r-lacerenza-51b53928/?originalSubdomain=mt",
-                    BiographyP1:'No BiographyP1',
+
                     Experience:[
                       {
-                        yearsOfExperience:"",
-                        placeOfExperience:"",
-                        locationOfExperience:"",
-                        areaOfExpertise:"",
-                        descOfWorkDoneInAreaOfExpertise:"",
+                        yearsOfExperience:"May 2021 - Present",
+                        placeOfExperience:"Red Acre Ltd · Full-time",
+                        locationOfExperience:"Sliema, Malta",
+                        areaOfExpertise:"Talent Acquisition",
+                        descOfWorkDoneInAreaOfExpertise:"Red Acre Ltd. is a global organization and SaaS company that provides services to FinTech companies, predominantly within the Forex and Crypto industries.I am responsible for recruiting in Malta, Dublin and Limassol-based offices. 1=>Manage the full recruitment life cycle (technology, digital marketing, finance and legal departments). 2=>Communicate with the hiring managers and support them throughout the whole recruitment process. 3=>Headhunting in the EMEA and LATAM markets 4=>Employer branding 5=>Onboarding and Offboarding 6=>Conduct skip-level meetings for the marketing, finance, trade and administration departments. 6=>Schedule and follow up on performance assessment meetings. ",
+                      },
+                      {
+                        yearsOfExperience:"Jan 2019 - May 2021",
+                        placeOfExperience:"Archer - The IT Recruitment Consultancy",
+                        locationOfExperience:"Xbiex, Malta",
+                        areaOfExpertise:"Associate Recruitment Manager",
+                        descOfWorkDoneInAreaOfExpertise:"Archer is a Dublin and Malta-based IT recruitment agency. I joined the company when it was a startup and developed my role together with the company’s growth. 1==>Hands-on recruitment of IT professionals in the EMEA space. ==>Business Development – look for new business opportunities and negotiate terms and conditions. 3==>Account Management – manage a large portfolio of clients in order to deliver high standards and to improve the business relationships.4==>Internal Recruitment 5==> Training and coaching junior recruiters 6==> Team performance assessment and KPIs management 7==>Keeping records of the weekly and monthly report 8==>Attending board meetings 9==> Report to the Managing Director based in Dublin. ",
+                      },
+                      {
+                        yearsOfExperience:"Jan 2017 - Dec 2018",
+                        placeOfExperience:"Archer - The IT Recruitment Consultancy",
+                        locationOfExperience:"Malta",
+                        areaOfExpertise:"Lead Consultant",
+                        descOfWorkDoneInAreaOfExpertise:"Responsible for growing and managing the Malta based office. Successfully grew the team, achieved team targets, and managed a team of 6-8 people. •	360 consultant (business development, account management and recruitment)•	Internal recruitment•	Team leading•	KPIs management•	Keeping records of the weekly and monthly report•	Report to the Managing Director based in Dublin",
+                      },
+                      {
+                        yearsOfExperience:"Sep 2016 - Dec 2016",
+                        placeOfExperience:"Archer - The IT Recruitment Consultancy",
+                        locationOfExperience:"Sliema, Malta",
+                        areaOfExpertise:"Senior IT Recruitment Consultant | IT Infrastructure | DevOps",
+                        descOfWorkDoneInAreaOfExpertise:"•	Business development, account management and recruitment.",
                       },
                     ],
                     professionalSkills:[
