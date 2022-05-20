@@ -10,13 +10,13 @@ export const courseRelStructuralData = [
       menu:[
         {
           name:'Introduction',
-          detail:"1)Religion-wikipedia, 2)pascal-view of religion, 3)list of the world most populated religion",
-          // detail1:"A save in a text editor records all of the words in a document as a single file. You are only ever given one record of the file, such as ```essay.doc```, unless you make duplicate copies (which is difficult to remember to do and keep track of):```essay-draft1.doc, essay-draft2.doc, essay-final.doc```",
-          // detail2:"However, a save in Git records differences in the files and folders AND keeps a historical record of each save. This feature is a game changer. As an individual developer, Git enables you to review how your project grows and to easily look at or restore file states from the past. Once connected to a network, Git allows you to push your project to GitHub or other alternatives such as: Bitbucket, Beanstalk, or GitLab for sharing and collaborating with other developers.",
-          // detail3:"Please note, we only support GitHub within our curriculum, and will not help troubleshoot the alternatives.",
-          // detail4:"While Git works on your local machine, GitHub is a remote storage facility on the web for all your coding projects. This means that by learning Git, you will get to showcase your portfolio on GitHub! This is really important because almost all software development companies consider using Git to be an essential skill for modern web developers. Having a GitHub portfolio will provide proof to future potential employers as to what you are capable of.",
-          // detail5:"In this lesson, we will briefly explore the history of Git, what it is, and what it’s useful for.\n In the next lesson, we will go over the basic workflow for using Git, which should enhance your understanding and demonstrate why Git is so useful.Finally, you will set up a project with Git that will serve as a template for your future projects.",
-          // detail6:"For now, let’s learn what Git is and why it’s so powerful!",
+          detail:"The aim of this Section is to provide a broad foundation on which the reader may base his further studies on the teaching of Islam",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
           ancorName:"Introduction",
           // popup1Name:"",
           // popup1:"",
@@ -25,7 +25,125 @@ export const courseRelStructuralData = [
 
 
         },
+        {
+          name:'Origin of Islam',
+          detail:"```Islam``` is an Arabic word which means peace,purity,acceptance and submission to God. Islam is monotheistic, that is belief in one God and owes its origin form God.(Q.3:19, 3:85, 5:3).",
+          detail1:"A Muslim is one who freely and willingly accept the supreme power of God and strives to organize his life in total accord with the teaching of Islam.He also works for building social institutions which reflect the guidance of God.",
+          detail2:'"Mohammedanism" is a misnomer for Islam and offends its very spirit since the Prophet Mohamad(P.B.U.H)  was a messenger of God, and not a divine being worshipped by Muslims.',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Origin of Islam",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
 
+
+        },
+        {
+          name:'The concept of God in Islam',
+          detail:"Knowledge of God and belief in Him constitutes the very foundation of Islam. As we look around our environment, we see that every family has a head, every school has a principal, every town has a mayor, and every nation has a head of state.",
+          detail1:" Moreover we know beyond doubt that every product is the work of a certain producer and every beautiful art is the creation of a great artist. One often wonders at the beauty of nature with its scientific charms and marvels. ",
+          detail2:'The almost endless horizons in the sky and their reaching expansions - the ceaseless succession of day and night in the most orderly manner, the course of the sun, the moon and the stars, etc. One often wonders because one would like to know the maker and maintenance of all these things with which we live and which we immensely enjoy.',
+          detail3:"Can we find an explanation of the universe? Is there any convincing interpretation of the secret of existence?",
+          detail4:"In the world then there must be a great force in action to keep everything in order. In beautiful nature, there must be a great originator who creates the most charming objects and produces everything for a special purpose in life. This force is the strongest of all forces and is the cause of all forms of creation.",
+          detail5:" True believers and deeply enlightened people recognize their originator and call Him Allah or God. He is not a man because no man can create or make another man. He is not an animal or a plant.",
+          detail6:' According to Islam, God is unique as presented in the Holy Qur\'an "He is ALLAH(GOD), the only One. Allah helps and does not need help. He does not have a child and He was not born of anyone. There is none comparable to Him." (Holy Qur\'an 112:1-3,  Q2:255, Q59:22-24)',
+          ancorName:"The concept of God in Islam",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:'',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:'',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:'',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:'',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:'',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
       ],
       additionalRead:[
         {
