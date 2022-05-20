@@ -33,7 +33,7 @@ const CourseRelScreen2 = () => {
     img={ auth.user.profilePic ? auth.user.profilePic :profile}
     logo={logo}
     pic={pic}
-    activeLink8="admin__active"
+    activeLink11="admin__active"
     fullname={auth.user.fullname }
     username={auth.user.username}
     />
