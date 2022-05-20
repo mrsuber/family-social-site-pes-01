@@ -107,12 +107,10 @@ export const relData = [
         details9:"Because Abraham’s wife Sarai (later Sarah) remains childless, Abraham has a son with Sarah’s slave Hagar. The child is called Ishmael. At this stage (Genesis 17) Abraham receives the commandment of circumcision of all males when they are eight days old. At the same time he is told Sarah will bear a son as well. This is Isaac. Trouble brews between Sarah and Hagar as their sons grow up, and Sarah persuades Abraham to send Hagar and Ishmael away (Genesis 21). God promises Hagar that Ishmael too will be made into a great nation. God then tests Abraham’s faith by commanding him to sacrifice Isaac (Genesis 22). But when Abraham is about to sacrifice Isaac on Mount Moriah, an angel stops him and directs his gaze to a ram caught in the thicket. The ram is sacrificed instead of Isaac.",
         details10:"",
         details11:"read more from the link",
-        images:[
-          {
-            imageName:"Abrahamic Religion",
-            imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1652978987/msbGeanologyProfilePics/religion/Abrahamaic_religion_ssippq.png",
-          }
-        ],
+
+        imageName:"Abrahamic Religion",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1652978987/msbGeanologyProfilePics/religion/Abrahamaic_religion_ssippq.png",
+
         popUpSources:[
           {
             name:"Abrahamic religions",
@@ -127,10 +125,10 @@ export const relData = [
 
       },
       {
-        name:"Abrahamic religions",
-        details1:"",
-        details2:"",
-        details3:"",
+        name:"Monotheism",
+        details1:"Monotheism is the belief that there is only one deity, an all-supreme being that is universally referred to as God.",
+        details2:"Monotheism is one of two major styles of religious belief in the world. Monotheism means the belief in only one god. By contrast, polytheism means the belief in the existence of multiple gods or goddesses. Christianity, Judaism, and Islam are the three major world religions that consider themselves monotheistic, although Christianity has a more complex explanation of 'one God' than Judaism and Islam do.",
+        details3:"Mark 12:29 Jesus answered, “The foremost is, ‘Hear, O Israel! The Lord our God is one Lord;",
         details4:"",
         details5:"",
         details6:"",
@@ -141,8 +139,38 @@ export const relData = [
         details11:"",
         popUpSources:[
           {
-            name:"Abrahamic religions",
-            link:"https://en.wikipedia.org/wiki/Abrahamic_religions",
+            name:"Monotheism",
+            link:"https://en.wikipedia.org/wiki/Monotheism",
+          },
+          {
+            name:"Monotheism",
+            link:"https://bible.knowing-jesus.com/topics/Monotheism",
+          },
+        ],
+
+
+      },
+      {
+        name:"Jesus",
+        details1:"Jesus (c. 4 BC – AD 30 or 33), also referred to as Jesus of Nazareth or Jesus Christ, was a first-century Jewish preacher and religious leader. He is the central figure of Christianity, the world's largest religion. Most Christians believe he is the incarnation of God the Son and the awaited messiah (the Christ), prophesied in the Hebrew Bible.",
+        details2:"Jesus, also called Jesus Christ, Jesus of Galilee, or Jesus of Nazareth, (born c. 6–4 BCE, Bethlehem—died c. 30 CE, Jerusalem), religious leader revered in Christianity, one of the world’s major religions. He is regarded by most Christians as the Incarnation of God. The history of Christian reflection on the teachings and nature of Jesus is examined in the article Christology.(Christology, Christian reflection, teaching, and doctrine concerning Jesus of Nazareth. Christology is the part of theology that is concerned with the nature and work of Jesus, including such matters as the Incarnation, the Resurrection, and his human and divine natures and their relationship.)",
+        details3:"Ancient Jews usually had only one name, and, when greater specificity was needed, it was customary to add the father’s name or the place of origin. Thus, in his lifetime Jesus was called Jesus son of Joseph (Luke 4:22; John 1:45, 6:42), Jesus of Nazareth (Acts 10:38), or Jesus the Nazarene (Mark 1:24; Luke 24:19). After his death he came to be called Jesus Christ.",
+        details4:"Christ was not originally a name but a title derived from the Greek word christos, which translates the Hebrew term meshiah (Messiah), meaning “the anointed one.” This title indicates that Jesus’ followers believed him to be the anointed son of King David, whom some Jews expected to restore the fortunes of Israel. Passages such as Acts of the Apostles 2:36 show that some early Christian writers knew that the Christ was properly a title, but in many passages of the New Testament, including those in the letters of the Apostle Paul, the name and title are combined and used together as Jesus’ name: Jesus Christ or Christ Jesus (Romans 1:1; 3:24). Paul sometimes simply used Christ as Jesus’ name (e.g., Romans 5:6).",
+        details5:"Although born in Bethlehem, according to Matthew and Luke, Jesus was a Galilean from Nazareth, a village near Sepphoris, one of the two major cities of Galilee (Tiberias was the other). He was born to Joseph and Mary sometime between 6 BCE and shortly before the death of Herod the Great (Matthew 2; Luke 1:5) in 4 BCE. According to Matthew and Luke, however, Joseph was only legally his father. They report that Mary was a virgin when Jesus was conceived and that she “was found to be with child from the Holy Spirit” (Matthew 1:18; cf. Luke 1:35). Joseph is said to have been a carpenter (Matthew 13:55)—that is, a craftsman who worked with his hands—and, according to Mark 6:3, Jesus also became a carpenter.",
+        details6:"Luke (2:41–52) states that Jesus as a youth was precociously learned, but there is no other evidence of his childhood or early life. As a young adult, he went to be baptized by the prophet John the Baptist and shortly thereafter became an itinerant preacher and healer (Mark 1:2–28). In his mid-30s Jesus had a short public career, lasting perhaps less than one year, during which he attracted considerable attention. Sometime between 29 and 33 CE—possibly 30 CE—he went to observe Passover in Jerusalem, where his entrance, according to the Gospels, was triumphant and infused with eschatological significance. While there he was arrested, tried, and executed. His disciples became convinced that he rose from the dead and appeared to them. They converted others to belief in him, which eventually led to a new religion, Christianity.",
+        details7:"",
+        details8:"",
+        details9:"",
+        details10:"",
+        details11:"",
+        popUpSources:[
+          {
+            name:"Jesus",
+            link:"https://en.wikipedia.org/wiki/Jesus",
+          },
+          {
+            name:"Jesus",
+            link:"https://www.britannica.com/biography/Jesus/Jewish-Palestine-at-the-time-of-Jesus",
           },
         ],
 
@@ -150,34 +178,17 @@ export const relData = [
       },
     ],
     MainLocation:"Cameroon || southwest || Buea",
-    TotalNumberOfBranches:"8",
+    TotalNumberOfBranches:"2",
 
     TotalNumberCompleted:"0",
     LessonTittle:[
       {
-        title:"Introduction to HTML and CSS"
+        title:"Torah or Pentateuch or Old Testament"
       },
       {
-        title:"Elements and Tags"
+        title:"Gospel or New Testament"
       },
-      {
-        title:"HTML Boilerplate"
-      },
-      {
-        title:"Working with Text"
-      },
-      {
-        title:"Lists"
-      },
-      {
-        title:" Links and Images"
-      },
-      {
-        title:"Commit Messages"
-      },
-      {
-        title:"Project: Recipes"
-      },
+
 
     ],
 

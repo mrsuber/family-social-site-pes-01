@@ -3,6 +3,8 @@ import './UnclearPopup.css'
 import {AdminSources,AdminCourseImagePopUp} from '../../../../components'
 const UnclearPopup = ({data,setUnclearPopup}) => {
 
+
+
   return (
     <div className="admin__Unclear-container">
       <div className="admin__Unclear-content">
@@ -33,9 +35,8 @@ const UnclearPopup = ({data,setUnclearPopup}) => {
         <p style={{marginBottom:"15px"}}>{data.details9 ? data.details9 :''}</p>
         <p style={{marginBottom:"15px"}}>{data.details10 ? data.details10 :''}</p>
         <p style={{marginBottom:"15px"}}>{data.details11 ? data.details11 :''}</p>
-        {data.images.length>0 && <>
-            display imagee
-          </>}
+        {data.imageName && <><AdminCourseImagePopUp img={data.imageLink} name={data.imageName}/></>}
+
         {data.popUpSources && data.popUpSources.length>0 ? <AdminSources source={data.popUpSources} name={data.popUpSources[0].name} id="pop1"/>:<p>no refrence link</p>}
 
       </div>
