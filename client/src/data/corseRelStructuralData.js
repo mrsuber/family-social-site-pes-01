@@ -60,7 +60,41 @@ export const courseRelStructuralData = [
 
         },
         {
-          name:'',
+          name:'Islamic Monotheism - Tawhid(The oneness of Allah)[part1]',
+          detail:"Tawhid is the most important Islamic belief. It is the first thing that each and every matured human being must learn. It implies that everything in existence originated from one and only Creator, who is also the sustainer and the sole source of guidance. This belief should govern all aspects of human life. Allah is the sole source of Power and Authority, therefore entitled to worship and obedience from mankind. There is no chance for any partnership with the Creator.",
+          detail1:"The term TAWHID is derived from the there root ```w-h-d``` which serves as the vehicle for the basic concept of  'oneness', or 'unity', along with the closely related ideas of 'singularity' and 'uniqueness'.These root letters are clearly apparent in the numerical adjective ```wahid```[one]",
+          detail2:'Linguistically Towhid means: "To Make something one, or to assert the oneness of something." However what we are concerned with here is the shari\'ah or technical meaning of Towhid which is:"   To single out Almighty God alone for worship."',
+          detail3:'It is asserted in the first pillar of Islam "La illaha illa llah"[ There is none worthy of worship except Allah(SWT)]. Tawhid has three aspects(diviesions).',
+          detail4:"1.) Tawhid ar-Ruboobiyyah (the Oneness of God in His Lordship)",
+          detail5:"2.) Tawhid al-Uloohiyyah (to single-out Almighty God alone for worship)",
+          detail6:"3.) Tawhid al-Asmaa was-Sifaat (the uniqueness of God's Names and Attributes)",
+          ancorName:"Islamic Monotheism - Tawhid(The oneness of Allah)",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:' Tawhid ar-Ruboobiyyah (the Oneness of God in His Lordship)',
+          detail:"Tawhid ar-Ruboobiyyah implies: A firm and definite belief that Almighty God alone is the  Creator, the Master, and Owner, and Command is for none but Him.",
+          detail1:'God says in the Quran "Allah created all things and He is the agent on which all things depend." (Q13:16, Q6:1, Q6:102, Q35:1-3 Q39:46)',
+          detail2:' A confession with your heart that the Creator (of everything) is Allah; it is that you have to say: " I testify that the Creator of all the universe including the unknown forms of life, is Allah. He is the Organizer and Planner of all its affairs. It is He who gives life and death, and He (ie Allah Alone) is the Sustainer, the Giver of security." ',
+          detail3:' This is (your confession for the) "Oneness of the Lordship of Allah".',
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:" Tawhid ar-Ruboobiyyah (the Oneness of God in His Lordship)",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'Tawhid al-Uloohiyyah (to single-out Almighty God alone for worship)',
           detail:"",
           detail1:"",
           detail2:'',
@@ -68,7 +102,41 @@ export const courseRelStructuralData = [
           detail4:"",
           detail5:"",
           detail6:"",
-          ancorName:"",
+          ancorName:"Tawhid al-Uloohiyyah (to single-out Almighty God alone for worship)",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'Tawhid al-Asmaa was-Sifaat (the uniqueness of God\'s Names and Attributes)',
+          detail:"",
+          detail1:"",
+          detail2:'',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Tawhid al-Asmaa was-Sifaat (the uniqueness of God's Names and Attributes)",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'Islamic Monotheism - Tawhid(The oneness of Allah)[part2]',
+          detail:"",
+          detail1:"",
+          detail2:'',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Islamic Monotheism - Tawhid(The oneness of Allah)[part2]",
           // popup1Name:"",
           // popup1:"",
           // popup2Name:"",
@@ -159,11 +227,26 @@ export const courseRelStructuralData = [
       ],
       KnowledgeCheck:[
         {
-          check:""
+          check:"what is Islam"
         },
         {
-          check:""
+          check:"In your own words, discribe the concept of God in Islam"
         },
+        {
+          check:"what is Tawhid"
+        },
+        {
+          check:"what is Tawhid ar-Ruboobiyyah"
+        },
+        {
+          check:"what is Tawhid al-Uloohiyyah"
+        },
+        {
+          check:"what is Tawhid al-Asmaa was-Sifaat"
+        },
+
+
+
       ],
     },
     companyLevel1:[
