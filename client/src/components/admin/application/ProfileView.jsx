@@ -67,7 +67,16 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
           <p className="admin__about_paragraph">{data.about?data.about : <span className="admin__worning-update">update about content</span>}</p>
           {data.about2 && <p className="admin__about_paragraph">{data.about2}</p>}
           {data.about3 && <p className="admin__about_paragraph">{data.about3}</p>}
+          {data.about4 && <p className="admin__about_paragraph">{data.about4}</p>}
 
+          <div style={{margin:"10px 0"}}>
+          {data.aboutPopUp.length >0
+            ? data.aboutPopUp.map((item)=>(<span className="admin__profileOnView-more decorating_pop" onClick={()=>showStatus(item)}>
+          {`${item.name} pop`}
+          </span>))
+          :<></>
+        }
+        </div>
           {data.aboutSource && data.aboutSource.length!==0? <AdminSources source={ data.aboutSource} name="about " id="touch"/>:<span className="admin__worning-update">update About sources</span>}
 
         </div>

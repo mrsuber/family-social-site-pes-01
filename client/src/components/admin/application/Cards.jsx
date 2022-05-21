@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import './styles.css'
 import {AdminApplicationProfileEdit, AdminApplicationProfileView} from '../../../components'
 
-const Cards = ({setOnStructuralDetail,data,setCompanyName}) => {
+const Cards = ({setOnStructuralDetail,data,setCompanyName,setStatusCheck,setStatusCheckData}) => {
 
     const [onEdit,setOnEdit] = useState(false)
     const [onView,setOnView] = useState(false)
@@ -12,6 +12,11 @@ const Cards = ({setOnStructuralDetail,data,setCompanyName}) => {
 
       setOnStructuralDetail(true)
       setCompanyName(data.companyName)
+    }
+
+    const status = (data) =>{
+      setStatusCheckData(data)
+      setStatusCheck(true)
     }
 
   return (
@@ -39,8 +44,8 @@ const Cards = ({setOnStructuralDetail,data,setCompanyName}) => {
               <h4>Sturcture Details</h4>
 
             </button>
-            <button className="admin__rev-sum-apply">
-              <h4>Activated</h4>
+            <button className="admin__rev-sum-apply" onClick={()=>status(data)}>
+              <h4>{data.ApplicationStatus? data.ApplicationStatus:"Status Unkown"}</h4>
 
             </button>
         </div>

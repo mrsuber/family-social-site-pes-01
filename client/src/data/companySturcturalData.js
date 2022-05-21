@@ -935,13 +935,51 @@ export const companyStructuralData = [
                     BiographyP1:"Experienced Talent Acquisition Specialist with a demonstrated history of working in the information technology and digital marketing industries, with a solid understanding of the iGaming, Information Technology, Marketing, Legal, Banking, Finance, FinTech, Forex, and Crypto industries. ",
                     BiographyP2:"Able to work on multiple searches at the same time, while understanding priorities; to communicate with hiring managers from different departments, understanding their requirements, advising and supporting them throughout the whole recruitment process. ",
                     BiographyP3:"Skilled in employees onboarding and offboarding processes.",
-
+                    BiographyP4:"Loves Photograhs and nature (instagram)",
                     phoneNumber:'',
-                    email:"careers@redacreltd.freshteam.com",
+                    email:"careers@redacreltd.freshteam.com | serena@bettingconections.com",
                     website:"redacreltd.com/  (Company Website)",
-                    address:"",
+                    twitter:"https://twitter.com/serenarl",
+                    address:"San Pawl il-Baħar | Malta (facebook)",
                     linkedIn:"https://www.linkedin.com/in/serena-r-lacerenza-51b53928/?originalSubdomain=mt",
-
+                    Education:[
+                      {
+                        year:"2010 - 2011",
+                        institutionName:"Free International University Of Social Studies",
+                        certificateName:"Masters (Human Resources)",
+                        certificatePoints:"",
+                      },
+                      {
+                        year:"2007 - 2010",
+                        institutionName:"University of Bari",
+                        certificateName:"Masters (Philosophy)",
+                        certificatePoints:"",
+                      }
+                      ,
+                      {
+                        year:"2003 - 2007",
+                        institutionName:"University of Bari",
+                        certificateName:"Bachelors (Philosophy)",
+                        certificatePoints:"",
+                      }
+                      ,
+                      {
+                        year:"1998 - 2003",
+                        institutionName:"Liceo Classico \"Alfredo Casardi\"",
+                        certificateName:"(Business)",
+                        certificatePoints:"",
+                      }
+                    ],
+                    languages:[
+                    {
+                      languageName:"Italian. Native or bilingual proficiency",
+                      languagesPercent:"95%"
+                    },
+                    {
+                      languageName:"English Professional working proficiency",
+                      languagesPercent:"95%"
+                    },
+                  ],
                     Experience:[
                       {
                         yearsOfExperience:"May 2021 - Present",
@@ -971,6 +1009,20 @@ export const companyStructuralData = [
                         areaOfExpertise:"Senior IT Recruitment Consultant | IT Infrastructure | DevOps",
                         descOfWorkDoneInAreaOfExpertise:"•	Business development, account management and recruitment.",
                       },
+                      {
+                        yearsOfExperience:"May 2012 - Feb 2015",
+                        placeOfExperience:"Betting Connections",
+                        locationOfExperience:"Sliema, Malta",
+                        areaOfExpertise:"Recruitment Consultant",
+                        descOfWorkDoneInAreaOfExpertise:"Betting Connections is a Malta-based recruitment agency that specializes in the iGaming market. •	Responsible for recruiting internationally Marketing, IT, Sales, Finance and Customer Service professionals within the iGaming industry.",
+                      },
+                      {
+                        yearsOfExperience:"Jun 2011 - Oct 2011",
+                        placeOfExperience:"Gi Group",
+                        locationOfExperience:"Rome, Italy",
+                        areaOfExpertise:"Recruitment & HR Administration Assistant - Internship",
+                        descOfWorkDoneInAreaOfExpertise:"Gi Group is an international Interim Recruitment Agency. =>•	Recruit professionals within the hospitality and retail industries.==>•	Support the payroll department.",
+                      },
                     ],
                     professionalSkills:[
                       {
@@ -991,6 +1043,14 @@ export const companyStructuralData = [
                       {
                         name:"linkedin",
                         link:"https://www.linkedin.com/in/serena-r-lacerenza-51b53928/?originalSubdomain=mt"
+                      },
+                      {
+                        name:"instagram",
+                        link:"https://www.instagram.com/_blackeyes_92/?hl=en"
+                      },
+                      {
+                        name:"facebook",
+                        link:"https://web.facebook.com/serena.r.lacerenza/about?lst=100006607650013%3A1301445150%3A1653147888&_rdc=1&_rdr"
                       }
                     ],
 

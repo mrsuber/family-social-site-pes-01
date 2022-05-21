@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import './AdminApplicationScreen.css'
 
-import {AdminSideBar,AdminApplicationStructure,AdminApplicationCard} from '../../../components'
+import {AdminSideBar,AdminApplicationStructure,AdminApplicationCard,AdminApplicationStages} from '../../../components'
 import {profile,logo,pic} from '../../../images'
 import logo2 from '../../../images/admin/google_logo.jpg'
 import logo3 from '../../../images/admin/Oracle_Logo.png'
@@ -20,6 +20,8 @@ const AdminApplicationScreen = () => {
     const [sturtureData,setSturtureData] = useState(companyStructuralData)
     const [companyName, setCompanyName]=useState(null)
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
+    const [statusCheck,setStatusCheck] = useState(false)
+    const [statusCheckData,setStatusCheckData]= useState([])
     const dispatch = useDispatch()
 
 
@@ -45,6 +47,7 @@ const AdminApplicationScreen = () => {
     fullname={auth.user.fullname }
     username={auth.user.username}
     />
+
     <div className="admin__main-content">
       <header className="admin__header">
         <div className="admin__header-title-wrapper">
@@ -63,28 +66,33 @@ const AdminApplicationScreen = () => {
           </button>
         </div>
       </header>
+          {statusCheck===true?<><AdminApplicationStages statusCheckData={statusCheckData}/></>
+            :<>
+          {
+            onStructuralDetail===false
+            ?<>
+            <main className="admin__main">
+            <section>
 
-        {
-          onStructuralDetail===false
-          ?<>
-          <main className="admin__main">
-          <section>
+                <div className="admin__block-grid-apply">
+                {
+                  cardData && cardData.map((data,index)=>(
+                    <AdminApplicationCard data={data} setOnStructuralDetail={setOnStructuralDetail} setCompanyName={setCompanyName} key={index} setStatusCheck={setStatusCheck} setStatusCheckData={setStatusCheckData}/>
+                  ))
 
-              <div className="admin__block-grid-apply">
-              {
-                cardData && cardData.map((data,index)=>(
-                  <AdminApplicationCard data={data} setOnStructuralDetail={setOnStructuralDetail} setCompanyName={setCompanyName} key={index}/>
-                ))
-
-              }
+                }
 
 
-              </div>
-          </section>
-          </main>
-          </>
-          :<><AdminApplicationStructure companyName={companyName} cardData={cardData} strutureData={sturtureData} setOnStructuralDetail={setOnStructuralDetail}/></>
-        }
+                </div>
+            </section>
+            </main>
+            </>
+            :<><AdminApplicationStructure companyName={companyName} cardData={cardData} strutureData={sturtureData} setOnStructuralDetail={setOnStructuralDetail}/></>
+          }
+
+          </>}
+
+
 
 
 

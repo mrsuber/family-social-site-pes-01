@@ -3,7 +3,7 @@ import {AdminSources} from '../../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPhone,faEnvelope,faGlobe,faMapMarker,faFilm,faCookie,faPaintBrush,faMapMarkedAlt} from '@fortawesome/free-solid-svg-icons';
 
-import {LinkedIn} from '@material-ui/icons'
+import {LinkedIn,Twitter} from '@material-ui/icons'
 
 import './SturcturalPeoplePopUpDetail.css'
 
@@ -50,6 +50,11 @@ const SturcturalPeoplePopUpDetail = ({setOnView,onView=false, data,position}) =>
             <li>
               <span className="admin__resume__icon"><LinkedIn/></span>
               <span className="admin__resume__text">{data.linkedIn? data.linkedIn:<span className="admin__worning-update">update LinkedIn</span>}</span>
+            </li>
+
+            <li>
+              <span className="admin__resume__icon"><Twitter/></span>
+              <span className="admin__resume__text">{data.twitter? data.twitter:<span className="admin__worning-update">update Twitter</span>}</span>
             </li>
 
             <li>

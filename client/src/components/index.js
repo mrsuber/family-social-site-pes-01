@@ -66,6 +66,7 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 
 //admin
+export {default as AdminApplicationStages} from './admin/application/applicationStages/AdminApplicationStages'
 export {default as AdminRelSubPopup} from './admin/AdminRelSubPopup/AdminRelSubPopup'
 export {default as AdminRelCourseCard} from './admin/adminRelCourseCard/AdminRelCourseCard'
 export {default as AdminRelCoursePreviewPopup} from './admin/adminRelCoursePreviewPopup/AdminRelCoursePreviewPopup'
