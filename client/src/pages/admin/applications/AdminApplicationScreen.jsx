@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './AdminApplicationScreen.css'
 
 import {AdminSideBar,AdminApplicationStructure,AdminApplicationCard} from '../../../components'
@@ -11,6 +11,8 @@ import {useDispatch,useSelector} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
 import {companyData} from '../../../data/companyData'
 import {companyStructuralData} from '../../../data/companySturcturalData'
+import axios from 'axios'
+
 
 const AdminApplicationScreen = () => {
     const {auth} = useSelector(state=>state)
@@ -21,7 +23,13 @@ const AdminApplicationScreen = () => {
     const dispatch = useDispatch()
 
 
-
+    useEffect(()=>{
+      const getCompanyData = async ()=>{
+        const res = await axios.get("https://raw.githubusercontent.com/mrsuber/Data/master/companyData.json")
+        console.log("company Data",res)
+      }
+      getCompanyData()
+    },[])
   return (
     <div className="admin__body">
     <input type="checkbox" name="admin__menu-toggle" id="admin__menu-toggle"/>
