@@ -422,10 +422,55 @@ DepartmentSource:[
     about:"From fintech to blockchain technology, Red Acre has worked across multiple cutting-edge industries to offer world-class business solutions and alternatives to make your life easier. We aim to ease the pressure of running a business and build sustainable platforms that support and enable your business to leap to the next level.",
     about2:"Leading the way with innovative back office services. We offer bespoke solutions to all your business needs - covering compliance, payments, general support and bespoke office systems.",
     about3:"Red Acre provides back office solutions and services to improve business processes. It offers online customer support assistance and give choices for compliance and payment providers. Red Acre is based in Valletta, Malta.",
+    about4:"Founded 2019 with 126 total number of employees or 160 employees by apollo and Company revenue:$10 - 49 M by infotelligent",
+    aboutPopUp:[
+      {
+        name:"fintech",
+        details1:"Fintech, or financial technology, is the term used to describe any technology that delivers financial services through software, such as online banking, mobile payment apps or even cryptocurrency.",
+        details2:"Fintech is a broad category that encompasses many different technologies, but the primary objectives are to change the way consumers and businesses access their finances and compete with traditional financial services.",
+        popUpSources:[
+          {
+            name:"fintech",
+            link:"https://www.uschamber.com/co/run/business-financing/what-is-fintech",
+          },
+        ],
+
+
+      },
+      {
+        name:"Blockchain",
+        details1:"Blockchain defined: Blockchain is a shared, immutable ledger that facilitates the process of recording transactions and tracking assets in a business network.",
+        details2:"An asset can be tangible (a house, car, cash, land) or intangible (intellectual property, patents, copyrights, branding).",
+        details3:"Virtually anything of value can be tracked and traded on a blockchain network, reducing risk and cutting costs for all involved.",
+        popUpSources:[
+          {
+            name:"Blockchain",
+            link:"https://www.uschamber.com/co/run/business-financing/what-is-fintech",
+          },
+        ],
+
+
+      },
+    ],
     aboutSource:[
       {
         name:"Red Acre",
         link:"https://redacreltd.com/",
+
+      },
+      {
+        name:"Red Acre Ltd by infotelligent",
+        link:"https://infotelligent.com/company/red-acre-ltd/42208080",
+
+      },
+      {
+        name:"Red Acre Ltd Information",
+        link:"https://rocketreach.co/red-acre-ltd-profile_b450ebd8fc7c0b7c",
+
+      },
+      {
+        name:"Red Acre Ltd Details",
+        link:"https://www.apollo.io/companies/Red-Acre-Ltd/5da5312ae409180001e2e664?chart=count",
 
       },
       {
@@ -474,8 +519,13 @@ DepartmentSource:[
           details8:"About you: You architect, design, develop and maintain JavaScript code with a handful of other languages && You are interested in keeping up with current standard methodologies && You know and care about engineering practices like CI/CD and automated testing && You have working knowledge in Agile methodologies && You have excellent analytical and problem-solving skills and can communicate your ideas to both technical and non-technical audiences && You enjoy sharing knowledge with others && You are motivated and love working in fast-paced environments",
           details9:"Question 1 !!!!!!!: under your careerpage in the full-stack developer job post, you mension the``` type: platform```. can you please elaburate",
           details10:"Question 2 !!!!!!!: In the ```why us``` page, This was one of the first reason i applied for the position, ==>under the topic ```Be part of an ever-expanding team of the brightest talent.```, you mensioned ```!!! We want to be not just a workplace for our employees - we want to be a place to develop and grow.!!!```: . can you please elaburate",
-
+          imageName:"company Growth chart",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653144197/msbGeanologyProfilePics/red_arce_l7gykw.png",
           popUpSources:[
+            {
+              name:"company Growth chart",
+              link:"https://rocketreach.co/red-acre-ltd-management_b450ebd8fc7c0b7c",
+            },
             {
               name:"careers at red acre",
               link:"https://careers.redacreltd.com/jobs",
@@ -506,13 +556,8 @@ DepartmentSource:[
 
   Employee:[
     {
-      year:"2019",
-      numberOfEmployee:"31"
-  },
-
-  {
-    year:"2021",
-    numberOfEmployee:"61"
+    year:"2022",
+    numberOfEmployee:"201-500"
 },
 
 ],
@@ -531,23 +576,17 @@ EmployeeSource:[
 Revenue:[
   {
     year:'2019',
-    amount:'6'
+    amount:'$10 - 49 M'
   },
-  {
-    year:'2020',
-    amount:'unknown'
-  },
-  {
-    year:'2021',
-    amount:'Unknown'
 
-  }
 ],
 RevenueType:'Revenue in Millions U.S dollars',
 RevenueSource:[
-  {name:"zoominfo",
-  link:"https://www.zoominfo.com/c/hippo-education-llc/357830893",
-  }
+  {
+    name:"Red Acre Ltd by infotelligent",
+    link:"https://infotelligent.com/company/red-acre-ltd/42208080",
+
+  },
 ],
 Departments:[
   {
