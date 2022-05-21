@@ -1,4 +1,4 @@
-import {logo} from '../images'
+ // website to download the hebrew transliterated and english : https://www.scripture4all.org/OnlineInterlinear/Hebrew_Index.htm
 export const courseRelStructuralData = [
   {
     learningTitle:"Islam",
