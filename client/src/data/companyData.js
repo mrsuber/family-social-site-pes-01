@@ -561,8 +561,8 @@ DepartmentSource:[
 },
 
 ],
-EmployeeType:'Full-time Employee',
-EmployeeSource:[
+  EmployeeType:'Full-time Employee',
+  EmployeeSource:[
   {
     name:"linkedin.com",
     link:"https://www.linkedin.com/company/hippo-education-inc-/people/",
@@ -573,22 +573,22 @@ EmployeeSource:[
     link:"https://www.federalpay.org/paycheck-protection-program/hippo-education-llc-woodland-hills-ca",
   }
 ],
-Revenue:[
+  Revenue:[
   {
     year:'2019',
     amount:'$10 - 49 M'
   },
 
 ],
-RevenueType:'Revenue in Millions U.S dollars',
-RevenueSource:[
+  RevenueType:'Revenue in Millions U.S dollars',
+  RevenueSource:[
   {
     name:"Red Acre Ltd by infotelligent",
     link:"https://infotelligent.com/company/red-acre-ltd/42208080",
 
   },
 ],
-Departments:[
+  Departments:[
   {
     DepartmentName:'Unknown',
     DepartmentDesc:{
@@ -596,12 +596,25 @@ Departments:[
     }
   },
 ],
-DepartmentSource:[
+  DepartmentSource:[
   {
     name:"",
     link:"",
   }
-]
+],
+  ApplicationStatus:"Active",
+  ApplicationStage:[
+    {
+      stageName:"Stage1"
+    },
+    {
+      stageName:"Stage2"
+    },
+    {
+      stageName:"Stage3"
+    }
+  ]
+
   }
 
 ]
