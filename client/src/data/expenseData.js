@@ -86,6 +86,14 @@ export const allExpenseData = [
     date: '05-18-2022',
   },
 
+  {
+    amount:1500,
+    category:'Bills',
+    type:'Expense',
+    details:'1500 francs to for electronic(current) ',
+    date: '05-18-2022',
+  },
+
 
 
 ]
