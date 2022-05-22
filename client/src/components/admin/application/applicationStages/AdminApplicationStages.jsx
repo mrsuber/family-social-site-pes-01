@@ -1,7 +1,6 @@
 import React from 'react'
 import './AdminApplicationStages.css'
 const AdminApplicationStages = (data) => {
-  console.log("stage data",data.statusCheckData.ApplicationStage)
   return (
     <div className="apply__stage-container">
     {
