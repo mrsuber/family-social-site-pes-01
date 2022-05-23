@@ -25,9 +25,9 @@ const AdminApplicationScreen = () => {
     const dispatch = useDispatch()
 
 
-  
 
-    console.log("stage data", statusCheckData)
+
+
   return (
     <div className="admin__body">
     <input type="checkbox" name="admin__menu-toggle" id="admin__menu-toggle"/>

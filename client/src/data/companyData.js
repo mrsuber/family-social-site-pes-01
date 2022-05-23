@@ -605,14 +605,32 @@ DepartmentSource:[
   ApplicationStatus:"Active",
   ApplicationStage:[
     {
-      stageName:"Stage1"
+      stageName:"Stage1-Red Acre",
+      stagePercent:100,
+      about:"This is the application phase to the company for the position",
+      aboutPopUp:[]
     },
     {
-      stageName:"Stage2"
+      stageName:"Stage2-Red Acre",
+      stagePercent:50,
+      aboutPopUp:[]
     },
     {
-      stageName:"Stage3"
-    }
+      stageName:"Stage3-Red Acre",
+      stagePercent:75,
+      aboutPopUp:[]
+    },
+    {
+      stageName:"Stage4-Red Acre",
+      stagePercent:75,
+
+      aboutPopUp:[]
+    },
+    {
+      stageName:"Stage5-Red Acre",
+      stagePercent:75,
+      aboutPopUp:[]
+    },
   ]
 
   }
