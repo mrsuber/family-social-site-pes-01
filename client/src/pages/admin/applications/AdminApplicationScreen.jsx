@@ -25,13 +25,9 @@ const AdminApplicationScreen = () => {
     const dispatch = useDispatch()
 
 
-    useEffect(()=>{
-      const getCompanyData = async ()=>{
-        const res = await axios.get("https://raw.githubusercontent.com/mrsuber/Data/master/companyData.json")
-        console.log("company Data",res)
-      }
-      getCompanyData()
-    },[])
+
+
+
   return (
     <div className="admin__body">
     <input type="checkbox" name="admin__menu-toggle" id="admin__menu-toggle"/>
@@ -66,7 +62,20 @@ const AdminApplicationScreen = () => {
           </button>
         </div>
       </header>
-          {statusCheck===true?<><AdminApplicationStages statusCheckData={statusCheckData}/></>
+          {statusCheck===true
+            ?<>
+            <main className="admin__main">
+            <section>
+
+                <div className="admin__block-grid-apply">
+
+                <AdminApplicationStages statusCheckData={statusCheckData}/>
+
+
+                </div>
+            </section>
+            </main>
+            </>
             :<>
           {
             onStructuralDetail===false

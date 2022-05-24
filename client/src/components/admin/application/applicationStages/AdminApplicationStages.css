@@ -1,19 +1,22 @@
 .apply__stage-container {
-  position: absolute;
+  /* position: absolute; */
   height: 300px;
-  width: 745px;
+  width: 60rem;
   top: 175px;
   left: calc(50% - 300px);
   display: flex;
+  flex-wrap: wrap;
 }
 
 .apply__stage-card {
+  cursor: pointer;
   display: flex;
-  height: 280px;
+  height: 310px;
   width: 200px;
   background-color: #17141d;
   border-radius: 10px;
   box-shadow: -1rem 0 3rem #000;
+  margin: 10px 0;
 /*   margin-left: -50px; */
   transition: 0.4s ease-out;
   position: relative;
@@ -61,7 +64,7 @@
   position: absolute;
   top: 0px;
   z-index: 3;
-  width: 75%;
+  /* width: 75%; */
   height: 100%;
   background: rgb(0,154,217);
   background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
@@ -80,16 +83,25 @@
 }
 
 .apply__stage-stroke {
-  stroke: white;
+  /* stroke: white;
+  background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%); */
+
   stroke-dasharray: 360;
   stroke-dashoffset: 360;
+  /* stroke-dashoffset: 360; */
   transition: 0.6s ease-out;
 }
 
 .apply__stage-container svg {
   fill: #17141d;
   stroke-width: 2px;
+  transition: 0.6s ease-out;
 }
+.apply__stage-container svg:hover {
+  fill: #009ad99c;
+
+}
+
 
 .apply__stage-card:hover .apply__stage-stroke {
   /* stroke-dashoffset: 25; */
