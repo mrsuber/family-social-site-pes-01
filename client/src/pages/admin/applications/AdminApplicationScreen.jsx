@@ -66,6 +66,7 @@ const AdminApplicationScreen = () => {
             ?<>
             <main className="admin__main">
             <section>
+            <button className="admin__structural-back-btn" onClick={()=>setStatusCheck(false)}>Back</button>
 
                 <div className="admin__block-grid-apply">
 
