@@ -605,31 +605,431 @@ DepartmentSource:[
   ApplicationStatus:"Active",
   ApplicationStage:[
     {
-      stageName:"Stage1-Red Acre",
+      stageName:"Stage1-Applying for job",
       stagePercent:100,
-      about:"This is the application phase to the company for the position",
-      aboutPopUp:[]
+      about:"This is the application phase to the company for the position of full stack developer",
+      about2:"!!!!!!!!!!!!!!!!!Cover letter unavialable.!!!!!!!!!!!!!!!!!",
+      aboutPopUp:[
+        {
+          name:"Resume",
+          imageName:"Resume Image",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653477784/msbGeanologyProfilePics/Resume1024_1_ws31nm.jpg",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        }
+      ]
     },
     {
-      stageName:"Stage2-Red Acre",
-      stagePercent:50,
-      aboutPopUp:[]
+      stageName:"Stage2-First human response form company",
+      stagePercent:100,
+      about:"Monitoring first contact form the company(Not auto reply)",
+      about2:"1.) first feedback was form Red Arce, Not sure if it was Auto reply or not",
+      about3:"2.) second was from Recruter name: Serena Lacerenza",
+      aboutPopUp:[
+        {
+          name:"first feedback",
+          imageName:"first feedback mail",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653479757/msbGeanologyProfilePics/Red%20Arce/R1_abgozi.png",
+          popUpSources:[
+            {
+            name:"mails ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"second feedback mail from serena",
+          imageName:"second feedback mail from serena",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653479913/msbGeanologyProfilePics/Red%20Arce/R2_oin92w.png",
+          popUpSources:[
+            {
+            name:"mails ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"My reply to second feedback mail from serena",
+          imageName:"My reply to second feedback mail from serena",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653480143/msbGeanologyProfilePics/Red%20Arce/R3_gnk4ot.png",
+          popUpSources:[
+            {
+            name:"mails ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        }
+      ]
     },
     {
-      stageName:"Stage3-Red Acre",
-      stagePercent:75,
-      aboutPopUp:[]
-    },
-    {
-      stageName:"Stage4-Red Acre",
-      stagePercent:75,
+      stageName:"Stage3-Technical assesment",
+      stagePercent:100,
+      about:"Technical Assessment",
+      about2:"Invitation and preparation for Technical Assesment",
+      about3:"Technical Assesment",
+      aboutPopUp:[
+        {
+          name:"Invitation and Preparation 1",
+          details1:"This was a creation of a private github account inviting me to be a contributer.",
+          details2:"Here i will have Push privilages such that what ever the Assesment is i will push here for their evaluation",
+          imageName:"Invitation and Preparation 1",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653481052/msbGeanologyProfilePics/Red%20Arce/R4_mqzuyt.png",
+          popUpSources:[
+            {
+            name:"email ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"Invitation and Preparation 2",
+          details1:"Strict instructions on what to build.the document is in the source",
+          details2:"You are required to develop a Widget for one of our clients. This widget will be used to display several currency exchanges rates and it will allow the user to exchange USD (Note#1) for Crypto(Note#2).The application consists of a React front-end client and a Node back-end service(Express.js).",
+          details3:"Criteria: The application must meet all the following criteria",
+          details4:"1.) Front-end must have a toolbar with two dropdowns and two input fiels where you can pick the currency that you want to exchange from and the Crypto that you want to exchange to.",
+          details5:"2.) Front-end must have a table component to display historical data(Note#3)",
+          details6:"3.) Back-end service must consume the rates from the API(Note#4) every few minutes(configurable Number),store the data in the Database (Note#5) and stream the data to the front-end using WebSockets.",
+          details7:"4.) Latest Node and React versions must be used.",
+          details8:"5.) You need to upload the repository to GitHub and share the link.",
+          details9:"6.) Yoy need to create a short video to demo the application in a working state",
+          details10:"7.) Assesment will be rejected if no readme file is provided with instruction on how to run the project.",
+          details11:"Bonus points ==> Dockerize the application, ==>Documentation of the code with comments. ==>Unit-test, ==>Add a Date Picker Filter (any Date Picker can be used) on the table to filter data by time, ==> Add sorting for all columns on the table. ==> Mobile view must be exact as the design provided.",
+          details12:"Notes ==> USD is mandatory.EUR, GBP and other fiat currencies are optional. ==> BTC and ETH are mandatory.Other Cryto are optional ==>Table fields are 'Date & Time', 'Currency form','Amount 1', 'Currency to','Amount 2','Type'. ===> There are two types of data, 'Live Price' and 'Exchanged', ==>'Live Price' indicates the rate coming form the API and it is the currency conversion of any currency to USD. For example the live price of 1BTC is 44000 USD. ===> 'Exchange' indicates the transaction happened when the user clicked 'SAVE' button . for exmple the user exchanged 44000 USD to get 1 BTC. ==> Any API can be used of even a mock server that returns fake data. ==> you can use either Mongo or MySQL.",
+          details13:"Good luck!",
+          imageName:"Invitation and Preparation 2",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653483743/msbGeanologyProfilePics/Red%20Arce/R5_opb7tv.png",
+          popUpSources:[
+            {
+            name:"email ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"My Reply about the Assesment",
+          details1:"There are two reason why I reply this mail.",
+          details2:"1.) let the recruiter be familia with you (formal way of socializing)",
+          details3:"2.) Make the recruiter know you have started your assesment",
 
-      aboutPopUp:[]
+          imageName:"My Reply about the Assesment",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653484427/msbGeanologyProfilePics/Red%20Arce/R6_rongwy.png",
+          popUpSources:[
+            {
+            name:"email ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"Her reply to My quesion on Assesment",
+          details1:"From her mail, you can tell if she is getting familia and comfortable with you or not",
+          details2:"1.) In this case, she is now on first Name basis, and Hi is used instead of Dear.",
+
+          imageName:"Her reply to My quesion on Assesment",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653484853/msbGeanologyProfilePics/Red%20Arce/R7_esn7z5.png",
+          popUpSources:[
+            {
+            name:"email ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+
+      ]
     },
     {
-      stageName:"Stage5-Red Acre",
-      stagePercent:75,
-      aboutPopUp:[]
+      stageName:"Stage4-Delevary of Assesment",
+      stagePercent:100,
+      about:"Delevary of Assesment",
+      about2:"I deleverded the first part of the assesment befor time and the second part on the due date",
+      aboutPopUp:[
+        {
+          name:"first delivery of Assesment",
+          details1:"Deliver on time and just the very basic of what is required of you to do",
+          details2:"Link delivery message to your previous conversation",
+          imageName:"first delivery of Assesment",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653485123/msbGeanologyProfilePics/Red%20Arce/R8_qi8hag.png",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+
+        {
+          name:"Her reply to the first delivery",
+          details1:"This is the sign the conversation is going",
+          imageName:"her reply to the first deliver",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653485406/msbGeanologyProfilePics/Red%20Arce/R9_xxkx1r.png",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"second/full delivery of Assesment",
+          details1:"Deliver on time and either all or at most what you have done about the application just before due date",
+          details2:"Link delivery message to your previous conversation",
+          imageName:"second/full delivery of Assesment",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653485590/msbGeanologyProfilePics/Red%20Arce/R10_mtzikq.png",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"Follow up mail",
+          details1:"If the recruiter stays for long without saying anything after the full delivery, send a follow up mail",
+          details2:"wait untill she replies your follow up mail",
+          imageName:"Follow up mail",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653485767/msbGeanologyProfilePics/Red%20Arce/R11_k4gyep.png",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+      ]
+    },
+    {
+      stageName:"Stage5-Awaiting a reply from assesment or follow up mail",
+      stagePercent:100,
+      about:"This could either be a mail with the following,",
+      about2:"case 1==>This could be a mail telling you to be patient for the results of your assesment",
+      about3:"case 2==> This could be a mail telling you the result of your assesment and you did not make it",
+      about4:"case 3==> This could be mail on setting interview time",
+      about5:"case 4==> Congratulation, you made it to interview",
+
+      aboutPopUp:[
+        {
+          name:"case 1",
+
+          imageName:"case 1",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653486689/msbGeanologyProfilePics/Red%20Arce/R12_sfsgj6.png",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"replying to case 1",
+          details1:"be apriciative of the opotunity, many don't make it this far",
+          imageName:"replying to case 1",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653486845/msbGeanologyProfilePics/Red%20Arce/R13_sx5i7a.png",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"case 3",
+          imageName:"case 3 setting up interview time",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653487830/msbGeanologyProfilePics/Red%20Arce/R14_xdrvop.png",
+          popUpSources:[
+            {
+            name:"mail ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"reply to case 3",
+          imageName:"reply to case 3 setting up interview time",
+          details1:"choose a time in which the recruiter will be most okay with.",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653487962/msbGeanologyProfilePics/Red%20Arce/R15_x2zwdf.png",
+          popUpSources:[
+            {
+            name:"mail ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:" case 4",
+          imageName:"case 4 ",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653488092/msbGeanologyProfilePics/Red%20Arce/R16_frar7u.png",
+          popUpSources:[
+            {
+            name:"mail ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:" reply to case 4",
+          imageName:"reply to case 4 ",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653488251/msbGeanologyProfilePics/Red%20Arce/R17_kk5je8.png",
+          popUpSources:[
+            {
+            name:"mail ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:" her reply to my reply to case 4",
+          imageName:"her reply to my reply to case 4 ",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653488381/msbGeanologyProfilePics/Red%20Arce/R18_mgfxeo.png",
+          popUpSources:[
+            {
+            name:"mail ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+      ]
+    },
+    {
+      stageName:"Stage6-The Interview",
+      stagePercent:100,
+      about:"Preparation for the Interview",
+      about2:"case 1==> Most common interview quesions and how to answer them",
+      about3:"case 2==> reserch about those you are sopose to have interview with",
+      about4:"case 3==> prepare the place and time and internet you need for the interview",
+      about5:"case 4==> Have the interview",
+      about6:"case 5==> Follow up interview quesions",
+
+      aboutPopUp:[
+        {
+          name:"case 1",
+          details1:"!!!!!!!!!!! No fomal preparation done!!!!!!!!!!!!",
+          // imageName:"case 1",
+          // imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653486689/msbGeanologyProfilePics/Red%20Arce/R12_sfsgj6.png",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"case 2",
+          details1:"Serena research in in the company structural detail but not much about the techlead",
+          // imageName:"replying to case 1",
+          // imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653486845/msbGeanologyProfilePics/Red%20Arce/R13_sx5i7a.png",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"case 3",
+          details1:"Nokeli consulting lcc office, internet was put in both MTN and Orange networks",
+          // imageName:"case 3 setting up interview time",
+          // imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653487830/msbGeanologyProfilePics/Red%20Arce/R14_xdrvop.png",
+          popUpSources:[
+            {
+            name:"mail ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"case 4",
+          // imageName:"case 4",
+          details1:"!!!!!!!!!forgot to take a screen shot of the interview going on.!!!!!!",
+          // imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653487962/msbGeanologyProfilePics/Red%20Arce/R15_x2zwdf.png",
+          popUpSources:[
+            {
+            name:"mail ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:" case 5",
+          imageName:"case 5 interview Quesion follow up",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653489494/msbGeanologyProfilePics/Red%20Arce/R19_ymv6c4.png",
+          popUpSources:[
+            {
+            name:"mail ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:" Her reply to case 5",
+          imageName:"Her reply to case 5 ",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653489999/msbGeanologyProfilePics/Red%20Arce/R20_a74xpq.png",
+          popUpSources:[
+            {
+            name:"mail ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:" About my salary and job conditions",
+          imageName:"About my salary and job conditions",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653490383/msbGeanologyProfilePics/Red%20Arce/R21_rqkc71.png",
+          popUpSources:[
+            {
+            name:"mail ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+      ]
+    },
+    {
+      stageName:"Stage7-Awaiting Interview Result",
+      stagePercent:100,
+      about:"Awaiting result of the Interview",
+      about2:"case 1 ==> Congratulation, you have been selected for the next phase",
+      about3:"case 2 ==> Unfortunately ......",
+      aboutPopUp:[
+        {
+          name:"case 2",
+          imageName:"Unfortunately ...",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653491167/msbGeanologyProfilePics/Red%20Arce/R22_zddlyh.png",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"My reply to case 2",
+          imageName:"reply to case 2",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653491309/msbGeanologyProfilePics/Red%20Arce/R23_cfe10v.png",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        },
+        {
+          name:"Her reply to My reply to case 2",
+          imageName:"Her reply to My reply to case 2",
+          imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653491470/msbGeanologyProfilePics/Red%20Arce/R24_lt45cc.png",
+          popUpSources:[
+            {
+            name:"resume ",
+            link:"https://github.com/mrsuber/my-resume-cv"
+          }
+          ]
+        }
+
+
+      ]
     },
   ]
 

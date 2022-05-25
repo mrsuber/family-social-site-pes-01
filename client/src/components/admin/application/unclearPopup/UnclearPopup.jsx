@@ -35,6 +35,8 @@ const UnclearPopup = ({data,setUnclearPopup}) => {
         <p style={{marginBottom:"15px"}}>{data.details9 ? data.details9 :''}</p>
         <p style={{marginBottom:"15px"}}>{data.details10 ? data.details10 :''}</p>
         <p style={{marginBottom:"15px"}}>{data.details11 ? data.details11 :''}</p>
+          <p style={{marginBottom:"15px"}}>{data.details12 ? data.details12 :''}</p>
+            <p style={{marginBottom:"15px"}}>{data.details13 ? data.details13 :''}</p>
         {data.imageName && <><AdminCourseImagePopUp img={data.imageLink} name={data.imageName}/></>}
 
         {data.popUpSources && data.popUpSources.length>0 ? <AdminSources source={data.popUpSources} name={data.popUpSources[0].name} id="pop1"/>:<p>no refrence link</p>}
