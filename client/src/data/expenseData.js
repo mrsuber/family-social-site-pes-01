@@ -93,7 +93,19 @@ export const allExpenseData = [
     details:'1500 francs to for electronic(current) ',
     date: '05-18-2022',
   },
-
-
+  {
+    amount:1500,
+    category:'Bills',
+    type:'Expense',
+    details:'1000 for orange internet and 500 for Mtn internet',
+    date: '05-23-2022',
+  },
+  {
+    amount:1500,
+    category:'Food',
+    type:'Expense',
+    details:'1500 for buying spices for food',
+    date: '05-23-2022',
+  },
 
 ]
