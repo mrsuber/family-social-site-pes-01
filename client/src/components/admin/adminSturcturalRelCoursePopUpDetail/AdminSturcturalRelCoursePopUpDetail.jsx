@@ -40,11 +40,25 @@ const AdminSturcturalRelCoursePopUpDetail = ({setOnView,onView=false, data,posit
                 <a href={`#${item.ancorName}`} style={{textDecoration:"none"}}><span className="admin__resume__text">{item.name}</span></a>
               </li>
             ))
-            :<li>
+            :<>
 
-              <span className="admin__resume__text">{<span className="admin__worning-update">update Menu</span>}</span>
-            </li>
+            </>
           }
+
+          {
+            data.menu2 && data.menu2.length!==0
+            ?data.menu2.map((item)=>(
+              <li className="admin__popup-sidemenu">
+
+                <a href={`#${item.ancorName}`} style={{textDecoration:"none"}}><span className="admin__resume__text">{item.name}</span></a>
+              </li>
+            ))
+            :<>
+
+            </>
+          }
+
+
 
 
           </ul>
@@ -115,7 +129,46 @@ const AdminSturcturalRelCoursePopUpDetail = ({setOnView,onView=false, data,posit
               }
               </>
             ))
-            :<span className="admin__worning-update">update Details</span>
+            :<span className="admin__worning-update">{/*update Details*/}</span>
+          }
+
+          {
+            data.menu2 && data.menu2.length!==0
+            ?data.menu2.map((item)=>(
+              <>
+              <a id={item.ancorName} style={{textDecoration:"none"}}>
+              <h2 className="admin__resume__right-title">{item.name}</h2>
+              </a>
+              <p className="admin__resume__right-par">
+                {item.detail}
+              </p>
+
+
+              {item.popup1
+                ?<>
+
+                <AdminCourseImagePopUp img={item.popup1} name={item.popup1Name?item.popup1Name:'Read More...'}  />
+                </>
+                :<></>
+              }
+              {item.popup2
+                ?<>
+                <hr className="admin__hr_break"/>
+                <AdminCourseImagePopUp img={item.popup2} name={item.popup2Name?item.popup2Name:'Read More...'} />
+                </>
+                :<></>
+              }
+
+              {item.popup3
+                ?<>
+                <hr className="admin__hr_break"/>
+                <AdminCourseImagePopUp img={item.popup3} name={item.popup3Name?item.popup3Name:'Read More...'} />
+                </>
+                :<></>
+              }
+              </>
+            ))
+            :<span className="admin__worning-update">{/*update Details*/}</span>
           }
           {!data.KnowledgeCheck || data.KnowledgeCheck.length===0
             ?<></>
