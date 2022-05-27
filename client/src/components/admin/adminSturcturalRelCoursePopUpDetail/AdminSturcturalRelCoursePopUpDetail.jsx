@@ -19,7 +19,7 @@ const AdminSturcturalRelCoursePopUpDetail = ({setOnView,onView=false, data,posit
 
 
 
-      <div className="admin__profileOnveiw-content2">
+      <div className="admin__profileOnveiw-content33">
 
       <div className="admin__main-resume-container">
       <div className="admin__resume__left-side">
@@ -141,6 +141,23 @@ const AdminSturcturalRelCoursePopUpDetail = ({setOnView,onView=false, data,posit
               </a>
               <p className="admin__resume__right-par">
                 {item.detail}
+                {item.verses && item.verses.length>0
+                  ?item.verses.map((verse)=>(
+                    <div>
+                        <ul>
+                          <li>{verse.hebrew && verse.hebrew.length>0? verse.hebrew.map((word)=>(
+                            <div style={{margin:"0 23px",fontSize:"12px"}}>
+                            {word}
+
+                            </div>)):<>No word</>}</li>
+                          <li>{verse.transliteration && verse.transliteration.length>0? verse.transliteration.map((word)=>(<span style={{margin:"0 23px",fontSize:"12px"}}>{word}</span>)):<>No word</>}</li>
+                          <li>{verse.english && verse.english.length>0? verse.english.map((word)=>(<span style={{margin:"0 23px",fontSize:"12px"}}>{word}</span>)):<>No word</>}</li>
+                          <li>fullen</li>
+                        </ul>
+                    </div>
+                  ))
+
+                  :<>Donothing</>}
               </p>
 
 
