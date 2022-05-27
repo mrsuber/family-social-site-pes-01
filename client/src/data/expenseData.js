@@ -107,5 +107,26 @@ export const allExpenseData = [
     details:'1500 for buying spices for food',
     date: '05-23-2022',
   },
+  {
+    amount:200,
+    category:'Food',
+    type:'Expense',
+    details:'fresh tomato for 100 and sashet tomato for 100',
+    date: '05-27-2022',
+  },
+  {
+    amount:200,
+    category:'Other',
+    type:'Expense',
+    details:'omo to wash my dreses for 200',
+    date: '05-27-2022',
+  },
+  {
+    amount:100,
+    category:'Gifts',
+    type:'Expense',
+    details:'gave Eli of Tabaken 100 to buy pair',
+    date: '05-18-2022',
+  },
 
 ]

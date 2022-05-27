@@ -104,6 +104,36 @@ const AdminSturcturalRelCoursePopUpDetail = ({setOnView,onView=false, data,posit
               {item.detail6 &&<p className="admin__resume__right-par">
                 {item.detail6}
               </p>}
+              {item.detail7 &&<p className="admin__resume__right-par">
+                {item.detail7}
+              </p>}
+              {item.detail8 &&<p className="admin__resume__right-par">
+                {item.detail8}
+              </p>}
+              {item.detail9 &&<p className="admin__resume__right-par">
+                {item.detail9}
+              </p>}
+              {item.detail10 &&<p className="admin__resume__right-par">
+                {item.detail10}
+              </p>}
+              {item.detail11 &&<p className="admin__resume__right-par">
+                {item.detail11}
+              </p>}
+              {item.detail12 &&<p className="admin__resume__right-par">
+                {item.detail12}
+              </p>}
+              {item.detail13 &&<p className="admin__resume__right-par">
+                {item.detail13}
+              </p>}
+              {item.detail14 &&<p className="admin__resume__right-par">
+                {item.detail14}
+              </p>}
+              {item.detail15 &&<p className="admin__resume__right-par">
+                {item.detail15}
+              </p>}
+              {item.detail16 &&<p className="admin__resume__right-par">
+                {item.detail16}
+              </p>}
 
               {item.popup1
                 ?<>
