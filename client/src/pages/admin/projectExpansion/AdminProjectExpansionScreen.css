@@ -1,3 +1,132 @@
 .admin__main-expense{
   min-height: 100vh;
 }
+.circleContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.peLogo {
+  border-radius: 50%;
+  cursor: pointer;
+  /* border: 1px solid red; */
+}
+.peLogo__img{
+
+}
+.logo__circle0 {
+  /* position: relative; */
+  /* width: 100px;
+  height: 100px; */
+  background-color: #bc3010;
+  border: 8px solid #0a172b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+.logo__circle0:hover{
+  border: 8px solid #bc3010;
+}
+.logo__circle1 {
+  /* position: relative; */
+  /* width: 90px;
+  height: 90px; */
+  background-color: #9a2fce;
+  border: 8px solid #0a172b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+.logo__circle1:hover{
+  border: 8px solid #9a2fce;
+}
+
+.logo__circle2 {
+  /* transform: translate(25%, 25%); */
+  /* width: 90px;
+  height: 90px; */
+  background-color: #49a5b1;
+  border: 8px solid #0a172b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+.logo__circle2:hover{
+  border: 8px solid #49a5b1;
+}
+
+
+.logo__circle3 {
+   /* transform: translate(48%, 46%); */
+  /* width: 80px;
+  height: 80px; */
+  background-color: #307511;
+  border: 8px solid #0a172b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+.logo__circle3:hover{
+  border: 8px solid #307511;
+}
+
+.logo__circle4 {
+   /* transform: translate(71%, 67%); */
+  /* width: 70px;
+  height: 70px; */
+  background-color: white;
+    border: 8px solid #0a172b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+.logo__circle4:hover{
+  border: 8px solid white;
+}
+
+.logo__circle5 {
+   /* transform: translate(48%, 46%); */
+  /* width: 60px;
+  height: 60px; */
+  background-color: var(--color-main);
+  border: 8px solid #0a172b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+.logo__circle5:hover{
+  border: 8px solid var(--color-main);
+}
+
+.logo__circle6 {
+   /* transform: translate(48%, 46%); */
+  /* width: 50px;
+  height: 50px; */
+  background-color: #0a172b;
+  border: 2px solid #0a172b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+/* .logo__circle7 { */
+   /* transform: translate(48%, 46%); */
+  /* width: 50px;
+  height: 50px;
+  background-color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */

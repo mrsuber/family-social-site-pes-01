@@ -9,6 +9,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
 import {prodjectExpansionData} from '../../../data/prodjectExpansionCardData'
 
+let varible = 60;
 const AdminProjectExpansionScreen = () => {
     const {auth} = useSelector(state=>state)
     const dispatch = useDispatch()
@@ -49,14 +50,31 @@ const AdminProjectExpansionScreen = () => {
       </header>
 
       <main className="admin__main-expense">
+      <div className="circleContainer">
+      <div class="peLogo logo__circle0" style={{width:`${7 * varible}px`, height:`${7 * varible}px`}}>
+      <div class="peLogo logo__circle1" style={{width:`${6 * varible}px`, height:`${6 * varible}px`}}>
+          <div class="peLogo logo__circle2"style={{width:`${5 * varible}px`, height:`${5 * varible}px`}}>
+              <div class="peLogo logo__circle3" style={{width:`${4 * varible}px`, height:`${4 * varible}px`}}>
+                  <div class="peLogo logo__circle4" style={{width:`${3 * varible}px`, height:`${3 * varible}px`}}>
+                      <div class="peLogo logo__circle5" style={{width:`${2 * varible}px`, height:`${2 * varible}px`}}>
+                          <div class="peLogo logo__circle6" style={{width:`${1 * varible}px`, height:`${1 * varible}px`}}>
+                            <img src={logo} alt="logo" className="peLogo__img" style={{width:`${.5 * varible}px`, height:`${.5 * varible}px`}}/>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
       <div className="admin__block-grid-apply">
       {
-        prodjectExpansionData?
+      /*  prodjectExpansionData?
         prodjectExpansionData.map((data,index)=>(
           <AdminProjectExpansionCard data={data} logo="" setOnStructuralDetail="" setCompanyName=""/>
 
         ))
-        :<></>
+        :<></>*/
       }
 
 
