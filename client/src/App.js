@@ -21,7 +21,6 @@ import {Alert,CallModal} from './components'
 import {useSelector,useDispatch} from 'react-redux'
 import {useEffect} from 'react'
 import {refreshToken} from './redux/actions/authAction'
-import bg from './images/boxed-bg.jpg'
 import io from 'socket.io-client'
 import {GLOBALTYPES} from './redux/actions/globlaTypes'
 import SocketClient from './SocketClient'
@@ -31,7 +30,7 @@ import Peer from 'peerjs'
 
 const App=()=> {
 
-  const {auth,modal,status,call,family} = useSelector(state => state)
+  const {auth,modal,status,call} = useSelector(state => state)
   const dispatch = useDispatch()
 
   useEffect(()=>{
@@ -66,13 +65,13 @@ const App=()=> {
             <Route exact path="/admin/login" component={AdminLoginScreen} />
               <PrivateRoute exact path="/blog_home" component={ BlogHomePage}/>
 
-            <PrivateRoute exact path="/social_home" component={auth.token && family.selectFamily===false? HomePage : LoginScreen2}/>
-            <PrivateRoute exact path="/message" component={auth.token && family.selectFamily===false? Message : LoginScreen2}/>
-            <PrivateRoute exact path="/message/:id" component={auth.token && family.selectFamily===false? MessageDetails : LoginScreen2}/>
-            <PrivateRoute exact path="/discover" component={auth.token && family.selectFamily===false? Discover : LoginScreen2}/>
-            <PrivateRoute exact path="/notify" component={auth.token && family.selectFamily===false? Notify : LoginScreen2}/>
-            <PrivateRoute exact path="/profile/:id" component={auth.token && family.selectFamily===false? Profile : LoginScreen2}/>
-            <PrivateRoute exact path="/post/:id" component={auth.token && family.selectFamily===false? PostDetails : LoginScreen2}/>
+            <PrivateRoute exact path="/social_home" component={auth.token ? HomePage : LoginScreen2}/>
+            <PrivateRoute exact path="/message" component={auth.token ? Message : LoginScreen2}/>
+            <PrivateRoute exact path="/message/:id" component={auth.token ? MessageDetails : LoginScreen2}/>
+            <PrivateRoute exact path="/discover" component={auth.token ? Discover : LoginScreen2}/>
+            <PrivateRoute exact path="/notify" component={auth.token ? Notify : LoginScreen2}/>
+            <PrivateRoute exact path="/profile/:id" component={auth.token ? Profile : LoginScreen2}/>
+            <PrivateRoute exact path="/post/:id" component={auth.token ? PostDetails : LoginScreen2}/>
 
             <Route exact path="/admin/expense" component={auth.token && auth.user.isSuperAdmin===true? AdminExpenseScreen : AdminErrorScreen}/>
             <Route exact path="/admin/projectExpansion" component={auth.token && auth.user.isSuperAdmin===true? AdminProjectExpansionScreen : AdminErrorScreen}/>

@@ -4,7 +4,7 @@ import {profile,logo,pic} from '../../../images'
 import {AdminSideBar,DisplayCssColorsHis,AdminRevenueCard,IrishFlower,GlobalTemp,WorldMap,Migrands,WorldMapMig} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faEye, faClock,faUsers,faHeart,faSignInAlt} from '@fortawesome/free-solid-svg-icons';
-import {useCountryData,useCssColorData,useIrisFlowerData,useTempData,useWorldMapData,usePointsOnMapData,useMigrandsData,useMigrandsMissPointsData} from '../../../utils/adminUseData'
+import {useCountryData,useIrisFlowerData,useTempData,useWorldMapData,usePointsOnMapData,useMigrandsData,useMigrandsMissPointsData} from '../../../utils/adminUseData'
 import {Link} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
@@ -12,7 +12,6 @@ import {logout} from '../../../redux/actions/authAction'
 const AdminHome = () => {
 
   const countryData = useCountryData();
-  const cssColorData = useCssColorData()
   const irishFlowerData = useIrisFlowerData()
   const tempData = useTempData()
   const worldMapData=useWorldMapData()
@@ -27,9 +26,7 @@ const AdminHome = () => {
   const logoutnow =()=>{
     dispatch(logout())
   }
-  const longinnow = ()=>{
-    window.location.href = "/admin/login"
-  }
+
 
   useEffect(()=>{
 
@@ -53,7 +50,7 @@ const AdminHome = () => {
               }
 
   },[auth,data])
-  
+
   return (
     <div className="admin__body">
     <input type="checkbox" name="admin__menu-toggle" id="admin__menu-toggle"/>

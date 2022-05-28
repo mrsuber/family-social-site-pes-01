@@ -1,10 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './Student.css'
 
 import {AdminSideBar,AdminApplicationStructure,AdminApplicationCard} from '../../../components'
 import {profile,logo,pic} from '../../../images'
-import logo2 from '../../../images/admin/google_logo.jpg'
-import logo3 from '../../../images/admin/Oracle_Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faHome} from '@fortawesome/free-solid-svg-icons';
 import {useDispatch,useSelector} from 'react-redux'
@@ -14,12 +12,15 @@ import {companyStructuralData} from '../../../data/companySturcturalData'
 
 const StudentScreen2 = () => {
     const {auth} = useSelector(state=>state)
-    const [cardData,setCardData]=useState(companyData)
-    const [sturtureData,setSturtureData] = useState(companyStructuralData)
+    const [cardData,setCardData]=useState([])
+    const [sturtureData,setSturtureData] = useState([])
     const [companyName, setCompanyName]=useState(null)
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
     const dispatch = useDispatch()
-
+    useEffect(()=>{
+      setCardData(companyData)
+      setSturtureData(companyStructuralData)
+    },[])
 
 
   return (

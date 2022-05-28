@@ -1,42 +1,32 @@
 import React,{useState,useEffect} from 'react'
 import './AdminLoginScreen.css'
-import {AdminSideBar,AdminToast} from '../../../components'
+import {AdminSideBar} from '../../../components'
 import {profile,logo,pic} from '../../../images'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars,faChartLine,faHome} from '@fortawesome/free-solid-svg-icons';
 
 import {useDispatch,useSelector} from 'react-redux'
-import {useHistory} from 'react-router-dom'
 import {login} from '../../../redux/actions/authAction'
 import {Link} from 'react-router-dom'
 
 const AdminLoginScreen = () => {
   const {auth} = useSelector(state => state)
-  const history = useHistory()
+
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
-  const [reload,setReload] = useState(false)
-  // const initialState = {email:email,password:password}
-  // const[userData,setUserData]= useState(initialState)
-  const [isFectching,setIsFectching]=useState(false)
-  // const {email,password} = userData
 
 
 
-  const [typePass,setTypePass]=useState(false)
+
 
   const dispatch = useDispatch()
 
-  // const handleChangeInput = e=>{
-  //   const {name,value} = e.target
-  //   setUserData({...userData,[name]:value})
-  // }
 
     const loginHandler= (e)=>{
       e.preventDefault()
-      setIsFectching(true)
+
       dispatch(login({email,password}))
-      setIsFectching(false)
+
 
 
     }

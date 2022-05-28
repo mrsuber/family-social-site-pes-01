@@ -1,0 +1,48 @@
+.admin__worning-update{
+  color:red !important;
+  /* font-weight: bolder !important; */
+  font-size: inherit !important;
+}
+
+.admin__popup-sidemenu{
+  transition: 0.4s ease-in-out;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.admin__popup-sidemenu:hover{
+  font-weight: 600 !important;
+  background: rgba(45, 136, 238, 0.05);
+
+
+}
+
+.courseImageReadMorePopUp{
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+
+}
+
+.courseImageReadMorePopUp:hover{
+  text-decoration: underline;
+}
+
+.admin__hr_break{
+  margin: 10px 0;
+}
+
+.admin__profileOnveiw-content33{
+
+
+    width: 100%;
+    background: var(--bg);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    border: 1px solid var(--color-main);
+
+    /* new code */
+    max-width: 1125px;
+    min-height: 1000px;
+
+}

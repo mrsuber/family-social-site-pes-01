@@ -15,7 +15,6 @@ import message from './messageReducer'
 import online from './onlineReducer'
 import call from './callReducer'
 import peer from './peerReducer'
-import family from './familyReducer'
 import school from './schoolReducer'
 
 
@@ -36,6 +35,5 @@ message,
 online,
 call,
 peer,
-family,
 school
 })
