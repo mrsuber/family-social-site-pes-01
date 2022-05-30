@@ -7,7 +7,7 @@ import {ZoomIn,ZoomOut,Refresh} from '@material-ui/icons';
 
 
 
-const AdminSturctureProjectExpansionDetails = ({courseName,strutureData,setOnStructuralDetail,logo}) => {
+const AdminSturctureProjectExpansionDetails = ({courseName,strutureData,setOnStructuralDetail,logo,setShowCore}) => {
 
     const[filteredStructuralData,setFilteredStructuralData] = useState(null)
       const [lenght,setLenth] = useState(50)
@@ -95,7 +95,7 @@ const AdminSturctureProjectExpansionDetails = ({courseName,strutureData,setOnStr
 
     }
     <section>
-      <button className="admin__structural-back-btn" onClick={()=>setOnStructuralDetail(false)}>Back</button>
+      <button className="admin__structural-back-btn" onClick={()=>setShowCore(false)}>Back</button>
 
 
 
