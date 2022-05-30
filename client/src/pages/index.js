@@ -10,8 +10,6 @@ export {default as Discover} from './privatePages/discover/Discover'
 export {default as Notify} from './privatePages/notify/Notify'
 export {default as Profile} from './privatePages/profile/Profile'
 export {default as PostDetails} from './privatePages/postDetails/PostDetails'
-export {default as FamilyCheck} from './privatePages/family/familyCheck/FamilyCheck'
-// export {default as FamilyHome} from './privatePages/family/familyHomePage/FamilyHome'
 // porfolio pages
 
 export {default as PorfolioHome} from './myPorfolioSite/home/Home'

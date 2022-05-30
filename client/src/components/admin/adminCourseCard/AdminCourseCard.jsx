@@ -2,12 +2,9 @@ import React,{useState} from 'react'
 import './AdminCourseCard.css'
 // import {AdminApplicationProfileEdit, AdminApplicationProfileView} from '../../../components'
 import {AdminCoursePreviewPopup} from '../../../components'
-import {useDispatch,useSelector} from 'react-redux'
 
 const AdminCourseCard = ({data,logo,setOnStructuralDetail,setCourseName}) => {
 
-    const {auth} = useSelector(state=>state)
-    const [onEdit,setOnEdit] = useState(false)
     const [onView,setOnView] = useState(false)
 
 

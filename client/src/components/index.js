@@ -43,7 +43,6 @@ export {default as MessageDisplay} from './message/messageDisplay/MessageDisplay
 export {default as Icons} from './icons/Icons'
 export {default as CallModal} from './call/CallModal'
 export {default as Times} from './times/Times'
-export {default as SelectFamilyCard} from './family/selectFamilyCard/SelectFamilyCard'
 export {default as DisplayCard} from './displayCard/DisplayCard'
 export {default as Input} from './helperInput/Input'
 export {default as Table} from './table/Table'
@@ -66,6 +65,8 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 
 //admin
+export {default as AdminSturctureProjectExpansionDetails} from './admin/adminSturctureProjectExpansionDetails/AdminSturctureProjectExpansionDetails'
+export {default as AdminSturcturalProjectExpansionPopUpDetail} from './admin/adminSturcturalProjectExpansionPopUpDetail/AdminSturcturalProjectExpansionPopUpDetail'
 export {default as AdminApplicationStagePreviewPopup} from './admin/application/adminApplicationStagePreviewPopup/AdminApplicationStagePreviewPopup'
 export {default as AdminApplicationStages} from './admin/application/applicationStages/AdminApplicationStages'
 export {default as AdminRelSubPopup} from './admin/AdminRelSubPopup/AdminRelSubPopup'

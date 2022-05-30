@@ -9,21 +9,20 @@ import {faBars,faChartLine,faHome,faPlus} from '@fortawesome/free-solid-svg-icon
 import {useDispatch,useSelector} from 'react-redux'
 import {logout} from '../../../redux/actions/authAction'
 import {schoolData} from '../../../data/learningData'
-import {getSchools} from '../../../redux/actions/schoolAction'
+// import {getSchools} from '../../../redux/actions/schoolAction'
 
 const StudentScreen = () => {
-    const {auth,school} = useSelector(state=>state)
+    const {auth} = useSelector(state=>state)
     // const [schools,setSchools]=useState(school.schools)
-    const [schools,setSchools]=useState(schoolData)
-    const [companyName, setCompanyName]=useState(null)
+    const [schools,setSchools]=useState([])
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
     const dispatch = useDispatch()
 
-    // useEffect(()=>{
-    //   dispatch(getSchools(auth.token))
-    //   setSchools(school.schools)
-    //
-    // },[school.schools])
+    useEffect(()=>{
+
+      setSchools(schoolData)
+
+    },[])
 
 
 
@@ -74,7 +73,7 @@ const StudentScreen = () => {
               <div className="admin__block-grid-apply">
               {
                 schools && schools.map((data,index)=>(
-                  <AdminSchoolCards data={data} logo={logo} setOnStructuralDetail={setOnStructuralDetail} setCompanyName={setCompanyName} key={index}/>
+                  <AdminSchoolCards data={data} logo={logo} setOnStructuralDetail={setOnStructuralDetail} key={index}/>
                 ))
 
               }

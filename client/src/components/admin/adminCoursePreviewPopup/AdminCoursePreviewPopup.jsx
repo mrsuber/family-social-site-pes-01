@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import './AdminCoursePreviewPopup.css'
-import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup} from '../../../components'
+import {AdminUnclearPopup,DepartmentInfoPopup} from '../../../components'
 
 const AdminCoursePreviewPopup = ({setOnView,onView=false, data, structural}) => {
     const [unclearPopup,setUnclearPopup] = useState(false)
@@ -8,22 +8,7 @@ const AdminCoursePreviewPopup = ({setOnView,onView=false, data, structural}) => 
     const[depPopup, setDepPopup] = useState(false)
     const[depData,setDepData] = useState(null)
 
-      // const structural = ()=>{
-      //   setOnView(false)
-      //   setCompanyName(data.learningTitle)
-      //   setOnStructuralDetail(true)
-      //
-      // }
-
-      const showStatus = (data)=>{
-        setAnalysisData(data)
-        setUnclearPopup(true)
-      }
-
-      const showDepInfo = (data)=>{
-        setDepData(data)
-        setDepPopup(true)
-      }
+  
 
   return (
     <>{

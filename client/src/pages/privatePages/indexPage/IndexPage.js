@@ -1,44 +1,18 @@
-import {useEffect,useState} from 'react'
 import './IndexPage.css'
-import {SelectFamilyCard,DisplayCard} from '../../../components'
+import {DisplayCard} from '../../../components'
 import {
   gs1,gs2,gs3,gs4,gs5,gs6,logo,
   gb1,gb2,gb3,gb4,gb5,gb6,
   sc1,sc2,sc3,sc4,sc5,sc6,
   ad1,ad2,ad3,ad4,ad5,
 } from '../../../images'
-import {useSelector,useDispatch} from 'react-redux'
-import {FAMILY_TYPES} from '../../../redux/actions/familyAction'
+import {useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
-import {indexData} from '../../../data/indexPageDisplayData'
 
 const IndexPage = () => {
-  const{family,auth} = useSelector(state=>state)
-  const [data,setData] = useState([])
-  const dispatch = useDispatch()
+  const{auth} = useSelector(state=>state)
 
   const history = useHistory()
-
-  // const redirect = (address) =>{
-  //   if(address === "redirectBlogHomePage"){
-  //     window.location.href = "/porfolio/home"
-  //   }else if(address === "redirectAdminHome"){
-  //     window.location.href = "/admin"
-  //   }else if (address === "redirectSocialHomePage"){
-  //     if(auth.token){
-  //       // history.push('/social_home');
-  //       dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:true})
-  //       history.push('/social_home');
-  //     }else{
-  //       window.location.pathname ='/login';
-  //     }
-  //   }
-  // }
-  // useEffect(()=>{
-  //   if(indexData){
-  //     setData(indexData)
-  //   }
-  // },[data])
 
 
   const redirectBlogHomePage = () => {
@@ -54,7 +28,6 @@ const IndexPage = () => {
   const redirectSocialHomePage = () =>{
     if(auth.token){
       // history.push('/social_home');
-      dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:true})
       history.push('/social_home');
     }else{
       window.location.pathname ='/login';

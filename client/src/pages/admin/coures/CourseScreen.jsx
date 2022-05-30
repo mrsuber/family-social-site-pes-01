@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './Course.css'
 
 import {AdminCourseCard,AdminSideBar,AdminCourseStructureDetails} from '../../../components'
@@ -14,13 +14,17 @@ import {courseStructuralData} from '../../../data/courseStructuralData'
 const CourseScreen = () => {
     const {auth} = useSelector(state=>state)
 
-    const [cardData,setCardData]=useState(devCourseData)
-    const [sturtureData,setSturtureData] = useState(courseStructuralData)
+    const [cardData,setCardData]=useState([])
+    const [sturtureData,setSturtureData] = useState([])
 
     const [courseName, setCourseName]=useState(null)
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
     const dispatch = useDispatch()
 
+    useEffect(()=>{
+      setCardData(devCourseData)
+      setSturtureData(courseStructuralData)
+    },[])
 
 
   return (

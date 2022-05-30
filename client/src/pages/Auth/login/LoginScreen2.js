@@ -3,7 +3,6 @@ import {useState,useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {CircularProgress} from "@material-ui/core"
 import {login} from '../../../redux/actions/authAction'
-import {FAMILY_TYPES} from '../../../redux/actions/familyAction'
 
 import {useDispatch,useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
@@ -32,7 +31,6 @@ const LoginScreen2 = () => {
     setIsFectching(true)
     dispatch(login(userData))
     setIsFectching(false)
-    dispatch({type:FAMILY_TYPES.SELECT_FAMILY, payload:true})
 
   }
 

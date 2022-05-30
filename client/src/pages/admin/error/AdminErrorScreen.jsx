@@ -15,9 +15,7 @@ const AdminErrorScreen = () => {
   const logoutnow =()=>{
     dispatch(logout())
   }
-  const longinnow = ()=>{
-    window.location.href = "/admin/login"
-  }
+
 
   return (
     <div className="admin__body">
