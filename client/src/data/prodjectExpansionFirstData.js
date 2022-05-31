@@ -1,16 +1,16 @@
-import {logo} from '../images'
+
 export const prodjectExpansionData = [
   {
-    learningTitle:"Islam",
-    companyName:"Islam",
+    learningTitle:"High commander and Chief",
+    companyName:"High commander and Chief",
     companyHeadOfficeLocation:"Cameroon | Buea | Ndongo",
     initialData:{
-      name:"About Islam",
-      logo:'https://symbolsage.com/wp-content/uploads/2021/05/star-crescent-islam-symbol.jpg?c935a4&c935a4',
+      name:"About High Commander and Chief",
+      logo:'https://cdn3.iconfinder.com/data/icons/gray-user-toolbar/512/general-512.png',
       menu:[
         {
           name:'Introduction',
-          detail:"The aim of this Section is to provide a broad foundation on which the reader may base his further studies on the teaching of Islam",
+          detail:"",
           detail1:"",
           detail2:"",
           detail3:"",
@@ -255,21 +255,42 @@ export const prodjectExpansionData = [
     },
     companyLevel1:[
       {
-        name:"The Holy Quran",
+        name:"Preparation",
         people:[ ]
       },
 
       {
-        name:"Hadith",
+        name:"General 1",
+
+        people:[],
+      },
+
+      {
+        name:"General 2",
+
+        people:[],
+      },
+
+      {
+        name:"General 3",
 
         people:[],
       },
       {
-        name:"Seerah Of Prophet Mohamad",
+        name:"General 4",
 
         people:[],
-      }
+      },
+      {
+        name:"Project Expansion Simple",
 
+        people:[],
+      },
+      {
+        name:"Project Expansion Complex",
+
+        people:[],
+      },
 
     ],
 

@@ -57,7 +57,7 @@ const AdminProjectExpansionScreen = () => {
 
       {
         showCore === true
-        ?        <><AdminSturctureProjectExpansionDetails courseName="Islam" logo={logo} strutureData={pe} setShowCore={setShowCore}/></>
+        ?        <><AdminSturctureProjectExpansionDetails courseName="High commander and Chief" logo={logo} strutureData={pe} setShowCore={setShowCore}/></>
         :<div className="circleContainer">
      <div class="peLogo logo__circle0" style={{width:`${7 * varible}px`, height:`${7 * varible}px`}}>
      <div class="peLogo logo__circle1" style={{width:`${6 * varible}px`, height:`${6 * varible}px`}}>
