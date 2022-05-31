@@ -86,7 +86,7 @@ const AdminApplicationScreen = () => {
 
                 <div className="admin__block-grid-apply">
                 {
-                  cardData && cardData.map((data,index)=>(
+                  cardData && cardData.slice(0).reverse().map((data,index)=>(
                     <AdminApplicationCard data={data} setOnStructuralDetail={setOnStructuralDetail} setCompanyName={setCompanyName} key={index} setStatusCheck={setStatusCheck} setStatusCheckData={setStatusCheckData}/>
                   ))
 
