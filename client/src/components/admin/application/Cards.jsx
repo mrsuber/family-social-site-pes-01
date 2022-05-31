@@ -45,7 +45,15 @@ const Cards = ({setOnStructuralDetail,data,setCompanyName,setStatusCheck,setStat
 
             </button>
             <button className="admin__rev-sum-apply" onClick={()=>status(data)}>
-              <h4>{data.ApplicationStatus? data.ApplicationStatus:"Status Unkown"}</h4>
+              <h4>{
+                data.ApplicationStatus && data.ApplicationStatus === "Active"
+                ?<span style={{color:'#00ff11',fontWeight:"500"}}>
+                    {data.ApplicationStatus}</span>
+                :<span style={{color:'#feff00',fontWeight:"500"}}>{data.ApplicationStatus}</span>
+
+              }
+              {data.ApplicationStatus?"":"Status Unknown"}
+              </h4>
 
             </button>
         </div>

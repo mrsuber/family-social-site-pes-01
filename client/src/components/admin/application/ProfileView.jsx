@@ -68,6 +68,7 @@ const ProfileEdit = ({setOnView,onView=false, data, setOnStructuralDetail,setCom
           {data.about2 && <p className="admin__about_paragraph">{data.about2}</p>}
           {data.about3 && <p className="admin__about_paragraph">{data.about3}</p>}
           {data.about4 && <p className="admin__about_paragraph">{data.about4}</p>}
+          {data.about5 && <p className="admin__about_paragraph">{data.about5}</p>}
 
           <div style={{margin:"10px 0"}}>
           {data.aboutPopUp.length >0

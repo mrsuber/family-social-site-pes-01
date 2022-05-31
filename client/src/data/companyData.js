@@ -602,7 +602,7 @@ DepartmentSource:[
     link:"",
   }
 ],
-  ApplicationStatus:"Active",
+  ApplicationStatus:"In Active",
   ApplicationStage:[
     {
       stageName:"Stage1-Applying for job",
@@ -1033,6 +1033,237 @@ DepartmentSource:[
     },
   ]
 
+},
+{
+  companyName:"proxify",
+  logo:"data:image/png;base64,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",
+  about:"We connect talented developers with scaling teams. We are Proxify, a company founded by developers who understand that talent does not have borders.",
+  about2:"We have met many companies who have tried to do the same but weren’t able to find the ‘right developer’. We have created a growing network of talented freelance developers who we ourselves would be proud to work with.",
+  about3:"Headquartered in Stockholm, Uppland, Sweden, Proxify.io is a startup that provides companies with a network of talented freelance developers who work on a remote basis. Proxify employs an ambitious, like-minded team of professionals and offers its associates the chance to pursue stimulating work while shaping and defining their roles. Furthermore, team members are offered competitive hourly compensation and flexible work arrangements, such as 100% remote, work-from-anywhere jobs with full-time, flexible schedules.",
+  about4:"Remote Proxify jobs posted in the past include positions in graphic design, internet & ecommerce, software development, and related fields. Believing \"talent has no borders,\" the company both works and hires remotely and looks for agile self-starters and proven team players who will thrive in an ever-changing environment. Ideal candidates are also social people who willingly communicate and suggest ideas, contribute to value-driven discussions, and drive colleagues forward. Although team members can work from any global location, \"business travels to Sweden are possible\" in some roles.",
+  about5:"Proxify.io recruits developers using four methods: professional reviews, personal evaluations, technical evaluations, and references. In response to client needs, the company seeks out suitable developers, tests their code, and sets up a meet and greet between the developer and the hiring organization. If it is a good match, the developer joins the team and Proxify continues to provide regular support and quality assurance. Developers can be hired by skill, such as Laravel, PHP, WordPress, and React developers, and are screened to ensure that they can build client projects correctly from start to finish.",
+  aboutPopUp:[
+    {
+      name:"",
+      details1:"",
+      details2:"",
+      popUpSources:[
+        {
+          name:"",
+          link:"",
+        },
+      ],
+
+
+    },
+  ],
+  aboutSource:[
+    {
+      name:"proxify",
+      link:"https://proxify.io/company",
+
+    },
+    {
+      name:"flexjobs",
+      link:"https://www.flexjobs.com/remote-jobs/company/proxifyio",
+    }
+  ],
+  MainLocation:"Headquartered in Stockholm, Uppland, Sweden  GMT(+2)",
+  TotalNumberOfBranches:"!!!!!!!Unknown!!!!!!!",
+  OtherLocations:[
+    {
+      name:"!!!!!!!Unknown!!!!!!!",
+      link:"https://proxify.io/"
+
+    },
+  ],
+  LocationSources:[
+
+    {
+      name:"flexjobs",
+      link:"https://www.flexjobs.com/remote-jobs/company/proxifyio",
+    }
+  ],
+  JobPost:[
+  {
+    name:"React/Full-stack developer",
+    location:"Proxify will look for the location",
+    link:"https://career.proxify.io/apply/",
+    analysis:{
+      status:"!!!!!!Unclear!!!!!!",
+      jobLocation:"!!!!!!Unknown!!!!!",
+      currentOfficeLocation:"!!!!!!Unknown!!!!!",
+      details1:"After the meeting and screening then the unkown might be know",
+      popUpSources:[
+        {
+          name:"Apply to Proxify",
+          link:"https://career.proxify.io/apply/",
+        },
+      ],
+    },
+    reasonForAnalysis:"proxify works like turing after vetting you, then they look for where to settle you",
+    analysisSource:[
+      {name:"",
+      link:""},
+    ],
+
   }
+
+  ],
+  JobPostSources:[
+    {
+      name:"",
+      link:""
+  }
+],
+Employee:[
+  {
+  year:"Founded 2018",
+  numberOfEmployee:"201 to 500 "
+},
+],
+EmployeeType:'Full-time Employee',
+EmployeeType:'Full-time Employee',
+EmployeeSource:[
+{
+  name:"linkedin.com",
+  link:"https://www.linkedin.com/company/proxify-se/people/",
+
+},
+],
+Revenue:[
+{
+  year:'every Year',
+  amount:'about $9 M'
+},
+
+],
+RevenueType:'Revenue in Millions U.S dollars',
+RevenueSource:[
+{
+  name:"zoominfo",
+  link:"https://www.zoominfo.com/c/proxify-ab/547038607",
+
+},
+],
+Departments:[
+{
+  DepartmentName:'!!!!!!Unknown!!!!!!',
+  DepartmentDesc:{
+    details1:"Department number:!!!!!!Unknown!!!!!!, Name:!!!!!!Unknown!!!!!!, "
+  }
+},
+],
+DepartmentSource:[
+{
+  name:"",
+  link:"",
+}
+],
+ApplicationStatus:"Active",
+ApplicationStage:[
+  {
+    stageName:"Stage1-Applying for job",
+    stagePercent:100,
+    about:"This is the application phase to the company for the position of full stack developer",
+    about2:"!!!!!!!!!!!!!!!!!Cover letter unavialable.!!!!!!!!!!!!!!!!!",
+    aboutPopUp:[
+      {
+        name:"Resume",
+        imageName:"Resume Image",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653477784/msbGeanologyProfilePics/Resume1024_1_ws31nm.jpg",
+        popUpSources:[
+          {
+          name:"resume ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      }
+    ]
+  },
+  {
+    stageName:"Stage2-First human response form company",
+    stagePercent:100,
+    about:"Monitoring first contact form the company(Not auto reply)",
+    about2:"1.) first feedback was from Proxify (Talent Acquisition Specialist) her name Christina Kobets.",
+    about3:"2.) she send her calender for the schedules to meet her",
+    aboutPopUp:[
+      {
+        name:"first feedback",
+        imageName:"first feedback mail for Christina Kobets",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654001252/msbGeanologyProfilePics/proxify/first_feedback_mail_dnb4be.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+      {
+        name:"confirmation of setting schedules",
+        imageName:"confirmation of setting schedules with Christina Kobets ",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654001252/msbGeanologyProfilePics/proxify/scheduled_with_Christina_kobets_me160b.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+      {
+        name:"My reply to first feedback mail from Christina Kobets",
+        imageName:"My reply to first feedback mail from Christina Kobets",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654002131/msbGeanologyProfilePics/proxify/reply_to_first_feedback_s9cbui.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      }
+    ]
+  },
+  {
+    stageName:"Stage3-Technical assesment",
+    stagePercent:0,
+    about:"Technical Assessment",
+
+  },
+  {
+    stageName:"Stage4-Delevary of Assesment",
+    stagePercent:0,
+    about:"Delevary of Assesment",
+
+  },
+  {
+    stageName:"Stage5-Awaiting a reply from assesment or follow up mail",
+    stagePercent:0,
+    about:"This could either be a mail with the following,",
+    about2:"case 1==>This could be a mail telling you to be patient for the results of your assesment",
+    about3:"case 2==> This could be a mail telling you the result of your assesment and you did not make it",
+    about4:"case 3==> This could be mail on setting interview time",
+    about5:"case 4==> Congratulation, you made it to interview",
+
+  },
+  {
+    stageName:"Stage6-The Interview",
+    stagePercent:0,
+    about:"Preparation for the Interview",
+    about2:"case 1==> Most common interview quesions and how to answer them",
+    about3:"case 2==> reserch about those you are sopose to have interview with",
+    about4:"case 3==> prepare the place and time and internet you need for the interview",
+    about5:"case 4==> Have the interview",
+    about6:"case 5==> Follow up interview quesions",
+
+  },
+  {
+    stageName:"Stage7-Awaiting Interview Result",
+    stagePercent:0,
+    about:"Awaiting result of the Interview",
+
+  },
+]
+}
+
 
 ]
