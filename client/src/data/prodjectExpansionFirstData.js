@@ -10,8 +10,8 @@ export const prodjectExpansionData = [
       menu:[
         {
           name:'Introduction',
-          detail:"",
-          detail1:"",
+          detail:"This section talks the High commander and Chief as follows",
+          detail1:"1.) Who",
           detail2:"",
           detail3:"",
           detail4:"",
