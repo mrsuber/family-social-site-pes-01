@@ -27,7 +27,7 @@ const AdminSturcturalProjectExpansionPopUpDetail = ({setOnView,onView=false, dat
           <div className="admin__resume__img-box">
             <img src={data.logo}  alt="Mohamad"/>
           </div>
-          <h2>{data.name? data.name:<span className="admin__worning-update">update Name</span>}<br/><span>{data.courseNumber? data.courseNumber :<span className="admin__worning-update">update course Number</span>}{' - '}{data.courseStatus? data.courseStatus :<span className="admin__worning-update">update Status</span>}</span></h2>
+          <h2>{data.name? data.name:<span className="admin__worning-update">update Name</span>}</h2>
         </div>
         <div className="admin__resume__contactInfo">
           <h3 className="admin__resume__title">Side Rel Menu</h3>
