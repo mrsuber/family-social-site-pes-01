@@ -1263,6 +1263,330 @@ ApplicationStage:[
 
   },
 ]
+},
+{
+  companyName:"camsole",
+  logo:"https://s3.eu-central-1.amazonaws.com/files-eu.freshteam.com/production/138377/attachments/25000768006/logo/Logo_Camsol.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIARX2EI6XTRE5XX3NQ%2F20220601%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20220601T103122Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEkaDGV1LWNlbnRyYWwtMSJHMEUCIG9UXx%2FpVeF1Sj2iPXtu2MUUXIkRgk2QE9NlMyUecXcAAiEAmb5XXVq061%2Bfa2uiw4JxpVFNeY1xWcMS%2FBSHjl%2FrPssq3AQIQhADGgwxMTk4NjU0MDY5NTEiDBREK%2BVj90xuhGOA3Cq5BB9Lc1W1i1JFtVygD9jZ%2BF1Tw3oeJuDuOZ5dzQ7fOgofZ0b%2Fl7tz42eMiD5bjKNxKE1lUzY8x3z5crbISwzpm6po205C7ezj6pDxRTpR%2BJQNcMClzjhKXk3GC52bbd4h7lapASn%2F7sU%2BO4xvRNF3yooli%2FcA77NLZhpbp%2FH5fhLEMYh1BCttXo47SerpHCSiDfs%2FgTsDCpZExPOJZX1Ta975hdbqMuktoQeCz7QS%2F%2B1S5kwt8nAMl4QGUxgAxp8p53px9BYuI8K1pL5%2Bs55x8qAqmA3eIdRx3XyhHTMKyhT3TAW0RSDulSquRU%2FfN%2Botn6AKfBjjNW1dksrdSNuMveQvrzuss2v3S0pZQvLBMLFQLqItJq0X4ujGld5AJpefb7c3CxkJqfzvJLZ8s%2FS3MoIenYiGWbCHDxeDS3FY34qRxMxDABk2U3XXA0BO7DjfFX8h21E8nKtckQ6jaDRER27i5WljNvSzET1%2FQHwl5m4AyWfz4QyTY1IuZzO5%2BsyRUnDnLrEuor7%2FaugfDWfV2NLwl3gj3pVwEaigsxDMZ3TQx26PrUlNJ47RI63bBgKmTJDr54rDMPyNGpHGeujzpWvJLxMym%2BtKWRWjU3IyYtWtHehQOJXJ1LHFX2QJzBxeyHz3pNHER%2BWcNrIG97kV35TPBJ3QTX9lw0gom8NJWfJ5xnnRVQwhtIlDaPFgjDDY3GyEqlhm1xy9UzpsMPL5kuotUQ5DDVxrZdc8lzuMprF54WV9oNq66kIdMNbV3JQGOqkB1WCKsKo4sMSMzStLa8bSFDhTzmK2v7VZijGYl3QMUakkhAgTc4UE9zShtoELDRbIGVkpF7UeqtGAzkbFOMHKkHOSmtRgmRb0P18WS7h%2FT1We5F0SKvmWxjKtn4hunhSlk%2BsMB4xVIwMJIQogVZPJEqM%2FWhsFAkFxkUO2elw8JBuCDHKPp36YL%2Fi18fNPXJ%2FTVPsOHHyjr5oIkDRT4pAx1RKYm4fqLONLyQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=8c7179cf5b4a6c59e6d92498e8b0aa3378e7d216aac30008cfbf99ce9d8b181c",
+  about:"",
+  about2:"",
+  about3:"",
+  about4:"",
+  about5:"",
+  aboutPopUp:[
+    {
+      name:"",
+      details1:"",
+      details2:"",
+      popUpSources:[
+        {
+          name:"",
+          link:"",
+        },
+      ],
+
+
+    },
+  ],
+  aboutSource:[
+    {
+      name:"camsole",
+      link:"https://camsol.io/",
+
+    }
+  ],
+  MainLocation:"!!!unknown!!!",
+  TotalNumberOfBranches:"!!!!!!!Unknown!!!!!!!",
+  OtherLocations:[
+    {
+      name:"!!!!!!!Unknown!!!!!!!",
+      link:"https://camsol.io/"
+
+    },
+  ],
+  LocationSources:[
+
+    {
+      name:"https://camsol.io/",
+      link:"https://camsol.freshteam.com/jobs/DpLc3lhS0I8E/full-stack-developer-remote#applicant-form",
+    }
+  ],
+  JobPost:[
+  {
+    name:"React/Full-stack developer",
+    location:"!!!unknown!!!",
+    link:"https://camsol.freshteam.com/jobs/DpLc3lhS0I8E/full-stack-developer-remote#applicant-form",
+    analysis:{
+      status:"!!!!!!Unclear!!!!!!",
+      jobLocation:"!!!!!!Unknown!!!!!",
+      currentOfficeLocation:"!!!!!!Unknown!!!!!",
+      details1:"",
+      popUpSources:[
+        {
+          name:"Apply to camsole",
+          link:"https://camsol.freshteam.com/jobs/DpLc3lhS0I8E/full-stack-developer-remote#applicant-form",
+        },
+      ],
+    },
+    reasonForAnalysis:"",
+    analysisSource:[
+      {name:"",
+      link:""},
+    ],
+
+  }
+
+  ],
+  JobPostSources:[
+    {
+      name:"",
+      link:""
+  }
+],
+Employee:[
+  {
+  year:"",
+  numberOfEmployee:""
+},
+],
+EmployeeType:'Full-time Employee',
+EmployeeSource:[
+{
+  name:"camsole jobs",
+  link:"https://camsol.freshteam.com/jobs/DpLc3lhS0I8E/full-stack-developer-remote#applicant-form",
+
+},
+],
+Revenue:[
+{
+  year:'',
+  amount:''
+},
+
+],
+RevenueType:'Revenue in Millions U.S dollars',
+RevenueSource:[
+{
+  name:"",
+  link:"",
+
+},
+],
+Departments:[
+{
+  DepartmentName:'!!!!!!Unknown!!!!!!',
+  DepartmentDesc:{
+    details1:"Department number:!!!!!!Unknown!!!!!!, Name:!!!!!!Unknown!!!!!!, "
+  }
+},
+],
+DepartmentSource:[
+{
+  name:"",
+  link:"",
+}
+],
+ApplicationStatus:"Active",
+ApplicationStage:[
+  {
+    stageName:"Stage1-Applying for job",
+    stagePercent:100,
+    about:"This is the application phase to the company for the position of full stack developer",
+    about2:"!!!!!!!!!!!!!!!!!Cover letter unavialable.!!!!!!!!!!!!!!!!!",
+    aboutPopUp:[
+      {
+        name:"Resume",
+        imageName:"Resume Image",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653477784/msbGeanologyProfilePics/Resume1024_1_ws31nm.jpg",
+        popUpSources:[
+          {
+          name:"resume ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      }
+    ]
+  },
+  {
+    stageName:"Stage2-First human response form company",
+    stagePercent:100,
+    about:"Monitoring first contact form the company(Not auto reply)",
+    about2:"1.) first feedback was from Camsole Auto reply.",
+    about3:"2.) recomended by Carine Kongnyu to send message on Whatapp.",
+    aboutPopUp:[
+      {
+        name:"first feedback",
+        imageName:"first feedback mail for Camsole",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654081810/msbGeanologyProfilePics/camsole/first_auto_reply_h22ozw.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+      {
+        name:"recomended by Carine Kongnyu to send message on Whatapp",
+        imageName:"recomended by Carine Kongnyu to send message on Whatapp ",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654081811/msbGeanologyProfilePics/camsole/first_Whatsapp_text_puavuz.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+      {
+        name:"first reply form recruiter Mme Selina Scherer-Braun ",
+        imageName:"first reply form recruiter Mme Selina Scherer-Braun",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654083298/msbGeanologyProfilePics/camsole/recruiters_reply_b0nkxv.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      }
+
+    ]
+  },
+  {
+    stageName:"Stage3-First Interview",
+    stagePercent:100,
+    about:"First Interview with Recruiter: Selina Scherer-Braun",
+    about2:"1.) all on whats app chat",
+    aboutPopUp:[
+      {
+        name:"01 chat form recruiter Mme Selina Scherer-Braun ",
+        imageName:"first reply form recruiter Mme Selina Scherer-Braun",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654083298/msbGeanologyProfilePics/camsole/recruiters_reply_b0nkxv.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+      {
+        name:"02 chats form recruiter Mme Selina Scherer-Braun ",
+        imageName:"02 chats form recruiter Mme Selina Scherer-Braun",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087970/msbGeanologyProfilePics/camsole/02_chat_y7mg1q.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      }
+      ,
+      {
+        name:"03 chats form recruiter Mme Selina Scherer-Braun ",
+        imageName:"03 chats form recruiter Mme Selina Scherer-Braun",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087970/msbGeanologyProfilePics/camsole/03_chat_wea9vv.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+      {
+        name:"04 chats form recruiter Mme Selina Scherer-Braun ",
+        imageName:"04 chats form recruiter Mme Selina Scherer-Braun",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087970/msbGeanologyProfilePics/camsole/chat_04_mzrgnv.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+      {
+        name:"05 chats form recruiter Mme Selina Scherer-Braun ",
+        imageName:"05 chats form recruiter Mme Selina Scherer-Braun",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087970/msbGeanologyProfilePics/camsole/chat_05_osrghg.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+      {
+        name:"06 chats form recruiter Mme Selina Scherer-Braun ",
+        imageName:"06 chats form recruiter Mme Selina Scherer-Braun",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087971/msbGeanologyProfilePics/camsole/chat_06_ptyj1m.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+      {
+        name:"07 chats form recruiter Mme Selina Scherer-Braun ",
+        imageName:"07 chats form recruiter Mme Selina Scherer-Braun",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087971/msbGeanologyProfilePics/camsole/chat_07_skd9yj.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+      {
+        name:"08 chats form recruiter Mme Selina Scherer-Braun ",
+        imageName:"08 chats form recruiter Mme Selina Scherer-Braun",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087971/msbGeanologyProfilePics/camsole/chat_08_f9kjai.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      }
+    ]
+
+  },
+  {
+    stageName:"Stage4-Technical assesment",
+    stagePercent:0,
+    about:"Technical Assessment",
+
+  },
+  {
+    stageName:"Stage5-Delevary of Assesment",
+    stagePercent:0,
+    about:"Delevary of Assesment",
+
+  },
+  {
+    stageName:"Stage6-Awaiting a reply from assesment or follow up mail",
+    stagePercent:0,
+    about:"This could either be a mail with the following,",
+    about2:"case 1==>This could be a mail telling you to be patient for the results of your assesment",
+    about3:"case 2==> This could be a mail telling you the result of your assesment and you did not make it",
+    about4:"case 3==> This could be mail on setting interview time",
+    about5:"case 4==> Congratulation, you made it to interview",
+
+  },
+  {
+    stageName:"Stage7-The Interview",
+    stagePercent:0,
+    about:"Preparation for the Interview",
+    about2:"case 1==> Most common interview quesions and how to answer them",
+    about3:"case 2==> reserch about those you are sopose to have interview with",
+    about4:"case 3==> prepare the place and time and internet you need for the interview",
+    about5:"case 4==> Have the interview",
+    about6:"case 5==> Follow up interview quesions",
+
+  },
+  {
+    stageName:"Stage8-Awaiting Interview Result",
+    stagePercent:0,
+    about:"Awaiting result of the Interview",
+
+  },
+]
 }
 
 
