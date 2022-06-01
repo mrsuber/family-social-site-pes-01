@@ -65,6 +65,7 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 
 //admin
+export {default as AdminProjectExpansionSturcturalPeoplePopUpDetail} from './admin/adminProjectExpansionSturcturalPeoplePopUpDetail/AdminProjectExpansionSturcturalPeoplePopUpDetail'
 export {default as AdminSturctureProjectExpansionDetails} from './admin/adminSturctureProjectExpansionDetails/AdminSturctureProjectExpansionDetails'
 export {default as AdminSturcturalProjectExpansionPopUpDetail} from './admin/adminSturcturalProjectExpansionPopUpDetail/AdminSturcturalProjectExpansionPopUpDetail'
 export {default as AdminApplicationStagePreviewPopup} from './admin/application/adminApplicationStagePreviewPopup/AdminApplicationStagePreviewPopup'

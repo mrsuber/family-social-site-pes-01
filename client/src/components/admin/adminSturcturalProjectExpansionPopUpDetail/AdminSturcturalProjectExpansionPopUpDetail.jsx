@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {AdminSources,AdminCourseImagePopUp,AdminCourseUrlPopUp} from '../../../components'
+import {AdminSources,AdminCourseImagePopUp,AdminCourseUrlPopUp,AdminProjectExpansionSturcturalPeoplePopUpDetail} from '../../../components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPhone,faEnvelope,faGlobe,faMapMarker,faFilm,faCookie,faPaintBrush,faMapMarkedAlt} from '@fortawesome/free-solid-svg-icons';
 
@@ -8,13 +8,15 @@ import {LinkedIn} from '@material-ui/icons'
 import './adminSturcturalProjectExpansionPopUpDetail.css'
 
 const AdminSturcturalProjectExpansionPopUpDetail = ({setOnView,onView=false, data,position}) => {
-
+  const [onView2, setOnView2] = useState(false)
+  const [profileData,setProfileData] = useState([])
 
   return (
     <>{
       onView===false
       ? <></>
       : <>
+
       <div className="admin__profileOnveiw-container" style={{background:'#2d88ee08'}}>
 
 
@@ -134,7 +136,13 @@ const AdminSturcturalProjectExpansionPopUpDetail = ({setOnView,onView=false, dat
               {item.detail16 &&<p className="admin__resume__right-par">
                 {item.detail16}
               </p>}
-
+              {
+                item.profileData
+                ?<>
+                <AdminProjectExpansionSturcturalPeoplePopUpDetail data={item.profileData}/>
+                </>
+                :<></>
+              }
               {item.popup1
                 ?<>
 
