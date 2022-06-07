@@ -1,10 +1,6 @@
 import {logo} from '../images'
 export const courseStructuralData = [
-  // {
-  //   companyName:"Google",
-  //   companyHeadOfficeLocation:"Austin, Texas, United States",
-  //
-  // },
+
   {
     learningTitle:"Foundations",
     companyHeadOfficeLocation:"Cameroon | Buea",
@@ -2943,6 +2939,33 @@ title:"What happened the day Google decided links including (/) were malware",
 url:"https://www.itpro.co.uk/609724/google-apologises-after-blacklisting-entire-internet"
 },
 ],
+KnowledgeCheck:[
+  {
+    check:"What element is used to create a link?"
+  },
+  {
+    check:"What is an attribute?"
+  },
+  {
+    check:"What attribute tells links where to go to?"
+  },
+  {
+    check:"What is the difference between an absolute and relative link?"
+  },
+
+  {
+    check:"Which element is used to display an image?"
+  },
+  {
+    check:"What two attributes do images always need to have?"
+  },
+  {
+    check:"How do you access a parent directory in a filepath?"
+  },
+  {
+    check:"What are the four main image formats that you can use for images on the web?"
+  },
+],
 source:[
 {
 name:"TheodinProject",
@@ -2963,6 +2986,96 @@ courseNumber:"007",
 logo:logo,
 menu:[
 {
+name:'Introduction',
+detail:"This lesson will explain the importance of good commit messages, how to write them, when to commit and why having a history of good commits is so important!",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"Introduction",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'Lesson Overview',
+detail:"This section contains a general overview of topics that you will learn in this lesson.",
+detail1:"How to write a meaningful commit message",
+detail2:"Why meaningful commit messages are important",
+detail3:"When to commit",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"Lesson Overview",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'Are commit messages so important they deserve their own lesson?',
+detail:"Yes! Let me give you a quick list of reasons why:",
+detail1:"When you are applying for jobs, employers will look through your projects on GitHub and they will look through your commit history. Having good commits as a novice developer will help you stand out.",
+detail2:"Having a good commit message history will allow you (or other developers working on your code) to quickly see what changes were made and why. This is useful if a bug is found in the code that needs to be fixed!",
+detail3:"Having a good commit message history will also be helpful if you come back to a project you were working on after stepping away from it for a while. You likely won’t remember your thought process and changes made when initially writing out the code.",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"Are commit messages so important they deserve their own lesson?",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'When to Commit',
+detail:"A good way to view a commit is like a “snapshot” of your code at the moment that commit was made. That version of your code up to that point will be saved for you to revert back to or look back at.",
+detail1:"When writing code, it’s considered best practice to commit every time you have a meaningful change in the code. This will create a timeline of your progress and show that your finished code didn’t appear out of nowhere.",
+detail2:"This means, make a commit if you get a piece of code you are working on to function like you want it to, fix a typo, or fix a bug. As you gain experience, you will develop a better feel for what should be committed!",
+detail3:"There will come a time when you are working on a project and you FINALLY get something just right (this would be a good time to commit), and then maybe 30 seconds to a few days later it breaks. You have no idea what you changed, everything looks to be the same and you don’t remember editing that line, but alas, it isn’t working how you want it anymore. You’d be able to go back through your commit history and either revert your code back to the last commit you made when you first got that part working or go back and see what your code looked like at that point in time.",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"When to Commit",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'Assignment',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"Assignment",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
+name:'',
+detail:"",
+detail1:"",
+detail2:"",
+detail3:"",
+detail4:"",
+detail5:"",
+detail6:"",
+ancorName:"",
+popup1Name:"",
+popup1:"",
+popup2Name:"",
+popup2:"",
+},
+{
 name:'',
 detail:"",
 detail1:"",
@@ -2980,7 +3093,7 @@ popup2:"",
 ],
 additionalRead:[
 {
-title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+title:"This article, How to Write a Git Commit Message, covers all the main bases on how to write good commit messages. The whole article is great and informative but the meat of the article is “The seven rules of a great commit message.”",
 url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
 },
 ],

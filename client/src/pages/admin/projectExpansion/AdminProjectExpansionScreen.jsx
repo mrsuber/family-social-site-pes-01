@@ -59,13 +59,13 @@ const AdminProjectExpansionScreen = () => {
         showCore === true
         ?        <><AdminSturctureProjectExpansionDetails courseName="High commander and Chief" logo={logo} strutureData={pe} setShowCore={setShowCore}/></>
         :<div className="circleContainer">
-     <div class="peLogo logo__circle0" style={{width:`${7 * varible}px`, height:`${7 * varible}px`}}>
-     <div class="peLogo logo__circle1" style={{width:`${6 * varible}px`, height:`${6 * varible}px`}}>
-         <div class="peLogo logo__circle2"style={{width:`${5 * varible}px`, height:`${5 * varible}px`}}>
-             <div class="peLogo logo__circle3" style={{width:`${4 * varible}px`, height:`${4 * varible}px`}}>
-                 <div class="peLogo logo__circle4" style={{width:`${3 * varible}px`, height:`${3 * varible}px`}}>
-                     <div class="peLogo logo__circle5" style={{width:`${2 * varible}px`, height:`${2 * varible}px`}}onClick={() =>setShowCore(true)} >
-                         <div class="peLogo logo__circle6" style={{width:`${1 * varible}px`, height:`${1 * varible}px`}} onClick={() =>setShowCore(true)}>
+     <div className="peLogo logo__circle0" style={{width:`${7 * varible}px`, height:`${7 * varible}px`}}>
+     <div className="peLogo logo__circle1" style={{width:`${6 * varible}px`, height:`${6 * varible}px`}}>
+         <div className="peLogo logo__circle2"style={{width:`${5 * varible}px`, height:`${5 * varible}px`}}>
+             <div className="peLogo logo__circle3" style={{width:`${4 * varible}px`, height:`${4 * varible}px`}}>
+                 <div className="peLogo logo__circle4" style={{width:`${3 * varible}px`, height:`${3 * varible}px`}}>
+                     <div className="peLogo logo__circle5" style={{width:`${2 * varible}px`, height:`${2 * varible}px`}}onClick={() =>setShowCore(true)} >
+                         <div className="peLogo logo__circle6" style={{width:`${1 * varible}px`, height:`${1 * varible}px`}} onClick={() =>setShowCore(true)}>
                            <img src={logo} alt="logo" className="peLogo__img" style={{width:`${.5 * varible}px`, height:`${.5 * varible}px`}}/>
                          </div>
                      </div>
@@ -75,6 +75,277 @@ const AdminProjectExpansionScreen = () => {
          </div>
      </div>
      </div>
+      }
+
+      {
+        <>
+        <div className="logo__body">
+        <div className='grain'></div>
+<div className='intro'>
+  <div className='center'>
+    <div className='core'></div>
+    <div className='outer_one'>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+    </div>
+    <div className='outer_two'>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+      <div className='outer_two__piece'></div>
+    </div>
+    <div className='outer_three'>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+      <div className='outer_three__piece'></div>
+    </div>
+    <div className='outer_four'>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+      <div className='outer_four__piece'></div>
+    </div>
+    <div className='outer_five'>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+      <div className='outer_five__piece'></div>
+    </div>
+    <div className='pieces'>
+      <div className='future_ui__piece'>
+        <span>Warp drive</span>
+        <div className='line'></div>
+        <div className='tip'>
+          Yes, commander!
+        </div>
+      </div>
+      <div className='future_ui__piece'>
+        <span>Teleport</span>
+        <div className='line'></div>
+        <div className='tip'>
+          Beam me up!
+        </div>
+      </div>
+      <div className='future_ui__piece'>
+        <span>Fusion core</span>
+        <div className='line'></div>
+        <div className='tip'>
+          Engineering!
+        </div>
+      </div>
+      <div className='future_ui__piece'>
+        <span>Laser target</span>
+        <div className='line'></div>
+        <div className='tip'>
+          Charge laz0rs!
+        </div>
+      </div>
+      <div className='future_ui__piece'>
+        <span>Shields</span>
+        <div className='line'></div>
+        <div className='tip'>
+          Status report!
+        </div>
+      </div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+      <div className='future_ui__piece blank'></div>
+    </div>
+  </div>
+</div>
+</div>
+  </>
       }
 
       </main>

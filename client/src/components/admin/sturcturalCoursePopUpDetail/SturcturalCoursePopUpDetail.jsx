@@ -54,7 +54,7 @@ const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) =>
 
       </div>
 
-      <div className="admin__resume__right-side">
+      <div className="admin__resume__course__right-side">
         <div className="admin__resume__about">
 
           {
