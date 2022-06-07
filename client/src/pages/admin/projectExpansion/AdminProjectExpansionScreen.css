@@ -874,22 +874,22 @@ border: 10px solid var(--color-main) ;
 .logo__body .center .outer_one2 .outer_one__piece {
   width: 10px;
   height: 30px;
-  background: #307511;
-  box-shadow: 0px 0px 20px 0px #307511 ;
+  background: #9a2fce;
+  box-shadow: 0px 0px 20px 0px #9a2fce ;
   transform-origin: 145px 0px;
 }
 .logo__body .center .outer_one3 .outer_one__piece {
   width: 10px;
   height: 30px;
-  background: #49a5b1;
-  box-shadow: 0px 0px 20px 0px #49a5b1 ;
+  background: #307511;
+  box-shadow: 0px 0px 20px 0px #307511 ;
   transform-origin: 155px 0px;
 }
 .logo__body .center .outer_one4 .outer_one__piece {
   width: 10px;
   height: 30px;
-  background: #9a2fce;
-  box-shadow: 0px 0px 20px 0px #9a2fce ;
+  background: #55e2f9;
+  box-shadow: 0px 0px 20px 0px #55e2f9 ;
   transform-origin: 165px 0px;
 }
 
@@ -999,9 +999,11 @@ border: 10px solid var(--color-main) ;
 	 cursor: pointer;
 	 color: white;
 	 animation: blink 0.4s 0.4s;
-	 background: #de0b46;
+
+   background: #307511;
+   box-shadow: 0px 0px 20px 0px #307511 ;
 	 transform: rotate(-45deg) translatex(20px);
-	 box-shadow: 0px 0px 55px rgba(222, 11, 70, 0.77);
+
 }
  .logo__body .center .pieces .future_ui__piece:nth-of-type(1):hover span {
 	 position: absolute;
@@ -1028,9 +1030,9 @@ border: 10px solid var(--color-main) ;
 	 cursor: pointer;
 	 color: white;
 	 animation: blink 0.4s 0.4s;
-	 background: #de0b46;
+	 background: #fff;
 	 transform: rotate(-35deg) translatex(20px);
-	 box-shadow: 0px 0px 55px rgba(222, 11, 70, 0.77);
+	 box-shadow: 0px 0px 20px 0px #fff
 }
  .logo__body .center .pieces .future_ui__piece:nth-of-type(2):hover span {
 	 position: absolute;
@@ -1057,9 +1059,10 @@ border: 10px solid var(--color-main) ;
 	 cursor: pointer;
 	 color: white;
 	 animation: blink 0.4s 0.4s;
-	 background: #de0b46;
+   background: var(--color-main);
+
 	 transform: rotate(-25deg) translatex(20px);
-	 box-shadow: 0px 0px 55px rgba(222, 11, 70, 0.77);
+    box-shadow: 0px 0px 55px rgb(60 109 255 / 61%);
 }
  .logo__body .center .pieces .future_ui__piece:nth-of-type(3):hover span {
 	 position: absolute;
@@ -1086,9 +1089,9 @@ border: 10px solid var(--color-main) ;
 	 cursor: pointer;
 	 color: white;
 	 animation: blink 0.4s 0.4s;
-	 background: #de0b46;
+	 background: #9a2fce;
 	 transform: rotate(-15deg) translatex(20px);
-	 box-shadow: 0px 0px 55px rgba(222, 11, 70, 0.77);
+	 box-shadow: 0px 0px 20px 0px #9a2fce ;
 }
  .logo__body .center .pieces .future_ui__piece:nth-of-type(4):hover span {
 	 position: absolute;
@@ -1115,9 +1118,10 @@ border: 10px solid var(--color-main) ;
 	 cursor: pointer;
 	 color: white;
 	 animation: blink 0.4s 0.4s;
-	 background: #de0b46;
+
+   background: #55e2f9;
+   box-shadow: 0px 0px 20px 0px #55e2f9 ;
 	 transform: rotate(-5deg) translatex(20px);
-	 box-shadow: 0px 0px 55px rgba(222, 11, 70, 0.77);
 }
  .logo__body .center .pieces .future_ui__piece:nth-of-type(5):hover span {
 	 position: absolute;

@@ -470,38 +470,38 @@ const AdminProjectExpansionScreen = () => {
     </div>
     <div className='pieces'>
       <div className='future_ui__piece'>
-        <span>Warp drive</span>
+        <span>General 3</span>
         <div className='line'></div>
         <div className='tip'>
-          Yes, commander!
+          Food
         </div>
       </div>
       <div className='future_ui__piece'>
-        <span>Teleport</span>
+        <span>General 1</span>
         <div className='line'></div>
         <div className='tip'>
-          Beam me up!
+          Government and Finance
         </div>
       </div>
       <div className='future_ui__piece'>
-        <span>Fusion core</span>
+        <span>Comander</span>
         <div className='line'></div>
         <div className='tip'>
-          Engineering!
+          High Commander and Chief
         </div>
       </div>
       <div className='future_ui__piece'>
-        <span>Laser target</span>
+        <span>General 2</span>
         <div className='line'></div>
         <div className='tip'>
-          Charge laz0rs!
+          Design
         </div>
       </div>
       <div className='future_ui__piece'>
-        <span>Shields</span>
+        <span>General 4</span>
         <div className='line'></div>
         <div className='tip'>
-          Status report!
+          Research and Developement
         </div>
       </div>
       <div className='future_ui__piece blank'></div>
