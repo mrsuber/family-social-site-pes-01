@@ -1,6 +1,7 @@
 .admin__main-expense{
   min-height: 100vh;
 }
+
 .circleContainer{
   display: flex;
   align-items: center;
@@ -112,11 +113,16 @@
   /* width: 50px;
   height: 50px; */
   background-color: #0a172b;
-  border: 2px solid #0a172b;
+  /* border: 2px solid #0a172b; */
   display: flex;
   align-items: center;
   justify-content: center;
 
+}
+.logo__circle6_core{
+  /* transform: translateY(-21px) translateZ(-870px) rotateX(69deg) rotateY(-26deg) rotatez(-647deg) scale(0.9); */
+/* animation: wiggle 20s infinite linear; */
+border: 10px solid var(--color-main) ;
 }
 
 
@@ -142,12 +148,13 @@
 	 margin: auto;
 	 transform: translateY(-50%);
 }
- .logo__body .center .outer_one, .logo__body .center .outer_two, .logo__body .center .outer_three, .logo__body .center .outer_four, .logo__body .center .outer_five, .logo__body .center .pieces {
+ .logo__body .center .outer_one1,.logo__body .center .outer_one2,.logo__body .center .outer_one3,.logo__body .center .outer_one4,.logo__body .center .outer_one5,.logo__body .center .outer_one, .logo__body .center .outer_two, .logo__body .center .outer_three, .logo__body .center .outer_four, .logo__body .center .outer_five, .logo__body .center .pieces {
 	 position: absolute;
 	 width: 50px;
 	 height: 50px;
 	 left: 50%;
 }
+
  .logo__body .center .outer_two__piece:nth-of-type(1), .logo__body .center .outer_three__piece:nth-of-type(1) {
 	 animation: fade 5s 0.1s infinite;
 }
@@ -815,7 +822,7 @@
 	 padding: 0;
 	 font-family: montserrat;
 	 perspective: 800;
-	 background: radial-gradient(ellipse at top left, rgba(222, 11, 70, 0.26) -160%, rgba(255, 255, 255, 0) 103%), -webkit-radial-gradient(center, ellipse cover, #0c1019 0%, #0b0b0e 100%);
+	 /* background: radial-gradient(ellipse at top left, var(--bg2) -160%, rgba(255, 255, 255, 0) 103%), -webkit-radial-gradient(center, ellipse cover, #0c1019 0%, #0b0b0e 100%); */
 	 overflow: hidden;
 }
  .logo__body .grain {
@@ -843,18 +850,55 @@
 	 width: 50px;
 	 height: 50px;
 	 border-radius: 50px;
-	 background: #de0b46;
-	 box-shadow: 0px 0px 70px 20px #de0b46;
+	 background: var(--color-main) ;
+	 box-shadow: 0px 0px 70px 20px var(--color-main);
 }
- .logo__body .center .outer_one {
+ .logo__body .center .outer_one, .logo__body .center .outer_one1,.logo__body .center .outer_one2,.logo__body .center .outer_one3,.logo__body .center .outer_one4,.logo__body .center .outer_one5{
 	 transform: translateX(-120px) translateY(-50%);
 }
+
  .logo__body .center .outer_one__piece {
 	 width: 10px;
 	 height: 30px;
-	 background: #de0b46;
-	 box-shadow: 0px 0px 20px 0px #de0b46;
+	 background: var(--color-main) ;
+	 box-shadow: 0px 0px 20px 0px var(--color-main) ;
 	 transform-origin: 120px 0px;
+}
+.logo__body .center .outer_one1 .outer_one__piece {
+  width: 10px;
+  height: 30px;
+  background: #fff;
+  box-shadow: 0px 0px 20px 0px #fff ;
+  transform-origin: 135px 0px;
+}
+.logo__body .center .outer_one2 .outer_one__piece {
+  width: 10px;
+  height: 30px;
+  background: #307511;
+  box-shadow: 0px 0px 20px 0px #307511 ;
+  transform-origin: 145px 0px;
+}
+.logo__body .center .outer_one3 .outer_one__piece {
+  width: 10px;
+  height: 30px;
+  background: #49a5b1;
+  box-shadow: 0px 0px 20px 0px #49a5b1 ;
+  transform-origin: 155px 0px;
+}
+.logo__body .center .outer_one4 .outer_one__piece {
+  width: 10px;
+  height: 30px;
+  background: #9a2fce;
+  box-shadow: 0px 0px 20px 0px #9a2fce ;
+  transform-origin: 165px 0px;
+}
+
+.logo__body .center .outer_one5 .outer_one__piece {
+  width: 10px;
+  height: 30px;
+  background: #de0b46;
+  box-shadow: 0px 0px 20px 0px #de0b46;
+  transform-origin: 175px 0px;
 }
  .logo__body .center .outer_two {
 	 transform: translateX(-290px) translateY(-50%);
@@ -924,17 +968,18 @@
 	 left: -547px;
 	 transform: rotatez(4deg);
 	 top: 17px;
-	 background: #de0b46;
+	 background: var(--color-main);
 	 position: absolute;
 	 opacity: 0;
 }
  .logo__body .center .pieces .future_ui__piece {
-	 border: 3px solid #de0b46;
+	 /* border: 3px solid #de0b46; */
+   border: 3px solid var(--color-main);
 	 position: absolute;
 	 font-weight: 900;
 	 padding: 30px;
 	 font-size: 30px;
-	 box-shadow: 0px 0px 25px rgba(222, 11, 70, 0.27);
+	 box-shadow: 0px 0px 25px rgb(60 109 255 / 61%);
 	 transform-style: preserve-3d;
 	 transition: all 1s 0.1s;
 	 color: white;
@@ -943,7 +988,7 @@
 	 background: transparent;
 	 color: white;
 	 border-radius: 100px !important;
-	 box-shadow: 0px 0px 25px rgba(222, 11, 70, 0.27);
+	 box-shadow: 0px 0px 25px rgb(60 109 255 / 61%);
 	 transform-origin: -540px 0px;
 }
  .logo__body .center .pieces .future_ui__piece:nth-of-type(1) {

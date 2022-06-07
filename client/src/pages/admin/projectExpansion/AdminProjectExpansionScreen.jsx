@@ -55,7 +55,7 @@ const AdminProjectExpansionScreen = () => {
 
       <main className="admin__main-expense">
 
-      {
+      {/*
         showCore === true
         ?        <><AdminSturctureProjectExpansionDetails courseName="High commander and Chief" logo={logo} strutureData={pe} setShowCore={setShowCore}/></>
         :<div className="circleContainer">
@@ -75,7 +75,7 @@ const AdminProjectExpansionScreen = () => {
          </div>
      </div>
      </div>
-      }
+      */}
 
       {
         <>
@@ -83,8 +83,202 @@ const AdminProjectExpansionScreen = () => {
         <div className='grain'></div>
 <div className='intro'>
   <div className='center'>
-    <div className='core'></div>
+    <div className='core'>
+    <div className="peLogo logo__circle6 logo__circle6_core" style={{width:`${1 * varible}px`, height:`${1 * varible}px`}} onClick={() =>setShowCore(true)}>
+      <img src={logo} alt="logo" className="peLogo__img" style={{width:`${.5 * varible}px`, height:`${.5 * varible}px`}}/>
+    </div>
+    </div>
     <div className='outer_one'>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+    </div>
+    <div className='outer_one1'>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+    </div>
+    <div className='outer_one2'>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+    </div>
+    <div className='outer_one3'>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+    </div>
+    <div className='outer_one4'>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+      <div className='outer_one__piece'></div>
+    </div>
+    <div className='outer_one5'>
       <div className='outer_one__piece'></div>
       <div className='outer_one__piece'></div>
       <div className='outer_one__piece'></div>
