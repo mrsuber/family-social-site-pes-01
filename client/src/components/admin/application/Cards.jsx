@@ -49,7 +49,7 @@ const Cards = ({setOnStructuralDetail,data,setCompanyName,setStatusCheck,setStat
                 data.ApplicationStatus && data.ApplicationStatus === "Active"
                 ?<span style={{color:'#00ff11',fontWeight:"500"}}>
                     {data.ApplicationStatus}</span>
-                :<span style={{color:'#feff00',fontWeight:"500"}}>{data.ApplicationStatus}</span>
+                :<>{data.ApplicationStatus && data.ApplicationStatus === "Employed"?<span style={{color:'#0cb2f3',fontWeight:"500"}}>{data.ApplicationStatus}</span> : <span style={{color:'#feff00',fontWeight:"500"}}>{data.ApplicationStatus}</span>}</>
 
               }
               {data.ApplicationStatus?"":"Status Unknown"}
