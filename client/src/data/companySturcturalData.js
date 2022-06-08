@@ -1203,5 +1203,196 @@ export const companyStructuralData = [
 
 
   },
+  {
+    companyName:"proxify",
+    companyHeadOfficeLocation:"Headquartered in Stockholm, Uppland, Sweden  GMT(+2)",
+    companyLevel1:[
+      {
+        name:"proxify Executive Leadership",
+        people:[
+
+
+          {
+            name:'Viktor Jarnheimer',
+            photo:'https://career.proxify.io/_nuxt/img/0d5939d.webp',
+            title:'Co-founder and CEO',
+            BiographyP1:'A full-stack developer who has run four startups before Proxify - all with a focus on cutting edge technologies, built using distributed teams.',
+            source:[
+              {
+                name:"proxify",
+                link:"https://career.proxify.io/company/"
+              }
+            ],
+            report1:[
+              {
+                name:'Nadia Pokhyla',
+                photo:'https://career.proxify.io/_nuxt/img/0716184.webp',
+                title:'Head of Recruitment',
+                BiographyP1:"An experienced and results-oriented recruiter, with a strong background in global IT recruitment, highly focused on creating the perfect match between great companies and IT professionals.",
+                source:[
+                  {
+                    name:"proxify",
+                    link:"https://career.proxify.io/company/"
+                  }
+                ],
+                report2:[
+                  {
+                    name:'Alexis Komarov',
+                    photo:'https://career.proxify.io/_nuxt/img/56793c4.webp',
+                    title:'Head of Talent Acquisition',
+                    phoneNumber:'',
+                    email:"",
+                    website:"",
+                    twitter:"",
+                    address:"",
+                    linkedIn:"",
+                    Education:[
+                      {
+                        year:"",
+                        institutionName:"",
+                        certificateName:"",
+                        certificatePoints:"",
+                      },
+
+                    ],
+                    languages:[
+                    {
+                      languageName:"English",
+                      languagesPercent:"95%"
+                    },
+                    {
+                      languageName:"English Professional working proficiency",
+                      languagesPercent:"95%"
+                    },
+                  ],
+                    Experience:[
+                      {
+                        yearsOfExperience:"",
+                        placeOfExperience:"",
+                        locationOfExperience:"",
+                        areaOfExpertise:"",
+                        descOfWorkDoneInAreaOfExpertise:"",
+                      },
+
+                    ],
+                    professionalSkills:[
+                      {
+
+                        nameOfSkill:"",
+                        persentageOfSkills:"",
+                      },
+
+
+                    ],
+                    Interest:[
+                      {
+                        // iconOfInterest:"",
+                        // nameOfInterest:"",
+                      }
+                    ],
+                    source:[
+                      {
+                        name:"",
+                        link:""
+                      },
+
+                    ],
+
+                    report3:[
+                      {
+                        name:'Christina Kobets /Khrystyna Kobets',
+                        photo:'https://proxify.io/_nuxt/img/dee14f5.webp',
+                        title:'Talent Acquisition',
+                        phoneNumber:'',
+                        email:"",
+                        website:"",
+                        twitter:"",
+                        address:"",
+                        linkedIn:"",
+                        Education:[
+                          {
+                            year:"",
+                            institutionName:"",
+                            certificateName:"",
+                            certificatePoints:"",
+                          },
+
+                        ],
+                        languages:[
+                        {
+                          languageName:"English",
+                          languagesPercent:"95%"
+                        },
+                        {
+                          languageName:"English Professional working proficiency",
+                          languagesPercent:"95%"
+                        },
+                      ],
+                        Experience:[
+                          {
+                            yearsOfExperience:"Dec 2020 - Present",
+                            placeOfExperience:"Proxify",
+                            locationOfExperience:"Kyiv, Kyiv City, Ukraine",
+                            areaOfExpertise:"Talent Acquisition Specialist",
+                            descOfWorkDoneInAreaOfExpertise:"Working with different technical and non-technical roles (full recruitment cycle - detecting needs, building the plan, sourcing, outreach, interviewing, leading through the process, presenting offers); ===>Working with inbound and outbound pipelines on different markets; ==>Scheduling interviews, arranging on-sites, meeting with candidates; ===>Helping in building the recruitment process within the Company.",
+                          },
+
+                        ],
+                        professionalSkills:[
+                          {
+
+                            nameOfSkill:"",
+                            persentageOfSkills:"",
+                          },
+
+
+                        ],
+                        Interest:[
+                          {
+                            // iconOfInterest:"",
+                            // nameOfInterest:"",
+                          }
+                        ],
+                        source:[
+                          {
+                            name:"",
+                            link:""
+                          },
+
+                        ],
+
+
+                      },
+                    ],
+
+
+                  },
+                ],
+
+              },
+
+
+
+
+
+            ]
+          },
+
+
+        ]
+      },
+
+      {
+        name:"proxify Board of Directors",
+        people:[
+
+        ]
+      }
+
+
+    ],
+
+
+  },
 
 ]

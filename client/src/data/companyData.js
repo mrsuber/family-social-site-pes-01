@@ -1044,13 +1044,14 @@ DepartmentSource:[
   about5:"Proxify.io recruits developers using four methods: professional reviews, personal evaluations, technical evaluations, and references. In response to client needs, the company seeks out suitable developers, tests their code, and sets up a meet and greet between the developer and the hiring organization. If it is a good match, the developer joins the team and Proxify continues to provide regular support and quality assurance. Developers can be hired by skill, such as Laravel, PHP, WordPress, and React developers, and are screened to ensure that they can build client projects correctly from start to finish.",
   aboutPopUp:[
     {
-      name:"",
-      details1:"",
-      details2:"",
+      name:"question on management",
+      details1:"Q1 Remote developers hired Through proxify are they independent or is Proxify watching over them",
+      details2:"Answer 1:",
+      details3:"Proxify continues to provide regular support and quality assurance",
       popUpSources:[
         {
-          name:"",
-          link:"",
+          name:"flexjobs",
+          link:"https://www.flexjobs.com/remote-jobs/company/proxifyio",
         },
       ],
 
@@ -1266,11 +1267,11 @@ ApplicationStage:[
 },
 {
   companyName:"camsole",
-  logo:"https://s3.eu-central-1.amazonaws.com/files-eu.freshteam.com/production/138377/attachments/25000768006/logo/Logo_Camsol.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIARX2EI6XTRE5XX3NQ%2F20220601%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20220601T103122Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEkaDGV1LWNlbnRyYWwtMSJHMEUCIG9UXx%2FpVeF1Sj2iPXtu2MUUXIkRgk2QE9NlMyUecXcAAiEAmb5XXVq061%2Bfa2uiw4JxpVFNeY1xWcMS%2FBSHjl%2FrPssq3AQIQhADGgwxMTk4NjU0MDY5NTEiDBREK%2BVj90xuhGOA3Cq5BB9Lc1W1i1JFtVygD9jZ%2BF1Tw3oeJuDuOZ5dzQ7fOgofZ0b%2Fl7tz42eMiD5bjKNxKE1lUzY8x3z5crbISwzpm6po205C7ezj6pDxRTpR%2BJQNcMClzjhKXk3GC52bbd4h7lapASn%2F7sU%2BO4xvRNF3yooli%2FcA77NLZhpbp%2FH5fhLEMYh1BCttXo47SerpHCSiDfs%2FgTsDCpZExPOJZX1Ta975hdbqMuktoQeCz7QS%2F%2B1S5kwt8nAMl4QGUxgAxp8p53px9BYuI8K1pL5%2Bs55x8qAqmA3eIdRx3XyhHTMKyhT3TAW0RSDulSquRU%2FfN%2Botn6AKfBjjNW1dksrdSNuMveQvrzuss2v3S0pZQvLBMLFQLqItJq0X4ujGld5AJpefb7c3CxkJqfzvJLZ8s%2FS3MoIenYiGWbCHDxeDS3FY34qRxMxDABk2U3XXA0BO7DjfFX8h21E8nKtckQ6jaDRER27i5WljNvSzET1%2FQHwl5m4AyWfz4QyTY1IuZzO5%2BsyRUnDnLrEuor7%2FaugfDWfV2NLwl3gj3pVwEaigsxDMZ3TQx26PrUlNJ47RI63bBgKmTJDr54rDMPyNGpHGeujzpWvJLxMym%2BtKWRWjU3IyYtWtHehQOJXJ1LHFX2QJzBxeyHz3pNHER%2BWcNrIG97kV35TPBJ3QTX9lw0gom8NJWfJ5xnnRVQwhtIlDaPFgjDDY3GyEqlhm1xy9UzpsMPL5kuotUQ5DDVxrZdc8lzuMprF54WV9oNq66kIdMNbV3JQGOqkB1WCKsKo4sMSMzStLa8bSFDhTzmK2v7VZijGYl3QMUakkhAgTc4UE9zShtoELDRbIGVkpF7UeqtGAzkbFOMHKkHOSmtRgmRb0P18WS7h%2FT1We5F0SKvmWxjKtn4hunhSlk%2BsMB4xVIwMJIQogVZPJEqM%2FWhsFAkFxkUO2elw8JBuCDHKPp36YL%2Fi18fNPXJ%2FTVPsOHHyjr5oIkDRT4pAx1RKYm4fqLONLyQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=8c7179cf5b4a6c59e6d92498e8b0aa3378e7d216aac30008cfbf99ce9d8b181c",
-  about:"",
-  about2:"",
-  about3:"",
-  about4:"",
+  logo:"https://s3.eu-central-1.amazonaws.com/files-eu.freshteam.com/production/138377/attachments/25000768006/logo/Logo_Camsol.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIARX2EI6XTUBOC5OME%2F20220607%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20220607T114219Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDGV1LWNlbnRyYWwtMSJHMEUCIQDQaa8HA0NkCr5bJ46nPVf2bafwuLg83UNg6fWT0jODzQIgPlPNxVEhiyvcGWEKe3QbUL7hF0UVC3qxLH8QB3iiuDYq5QQI0P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwxMTk4NjU0MDY5NTEiDPSCl%2FYwHTw%2FFAvL6Cq5BAl5U6fZ1BisRNoH6V9%2BMWIPWhGVmaudCASCMveNy25JYBTlahBp53eLAjfmg0frT7xzeMKrgtX7MXEzuvdfQJoI7J%2BpU2r2w4P1Y2q2H5siKqQsVvMG8mmmjcISA5AiPl5GJ%2F3Nd7rJK0zpeE6fqSL1I4af9aB%2BS%2BUwWGBUnTYdqVYVRTt6RdGN0AjREOZHDuWhXD4r0TpRAayQ9Q2%2FiNFIPNEVHpGEHVNt3PzgDeC5XBA01rHzNY6uwDMnTLBVHZK24SfBHosiXgHFzvbOLNuU%2BteCRmwhF1C0MvmRPxlKeWt57hxselmfTOgTZzkjG933Y9mzfMpMxxnSykrPOjNK%2FqCqTLkdvybTe8ZmJZDRM0O9d5H%2Fx7402ueFcS4oDOm%2FQ9qT2t6Yc%2Bo7mEQXqJofiVCJ8putPmXrty6qwR5olOW9GUPDBsbKRu3NRCXGO8tp41K2619rh9O9uOrENj257GcxhJt9lPXL8vW3iKahG%2F3Gueirj9tQ2bdKuqFJzFzzUSgNP%2FXVUnAF5Iva21DcqHXOtDfRqq2jpNvNWo4v%2BUFqzYlZ%2FO%2BJOMFH2UflCgjot3GQYiadEWEJSE29xbWprZ%2FG%2Bj59JgO0Pc24WnBRgs3PjNtZqUkNArMyQQYMcAy3eC%2BxfVIqMfM4zcWTwbU8bp3lPRiQlF8pfxqc5lPVuDu3%2BzYkUE%2FT18VhvoCFTkpwSaH39DnBmiMrmrADasSufLORIfVYrjApLxQFoaVvdqSTIUJLttm%2FMPj4%2B5QGOqkB4OOQkawdIbAznQjW%2F5tDq7YjcSeqyIp9G21y1lZHxOVnz44jk7fQuq98DmoVreJm1CiJSsD8UCGF0GxodJVRMMW1XgNODpMFqE3KpE0rqn%2FpFiju%2FcNGSCYEsDTrf%2BXkEKVdYDmY6LdQWAD7Bo%2Bxb5a6wJOLeb56w2s5aUWVpZcCojNM%2BjsHh4ciPX2MmPcjntfDboA93vvBQlWMHn%2FVd4Vo%2FIyTUGP4MQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d9833c9df7812583e7bd1b0065ef8f32b6bfe7f37d00c90fc5779e9e0820b33d",
+  about:"IT PROGRAM ==>Even during their studies, young people in the IT degree program can deepen the application of their theoretical knowledge in practical projects through the support of international mentors. In cooperation with World Charity Tour, we support with obstacles, transfer knowledge and accompany successes",
+  about2:"EMPLOYMENT AFTER UNIVERSITY ==>We offer you a career start in a sustainable position for a German company directly after graduation. This way you will receive a good starting salary and can gain experience. You will be accompanied in your growth and take responsibility.",
+  about3:"INTERNATIONAL PROJECTS ==>The projects with our international partners allow you to interact directly with clients and potential employers. In this way, you can overcome hurdles and concerns and thus increase your chances of being hired.",
+  about4:"RECRUITMENT AND TRANSFER ==> We support you in your life's journey. With our experience, we can overcome regulatory obstacles and talk to potential employers so you can fulfill your vision.",
   about5:"",
   aboutPopUp:[
     {
@@ -1385,7 +1386,7 @@ DepartmentSource:[
   link:"",
 }
 ],
-ApplicationStatus:"Active",
+ApplicationStatus:"Employed",
 ApplicationStage:[
   {
     stageName:"Stage1-Applying for job",
@@ -1549,29 +1550,67 @@ ApplicationStage:[
   },
   {
     stageName:"Stage4-Technical assesment",
-    stagePercent:0,
+    stagePercent:100,
     about:"Technical Assessment",
+    about2:"This was building an app and working as a team",
 
+    aboutPopUp:[
+      {
+        // name:"01 chat form recruiter Mme Selina Scherer-Braun ",
+        // imageName:"first reply form recruiter Mme Selina Scherer-Braun",
+        // imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654083298/msbGeanologyProfilePics/camsole/recruiters_reply_b0nkxv.png",
+        // popUpSources:[
+        //   {
+        //   name:"mails ",
+        //   link:"https://github.com/mrsuber/my-resume-cv"
+        // }
+        // ]
+      },]
   },
   {
     stageName:"Stage5-Delevary of Assesment",
-    stagePercent:0,
+    stagePercent:100,
     about:"Delevary of Assesment",
+    about2:"This was a test on building andriod app working with Mr Tobias",
+    aboutPopUp:[
+      {
+        // name:"01 chat form recruiter Mme Selina Scherer-Braun ",
+        // imageName:"first reply form recruiter Mme Selina Scherer-Braun",
+        // imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654083298/msbGeanologyProfilePics/camsole/recruiters_reply_b0nkxv.png",
+        // popUpSources:[
+        //   {
+        //   name:"mails ",
+        //   link:"https://github.com/mrsuber/my-resume-cv"
+        // }
+        // ]
+      },]
 
   },
   {
     stageName:"Stage6-Awaiting a reply from assesment or follow up mail",
-    stagePercent:0,
+    stagePercent:100,
     about:"This could either be a mail with the following,",
     about2:"case 1==>This could be a mail telling you to be patient for the results of your assesment",
     about3:"case 2==> This could be a mail telling you the result of your assesment and you did not make it",
     about4:"case 3==> This could be mail on setting interview time",
     about5:"case 4==> Congratulation, you made it to interview",
-
+    aboutPopUp:[
+      {
+        name:"case 4 ==> congrats ",
+        imageName:"interview agender with Mrs Selina and Mr Tobias",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654599818/msbGeanologyProfilePics/camsole/interview_nzkiuy.png",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+    ]
   },
   {
     stageName:"Stage7-The Interview",
-    stagePercent:0,
+    stagePercent:100,
     about:"Preparation for the Interview",
     about2:"case 1==> Most common interview quesions and how to answer them",
     about3:"case 2==> reserch about those you are sopose to have interview with",
@@ -1582,8 +1621,31 @@ ApplicationStage:[
   },
   {
     stageName:"Stage8-Awaiting Interview Result",
-    stagePercent:0,
+    stagePercent:100,
     about:"Awaiting result of the Interview",
+    about2:"Interview was a success, Awaiting contract",
+
+  },
+
+  {
+    stageName:"Stage9-Awaiting Contract",
+    stagePercent:100,
+    about:"Awaiting contract to sign",
+    about2:"contract was successfully given by Selina",
+
+    aboutPopUp:[
+      {
+        name:"Congratulation 🎉🎉🥳🥳🥳 🎉🎉",
+        imageName:"Contract with you and camsol",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654674016/msbGeanologyProfilePics/camsole/template2_ccttar.jpg",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+    ]
 
   },
 ]
