@@ -1,5 +1,6 @@
  // website to download the hebrew transliterated and english : https://www.scripture4all.org/OnlineInterlinear/Hebrew_Index.htm
 // website for the audio of the hebrew https://www.torahclass.com/audio-bible-in-hebrew
+// https://www.ccel.org/ccel/anonymous/hebrewot/Genesis.html
 //website for islam Quran https://quranwbw.com/1
 export const courseRelStructuralData = [
   {
