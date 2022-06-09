@@ -267,6 +267,117 @@ export const courseRelStructuralData = [
 
 
         },
+
+        {
+          name:'Alms -Giving(Zakaat)',
+          detail:"Zakat (compulsary alms-giving) is a fixed protion of 2.5% of ones yearly balance which is obligatory to give away annually for the benefit of the poor and needy. ",
+          detail1:"only those who have a certain fixed minimum amount of wealth are expected to remove it. the obligation of zakat is found in (Q 9:60).(Q2:261 - 268). ",
+          detail2:'It may be added here that a great warning has been giventot those who do not pay Zakaat.',
+          detail3:'"And (There are) those who hoard gold and silver and do not spend it in the cause of Allah so give them the tidings of a painful punishment" (Q9:34)',
+          detail4:"Ther are two types of Zakat",
+          detail5:"1.)Zakat on Property (Zakat al-mal )",
+          detail6:"2.)Zakat on yourself(Zakat al-Fitr)",
+          ancorName:"Alms -Giving(Zakaat)",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'Zakat on Property(Zakat al-mal)',
+          detail:"It is compulsory to give Zakat on the following type of property",
+          detail1:"LiveStock(Goats, camels, and cows,), Cereals(rice, corn, and wheat), Fruits(Dates and grapes only), Gold and silver (includes foreign-exchange, valuable notes and savings), Minerals and buried treasure, Stocks(Goods to be traded)",
+          detail2:'The Zakat is contribution of 2.5% annually of the value of the accumulated wealth, investments and/or savings, when both the nisab(minimum value ) and haul (a period of one Islamic year or 354 days) are due.',
+          detail3:"It is very important to calculate your Zakat correctly, and to ensure you are paying enough Zakat each year. As Zakat is a percentage of your wealth, the amount of Zakat you need to pay each year will vary depending on your income, savings and expenditure. ",
+          detail4:"This is often affected by outside forces like inflation, recessions and political movements. One of the most important things to do is to calculate zakat on salary if you are working, and this can sometimes be a bit confusing.",
+          detail5:"",
+          detail6:"",
+          ancorName:"Zakat on Property(Zakat al-mal)",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'Zakat Fitr (Zakat on yourself)',
+          detail:"Zakat Fitr is given at the end of the fast of ramadan before the Eid prayers.",
+          detail1:"The minimum amount is one sa` (four double handfuls) of food, grain or dried fruit for each member of the family. This calculation is based on Ibn 'Umar's report that the Prophet made Zakat al-Fitr compulsory and payable by a sa` of dried dates or a sa` of barley.",
+          detail2:'The Hanafi school permits paying Zakat al-Fitr in the form of cash, equivalent to the above amount, while this is not permitted Maliki, Shafi\'i and Hanbali schools.',
+          detail3:"Using cash as a form of payment became the adopted position by many official fataw councils around the world.",
+          detail4:'A companion of Mohammed, Abu Sa`eed al-Khudree said, "In the Prophet\'s time, we used to give it (Zakatal-Fitr) as a sa` of food, dried dates, barley, raisins or dried cheese".',
+          detail5:"(According to the majority of Sunni scholars One Sa'a is approximately between 2.6 kg to 3 kg.)",
+          detail6:"The distribution of Zakat al-Fitr is the same as that of Zakat, and is included within its broader sense. Those who may receive Zakat al-Fitr are the eight categories of recipients mentioned in Surat Al-Tawbah, [9: 60].",
+          detail7:"They include :",
+          detail8:"he poor,the needy,collectors of Zakah,reconciliation of hearts(Those who have converted to Islam and are in need),freeing captives / slaves (fee al-Riqab),debtors,those fighting for a religious cause or a cause of God (Fī Sabīlillāh) or for Jihad in the way of Allah,the traveler.",
+          detail9:"Zakat al-Fitr must go to the above-mentioned categories. The Zakat al-mal cannot be used for any other such things either.",
+          detail10:"Note: That it is zakat on property that is a pillar of Islam and not Zakaatul fitr",
+          ancorName:"Zakat Fitr (Zakat on yourself)",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'HOW TO CALCULATE ZAKAT',
+          detail:"First of all you’ll need to work out whether you’re obligated to pay Zakat by looking at whether what you own meets the Nisab. This is the minimum threshold of wealth that one must own before they are obligated to pay Zakat.",
+          detail1:"The value of the Nisab in prophetic tradition is 87.48 grams of pure gold or 612.36 grams of pure silver so the monetary value of the Nisab will vary according to current prices. The monetary value of the Nisab varies year to year, so it is important to ensure you have the right figure.",
+          detail2:'Due to the significant difference in the cost of gold and silver, the Nisab for silver is much lower than that of gold. Although either of the two values can be used, many scholars advise that we apply the Nisab of silver when calculating our Zakat so that more people are eligible to pay, thus resulting in more needy people being supported.',
+          detail3:"Zakat should be calculated and paid on any surplus wealth that you have owned for at least one lunar year.",
+          detail4:"This Includes:",
+          detail5:"Gold, silver, precious metal, including ornaments/jewellery containing gold/silver",
+          detail6:"Stocks and shares",
+          detail7:"Money you have lent to others",
+          detail8:"Cash in bank accounts, committees or at home",
+          detail9:"Any business stock",
+          detail10:"Pensions and Property you own for investment purposes",
+          ancorName:"HOW TO CALCULATE ZAKAT",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'CALCULATE ZAKAT ON SALARY',
+          detail:"To be eligible for zakat, you have to own wealth above the nisab value for one full year, and this means that if you receive a salary but all of it is spent on your daily living, you have no wealth left on which to pay Zakat.",
+          detail1:"This means you do not need to be Zakat. One full year starts from the date of possession of the nisab which is said to be the minimum wealth on which zakat has to be paid.",
+          detail2:'It is especially important to be mindful when calculating your Zakat, if your salary is inconsistent, and you do not receive the same amount each month. It is important to be aware how much you are spending and are able to save over the year, as this will determine exactly how much Zakat you must pay.',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"CALCULATE ZAKAT ON SALARY",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'Importance of Alms-Giving(Zakat)',
+          detail:"zakat purifies the property of the people and clears it from e shares which do not belong to it anymore.",
+          detail1:"zakat purifies the heart of the contributor form selfishness and geed of wealth",
+          detail2:'zakat reduces to the minimum of the sufferings of the needy and the poor',
+          detail3:" members of the society bridging the gap between the poor and the rich.",
+          detail4:"zakat is a healthy form of internal security against selfish and penetration of  the spiritual and the responsive interactions between the individual and the society",
+          detail5:"",
+          detail6:"",
+          ancorName:"Importance of Alms-Giving(Zakat)",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
         {
           name:'',
           detail:"",
