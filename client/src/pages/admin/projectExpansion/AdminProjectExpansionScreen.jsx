@@ -14,11 +14,23 @@ const AdminProjectExpansionScreen = () => {
     const {auth} = useSelector(state=>state)
     const dispatch = useDispatch()
     const [pe,setPe]= useState([])
+    const [data,setData]=useState({})
     const [showCore,setShowCore] = useState(false)
-    const [popup,setpopup]=useState(false)
+    const [onView,setOnView]=useState(false)
     useEffect(()=>{
       setPe(prodjectExpansionData)
     },[])
+
+    const activatePopup=(title)=>{
+      
+      for(let i=0;i<pe.length;i++){
+        console.log(pe[i].title)
+        if(pe[i].title===title){
+          setData(pe[i])
+        }
+      }
+      setOnView(true)
+    }
   return (
 
     <div className="admin__body">
@@ -56,9 +68,8 @@ const AdminProjectExpansionScreen = () => {
 
       <main className="admin__main-expense">
 
-      {popup&&<AdminProjectExpansionPreviewPopup/>}
-      {
-        <>
+    <AdminProjectExpansionPreviewPopup onView={onView} setOnView={setOnView} data={data} />
+
         <div className="logo__body">
         <div className='grain'></div>
 <div className='intro'>
@@ -463,7 +474,7 @@ const AdminProjectExpansionScreen = () => {
           Government and Finance
         </div>
       </div>
-      <div className='future_ui__piece' onClick={()=>console.log("hi")}>
+      <div className='future_ui__piece' onClick={()=>activatePopup("High Commander and Chief")}>
         <span>Comander</span>
         <div className='line'></div>
         <div className='tip'>
@@ -519,8 +530,7 @@ const AdminProjectExpansionScreen = () => {
   </div>
 </div>
 </div>
-  </>
-      }
+
 
       </main>
     </div>

@@ -10,7 +10,7 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
     const [analysisData,setAnalysisData]=useState(null)
     const[depPopup, setDepPopup] = useState(false)
     const[depData,setDepData] = useState(null)
-
+    console.log(data)
       const structural = ()=>{
         setOnView(false)
         setCompanyName(data.companyName)
@@ -52,78 +52,37 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
 
       <AdminInpuEdit/>
       <div className="admin__profileOnveiw-content">
-        <div className="admin__profileOnveiw-avatar">
-          {data.logo
-            ?<> <img src={data.logo} alt="profilePic"/><div><span className="adminEditButton"><FontAwesomeIcon icon={faPlus}/>Add source</span></div></>
-            :<><span className="admin__worning-update">update logo</span><span className="adminEditButton"><FontAwesomeIcon icon={faPlus}/>Add source</span></>
-          }
-        </div>
+      <div className="pe1__card">
+          <header>
+              <time className="pe1__time" datetime="2022-06-10T19:00">June 10 - 2022</time>
+              <div className="pe1__logo">
+                  <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        id="Layer_1" viewBox="0 0 234.5 53.7"
+                        >
 
+                        <path
+                        d="M.6 1.4L116.9 52l117-50.6"
+                        className="pe1__path-style"
+                        />
+                        </svg>
+                  </span>
 
-        <div className="admin__profileOnView-item">
-        <h3> Name:{data.learningTitle? <span>{data.learningTitle}</span> : <span className="admin__worning-update">update learning Title</span>}<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
+                  <img src={data.logo} alt="logo" className="pe1__img"/>
+              </div>
+              <div className="pe1__sponsor">{data.title}</div>
+          </header>
+          <div className="pe1__announcement">
+              <h3 className="pe1__h3">profile Unknown</h3>
+              <h1 className="pe1__h1">Candidate Unknown</h1>
+              <h3 className="pe1__italic pe1__h3">Mission Unkown</h3>
+          </div>
+      </div>
 
-          <h3> Path:{data.path? <span>{data.path}</span> : <span className="admin__worning-update">update study path name</span>}<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
-
-        </div>
-
-        <div className="admin__profileOnView-item">
-          <h3>{`About ${data.path ? data.path:<span className="admin__worning-update">update path name</span>}`}:<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
-          <p>{data.about?data.about : <span className="admin__worning-update">update about content</span>}<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></p>
-        </div>
-
-        <div className="admin__profileOnView-item">
-        <h3> Main Location (Head Office):<span>{data.MainLocation ? data.MainLocation :<span className="admin__worning-update">update head Office location</span>}</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
-          <h3>Total Number Of Office/Branches:<span>{data.TotalNumberOfBranches ? data.TotalNumberOfBranches : <span className="admin__worning-update">update number of Branches</span>}</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
-          <h3>Other Locations:<span className="adminEditButton"><FontAwesomeIcon icon={faPlus}/></span></h3>
-          {data.OtherLocations && data.OtherLocations.length!==0? data.OtherLocations.map((d,i)=>(
-            <p key={i}>{d.name}<span className="admin__profileOnView-more"> <a href={d.link} target="_blank" rel="noreferrer">more link</a></span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></p>
-          )):<p><span className="admin__worning-update">update other Locations</span></p>}
-
-
-        </div>
-
-        <div className="admin__profileOnView-item">
-        {
-          data.JobPost && data.JobPost!==0? data.JobPost.map((item)=>(
-            <div style={{borderTop:"1px solid blue",marginBottom:"15px", marginTop:"15px"}}>
-            <h3>Job Post:<span>{item.name && item.name}</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
-            <h3>Job Location:<span>{item.location && item.location}</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
-            <h3>Job Details:</h3>
-                <p>{item.details && item.details }<span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></p>
-            <h3>Job Analysis:</h3>
-            {item.analysis
-              ?<p >
-                    { item.analysis.status
-                        ? item.analysis.status
-                        :<span className="admin__worning-update">update Analysis status</span>
-                    }
-                    <span className="admin__profileOnView-more" onClick={()=>showStatus(item.analysis)}>
-                    more popup
-                    </span>
-                    <span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span>
-                </p>
-
-
-              :<></>
-
-            }
-
-            </div>
-          )):<>
-          <h3>Job Post:<span className="admin__worning-update">update Job Post:</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
-          <h3>Job Location:<span className="admin__worning-update">update Job Location</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
-          <h3>Job Analysis:<span className="admin__worning-update">update Job Analysis</span><span className="adminEditButton"><FontAwesomeIcon icon={faEdit}/></span></h3>
-          </>
-        }
-
-
-
-
-            {data.JobPostSources && data.JobPostSources.length!==0? <AdminSources source={ data.JobPostSources} name="about " id="touch5"/>:<><span className="admin__worning-update">Add Job post source</span><span className="adminEditButton"><FontAwesomeIcon icon={faPlus}/></span></>}
-            <span className="adminEditButton"><FontAwesomeIcon icon={faPlus}/>{'  '}Add source</span>
-        </div>
-
+    <div className="pe1__inspiration">
+    <a rel="noopener" target="_blank" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3794/heartland.jpg">Inspiration</a>
+    </div>
 
 
 

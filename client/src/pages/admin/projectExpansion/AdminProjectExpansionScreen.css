@@ -16,7 +16,8 @@
   /* border: 1px solid red; */
 }
 .peLogo__img{
-
+  -webkit-animation: spin 5s infinite;
+     animation: spin 5s infinite;
 }
 .logo__circle0 {
   /* position: relative; */
