@@ -1648,6 +1648,50 @@ ApplicationStage:[
     ]
 
   },
+
+  {
+    stageName:"Stage10-Monetoring work",
+    // 1% = 7days
+    stagePercent:50,
+    stageDays:100,
+    about:"This is helps you monitor work starting form what you do to what you must do",
+    about2:"keeps track of number of employed days and number of work days",
+
+    aboutPopUp:[
+      {
+        name:"",
+        imageName:"",
+        imageLink:"",
+        popUpSources:[
+          {
+          name:"",
+          link:""
+        }
+        ]
+      },
+    ],
+    stageAnalysis:{
+      startWorkDay:"13 June 2022",
+
+    },
+    menu:[
+      {
+        name:'Day-01 13 June 2022 ',
+        detail:"day ",
+        detail1:"",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        ancorName:"Day-01 13 June 2022",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+    ],
+  },
 ]
 }
 

@@ -24,7 +24,7 @@ const Cards = ({setOnStructuralDetail,data,setCompanyName,setStatusCheck,setStat
 
     <div  className="admin__revenue-card-apply">
     <AdminApplicationProfileEdit setOnEdit={setOnEdit} onEdit={onEdit}/>
-  <AdminApplicationProfileView setOnView={setOnView} onView={onView} data={data} setOnStructuralDetail={setOnStructuralDetail} setCompanyName={setCompanyName}/>
+    <AdminApplicationProfileView setOnView={setOnView} onView={onView} data={data} setOnStructuralDetail={setOnStructuralDetail} setCompanyName={setCompanyName}/>
         <div className="admin__rev-content-apply">
 
             <div className="admin__revenue-card-apply-avatar">
