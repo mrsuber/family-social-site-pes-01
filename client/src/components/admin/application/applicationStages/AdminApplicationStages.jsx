@@ -14,7 +14,7 @@ const AdminApplicationStages = (data) => {
 
   return (
     <>
-    <AdminApplicationStagePreviewPopup setOnView={setOnView} onView={onView} data={popupData}/>
+    <AdminApplicationStagePreviewPopup setOnView={setOnView} onView={onView} data={popupData} />
     <div className="apply__stage-container">
 
     {

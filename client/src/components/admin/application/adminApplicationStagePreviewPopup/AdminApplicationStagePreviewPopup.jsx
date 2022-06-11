@@ -10,12 +10,7 @@ const AdminApplicationStagePreviewPopup = ({setOnView,onView=false, data, struct
     const[depPopup, setDepPopup] = useState(false)
     const[depData,setDepData] = useState(null)
 
-      // const structural = ()=>{
-      //   setOnView(false)
-      //   setCompanyName(data.learningTitle)
-      //   setOnStructuralDetail(true)
-      //
-      // }
+
 
       const showStatus = (data)=>{
         setAnalysisData(data)
