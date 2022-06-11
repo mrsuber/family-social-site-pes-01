@@ -1267,7 +1267,7 @@ ApplicationStage:[
 },
 {
   companyName:"camsole",
-  logo:"https://s3.eu-central-1.amazonaws.com/files-eu.freshteam.com/production/138377/attachments/25000768006/logo/Logo_Camsol.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIARX2EI6XTUBOC5OME%2F20220607%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20220607T114219Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDGV1LWNlbnRyYWwtMSJHMEUCIQDQaa8HA0NkCr5bJ46nPVf2bafwuLg83UNg6fWT0jODzQIgPlPNxVEhiyvcGWEKe3QbUL7hF0UVC3qxLH8QB3iiuDYq5QQI0P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwxMTk4NjU0MDY5NTEiDPSCl%2FYwHTw%2FFAvL6Cq5BAl5U6fZ1BisRNoH6V9%2BMWIPWhGVmaudCASCMveNy25JYBTlahBp53eLAjfmg0frT7xzeMKrgtX7MXEzuvdfQJoI7J%2BpU2r2w4P1Y2q2H5siKqQsVvMG8mmmjcISA5AiPl5GJ%2F3Nd7rJK0zpeE6fqSL1I4af9aB%2BS%2BUwWGBUnTYdqVYVRTt6RdGN0AjREOZHDuWhXD4r0TpRAayQ9Q2%2FiNFIPNEVHpGEHVNt3PzgDeC5XBA01rHzNY6uwDMnTLBVHZK24SfBHosiXgHFzvbOLNuU%2BteCRmwhF1C0MvmRPxlKeWt57hxselmfTOgTZzkjG933Y9mzfMpMxxnSykrPOjNK%2FqCqTLkdvybTe8ZmJZDRM0O9d5H%2Fx7402ueFcS4oDOm%2FQ9qT2t6Yc%2Bo7mEQXqJofiVCJ8putPmXrty6qwR5olOW9GUPDBsbKRu3NRCXGO8tp41K2619rh9O9uOrENj257GcxhJt9lPXL8vW3iKahG%2F3Gueirj9tQ2bdKuqFJzFzzUSgNP%2FXVUnAF5Iva21DcqHXOtDfRqq2jpNvNWo4v%2BUFqzYlZ%2FO%2BJOMFH2UflCgjot3GQYiadEWEJSE29xbWprZ%2FG%2Bj59JgO0Pc24WnBRgs3PjNtZqUkNArMyQQYMcAy3eC%2BxfVIqMfM4zcWTwbU8bp3lPRiQlF8pfxqc5lPVuDu3%2BzYkUE%2FT18VhvoCFTkpwSaH39DnBmiMrmrADasSufLORIfVYrjApLxQFoaVvdqSTIUJLttm%2FMPj4%2B5QGOqkB4OOQkawdIbAznQjW%2F5tDq7YjcSeqyIp9G21y1lZHxOVnz44jk7fQuq98DmoVreJm1CiJSsD8UCGF0GxodJVRMMW1XgNODpMFqE3KpE0rqn%2FpFiju%2FcNGSCYEsDTrf%2BXkEKVdYDmY6LdQWAD7Bo%2Bxb5a6wJOLeb56w2s5aUWVpZcCojNM%2BjsHh4ciPX2MmPcjntfDboA93vvBQlWMHn%2FVd4Vo%2FIyTUGP4MQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d9833c9df7812583e7bd1b0065ef8f32b6bfe7f37d00c90fc5779e9e0820b33d",
+  logo:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654968713/msbGeanologyProfilePics/camsole/Logo_Camsol_zpsphu.png",
   about:"IT PROGRAM ==>Even during their studies, young people in the IT degree program can deepen the application of their theoretical knowledge in practical projects through the support of international mentors. In cooperation with World Charity Tour, we support with obstacles, transfer knowledge and accompany successes",
   about2:"EMPLOYMENT AFTER UNIVERSITY ==>We offer you a career start in a sustainable position for a German company directly after graduation. This way you will receive a good starting salary and can gain experience. You will be accompanied in your growth and take responsibility.",
   about3:"INTERNATIONAL PROJECTS ==>The projects with our international partners allow you to interact directly with clients and potential employers. In this way, you can overcome hurdles and concerns and thus increase your chances of being hired.",
@@ -1652,8 +1652,8 @@ ApplicationStage:[
   {
     stageName:"Stage10-Monetoring work",
     // 1% = 7days
-    stagePercent:50,
-    stageDays:100,
+    stagePercent:1,
+  
     about:"This is helps you monitor work starting form what you do to what you must do",
     about2:"keeps track of number of employed days and number of work days",
 
