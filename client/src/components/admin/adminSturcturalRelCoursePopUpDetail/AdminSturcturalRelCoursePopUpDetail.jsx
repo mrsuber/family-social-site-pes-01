@@ -51,6 +51,20 @@ const AdminSturcturalRelCoursePopUpDetail = ({setOnView,onView=false, data,posit
               <li className="admin__popup-sidemenu">
 
                 <a href={`#${item.ancorName}`} style={{textDecoration:"none"}}><span className="admin__resume__text">{item.name}</span></a>
+                <details>
+                  <summary></summary>
+                  <nav class="admin__rel_sidebar_menu admin__Irishhis-container">
+                  {
+                    item.verseInfo.verses && item.verseInfo.verses.length!==0
+                    ?item.verseInfo.verses.map((verse,index2)=>(
+                      <a href={`#${verse.ancorVerseName}`}>{verse.verseName}</a>
+
+                    ))
+                    :<>No verses</>
+                  }
+
+                  </nav>
+                  </details>
               </li>
             ))
             :<>
@@ -162,6 +176,7 @@ const AdminSturcturalRelCoursePopUpDetail = ({setOnView,onView=false, data,posit
             :<span className="admin__worning-update">{/*update Details*/}</span>
           }
 
+
           {
             data.menu2 && data.menu2.length!==0
             ?data.menu2.map((item)=>(
@@ -169,50 +184,20 @@ const AdminSturcturalRelCoursePopUpDetail = ({setOnView,onView=false, data,posit
               <a id={item.ancorName} style={{textDecoration:"none"}}>
               <h2 className="admin__resume__right-title">{item.name}</h2>
               </a>
+              {
+                item.verseInfo.verses && item.verseInfo.verses.length!==0
+                ?item.verseInfo.verses.map((verse)=>(
+                  <>
+                  <a id={verse.ancorVerseName} style={{textDecoration:"none"}}>
+                  <h2 className="admin__resume__right-title" style={{fontSize: 10, color: '#08f7c1'}}>{verse.verseName}</h2>
+                  </a>
+                  </>
+                ))
+                :<>no verses</>
+              }
               <p className="admin__resume__right-par">
                 {item.detail}
-                {item.verses && item.verses.length>0
-                  ?item.verses.map((verse)=>(
-                    <div>
-                        <ul>
-                          <li>{verse.hebrew && verse.hebrew.length>0? verse.hebrew.map((word)=>(
-                            <div style={{margin:"0 23px",fontSize:"12px"}}>
-                            {word}
-
-                            </div>)):<>No word</>}</li>
-                          <li>{verse.transliteration && verse.transliteration.length>0? verse.transliteration.map((word)=>(<span style={{margin:"0 23px",fontSize:"12px"}}>{word}</span>)):<>No word</>}</li>
-                          <li>{verse.english && verse.english.length>0? verse.english.map((word)=>(<span style={{margin:"0 23px",fontSize:"12px"}}>{word}</span>)):<>No word</>}</li>
-                          <li>fullen</li>
-                        </ul>
-                    </div>
-                  ))
-
-                  :<>Donothing</>}
               </p>
-
-
-              {item.popup1
-                ?<>
-
-                <AdminCourseImagePopUp img={item.popup1} name={item.popup1Name?item.popup1Name:'Read More...'}  />
-                </>
-                :<></>
-              }
-              {item.popup2
-                ?<>
-                <hr className="admin__hr_break"/>
-                <AdminCourseImagePopUp img={item.popup2} name={item.popup2Name?item.popup2Name:'Read More...'} />
-                </>
-                :<></>
-              }
-
-              {item.popup3
-                ?<>
-                <hr className="admin__hr_break"/>
-                <AdminCourseImagePopUp img={item.popup3} name={item.popup3Name?item.popup3Name:'Read More...'} />
-                </>
-                :<></>
-              }
               </>
             ))
             :<span className="admin__worning-update">{/*update Details*/}</span>
