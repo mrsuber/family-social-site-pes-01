@@ -20,11 +20,15 @@ const CourseScreen = () => {
     const [courseName, setCourseName]=useState(null)
     const [onStructuralDetail,setOnStructuralDetail] = useState(false)
     const dispatch = useDispatch()
-
+    const [refresh,setRefresh]=useState(false)
     useEffect(()=>{
-      setCardData(devCourseData)
-      setSturtureData(courseStructuralData)
-    },[])
+      if(refresh){setCardData(devCourseData)
+      setSturtureData(courseStructuralData)}
+      if(!refresh){setCardData(devCourseData)
+      setSturtureData(courseStructuralData)}
+
+        
+    },[refresh])
 
 
   return (
@@ -75,7 +79,7 @@ const CourseScreen = () => {
 
               {
                 cardData && cardData.map((data,index)=>(
-                  <AdminCourseCard data={data} logo={logo} setOnStructuralDetail={setOnStructuralDetail} setCourseName={setCourseName} key={index}/>
+                  <AdminCourseCard data={data} logo={logo} setOnStructuralDetail={setOnStructuralDetail} setCourseName={setCourseName} key={index} />
                 ))
 
               }
@@ -85,7 +89,7 @@ const CourseScreen = () => {
           </section>
           </main>
           </>
-          :<><AdminCourseStructureDetails courseName={courseName} cardData={cardData} strutureData={sturtureData} setOnStructuralDetail={setOnStructuralDetail}/></>
+          :<><AdminCourseStructureDetails courseName={courseName} cardData={cardData} strutureData={sturtureData} setOnStructuralDetail={setOnStructuralDetail} refresh={refresh} setRefresh={setRefresh}/></>
         }
 
 

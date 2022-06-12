@@ -7,8 +7,10 @@ import {LinkedIn} from '@material-ui/icons'
 
 import './sturcturalCoursePopUpDetail.css'
 
-const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) => {
-
+const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position,refresh,setRefresh}) => {
+  const refreshData = ()=>{
+    setRefresh(!refresh)
+  }
 
   return (
     <>{
@@ -24,7 +26,7 @@ const SturcturalCoursePopUpDetail = ({setOnView,onView=false, data,position}) =>
       <div className="admin__main-resume-container">
       <div className="admin__resume__left-side">
         <div className="admin__resume__profileText">
-          <div className="admin__resume__img-box">
+          <div className="admin__resume__img-box" onClick={refreshData}>
             <img src={data.logo}  alt="Mohamad"/>
           </div>
           <h2>{data.name? data.name:<span className="admin__worning-update">update Name</span>}<br/><span>{data.courseNumber? data.courseNumber :<span className="admin__worning-update">update course Number</span>}{' - '}{data.courseStatus? data.courseStatus :<span className="admin__worning-update">update Status</span>}</span></h2>

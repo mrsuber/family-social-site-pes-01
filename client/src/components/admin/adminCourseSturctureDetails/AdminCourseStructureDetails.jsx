@@ -7,7 +7,7 @@ import {ZoomIn,ZoomOut,Refresh} from '@material-ui/icons';
 
 
 
-const AdminCourseStructureDetails = ({courseName,cardData,strutureData,setOnStructuralDetail}) => {
+const AdminCourseStructureDetails = ({courseName,cardData,strutureData,setOnStructuralDetail,refresh,setRefresh}) => {
 
     const[filteredCardData, setfilteredCardData] = useState([])
     const[filteredStructuralData,setFilteredStructuralData] = useState(null)
@@ -15,7 +15,7 @@ const AdminCourseStructureDetails = ({courseName,cardData,strutureData,setOnStru
       const [onView,setOnView] = useState(false)
       const [people,setPeople] = useState(null)
       const [position,setPosition]= useState(null)
-
+      
       const [zoom, setZoom]=useState(1)
 
   useEffect(()=>{
@@ -78,7 +78,7 @@ const AdminCourseStructureDetails = ({courseName,cardData,strutureData,setOnStru
 
 
 
-  },[courseName,cardData,filteredCardData,filteredStructuralData,strutureData,lenght])
+  },[courseName,cardData,filteredCardData,filteredStructuralData,strutureData,lenght,refresh])
 
 
   const displayPopup =(item,data)=>{
@@ -102,7 +102,7 @@ const AdminCourseStructureDetails = ({courseName,cardData,strutureData,setOnStru
     {
       onView===true
       /*&& <AdminResume/>*/
-      && <AdminSturcturalCoursePopUpDetail setOnView={setOnView} onView={onView} data={people} position={position} setOnStructuralDetail={setOnStructuralDetail}/>
+      && <AdminSturcturalCoursePopUpDetail setOnView={setOnView} onView={onView} data={people} position={position} setOnStructuralDetail={setOnStructuralDetail}refresh={refresh} setRefresh={setRefresh}/>
 
     }
     <section>
