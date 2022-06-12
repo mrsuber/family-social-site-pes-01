@@ -435,6 +435,113 @@ export const courseRelStructuralData = [
     companyLevel1:[
       {
         name:"The Holy Quran",
+        logo:'https://en.shafaqna.com/wp-content/uploads/2017/11/main-qimg-34e6fd0e49307677e37b0aabead7124f-c.jpg',
+        menu2:[
+          {
+            name:'Surah Alfatiha',
+            ancorName:"Surah Alfatiha",
+            verseInfo:{
+
+              verses:[
+                {
+                  verseName:"surah Fatiha verse1",
+                  ancorVerseName:"surah Fatiha verse1"
+                },
+                {
+                  verseName:"surah Fatiha verse2",
+                  ancorVerseName:"surah Fatiha verse2"
+                },
+                {
+                  verseName:"surah Fatiha verse3",
+                  ancorVerseName:"surah Fatiha verse3"
+                }
+                ,
+                {
+                  verseName:"surah Fatiha verse4",
+                  ancorVerseName:"surah Fatiha verse4"
+                }
+                ,
+                {
+                  verseName:"surah Fatiha verse5",
+                  ancorVerseName:"surah Fatiha verse5"
+                },
+                {
+                  verseName:"surah Fatiha verse6",
+                  ancorVerseName:"surah Fatiha verse6"
+                },
+                {
+                  verseName:"surah Fatiha verse7",
+                  ancorVerseName:"surah Fatiha verse7"
+                },
+                {
+                  verseName:"surah Fatiha verse8",
+                  ancorVerseName:"surah Fatiha verse8"
+                },
+
+
+
+                {
+                  verseName:"surah Fatiha verse11",
+                  ancorVerseName:"surah Fatiha verse11"
+                },
+                {
+                  verseName:"surah Fatiha verse12",
+                  ancorVerseName:"surah Fatiha verse12"
+                },
+                {
+                  verseName:"surah Fatiha verse13",
+                  ancorVerseName:"surah Fatiha verse13"
+                }
+                ,
+                {
+                  verseName:"surah Fatiha verse14",
+                  ancorVerseName:"surah Fatiha verse14"
+                }
+                ,
+                {
+                  verseName:"surah Fatiha verse15",
+                  ancorVerseName:"surah Fatiha verse15"
+                },
+                {
+                  verseName:"surah Fatiha verse16",
+                  ancorVerseName:"surah Fatiha verse16"
+                },
+                {
+                  verseName:"surah Fatiha verse17",
+                  ancorVerseName:"surah Fatiha verse17"
+                },
+                {
+                  verseName:"surah Fatiha verse18",
+                  ancorVerseName:"surah Fatiha verse18"
+                }
+              ]
+            }
+            // popup1Name:"",
+            // popup1:"",
+            // popup2Name:"",
+            // popup2:"",
+
+
+          },
+        ],
+        additionalRead:[
+          // {
+          //   title:"Additional reads",
+          //   url:"ls"
+          // },
+        ],
+        source:[
+          {
+            name:"Islam Sources",
+            link:"www.google.com"
+          },
+        ],
+        KnowledgeCheck:[
+          // {
+          //   check:"what is Islam"
+          // },
+        ],
+
         people:[ ]
       },
 
