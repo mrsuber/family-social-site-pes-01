@@ -1653,7 +1653,7 @@ ApplicationStage:[
     stageName:"Stage10-Monetoring work",
     // 1% = 7days
     stagePercent:1,
-  
+
     about:"This is helps you monitor work starting form what you do to what you must do",
     about2:"keeps track of number of employed days and number of work days",
 
@@ -1677,13 +1677,15 @@ ApplicationStage:[
     menu:[
       {
         name:'Day-01 13 June 2022 ',
-        detail:"day ",
-        detail1:"",
-        detail2:"",
-        detail3:"",
-        detail4:"",
-        detail5:"",
-        detail6:"",
+        detail:"day worm welcomes on whatsapp",
+        detail1:"create an account for task management in https://www.notion.so/camsol/c5037995bb3649c1b86d87c198df142f?v=a4307ef7d1ba4061ac0b5581bb91416b",
+        detail2:"8:00am meeting, We have progress reviews at 12pm and 3pm",
+        detail3:"my loging to the wine testing directus data base",
+        detail4:"username: my email",
+        detail5:"passwid: Online2022#@!",
+        detail6:"link : https://twuw1gfg.directus.app",
+        detail7:"sending post request and getting response",
+        detail8:"work complete at 5pm",
         ancorName:"Day-01 13 June 2022",
         popup1Name:"",
         popup1:"",
