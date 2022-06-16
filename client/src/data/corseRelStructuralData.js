@@ -385,7 +385,7 @@ export const courseRelStructuralData = [
           detail2:' Fasting during this month is compulsory except for ill-health and other adverse conditions. ',
           detail3:"Fasting begins at dawn and ends at sunset.",
           detail4:"Fasting is another unique moral and spiritual characteristic of Islam. Fasting means to abstain \"completely \" from food, drinks, and intimate intercourse, before the break of dawn till sunset. Fasting as a pillar of Islam is during the entire month of Ramadan, the ninth month of the Islamic year",
-          detail5:"Fasting Ramadan is obligatory on every responsible and fit Mslim because Allah says in (Q2:182-187) O Ye who believe, fasting is prescribe on you as was prescribe for those before you that you may become almutaqun...",
+          detail5:"Fasting Ramadan is obligatory on every responsible and fit Muslim because Allah says in (Q2:183-187) O Ye who believe, fasting is prescribe on you as was prescribe for those before you that you may become almutaqun...",
           detail6:"But there are other times when it is recommended to make voluntary fasting, after the traditions of Prophet Muhammad. Among these times are Mondays and Thursdays of every week. a few days of each month in the two months heralding coming Ramadan. ie, Rajab and Sha'ban, six days after Ramadan following the 'Eid ul-Fitr Day. Besides, it is always compensating to fast any day of any month of the year, except the 'Eid Days and Fridays when no Muslim should fast.",
           detail7:"However, we may repeat that the only obligatory fasting is that of Ramadan which may be 29 or 30 days. depending on the moon's positions. this is a pillar of Islam and any failure to observe it without reasonable excuses is a grave sin in the sight of God.",
           ancorName:"Fasting in the month of Ramadan",
@@ -398,11 +398,11 @@ export const courseRelStructuralData = [
         },
         {
           name:'Who Must Fast?',
-          detail:"Fasting Ramadaniscompulsory uponevery Muslim,male or female who has these qualities:",
-          detail1:"To bementally andphysically fit,which means to be sane and able.",
-          detail2:'To be full age, the age of puberty and discretion, which is normally about fourteen. children under this ages should be encouraged to start this good practice on easy levels , so when they reach the age of puberty thy will be mentally and physically prepared to observe fasting.',
-          detail3:"To be present at one's permanent settlement. your home town, ones farm and one's business premises, etc This means not to be on a journey o about fifty miles or more.",
-          detail4:"To be fairly certain thatfasting is unlikely to cause you any harm, physical and mental, other than the normal reactions of hunger and thirst etc",
+          detail:"Fasting Ramadan is compulsory uponevery Muslim,male or female who has these qualities:",
+          detail1:"To be mentally and physically fit,which means to be sane and able.",
+          detail2:'To be full age, the age of puberty and discretion, which is normally about fourteen. children under this ages should be encouraged to start this good practice on easy levels , so when they reach the age of puberty they will be mentally and physically prepared to observe fasting.',
+          detail3:"To be present at one's permanent settlement. your home town, ones farm and one's business premises, etc This means not to be on a journey of about fifty miles or more.",
+          detail4:"To be fairly certain that fasting is unlikely to cause you any harm, physical and mental, other than the normal reactions of hunger and thirst etc",
           detail5:"",
           detail6:"",
           ancorName:"Who Must Fast?",
@@ -418,11 +418,11 @@ export const courseRelStructuralData = [
           detail:"These said qualifications exclude the following categories:",
           detail1:"Children under the age of puberty and discretion.",
           detail2:'insane people who are unaccountable for other deeds. People of these two categories are exempted from the duty of fast and no compensation or any other substitute is enjoined on them',
-          detail3:"Men and Women who are too old and feeble to undertake the obligation of fast and bear its hardships. suche people are exempted from this duty but they must offer at least one needy poor Muslim an average full meal or its value per person per day.",
+          detail3:"Men and Women who are too old and feeble to undertake the obligation of fast and bear its hardships. such people are exempted from this duty but they must offer at least one needy poor Muslim an average full meal or its value per person per day.",
           detail4:"Sick people whose health is likely to be severely affected by the observance of fast. they may postpone the fast as long as they are sick to the latter date and make up for it a day for a day.",
           detail5:"Travellers may break the fast temporarily during their travel only and make up for it in later days a day for a day",
           detail6:"pragnat women and women breast-feeding their children may also break the fast if its observance is likely to endager their own health or that of their infants. but they must make up for the fast at a delayed time , a day for a day",
-          detail7:"women in the -period of menstrualtion(of a maximum often days or of confinement(of a maximum of forty day)); they maus postpone the fast till recovery ant hen make up for it day for a day. ",
+          detail7:"women in the -period of menstrualtion(of a maximum often days or of confinement(of a maximum of forty day)); they must postpone the fast till recovery and then make up for it day for a day. ",
           detail9:"It should be under stood that here like in all the other Islamic undertakings, the intention must be made clear that this action is undertaken in obedience of God, in response to his command and out of love of Him",
           ancorName:"Those Excepted from fasting and what they should do:",
           // popup1Name:"",
@@ -435,8 +435,8 @@ export const courseRelStructuralData = [
         {
           name:'What spoils fasting?',
           detail:"The fast of any day of Ramadan becomes void by intentionally eating or drinking and smoking or indulgence in any intimate intercourse and by allowing anything to enter through the mouth into the interior part of the body. And if this is done deliberately without any lawful reason, This is a major sin which only renewed repentance can expiate.",
-          detail1:"if anyone, through forgetfulness, does something that will ordinarily break the fast, observeaces is not nullified, and his fast stands valid provided he stops doing thatthing the moment he realizes what he is doing.",
-          detail2:"on completion of the fast of Ramadan, the special charity known as zakatul-tu-fitr (charity of 'fast-breaking') mst be distributed before 'Eid-ul-Fir",
+          detail1:"if anyone, through forgetfulness, does something that will ordinarily break the fast, observeaces is not nullified, and his fast stands valid provided he stops doing that thing the moment he realizes what he is doing.",
+          detail2:"on completion of the fast of Ramadan, the special charity known as zakatul-tu-fitr (charity of 'fast-breaking') must be distributed before 'Eid-ul-Fir",
           detail3:"",
           detail4:"",
           detail5:"",
@@ -475,7 +475,7 @@ export const courseRelStructuralData = [
           detail3:"-it cultivars in man a vigilant and sound conscience.",
           detail4:"-it indoctrinates man in patience and Unselfishness.",
           detail5:"-it is an effective lesson in applied moderation and willpower.",
-          detail6:"-it provides man with a Transparent sole to transcend a clear mind to think and a light body to maove and act.",
+          detail6:"-it provides man with a Transparent sole to transcend a clear mind to think and a light body to move and act.",
           detail7:"-it shows man a new way of wise saving and sound budgeting.",
           detail8:"it enables man to master the art of mature Adaptability",
           detail9:"it grounds man in disciplines and healthy survival",
@@ -588,6 +588,20 @@ export const courseRelStructuralData = [
               verses:[
                 {
                   verseName:"surah Fatiha verse1",
+                  verseDetail:[
+                    {
+                      arabic:[{word:"arabic1",source:"source1"},{word:"arabic2",source:"source2"},{word:"arabic3",source:"source3"}],
+                      english:[{word:"english1",source:"source1"},{word:"english2",source:"source2"},{word:"english3",source:"source3"}],
+                      arabicAudio:[{arabAudio:"arabic1",engAudio:"english1",source:"source1"},{arabAudio:"arabic2",engAudio:"english2",source:"source2"},{arabAudio:"arabic3",engAudio:"english3",source:"source3"}],
+
+                    }
+                  ],
+                  allTasfseer:[
+                    { tafseerArab:"tafaseer1 of verse 1",tafseerEnglis:"tafaseer1 of verse 1", source:"sorce of taseer1"},
+                    { tafseerArab:"tafaseer2 of verse 1",tafseerEnglis:"tafaseer2 of verse 1", source:"sorce of taseer2"},
+                    { tafseerArab:"tafaseer3 of verse 1",tafseerEnglis:"tafaseer3 of verse 1", source:"sorce of taseer3"}
+                  ],
+
                   ancorVerseName:"surah Fatiha verse1"
                 },
                 {
@@ -605,7 +619,7 @@ export const courseRelStructuralData = [
                 }
                 ,
                 {
-                  verseName:"surah Fatiha verse5",
+                  verseName:"surah Fattiha verse5",
                   ancorVerseName:"surah Fatiha verse5"
                 },
                 {

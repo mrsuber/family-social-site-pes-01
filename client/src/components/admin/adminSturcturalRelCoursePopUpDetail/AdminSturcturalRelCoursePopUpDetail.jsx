@@ -82,7 +82,7 @@ const AdminSturcturalRelCoursePopUpDetail = ({setOnView,onView=false, data,posit
 
       </div>
 
-      <div className="admin__resume__right-side">
+      <div className="admin__resume__right-side" style={{padding: '5px'}}>
         <div className="admin__resume__about">
 
           {
@@ -184,17 +184,21 @@ const AdminSturcturalRelCoursePopUpDetail = ({setOnView,onView=false, data,posit
               <a id={item.ancorName} style={{textDecoration:"none"}}>
               <h2 className="admin__resume__right-title">{item.name}</h2>
               </a>
-              {
-                item.verseInfo.verses && item.verseInfo.verses.length!==0
-                ?item.verseInfo.verses.map((verse)=>(
-                  <>
-                  <a id={verse.ancorVerseName} style={{textDecoration:"none"}}>
-                  <h2 className="admin__resume__right-title" style={{fontSize: 10, color: '#08f7c1'}}>{verse.verseName}</h2>
-                  </a>
-                  </>
-                ))
-                :<>no verses</>
-              }
+              <details>
+                <summary style={{top:'14px',left: '274px'}}></summary>
+                <nav class="admin__rel_sidebar_menu admin__Irishhis-container">
+                {
+                  item.verseInfo.verses && item.verseInfo.verses.length!==0
+                  ?item.verseInfo.verses.map((verse,index2)=>(
+                    <a id={verse.ancorVerseName} style={{textDecoration:"none",color: '#08f7c1'}}>{verse.verseName}</a>
+
+                  ))
+                  :<>No verses</>
+                }
+
+                </nav>
+                </details>
+            
               <p className="admin__resume__right-par">
                 {item.detail}
               </p>
