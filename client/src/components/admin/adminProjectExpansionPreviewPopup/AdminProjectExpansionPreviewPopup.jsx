@@ -3,14 +3,14 @@ import './AdminProjectExpansionPreviewPopup.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
 
-import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit} from '../../../components'
+import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,AdminProjectExpansionPreviewPopupTimetable} from '../../../components'
 
 const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnStructuralDetail,setCompanyName}) => {
     const [unclearPopup,setUnclearPopup] = useState(false)
     const [analysisData,setAnalysisData]=useState(null)
     const[depPopup, setDepPopup] = useState(false)
     const[depData,setDepData] = useState(null)
-    console.log(data)
+    const [onView2,setOnView2]=useState(false)
       const structural = ()=>{
         setOnView(false)
         setCompanyName(data.companyName)
@@ -43,6 +43,8 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
 }
 
       <div className="admin__profileOnveiw-container">
+      <AdminProjectExpansionPreviewPopupTimetable onView2={onView2} setOnView2={setOnView2}/>
+
       <div className="admin__profileOnView-btn-container">
       <button className="admin__profileOnveiw-close-btn" onClick={()=>setOnView(false)}>
       Close
@@ -74,9 +76,16 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
               <div className="pe1__sponsor">{data.title}</div>
           </header>
           <div className="pe1__announcement">
-              <h3 className="pe1__h3">profile Unknown</h3>
-              <h1 className="pe1__h1">Candidate Unknown</h1>
-              <h3 className="pe1__italic pe1__h3">Mission Unkown</h3>
+              <h3 className="pe1__h3">Menu</h3>
+              <ul className="pe1__ul">
+              <li className="pe1__ul-li" onClick={()=>setOnView2(true)}><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Timetable`}</span></div></li>
+
+                <li className="pe1__ul-li"><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Profile`}</span></div></li>
+                <li className="pe1__ul-li"><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Achievement`}</span></div></li>
+                <li className="pe1__ul-li"><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Todos`}</span></div></li>
+
+              </ul>
+
           </div>
       </div>
 

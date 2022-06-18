@@ -1,0 +1,13 @@
+.adminEditButton{
+  cursor: pointer !important;
+
+}
+.admin__profileOnveiw-content01 {
+    /* max-width: 464px; */
+    width: 84%;
+    background: var(--bg);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    border: 1px solid var(--color-main);
+}
