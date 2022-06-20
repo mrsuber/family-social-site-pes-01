@@ -11,3 +11,10 @@
     margin: 20px auto;
     border: 1px solid var(--color-main);
 }
+
+.pe-cal__wrapper{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}

@@ -2,15 +2,16 @@ import React,{useState} from 'react'
 import './AdminProjectExpansionPreviewPopupTimetable.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
+import {getMonth} from '../../../utils/formatCalenderDays'
 
-import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit} from '../../../components'
+import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,CalenderHeader} from '../../../components'
 
 const AdminProjectExpansionPreviewPopupTimetable = ({setOnView2,onView2=false, data, setOnStructuralDetail,setCompanyName}) => {
     const [unclearPopup,setUnclearPopup] = useState(false)
     const [analysisData,setAnalysisData]=useState(null)
     const[depPopup, setDepPopup] = useState(false)
     const[depData,setDepData] = useState(null)
-
+    console.table(getMonth())
       const structural = ()=>{
         setOnView2(false)
         setCompanyName(data.companyName)
@@ -53,7 +54,12 @@ const AdminProjectExpansionPreviewPopupTimetable = ({setOnView2,onView2=false, d
       <AdminInpuEdit/>
       <div className="admin__profileOnveiw-content01">
       <div className="pe1__card">
-      
+      <div className="pe-cal__wrapper">
+        <CalenderHeader />
+        <div className="pe-cal__body">
+
+        </div>
+      </div>
 
       </div>
         <button className="admin__profileOnView-sturctur-btn" onClick={()=>setOnView2(false)}>

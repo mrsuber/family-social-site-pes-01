@@ -505,6 +505,145 @@ export const courseRelStructuralData = [
 
         },
         {
+          name:'Types of Hajj',
+          detail:"1.)Tamattu' Hajj",
+          detail1:"Tamattu means performing 'Umrah during the Hajj season, and on the Day of Tarwiah, a pilgrim gets into the state of Ihram for Hajj. Anyone intending to perform a Tamattu Hajj should on approaching the Miqat make intention for 'Umrah. After fulfilling the Hajj rituals, one should offer a sacrificial animal.",
+          detail2:'2.)Qiran Hajj',
+          detail3:"In this type of Hajj, a prigrim should declare his intention to perform both Hajj and Umrah together. only when he throws the jumarah of Al-Aqaba, gets his hair shaved or cut that he can put off his Ihram. However, he should offer a sacrificial animal",
+          detail4:"3.)Ifrad Hajj",
+          detail5:"in the Miqat, a pilgrim of Ifrad Hajj declares his intention fo Hajj only. He maintains his Ihram p to the Day of Sacrifice. No offering is required from him.",
+          detail6:"",
+          ancorName:"Types of Hajj",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'Umrah',
+          detail:"1.)Rituals of 'Umrah",
+          detail1:"In Arabic the word 'Umrah is derived from I'timar which means a visit. However 'Umrah technically means paying a visit to Ka'bah, performing Tawaf[circumambulation] around it , walding between Safa and Marwah seven times. A performer of Umrah puts off his Ihram by haveing his hair shaved or cut",
+          detail2:'',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Umrah",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        }
+        ,
+        {
+          name:'pillars of Hajj',
+          detail:"There are Three basic pillars for performing Hajj.",
+          detail1:"1.To enter into the State of 'Ihram' and have the intention to perform the Pilgirmage",
+          detail2:'2. to stay at the field of "Arafat" on the ninth of Zul-Hajj. If someone cannot go to the field of Arafat even for a short time then his/her pilgrimage will not be complete. He/she has to perform the pilgrimage again the following year.',
+          detail3:"3. Additional circlingto the \"ka bah\" that is done after the stay a the field of \"Arafat\" and performed form the tenth to the end of the month.",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"pillars of Hajj",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        }
+        ,
+        {
+          name:'Upon Whom is it obligatory to perform Hajj',
+          detail:"An adult Muslim of sane mind and able bod and having means to bear the expenses must perform this act of worship once in his /her lifetime. There should be peace on the way to Macca and there should be no hindrance or restriction in travelling to Mecca.",
+          detail1:"Hajj is not obligatory for children, the sick, and those who are unable to bear the expenses for hajj.",
+          detail2:'',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Upon Whom is it obligatory to perform Hajj",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        }
+        ,
+        {
+          name:'What are the timings of Hajj(pilgrimage)',
+          detail:"There are specific months for performing the hajj and are called \"Months of Pilgrimage\".",
+          detail1:"There Three Islamic months are Hawal, Zul Qa'da and Zul-Hajj.",
+          detail2:'During these three \"Months of Hajj,\" one prepares for the pilgrimage, attains good morals and completes other physical conditions for the pilgrimage. ',
+          detail3:"All the essential duties of the pilgrimage have to be completed between the 8th and the 13th day of Zul-Hajj. ",
+          detail4:"Additional tawaaf (circling around the Ka'ba), however, may be performed until the end of the month of Dul -Hajj.Importance of Pilgrimage (Hajj)",
+          detail5:"",
+          detail6:"",
+          ancorName:"What are the timings of Hajj(pilgrimage)",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'Importance of Pilgrimage (Hajj)',
+          detail:"- It is a wholesome demonstration of the Universality of Islam and the brotherhood and equality of the Muslims.",
+          detail1:"- it is to confirm the commitment of a Muslim to God and their readiness to forsake the Material interest in His(Allah) service",
+          detail2:'- It is to acquaint the pilgrims with the spiritual and historical environment of Prophet  Mohamad (P.B.U.H) so that they may derive warm inspiration and strengthened their faith.',
+          detail3:"-It is also to commemorate the Divine rituals observed by Abraham and Ismael, who are known to have been the first pilgrims to the house of God on earth ie the Ka'bah at Makka(Makkah)",
+          detail4:"- it is a reminder of the Grand Assembly on the Day of judgment when people will stand equal before God waiting for their final Destiny and where no superiority of race or stock can be claimed.",
+          detail5:"",
+          detail6:"",
+          ancorName:"Importance of Pilgrimage (Hajj)",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:'',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:'',
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          // popup1Name:"",
+          // popup1:"",
+          // popup2Name:"",
+          // popup2:"",
+
+
+        },
+        {
           name:'',
           detail:"",
           detail1:"",
