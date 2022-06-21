@@ -1694,7 +1694,7 @@ ApplicationStage:[
       },
       {
         name:'Day-02 14 June 2022 ',
-        detail:"",
+        detail:"started working on the the app tap bar",
         detail1:"",
         detail2:"",
         detail3:"",
@@ -1711,7 +1711,7 @@ ApplicationStage:[
       },
       {
         name:'Day-03 15 June 2022 ',
-        detail:"",
+        detail:"worked on the display home screen and the detail screen",
         detail1:"",
         detail2:"",
         detail3:"",
@@ -1728,7 +1728,7 @@ ApplicationStage:[
       },
       {
         name:'Day-04 16 June 2022 ',
-        detail:"",
+        detail:"completed the design of the home screen",
         detail1:"",
         detail2:"",
         detail3:"",
@@ -1745,7 +1745,7 @@ ApplicationStage:[
       },
       {
         name:'Day-05 17 June 2022 ',
-        detail:"",
+        detail:"finalised other pages lay graound of the app, ",
         detail1:"",
         detail2:"",
         detail3:"",
@@ -1796,7 +1796,7 @@ ApplicationStage:[
       },
       {
         name:'Day-08 20 June 2022 ',
-        detail:"",
+        detail:"had a meeting with Mmm Larissa, about the vision of the app and work the first flow",
         detail1:"",
         detail2:"",
         detail3:"",
@@ -1811,441 +1811,10 @@ ApplicationStage:[
         popup2Name:"",
         popup2:"",
       },
-    ],
-  },
-]
-}
-,
-{
-  companyName:"Brainnest",
-  logo:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654968713/msbGeanologyProfilePics/camsole/Logo_Camsol_zpsphu.png",
-  about:"The business management and training company headquartered in Bremen, Germany. We are a success-driven firm that provides management advisory and contracting services customized to help companies from different industries with business management problems. Brainnest runs, leads, and manages complex projects and initiatives. We have begun from scratch when a network of professionals, Ph.D. holders, and highly skilled personnel bring to a business table their practical and academic years of experience to form up a concrete blueprint on which the company has been designed. Since 2020, we offer a combination of expertise, proficiency, and commitment leveraging our deep industry experience, along with using analytical rigor to drive outstanding results for businesses. We proudly provide top-class consulting and training services for a wide range of industries around the world. A well-equipped team, advanced tools, and modern methodologies are some of what we correctly utilize to offer our clients what makes them the best in their fields.",
-  about2:"",
-  about3:"",
-  about4:"",
-  about5:"",
-  aboutPopUp:[
-    {
-      name:"",
-      details1:"",
-      details2:"",
-      popUpSources:[
-        {
-          name:"",
-          link:"",
-        },
-      ],
 
-
-    },
-  ],
-  aboutSource:[
-    {
-      name:"linkedIn",
-      link:"https://www.linkedin.com/company/brainnestde/?originalSubdomain=de",
-
-    }
-  ],
-  MainLocation:"!!!unknown!!!",
-  TotalNumberOfBranches:"!!!!!!!Unknown!!!!!!!",
-  OtherLocations:[
-    {
-      name:"!!!!!!!Unknown!!!!!!!",
-      link:"https://camsol.io/"
-
-    },
-  ],
-  LocationSources:[
-
-    {
-      name:"https://camsol.io/",
-      link:"https://camsol.freshteam.com/jobs/DpLc3lhS0I8E/full-stack-developer-remote#applicant-form",
-    }
-  ],
-  JobPost:[
-  {
-    name:"React/Full-stack developer",
-    location:"!!!unknown!!!",
-    link:"https://camsol.freshteam.com/jobs/DpLc3lhS0I8E/full-stack-developer-remote#applicant-form",
-    analysis:{
-      status:"!!!!!!Unclear!!!!!!",
-      jobLocation:"!!!!!!Unknown!!!!!",
-      currentOfficeLocation:"!!!!!!Unknown!!!!!",
-      details1:"",
-      popUpSources:[
-        {
-          name:"Apply to camsole",
-          link:"https://camsol.freshteam.com/jobs/DpLc3lhS0I8E/full-stack-developer-remote#applicant-form",
-        },
-      ],
-    },
-    reasonForAnalysis:"",
-    analysisSource:[
-      {name:"",
-      link:""},
-    ],
-
-  }
-
-  ],
-  JobPostSources:[
-    {
-      name:"",
-      link:""
-  }
-],
-Employee:[
-  {
-  year:"",
-  numberOfEmployee:""
-},
-],
-EmployeeType:'Full-time Employee',
-EmployeeSource:[
-{
-  name:"camsole jobs",
-  link:"https://camsol.freshteam.com/jobs/DpLc3lhS0I8E/full-stack-developer-remote#applicant-form",
-
-},
-],
-Revenue:[
-{
-  year:'',
-  amount:''
-},
-
-],
-RevenueType:'Revenue in Millions U.S dollars',
-RevenueSource:[
-{
-  name:"",
-  link:"",
-
-},
-],
-Departments:[
-{
-  DepartmentName:'!!!!!!Unknown!!!!!!',
-  DepartmentDesc:{
-    details1:"Department number:!!!!!!Unknown!!!!!!, Name:!!!!!!Unknown!!!!!!, "
-  }
-},
-],
-DepartmentSource:[
-{
-  name:"",
-  link:"",
-}
-],
-ApplicationStatus:"Employed",
-ApplicationStage:[
-  {
-    stageName:"Stage1-Applying for job",
-    stagePercent:100,
-    about:"This is the application phase to the company for the position of full stack developer",
-    about2:"!!!!!!!!!!!!!!!!!Cover letter unavialable.!!!!!!!!!!!!!!!!!",
-    aboutPopUp:[
       {
-        name:"Resume",
-        imageName:"Resume Image",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653477784/msbGeanologyProfilePics/Resume1024_1_ws31nm.jpg",
-        popUpSources:[
-          {
-          name:"resume ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      }
-    ]
-  },
-  {
-    stageName:"Stage2-First human response form company",
-    stagePercent:100,
-    about:"Monitoring first contact form the company(Not auto reply)",
-    about2:"1.) first feedback was from Camsole Auto reply.",
-    about3:"2.) recomended by Carine Kongnyu to send message on Whatapp.",
-    aboutPopUp:[
-      {
-        name:"first feedback",
-        imageName:"first feedback mail for Camsole",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654081810/msbGeanologyProfilePics/camsole/first_auto_reply_h22ozw.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      },
-      {
-        name:"recomended by Carine Kongnyu to send message on Whatapp",
-        imageName:"recomended by Carine Kongnyu to send message on Whatapp ",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654081811/msbGeanologyProfilePics/camsole/first_Whatsapp_text_puavuz.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      },
-      {
-        name:"first reply form recruiter Mme Selina Scherer-Braun ",
-        imageName:"first reply form recruiter Mme Selina Scherer-Braun",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654083298/msbGeanologyProfilePics/camsole/recruiters_reply_b0nkxv.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      }
-
-    ]
-  },
-  {
-    stageName:"Stage3-First Interview",
-    stagePercent:100,
-    about:"First Interview with Recruiter: Selina Scherer-Braun",
-    about2:"1.) all on whats app chat",
-    aboutPopUp:[
-      {
-        name:"01 chat form recruiter Mme Selina Scherer-Braun ",
-        imageName:"first reply form recruiter Mme Selina Scherer-Braun",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654083298/msbGeanologyProfilePics/camsole/recruiters_reply_b0nkxv.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      },
-      {
-        name:"02 chats form recruiter Mme Selina Scherer-Braun ",
-        imageName:"02 chats form recruiter Mme Selina Scherer-Braun",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087970/msbGeanologyProfilePics/camsole/02_chat_y7mg1q.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      }
-      ,
-      {
-        name:"03 chats form recruiter Mme Selina Scherer-Braun ",
-        imageName:"03 chats form recruiter Mme Selina Scherer-Braun",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087970/msbGeanologyProfilePics/camsole/03_chat_wea9vv.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      },
-      {
-        name:"04 chats form recruiter Mme Selina Scherer-Braun ",
-        imageName:"04 chats form recruiter Mme Selina Scherer-Braun",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087970/msbGeanologyProfilePics/camsole/chat_04_mzrgnv.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      },
-      {
-        name:"05 chats form recruiter Mme Selina Scherer-Braun ",
-        imageName:"05 chats form recruiter Mme Selina Scherer-Braun",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087970/msbGeanologyProfilePics/camsole/chat_05_osrghg.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      },
-      {
-        name:"06 chats form recruiter Mme Selina Scherer-Braun ",
-        imageName:"06 chats form recruiter Mme Selina Scherer-Braun",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087971/msbGeanologyProfilePics/camsole/chat_06_ptyj1m.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      },
-      {
-        name:"07 chats form recruiter Mme Selina Scherer-Braun ",
-        imageName:"07 chats form recruiter Mme Selina Scherer-Braun",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087971/msbGeanologyProfilePics/camsole/chat_07_skd9yj.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      },
-      {
-        name:"08 chats form recruiter Mme Selina Scherer-Braun ",
-        imageName:"08 chats form recruiter Mme Selina Scherer-Braun",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654087971/msbGeanologyProfilePics/camsole/chat_08_f9kjai.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      }
-    ]
-
-  },
-  {
-    stageName:"Stage4-Technical assesment",
-    stagePercent:100,
-    about:"Technical Assessment",
-    about2:"This was building an app and working as a team",
-
-    aboutPopUp:[
-      {
-        // name:"01 chat form recruiter Mme Selina Scherer-Braun ",
-        // imageName:"first reply form recruiter Mme Selina Scherer-Braun",
-        // imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654083298/msbGeanologyProfilePics/camsole/recruiters_reply_b0nkxv.png",
-        // popUpSources:[
-        //   {
-        //   name:"mails ",
-        //   link:"https://github.com/mrsuber/my-resume-cv"
-        // }
-        // ]
-      },]
-  },
-  {
-    stageName:"Stage5-Delevary of Assesment",
-    stagePercent:100,
-    about:"Delevary of Assesment",
-    about2:"This was a test on building andriod app working with Mr Tobias",
-    aboutPopUp:[
-      {
-        // name:"01 chat form recruiter Mme Selina Scherer-Braun ",
-        // imageName:"first reply form recruiter Mme Selina Scherer-Braun",
-        // imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654083298/msbGeanologyProfilePics/camsole/recruiters_reply_b0nkxv.png",
-        // popUpSources:[
-        //   {
-        //   name:"mails ",
-        //   link:"https://github.com/mrsuber/my-resume-cv"
-        // }
-        // ]
-      },]
-
-  },
-  {
-    stageName:"Stage6-Awaiting a reply from assesment or follow up mail",
-    stagePercent:100,
-    about:"This could either be a mail with the following,",
-    about2:"case 1==>This could be a mail telling you to be patient for the results of your assesment",
-    about3:"case 2==> This could be a mail telling you the result of your assesment and you did not make it",
-    about4:"case 3==> This could be mail on setting interview time",
-    about5:"case 4==> Congratulation, you made it to interview",
-    aboutPopUp:[
-      {
-        name:"case 4 ==> congrats ",
-        imageName:"interview agender with Mrs Selina and Mr Tobias",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654599818/msbGeanologyProfilePics/camsole/interview_nzkiuy.png",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      },
-    ]
-  },
-  {
-    stageName:"Stage7-The Interview",
-    stagePercent:100,
-    about:"Preparation for the Interview",
-    about2:"case 1==> Most common interview quesions and how to answer them",
-    about3:"case 2==> reserch about those you are sopose to have interview with",
-    about4:"case 3==> prepare the place and time and internet you need for the interview",
-    about5:"case 4==> Have the interview",
-    about6:"case 5==> Follow up interview quesions",
-
-  },
-  {
-    stageName:"Stage8-Awaiting Interview Result",
-    stagePercent:100,
-    about:"Awaiting result of the Interview",
-    about2:"Interview was a success, Awaiting contract",
-
-  },
-
-  {
-    stageName:"Stage9-Awaiting Contract",
-    stagePercent:100,
-    about:"Awaiting contract to sign",
-    about2:"contract was successfully given by Selina",
-
-    aboutPopUp:[
-      {
-        name:"Congratulation 🎉🎉🥳🥳🥳 🎉🎉",
-        imageName:"Contract with you and camsol",
-        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654674016/msbGeanologyProfilePics/camsole/template2_ccttar.jpg",
-        popUpSources:[
-          {
-          name:"mails ",
-          link:"https://github.com/mrsuber/my-resume-cv"
-        }
-        ]
-      },
-    ]
-
-  },
-
-  {
-    stageName:"Stage10-Monetoring work",
-    // 1% = 7days
-    stagePercent:1,
-
-    about:"This is helps you monitor work starting form what you do to what you must do",
-    about2:"keeps track of number of employed days and number of work days",
-
-    aboutPopUp:[
-      {
-        name:"",
-        imageName:"",
-        imageLink:"",
-        popUpSources:[
-          {
-          name:"",
-          link:""
-        }
-        ]
-      },
-    ],
-    stageAnalysis:{
-      startWorkDay:"13 June 2022",
-
-    },
-    menu:[
-      {
-        name:'Day-01 13 June 2022 ',
-        detail:"day worm welcomes on whatsapp",
-        detail1:"create an account for task management in https://www.notion.so/camsol/c5037995bb3649c1b86d87c198df142f?v=a4307ef7d1ba4061ac0b5581bb91416b",
-        detail2:"8:00am meeting, We have progress reviews at 12pm and 3pm",
-        detail3:"my loging to the wine testing directus data base",
-        detail4:"username: my email",
-        detail5:"passwid: Online2022#@!",
-        detail6:"link : https://twuw1gfg.directus.app",
-        detail7:"sending post request and getting response",
-        detail8:"work complete at 5pm",
-        ancorName:"Day-01 13 June 2022",
-        popup1Name:"",
-        popup1:"",
-        popup2Name:"",
-        popup2:"",
-      },
-      {
-        name:'Day-02 14 June 2022 ',
-        detail:"connected the app to the database using graph Ql",
+        name:'Day-09 21 June 2022 ',
+        detail:"working on the first flow of the app",
         detail1:"",
         detail2:"",
         detail3:"",
@@ -2254,41 +1823,7 @@ ApplicationStage:[
         detail6:"",
         detail7:"",
         detail8:"",
-        ancorName:"Day-02 14 June 2022",
-        popup1Name:"",
-        popup1:"",
-        popup2Name:"",
-        popup2:"",
-      },
-      {
-        name:'Day-03 15 June 2022 ',
-        detail:"build the display to select category and filter the list",
-        detail1:"build the nagation tapbar and costomize it",
-        detail2:"",
-        detail3:"",
-        detail4:"",
-        detail5:"",
-        detail6:"",
-        detail7:"",
-        detail8:"",
-        ancorName:"Day-03 15 June 2022",
-        popup1Name:"",
-        popup1:"",
-        popup2Name:"",
-        popup2:"",
-      },
-      {
-        name:'Day-04 16 June 2022 ',
-        detail:"",
-        detail1:"",
-        detail2:"",
-        detail3:"",
-        detail4:"",
-        detail5:"",
-        detail6:"",
-        detail7:"",
-        detail8:"",
-        ancorName:"Day-03 15 June 2022",
+        ancorName:"Day-09 21 June 2022",
         popup1Name:"",
         popup1:"",
         popup2Name:"",
@@ -2298,6 +1833,7 @@ ApplicationStage:[
   },
 ]
 }
+
 
 
 ]
