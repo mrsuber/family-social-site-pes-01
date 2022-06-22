@@ -559,9 +559,9 @@ export const courseRelStructuralData = [
         ,
         {
           name:'Upon Whom is it obligatory to perform Hajj',
-          detail:"An adult Muslim of sane mind and able bod and having means to bear the expenses must perform this act of worship once in his /her lifetime. There should be peace on the way to Macca and there should be no hindrance or restriction in travelling to Mecca.",
+          detail:"An adult Muslim of sane mind and able body and having means to bear the expenses must perform this act of worship once in his /her lifetime. There should be peace on the way to Macca and there should be no hindrance or restriction in travelling to Mecca.",
           detail1:"Hajj is not obligatory for children, the sick, and those who are unable to bear the expenses for hajj.",
-          detail2:'',
+          detail2:'Q2:189',
           detail3:"",
           detail4:"",
           detail5:"",
