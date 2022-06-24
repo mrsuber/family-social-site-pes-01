@@ -1,0 +1,5 @@
+.calenderDay__wrapper{
+  border: solid gray 2px;
+  display:flex;
+  flex-direction: column;
+}

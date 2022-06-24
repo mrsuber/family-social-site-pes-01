@@ -4,14 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
 import {getMonth} from '../../../utils/formatCalenderDays'
 
-import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,CalenderHeader} from '../../../components'
+import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,CalenderHeader,CalenderSideBar,CalenderMonth} from '../../../components'
 
 const AdminProjectExpansionPreviewPopupTimetable = ({setOnView2,onView2=false, data, setOnStructuralDetail,setCompanyName}) => {
     const [unclearPopup,setUnclearPopup] = useState(false)
     const [analysisData,setAnalysisData]=useState(null)
     const[depPopup, setDepPopup] = useState(false)
     const[depData,setDepData] = useState(null)
-    console.table(getMonth())
+    const [currentMonth,setCurrentMonth]=useState(getMonth())
+
       const structural = ()=>{
         setOnView2(false)
         setCompanyName(data.companyName)
@@ -57,6 +58,8 @@ const AdminProjectExpansionPreviewPopupTimetable = ({setOnView2,onView2=false, d
       <div className="pe-cal__wrapper">
         <CalenderHeader />
         <div className="pe-cal__body">
+        <CalenderSideBar/>
+        <CalenderMonth month={currentMonth}/>
 
         </div>
       </div>

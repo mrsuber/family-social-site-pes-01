@@ -1395,4 +1395,10 @@ export const companyStructuralData = [
 
   },
 
+  {
+    companyName:"camsol",
+    companyHeadOfficeLocation:"Headquartered in Stockholm, Uppland, Sweden  GMT(+2)",
+
+  }
+
 ]
