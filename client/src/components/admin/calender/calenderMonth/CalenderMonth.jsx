@@ -7,7 +7,7 @@ const CalenderMonth = ({month}) =>{
       {month.map((row,index)=>(
           <React.Fragment key={index}>
           {row.map((day,index2)=>(
-            <CalenderDay day={day} key={index2}/>
+            <CalenderDay day={day} key={index2} rowIdx={index}/>
           ))}
           </React.Fragment>
         ))}

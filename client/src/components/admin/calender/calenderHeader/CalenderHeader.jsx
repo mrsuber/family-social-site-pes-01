@@ -1,7 +1,10 @@
-const CalenderHeader = () =>{
+import './CalenderHeader.css'
+
+const CalenderHeader = ({data}) =>{
+
   return(
-    <div>
-      this si calender header
+    <div className="CalenderHeader__wrapper">
+      <img src={data.logo} alt="logo" className=" CalenderHeader__logo"/>
     </div>
   )
 }

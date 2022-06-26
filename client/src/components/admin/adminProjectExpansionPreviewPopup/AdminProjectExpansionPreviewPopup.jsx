@@ -28,6 +28,7 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
         setDepPopup(true)
       }
 
+
   return (
     <>{
       onView===false
@@ -43,7 +44,7 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
 }
 
       <div className="admin__profileOnveiw-container">
-      <AdminProjectExpansionPreviewPopupTimetable onView2={onView2} setOnView2={setOnView2}/>
+      <AdminProjectExpansionPreviewPopupTimetable onView2={onView2} setOnView2={setOnView2} data={data}/>
 
       <div className="admin__profileOnView-btn-container">
       <button className="admin__profileOnveiw-close-btn" onClick={()=>setOnView(false)}>

@@ -22,7 +22,7 @@ const AdminProjectExpansionScreen = () => {
     },[])
 
     const activatePopup=(title)=>{
-      
+
       for(let i=0;i<pe.length;i++){
         console.log(pe[i].title)
         if(pe[i].title===title){
@@ -31,6 +31,8 @@ const AdminProjectExpansionScreen = () => {
       }
       setOnView(true)
     }
+
+
   return (
 
     <div className="admin__body">

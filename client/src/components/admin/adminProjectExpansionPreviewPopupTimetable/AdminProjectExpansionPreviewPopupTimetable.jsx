@@ -13,6 +13,7 @@ const AdminProjectExpansionPreviewPopupTimetable = ({setOnView2,onView2=false, d
     const[depData,setDepData] = useState(null)
     const [currentMonth,setCurrentMonth]=useState(getMonth())
 
+
       const structural = ()=>{
         setOnView2(false)
         setCompanyName(data.companyName)
@@ -52,11 +53,11 @@ const AdminProjectExpansionPreviewPopupTimetable = ({setOnView2,onView2=false, d
 
       </div>
 
-      <AdminInpuEdit/>
+      <AdminInpuEdit />
       <div className="admin__profileOnveiw-content01">
       <div className="pe1__card">
       <div className="pe-cal__wrapper">
-        <CalenderHeader />
+        <CalenderHeader data={data}/>
         <div className="pe-cal__body">
         <CalenderSideBar/>
         <CalenderMonth month={currentMonth}/>
