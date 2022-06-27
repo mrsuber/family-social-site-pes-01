@@ -2,7 +2,7 @@
   padding: 5px 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .CalenderHeader__logo{
@@ -16,5 +16,24 @@
     margin: 0 10px;
     vertical-align: center;
     animation: spin 5s infinite;
+
+}
+
+.CalenderHeader__heading{
+  margin: 10px;
+  font-size: 15px;
+  color: gray;
+  font-weight: 500;
+
+}
+
+
+.CalenderHeader__button{
+  border-radius: 50%;
+  padding: 5px 10px;
+  margin: 10px;
+}
+
+.CalenderHeader__button2{
 
 }
