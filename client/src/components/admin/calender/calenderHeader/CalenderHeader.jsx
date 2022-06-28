@@ -1,5 +1,5 @@
 import './CalenderHeader.css'
-
+import arrow from './arrow.png'
 const CalenderHeader = ({data}) =>{
 
   return(
@@ -8,8 +8,10 @@ const CalenderHeader = ({data}) =>{
       <h1 className="CalenderHeader__heading">Calendar</h1>
       <button className="CalenderHeader__button">Today</button>
       <button className="CalenderHeader__button2">
-        <span></span>
-        <span></span>
+        <span><img src={arrow}/></span>
+      </button>
+      <button className="CalenderHeader__button2">
+        <span><img className="CalenderHeader__button2" src={arrow}/></span>
       </button>
     </div>
   )
