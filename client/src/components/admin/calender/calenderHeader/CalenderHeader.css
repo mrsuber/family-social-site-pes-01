@@ -29,15 +29,32 @@
 
 
 .CalenderHeader__button{
-  border-radius: 50%;
-  padding: 5px 10px;
-  margin: 10px;
+  color: white;
 }
 
-.CalenderHeader__button2 {
+.CalenderHeader__img2{
   -webkit-transform:rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
+  filter: invert(100%);
+}
+.CalenderHeader__img3{
+  filter: invert(100%);
+}
+
+.CalenderHeader__button,.CalenderHeader__button2,.CalenderHeader__button3{
+  margin: 0 8px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--normal-text);
+  border: 1px solid var(--color-main);
+  background: var(--bg);
+  transition: .3s ease;
+}
+
+.CalenderHeader__button:hover,.CalenderHeader__button2:hover,.CalenderHeader__button3:hover{
+  border:1px solid #00ffa4;
+  background: #137880 ;
 }

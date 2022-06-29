@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import './AdminProjectExpansionPreviewPopup.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
+import ContextWrapper from '../../../context/ContextWrapper'
 
 import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,AdminProjectExpansionPreviewPopupTimetable} from '../../../components'
 
@@ -44,8 +45,9 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
 }
 
       <div className="admin__profileOnveiw-container">
+      <ContextWrapper>
       <AdminProjectExpansionPreviewPopupTimetable onView2={onView2} setOnView2={setOnView2} data={data}/>
-
+      </ContextWrapper>
       <div className="admin__profileOnView-btn-container">
       <button className="admin__profileOnveiw-close-btn" onClick={()=>setOnView(false)}>
       Close

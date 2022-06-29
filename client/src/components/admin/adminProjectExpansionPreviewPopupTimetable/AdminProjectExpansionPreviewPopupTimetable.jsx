@@ -1,9 +1,9 @@
-import React,{useState} from 'react'
+import React,{useState,useContext,useEffect} from 'react'
 import './AdminProjectExpansionPreviewPopupTimetable.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
 import {getMonth} from '../../../utils/formatCalenderDays'
-
+import GlobalContext from '../../../context/GlobalContext'
 import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,CalenderHeader,CalenderSideBar,CalenderMonth} from '../../../components'
 
 const AdminProjectExpansionPreviewPopupTimetable = ({setOnView2,onView2=false, data, setOnStructuralDetail,setCompanyName}) => {
@@ -12,8 +12,10 @@ const AdminProjectExpansionPreviewPopupTimetable = ({setOnView2,onView2=false, d
     const[depPopup, setDepPopup] = useState(false)
     const[depData,setDepData] = useState(null)
     const [currentMonth,setCurrentMonth]=useState(getMonth())
-
-
+    const {monthIndex} = useContext(GlobalContext)
+    useEffect(() => {
+      setCurrentMonth(getMonth(monthIndex))
+    }, [monthIndex])
       const structural = ()=>{
         setOnView2(false)
         setCompanyName(data.companyName)

@@ -13,12 +13,12 @@
 
 .admin__profileOnveiw-close-btn {
   margin: 0 8px;
-  border: none;
   padding: 5px 10px;
   border-radius: 5px;
   color: var(--normal-text);
   border: 1px solid var(--color-main);
   background: var(--bg);
+  transition: .3s ease;
 
 }
 .admin__profileOnView-btn-container{
