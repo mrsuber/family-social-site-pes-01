@@ -1,8 +1,14 @@
+import {CalenderCreateEventButton,SmallCalender} from '../../../../components'
+import './CalenderSideBar.css'
+
+
 const CalenderSideBar = () =>{
   return(
-    <div>
-      calender side bar
-    </div>
+    <aside className="calendersidbar__wraper">
+    <CalenderCreateEventButton />
+    <SmallCalender/>
+    
+    </aside>
   )
 }
 

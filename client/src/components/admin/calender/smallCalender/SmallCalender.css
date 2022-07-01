@@ -1,0 +1,12 @@
+.smallcalender__wrapper{
+  margin-top: 10px;
+}
+.smallCalender__header{
+  display: flex;
+  justify-content: space-between;
+}
+.smallCalender__p{
+  color:gray;
+  font-weight: 500;
+  font-size: 12px;
+}

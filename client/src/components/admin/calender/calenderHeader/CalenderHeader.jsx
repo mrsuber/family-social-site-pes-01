@@ -14,18 +14,21 @@ const CalenderHeader = ({data}) =>{
   function handleNextMonth(){
     setMonthIndex(monthIndex + 1)
   }
+  function handleReset(){
+    setMonthIndex(dayjs().month())
+  }
   return(
     <div className="CalenderHeader__wrapper">
       <img src={data.logo} alt="logo" className=" CalenderHeader__logo"/>
       <h1 className="CalenderHeader__heading">Calendar</h1>
-      <button className="CalenderHeader__button">Today</button>
+      <button className="CalenderHeader__button" onClick={handleReset}>Today</button>
       <button className="CalenderHeader__button2" onClick={handlePrevMonth}>
         <span><img className="CalenderHeader__img2" src={arrow}/></span>
       </button>
       <button className="CalenderHeader__button3" onClick={handleNextMonth}>
         <span><img className="CalenderHeader__img3" src={arrow}/></span>
       </button>
-      <h2>{dayjs(new Date(dayjs().year(),monthIndex)).format("MMMM YYYY")}</h2>
+      <h2 className="CalenderHeader__h2">{dayjs(new Date(dayjs().year(),monthIndex)).format("MMMM YYYY")}</h2>
     </div>
   )
 }

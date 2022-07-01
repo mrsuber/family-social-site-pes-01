@@ -1,0 +1,23 @@
+.calendercreateeventbutton__wrapper{
+
+  display: flex;
+  margin: 0 8px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--normal-text);
+  border: 1px solid var(--color-main);
+  background: var(--bg);
+  transition: .3s ease;
+  align-items: center;
+}
+.calendercreateeventbutton__wrapper:hover{
+  border:1px solid #00ffa4;
+  background: #137880 ;
+}
+.calendercreateeventbutton__span1{
+  font-size: 24px
+}
+.calendercreateeventbutton__span{
+  padding-left: 12px;
+  padding-right: 5px;
+}
