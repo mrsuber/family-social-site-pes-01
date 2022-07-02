@@ -1,7 +1,7 @@
 import React,{useContext} from 'react'
 import GlobalContext from '../../../../context/GlobalContext'
 import './CalenderHeader.css'
-import arrow from './arrow.png'
+import arrow from '../../../../images/admin/arrow.png'
 import dayjs from 'dayjs'
 
 
@@ -15,7 +15,7 @@ const CalenderHeader = ({data}) =>{
     setMonthIndex(monthIndex + 1)
   }
   function handleReset(){
-    setMonthIndex(dayjs().month())
+    setMonthIndex(monthIndex === dayjs().month() ? monthIndex + Math.random() : dayjs().month())
   }
   return(
     <div className="CalenderHeader__wrapper">
