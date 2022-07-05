@@ -29,7 +29,11 @@ const SmallCalender = () =>{
     }
   }
 
-  const {monthIndex} = useContext(GlobalContext)
+  const {
+    monthIndex,
+    setSmallCalenderMonth,
+    setDaySelected,
+  } = useContext(GlobalContext)
 
   useEffect(()=>{
     setCurrentMonthIndex(monthIndex)
@@ -61,7 +65,12 @@ const SmallCalender = () =>{
             currentMonth.map((row,i)=>(
               <React.Fragment key={i}>
                   {row.map((day,idx)=>(
-                    <button key={idx} className={`CalenderHeader__button3 ${getDayClass(day)}`} style={{padding: '3px 0',width: '100%',}}>
+                    <button
+                    onClick={()=>{
+                      setSmallCalenderMonth(currentMonthIndex)
+                      setDaySelected()
+                    }}
+                    key={idx} className={`CalenderHeader__button3 ${getDayClass(day)}`} style={{padding: '3px 0',width: '100%',}}>
                         <span style={{fontSize: '12px'}}>{day.format('D')}</span>
                     </button>
                   ))}
