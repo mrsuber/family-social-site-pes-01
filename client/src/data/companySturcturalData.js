@@ -1398,7 +1398,101 @@ export const companyStructuralData = [
   {
     companyName:"camsol",
     companyHeadOfficeLocation:"Headquartered in Stockholm, Uppland, Sweden  GMT(+2)",
+    companyLevel1:[
+      {
+        name:"camsol Executive Leadership",
+        people:[
+          {
+            name:'Selina Scherer-Braun ',
+            photo:'https://media-exp2.licdn.com/dms/image/C4E03AQFw7U08odgV2Q/profile-displayphoto-shrink_200_200/0/1653244317807?e=1662595200&v=beta&t=FEihz3H4yllPo4V2Tspmnv6dOsrtpIg__TzQRcjZiiQ',
+            title:'Geschäftsführende Gesellschafterin(Managing Partner) | CEO',
+            phoneNumber:'+49 173 9760212',
+            email:"selina.scherer-braun@camsol.io",
+            website:"camsol.io",
+            address:"Black Forest, a large forested mountain range in south-west Germany",
+            linkedIn:"https://www.linkedin.com/in/schererbraun/",
+            Education:[
+              {
 
+                year:"!!!!!!!!2002 - 2003",
+                certificateName:"!!!!!!!!MSC, Human Resources ManagementMSC, Human Resources Management",
+                certificatePoints:"!!!!!!!!Distinction",
+                institutionName:"!!!!!!!!University of Portsmouth",
+              },
+
+
+
+
+            ],
+            languages:[
+              {
+                languageName:"English",
+                languagesPercent:"95%"
+              },
+              {
+                languageName:"German",
+                languagesPercent:"95%"
+              }
+            ],
+            BiographyP1:'Executive level ',
+            BiographyP2:"",
+            BiographyP3:"",
+            BiographyP4:"",
+            BiographyP5:"",
+            Experience:[
+              {
+                yearsOfExperience:"!!!!!!!!Dec 2017 - Present 2022",
+                placeOfExperience:"Camsol",
+                locationOfExperience:"!!!!!!!!location unknown!!!",
+                areaOfExpertise:"Geschäftsführende Gesellschafterin(Managing Partner) | CEO",
+                descOfWorkDoneInAreaOfExpertise:"!!!!!!!!HR Leader, focused on providing strategic HR Partnering to Executive Vice President Applications, EMEA & JAPAC. Focused on Optimising Business Performance, Executive Leadership, Organisation Design and Transformation. Responsible for leading a team of Senior HRBPs who align with EMEA based Executives (Senior Vice Presidents / Vice Presidents) within the License Organisation,",
+              },
+
+
+
+            ],
+            professionalSkills:[
+              {
+
+                nameOfSkill:"Strategy",
+                persentageOfSkills:"95%",
+              },
+
+
+            ],
+            Interest:[
+              {
+                // iconOfInterest:"",
+                // nameOfInterest:"",
+              }
+            ],
+            source:[
+              {
+                name:"LinkedIn",
+                link:"https://www.linkedin.com/in/schererbraun/"
+              },
+
+
+            ],
+
+              report1:[
+                {
+                  name:'Azimi Zubai Yakubu (Morgan Kehlani)',
+                  photo:'https://ca.slack-edge.com/T03MZB4ML81-U03MZ8N6F51-103ec47f9e50-512',
+                  title:'',
+                }
+              ]
+
+          }
+        ],
+      },
+      {
+        name:"camsole Board of Directors",
+        people:[
+
+        ]
+      }
+    ],
   }
 
 ]
