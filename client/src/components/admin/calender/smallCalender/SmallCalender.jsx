@@ -21,10 +21,12 @@ const SmallCalender = () =>{
     const format = "DD-MM-YY"
     const nowDay = dayjs().format(format)
     const currDay = day.format(format)
-
+    const slcDay = daySelected && daySelected.format(format)
     if(nowDay === currDay){
       return 'smallCalender__dayBacground'
-    }else {
+    }else if(currDay === slcDay){
+      return 'smallCalender__dayBacground2'
+    }else{
       return ''
     }
   }
@@ -32,7 +34,8 @@ const SmallCalender = () =>{
   const {
     monthIndex,
     setSmallCalenderMonth,
-    setDaySelected,
+    daySelected,
+    setDaySelected
   } = useContext(GlobalContext)
 
   useEffect(()=>{
@@ -68,7 +71,7 @@ const SmallCalender = () =>{
                     <button
                     onClick={()=>{
                       setSmallCalenderMonth(currentMonthIndex)
-                      setDaySelected()
+                      setDaySelected(day)
                     }}
                     key={idx} className={`CalenderHeader__button3 ${getDayClass(day)}`} style={{padding: '3px 0',width: '100%',}}>
                         <span style={{fontSize: '12px'}}>{day.format('D')}</span>

@@ -33,3 +33,18 @@
   background-color: #137880 !important;
     border:1px solid #00ffa4 !important;
 }
+
+.smallCalender__dayBacground2{
+  /* background-color: #137880 !important; */
+    border:1px solid #00ff5c !important;
+    color:#00ff5c !important
+}
+.smallCalender__dayBacground2:focus,
+.smallCalender__dayBacground:focus,
+.CalenderHeader__button2:focus,
+.CalenderHeader__button3:focus,
+.CalenderHeader__button:focus,
+.calendercreateeventbutton__wrapper:focus
+{
+       outline: none;
+     }

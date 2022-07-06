@@ -2079,7 +2079,7 @@ ApplicationStage:[
         detail3:" started documenting winetasting MVP",
         detail4:"got additional money from CEO 45458 frs",
         detail5:"clean the code of wine tasting and refator to the essencial",
-        detail6:"creating the task to do on Notion",
+        detail6:"",
         detail7:"",
         detail8:"",
         detail9:"",
