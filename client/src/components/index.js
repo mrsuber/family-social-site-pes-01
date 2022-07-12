@@ -65,6 +65,7 @@ export {default as Preloader} from './portfolioComponents/preloader/Preloader'
 
 
 //admin
+export {default as CalenderEventModal} from './admin/calender/calenderEventModal/CalenderEventModal'
 export {default as SmallCalender} from './admin/calender/smallCalender/SmallCalender'
 export {default as CalenderCreateEventButton} from './admin/calender/calenderCreateEventButton/CalenderCreateEventButton'
 export {default as CalenderDay} from './admin/calender/calenderDay/CalenderDay'

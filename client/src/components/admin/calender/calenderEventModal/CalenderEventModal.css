@@ -1,0 +1,22 @@
+.eventModal{
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventModal__form{
+  background: white;
+  border-radius: 20px;
+  shadow:var(--shadow);
+  width: 25%;
+
+}
+
+.eventModal__header{
+  background: gray;
+}
