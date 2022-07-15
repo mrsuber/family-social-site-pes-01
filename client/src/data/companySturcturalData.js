@@ -1414,10 +1414,10 @@ export const companyStructuralData = [
             Education:[
               {
 
-                year:"!!!!!!!!2002 - 2003",
-                certificateName:"!!!!!!!!MSC, Human Resources ManagementMSC, Human Resources Management",
-                certificatePoints:"!!!!!!!!Distinction",
-                institutionName:"!!!!!!!!University of Portsmouth",
+                year:"Oct 2012 - Mar 2017",
+                certificateName:"Bachelor of Arts - BA, Linguistik - Schwerpunkt Computerlinguistik",
+                certificatePoints:"!!!!!!!!Uknown",
+                institutionName:"Ruhr University Bochum",
               },
 
 
@@ -1434,27 +1434,61 @@ export const companyStructuralData = [
                 languagesPercent:"95%"
               }
             ],
-            BiographyP1:'Executive level ',
-            BiographyP2:"",
+            BiographyP1:'Hi, my name is Selina, I am the CEO and founder of Camsol. I live in Saint George in Black Forest, Germany. My passions are social sustainability, computer linguistics and writing. I have two children and am married. In my free time I like to read, listen to music, play computer games or board games, write and work on craft projects.',
+            BiographyP2:"I also recieved some questions about my relation to Tobias.We are married since 2015 and have two children. I am the CEO of Camsol and Tobias supports us, but currently full-tim employed at Haufe Group.I hope in the future he will have more time to work with us",
             BiographyP3:"",
             BiographyP4:"",
             BiographyP5:"",
             Experience:[
               {
-                yearsOfExperience:"!!!!!!!!Dec 2017 - Present 2022",
-                placeOfExperience:"Camsol",
-                locationOfExperience:"!!!!!!!!location unknown!!!",
+                yearsOfExperience:"May 2022 - Present",
+                placeOfExperience:"Camsol Technologies UG (haftungsbeschränkt) Full time",
+                locationOfExperience:"Germany",
                 areaOfExpertise:"Geschäftsführende Gesellschafterin(Managing Partner) | CEO",
-                descOfWorkDoneInAreaOfExpertise:"!!!!!!!!HR Leader, focused on providing strategic HR Partnering to Executive Vice President Applications, EMEA & JAPAC. Focused on Optimising Business Performance, Executive Leadership, Organisation Design and Transformation. Responsible for leading a team of Senior HRBPs who align with EMEA based Executives (Senior Vice Presidents / Vice Presidents) within the License Organisation,",
+                descOfWorkDoneInAreaOfExpertise:"HR Leader, focused on providing strategic HR Partnering to Executive Vice President Applications. Focused on Optimising Business Performance, Executive Leadership, Organisation Design and Transformation. Responsible for leading a team of Senior HRBPs who align with Camsol based Executives (Senior Vice Presidents / Vice Presidents) within the License Organisation,",
               },
-
+              {
+                yearsOfExperience:"Jan 2016 - Present",
+                placeOfExperience:"Zuhause( At home) · Full-time",
+                locationOfExperience:"Germany",
+                areaOfExpertise:"Mutter(mother) Full time",
+                descOfWorkDoneInAreaOfExpertise:"all description of a mother to kids",
+              },
+              {
+                yearsOfExperience:"Apr 2015 - Oct 2019",
+                placeOfExperience:"fothmind GmbH · Full-time",
+                locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
+                areaOfExpertise:"Developer and Consultant",
+                descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · Data Science · Python",
+              },
+              {
+                yearsOfExperience:"Jun 2016 - Feb 2017",
+                placeOfExperience:"bee security GmbH · Full-time",
+                locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
+                areaOfExpertise:"Technical Editor",
+                descOfWorkDoneInAreaOfExpertise:"",
+              },
+              {
+                yearsOfExperience:"Apr 2015 - Sep 2015",
+                placeOfExperience:"Ruhr-Universität Bochum · Part-time",
+                locationOfExperience:"",
+                areaOfExpertise:"Studentische Hilfskräfte(student assistants)",
+                descOfWorkDoneInAreaOfExpertise:"Skills: Data Science · Python",
+              },
+              {
+                yearsOfExperience:"ul 2014 - Dec 2014 ",
+                placeOfExperience:"GoToSec GmbH · Full-time",
+                locationOfExperience:"",
+                areaOfExpertise:"SAP Developer",
+                descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · ABAP · Groovy · Python",
+              },
 
 
             ],
             professionalSkills:[
               {
 
-                nameOfSkill:"Strategy",
+                nameOfSkill:"SAP Developer at GoToSec GmbH",
                 persentageOfSkills:"95%",
               },
 
@@ -1470,6 +1504,10 @@ export const companyStructuralData = [
               {
                 name:"LinkedIn",
                 link:"https://www.linkedin.com/in/schererbraun/"
+              },
+              {
+                name:"Notion",
+                link:"https://www.notion.so/camsol/44d1d0a072624df9a5ab29d6bbc7b20a?v=c3a189c055474561b63f6a0a7741121e"
               },
 
 
