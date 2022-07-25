@@ -11,15 +11,49 @@
 
 .eventModal__form{
   background: white;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   shadow:var(--shadow);
   width: 25%;
 
 }
+
 
 .eventModal__header{
   background: gray;
   padding: 5px 10px;
   display: flex;
   justify-content: center;
+}
+
+.eventModal__formbody{
+  padding: 10px;
+}
+
+.eventModal__formbodychild{
+display: grid;
+grid-template-columns: auto auto auto auto auto;
+
+}
+/* .calendermonth__wrapper{
+  flex:1;
+
+  grid-template-columns: auto auto auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto;
+  font-size: 12px;
+} */
+
+.eventModal__formInput{
+  padding: 2px;
+  border: 0px;
+  color: gray;
+  font-weight: 600;
+  padding-bottom: 5px;
+  width: 100%;
+  border-bottom: 2px solid black;
+  border-color: gray;
+}
+
+.eventModal__formInput:focus{
+  outline: none;
+  border-bottom: blue solid 2px;
 }
