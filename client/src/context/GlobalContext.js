@@ -7,7 +7,9 @@ const initialState = {
   smallCalenderMonth:0,
   setSmallCalenderMonth:(index)=>{},
   daySelected:null,
-  setDaySelected:(day) =>{}
+  setDaySelected:(day) =>{},
+  showEventModal:false,
+  setShowEventModal:()=>{}
 }
 const GlobalContext = createContext(initialState)
 
