@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
 import {getMonth} from '../../../utils/formatCalenderDays'
 import GlobalContext from '../../../context/GlobalContext'
-import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,CalenderHeader,CalenderSideBar,CalenderMonth} from '../../../components'
+import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,CalenderHeader,CalenderSideBar,CalenderMonth,CalenderEventModal} from '../../../components'
 
 const AdminProjectExpansionPreviewPopupTimetable = ({setOnView2,onView2=false, data, setOnStructuralDetail,setCompanyName}) => {
     const [unclearPopup,setUnclearPopup] = useState(false)
@@ -12,7 +12,7 @@ const AdminProjectExpansionPreviewPopupTimetable = ({setOnView2,onView2=false, d
     const[depPopup, setDepPopup] = useState(false)
     const[depData,setDepData] = useState(null)
     const [currentMonth,setCurrentMonth]=useState(getMonth())
-    const {monthIndex} = useContext(GlobalContext)
+    const {monthIndex,showEventModal,} = useContext(GlobalContext)
     useEffect(() => {
       setCurrentMonth(getMonth(monthIndex))
     }, [monthIndex])
@@ -58,6 +58,8 @@ const AdminProjectExpansionPreviewPopupTimetable = ({setOnView2,onView2=false, d
       <AdminInpuEdit />
       <div className="admin__profileOnveiw-content01">
       <div className="pe1__card">
+      {showEventModal && <CalenderEventModal/>}
+
       <div className="pe-cal__wrapper">
         <CalenderHeader data={data}/>
         <div className="pe-cal__body">
