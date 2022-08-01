@@ -128,5 +128,35 @@ export const allExpenseData = [
     details:'gave Eli of Tabaken 100 to buy pair',
     date: '05-18-2022',
   },
+  ,
+  {
+    amount:100000,
+    category:'Debt',
+    type:'Expense',
+    details:'capital i am to return to boris',
+    date: '07-29-2022',
+  },
+  ,
+  {
+    amount:60000,
+    category:'Debt',
+    type:'Expense',
+    details:'capital i am to return to hope',
+    date: '07-29-2022',
+  },
+  {
+    amount:10000,
+    category:'Bills',
+    type:'Expense',
+    details:'Charges for widrawal of 200000 salary',
+    date: '07-29-2022',
+  },
+  {
+    amount:200000,
+    category:'Salary',
+    type:'Income',
+    details:'Gift form me,money i had befor tracking',
+    date: '07-29-2022',
+  },
 
 ]

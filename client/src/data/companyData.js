@@ -1266,6 +1266,363 @@ ApplicationStage:[
 ]
 },
 {
+  companyName:"VELTE TECHNOLOGY SOLUTIONS",
+  logo:"",
+  about:"",
+  about2:"",
+  about3:"",
+  about4:"",
+  about5:"",
+  aboutPopUp:[
+    {
+      name:"",
+      details1:"",
+      details2:"",
+      popUpSources:[
+        {
+          name:"",
+          link:"",
+        },
+      ],
+
+
+    },
+  ],
+  aboutSource:[
+    {
+      name:"",
+      link:"",
+
+    }
+  ],
+  MainLocation:"!!!unknown!!!",
+  TotalNumberOfBranches:"!!!!!!!Unknown!!!!!!!",
+  OtherLocations:[
+    {
+      name:"!!!!!!!Unknown!!!!!!!",
+      link:""
+
+    },
+  ],
+  LocationSources:[
+
+    {
+      name:"",
+      link:"",
+    }
+  ],
+  JobPost:[
+  {
+    name:"React/Full-stack developer",
+    location:"!!!unknown!!!",
+    link:"referrals",
+    analysis:{
+      status:"!!!!!!Unclear!!!!!!",
+      jobLocation:"!!!!!!Unknown!!!!!",
+      currentOfficeLocation:"!!!!!!Unknown!!!!!",
+      details1:"",
+      popUpSources:[
+        {
+          name:"",
+          link:"",
+        },
+      ],
+    },
+    reasonForAnalysis:"",
+    analysisSource:[
+      {name:"",
+      link:""},
+    ],
+
+  }
+
+  ],
+  JobPostSources:[
+    {
+      name:"",
+      link:""
+  }
+],
+Employee:[
+  {
+  year:"",
+  numberOfEmployee:""
+},
+],
+EmployeeType:'Part-time Employee',
+EmployeeSource:[
+{
+  name:"",
+  link:"",
+
+},
+],
+Revenue:[
+{
+  year:'',
+  amount:''
+},
+
+],
+RevenueType:'Revenue in Millions U.S dollars',
+RevenueSource:[
+{
+  name:"",
+  link:"",
+
+},
+],
+Departments:[
+{
+  DepartmentName:'!!!!!!Unknown!!!!!!',
+  DepartmentDesc:{
+    details1:"Department number:!!!!!!Unknown!!!!!!, Name:!!!!!!Unknown!!!!!!, "
+  }
+},
+],
+DepartmentSource:[
+{
+  name:"",
+  link:"",
+}
+],
+ApplicationStatus:"Employed",
+ApplicationStage:[
+  {
+    stageName:"Stage1-Applying for job",
+    stagePercent:100,
+    about:"This is the application phase to the company for the position of full stack developer",
+    about2:"In my case the CEO reached out to me",
+    aboutPopUp:[
+      {
+        name:"Resume",
+        imageName:"Resume Image",
+        imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1653477784/msbGeanologyProfilePics/Resume1024_1_ws31nm.jpg",
+        popUpSources:[
+          {
+          name:"resume ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      }
+    ]
+  },
+  {
+    stageName:"Stage2-First human response form company",
+    stagePercent:100,
+    about:"Monitoring first contact form the company(Not auto reply)",
+    about2:"1.) first feedback was from VELTE TECHNOLOGY SOLUTIONS Auto reply.",
+    about3:"",
+    aboutPopUp:[
+      {
+        name:"first feedback",
+        imageName:"first feedback Whatsapp",
+        imageLink:"",
+        popUpSources:[
+          {
+          name:" ",
+          link:""
+        }
+        ]
+      },
+
+      {
+        name:"first reply form recruiter PRINCE OTI ACHEAMPONG ",
+        imageName:"first reply form recruiter PRINCE OTI ACHEAMPONG",
+        imageLink:"",
+        popUpSources:[
+          {
+          name:"whatsapp ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      }
+
+    ]
+  },
+  {
+    stageName:"Stage3-First Interview",
+    stagePercent:100,
+    about:"First Interview with Recruiter: PRINCE OTI ACHEAMPONG",
+    about2:"1.) zoom call",
+    aboutPopUp:[
+      {
+        name:"01 chat form recruiter PRINCE OTI ACHEAMPONG ",
+        imageName:"first reply form recruiter PRINCE OTI ACHEAMPONG",
+        imageLink:"",
+        popUpSources:[
+          {
+          name:"whatsapp ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+      {
+        name:"02 chats form recruiter PRINCE OTI ACHEAMPONG ",
+        imageName:"02 chats form recruiter PRINCE OTI ACHEAMPONG",
+        imageLink:"",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      }
+
+    ]
+
+  },
+  {
+    stageName:"Stage4-Technical assesment",
+    stagePercent:100,
+    about:"Technical Assessment",
+    about2:"asked for my porfolio, and that was it",
+
+    aboutPopUp:[
+      {
+        // name:"01 chat form recruiter Mme Selina Scherer-Braun ",
+        // imageName:"first reply form recruiter Mme Selina Scherer-Braun",
+        // imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654083298/msbGeanologyProfilePics/camsole/recruiters_reply_b0nkxv.png",
+        // popUpSources:[
+        //   {
+        //   name:"mails ",
+        //   link:"https://github.com/mrsuber/my-resume-cv"
+        // }
+        // ]
+      },]
+  },
+  {
+    stageName:"Stage5-Delevary of Assesment",
+    stagePercent:100,
+    about:"No Delevary of Assesment",
+    about2:"",
+    aboutPopUp:[
+      {
+        // name:"01 chat form recruiter Mme Selina Scherer-Braun ",
+        // imageName:"first reply form recruiter Mme Selina Scherer-Braun",
+        // imageLink:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654083298/msbGeanologyProfilePics/camsole/recruiters_reply_b0nkxv.png",
+        // popUpSources:[
+        //   {
+        //   name:"mails ",
+        //   link:"https://github.com/mrsuber/my-resume-cv"
+        // }
+        // ]
+      },]
+
+  },
+  {
+    stageName:"Stage6-Awaiting a reply from assesment or follow up mail",
+    stagePercent:100,
+    about:"This could either be a mail with the following,",
+    about2:"case 1==>This could be a mail telling you to be patient for the results of your assesment",
+    about3:"case 2==> This could be a mail telling you the result of your assesment and you did not make it",
+    about4:"case 3==> This could be mail on setting interview time",
+    about5:"case 4==> Congratulation, you made it to interview",
+    aboutPopUp:[
+      {
+        name:"case 4 ==> congrats ",
+        imageName:"interview agender with PRINCE OTI ACHEAMPONG",
+        imageLink:"",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+    ]
+  },
+  {
+    stageName:"Stage7-The Interview",
+    stagePercent:100,
+    about:"Preparation for the Interview",
+    about2:"case 1==> Most common interview quesions and how to answer them",
+    about3:"case 2==> reserch about those you are sopose to have interview with",
+    about4:"case 3==> prepare the place and time and internet you need for the interview",
+    about5:"case 4==> Have the interview",
+    about6:"case 5==> Follow up interview quesions",
+
+  },
+  {
+    stageName:"Stage8-Awaiting Interview Result",
+    stagePercent:100,
+    about:"Awaiting result of the Interview",
+    about2:"Interview was a success, Awaiting contract",
+
+  },
+
+  {
+    stageName:"Stage9-Awaiting Contract",
+    stagePercent:100,
+    about:"Awaiting contract to sign",
+    about2:"contract was successfully given by PRINCE OTI ACHEAMPONG",
+
+    aboutPopUp:[
+      {
+        name:"Congratulation 🎉🎉🥳🥳🥳 🎉🎉",
+        imageName:"Contract with you and VELTE TECHNOLOGY SOLUTIONS",
+        imageLink:"",
+        popUpSources:[
+          {
+          name:"mails ",
+          link:"https://github.com/mrsuber/my-resume-cv"
+        }
+        ]
+      },
+    ]
+
+  },
+
+  {
+    stageName:"Stage10-Monetoring work",
+    // 1% = 7days
+    stagePercent:2.55,
+
+    about:"This is helps you monitor work starting form what you do to what you must do",
+    about2:"keeps track of number of employed days and number of work days",
+
+    aboutPopUp:[
+      {
+        name:"",
+        imageName:"",
+        imageLink:"",
+        popUpSources:[
+          {
+          name:"",
+          link:""
+        }
+        ]
+      },
+    ],
+    stageAnalysis:{
+      startWorkDay:"01 August 2022",
+
+    },
+    menu:[
+      {
+        name:'Day-01 01 August 2022 ',
+        detail:"design ticket master web application using figma",
+        detail1:"this website is to sell tickets for shows, online, it should have a dashboard for proper monitoring",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        detail7:"",
+        detail8:"",
+        ancorName:"Day-01 01 August 2022 ",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+
+
+    ],
+  },
+]
+},
+{
   companyName:"camsol",
   logo:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654968713/msbGeanologyProfilePics/camsole/Logo_Camsol_zpsphu.png",
   about:"IT PROGRAM ==>Even during their studies, young people in the IT degree program can deepen the application of their theoretical knowledge in practical projects through the support of international mentors. In cooperation with World Charity Tour, we support with obstacles, transfer knowledge and accompany successes",
@@ -2484,10 +2841,82 @@ ApplicationStage:[
         popup2Name:"",
         popup2:"",
       },
+      {
+        name:'Day-45 29 july 2022 ',
+        detail:"morning mettings at 8 am",
+        detail1:"talked with alden and issabel, member of my team",
+        detail2:"worked on the romis system design for warehouse",
+        detail3:"Updates on the Romis fation app",
+        detail4:"small update on the wine tasting ",
+        detail5:"got paid today 200000",
+        detail6:"",
+        detail7:"",
+        detail8:"",
+        detail9:"",
+        ancorName:"Day-45 29 july 2022",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'Day-46 30 july 2022 ',
+        detail:"weekend, ",
+        detail1:"started the new company project()",
+        detail2:"completed animation of the Romis wearhouse management",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        detail7:"",
+        detail8:"",
+        detail9:"",
+        ancorName:"Day-46 30 july 2022",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'Day-47 31 july 2022 ',
+        detail:"weekend, ",
+        detail1:"started the new company project()",
+        detail2:"",
+        detail3:"",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        detail7:"",
+        detail8:"",
+        detail9:"",
+        ancorName:"Day-47 31 july 2022",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
+      {
+        name:'Day-48 01 August 2022 ',
+        detail:"started today as a team leader ",
+        detail1:"1 implementing wine tasting , all issue are already set and @Alden Brown  and I are active programmers in this",
+        detail2:"2 set up Romis and get familiar with @Cesar Ndjoko and see if he can start implementing this,",
+        detail3:"demo the flow of Romis (frank) to see if that is what he wanted then set it up with @Issabel, she likes and is good in design she could work on the two projects simultanousely,(this is because she told me she is almost rounding up with Acteevent design)",
+        detail4:"",
+        detail5:"",
+        detail6:"",
+        detail7:"",
+        detail8:"",
+        detail9:"apply for internet",
+        ancorName:"Day-48 01 August 2022",
+        popup1Name:"",
+        popup1:"",
+        popup2Name:"",
+        popup2:"",
+      },
     ],
   },
 ]
-}
+},
 
 
 
