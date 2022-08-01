@@ -1518,6 +1518,38 @@ export const companyStructuralData = [
                   name:'Azimi Zubai Yakubu (Morgan Kehlani)',
                   photo:'https://ca.slack-edge.com/T03MZB4ML81-U03MZ8N6F51-103ec47f9e50-512',
                   title:'',
+                },
+                {
+                  name:'Mohamad Siysinyuy Banbong',
+                  photo:'https://avatars.githubusercontent.com/u/40745841?v=4',
+                  title:'Megaminds team lead(full stack developer)',
+                  report2:[
+                    {
+                      name:'Djomo NKwuatchou Brown Alden(Djomo Nkwuatchou Brown Alden)',
+                      photo:'https://avatars.githubusercontent.com/u/39649631?v=4',
+                      title:'full stack developer'
+                    },
+                    {
+                      name:'TAFFO N. ANGE K',
+                      photo:'',
+                      title:'full stack developer'
+                    },
+                    {
+                      name:'Asoh Yannick',
+                      photo:'',
+                      title:'full stack developer'
+                    },
+                    {
+                      name:'TATCHOUANG SIGNE ERIC WILFRIED',
+                      photo:'',
+                      title:'full stack developer'
+                    },
+                    {
+                      name:'NWOTEH MAGUNG ISSABEL',
+                      photo:'',
+                      title:'full stack developer'
+                    },
+                  ]
                 }
               ]
 
