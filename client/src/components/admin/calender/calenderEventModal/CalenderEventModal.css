@@ -7,32 +7,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #002fbc69;
+  z-index: 12;
 }
 
 .eventModal__form{
   background: white;
-  /* border-radius: 20px; */
+  border: 1px solid #396aff;
   shadow:var(--shadow);
   width: 25%;
+  margin-top: -18rem;
 
 }
 
 
 .eventModal__header{
-  background: gray;
+  background: #124c96;
   padding: 5px 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .eventModal__formbody{
   padding: 10px;
+  background: black;
 }
 
 .eventModal__formbodychild{
 display: grid;
-grid-template-columns: auto auto auto auto auto;
-
+grid-template-columns: 10% auto;
 }
 /* .calendermonth__wrapper{
   flex:1;
@@ -45,15 +49,37 @@ grid-template-columns: auto auto auto auto auto;
 .eventModal__formInput{
   padding: 2px;
   border: 0px;
-  color: gray;
+  color: #fff;
   font-weight: 600;
   padding-bottom: 5px;
   width: 100%;
   border-bottom: 2px solid black;
-  border-color: gray;
+  border-color: #fff;
+  background-color: black;
 }
 
 .eventModal__formInput:focus{
   outline: none;
-  border-bottom: blue solid 2px;
+  border-bottom: #0285c7 solid 2px;
+}
+
+.eventModal__header button{
+
+  display: flex;
+  margin: 0 8px;
+  padding: 0 10px;
+  border-radius: 5px;
+  color: var(--normal-text);
+  border: 1px solid var(--color-main);
+  background: var(--bg);
+  transition: .3s ease;
+  align-items: center;
+}
+.eventModal__header button:hover{
+  border:1px solid #00ffa4;
+  background: #137880 ;
+}
+
+.eventModal__Schedule_icon svg{
+  color: var(--color-main);
 }
