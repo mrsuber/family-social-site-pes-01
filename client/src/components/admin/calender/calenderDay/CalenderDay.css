@@ -2,6 +2,8 @@
   border: solid gray 2px;
   display:flex;
   flex-direction: column;
+  justify-content: center;
+align-items: center;
 }
 
 .calenderDay__text{
@@ -30,4 +32,25 @@
   padding: 10px;
   border: 2px solid var(--color-main);
 
+}
+
+.calenderDay__wrapper2{
+  
+  cursor: pointer;
+  width: 150px;
+  min-height: 50px;
+  height: 100%;
+  /* background-color: rgb(85, 43, 43); */
+ 
+}
+
+.calenderDay__event{
+padding: 10px;
+margin-right: 3px;
+color: #fff;
+border-radius: 10px;
+margin-bottom: 5px;
+white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
