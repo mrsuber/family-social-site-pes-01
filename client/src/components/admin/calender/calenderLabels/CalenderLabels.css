@@ -1,0 +1,18 @@
+.calender__lable_wapper{
+  float: left;
+  
+}
+.calender__lable_p{
+  color:gray;
+  font-size: bold;
+  margin-top: 10px;
+}
+.calender__lable_input{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.calender__lable_label{
+  
+}
