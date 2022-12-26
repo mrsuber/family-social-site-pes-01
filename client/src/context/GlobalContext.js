@@ -14,6 +14,10 @@ const initialState = {
   savedEvents:[],
   selectedEvent:null,
   setSelectedEvent:()=>{},
+  setLabels: () => {},
+  labels: [],
+  updateLabel:()=>{},
+  filteredEvents:[],
 }
 const GlobalContext = createContext(initialState)
 
