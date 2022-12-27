@@ -1,4 +1,4 @@
-
+import {cms10_eric, cms1_CEO,cms2_max,cms3_moh,cms4_Tobi, cms5_Alice, cms6_carine, cms7_Ngoran, cms8_Elma, cms9_Muma} from '../images'
 export const companyStructuralData = [
   // {
   //   companyName:"Google",
@@ -1404,7 +1404,7 @@ export const companyStructuralData = [
         people:[
           {
             name:'Selina Scherer-Braun ',
-            photo:'https://media-exp2.licdn.com/dms/image/C4E03AQFw7U08odgV2Q/profile-displayphoto-shrink_200_200/0/1653244317807?e=1662595200&v=beta&t=FEihz3H4yllPo4V2Tspmnv6dOsrtpIg__TzQRcjZiiQ',
+            photo:cms1_CEO,
             title:'Geschäftsführende Gesellschafterin(Managing Partner) | CEO',
             phoneNumber:'+49 173 9760212',
             email:"selina.scherer-braun@camsol.io",
@@ -1514,9 +1514,26 @@ export const companyStructuralData = [
             ],
 
               report1:[
+                // {
+                //   name:'Azimi Zubai Yakubu (Morgan Kehlani)',
+                //   photo:'https://ca.slack-edge.com/T03MZB4ML81-U03MZ8N6F51-103ec47f9e50-512',
+                //   title:'',
+                // },
                 {
-                  name:'Azimi Zubai Yakubu (Morgan Kehlani)',
-                  photo:'https://ca.slack-edge.com/T03MZB4ML81-U03MZ8N6F51-103ec47f9e50-512',
+                  name:'Maximilian Betz',
+                  photo:cms2_max,
+                  title:'Ask him ???????????????',
+                  BiographyP1:'ask him ?????????????????? or find out form slack',
+                  source:[
+                    {
+                      name:"unknown???????",
+                      link:"??????"
+                    }
+                  ]
+                },
+                {
+                  name:'Tobias Braun',
+                  photo:cms4_Tobi,
                   title:'',
                 },
                 {
@@ -1525,30 +1542,40 @@ export const companyStructuralData = [
                   title:'Megaminds team lead(full stack developer)',
                   report2:[
                     {
-                      name:'Djomo NKwuatchou Brown Alden(Djomo Nkwuatchou Brown Alden)',
-                      photo:'https://avatars.githubusercontent.com/u/39649631?v=4',
-                      title:'full stack developer'
+                      name:'Alice Ndeh',
+                      photo:cms5_Alice,
+                      title:'team lead',
+                      report3:[
+                        {
+                          name:'Ngang Muma',
+                          photo:cms9_Muma,
+                          title:''
+                        },
+                        {
+                          name:'Signe Eric',
+                          photo:cms10_eric,
+                          title:''
+                        },
+                      ]
                     },
                     {
-                      name:'TAFFO N. ANGE K',
-                      photo:'',
-                      title:'full stack developer'
+                      name:'Kongnyu Carine',
+                      photo:cms6_carine,
+                      title:'team lead',
+                      report3:[
+                        {
+                          name:'Ngoran Bedes Tomnyuy',
+                          photo:cms7_Ngoran,
+                          title:''
+                        },
+                        {
+                          name:'Elmander Elmer',
+                          photo:cms8_Elma,
+                          title:''
+                        },
+                      ]
                     },
-                    {
-                      name:'Asoh Yannick',
-                      photo:'',
-                      title:'full stack developer'
-                    },
-                    {
-                      name:'TATCHOUANG SIGNE ERIC WILFRIED',
-                      photo:'',
-                      title:'full stack developer'
-                    },
-                    {
-                      name:'NWOTEH MAGUNG ISSABEL',
-                      photo:'',
-                      title:'full stack developer'
-                    },
+                    
                   ]
                 }
               ]
@@ -1559,7 +1586,137 @@ export const companyStructuralData = [
       {
         name:"camsole Board of Directors",
         people:[
+          {
+            name:'Maximilian Betz',
+            photo:cms2_max,
+            title:'Ask him ???????????????',
+            BiographyP1:'ask him ?????????????????? or find out form slack',
+            source:[
+              {
+                name:"unknown???????",
+                link:"??????"
+              }
+            ]
+          },
+          {
 
+            name:'Selina Scherer-Braun ',
+            photo:cms1_CEO,
+            title:'Geschäftsführende Gesellschafterin(Managing Partner) | CEO',
+            phoneNumber:'+49 173 9760212',
+            email:"selina.scherer-braun@camsol.io",
+            website:"camsol.io",
+            address:"Black Forest, a large forested mountain range in south-west Germany",
+            linkedIn:"https://www.linkedin.com/in/schererbraun/",
+            Education:[
+              {
+
+                year:"Oct 2012 - Mar 2017",
+                certificateName:"Bachelor of Arts - BA, Linguistik - Schwerpunkt Computerlinguistik",
+                certificatePoints:"!!!!!!!!Uknown",
+                institutionName:"Ruhr University Bochum",
+              },
+
+
+
+
+            ],
+            languages:[
+              {
+                languageName:"English",
+                languagesPercent:"95%"
+              },
+              {
+                languageName:"German",
+                languagesPercent:"95%"
+              }
+            ],
+            BiographyP1:'Hi, my name is Selina, I am the CEO and founder of Camsol. I live in Saint George in Black Forest, Germany. My passions are social sustainability, computer linguistics and writing. I have two children and am married. In my free time I like to read, listen to music, play computer games or board games, write and work on craft projects.',
+            BiographyP2:"I also recieved some questions about my relation to Tobias.We are married since 2015 and have two children. I am the CEO of Camsol and Tobias supports us, but currently full-tim employed at Haufe Group.I hope in the future he will have more time to work with us",
+            BiographyP3:"",
+            BiographyP4:"",
+            BiographyP5:"",
+            Experience:[
+              {
+                yearsOfExperience:"May 2022 - Present",
+                placeOfExperience:"Camsol Technologies UG (haftungsbeschränkt) Full time",
+                locationOfExperience:"Germany",
+                areaOfExpertise:"Geschäftsführende Gesellschafterin(Managing Partner) | CEO",
+                descOfWorkDoneInAreaOfExpertise:"HR Leader, focused on providing strategic HR Partnering to Executive Vice President Applications. Focused on Optimising Business Performance, Executive Leadership, Organisation Design and Transformation. Responsible for leading a team of Senior HRBPs who align with Camsol based Executives (Senior Vice Presidents / Vice Presidents) within the License Organisation,",
+              },
+              {
+                yearsOfExperience:"Jan 2016 - Present",
+                placeOfExperience:"Zuhause( At home) · Full-time",
+                locationOfExperience:"Germany",
+                areaOfExpertise:"Mutter(mother) Full time",
+                descOfWorkDoneInAreaOfExpertise:"all description of a mother to kids",
+              },
+              {
+                yearsOfExperience:"Apr 2015 - Oct 2019",
+                placeOfExperience:"fothmind GmbH · Full-time",
+                locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
+                areaOfExpertise:"Developer and Consultant",
+                descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · Data Science · Python",
+              },
+              {
+                yearsOfExperience:"Jun 2016 - Feb 2017",
+                placeOfExperience:"bee security GmbH · Full-time",
+                locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
+                areaOfExpertise:"Technical Editor",
+                descOfWorkDoneInAreaOfExpertise:"",
+              },
+              {
+                yearsOfExperience:"Apr 2015 - Sep 2015",
+                placeOfExperience:"Ruhr-Universität Bochum · Part-time",
+                locationOfExperience:"",
+                areaOfExpertise:"Studentische Hilfskräfte(student assistants)",
+                descOfWorkDoneInAreaOfExpertise:"Skills: Data Science · Python",
+              },
+              {
+                yearsOfExperience:"ul 2014 - Dec 2014 ",
+                placeOfExperience:"GoToSec GmbH · Full-time",
+                locationOfExperience:"",
+                areaOfExpertise:"SAP Developer",
+                descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · ABAP · Groovy · Python",
+              },
+
+
+            ],
+            professionalSkills:[
+              {
+
+                nameOfSkill:"SAP Developer at GoToSec GmbH",
+                persentageOfSkills:"95%",
+              },
+
+
+            ],
+            Interest:[
+              {
+                // iconOfInterest:"",
+                // nameOfInterest:"",
+              }
+            ],
+            source:[
+              {
+                name:"LinkedIn",
+                link:"https://www.linkedin.com/in/schererbraun/"
+              },
+              {
+                name:"Notion",
+                link:"https://www.notion.so/camsol/44d1d0a072624df9a5ab29d6bbc7b20a?v=c3a189c055474561b63f6a0a7741121e"
+              },
+
+
+            ],
+
+          },
+          {
+            name:'Mohamad Siysinyuy Banbong',
+                  photo:cms3_moh,
+                  title:'Megaminds team lead(full stack developer)',
+                  
+          },
         ]
       }
     ],

@@ -75,6 +75,7 @@ export {default as CalenderHeader} from './admin/calender/calenderHeader/Calende
 export {default as CalenderLabels} from './admin/calender/calenderLabels/CalenderLabels'
 export {default as AdminProjectExpansionPreviewPopupTimetable} from './admin/adminProjectExpansionPreviewPopupTimetable/AdminProjectExpansionPreviewPopupTimetable'
 export {default as AdminProjectExpansionSturcturalPeoplePopUpDetail} from './admin/adminProjectExpansionSturcturalPeoplePopUpDetail/AdminProjectExpansionSturcturalPeoplePopUpDetail'
+export {default as AdminProjectExpansionGeneralProfile} from './admin/adminProjectExpansionGeneralProfile/AdminProjectExpansionGeneralProfile'
 export {default as AdminSturctureProjectExpansionDetails} from './admin/adminSturctureProjectExpansionDetails/AdminSturctureProjectExpansionDetails'
 export {default as AdminSturcturalProjectExpansionPopUpDetail} from './admin/adminSturcturalProjectExpansionPopUpDetail/AdminSturcturalProjectExpansionPopUpDetail'
 export {default as AdminApplicationStagePreviewPopup} from './admin/application/adminApplicationStagePreviewPopup/AdminApplicationStagePreviewPopup'

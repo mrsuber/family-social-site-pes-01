@@ -38,3 +38,21 @@ export {default as sc3} from './school/3.jpg'
 export {default as sc4} from './school/4.jpg'
 export {default as sc5} from './school/5.jpeg'
 export {default as sc6} from './school/6.jpg'
+
+
+//camsole workers
+export {default as camsol_logo1} from './camsol/camsol_logo.png'
+export {default as cms1_CEO} from './camsol/CEO-selina.jpeg'
+export {default as cms2_max} from './camsol/maximilia.png'
+export {default as cms3_moh} from './camsol/Mohamad.jpeg'
+export {default as cms4_Tobi} from './camsol/Tobias.jpeg'
+export {default as cms5_Alice} from './camsol/Alice.png'
+export {default as cms6_carine} from './camsol/Carine.jpeg'
+export {default as cms7_Ngoran} from './camsol/Ngoran.jpeg'
+export {default as cms8_Elma} from './camsol/elma.jpeg'
+export {default as cms9_Muma} from './camsol/muma.jpeg'
+export {default as cms10_eric} from './camsol/eric.jpeg'
+
+
+//velte workers
+export {default as velte_logo} from './velteTehc/Screen Shot 2022-12-27 at 8.35.27 PM.png'
