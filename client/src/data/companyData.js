@@ -1,5 +1,6 @@
 import logo2 from '../images/admin/google_logo.jpg'
 import logo3 from '../images/admin/Oracle_Logo.png'
+import {camsol_logo1,velte_logo} from '../images'
 export const companyData = [
   {
     companyName:"Google",
@@ -1267,7 +1268,7 @@ ApplicationStage:[
 },
 {
   companyName:"VELTE TECHNOLOGY SOLUTIONS",
-  logo:"",
+  logo:velte_logo,
   about:"",
   about2:"",
   about3:"",
@@ -1624,7 +1625,7 @@ ApplicationStage:[
 },
 {
   companyName:"camsol",
-  logo:"https://res.cloudinary.com/msb-geneasocial/image/upload/v1654968713/msbGeanologyProfilePics/camsole/Logo_Camsol_zpsphu.png",
+  logo:camsol_logo1,
   about:"IT PROGRAM ==>Even during their studies, young people in the IT degree program can deepen the application of their theoretical knowledge in practical projects through the support of international mentors. In cooperation with World Charity Tour, we support with obstacles, transfer knowledge and accompany successes",
   about2:"EMPLOYMENT AFTER UNIVERSITY ==>We offer you a career start in a sustainable position for a German company directly after graduation. This way you will receive a good starting salary and can gain experience. You will be accompanied in your growth and take responsibility.",
   about3:"INTERNATIONAL PROJECTS ==>The projects with our international partners allow you to interact directly with clients and potential employers. In this way, you can overcome hurdles and concerns and thus increase your chances of being hired.",

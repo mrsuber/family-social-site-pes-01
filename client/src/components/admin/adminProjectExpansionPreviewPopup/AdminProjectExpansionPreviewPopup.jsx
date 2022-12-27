@@ -5,8 +5,11 @@ import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
 import ContextWrapper from '../../../context/ContextWrapper'
 
 import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,AdminProjectExpansionPreviewPopupTimetable} from '../../../components'
+import { useSelector } from 'react-redux';
 
 const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnStructuralDetail,setCompanyName}) => {
+    const {auth} = useSelector(state=>state)
+
     const [unclearPopup,setUnclearPopup] = useState(false)
     const [analysisData,setAnalysisData]=useState(null)
     const[depPopup, setDepPopup] = useState(false)
@@ -29,7 +32,11 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
         setDepPopup(true)
       }
 
-
+      const checkWhoseProfileToPopUp = ()=>{
+       if(auth?.user?.role === "general0"){
+        console.log("this is the one")
+       }
+      }
   return (
     <>{
       onView===false
@@ -83,7 +90,7 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
               <ul className="pe1__ul">
               <li className="pe1__ul-li" onClick={()=>setOnView2(true)}><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Timetable`}</span></div></li>
 
-                <li className="pe1__ul-li"><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Profile`}</span></div></li>
+                <li className="pe1__ul-li" onClick={checkWhoseProfileToPopUp}><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Profile`}</span></div></li>
                 <li className="pe1__ul-li"><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Achievement`}</span></div></li>
                 <li className="pe1__ul-li"><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Todos`}</span></div></li>
 
