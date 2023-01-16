@@ -1,4 +1,4 @@
-import {cms10_eric, cms1_CEO,cms2_max,cms3_moh,cms4_Tobi, cms5_Alice, cms6_carine, cms7_Ngoran, cms8_Elma, cms9_Muma} from '../images'
+import {cms10_eric, cms11_leo, cms12_Delor, cms13_jubal, cms14_steph, cms15_jeanne, cms16_Jume, cms17_francktch, cms18_david, cms19_johanah, cms1_CEO,cms20_Ramish,cms21_simon,cms22_francesBeri,cms2_max,cms3_moh,cms4_Tobi, cms5_Alice, cms6_carine, cms7_Ngoran, cms8_Elma, cms9_Muma} from '../images'
 export const companyStructuralData = [
   // {
   //   companyName:"Google",
@@ -1400,7 +1400,74 @@ export const companyStructuralData = [
     companyHeadOfficeLocation:"Headquartered in Stockholm, Uppland, Sweden  GMT(+2)",
     companyLevel1:[
       {
-        name:"camsol Executive Leadership",
+        name:"Product",
+        people:[
+          {
+            name:'Leonardo Bornhäußer',
+            photo:cms11_leo,
+            title:'Ask him ???????????????',
+            BiographyP1:'ask him ?????????????????? or find out form slack',
+            source:[
+              {
+                name:"unknown???????",
+                link:"??????"
+              }
+            ],
+            report1:[
+              {
+                name:'Nkamibo Delor',
+                photo:cms12_Delor,
+                title:'',
+                report2:[
+                  {
+                    name:'Mouaffo Alane Johan',
+                    photo:cms19_johanah,
+                    title:'',
+                  },
+                  {
+                    name:'Kapgang Landry',
+                    photo:'',
+                    title:'',
+                  },
+                  {
+                    name:'Ramish Budzi',
+                    photo:cms20_Ramish,
+                    title:'',
+                  },
+                  {
+                    name:'Bassah Nahjela',
+                    photo:'',
+                    title:'',
+                  },
+                  {
+                    name:'Ngafeeson simon',
+                    photo:cms21_simon,
+                    title:'',
+                  },
+                  {
+                    name:'Francis Berinyuy',
+                    photo:cms22_francesBeri,
+                    title:'',
+                  },
+                ]
+              },
+              {
+                name:'Jubal Prospère',
+                photo:cms13_jubal,
+                title:'',
+              },
+              {
+                name:'Stephanie Wainachi',
+                photo:cms14_steph,
+                title:'',
+              },
+            ]
+          },
+         
+        ],
+      },
+      {
+        name:"Brand & Value",
         people:[
           {
             name:'Selina Scherer-Braun ',
@@ -1520,68 +1587,107 @@ export const companyStructuralData = [
                 //   title:'',
                 // },
                 {
-                  name:'Maximilian Betz',
-                  photo:cms2_max,
-                  title:'Ask him ???????????????',
-                  BiographyP1:'ask him ?????????????????? or find out form slack',
-                  source:[
-                    {
-                      name:"unknown???????",
-                      link:"??????"
-                    }
-                  ]
-                },
-                {
-                  name:'Tobias Braun',
-                  photo:cms4_Tobi,
-                  title:'',
-                },
-                {
-                  name:'Mohamad Siysinyuy Banbong',
-                  photo:'https://avatars.githubusercontent.com/u/40745841?v=4',
-                  title:'Megaminds team lead(full stack developer)',
+                  name:'Kongnyu Carine',
+                  photo:cms6_carine,
+                  title:'team lead',
                   report2:[
                     {
-                      name:'Alice Ndeh',
-                      photo:cms5_Alice,
-                      title:'team lead',
-                      report3:[
-                        {
-                          name:'Ngang Muma',
-                          photo:cms9_Muma,
-                          title:''
-                        },
-                        {
-                          name:'Signe Eric',
-                          photo:cms10_eric,
-                          title:''
-                        },
-                      ]
+                      name:'Ngoran Bedes Tomnyuy',
+                      photo:cms7_Ngoran,
+                      title:''
                     },
                     {
-                      name:'Kongnyu Carine',
-                      photo:cms6_carine,
-                      title:'team lead',
-                      report3:[
-                        {
-                          name:'Ngoran Bedes Tomnyuy',
-                          photo:cms7_Ngoran,
-                          title:''
-                        },
-                        {
-                          name:'Elmander Elmer',
-                          photo:cms8_Elma,
-                          title:''
-                        },
-                      ]
+                      name:'Elmander Elmer',
+                      photo:cms8_Elma,
+                      title:''
                     },
-                    
                   ]
-                }
+                },
+                {
+                  name:'Jeanne Monstadt',
+                  photo:cms15_jeanne,
+                  title:''
+                },
+                
               ]
 
           }
-        ],
+        ]
+      },
+      {
+        name:"Operations & Technologies",
+        people:[
+          {
+            name:'Tobias Braun',
+            photo:cms4_Tobi,
+            title:'CTO and CHRO',
+            report1:[
+              {
+                name:'Jume Brice',
+                photo:cms16_Jume,
+                title:'',
+                
+              },
+              {
+                name:'Franck Tchamo',
+                photo:cms17_francktch,
+                title:'',
+                
+              },
+            ]
+          },
+        ]
+      },
+      {
+        name:"Execution & Finance",
+        people:[
+          {
+            name:'Maximilian Betz',
+            photo:cms2_max,
+            title:'Managing Director, responsible for Legal and Finance and Holding Management',
+            BiographyP1:'ask him ?????????????????? or find out form slack',
+            source:[
+              {
+                name:"unknown???????",
+                link:"??????"
+              }
+            ],
+            report1:[
+              {
+                name:'Mohamad Siysinyuy Banbong',
+                photo:'https://avatars.githubusercontent.com/u/40745841?v=4',
+                title:'Megaminds team lead(full stack developer)',
+                report2:[
+                  {
+                    name:'Alice Ndeh',
+                    photo:cms5_Alice,
+                    title:'team lead',
+                    report3:[
+                      {
+                        name:'Ngang Muma',
+                        photo:cms9_Muma,
+                        title:''
+                      },
+                      {
+                        name:'Signe Eric',
+                        photo:cms10_eric,
+                        title:''
+                      },
+                    ]
+                  },
+                  
+                  
+                ]
+              },
+              {
+                name:'David',
+                photo:cms18_david,
+                title:'',
+                
+              },
+            ]
+          },
+        ]
       },
       {
         name:"camsole Board of Directors",
