@@ -12,6 +12,7 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
 
     const [unclearPopup,setUnclearPopup] = useState(false)
     const [analysisData,setAnalysisData]=useState(null)
+    const [showGeneral0Profile,setShowGeneral0Profile] =  useState(false)
     const[depPopup, setDepPopup] = useState(false)
     const[depData,setDepData] = useState(null)
     const [onView2,setOnView2]=useState(false)
@@ -34,7 +35,7 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
 
       const checkWhoseProfileToPopUp = ()=>{
        if(auth?.user?.role === "general0"){
-        console.log("this is the one")
+        setShowGeneral0Profile(true)
        }
       }
   return (
