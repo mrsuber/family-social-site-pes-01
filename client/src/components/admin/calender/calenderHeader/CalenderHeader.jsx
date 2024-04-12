@@ -20,7 +20,7 @@ const CalenderHeader = ({data}) =>{
   return(
     <div className="CalenderHeader__wrapper">
       <img src={data.logo} alt="logo" className=" CalenderHeader__logo"/>
-      <h1 className="CalenderHeader__heading">Calendar</h1>
+      <h1 className="CalenderHeader__heading">{data.title} Calendar</h1>
       <button className="CalenderHeader__button" onClick={handleReset}>Today</button>
       <button className="CalenderHeader__button2" onClick={handlePrevMonth}>
         <span><img className="CalenderHeader__img2" src={arrow}/></span>

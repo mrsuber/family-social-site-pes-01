@@ -1,4 +1,4 @@
-import {cms10_eric, cms11_leo, cms12_Delor, cms13_jubal, cms14_steph, cms15_jeanne, cms16_Jume, cms17_francktch, cms18_david, cms19_johanah, cms1_CEO,cms20_Ramish,cms21_simon,cms22_francesBeri,cms2_max,cms3_moh,cms4_Tobi, cms5_Alice, cms6_carine, cms7_Ngoran, cms8_Elma, cms9_Muma} from '../images'
+import {camsol_logo1, cms10_eric, cms11_leo, cms12_Delor, cms13_jubal, cms14_steph, cms15_jeanne, cms16_Jume, cms17_francktch, cms18_david, cms19_johanah, cms1_CEO,cms20_Ramish,cms21_simon,cms22_francesBeri,cms23_Schmidt,cms24_Herbert,cms25_Stephen,cms2_max,cms3_moh,cms4_Tobi, cms5_Alice, cms6_carine, cms7_Ngoran, cms8_Elma, cms9_Muma} from '../images'
 export const companyStructuralData = [
   // {
   //   companyName:"Google",
@@ -1400,431 +1400,946 @@ export const companyStructuralData = [
     companyHeadOfficeLocation:"Headquartered in Stockholm, Uppland, Sweden  GMT(+2)",
     companyLevel1:[
       {
-        name:"Product",
-        people:[
+        name:"CAMSOL GERMANY",
+        people:[ 
+          
           {
-            name:'Leonardo Bornhäußer',
-            photo:cms11_leo,
-            title:'Ask him ???????????????',
-            BiographyP1:'ask him ?????????????????? or find out form slack',
-            source:[
-              {
-                name:"unknown???????",
-                link:"??????"
-              }
-            ],
+            name:"Friends",
+            photo:camsol_logo1,
             report1:[
               {
-                name:'Nkamibo Delor',
-                photo:cms12_Delor,
-                title:'',
+                name:"Bylle Bauer"
+              },
+              {
+                name:"Daniel Antoni"
+              },
+              {
+                name:"Patrick Mitlacher"
+              },
+              {
+                name:"Andreas Rätzel"
+              },
+              {
+                name:"Frederick Hofmann"
+              },
+              {
+                name:"Tobias Braun"
+              },
+              
+            ]
+          },
+          {
+            name:"Operations & Technologies",
+            photo:camsol_logo1,
+            report1:[
+              {
+                name:'Tobias Braun',
+                photo:cms4_Tobi,
+                title:'CTO and CHRO',
                 report2:[
                   {
-                    name:'Mouaffo Alane Johan',
-                    photo:cms19_johanah,
-                    title:'',
+                    name:"Product & Design",
+                    photo:camsol_logo1,
+                    report3:[
+                      {
+                        name:'Leonardo Bornhäußer',
+                        photo:cms11_leo,
+                        title:'Ask him ???????????????',
+                        BiographyP1:'ask him ?????????????????? or find out form slack',
+                        source:[
+                          {
+                            name:"unknown???????",
+                            link:"??????"
+                          }
+                        ],
+                        report4:[
+                          {name:"Design",
+                            photo:camsol_logo1,
+                            report5:[
+                              {name:"Design Team 1",
+                            photo:camsol_logo1,
+                              report6:[
+                                {
+                                  name:'Alane Johan',
+                                  photo:cms19_johanah,
+                                  title:'',
+                                  report7:[
+                                    {
+                                      name:'Ngumih Fien Mbimsi-mbom',
+                                      photo:"",
+                                      title:'',
+                                    },
+                                    {
+                                      name:'Djiabi Angoh Maggy Ange',
+                                      layoff:true,
+                                      photo:'',
+                                      title:'',
+                                    },
+                                    {
+                                      name:'Kapgang Djampou Ralph Landry',
+                                      photo:"",
+                                      title:'',
+                                    },
+                                    {
+                                      name:'Nahjela Roselyn Bassah',
+                                      photo:'',
+                                      title:'',
+                                    },
+                                    
+                                  ]
+                                },
+                              ]
+                          },
+                          {name:"Design Team 2",
+                            photo:camsol_logo1,
+                              report6:[
+                                 {
+                                name:'Nkamibo Delor',
+                                photo:cms12_Delor,
+                                title:'',
+                                report7:[
+                                  
+                                  {
+                                    name:'Nwoteh Magung Issabel',
+                                    photo:'',
+                                    title:'',
+                                  },
+                                  {
+                                    name:'Foncham Bernard Bassah',
+                                    photo:"",
+                                    title:'',
+                                  },
+                                  {
+                                    name:'Francis Berinyuy',
+                                    photo:cms22_francesBeri,
+                                    title:'',
+                                  },
+                                ]
+                              },
+                              ]
+                          },
+                             
+                            ]
+                          },
+
+                          {name:"Social Media",
+                          photo:camsol_logo1,
+                          report5:[
+                            {
+                              name:'Stephanie Wainachi',
+                              photo:cms14_steph,
+                              title:'',
+                              report6:[
+                                {
+                                  name:"Regine Nkombong Cyrille",
+                                  layoff:true
+                                },
+                                {
+                                  name:"Gueguim Sonna Zitha Unelle"
+                                },
+                                {
+                                  name:"Meli Tchouala Imelda",
+                                  layoff:true
+                                },
+                                {
+                                  name:"Ngouleu Noumbissi Tertullien",
+                                  warning:true
+                                }
+                              ]
+                            },
+                          ]
+                        },
+
+                        {name:"Product",
+                        photo:camsol_logo1,
+                        report5:[
+                          {
+                            name:'Jubal Prospère',
+                            photo:cms13_jubal,
+                            title:'',
+                            report6:[
+                              {name:"Ulrich Djiofack",
+                              uknownPerson:true,
+                            },
+                            {
+                              name:"Findo Peter Kampete"
+                            },
+                            {
+                              name:"Messi Innocent Rostand"
+                            },
+                            {
+                              name:"Mugri Ndeh Frunwi"
+                            }
+                            ]
+                          },
+                        ]
+                      },
+
+
+                         
+                          
+                          
+                        ]
+                      },
+                     
+                    ],
                   },
                   {
-                    name:'Kapgang Landry',
-                    photo:'',
-                    title:'',
+                    name:"Brand & Value",
+                    photo:camsol_logo1,
+                    report3:[
+                      {
+                        name:'Selina Scherer-Braun ',
+                        photo:cms1_CEO,
+                        title:'Geschäftsführende Gesellschafterin(Managing Partner) | CEO',
+                        phoneNumber:'+49 173 9760212',
+                        email:"selina.scherer-braun@camsol.io",
+                        website:"camsol.io",
+                        address:"Black Forest, a large forested mountain range in south-west Germany",
+                        linkedIn:"https://www.linkedin.com/in/schererbraun/",
+                        Education:[
+                          {
+            
+                            year:"Oct 2012 - Mar 2017",
+                            certificateName:"Bachelor of Arts - BA, Linguistik - Schwerpunkt Computerlinguistik",
+                            certificatePoints:"!!!!!!!!Uknown",
+                            institutionName:"Ruhr University Bochum",
+                          },
+            
+            
+            
+            
+                        ],
+                        languages:[
+                          {
+                            languageName:"English",
+                            languagesPercent:"95%"
+                          },
+                          {
+                            languageName:"German",
+                            languagesPercent:"95%"
+                          }
+                        ],
+                        BiographyP1:'Hi, my name is Selina, I am the CEO and founder of Camsol. I live in Saint George in Black Forest, Germany. My passions are social sustainability, computer linguistics and writing. I have two children and am married. In my free time I like to read, listen to music, play computer games or board games, write and work on craft projects.',
+                        BiographyP2:"I also recieved some questions about my relation to Tobias.We are married since 2015 and have two children. I am the CEO of Camsol and Tobias supports us, but currently full-tim employed at Haufe Group.I hope in the future he will have more time to work with us",
+                        BiographyP3:"",
+                        BiographyP4:"",
+                        BiographyP5:"",
+                        Experience:[
+                          {
+                            yearsOfExperience:"May 2022 - Present",
+                            placeOfExperience:"Camsol Technologies UG (haftungsbeschränkt) Full time",
+                            locationOfExperience:"Germany",
+                            areaOfExpertise:"Geschäftsführende Gesellschafterin(Managing Partner) | CEO",
+                            descOfWorkDoneInAreaOfExpertise:"HR Leader, focused on providing strategic HR Partnering to Executive Vice President Applications. Focused on Optimising Business Performance, Executive Leadership, Organisation Design and Transformation. Responsible for leading a team of Senior HRBPs who align with Camsol based Executives (Senior Vice Presidents / Vice Presidents) within the License Organisation,",
+                          },
+                          {
+                            yearsOfExperience:"Jan 2016 - Present",
+                            placeOfExperience:"Zuhause( At home) · Full-time",
+                            locationOfExperience:"Germany",
+                            areaOfExpertise:"Mutter(mother) Full time",
+                            descOfWorkDoneInAreaOfExpertise:"all description of a mother to kids",
+                          },
+                          {
+                            yearsOfExperience:"Apr 2015 - Oct 2019",
+                            placeOfExperience:"fothmind GmbH · Full-time",
+                            locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
+                            areaOfExpertise:"Developer and Consultant",
+                            descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · Data Science · Python",
+                          },
+                          {
+                            yearsOfExperience:"Jun 2016 - Feb 2017",
+                            placeOfExperience:"bee security GmbH · Full-time",
+                            locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
+                            areaOfExpertise:"Technical Editor",
+                            descOfWorkDoneInAreaOfExpertise:"",
+                          },
+                          {
+                            yearsOfExperience:"Apr 2015 - Sep 2015",
+                            placeOfExperience:"Ruhr-Universität Bochum · Part-time",
+                            locationOfExperience:"",
+                            areaOfExpertise:"Studentische Hilfskräfte(student assistants)",
+                            descOfWorkDoneInAreaOfExpertise:"Skills: Data Science · Python",
+                          },
+                          {
+                            yearsOfExperience:"ul 2014 - Dec 2014 ",
+                            placeOfExperience:"GoToSec GmbH · Full-time",
+                            locationOfExperience:"",
+                            areaOfExpertise:"SAP Developer",
+                            descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · ABAP · Groovy · Python",
+                          },
+            
+            
+                        ],
+                        professionalSkills:[
+                          {
+            
+                            nameOfSkill:"SAP Developer at GoToSec GmbH",
+                            persentageOfSkills:"95%",
+                          },
+            
+            
+                        ],
+                        Interest:[
+                          {
+                            // iconOfInterest:"",
+                            // nameOfInterest:"",
+                          }
+                        ],
+                        source:[
+                          {
+                            name:"LinkedIn",
+                            link:"https://www.linkedin.com/in/schererbraun/"
+                          },
+                          {
+                            name:"Notion",
+                            link:"https://www.notion.so/camsol/44d1d0a072624df9a5ab29d6bbc7b20a?v=c3a189c055474561b63f6a0a7741121e"
+                          },
+            
+            
+                        ],
+            
+                          report4:[
+                            // {
+                            //   name:'Azimi Zubai Yakubu (Morgan Kehlani)',
+                            //   photo:'https://ca.slack-edge.com/T03MZB4ML81-U03MZ8N6F51-103ec47f9e50-512',
+                            //   title:'',
+                            // },
+                            {name:"Data Science",
+                            photo:camsol_logo1,
+                            report5:[
+                              {
+                              name:'Kongnyu Carine',
+                              photo:cms6_carine,
+                              title:'team lead',
+                              report6:[
+                                {
+                                  name:'Ngoran Bedes Tomnyuy',
+                                  photo:cms7_Ngoran,
+                                  title:''
+                                },
+                                {
+                                  name:'Elmander Elmer',
+                                  photo:cms8_Elma,
+                                  title:''
+                                },
+                                {
+                                  name:"Tanjoh Noel Nchong"
+                                },
+                                {
+                                  name:"Mopock Talla Ceverine Thalitha",
+                                  intern:true,
+                                  promotion:true,
+                                  promotionDate:"01/09/2023",
+                                  promotionTo:"fullstack"
+                                }
+                              ]
+                            },
+                            ]
+                          },
+
+                          {name:"Brand",
+                            photo:camsol_logo1,
+                            report5:[
+                              {
+                                name:'Alke Schmidt',
+                                photo:cms23_Schmidt,
+                                title:'team lead',
+                              }
+                            ]
+                          },
+                            
+                            
+                            
+                          ]
+            
+                      }
+                    ]
                   },
                   {
-                    name:'Ramish Budzi',
-                    photo:cms20_Ramish,
-                    title:'',
+                    name:"Cyber Security",
+                    photo:camsol_logo1,
+                    report3:[
+                      {
+                        name:'Simon Ngafeeson',
+                        photo:cms21_simon,
+                        title:'team lead',
+                        BiographyP1:'ask him ?????????????????? or find out form slack',
+                        source:[
+                          {
+                            name:"unknown???????",
+                            link:"??????"
+                          }
+                        ],
+                        report4:[
+                          {
+                            name:"Fuanjia Nkengfua Christopher"
+                          },
+                          {
+                            name:"Fondanui Kelly Tasha",
+                            layoff:true
+                          },
+                          {
+                            name:"Fotsop Buea Luca"
+                          },
+                          {
+                            name:"Aze Desmond Nembo"
+                          },
+                          {
+                            name:"Fondanui Kelly Tasha",
+                            layoff:true
+                          },
+                          {
+                            name:"Tambe Salome Ntoh",
+                            layoff:true
+                          }
+                        ]
+                      },
+                     
+                    ],
                   },
                   {
-                    name:'Bassah Nahjela',
-                    photo:'',
-                    title:'',
+                    name:"Director of Engineering",
+                    photo:camsol_logo1,
+                    report3:[
+                      {
+                        name:"Frontend of Engineering",
+                        photo:camsol_logo1,
+                        report4:[
+                          {
+                            name:'Jume Brice',
+                            photo:cms16_Jume,
+                            title:'Ask him ???????????????',
+                            BiographyP1:'ask him ?????????????????? or find out form slack',
+                            source:[
+                              {
+                                name:"unknown???????",
+                                link:"??????"
+                              }
+                            ],
+                            report5:[
+                              {
+                                name:'FrontEnd Team 1',
+                                photo:camsol_logo1,
+                                report6:[
+                                  {
+                                    name:"Lowe Silcanus",
+                                    report7:[
+                                      {
+                                        name:"Acha Achubang",
+                                        warning:true
+                                      },
+                                      {
+                                        name:'Nkenfa Nkombong Brandon'
+                                      },
+                                      {
+                                        name:'Queen Laure Ngum Nfongeh'
+                                      },
+                                      {
+                                        name:"Chu Edwin Gah"
+                                      },
+                                      {
+                                        name:"Wuyika Serge Kevin"
+                                      },
+                                      {
+                                        name:"Carine Gije Nfor"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                name:'FrontEnd Team 2',
+                                photo:camsol_logo1,
+                                report6:[
+                                  {
+                                    name:"Prince Junior",
+                                    report7:[
+                                        {
+                                          name:"Apoh Prince Eldrige"
+                                        },
+                                        {
+                                          name:"Atem Randy Asong"
+                                        },
+                                        {
+                                          name:"Fomonyuytar Joseph"
+                                        },
+                                        {
+                                          name:"Bradon Mbianou",
+                                          uknownPerson:true
+                                        },
+                                        {
+                                          name:"Nchia Emmanuela Ekei"
+                                        },
+                                        {
+                                          name:"Nkwetakem Tabo Bruno"
+                                        }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                         
+                        ],
+                      },
+
+                      {
+                        name:"Backend of Engineering",
+                        photo:camsol_logo1,
+                        report4:[
+                          {
+                            name:'Nnouka Stephen',
+                            photo:cms25_Stephen,
+                            title:'Ask him ???????????????',
+                            BiographyP1:'ask him ?????????????????? or find out form slack',
+                            source:[
+                              {
+                                name:"unknown???????",
+                                link:"??????"
+                              }
+                            ],
+                            report5:[
+                              {
+                                name:'Backend Team 1',
+                                photo:camsol_logo1,
+                                report6:[
+                                  {
+                                    name:"Nkoa Chistophe",
+                                    report7:[
+                                      {
+                                        name:'Nde Che Lucien Ngwa',
+                                        layoff:true
+                                      },
+                                      {
+                                        name:'Norbert Ndip Etta',
+                                      },
+                                      {
+                                        name:'Peng Boris Akebuon',
+                                      },
+                                      {
+                                        name:'Brian Atanga Muma',
+                                      },
+                                      {
+                                        name:'Samuel Tiokeng',
+                                        uknownPerson:true
+                                      },
+                                      {
+                                        name:'Domou Namou Brice Armel',
+                                      },
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                name:'Backend Team 2',
+                                photo:camsol_logo1,
+                                report6:[
+                                  {
+                                    name:"Fru Boris",
+                                    report7:[
+                                        {
+                                          name:"Billy Hans Weno Ndum",
+                                          layoff:true
+                                        },
+                                        {name:"Nji Kebei Daniel Koum",
+                                        layoff:true
+                                      },
+                                        {name:"Djomo Nkwuatchou Brown Alden"},
+                                        {name:"Asonglefac Millenium Nzefe"},
+                                        {name:"Sonwa Boris Roberto"}
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                         
+                        ],
+                      },
+                     
+                     
+                    ],
                   },
                   {
-                    name:'Ngafeeson simon',
-                    photo:cms21_simon,
-                    title:'',
-                  },
-                  {
-                    name:'Francis Berinyuy',
-                    photo:cms22_francesBeri,
-                    title:'',
+                    name:"quality and assurance",
+                    photo:camsol_logo1,
+                    layoff:true,
+                    report3:[
+                      {
+                        name:'Herbert Mbangzieu',
+                        photo:cms24_Herbert,
+                        title:'team lead',
+                        transfered:true,
+                        BiographyP1:'ask him ?????????????????? or find out form slack',
+                        source:[
+                          {
+                            name:"unknown???????",
+                            link:"??????"
+                          }
+                        ],
+                        report4:[
+                          {
+                            name:'Yannick Njume',
+                            layoff:true,
+                          },
+                          {
+                            name:'Asonganyi Rouclec',
+                          }
+                        ]
+                      },
+                     
+                    ],
                   },
                 ]
               },
+            ]
+          },
+          {
+            name:"Execution & Finance",
+            photo:camsol_logo1,
+            report1:[
               {
-                name:'Jubal Prospère',
-                photo:cms13_jubal,
-                title:'',
-              },
-              {
-                name:'Stephanie Wainachi',
-                photo:cms14_steph,
-                title:'',
+                name:'Maximilian Betz',
+                photo:cms2_max,
+                title:'Managing Director, responsible for Legal and Finance and Holding Management',
+                BiographyP1:'ask him ?????????????????? or find out form slack',
+                source:[
+                  {
+                    name:"unknown???????",
+                    link:"??????"
+                  }
+                ],
+                report2:[
+                  {
+                    name:'Mohamad Siysinyuy Banbong',
+                    photo:'https://avatars.githubusercontent.com/u/40745841?v=4',
+                    title:'Country Manager',
+                    report3:[
+                      {
+                        name:'Alice Ndeh',
+                        layoff:true,
+                        photo:cms5_Alice,
+                        title:'team lead',
+                        report4:[
+                          {
+                            name:'Ngang Muma',
+                            photo:cms9_Muma,
+                            layoff:true,
+                            title:''
+                          },
+                          {
+                            name:'Signe Eric',
+                            photo:cms10_eric,
+                            layoff:true,
+                            title:''
+                          },
+                        ]
+                      },
+                      
+                      
+                    ]
+                  },
+                  {
+                    name:'David',
+                    photo:cms18_david,
+                    title:'Sales',
+                    
+                  },
+                  {
+                    name:'Jeanne Monstadt',
+                    photo:cms15_jeanne,
+                    title:'Investments'
+                  },
+                ]
               },
             ]
           },
-         
-        ],
-      },
-      {
-        name:"Brand & Value",
-        people:[
+          
+          
+          
           {
-            name:'Selina Scherer-Braun ',
-            photo:cms1_CEO,
-            title:'Geschäftsführende Gesellschafterin(Managing Partner) | CEO',
-            phoneNumber:'+49 173 9760212',
-            email:"selina.scherer-braun@camsol.io",
-            website:"camsol.io",
-            address:"Black Forest, a large forested mountain range in south-west Germany",
-            linkedIn:"https://www.linkedin.com/in/schererbraun/",
-            Education:[
+            name:"Board of Directors",
+            photo:camsol_logo1,
+            report1:[
               {
-
-                year:"Oct 2012 - Mar 2017",
-                certificateName:"Bachelor of Arts - BA, Linguistik - Schwerpunkt Computerlinguistik",
-                certificatePoints:"!!!!!!!!Uknown",
-                institutionName:"Ruhr University Bochum",
-              },
-
-
-
-
-            ],
-            languages:[
-              {
-                languageName:"English",
-                languagesPercent:"95%"
+                name:'Maximilian Betz',
+                photo:cms2_max,
+                title:'Ask him ???????????????',
+                BiographyP1:'ask him ?????????????????? or find out form slack',
+                source:[
+                  {
+                    name:"unknown???????",
+                    link:"??????"
+                  }
+                ]
               },
               {
-                languageName:"German",
-                languagesPercent:"95%"
-              }
-            ],
-            BiographyP1:'Hi, my name is Selina, I am the CEO and founder of Camsol. I live in Saint George in Black Forest, Germany. My passions are social sustainability, computer linguistics and writing. I have two children and am married. In my free time I like to read, listen to music, play computer games or board games, write and work on craft projects.',
-            BiographyP2:"I also recieved some questions about my relation to Tobias.We are married since 2015 and have two children. I am the CEO of Camsol and Tobias supports us, but currently full-tim employed at Haufe Group.I hope in the future he will have more time to work with us",
-            BiographyP3:"",
-            BiographyP4:"",
-            BiographyP5:"",
-            Experience:[
-              {
-                yearsOfExperience:"May 2022 - Present",
-                placeOfExperience:"Camsol Technologies UG (haftungsbeschränkt) Full time",
-                locationOfExperience:"Germany",
-                areaOfExpertise:"Geschäftsführende Gesellschafterin(Managing Partner) | CEO",
-                descOfWorkDoneInAreaOfExpertise:"HR Leader, focused on providing strategic HR Partnering to Executive Vice President Applications. Focused on Optimising Business Performance, Executive Leadership, Organisation Design and Transformation. Responsible for leading a team of Senior HRBPs who align with Camsol based Executives (Senior Vice Presidents / Vice Presidents) within the License Organisation,",
+    
+                name:'Selina Scherer-Braun ',
+                photo:cms1_CEO,
+                title:'Geschäftsführende Gesellschafterin(Managing Partner) | CEO',
+                phoneNumber:'+49 173 9760212',
+                email:"selina.scherer-braun@camsol.io",
+                website:"camsol.io",
+                address:"Black Forest, a large forested mountain range in south-west Germany",
+                linkedIn:"https://www.linkedin.com/in/schererbraun/",
+                Education:[
+                  {
+    
+                    year:"Oct 2012 - Mar 2017",
+                    certificateName:"Bachelor of Arts - BA, Linguistik - Schwerpunkt Computerlinguistik",
+                    certificatePoints:"!!!!!!!!Uknown",
+                    institutionName:"Ruhr University Bochum",
+                  },
+    
+    
+    
+    
+                ],
+                languages:[
+                  {
+                    languageName:"English",
+                    languagesPercent:"95%"
+                  },
+                  {
+                    languageName:"German",
+                    languagesPercent:"95%"
+                  }
+                ],
+                BiographyP1:'Hi, my name is Selina, I am the CEO and founder of Camsol. I live in Saint George in Black Forest, Germany. My passions are social sustainability, computer linguistics and writing. I have two children and am married. In my free time I like to read, listen to music, play computer games or board games, write and work on craft projects.',
+                BiographyP2:"I also recieved some questions about my relation to Tobias.We are married since 2015 and have two children. I am the CEO of Camsol and Tobias supports us, but currently full-tim employed at Haufe Group.I hope in the future he will have more time to work with us",
+                BiographyP3:"",
+                BiographyP4:"",
+                BiographyP5:"",
+                Experience:[
+                  {
+                    yearsOfExperience:"May 2022 - Present",
+                    placeOfExperience:"Camsol Technologies UG (haftungsbeschränkt) Full time",
+                    locationOfExperience:"Germany",
+                    areaOfExpertise:"Geschäftsführende Gesellschafterin(Managing Partner) | CEO",
+                    descOfWorkDoneInAreaOfExpertise:"HR Leader, focused on providing strategic HR Partnering to Executive Vice President Applications. Focused on Optimising Business Performance, Executive Leadership, Organisation Design and Transformation. Responsible for leading a team of Senior HRBPs who align with Camsol based Executives (Senior Vice Presidents / Vice Presidents) within the License Organisation,",
+                  },
+                  {
+                    yearsOfExperience:"Jan 2016 - Present",
+                    placeOfExperience:"Zuhause( At home) · Full-time",
+                    locationOfExperience:"Germany",
+                    areaOfExpertise:"Mutter(mother) Full time",
+                    descOfWorkDoneInAreaOfExpertise:"all description of a mother to kids",
+                  },
+                  {
+                    yearsOfExperience:"Apr 2015 - Oct 2019",
+                    placeOfExperience:"fothmind GmbH · Full-time",
+                    locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
+                    areaOfExpertise:"Developer and Consultant",
+                    descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · Data Science · Python",
+                  },
+                  {
+                    yearsOfExperience:"Jun 2016 - Feb 2017",
+                    placeOfExperience:"bee security GmbH · Full-time",
+                    locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
+                    areaOfExpertise:"Technical Editor",
+                    descOfWorkDoneInAreaOfExpertise:"",
+                  },
+                  {
+                    yearsOfExperience:"Apr 2015 - Sep 2015",
+                    placeOfExperience:"Ruhr-Universität Bochum · Part-time",
+                    locationOfExperience:"",
+                    areaOfExpertise:"Studentische Hilfskräfte(student assistants)",
+                    descOfWorkDoneInAreaOfExpertise:"Skills: Data Science · Python",
+                  },
+                  {
+                    yearsOfExperience:"ul 2014 - Dec 2014 ",
+                    placeOfExperience:"GoToSec GmbH · Full-time",
+                    locationOfExperience:"",
+                    areaOfExpertise:"SAP Developer",
+                    descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · ABAP · Groovy · Python",
+                  },
+    
+    
+                ],
+                professionalSkills:[
+                  {
+    
+                    nameOfSkill:"SAP Developer at GoToSec GmbH",
+                    persentageOfSkills:"95%",
+                  },
+    
+    
+                ],
+                Interest:[
+                  {
+                    // iconOfInterest:"",
+                    // nameOfInterest:"",
+                  }
+                ],
+                source:[
+                  {
+                    name:"LinkedIn",
+                    link:"https://www.linkedin.com/in/schererbraun/"
+                  },
+                  {
+                    name:"Notion",
+                    link:"https://www.notion.so/camsol/44d1d0a072624df9a5ab29d6bbc7b20a?v=c3a189c055474561b63f6a0a7741121e"
+                  },
+    
+    
+                ],
+    
               },
               {
-                yearsOfExperience:"Jan 2016 - Present",
-                placeOfExperience:"Zuhause( At home) · Full-time",
-                locationOfExperience:"Germany",
-                areaOfExpertise:"Mutter(mother) Full time",
-                descOfWorkDoneInAreaOfExpertise:"all description of a mother to kids",
+                name:'Mohamad Siysinyuy Banbong',
+                      photo:cms3_moh,
+                      title:'Megaminds team lead(full stack developer)',
+                      
               },
-              {
-                yearsOfExperience:"Apr 2015 - Oct 2019",
-                placeOfExperience:"fothmind GmbH · Full-time",
-                locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
-                areaOfExpertise:"Developer and Consultant",
-                descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · Data Science · Python",
-              },
-              {
-                yearsOfExperience:"Jun 2016 - Feb 2017",
-                placeOfExperience:"bee security GmbH · Full-time",
-                locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
-                areaOfExpertise:"Technical Editor",
-                descOfWorkDoneInAreaOfExpertise:"",
-              },
-              {
-                yearsOfExperience:"Apr 2015 - Sep 2015",
-                placeOfExperience:"Ruhr-Universität Bochum · Part-time",
-                locationOfExperience:"",
-                areaOfExpertise:"Studentische Hilfskräfte(student assistants)",
-                descOfWorkDoneInAreaOfExpertise:"Skills: Data Science · Python",
-              },
-              {
-                yearsOfExperience:"ul 2014 - Dec 2014 ",
-                placeOfExperience:"GoToSec GmbH · Full-time",
-                locationOfExperience:"",
-                areaOfExpertise:"SAP Developer",
-                descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · ABAP · Groovy · Python",
-              },
-
-
-            ],
-            professionalSkills:[
-              {
-
-                nameOfSkill:"SAP Developer at GoToSec GmbH",
-                persentageOfSkills:"95%",
-              },
-
-
-            ],
-            Interest:[
-              {
-                // iconOfInterest:"",
-                // nameOfInterest:"",
-              }
-            ],
-            source:[
-              {
-                name:"LinkedIn",
-                link:"https://www.linkedin.com/in/schererbraun/"
-              },
-              {
-                name:"Notion",
-                link:"https://www.notion.so/camsol/44d1d0a072624df9a5ab29d6bbc7b20a?v=c3a189c055474561b63f6a0a7741121e"
-              },
-
-
-            ],
-
-              report1:[
-                // {
-                //   name:'Azimi Zubai Yakubu (Morgan Kehlani)',
-                //   photo:'https://ca.slack-edge.com/T03MZB4ML81-U03MZ8N6F51-103ec47f9e50-512',
-                //   title:'',
-                // },
-                {
-                  name:'Kongnyu Carine',
-                  photo:cms6_carine,
-                  title:'team lead',
-                  report2:[
-                    {
-                      name:'Ngoran Bedes Tomnyuy',
-                      photo:cms7_Ngoran,
-                      title:''
-                    },
-                    {
-                      name:'Elmander Elmer',
-                      photo:cms8_Elma,
-                      title:''
-                    },
-                  ]
-                },
-                {
-                  name:'Jeanne Monstadt',
-                  photo:cms15_jeanne,
-                  title:''
-                },
-                
-              ]
-
+            ]
           }
         ]
       },
       {
-        name:"Operations & Technologies",
+        name:"CAMSOL CAMEROON",
         people:[
-          {
-            name:'Tobias Braun',
-            photo:cms4_Tobi,
-            title:'CTO and CHRO',
-            report1:[
-              {
-                name:'Jume Brice',
-                photo:cms16_Jume,
-                title:'',
-                
-              },
-              {
-                name:'Franck Tchamo',
-                photo:cms17_francktch,
-                title:'',
-                
-              },
-            ]
-          },
+          
+                {
+                  name:"Board of Directors",
+                  people:[
+                    {
+                      name:'Maximilian Betz',
+                      photo:cms2_max,
+                      title:'Ask him ???????????????',
+                      BiographyP1:'ask him ?????????????????? or find out form slack',
+                      source:[
+                        {
+                          name:"unknown???????",
+                          link:"??????"
+                        }
+                      ]
+                    },
+                    {
+
+                      name:'Selina Scherer-Braun ',
+                      photo:cms1_CEO,
+                      title:'Geschäftsführende Gesellschafterin(Managing Partner) | CEO',
+                      phoneNumber:'+49 173 9760212',
+                      email:"selina.scherer-braun@camsol.io",
+                      website:"camsol.io",
+                      address:"Black Forest, a large forested mountain range in south-west Germany",
+                      linkedIn:"https://www.linkedin.com/in/schererbraun/",
+                      Education:[
+                        {
+
+                          year:"Oct 2012 - Mar 2017",
+                          certificateName:"Bachelor of Arts - BA, Linguistik - Schwerpunkt Computerlinguistik",
+                          certificatePoints:"!!!!!!!!Uknown",
+                          institutionName:"Ruhr University Bochum",
+                        },
+
+
+
+
+                      ],
+                      languages:[
+                        {
+                          languageName:"English",
+                          languagesPercent:"95%"
+                        },
+                        {
+                          languageName:"German",
+                          languagesPercent:"95%"
+                        }
+                      ],
+                      BiographyP1:'Hi, my name is Selina, I am the CEO and founder of Camsol. I live in Saint George in Black Forest, Germany. My passions are social sustainability, computer linguistics and writing. I have two children and am married. In my free time I like to read, listen to music, play computer games or board games, write and work on craft projects.',
+                      BiographyP2:"I also recieved some questions about my relation to Tobias.We are married since 2015 and have two children. I am the CEO of Camsol and Tobias supports us, but currently full-tim employed at Haufe Group.I hope in the future he will have more time to work with us",
+                      BiographyP3:"",
+                      BiographyP4:"",
+                      BiographyP5:"",
+                      Experience:[
+                        {
+                          yearsOfExperience:"May 2022 - Present",
+                          placeOfExperience:"Camsol Technologies UG (haftungsbeschränkt) Full time",
+                          locationOfExperience:"Germany",
+                          areaOfExpertise:"Geschäftsführende Gesellschafterin(Managing Partner) | CEO",
+                          descOfWorkDoneInAreaOfExpertise:"HR Leader, focused on providing strategic HR Partnering to Executive Vice President Applications. Focused on Optimising Business Performance, Executive Leadership, Organisation Design and Transformation. Responsible for leading a team of Senior HRBPs who align with Camsol based Executives (Senior Vice Presidents / Vice Presidents) within the License Organisation,",
+                        },
+                        {
+                          yearsOfExperience:"Jan 2016 - Present",
+                          placeOfExperience:"Zuhause( At home) · Full-time",
+                          locationOfExperience:"Germany",
+                          areaOfExpertise:"Mutter(mother) Full time",
+                          descOfWorkDoneInAreaOfExpertise:"all description of a mother to kids",
+                        },
+                        {
+                          yearsOfExperience:"Apr 2015 - Oct 2019",
+                          placeOfExperience:"fothmind GmbH · Full-time",
+                          locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
+                          areaOfExpertise:"Developer and Consultant",
+                          descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · Data Science · Python",
+                        },
+                        {
+                          yearsOfExperience:"Jun 2016 - Feb 2017",
+                          placeOfExperience:"bee security GmbH · Full-time",
+                          locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
+                          areaOfExpertise:"Technical Editor",
+                          descOfWorkDoneInAreaOfExpertise:"",
+                        },
+                        {
+                          yearsOfExperience:"Apr 2015 - Sep 2015",
+                          placeOfExperience:"Ruhr-Universität Bochum · Part-time",
+                          locationOfExperience:"",
+                          areaOfExpertise:"Studentische Hilfskräfte(student assistants)",
+                          descOfWorkDoneInAreaOfExpertise:"Skills: Data Science · Python",
+                        },
+                        {
+                          yearsOfExperience:"ul 2014 - Dec 2014 ",
+                          placeOfExperience:"GoToSec GmbH · Full-time",
+                          locationOfExperience:"",
+                          areaOfExpertise:"SAP Developer",
+                          descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · ABAP · Groovy · Python",
+                        },
+
+
+                      ],
+                      professionalSkills:[
+                        {
+
+                          nameOfSkill:"SAP Developer at GoToSec GmbH",
+                          persentageOfSkills:"95%",
+                        },
+
+
+                      ],
+                      Interest:[
+                        {
+                          // iconOfInterest:"",
+                          // nameOfInterest:"",
+                        }
+                      ],
+                      source:[
+                        {
+                          name:"LinkedIn",
+                          link:"https://www.linkedin.com/in/schererbraun/"
+                        },
+                        {
+                          name:"Notion",
+                          link:"https://www.notion.so/camsol/44d1d0a072624df9a5ab29d6bbc7b20a?v=c3a189c055474561b63f6a0a7741121e"
+                        },
+
+
+                      ],
+
+                    },
+                    {
+                      name:'Mohamad Siysinyuy Banbong',
+                            photo:cms3_moh,
+                            title:'Megaminds team lead(full stack developer)',
+                            
+                    },
+                  ]
+                }
         ]
       },
-      {
-        name:"Execution & Finance",
-        people:[
-          {
-            name:'Maximilian Betz',
-            photo:cms2_max,
-            title:'Managing Director, responsible for Legal and Finance and Holding Management',
-            BiographyP1:'ask him ?????????????????? or find out form slack',
-            source:[
-              {
-                name:"unknown???????",
-                link:"??????"
-              }
-            ],
-            report1:[
-              {
-                name:'Mohamad Siysinyuy Banbong',
-                photo:'https://avatars.githubusercontent.com/u/40745841?v=4',
-                title:'Megaminds team lead(full stack developer)',
-                report2:[
-                  {
-                    name:'Alice Ndeh',
-                    photo:cms5_Alice,
-                    title:'team lead',
-                    report3:[
-                      {
-                        name:'Ngang Muma',
-                        photo:cms9_Muma,
-                        title:''
-                      },
-                      {
-                        name:'Signe Eric',
-                        photo:cms10_eric,
-                        title:''
-                      },
-                    ]
-                  },
-                  
-                  
-                ]
-              },
-              {
-                name:'David',
-                photo:cms18_david,
-                title:'',
-                
-              },
-            ]
-          },
-        ]
-      },
-      {
-        name:"camsole Board of Directors",
-        people:[
-          {
-            name:'Maximilian Betz',
-            photo:cms2_max,
-            title:'Ask him ???????????????',
-            BiographyP1:'ask him ?????????????????? or find out form slack',
-            source:[
-              {
-                name:"unknown???????",
-                link:"??????"
-              }
-            ]
-          },
-          {
-
-            name:'Selina Scherer-Braun ',
-            photo:cms1_CEO,
-            title:'Geschäftsführende Gesellschafterin(Managing Partner) | CEO',
-            phoneNumber:'+49 173 9760212',
-            email:"selina.scherer-braun@camsol.io",
-            website:"camsol.io",
-            address:"Black Forest, a large forested mountain range in south-west Germany",
-            linkedIn:"https://www.linkedin.com/in/schererbraun/",
-            Education:[
-              {
-
-                year:"Oct 2012 - Mar 2017",
-                certificateName:"Bachelor of Arts - BA, Linguistik - Schwerpunkt Computerlinguistik",
-                certificatePoints:"!!!!!!!!Uknown",
-                institutionName:"Ruhr University Bochum",
-              },
-
-
-
-
-            ],
-            languages:[
-              {
-                languageName:"English",
-                languagesPercent:"95%"
-              },
-              {
-                languageName:"German",
-                languagesPercent:"95%"
-              }
-            ],
-            BiographyP1:'Hi, my name is Selina, I am the CEO and founder of Camsol. I live in Saint George in Black Forest, Germany. My passions are social sustainability, computer linguistics and writing. I have two children and am married. In my free time I like to read, listen to music, play computer games or board games, write and work on craft projects.',
-            BiographyP2:"I also recieved some questions about my relation to Tobias.We are married since 2015 and have two children. I am the CEO of Camsol and Tobias supports us, but currently full-tim employed at Haufe Group.I hope in the future he will have more time to work with us",
-            BiographyP3:"",
-            BiographyP4:"",
-            BiographyP5:"",
-            Experience:[
-              {
-                yearsOfExperience:"May 2022 - Present",
-                placeOfExperience:"Camsol Technologies UG (haftungsbeschränkt) Full time",
-                locationOfExperience:"Germany",
-                areaOfExpertise:"Geschäftsführende Gesellschafterin(Managing Partner) | CEO",
-                descOfWorkDoneInAreaOfExpertise:"HR Leader, focused on providing strategic HR Partnering to Executive Vice President Applications. Focused on Optimising Business Performance, Executive Leadership, Organisation Design and Transformation. Responsible for leading a team of Senior HRBPs who align with Camsol based Executives (Senior Vice Presidents / Vice Presidents) within the License Organisation,",
-              },
-              {
-                yearsOfExperience:"Jan 2016 - Present",
-                placeOfExperience:"Zuhause( At home) · Full-time",
-                locationOfExperience:"Germany",
-                areaOfExpertise:"Mutter(mother) Full time",
-                descOfWorkDoneInAreaOfExpertise:"all description of a mother to kids",
-              },
-              {
-                yearsOfExperience:"Apr 2015 - Oct 2019",
-                placeOfExperience:"fothmind GmbH · Full-time",
-                locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
-                areaOfExpertise:"Developer and Consultant",
-                descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · Data Science · Python",
-              },
-              {
-                yearsOfExperience:"Jun 2016 - Feb 2017",
-                placeOfExperience:"bee security GmbH · Full-time",
-                locationOfExperience:"Köln, Nordrhein-Westfalen, Deutschland",
-                areaOfExpertise:"Technical Editor",
-                descOfWorkDoneInAreaOfExpertise:"",
-              },
-              {
-                yearsOfExperience:"Apr 2015 - Sep 2015",
-                placeOfExperience:"Ruhr-Universität Bochum · Part-time",
-                locationOfExperience:"",
-                areaOfExpertise:"Studentische Hilfskräfte(student assistants)",
-                descOfWorkDoneInAreaOfExpertise:"Skills: Data Science · Python",
-              },
-              {
-                yearsOfExperience:"ul 2014 - Dec 2014 ",
-                placeOfExperience:"GoToSec GmbH · Full-time",
-                locationOfExperience:"",
-                areaOfExpertise:"SAP Developer",
-                descOfWorkDoneInAreaOfExpertise:"Skills: SAP ERP · ABAP · Groovy · Python",
-              },
-
-
-            ],
-            professionalSkills:[
-              {
-
-                nameOfSkill:"SAP Developer at GoToSec GmbH",
-                persentageOfSkills:"95%",
-              },
-
-
-            ],
-            Interest:[
-              {
-                // iconOfInterest:"",
-                // nameOfInterest:"",
-              }
-            ],
-            source:[
-              {
-                name:"LinkedIn",
-                link:"https://www.linkedin.com/in/schererbraun/"
-              },
-              {
-                name:"Notion",
-                link:"https://www.notion.so/camsol/44d1d0a072624df9a5ab29d6bbc7b20a?v=c3a189c055474561b63f6a0a7741121e"
-              },
-
-
-            ],
-
-          },
-          {
-            name:'Mohamad Siysinyuy Banbong',
-                  photo:cms3_moh,
-                  title:'Megaminds team lead(full stack developer)',
-                  
-          },
-        ]
-      }
+      
     ],
   }
 

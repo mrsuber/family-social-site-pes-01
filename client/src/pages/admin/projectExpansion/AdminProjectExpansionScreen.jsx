@@ -462,15 +462,15 @@ const AdminProjectExpansionScreen = () => {
       <div className='outer_five__piece'></div>
     </div>
     <div className='pieces'>
-      <div className='future_ui__piece'>
+      <div className='future_ui__piece' onClick={()=>activatePopup("General 3")}>
         <span>General 3</span>
         <div className='line'></div>
         <div className='tip'>
           Food
         </div>
       </div>
-      <div className='future_ui__piece'>
-        <span>General 1</span>
+      <div className='future_ui__piece' onClick={()=>activatePopup("General 2")}>
+        <span>General 2</span>
         <div className='line'></div>
         <div className='tip'>
           Government and Finance
@@ -483,14 +483,14 @@ const AdminProjectExpansionScreen = () => {
           High Commander and Chief
         </div>
       </div>
-      <div className='future_ui__piece'>
-        <span>General 2</span>
+      <div className='future_ui__piece' onClick={()=>activatePopup("General 1")}>
+        <span>General 1</span>
         <div className='line'></div>
         <div className='tip'>
           Design
         </div>
       </div>
-      <div className='future_ui__piece'>
+      <div className='future_ui__piece' onClick={()=>activatePopup("General 4")}>
         <span>General 4</span>
         <div className='line'></div>
         <div className='tip'>

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
 import ContextWrapper from '../../../context/ContextWrapper'
 
-import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,AdminProjectExpansionPreviewPopupTimetable} from '../../../components'
+import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,AdminProjectExpansionPreviewPopupTimetable, AdminProjectExpansionPreviewPopupProfile, AdminProjectExpansionPreviewPopupArchivement} from '../../../components'
 import { useSelector } from 'react-redux';
 
 const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnStructuralDetail,setCompanyName}) => {
@@ -16,6 +16,9 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
     const[depPopup, setDepPopup] = useState(false)
     const[depData,setDepData] = useState(null)
     const [onView2,setOnView2]=useState(false)
+    const [onViewProfile, setOnViewProfile] = useState(false)
+    const [onViewArchivements, setOnViewArchivements] = useState(false)
+
       const structural = ()=>{
         setOnView(false)
         setCompanyName(data.companyName)
@@ -34,9 +37,26 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
       }
 
       const checkWhoseProfileToPopUp = ()=>{
-       if(auth?.user?.role === "general0"){
-        setShowGeneral0Profile(true)
-       }
+      //  if(auth?.user?.role === "general0"){
+      //   setShowGeneral0Profile(true)
+      //  }
+      // setOnView(false)
+      setOnViewProfile(true)
+      
+      }
+
+      const handleProfileClose = ()=>{
+        // setOnView(true)
+        setOnViewProfile(false)
+       
+      }
+
+      const handleArchivementClose = ()=>{
+        setOnViewArchivements(false)
+      }
+
+      const handleArchivementToPopUp = ()=>{
+        setOnViewArchivements(true)
       }
   return (
     <>{
@@ -56,12 +76,14 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
       <ContextWrapper>
       <AdminProjectExpansionPreviewPopupTimetable onView2={onView2} setOnView2={setOnView2} data={data}/>
       </ContextWrapper>
-      <div className="admin__profileOnView-btn-container">
-      <button className="admin__profileOnveiw-close-btn" onClick={()=>setOnView(false)}>
-      Close
-      </button>
+      {
+      onViewProfile && <AdminProjectExpansionPreviewPopupProfile onViewProfile={onViewProfile} handleProfileClose={handleProfileClose} data={data}/>
+     }
 
-      </div>
+{
+      onViewArchivements && <AdminProjectExpansionPreviewPopupArchivement onViewArchivements={onViewArchivements} handleArchivementClose={handleArchivementClose} data={data}/>
+     }
+      
 
       <AdminInpuEdit/>
       <div className="admin__profileOnveiw-content">
@@ -92,7 +114,7 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
               <li className="pe1__ul-li" onClick={()=>setOnView2(true)}><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Timetable`}</span></div></li>
 
                 <li className="pe1__ul-li" onClick={checkWhoseProfileToPopUp}><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Profile`}</span></div></li>
-                <li className="pe1__ul-li"><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Achievement`}</span></div></li>
+                <li className="pe1__ul-li" onClick={handleArchivementToPopUp}><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Achievement`}</span></div></li>
                 <li className="pe1__ul-li"><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Todos`}</span></div></li>
 
               </ul>

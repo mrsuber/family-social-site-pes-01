@@ -1,11 +1,11 @@
 import React from 'react'
-
-const DepartmentInfoPopup = ({data,setDepPopup}) => {
+import './ProfilePopup.css'
+const ProfilePopup = ({data,setDepPopup,handleProfileClose}) => {
   return (
-    <div className="admin__Unclear-container">
-      <div className="admin__Unclear-content">
-      <div className="admin__Unclear-btn-container">
-      <button className="admin__Unclear-close-btn" onClick={()=>setDepPopup(false)}>
+    <div className="admin__Unclear-container-profile">
+      <div className="admin__Unclear-content-profile">
+      <div className="admin__Unclear-btn-container-profile">
+      <button className="admin__Unclear-close-btn-profile" onClick={handleProfileClose}>
       Okay
       </button>
       </div>
@@ -34,4 +34,4 @@ const DepartmentInfoPopup = ({data,setDepPopup}) => {
   )
 }
 
-export default DepartmentInfoPopup
+export default ProfilePopup

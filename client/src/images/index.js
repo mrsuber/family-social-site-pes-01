@@ -64,6 +64,13 @@ export {default as cms19_johanah} from './camsol/johanah.png'
 export {default as cms20_Ramish} from './camsol/Ramish.jpg'
 export {default as cms21_simon} from './camsol/simon.jpg'
 export {default as cms22_francesBeri} from './camsol/Frances beri.png'
-
+export {default as cms23_Schmidt} from './camsol/Schmidt.png'
+export {default as cms24_Herbert} from './camsol/Herbert.png'
+export { default as cms25_Stephen} from './camsol/stephen.png'
 //velte workers
 export {default as velte_logo} from './velteTehc/Screen Shot 2022-12-27 at 8.35.27 PM.png'
+
+//Azure teaching images
+export {default as azure_1} from './Azure/1.png'
+export {default as azure_2} from './Azure/2.png'
+export {default as azure_3} from './Azure/azure_storage_services.png'
