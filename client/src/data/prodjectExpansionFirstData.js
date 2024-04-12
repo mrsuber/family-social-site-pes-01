@@ -46,8 +46,9 @@ export const prodjectExpansionData = [
                     week:"week1",
                     daysInWeek:[
                       {
-                        dayNumber:01,
+                       
                         dayTitle:"Thursday",
+                        dayNumber: "01" ,
                         Today:false,
                         achievementsInDay:[
                           {
@@ -138,7 +139,7 @@ export const prodjectExpansionData = [
                     week:"week1",
                     daysInWeek:[
                       {
-                        dayNumber:01,
+                        dayNumber:"01",
                         dayTitle:"Thursday",
                         achievementsInDay:[
                           {
@@ -159,7 +160,7 @@ export const prodjectExpansionData = [
                     week:"week1",
                     daysInWeek:[
                       {
-                        dayNumber:01,
+                        dayNumber:"01",
                         dayTitle:"Thursday",
                         achievementsInDay:[
                           {
@@ -200,7 +201,7 @@ export const prodjectExpansionData = [
                     week:"week1",
                     daysInWeek:[
                       {
-                        dayNumber:01,
+                        dayNumber:"01",
                         dayTitle:"Thursday",
                         achievementsInDay:[
                           {
@@ -241,7 +242,7 @@ export const prodjectExpansionData = [
                     week:"week1",
                     daysInWeek:[
                       {
-                        dayNumber:01,
+                        dayNumber:"01",
                         dayTitle:"Thursday",
                         achievementsInDay:[
                           {
@@ -282,7 +283,7 @@ export const prodjectExpansionData = [
                     week:"week1",
                     daysInWeek:[
                       {
-                        dayNumber:01,
+                        dayNumber:"01",
                         dayTitle:"Thursday",
                         achievementsInDay:[
                           {
@@ -323,7 +324,7 @@ export const prodjectExpansionData = [
                     week:"week1",
                     daysInWeek:[
                       {
-                        dayNumber:01,
+                        dayNumber:"01",
                         dayTitle:"Thursday",
                         achievementsInDay:[
                           {
