@@ -151,3 +151,6 @@ export {default as MarksMigMap} from './admin/MissingMigrandsWorldMap/Marks_map_
 // exporting expense components
 export {default as AdminExpensForm} from './admin/expense/AdminExpenseForm/AdminExpenseForm'
 export {default as AdminExpenseList} from './admin/expense/AdminExpenseList/AdminExpenseList'
+//exporting project expansion components
+export {default as AdminProjectExpansionPreviewPopupProfile} from './admin/adminProfile/profilePopup/ProfilePopup'
+export {default as AdminProjectExpansionPreviewPopupArchivement} from './admin/adminArchivements/archivementPopup/ArchivementPopup'

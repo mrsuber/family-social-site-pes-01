@@ -245,5 +245,21 @@ export const devCourseData = [
       },
     ],
   },
-
+  {
+    learningTitle:"Azure Deployement and Dev opps",
+    logo:logo,
+    path:"Fundermentals of Azure to Dev opps",
+    about:"this path takes you from learning cloud computing to deployment to devops in Azure",
+    MainLocation:"Cameroon || southwest || Buea",
+    TotalNumberOfBranches:"2",
+    TotalNumberCompleted:"0.0",
+    LessonTittle:[
+      {
+        title:"Introduction to Microsoft Azure Fundamentals"
+      },
+      {
+        title:"cloud computing"
+      },
+    ],
+  },
 ]

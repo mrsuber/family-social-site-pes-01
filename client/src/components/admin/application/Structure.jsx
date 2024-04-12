@@ -89,7 +89,16 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
 
 
 
-
+const runstyle =(data)=>{
+  if(data.layoff) return { backgroundColor: "red"}
+  if(data.transfered) return { backgroundColor: "#46461b"}
+  if(data.uknownPerson) return { backgroundColor: "#78057b"}
+  if(data.warning) return { backgroundColor: "#d1ce00"}
+  if(data.intern)return{backgroundColor: "white"}
+  return {
+    
+    }
+}
 
 
 
@@ -115,7 +124,7 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
           <h3 className="admin__section-head">Research before application.(move around with mouse to find tree)</h3>
           <div className="admin__graph-content_apply " style={{transform: `scale(${zoom})`}}>
 
-      <div className="admin__graph-board_apply" style={{width:`${lenght}rem`, backgroundColor:'#1364884f'}} >
+      <div className="admin__graph-board_apply" style={{width:`${lenght+1000}rem`, backgroundColor:'#1364884f'}} >
 
 
       <div className="admin__app_tree">
@@ -179,7 +188,7 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
                                       {
                                          item.report1.map((rep1)=>(
                                           <li className="li">
-                                          <nav>
+                                          <nav style={ runstyle(rep1)}>
                                           <div className="AdminStructure__company-logo">
                                             <img src={rep1.photo} alt="imgchild"/>
                                           </div>
@@ -197,7 +206,7 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
                                             {
                                                rep1.report2.map((rep2)=>(
                                                 <li className="li">
-                                                <nav>
+                                                <nav style={ runstyle(rep2)}>
                                                 <div className="AdminStructure__company-logo">
                                                   <img src={rep2.photo} alt="imgchild"/>
                                                 </div>
@@ -216,7 +225,7 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
                                                   {
                                                      rep2.report3.map((rep3)=>(
                                                       <li className="li">
-                                                      <nav>
+                                                      <nav style={ runstyle(rep3)}>
                                                       <div className="AdminStructure__company-logo">
                                                         <img src={rep3.photo} alt="imgchild"/>
                                                       </div>
@@ -228,6 +237,101 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
                                                       </div>
                                                       <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(rep3,rep2)} style={{cursor:'pointer'}}>more...</span>
                                                       </nav>
+                                                      
+                                                         {rep3.report4 && <ul className="ul">
+                                                         {/*report to the CEO and Bourd of directors*/}
+         
+                                                           {
+                                                              rep3.report4.map((rep4)=>(
+                                                               <li className="li">
+                                                               <nav style={ runstyle(rep4)}>
+                                                               <div className="AdminStructure__company-logo">
+                                                                 <img src={rep4.photo} alt="imgchild"/>
+                                                               </div>
+         
+                                                               <div className="AdminStructure__company-mainItem">
+                                                                 <h3>Name: <span>{rep4.name}</span></h3>
+         
+         
+                                                               </div>
+                                                               <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(rep4,rep3)} style={{cursor:'pointer'}}>more...</span>
+                                                               </nav>
+                                                               {rep4.report5 && <ul className="ul">
+                                                         {/*report to the CEO and Bourd of directors*/}
+         
+                                                           {
+                                                              rep4.report5.map((rep5)=>(
+                                                               <li className="li">
+                                                               <nav style={ runstyle(rep5)}>
+                                                               <div className="AdminStructure__company-logo">
+                                                                 <img src={rep5.photo} alt="imgchild"/>
+                                                               </div>
+         
+                                                               <div className="AdminStructure__company-mainItem">
+                                                                 <h3>Name: <span>{rep5.name}</span></h3>
+         
+         
+                                                               </div>
+                                                               <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(rep5,rep4)} style={{cursor:'pointer'}}>more...</span>
+                                                               </nav>
+                                                               {rep5.report6 && <ul className="ul">
+                                                         {/*report to the CEO and Bourd of directors*/}
+         
+                                                           {
+                                                              rep5.report6.map((rep6)=>(
+                                                               <li className="li">
+                                                               <nav style={ runstyle(rep6)}>
+                                                               <div className="AdminStructure__company-logo">
+                                                                 <img src={rep6.photo} alt="imgchild"/>
+                                                               </div>
+         
+                                                               <div className="AdminStructure__company-mainItem">
+                                                                 <h3>Name: <span>{rep6.name}</span></h3>
+         
+         
+                                                               </div>
+                                                               <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(rep6,rep5)} style={{cursor:'pointer'}}>more...</span>
+                                                               </nav>
+                                                               {rep6.report7 && <ul className="ul">
+                                                         {/*report to the CEO and Bourd of directors*/}
+         
+                                                           {
+                                                              rep6.report7.map((rep7)=>(
+                                                               <li className="li">
+                                                               <nav style={ runstyle(rep7)}>
+                                                               <div className="AdminStructure__company-logo">
+                                                                 <img src={rep7.photo} alt="imgchild"/>
+                                                               </div>
+         
+                                                               <div className="AdminStructure__company-mainItem">
+                                                                 <h3>Name: <span>{rep7.name}</span></h3>
+         
+         
+                                                               </div>
+                                                               <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(rep7,rep6)} style={{cursor:'pointer'}}>more...</span>
+                                                               </nav>
+                                                              
+                                                               </li>
+                                                             ))
+                                                           }
+         
+                                                         </ul>}
+                                                               </li>
+                                                             ))
+                                                           }
+         
+                                                         </ul>}
+                                                               </li>
+                                                             ))
+                                                           }
+         
+                                                         </ul>}
+                                                               </li>
+                                                             ))
+                                                           }
+         
+                                                         </ul>}
+                                                      
                                                       </li>
                                                     ))
                                                   }

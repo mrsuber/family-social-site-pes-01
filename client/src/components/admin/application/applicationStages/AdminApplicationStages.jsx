@@ -18,8 +18,8 @@ const AdminApplicationStages = (data) => {
     <div className="apply__stage-container">
 
     {
-      data.statusCheckData.ApplicationStage.length>0
-      ?data.statusCheckData.ApplicationStage.map((item)=>(
+      data?.statusCheckData?.ApplicationStage?.length>0
+      ?data?.statusCheckData?.ApplicationStage?.map((item)=>(
         <div className="apply__stage-card" onClick={()=>startpopup(item)}>
           <h3 className="apply__stage-title" style={{fontSize:"15px",color:"rgba(0,154,217,1)",fontWeight:"500"}}>{item.stageName}</h3>
           <div className="apply__stage-bar">

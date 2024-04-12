@@ -1,4 +1,4 @@
-import {logo} from '../images'
+import {logo,azure_1, azure_2, azure_3} from '../images'
 export const courseStructuralData = [
 
   {
@@ -4775,6 +4775,626 @@ people:[]
 },
 
 
+  ]
+},
+{
+  learningTitle:"Azure Deployement and Dev opps",
+  companyHeadOfficeLocation:"Cameroon | Buea",
+  logo:logo,
+  companyLevel1:[
+     {name:"Azure Fundamentals?",
+      courseStatus:"Incomplete",
+
+      courseNumber:"001",
+      logo:logo,
+      menu:[
+        {
+          name:'What is Azure Fundamentals?',
+          detail:"Azure Fundamentals is a series of three learning paths that familiarize you with Azure and its many services and features.",
+          detail1:"Whether you're interested in compute, networking, or storage services; learning about cloud security best practices; or exploring governance and management options, think of Azure Fundamentals as your curated guide to Azure.",
+          detail2:"Azure Fundamentals includes interactive exercises that give you hands-on experience with Azure. Many exercises provide a temporary Azure portal environment called the sandbox, which allows you to practice creating cloud resources for free at your own pace.",
+          detail3:"Technical IT experience isn't required; however, having general IT knowledge will help you get the most from your learning experience.",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"What is Azure Fundamentals?",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+         {
+          name:'Why should I take Azure Fundamentals?',
+          detail:"If you're just beginning to work with the cloud, or if you already have cloud experience, Azure Fundamentals provides you with everything you need to get started.",
+          detail1:"No matter your goals, Azure Fundamentals has something for you. You should take this course if you:",
+          detail2:"1.)Have general interest in Azure or in the cloud",
+          detail3:"2.)Want to earn official certification from Microsoft (AZ-900)",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Why should I take Azure Fundamentals?",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+      ],
+      KnowledgeCheck:[
+          
+          {
+            check:"what is your quesion"
+          },
+
+        ],
+      additionalRead:[
+        {
+          title:"Watch this video about how Git can improve the workflow of both an individual and a team of developers.",
+          url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+        },
+      ],
+      source:[
+        {
+          name:"TheodinProject",
+          link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+        },
+      ],
+    people:[]
+    },
+    {name:"cloud computing",
+      courseStatus:"Incomplete",
+
+      courseNumber:"002",
+      logo:logo,
+      menu:[
+        {
+          name:'What is cloud computing',
+          detail:"In this module, you’ll be introduced to general cloud concepts. You’ll start with an introduction to the cloud in general. Then you'll dive into concepts like shared responsibility, different cloud models, and explore the unique pricing method for the cloud.",
+          detail1:"Cloud computing is the delivery of computing services over the internet. Computing services include common IT infrastructure such as virtual machines, storage, databases, and networking. Cloud services also expand the traditional IT offerings to include things like Internet of Things (IoT), machine learning (ML), and artificial intelligence (AI).",
+          detail2:"Because cloud computing uses the internet to deliver these services, it doesn’t have to be constrained by physical infrastructure the same way that a traditional datacenter is. That means if you need to increase your IT infrastructure rapidly, you don’t have to wait to build a new datacenter—you can use the cloud to rapidly expand your IT footprint.",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"What is cloud computing",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+         {
+          name:'shared responsibility model',
+          detail:"You may have heard of the shared responsibility model, but you may not understand what it means or how it impacts cloud computing.",
+          detail1:"Start with a traditional corporate datacenter. The company is responsible for maintaining the physical space, ensuring security, and maintaining or replacing the servers if anything happens. The IT department is responsible for maintaining all the infrastructure and software needed to keep the datacenter up and running. They’re also likely to be responsible for keeping all systems patched and on the correct version.",
+          detail2:"With the shared responsibility model, these responsibilities get shared between the cloud provider and the consumer. Physical security, power, cooling, and network connectivity are the responsibility of the cloud provider. The consumer isn’t collocated with the datacenter, so it wouldn’t make sense for the consumer to have any of those responsibilities.",
+          detail3:"At the same time, the consumer is responsible for the data and information stored in the cloud. (You wouldn’t want the cloud provider to be able to read your information.) The consumer is also responsible for access security, meaning you only give access to those who need it.",
+          detail4:"Then, for some things, the responsibility depends on the situation. If you’re using a cloud SQL database, the cloud provider would be responsible for maintaining the actual database. However, you’re still responsible for the data that gets ingested into the database. If you deployed a virtual machine and installed an SQL database on it, you’d be responsible for database patches and updates, as well as maintaining the data and information stored in the database.",
+          detail5:"With an on-premises datacenter, you’re responsible for everything. With cloud computing, those responsibilities shift. The shared responsibility model is heavily tied into the cloud service types (covered later in this learning path): infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS). IaaS places the most responsibility on the consumer, with the cloud provider being responsible for the basics of physical security, power, and connectivity. On the other end of the spectrum, SaaS places most of the responsibility with the cloud provider. PaaS, being a middle ground between IaaS and SaaS, rests somewhere in the middle and evenly distributes responsibility between the cloud provider and the consumer.",
+          detail6:"",
+          ancorName:"shared responsibility model",
+          popup1Name:"diagram highlights how the Shared Responsibility Model ",
+          popup1:azure_1,
+          popup2Name:"",
+          popup2:"",
+        },
+
+        {
+          name:'Define cloud models',
+          detail:"What are cloud models? The cloud models define the deployment type of cloud resources. The three main cloud models are: private, public, and hybrid.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"cloud models",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+
+        {
+          name:'Private cloud',
+          detail:"Let’s start with a private cloud. A private cloud is, in some ways, the natural evolution from a corporate datacenter. It’s a cloud (delivering IT services over the internet) that’s used by a single entity. Private cloud provides much greater control for the company and its IT department. However, it also comes with greater cost and fewer of the benefits of a public cloud deployment. Finally, a private cloud may be hosted from your on site datacenter. It may also be hosted in a dedicated datacenter offsite, potentially even by a third party that has dedicated that datacenter to your company.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Private cloud",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Public cloud',
+          detail:"A public cloud is built, controlled, and maintained by a third-party cloud provider. With a public cloud, anyone that wants to purchase cloud services can access and use resources. The general public availability is a key difference between public and private clouds.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Public cloud",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Hybrid cloud',
+          detail:"A hybrid cloud is a computing environment that uses both public and private clouds in an inter-connected environment. A hybrid cloud environment can be used to allow a private cloud to surge for increased, temporary demand by deploying public cloud resources.",
+          detail1:"Hybrid cloud can be used to provide an extra layer of security. For example, users can flexibly choose which services to keep in public cloud and which to deploy to their private cloud infrastructure.",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"", 
+          detail6:"",
+          ancorName:"Hybrid cloud",
+          popup1Name:"Table highlights a few key comparative aspects between the cloud models.",
+          popup1:azure_2,
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Multi-cloud',
+          detail:"A fourth, and increasingly likely scenario is a multi-cloud scenario. In a multi-cloud scenario, you use multiple public cloud providers. Maybe you use different features from different cloud providers. Or maybe you started your cloud journey with one provider and are in the process of migrating to a different provider. Regardless, in a multi-cloud environment you deal with two (or more) public cloud providers and manage resources and security in both environments.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Multi-cloud",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Azure Arc',
+          detail:"zure Arc is a set of technologies that helps manage your cloud environment. Azure Arc can help manage your cloud environment, whether it's a public cloud solely on Azure, a private cloud in your datacenter, a hybrid configuration, or even a multi-cloud environment running on multiple cloud providers at once.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Azure Arc",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Azure VMware Solution',
+          detail:"What if you’re already established with VMware in a private cloud environment but want to migrate to a public or hybrid cloud? Azure VMware Solution lets you run your VMware workloads in Azure with seamless integration and scalability.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Azure VMware Solution",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Describe the consumption-based model',
+          detail:"When comparing IT infrastructure models, there are two types of expenses to consider. Capital expenditure (CapEx) and operational expenditure (OpEx).",
+          detail1:"CapEx is typically a one-time, up-front expenditure to purchase or secure tangible resources. A new building, repaving the parking lot, building a datacenter, or buying a company vehicle are examples of CapEx.",
+          detail2:"In contrast, OpEx is spending money on services or products over time. Renting a convention center, leasing a company vehicle, or signing up for cloud services are all examples of OpEx.",
+          detail3:"Cloud computing falls under OpEx because cloud computing operates on a consumption-based model. With cloud computing, you don’t pay for the physical infrastructure, the electricity, the security, or anything else associated with maintaining a datacenter. Instead, you pay for the IT resources you use. If you don’t use any IT resources this month, you don’t pay for any IT resources.",
+          detail4:"This consumption-based model has many benefits, including:",
+          detail5:"1=>No upfront costs. 2=>No need to purchase and manage costly infrastructure that users might not use to its fullest potential. 3=>The ability to pay for more resources when they're needed.",
+          detail6:"With a traditional datacenter, you try to estimate the future resource needs. If you overestimate, you spend more on your datacenter than you need to and potentially waste money. If you underestimate, your datacenter will quickly reach capacity and your applications and services may suffer from decreased performance. Fixing an under-provisioned datacenter can take a long time. You may need to order, receive, and install more hardware. You'll also need to add power, cooling, and networking for the extra hardware.",
+          detail7:"In a cloud-based model, you don’t have to worry about getting the resource needs just right. If you find that you need more virtual machines, you add more. If the demand drops and you don’t need as many virtual machines, you remove machines as needed. Either way, you’re only paying for the virtual machines that you use, not the “extra capacity” that the cloud provider has on hand.",
+          ancorName:"Describe the consumption-based model",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Compare cloud pricing models',
+          detail:"Cloud computing is the delivery of computing services over the internet by using a pay-as-you-go pricing model. You typically pay only for the cloud services you use, which helps you:",
+          detail1:"1.)Plan and manage your operating costs.",
+          detail2:"2.)Run your infrastructure more efficiently.",
+          detail3:"3.)Scale as your business needs change.",
+          detail4:"To put it another way, cloud computing is a way to rent compute power and storage from someone else’s datacenter. You can treat cloud resources like you would resources in your own datacenter. However, unlike in your own datacenter, when you're done using cloud resources, you give them back. You’re billed only for what you use.",
+          detail5:"Instead of maintaining CPUs and storage in your datacenter, you rent them for the time that you need them. The cloud provider takes care of maintaining the underlying infrastructure for you. The cloud enables you to quickly solve your toughest business challenges and bring cutting-edge solutions to your users.",
+          detail6:"",
+          ancorName:"Compare cloud pricing models",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+      ],
+      KnowledgeCheck:[
+          
+          {
+            check:"What is cloud computing?",
+          
+          },
+
+          {
+            check:"Which cloud model uses some datacenters focused on providing cloud services to anyone that wants them, and some data centers that are focused on a single customer?",
+           
+          },
+          {
+            check:"According to the shared responsibility model, which cloud service type places the most responsibility on the customer?",
+           
+          }
+
+        ],
+      additionalRead:[
+        {
+          title:"link title",
+          url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+        },
+      ],
+      source:[
+        {
+          name:"source title",
+          link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+        },
+      ],
+    people:[]
+    },
+    {name:"Azure Storage",
+      courseStatus:"Incomplete",
+
+      courseNumber:"003",
+      logo:logo,
+      menu:[
+        
+        {
+          name:'Introduction to Azure Storage',
+          detail:"Imagine you're building a photo-sharing application. Every day, thousands of users take pictures, and rely on your application to keep their photos safe while making them accessible across all their devices. Storing these photos is critical to your business, and you want to ensure users that the system used in your application is fast, reliable, and secure. Ideally, this would be done without you having to build all these aspects into the app.",
+          detail1:"Azure Storage provides such power, resiliency, and performance in the cloud. This module provides instructions about using the power of Azure Storage to achieve the reliability and performance in your app that you require. You can then apply this knowledge to any application.",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Introduction to Azure Storage",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Learning objectives',
+          detail:"In this module, you will:",
+          detail1:"1. Explore the data types and services supported by an Azure storage account.",
+          detail2:"2. Create a new Azure storage account using the Azure portal.",
+          detail3:"3. Create a new application and connect the app to an Azure Storage account.",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Learning objectives",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Prerequisites',
+          detail:"Some programming experience in either C# or JavaScript is assumed.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Prerequisites",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Explore Azure storage services',
+          detail:"Let's start by taking a quick look at Azure storage services, data styles, and accounts.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Explore Azure storage services",
+          popup1Name:"Microsoft Azure Storage is a managed service that provides durable, secure, and scalable storage in the cloud. Let's break down these terms.",
+          popup1:azure_3,
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Shorten your cycle time',
+          detail:"When you adopt DevOps practices:",
+          detail1:"1.You shorten your cycle time by working in smaller batches.",
+          detail2:"2.Using more automation.",
+          detail3:"3.Hardening your release pipeline.",
+          detail4:"4.Improving your telemetry.",
+          detail5:"5.Deploying more frequently.",
+          detail6:"",
+          ancorName:"Shorten your cycle time",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Optimize validated learning',
+          detail:"The more frequently you deploy, the more you can experiment. The more opportunity you have to pivot or persevere and gain validated learning each cycle. This acceleration in validated learning is the value of the improvement. Think of it as the sum of progress that you achieve and the failures that you avoid.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Optimize validated learning",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+      ],
+      KnowledgeCheck:[
+          
+          {
+            check:"What is cloud computing?",
+          
+          },
+
+          {
+            check:"Which cloud model uses some datacenters focused on providing cloud services to anyone that wants them, and some data centers that are focused on a single customer?",
+           
+          },
+          {
+            check:"According to the shared responsibility model, which cloud service type places the most responsibility on the customer?",
+           
+          }
+
+        ],
+      additionalRead:[
+        {
+          title:"link title",
+          url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+        },
+      ],
+      source:[
+        {
+          name:"source title",
+          link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+        },
+      ],
+    people:[]
+    },
+    {name:"DevOps",
+      courseStatus:"Incomplete",
+
+      courseNumber:"003",
+      logo:logo,
+      menu:[
+        
+        {
+          name:'What is DevOps',
+          detail:"The contraction of 'Dev' and 'Ops' refers to replacing siloed Development and Operations. The idea is to create multidisciplinary teams that now work together with shared and efficient practices and tools. Essential DevOps practices include agile planning, continuous integration, continuous delivery, and monitoring of applications. DevOps is a constant journey.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"What is DevOps",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Understand your cycle time',
+          detail:"Let us start with a basic assumption about software development. We will describe it with the OODA (Observe, Orient, Decide, Act) loop. Originally designed to keep fighter pilots from being shot out of the sky, the OODA loop is an excellent way to think about staying ahead of your competitors. You start with observing business, market, needs, current user behavior, and available telemetry data. Then you orient with the enumeration of options for what you can deliver, perhaps with experiments. Next, you decide what to pursue, and you act by delivering working software to real users. You can see all occurring in some cycle time.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Understand your cycle time",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Become data-informed',
+          detail:"We recommend you use data to inform what to do in your next cycle. Many experience reports tell us that roughly one-third of the deployments will have negative business results. Approximately one-third will have positive results, and one-third will make no difference. Fail fast on effects that do not advance the business and double down on outcomes that support the business. Sometimes the approach is called pivot or persevere.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Become data-informed",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Strive for validated learning',
+          detail:"How quickly you can fail fast or double down is determined by your cycle time. Also, in how long that loop takes, or in lean terms. Your cycle time determines how quickly you can gather feedback to determine what happens in the next loop. The feedback that you collect with each cycle should be factual, actionable data. We call it validated learning.Strive for validated learning. Good, indifferent, and bad. ",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Strive for validated learning",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Shorten your cycle time',
+          detail:"When you adopt DevOps practices:",
+          detail1:"1.You shorten your cycle time by working in smaller batches.",
+          detail2:"2.Using more automation.",
+          detail3:"3.Hardening your release pipeline.",
+          detail4:"4.Improving your telemetry.",
+          detail5:"5.Deploying more frequently.",
+          detail6:"",
+          ancorName:"Shorten your cycle time",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'Optimize validated learning',
+          detail:"The more frequently you deploy, the more you can experiment. The more opportunity you have to pivot or persevere and gain validated learning each cycle. This acceleration in validated learning is the value of the improvement. Think of it as the sum of progress that you achieve and the failures that you avoid.",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"Optimize validated learning",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+        {
+          name:'',
+          detail:"",
+          detail1:"",
+          detail2:"",
+          detail3:"",
+          detail4:"",
+          detail5:"",
+          detail6:"",
+          ancorName:"",
+          popup1Name:"",
+          popup1:"",
+          popup2Name:"",
+          popup2:"",
+        },
+      ],
+      KnowledgeCheck:[
+          
+          {
+            check:"What is cloud computing?",
+          
+          },
+
+          {
+            check:"Which cloud model uses some datacenters focused on providing cloud services to anyone that wants them, and some data centers that are focused on a single customer?",
+           
+          },
+          {
+            check:"According to the shared responsibility model, which cloud service type places the most responsibility on the customer?",
+           
+          }
+
+        ],
+      additionalRead:[
+        {
+          title:"link title",
+          url:"https://www.youtube.com/watch?v=8oRjP8yj2Wo"
+        },
+      ],
+      source:[
+        {
+          name:"source title",
+          link:"https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+        },
+      ],
+    people:[]
+    }
   ]
 }
 
