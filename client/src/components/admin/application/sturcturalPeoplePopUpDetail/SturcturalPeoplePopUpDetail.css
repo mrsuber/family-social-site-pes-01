@@ -3,3 +3,19 @@
   /* font-weight: bolder !important; */
   font-size: inherit !important;
 }
+.sickleaveSpan{
+  color: #02fb4c;
+}
+.sickleaveSpandanger{
+  color: red
+}
+
+.admin_stucture_statistics_para{
+  border: solid 1px  #3b3d3c;
+  border-radius: 10px;
+  transition: .3s ease;
+}
+
+.admin_stucture_statistics_para:hover{
+  color: #02fb4c;
+}

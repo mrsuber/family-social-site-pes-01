@@ -1,4 +1,4 @@
-import {camsol_logo1, cms10_eric, cms11_leo, cms12_Delor, cms13_jubal, cms14_steph, cms15_jeanne, cms16_Jume, cms17_francktch, cms18_david, cms19_johanah, cms1_CEO,cms20_Ramish,cms21_simon,cms22_francesBeri,cms23_Schmidt,cms24_Herbert,cms25_Stephen,cms2_max,cms3_moh,cms4_Tobi, cms5_Alice, cms6_carine, cms7_Ngoran, cms8_Elma, cms9_Muma} from '../images'
+import {Hawa_1, Samuel_Tiokeng1, Samuel_Tiokeng2, Samuel_Tiokeng3, camsol_logo1, cms10_eric, cms11_leo, cms12_Delor, cms13_jubal, cms14_steph, cms15_jeanne, cms16_Jume, cms17_francktch, cms18_david, cms19_johanah, cms1_CEO,cms20_Ramish,cms21_simon,cms22_francesBeri,cms23_Schmidt,cms24_Herbert,cms25_Stephen,cms2_max,cms3_moh,cms4_Tobi, cms5_Alice, cms6_carine, cms7_Ngoran, cms8_Elma, cms9_Muma, myles_1} from '../images'
 export const companyStructuralData = [
   // {
   //   companyName:"Google",
@@ -1438,6 +1438,26 @@ export const companyStructuralData = [
                 title:'CTO and CHRO',
                 report2:[
                   {
+                    name:'Mafany Tande Myles Bilong',
+                    photo:"cms2_max",
+                    title:'PA',
+                    BiographyP1:'ask him ?????????????????? or find out form slack',
+                    sickLeaveDayNumber:"1",
+                    sickLeaveExplain:[
+                      {reason:"Good day sir Mohamad. Hope you're well.I caught chicken pox for the first time in my life and it's not looking pretty. I don't want the confinement of hospitals so I just skipped all that and went to get the medicine myself.I went to a pharmacy earlier to have some meds bought. I'm writing to inquire if there's support for that, although I didn't go through the normal procedure of consultation.",
+                        date:"10-06-2024",
+                        paid:"yes",
+                        amount:"18420",
+                        paidDate:"10-06-2024",
+                        supportingDocs:[
+                          {doc:myles_1},
+                        ]
+                        
+                      },
+
+                    ]
+                  },
+                  {
                     name:"Product & Design",
                     photo:camsol_logo1,
                     report3:[
@@ -1468,21 +1488,23 @@ export const companyStructuralData = [
                                       name:'Ngumih Fien Mbimsi-mbom',
                                       photo:"",
                                       title:'',
+                                      layoff:true
                                     },
                                     {
                                       name:'Djiabi Angoh Maggy Ange',
                                       layoff:true,
-                                      photo:'',
+                                      photo:'https://ca.slack-edge.com/T03MZB4ML81-U0455K411LZ-8575ba402a86-512',
                                       title:'',
                                     },
                                     {
                                       name:'Kapgang Djampou Ralph Landry',
-                                      photo:"",
+                                      photo:"https://ca.slack-edge.com/T03MZB4ML81-U03V1R20771-9d5b6742a665-512",
                                       title:'',
+                                      layoff:true
                                     },
                                     {
                                       name:'Nahjela Roselyn Bassah',
-                                      photo:'',
+                                      photo:'https://ca.slack-edge.com/T03MZB4ML81-U048YGM7684-6d166bd46f85-512',
                                       title:'',
                                     },
                                     
@@ -1501,12 +1523,12 @@ export const companyStructuralData = [
                                   
                                   {
                                     name:'Nwoteh Magung Issabel',
-                                    photo:'',
+                                    photo:'https://ca.slack-edge.com/T03MZB4ML81-U03NH8K3U15-e1fe47757c7e-512',
                                     title:'',
                                   },
                                   {
                                     name:'Foncham Bernard Bassah',
-                                    photo:"",
+                                    photo:"https://ca.slack-edge.com/T03MZB4ML81-U051GPZQCR2-08ef616735f2-512",
                                     title:'',
                                   },
                                   {
@@ -1532,18 +1554,23 @@ export const companyStructuralData = [
                               report6:[
                                 {
                                   name:"Regine Nkombong Cyrille",
-                                  layoff:true
+                                  layoff:true,
+                                  photo:'https://ca.slack-edge.com/T03MZB4ML81-U04CGC8S17Z-873988e9a07d-512'
                                 },
                                 {
-                                  name:"Gueguim Sonna Zitha Unelle"
+                                  name:"Gueguim Sonna Zitha Unelle",
+                                  layoff:true,
+                                  photo:'https://ca.slack-edge.com/T03MZB4ML81-U04H5M7N1DY-d31c10d6d07c-512'
                                 },
                                 {
                                   name:"Meli Tchouala Imelda",
-                                  layoff:true
+                                  layoff:true,
+                                  photo:'https://ca.slack-edge.com/T03MZB4ML81-U050ZPWMM1D-f64eda49d82b-512'
                                 },
                                 {
                                   name:"Ngouleu Noumbissi Tertullien",
-                                  warning:true
+                                  warning:true,
+                                  photo:'https://ca.slack-edge.com/T03MZB4ML81-U03VA870CRF-8cb0ea37140b-512'
                                 }
                               ]
                             },
@@ -1559,16 +1586,23 @@ export const companyStructuralData = [
                             title:'',
                             report6:[
                               {name:"Ulrich Djiofack",
-                              uknownPerson:true,
+                              uknownPerson:false,
+                              photo:'https://ca.slack-edge.com/T03MZB4ML81-U05FYSGTLV6-9565e6a5f603-512'
                             },
                             {
-                              name:"Findo Peter Kampete"
+                              name:"Findo Peter Kampete",
+                              photo:'https://ca.slack-edge.com/T03MZB4ML81-U0411FAG942-2caff10fa1de-512',
+                              layoff:true
                             },
                             {
-                              name:"Messi Innocent Rostand"
+                              name:"Messi Innocent Rostand",
+                              photo:'https://ca.slack-edge.com/T03MZB4ML81-U042QBM8SS2-bc609f4e55ee-512',
+                              layoff:true
                             },
                             {
-                              name:"Mugri Ndeh Frunwi"
+                              name:"Mugri Ndeh Frunwi",
+                              layoff:true,
+                              photo:'https://ca.slack-edge.com/T03MZB4ML81-U042QCAAZD4-a5f5e7676239-512'
                             }
                             ]
                           },
@@ -1720,16 +1754,20 @@ export const companyStructuralData = [
                                 },
                                 {
                                   name:'Elmander Elmer',
+                                  layoff:true,
                                   photo:cms8_Elma,
                                   title:''
                                 },
                                 {
-                                  name:"Tanjoh Noel Nchong"
+                                  name:"Tanjoh Noel Nchong",
+                                  layoff:true
                                 },
                                 {
                                   name:"Mopock Talla Ceverine Thalitha",
                                   intern:true,
-                                  promotion:true,
+                                  promotion:false,
+                                  layoff:true,
+                                  photo:"https://ca.slack-edge.com/T03MZB4ML81-U03RQLEPT99-35531305936b-512",
                                   promotionDate:"01/09/2023",
                                   promotionTo:"fullstack"
                                 }
@@ -1773,17 +1811,24 @@ export const companyStructuralData = [
                         ],
                         report4:[
                           {
-                            name:"Fuanjia Nkengfua Christopher"
+                            name:"Fuanjia Nkengfua Christopher",
+                            layoff:true,
+                            photo:'https://ca.slack-edge.com/T03MZB4ML81-U06BA2FPD9T-57f8bf4a86ae-512'
+
                           },
                           {
                             name:"Fondanui Kelly Tasha",
+                            photo:"https://ca.slack-edge.com/T03MZB4ML81-U0402DGF7D0-f64a2d0a85a5-512",
                             layoff:true
                           },
                           {
-                            name:"Fotsop Buea Luca"
+                            name:"Fotsop Buea Luca",
+                            photo:"https://ca.slack-edge.com/T03MZB4ML81-U049EL3RVU0-4b842a5f429e-512",
+                            layoff:true
                           },
                           {
-                            name:"Aze Desmond Nembo"
+                            name:"Aze Desmond Nembo",
+                            photo:'https://ca.slack-edge.com/T03MZB4ML81-U03QWH0V292-1a04f6e910d3-512'
                           },
                           {
                             name:"Fondanui Kelly Tasha",
@@ -1824,25 +1869,35 @@ export const companyStructuralData = [
                                 report6:[
                                   {
                                     name:"Lowe Silcanus",
+                                    layoff:true,
+                                    photo:'https://ca.slack-edge.com/T03MZB4ML81-U03MS48PS7R-4bb456688b17-512',
                                     report7:[
                                       {
                                         name:"Acha Achubang",
+                                        layoff:true,
+                                        photo:'https://ca.slack-edge.com/T03MZB4ML81-U041XTLR5T5-706421c9b519-512',
                                         warning:true
                                       },
                                       {
-                                        name:'Nkenfa Nkombong Brandon'
+                                        name:'Nkenfa Nkombong Brandon',
+                                        layoff:true,
+                                        photo:'https://ca.slack-edge.com/T03MZB4ML81-U03NY0ATUR0-4ae18be44b1b-512',
                                       },
                                       {
-                                        name:'Queen Laure Ngum Nfongeh'
+                                        name:'Queen Laure Ngum Nfongeh',
+                                        photo:'https://ca.slack-edge.com/T03MZB4ML81-U055NSMH4KY-abbb4fea00b8-512'
                                       },
                                       {
-                                        name:"Chu Edwin Gah"
+                                        name:"Chu Edwin Gah",
+                                        photo:'https://ca.slack-edge.com/T03MZB4ML81-U044MT74P5K-fba87333acbd-512'
                                       },
                                       {
-                                        name:"Wuyika Serge Kevin"
+                                        name:"Wuyika Serge Kevin",
+                                        photo:'https://ca.slack-edge.com/T03MZB4ML81-U03RMTW7LH3-31d878429d44-512'
                                       },
                                       {
-                                        name:"Carine Gije Nfor"
+                                        name:"Carine Gije Nfor",
+                                        layoff:true
                                       }
                                     ]
                                   }
@@ -1854,25 +1909,34 @@ export const companyStructuralData = [
                                 report6:[
                                   {
                                     name:"Prince Junior",
+                                    photo:'https://ca.slack-edge.com/T03MZB4ML81-U04CJ9WMVBK-cba0f8afbabd-512',
                                     report7:[
                                         {
-                                          name:"Apoh Prince Eldrige"
+                                          name:"Apoh Prince Eldrige",
+                                          photo:'https://ca.slack-edge.com/T03MZB4ML81-U04GR131DPZ-1f24be3715b1-512',
                                         },
                                         {
-                                          name:"Atem Randy Asong"
+                                          name:"Atem Randy Asong",
+                                          photo:'https://ca.slack-edge.com/T03MZB4ML81-U04HD9MLCM7-fb37611438ae-512',
+                                          layoff:true
                                         },
                                         {
-                                          name:"Fomonyuytar Joseph"
+                                          name:"Fomonyuytar Joseph",
+                                          photo:"https://ca.slack-edge.com/T03MZB4ML81-U056CAWF1ME-198fec6652ca-512"
                                         },
                                         {
                                           name:"Bradon Mbianou",
-                                          uknownPerson:true
+                                          uknownPerson:false,
+                                          photo:"https://ca.slack-edge.com/T03MZB4ML81-U05CDV7015K-46cf92165291-512",
                                         },
                                         {
-                                          name:"Nchia Emmanuela Ekei"
+                                          name:"Nchia Emmanuela Ekei",
+                                          photo:"https://ca.slack-edge.com/T03MZB4ML81-U04M3KGMZ62-9a364dc60f34-512"
                                         },
                                         {
-                                          name:"Nkwetakem Tabo Bruno"
+                                          name:"Nkwetakem Tabo Bruno",
+                                          layoff:true,
+                                          photo:"https://ca.slack-edge.com/T03MZB4ML81-U04S2T1PW6M-33f481231569-512"
                                         }
                                     ]
                                   }
@@ -1892,6 +1956,7 @@ export const companyStructuralData = [
                             name:'Nnouka Stephen',
                             photo:cms25_Stephen,
                             title:'Ask him ???????????????',
+                            layoff:true,
                             BiographyP1:'ask him ?????????????????? or find out form slack',
                             source:[
                               {
@@ -1906,6 +1971,7 @@ export const companyStructuralData = [
                                 report6:[
                                   {
                                     name:"Nkoa Chistophe",
+                                    photo:'https://ca.slack-edge.com/T03MZB4ML81-U03NZ3K3SUT-d16201de00e5-512',
                                     report7:[
                                       {
                                         name:'Nde Che Lucien Ngwa',
@@ -1913,16 +1979,42 @@ export const companyStructuralData = [
                                       },
                                       {
                                         name:'Norbert Ndip Etta',
+                                         photo:'https://ca.slack-edge.com/T03MZB4ML81-U04GNUB93BR-0e23f80f6af8-512',
+                                         report8:[
+                                            {
+                                              name:"Fonyuy Verena Monyuuta-ah"
+                                            }
+                                         ]
                                       },
                                       {
-                                        name:'Peng Boris Akebuon',
+                                        name:'Peng Boris Akebuon',layoff:true,photo:'https://ca.slack-edge.com/T03MZB4ML81-U04RQ4Z6JNN-5ab958efa408-512',
                                       },
                                       {
-                                        name:'Brian Atanga Muma',
+                                        name:'Brian Atanga Muma',layoff:true,photo:'https://ca.slack-edge.com/T03MZB4ML81-U04293X9XCZ-709d19a29303-512',
                                       },
                                       {
                                         name:'Samuel Tiokeng',
-                                        uknownPerson:true
+                                        phoneNumber:'+237-670-922-061',
+                                        email:"samueledward40@gmail.com",
+                                        uknownPerson:false,
+                                        photo:"https://ca.slack-edge.com/T03MZB4ML81-U05EM1LQARZ-c6ff6369653e-512",
+                                        sickLeaveDayNumber:"1",
+                                        sickLeaveExplain:[
+                                          {reason:"This is Samuel Tiokeng from the Backend Team at Camsol. I am writing regarding the sick leave I took for on Monday 3rd of June. I went to the Mbingo Hospital in Douala and had expenses worth 16,000FCFA.  I had some weekness in my Joints for some time now and I had to consult for it because it was taking a toll on my productivity. This is how the expenses went at the hospital - Registration: 1000FCFA, - Tests: 7000FCF - Drugs: 8000FCFA Which gives a total of 16000FCFA for my hospital expenses. I was hoping for assistance with these medical expenses as the contract says concerning health insurance. Attached to this are pictures highlighting those expenses in my medical booklet",
+                                            date:"03-06-2024",
+                                            paid:"yes",
+                                            amount:"16000",
+                                            paidDate:"06-06-2024",
+                                            supportingDocs:[
+                                              {doc:Samuel_Tiokeng1},
+                                              {doc:Samuel_Tiokeng2},
+                                              {doc:Samuel_Tiokeng3}
+                                            ]
+                                            
+                                          },
+
+                                        ]
+
                                       },
                                       {
                                         name:'Domou Namou Brice Armel',
@@ -1937,6 +2029,7 @@ export const companyStructuralData = [
                                 report6:[
                                   {
                                     name:"Fru Boris",
+                                    photo:'https://ca.slack-edge.com/T03MZB4ML81-U04GYUW55HC-29cc7f71d153-512',
                                     report7:[
                                         {
                                           name:"Billy Hans Weno Ndum",
@@ -1945,9 +2038,9 @@ export const companyStructuralData = [
                                         {name:"Nji Kebei Daniel Koum",
                                         layoff:true
                                       },
-                                        {name:"Djomo Nkwuatchou Brown Alden"},
-                                        {name:"Asonglefac Millenium Nzefe"},
-                                        {name:"Sonwa Boris Roberto"}
+                                        {name:"Djomo Nkwuatchou Brown Alden" , layoff:true,photo:'https://ca.slack-edge.com/T03MZB4ML81-U03N1P4CNN8-4430a45d63ea-512'},
+                                        {name:"Asonglefac Millenium Nzefe", layoff:true,photo:"https://ca.slack-edge.com/T03MZB4ML81-U03V3MJ5G5V-67da3b2e7d46-512"},
+                                        {name:"Sonwa Boris Roberto", photo:"https://ca.slack-edge.com/T03MZB4ML81-U04RMHN4S6R-4d753f5dad94-512"}
                                     ]
                                   }
                                 ]
@@ -1971,6 +2064,7 @@ export const companyStructuralData = [
                         photo:cms24_Herbert,
                         title:'team lead',
                         transfered:true,
+                        layoff:true,
                         BiographyP1:'ask him ?????????????????? or find out form slack',
                         source:[
                           {
@@ -1982,9 +2076,11 @@ export const companyStructuralData = [
                           {
                             name:'Yannick Njume',
                             layoff:true,
+                            photo:'https://ca.slack-edge.com/T03MZB4ML81-U041Z74A47N-09896a5e2457-512'
                           },
                           {
                             name:'Asonganyi Rouclec',
+                            photo:'https://ca.slack-edge.com/T03MZB4ML81-U044Q1KTR6H-8b25e5b9a14b-512'
                           }
                         ]
                       },
@@ -2036,6 +2132,25 @@ export const companyStructuralData = [
                           },
                         ]
                       },
+                      {
+                        name:'Adidjatou Tsedoumo Hawa Dahli',
+                        photo:'https://ca.slack-edge.com/T03MZB4ML81-U06DM78MX5M-c4ff217b83cd-512',
+                        title:'HR/PA',
+                        sickLeaveDayNumber:"1",
+                        sickLeaveExplain:[
+                          {reason:"Dear Manager,I hope this message finds you well. I am writing to request a day off from work due to health concerns that I believe may impact my ability to perform effectively. I kindly ask for your understanding and approval for this time off to ensure I can address these health issues promptly. I will keep you updated on my status and ensure that any urgent tasks are handled accordingly. Thank you for your consideration. Best regards,Miss. Adidjatou T. Hawa Dahli ",
+                            date:"24-06-2024",
+                            paid:"no",
+                            amount:"",
+                            paidDate:"",
+                            supportingDocs:[
+                              {doc:Hawa_1},
+                            ]
+                            
+                          },
+    
+                        ]
+                      }
                       
                       
                     ]
@@ -2062,6 +2177,18 @@ export const companyStructuralData = [
             name:"Board of Directors",
             photo:camsol_logo1,
             report1:[
+            {
+              name:'Tobias Braun',
+              photo:cms4_Tobi,
+              title:'CTO and CHRO',
+              BiographyP1:'ask him ?????????????????? or find out form slack',
+                source:[
+                  {
+                    name:"unknown???????",
+                    link:"??????"
+                  }
+                ]
+            },
               {
                 name:'Maximilian Betz',
                 photo:cms2_max,
@@ -2187,12 +2314,7 @@ export const companyStructuralData = [
                 ],
     
               },
-              {
-                name:'Mohamad Siysinyuy Banbong',
-                      photo:cms3_moh,
-                      title:'Megaminds team lead(full stack developer)',
-                      
-              },
+             
             ]
           }
         ]
@@ -2203,7 +2325,7 @@ export const companyStructuralData = [
           
                 {
                   name:"Board of Directors",
-                  people:[
+                  report1:[
                     {
                       name:'Maximilian Betz',
                       photo:cms2_max,
