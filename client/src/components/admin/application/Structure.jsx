@@ -16,6 +16,7 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
       const [people,setPeople] = useState(null)
       const [position,setPosition]= useState(null)
       const [sickleaveViewPopUp,setSickleaveViewPopUp] = useState(false)
+      const [loanViewPopUp,setLoanViewPopUp] = useState(false)
 
       const [zoom, setZoom]=useState(1)
 
@@ -123,7 +124,7 @@ const runstyle =(data)=>{
         <p className='admin_stucture_statistics_para' onClick={()=>setSickleaveViewPopUp(true)}>Sick leaves No: <span className='admin_stucture_statistics_span'>02</span></p>
       </div>
       <div className='admin_stucture_statistics_container'>
-        <p>Payed leaves No: <span className='admin_stucture_statistics_span'>??</span></p>
+        <p className='admin_stucture_statistics_para' onClick={()=>setLoanViewPopUp(true)}>Loans No: <span className='admin_stucture_statistics_span'>02</span></p>
       </div>
       
     </div>
@@ -143,6 +144,21 @@ const runstyle =(data)=>{
      
      <p>3.) Samuel Tiokeng <span className='admin_stucture_statistics_span'>01-(2024)</span></p>
    </div>
+    
+  </div>}
+  {loanViewPopUp===true && 
+    
+    <div className='admin_stucture_statistics2'>
+      <button className="admin__structural-back-btn2 " onClick={()=>setLoanViewPopUp(false)}>close</button>
+    <div className='admin_stucture_statistics_container'>
+     
+      <p>1.)Francis Berinyuy - 195,000 CFA <span className='admin_stucture_statistics_span'>on 08-12-2023</span> <span className='admin_stucture_statistics_span'> paid on 01-04-2023</span></p>
+    </div>
+    <div className='admin_stucture_statistics_container'>
+     
+     <p>2.) Leonardo Bornhäußer /Creativate - 35,000 CFA  <span className='admin_stucture_statistics_span'>on 24-06-2024</span> <span className='admin_stucture_statistics_span'> paid on **NOT PAID**</span></p>
+   </div>
+   
     
   </div>}
     {
