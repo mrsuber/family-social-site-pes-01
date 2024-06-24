@@ -15,6 +15,7 @@ const Structure = ({companyName,cardData,strutureData,setOnStructuralDetail}) =>
       const [onView,setOnView] = useState(false)
       const [people,setPeople] = useState(null)
       const [position,setPosition]= useState(null)
+      const [sickleaveViewPopUp,setSickleaveViewPopUp] = useState(false)
 
       const [zoom, setZoom]=useState(1)
 
@@ -107,7 +108,43 @@ const runstyle =(data)=>{
     <div class="admin__stucture_btn admin__stucture_btn-zoom" onClick={()=>setZoom(zoom+0.1)}>  <ZoomIn /></div>
     <div class="admin__stucture_btn admin__stucture_btn-zoom-out" onClick={()=>setZoom(zoom-0.1)}><ZoomOut/></div>
     <div class="admin__stucture_btn admin__stucture_btn-zoom-init" onClick={()=>setZoom(1)}><Refresh/></div>
-
+    <div className='admin_stucture_statistics'>
+      <div className='admin_stucture_statistics_container'>
+       
+        <p>All Workers No: <span className='admin_stucture_statistics_span'>??</span></p>
+      </div>
+      <div className='admin_stucture_statistics_container'>
+        <p>CM Workers No: <span className='admin_stucture_statistics_span'>??</span></p>
+      </div>
+      <div className='admin_stucture_statistics_container'>
+        <p>Projects No: <span className='admin_stucture_statistics_span'>??</span></p>
+      </div>
+      <div className='admin_stucture_statistics_container'>
+        <p className='admin_stucture_statistics_para' onClick={()=>setSickleaveViewPopUp(true)}>Sick leaves No: <span className='admin_stucture_statistics_span'>02</span></p>
+      </div>
+      <div className='admin_stucture_statistics_container'>
+        <p>Payed leaves No: <span className='admin_stucture_statistics_span'>??</span></p>
+      </div>
+      
+    </div>
+    {sickleaveViewPopUp===true && 
+    
+    <div className='admin_stucture_statistics2'>
+      <button className="admin__structural-back-btn2 " onClick={()=>setSickleaveViewPopUp(false)}>close</button>
+    <div className='admin_stucture_statistics_container'>
+     
+      <p>1.) Adidjatou Tsedoumo Hawa Dahli <span className='admin_stucture_statistics_span'>01-(2024)</span></p>
+    </div>
+    <div className='admin_stucture_statistics_container'>
+     
+     <p>2.) Mafany Tande Myles Bilong <span className='admin_stucture_statistics_span'>01-(2024)</span></p>
+   </div>
+   <div className='admin_stucture_statistics_container'>
+     
+     <p>3.) Samuel Tiokeng <span className='admin_stucture_statistics_span'>01-(2024)</span></p>
+   </div>
+    
+  </div>}
     {
       onView===true
       /*&& <AdminResume/>*/
@@ -310,6 +347,27 @@ const runstyle =(data)=>{
                                                                </div>
                                                                <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(rep7,rep6)} style={{cursor:'pointer'}}>more...</span>
                                                                </nav>
+                                                              
+                                                               {rep7.report8 && <ul className="ul">
+                                                         {/*report to the CEO and Bourd of directors*/}
+         
+                                                           {
+                                                              rep7.report8.map((rep8)=>(
+                                                               <li className="li">
+                                                               <nav style={ runstyle(rep8)}>
+                                                               <div className="AdminStructure__company-logo">
+                                                                 <img src={rep8.photo} alt="imgchild"/>
+                                                               </div>
+         
+                                                               <div className="AdminStructure__company-mainItem">
+                                                                 <h3>Name: <span>{rep8.name}</span></h3>
+         
+         
+                                                               </div>
+                                                               <span className="AdminStructure__hoverSpan" onClick={()=>displayPopup(rep8,rep7)} style={{cursor:'pointer'}}>more...</span>
+                                                               </nav>
+                                                               </li>
+                                                              ))}</ul>}
                                                               
                                                                </li>
                                                              ))

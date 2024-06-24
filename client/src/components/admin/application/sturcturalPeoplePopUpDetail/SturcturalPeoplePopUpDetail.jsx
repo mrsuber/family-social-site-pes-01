@@ -140,14 +140,14 @@ const SturcturalPeoplePopUpDetail = ({setOnView,onView=false, data,position}) =>
           <div className="admin__resume__right-box">
 
             <div className="admin__resume__year-company">
-              <h5>{ex.yearsOfExperience}</h5>
-              <h5>{ex.placeOfExperience}</h5>
-              <h5>{ex.locationOfExperience}</h5>
+              <h5>{ex?.yearsOfExperience}</h5>
+              <h5>{ex?.placeOfExperience}</h5>
+              <h5>{ex?.locationOfExperience}</h5>
 
             </div>
             <div className="admin__resume__text">
-              <h4>{ex.areaOfExpertise}</h4>
-              <p>{ex.descOfWorkDoneInAreaOfExpertise}</p>
+              <h4>{ex?.areaOfExpertise}</h4>
+              <p>{ex?.descOfWorkDoneInAreaOfExpertise}</p>
             </div>
           </div>
         )) : <div className="admin__resume__right-box">
@@ -197,6 +197,28 @@ const SturcturalPeoplePopUpDetail = ({setOnView,onView=false, data,position}) =>
           }
 
           </ul>
+        </div>
+
+        <div className="admin__resume__about admin__resume__sickleaves">
+          <h2 className="admin__resume__right-title">Sick leaves</h2>
+          <div className="admin__resume__text">
+              <h4>Number of Sick leaves in total : {data?.sickLeaveDayNumber}</h4>
+             {data?.sickLeaveExplain?.map((sickleave,index)=>(
+              <div key={index}>
+                <div>
+                  {console.log(sickleave, "this is sick leave data")}
+                   <p>Reason for sick leave: <span className='sickleaveSpan'>{sickleave?.reason}</span></p>
+                   <p>date for sick leave: <span className='sickleaveSpan'>{sickleave?.date}</span></p>
+                   <p>Payment Status: {sickleave?.paid === "no" ? <span className='sickleaveSpandanger'>{sickleave?.paid}</span> :<span className='sickleaveSpan'>{sickleave?.paid}</span>} </p>
+                   <p>Payment amount: <span className='sickleaveSpan'>{sickleave?.amount}</span></p>
+                   <p>Payment date: <span className='sickleaveSpan'>{sickleave?.paidDate}</span></p>
+                   <p>Supporting Docs: {sickleave?.supportingDocs?.length>0 ? <span className='sickleaveSpan'>Docs Available. click to see</span> :<span className='sickleaveSpandanger'>No docs Available</span>} </p>
+                </div>
+               
+              </div>
+              
+             )) }
+            </div>
         </div>
       </div>
 

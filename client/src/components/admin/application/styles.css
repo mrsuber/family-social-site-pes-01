@@ -308,6 +308,24 @@
   background: #137880 ;
 }
 
+.admin__structural-back-btn2{
+  position: absolute;
+  margin: 0 10px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--normal-text);
+  border: 1px solid var(--color-main);
+  background: var(--bg);
+  width: 80px;
+  transition: .5s;
+  left: 26rem;
+}
+
+.admin__structural-back-btn2:hover{
+  border:1px solid #00ffa4;
+  background: #137880 ;
+}
 
 
 .test__box {
@@ -346,7 +364,7 @@
   z-index: 1;
 }
 .admin__stucture_btn:hover {
-  background: #eef;
+  background: rgb(99, 159, 150);
 }
 
 .admin__stucture_btn-zoom {
@@ -359,3 +377,77 @@
 .admin__stucture_btn-zoom-init {
   bottom: 50px;
 }
+
+.admin_stucture_statistics{
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  /* align-items: left;
+  justify-content: left; */
+  cursor: pointer;
+  width: 240px;
+  height: 400px;
+  background: #0D1117;;
+  border: 1px solid #005bac;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  color: #005bac;
+  padding: 15px;
+  position: fixed;
+  text-align: center;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+	transition: all 0.3s ease;
+  z-index: 1;
+  bottom: 0rem;
+  left: 26rem;
+}
+
+.admin_stucture_statistics2{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  /* align-items: left;
+  justify-content: left; */
+  cursor: pointer;
+  width: 540px;
+  height: 400px;
+  background: #0D1117;;
+  border: 1px solid #005bac;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  color: #005bac;
+  padding: 15px;
+  position: fixed;
+  text-align: center;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+	transition: all 0.3s ease;
+  z-index: 1;
+  bottom: 0rem;
+  left: 46rem;
+  overflow-y: scroll;
+}
+
+.admin_stucture_statistics_span{
+  color: #00ffa4;
+}
+
+.admin_stucture_statistics_container{
+margin-left: 0;
+padding-left: 1px;
+}
+.admin_stucture_statistics_container p{
+  margin-left: 0;
+  padding-left: 1px;
+  text-align: left;
+  }

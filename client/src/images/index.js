@@ -74,3 +74,9 @@ export {default as velte_logo} from './velteTehc/Screen Shot 2022-12-27 at 8.35.
 export {default as azure_1} from './Azure/1.png'
 export {default as azure_2} from './Azure/2.png'
 export {default as azure_3} from './Azure/azure_storage_services.png'
+//sick leave Camsol
+export {default as Samuel_Tiokeng1} from './camsol/sickleaveDocs/SamuelTiokeng/sick_doc1.jpeg'
+export {default as Samuel_Tiokeng2} from './camsol/sickleaveDocs/SamuelTiokeng/sick_doc2.jpeg'
+export {default as Samuel_Tiokeng3} from './camsol/sickleaveDocs/SamuelTiokeng/sick_doc3.jpeg'
+export {default as myles_1} from './camsol/sickleaveDocs/Myles/1.jpeg'
+export {default as Hawa_1} from './camsol/sickleaveDocs/Hawa/1.png'
