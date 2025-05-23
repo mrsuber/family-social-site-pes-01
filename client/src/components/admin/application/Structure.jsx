@@ -126,6 +126,9 @@ const runstyle =(data)=>{
       <div className='admin_stucture_statistics_container'>
         <p className='admin_stucture_statistics_para' onClick={()=>setLoanViewPopUp(true)}>Loans No: <span className='admin_stucture_statistics_span'>02</span></p>
       </div>
+      <div className='admin_stucture_statistics_container'>
+        <p className='admin_stucture_statistics_para' onClick={()=>setLoanViewPopUp(true)}>Company Hardware: <span className='admin_stucture_statistics_span'>02</span></p>
+      </div>
       
     </div>
     {sickleaveViewPopUp===true && 

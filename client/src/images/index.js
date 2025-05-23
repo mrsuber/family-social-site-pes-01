@@ -80,3 +80,6 @@ export {default as Samuel_Tiokeng2} from './camsol/sickleaveDocs/SamuelTiokeng/s
 export {default as Samuel_Tiokeng3} from './camsol/sickleaveDocs/SamuelTiokeng/sick_doc3.jpeg'
 export {default as myles_1} from './camsol/sickleaveDocs/Myles/1.jpeg'
 export {default as Hawa_1} from './camsol/sickleaveDocs/Hawa/1.png'
+
+//camsol technologies
+export {default as transform01} from './camsoltechnolgies/stage-01-transformation/transform01.png'
