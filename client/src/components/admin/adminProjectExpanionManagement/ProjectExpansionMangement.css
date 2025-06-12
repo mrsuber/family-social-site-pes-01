@@ -1,0 +1,120 @@
+.admin__Unclear-container-management
+{
+  position: relative;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* background: var(--button-bg); */
+  background: #2d88ee08;
+  z-index: 28;
+  overflow: auto;
+}
+
+.admin__Unclear-content-management
+{
+  
+  width: 100%;
+  background: var(--bg);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px auto;
+    margin-right: auto;
+  margin-right: 2rem;
+  border: 1px solid var(--color-main);
+  
+  max-width: 94vw;
+  min-height: 1000px;
+  right: -8rem;
+}
+
+.admin__Unclear-btn-container-management
+{
+  position: absolute;
+  top: 1rem;
+  right: 5rem;
+  color: white;
+  padding: 5px;
+  border: none;
+}
+
+.admin__Unclear-close-btn-management
+{
+  margin: 25px 8px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--normal-text);
+  border: 1px solid var(--color-main);
+  background: var(--bg);
+  float: left;
+}.admin__managementOnView-item h3 {
+  font-size: 16px;
+  color: var(--color-main);
+}
+
+.admin__managementOnView-item p {
+  font-size: 14px;
+  color: #00ffa4;
+  margin: 20px 0;
+  text-align: justify;
+}
+
+/* modifuy css */
+.admin__stucture_btn-zoom-management {
+  bottom: 190px;
+}
+
+.admin__stucture_btn-management {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background: #FFF;
+  border: 1px solid #005bac;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #005bac;
+  padding: 15px;
+  position: fixed;
+  text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: all 0.3s ease;
+  z-index: 1;
+  left: 7rem;
+}
+
+.admin_stucture_statistics-management {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  align-items: left;
+  justify-content: left;
+  cursor: pointer;
+  width: 240px;
+  height: 400px;
+  background: #0D1117;
+  border: 1px solid #005bac;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  color: #005bac;
+  padding: 15px;
+  position: fixed;
+  text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: all 0.3s ease;
+  z-index: 1;
+  bottom: 0rem;
+  left: 10rem;
+}
+.management-container-for-btn-and-stats{
+  height: 400px;
+  width:250px;
+  background-color: red;
+}

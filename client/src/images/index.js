@@ -3,6 +3,7 @@ export {default as img2} from './blog-1.jpg'
 export {default as img3} from './project-2.png'
 export {default as img4} from './project-3.png'
 export {default as logo} from './suber_logo1.png'
+export {default as logo2} from './suberCraftex/subercraftexLogo.png'
 export {default as profile} from './me.webp'
 
 // export for  geneosocial welcome clearTimeout
@@ -83,3 +84,10 @@ export {default as Hawa_1} from './camsol/sickleaveDocs/Hawa/1.png'
 
 //camsol technologies
 export {default as transform01} from './camsoltechnolgies/stage-01-transformation/transform01.png'
+
+
+//suber craftex 
+export {default as Safi} from './suberCraftex/Safiya.jpg'
+export {default as wis_01} from './suberCraftex/wisdom.jpg'
+export {default as vernyuy_01} from './suberCraftex/vernyuy.jpg'
+export {default as joy_1} from './suberCraftex/joy1.jpg'

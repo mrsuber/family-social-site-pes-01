@@ -154,3 +154,7 @@ export {default as AdminExpenseList} from './admin/expense/AdminExpenseList/Admi
 //exporting project expansion components
 export {default as AdminProjectExpansionPreviewPopupProfile} from './admin/adminProfile/profilePopup/ProfilePopup'
 export {default as AdminProjectExpansionPreviewPopupArchivement} from './admin/adminArchivements/archivementPopup/ArchivementPopup'
+
+
+//project expansion Management
+export {default as AdminProjectExpansionManagement} from './admin/adminProjectExpanionManagement/ProjectExpansionMangement'

@@ -24,7 +24,7 @@ const AdminProjectExpansionScreen = () => {
     const activatePopup=(title)=>{
 
       for(let i=0;i<pe.length;i++){
-        console.log(pe[i].title)
+       
         if(pe[i].title===title){
           setData(pe[i])
         }
@@ -487,7 +487,7 @@ const AdminProjectExpansionScreen = () => {
         <span>General 1</span>
         <div className='line'></div>
         <div className='tip'>
-          Design
+          Suber Craftex
         </div>
       </div>
       <div className='future_ui__piece' onClick={()=>activatePopup("General 4")}>

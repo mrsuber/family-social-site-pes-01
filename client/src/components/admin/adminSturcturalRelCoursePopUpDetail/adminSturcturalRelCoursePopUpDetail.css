@@ -165,3 +165,7 @@ details::before {
     opacity: 0;
   }
 }
+
+.admin__graph-board_apply {
+  width: 2000rem !important;
+}

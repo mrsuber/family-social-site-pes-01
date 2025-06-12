@@ -614,7 +614,161 @@ export const prodjectExpansionData = [
 {
   title:"General 1",
   logo:logo,
- 
+  businessTitle:"Suber Craftex",
+  BusinessDepartments:[
+    
+    {Department:[
+      {name:"Marketing & money In"},
+      {branch:[
+        {name:"suberCraftex marketing"},
+        {name:"camsol Technologies marketing",
+          stages:[
+            {name: 'e-marketing',
+              levels:[
+                {level : "investors",
+                  methods:[
+                    {method:"email",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"referal",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"social media",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                  ]
+                },
+                {level : "socializing(facebook etc)",
+                  methods:[
+                    {method:"facebook",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"linkin",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"whatsapp",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                  ]
+                },
+                {level: 'clients',
+                  methods:[
+                    {method:"email",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"referal",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"social media",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                  ]
+
+                }
+              ]
+
+            },
+            {name: 'physical marketing',
+              levels:[
+                {level : "investors",
+                  methods:[
+                    {method:"email",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"referal",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"social media",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                  ]
+                },
+                {level : "socializing(facebook etc)",
+                  methods:[
+                    {method:"facebook",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"linkin",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"whatsapp",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                  ]
+                },
+                {level: 'clients',
+                  methods:[
+                    {method:"email",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"referal",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                    {method:"social media",
+                      users:[
+                        {userProfile:{name:"mohamad"}}
+                      ]
+                    },
+                  ]
+
+                }
+              ]
+            }
+          ]
+        },
+
+      ]}
+    ]},
+    {Department:[
+      {name:"Branding"},
+    ]},
+    {Department:[
+      {name:"finance"},
+    ]},
+    {Department:[
+      {name:"Tech"},
+    ]},
+    {Department:[
+      {name:"products"},
+    ]},
+    {Department:[
+      {name:"Human resouce"},
+    ]},
+  ]
 },
 {
   title:"General 2",

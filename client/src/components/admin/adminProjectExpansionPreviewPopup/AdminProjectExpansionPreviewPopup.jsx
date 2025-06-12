@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faPlus} from '@fortawesome/free-solid-svg-icons';
 import ContextWrapper from '../../../context/ContextWrapper'
 
-import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,AdminProjectExpansionPreviewPopupTimetable, AdminProjectExpansionPreviewPopupProfile, AdminProjectExpansionPreviewPopupArchivement} from '../../../components'
+import {AdminSources,AdminUnclearPopup,DepartmentInfoPopup,AdminInpuEdit,AdminProjectExpansionPreviewPopupTimetable, AdminProjectExpansionPreviewPopupProfile, AdminProjectExpansionPreviewPopupArchivement,AdminProjectExpansionManagement} from '../../../components'
 import { useSelector } from 'react-redux';
 
 const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnStructuralDetail,setCompanyName}) => {
     const {auth} = useSelector(state=>state)
-
+    
     const [unclearPopup,setUnclearPopup] = useState(false)
     const [analysisData,setAnalysisData]=useState(null)
     const [showGeneral0Profile,setShowGeneral0Profile] =  useState(false)
@@ -17,8 +17,9 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
     const[depData,setDepData] = useState(null)
     const [onView2,setOnView2]=useState(false)
     const [onViewProfile, setOnViewProfile] = useState(false)
+    const [onViewMangement, setOnViewMangement] = useState(false)
     const [onViewArchivements, setOnViewArchivements] = useState(false)
-
+    const [onViewMenu, setOnViewMenu] = useState(true)
       const structural = ()=>{
         setOnView(false)
         setCompanyName(data.companyName)
@@ -51,12 +52,33 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
        
       }
 
+      //---------------------------------------handle management open and close modal
+      const checkWhoseManagementToPopUp = ()=>{
+        //  if(auth?.user?.role === "general0"){
+        //   setShowGeneral0Profile(true)
+        //  }
+        // setOnView(false)
+        setOnViewMangement(true)
+        
+        }
+  
+        const handleManagementClose = ()=>{
+          // setOnView(true)
+          setOnViewMangement(false)
+          setOnViewMenu(true)
+         
+        }
+
       const handleArchivementClose = ()=>{
         setOnViewArchivements(false)
       }
 
       const handleArchivementToPopUp = ()=>{
         setOnViewArchivements(true)
+      }
+      const handleClosemainMenu = (info)=>{
+        console.log("result of main menu",info)
+        setOnViewMenu(info)
       }
   return (
     <>{
@@ -79,13 +101,16 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
       {
       onViewProfile && <AdminProjectExpansionPreviewPopupProfile onViewProfile={onViewProfile} handleProfileClose={handleProfileClose} data={data}/>
      }
+     {
+      onViewMangement && <AdminProjectExpansionManagement onViewMangement={onViewMangement} handleManagementClose={handleManagementClose} generalSimpledata={data} SetMainMenuPopUp={handleClosemainMenu}/>
+     }
 
 {
       onViewArchivements && <AdminProjectExpansionPreviewPopupArchivement onViewArchivements={onViewArchivements} handleArchivementClose={handleArchivementClose} data={data}/>
      }
       
-
-      <AdminInpuEdit/>
+     {onViewMenu && <>
+     <AdminInpuEdit/>
       <div className="admin__profileOnveiw-content">
       <div className="pe1__card">
           <header>
@@ -111,6 +136,8 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
           <div className="pe1__announcement">
               <h3 className="pe1__h3">Menu</h3>
               <ul className="pe1__ul">
+              <li className="pe1__ul-li" onClick={checkWhoseManagementToPopUp}><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Management`}</span></div></li>
+
               <li className="pe1__ul-li" onClick={()=>setOnView2(true)}><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Timetable`}</span></div></li>
 
                 <li className="pe1__ul-li" onClick={checkWhoseProfileToPopUp}><div className="pe1__ul-li-profile"><span>{data.title}</span><span>{` Profile`}</span></div></li>
@@ -122,9 +149,7 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
           </div>
       </div>
 
-    <div className="pe1__inspiration">
-    <a rel="noopener" target="_blank" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3794/heartland.jpg">Inspiration</a>
-    </div>
+    
 
 
 
@@ -136,6 +161,8 @@ const AdminProjectExpansionPreviewPopup = ({setOnView,onView=false, data, setOnS
 
         </button>
       </div>
+     </>}
+      
 
 
       </div>
