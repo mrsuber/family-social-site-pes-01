@@ -60,7 +60,7 @@ const App=()=> {
             <Route exact path="/register" component={RegisterScreen} />
             <Route exact path="/forgotpassword" component={ForgotPasswordScreen} />
             <Route exact path="/resetpassword" component={ResetPasswordScreen} />
-            <Route exact path="/" component={IndexPage} />
+            <Route exact path="/" component={LoginScreen2} />
             <Route exact path="/admin" component={AdminHome} />
             <Route exact path="/admin/login" component={AdminLoginScreen} />
               <PrivateRoute exact path="/blog_home" component={ BlogHomePage}/>
