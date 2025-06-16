@@ -1,7 +1,7 @@
 import React from 'react'
 import {Facebook,YouTube, GitHub,LinkedIn,BusinessCenter,School} from '@material-ui/icons'
 import './ProfileAbout.css'
-import cv from '../../../images/Resume.pdf'
+import cv from '../../../images/master.pdf'
 
 const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
   return (
@@ -9,7 +9,7 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
       <div className="pf__container">
         <div className="pf__row">
           <div className="pf__section_title">
-            <h2 data-heading="main info">About me</h2>
+            <h2 data-heading="main info">Mohamad Siysinyuy Banbong: A Biography of Vision, Grit, and Innovation</h2>
           </div>
         </div>
         <div className="pf__row">
@@ -30,56 +30,52 @@ const ProfileAbout = ({profilePic,aboutSectionManagement}) => {
           <div className="pf__about_info">
 
 
-            <p><span>Hi! My name is Mohamad Siysinyuy. I am a Web Developer.</span>
+            <p><span>Roots: From the Farm to the Future</span><br/>
 
-If you are to know about me, you have to understand my background story, what drives me to be who I am.</p>
+<b></b><br/>
 
-<p>I will at my level best try to be brief as much as possible.</p>
+My story begins in the fertile soils of Cameroon, where my father—a dedicated crop and animal farmer—taught me the timeless principles of hard work, patience, and the cyclical beauty of growth. By age 10, I was knee-deep in the family farm, learning how dung enriched crops, how milk transformed into butter, and how a single seed could yield hundreds. But it was our neighbor, Ndiz—an agronomist with military precision in his fields—who showed me the power of systems. His fish ponds, egg-laying chickens, and geometrically perfect crops were my first lessons in scalability.</p>
 
-<p>My father was a farmer when I was in class four, Understand he is a farmer currently and he was probably a farmer long before I was born. but I choose to coin when I was in class four because that was when the farming truly got to me, this was when I truly developed a love for farming.</p>
+<p>Yet, a pivotal field trip to Ndawara Tea Plantation revealed the missing link: technology. Watching machines—orchestrated by computers—process tea while human hands delicately harvested shoots, I realized the future of farming (and beyond) lay at the intersection of <b>agriculture, engineering, and software.</b></p>
 
-<p>My father's specialty was both crop and animal farming, dung from the cow was put in a hole, for it to mature(as he called it), and then after a while, it was transported to the crops which did excessively well, dark green in color and the produce was high.</p>
+<p><b>Education: The Engineering Mindset</b></p>
 
-<p>I use to help him on the farm so often, we will sell products to customers together and use pesticides chemicals to treat crops like cabbages, tomatoes, and more.</p>
+<p>I pursued <b>Computer Engineering at the University of Buea,</b> but my curiosity was never confined to a classroom. Chemistry explained my father’s pesticides; biology decoded animal husbandry; physics and advanced math laid the groundwork for machines. Yet, it was computer science that became my compass—a tool to bridge gaps across industries.</p>
 
-<p>This is when I noticed that no business in the world made profit literally as farming, example, you plant one seed of corn and you harvest 500 seeds, products from cows like milk was an expensive gain on its own, not to talk of the butter gotten from it, as well as the yogurt made from milk that some butter has been extracted from.</p>
+<p>After graduation, I faced a harsh truth: investors wanted proof, not just plans. So I turned to <b>software engineering, </b>mastering full-stack development (React, Node.js, MERN) through The Odin Project, solving HackerRank challenges, and freelancing to fund my vision.</p>
 
-<p>My father also introduced me to some of his friends in the business only one of them outshine all, I use to call him Ndiz, he had finished the school of agriculture he says and from what he could do confirms his story strongly.</p>
+<p><b>Leadership: Building Systems That Build People</b></p>
 
-<p>His specialty was also crop farming but he was also into bird and fish farming. His farm was amazing to look at, all partitioned, all in very stright lines as if he told the crops what height to take and what lines not to cross as they grew.</p>
+<p>As <b>General Manager of Camsol Technologies,</b> I led 20+ teams across international projects like Gasvisor and ValletPay, merging tech with business strategy. But my heart remained in solving systemic problems:</p>
 
-<p>The chicken he kept were “layers” he called them so because they were not for consumption but for laying eggs. I have never seen so many eggs in one place to this day. I used to help him pick some of those eggs, some very normal, other funny-looking.</p>
-<p> His fish pond was never of so much interest to me at first because you only see fish when he feeds them but during an Agro-Pastoral show, I saw what they describe a fish, the kind you see only on TV and in a book, a fish with whiskers so calm, so confident in the water as if it knew it was the star of the show.</p>
+<p>1.) <b>Round Table Cameroon:</b> Shocked by the lack of documented projects, I built a digital platform (roundtable.subercraftex.com) for tracking members, projects, and donations. When funding gaps stalled progress, I proposed a self-sustaining clubhouse—only to hit bureaucratic walls.</p>
 
-<p>when I finished class seven and went into secondary school, my dad advised me to study science, because it will tell me more about the chemicals he used and he was right, chemistry and biology did a thorough job in that.</p>
+<p>2.) <b>SUBER-Craftex:</b> Undeterred, I launched a multi-disciplinary design empire (subercraftex.com)—woodworking, fashion, digital design—funded by 7.1M FCFA of my own salary. It’s more than a business; it’s a training hub for 200+ youth/year and a revenue engine for community projects.</p>
+<p> <b>The Core of Who I Am</b></p>
 
-<p>But it did not just explain and end there. very much more than my expectation I was introduced to computer science and went on a field trip to Ndawara Tea Plantation.
-This was the biggest piece of land I ever saw and I learned two very important things that day.</p>
-<p>First and most important was that machines did most of the work on the farm, either it was tractors in working the farm or the machines that help process tea right to sealing it in bags,</p>
-<p>secondly I also learn that these machines were controlled by computers</p>
-<p>Thirdly I learn that certain aspects of farming will always need a human touch, for example, harvesting tea, human hands needed to pick the soft shoot part of the plant, and normally machines will just harvest uniformly and lastly I learn that such labor in Cameroon was cheap.</p>
+<p>1.) <b>The Farmer’s Son:</b> I measure success like harvests—outputs must dwarf inputs.</p>
 
-<p>Labour has always been cheap and that is why colonial masters came to Africa according to African history thought in school. </p>
+<p>2.) <b>The Engineer:</b> I dissect problems into systems (whether code, supply chains, or crop cycles).</p>
+<p>3.) <b>The Craftsman:</b> From embroidery (which paid my tuition) to full-stack development, <i>I build with my hands and mind.</i></p>
+<p>4.) <b>The Leader:</b> At Camsol and SUBER-Craftex, I prove that <b>technology + tradition = transformation.</b></p>
+<p><b>Why This Matters</b></p>
 
-<p>For the first time I researched something, how do I get a computer to do all that as well as how do I build machines to do that, this lead me  to three fields of study,<br/>
-computer engineering,<br/>
-mechanical engineering, and agriculture<br/>
-when I was done with the ordinary level and had to go to high school, I decided to study something that will expose me in any of the there fields above, that was chemistry, biology, physics, pure maths, and further maths,</p>
+<p>My journey isn’t about titles—it’s about leverage.</p>
 
-<p>while in high school we went for another field trip to Tadu Dairy Cooperative. This was a trip to teach us about cross-breeding and the different products of milk,
-in addition to normal school learning, I saw for the first time an entire building can be made into a refrigerator, you can probably guess what ran in my head if such technology was applied to the whole farming process.
-I also learn that we gave our milk out for free compared to Tardu Dairy price and we never extracted half of the products that can be harvested from milk.</p>
+<p>--<b>For Farmers:</b> How AI can predict crop yields or fintech can streamline payments (like ValletPay).</p>
 
-<p>After high school, I had to make a choice how to further my education and my choice was computer engineering because it cuts across all fields of studies, a doctor needs a computer system to manage drug prescriptions as much as a farmer to manage accounts.
-I dived into computer engineering and as you know my specialty was software engineering, in the university I was introduced to the accounting and business part.
-I understood knowing about farming was not enough if I intended to lead in business, I had to see it from the business perspective, I am talking about investment, shares, shareholders, partnership, balance sheet, and all the complicated business terms you can read about. This was necessary to understand if not, my government will shut me down themselves.</p>
+<p>--<b>For Youth:</b> How SUBER-Craftex’s apprenticeship model turns skills into livelihoods.</p>
 
-<p>immediately after graduation, I did a demo, wrote a business plan, and move around talking to business investors, this took about 6 months of travel and presentations and I notice that business investors are more likely to invest in something solid, some part of this project can be traced, either proper documentation or some portion of the land has produced the product and is flourishing,</p>
+<p>--<b>For Africa:</b> How blending agro-tech, design, and software can rewrite "developing" to "dominant."</p>
 
-<p>I quickly knew that the initial capital for such will be raised by me, and the second most paying job is engineering, software engineering at the very top of the list.</p>
+<p><b>What’s Next?</b></p>
 
-<p>I decided that to sharpen my skills and for me to  compete with the world I have to be truly good with computers, I took on The Odin Project which teaches and shapes you into a web developer, I have done this in school before but this was another level in the specialty, with lost of links to read and lots of assignments, I am currently on the last chapter of The Odin Project which is "Getting Hired"
-</p>
+<p>I’m seeking <b>allies</b>—remote internships, investors, or collaborators—who see the blueprint:</p>
+
+<p>1.) <b>High-impact tech roles</b> where my hybrid skills (dev + design + strategy) can scale solutions.</p>
+<p>2.) <b>Global platforms</b> to amplify African innovation (like my Round Table Tracker or Profundra for fundraising).</p>
+<p>3.) <b>Mentorship</b> to refine my vision, because the best systems evolve with feedback.</p>
+<p><i>"I don’t just build apps or furniture—I build ecosystems where people and ideas grow."</i></p>
 
             <a href={cv} className="pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1" >Download Cv</a>
             <a href="#contact" className=" pf__link_item pf__outer_shadow pf__hover_in_shadow pf__link pf__btn1">Hire Me</a>
@@ -145,9 +141,9 @@ I understood knowing about farming was not enough if I intended to lead in busin
                 <div className="pf__skill_item">
                     <p>bootstrap</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span className="pf__project_num">40%(8-projects)</span>
-                        <span className="pf__project_num1">40%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(100% - 14px)"}}>
+                        <span className="pf__project_num">100%(20-projects)</span>
+                        <span className="pf__project_num1">100%</span>
 
                       </div>
                     </div>
@@ -158,9 +154,9 @@ I understood knowing about farming was not enough if I intended to lead in busin
                 <div className="pf__skill_item">
                     <p>jquery</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span className="pf__project_num">40%(8-projects)</span>
-                        <span className="pf__project_num1">40%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(80% - 14px)"}}>
+                        <span className="pf__project_num">80%(8-projects)</span>
+                        <span className="pf__project_num1">80%</span>
 
                       </div>
                     </div>
@@ -184,9 +180,9 @@ I understood knowing about farming was not enough if I intended to lead in busin
                 <div className="pf__skill_item">
                     <p>Docker</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span className="pf__project_num">40%(8-projects)</span>
-                        <span className="pf__project_num1">40%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(80% - 14px)"}}>
+                        <span className="pf__project_num">80%(8-projects)</span>
+                        <span className="pf__project_num1">80%</span>
 
                       </div>
                     </div>
@@ -197,9 +193,9 @@ I understood knowing about farming was not enough if I intended to lead in busin
                 <div className="pf__skill_item">
                     <p>angular</p>
                     <div className="pf__progress pf__inner_shadow">
-                      <div class="pf__progress_bar" style={{width:"calc(40% - 14px)"}}>
-                        <span className="pf__project_num">40%(8-project)</span>
-                        <span className="pf__project_num1">40%</span>
+                      <div class="pf__progress_bar" style={{width:"calc(80% - 14px)"}}>
+                        <span className="pf__project_num">80%(8-project)</span>
+                        <span className="pf__project_num1">80%</span>
 
                       </div>
                     </div>
@@ -276,6 +272,32 @@ I understood knowing about farming was not enough if I intended to lead in busin
                       <h3>Graphic Designer</h3>
                       <h4>Personal Projects</h4>
                       <p>Design of Graphics such as logos and websites as well as Photoshoots using tools like blender</p>
+
+                    </div>
+                  </div>
+                {/*experience start*/}
+
+                  {/*experience start*/}
+                  <div className="pf__timeline_item">
+                    <div className="pf__timeline_item_inner pf__outer_shadow">
+                      <span className="pf__icon"><BusinessCenter /></span>
+                      <span>2022 - 2023</span>
+                      <h3>Chief Operational Officer</h3>
+                      <h4>Company Projects</h4>
+                      <p>Vallet Pay</p>
+
+                    </div>
+                  </div>
+                {/*experience start*/}
+
+                   {/*experience start*/}
+                   <div className="pf__timeline_item">
+                    <div className="pf__timeline_item_inner pf__outer_shadow">
+                      <span className="pf__icon"><BusinessCenter /></span>
+                      <span>2022 - present</span>
+                      <h3>General Manager</h3>
+                      <h4>Company Projects</h4>
+                      <p>Vallet pay, Profundra</p>
 
                     </div>
                   </div>

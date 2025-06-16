@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 // import {Link} from 'react-router-dom'
 import './Home.css'
-import profilePic from '../../../images/porfolioImages/me.webp'
+import profilePic from '../../../images/porfolioImages/Mohamad.jpeg'
 
 import {Preloader,Switcher,Contact,Testimonial,Popup,ProfilePortfolio,ProfileNavbar,ProfileHeader,ProfileHome,ProfileAbout,ProfileService} from '../../../components'
 

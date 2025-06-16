@@ -1143,7 +1143,72 @@ export const generalStructuralData = [
                 },
                 ],
                 people:[
-               
+                  {
+                    name:'Vernyuy Dîna',
+                          photo:vernyuy_01,
+                          title:'bilingual letters, grauduate',
+                          phoneNumber:'+237 650058096(whatsapp)',
+                        email:"Unknown",
+                        website:"Unkown",
+                        address:"Youonde",
+                        linkedIn:"Unknown",
+                        Education:[
+                         
+            
+            
+            
+                        ],
+                        languages:[
+                          {
+                            languageName:"English",
+                            languagesPercent:"95%"
+                          },
+                         
+                        ],
+                        BiographyP1:'I did bilingual letters, grauduate',
+                        BiographyP2:"she is strugling, because right now she just want work that will occupie her and",
+                        BiographyP3:"I'm praying Allah to bless me with my soulmate,God fearing person and understanding, Friendly",
+                        BiographyP4:"I'm originated from bamenda, I'm presently in yaoundé",
+                        BiographyP5:"",
+                        Experience:[
+                          // {
+                          //   yearsOfExperience:"May 2022 - Present",
+                          //   placeOfExperience:"Camsol Technologies UG (haftungsbeschränkt) Full time",
+                          //   locationOfExperience:"Germany",
+                          //   areaOfExpertise:"Geschäftsführende Gesellschafterin(Managing Partner) | CEO",
+                          //   descOfWorkDoneInAreaOfExpertise:"HR Leader, focused on providing strategic HR Partnering to Executive Vice President Applications. Focused on Optimising Business Performance, Executive Leadership, Organisation Design and Transformation. Responsible for leading a team of Senior HRBPs who align with Camsol based Executives (Senior Vice Presidents / Vice Presidents) within the License Organisation,",
+                          // },
+                         
+            
+            
+                        ],
+                        professionalSkills:[
+                          // {
+            
+                          //   nameOfSkill:"SAP Developer at GoToSec GmbH",
+                          //   persentageOfSkills:"95%",
+                          // },
+            
+            
+                        ],
+                        Interest:[
+                          {
+                            // iconOfInterest:"",
+                            nameOfInterest:"I'm passionate about cooking.",
+                          }
+                        ],
+                        source:[
+                          // {
+                          //   name:"LinkedIn",
+                          //   link:"https://www.linkedin.com/in/schererbraun/"
+                          // },
+                          // {
+                          //   name:"Notion",
+                          //   link:"https://www.notion.so/camsol/44d1d0a072624df9a5ab29d6bbc7b20a?v=c3a189c055474561b63f6a0a7741121e"
+                          // },
+            
+                        ]
+                  },
                 
                 ],
               },
