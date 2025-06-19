@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://msb-geneasocial.herokuapp.com'
+export const BASE_URL = 'https://www.social.subercraftex.com'
