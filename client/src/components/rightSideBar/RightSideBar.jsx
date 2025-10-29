@@ -61,7 +61,7 @@ const RightSideBar = () => {
       <div className="social2__suggestion_footer_wrapper" >
 
         <small className="social2__suggestion_footer">
-          Know all about  <a href="https://www.social.subercraftex.com/porfolio/home" target="_blank" rel="noreferrer">
+L64: Know all about  <a href="/porfolio/home" target="_blank" rel="noreferrer">
             Mohamad Siysinyuy
             </a>
         </small>

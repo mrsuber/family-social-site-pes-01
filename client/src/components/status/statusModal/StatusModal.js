@@ -159,7 +159,7 @@ useEffect(()=>{
             {
               stream &&
               <div className="social2__status_modal_steam">
-                  <video autoplay muted ref={videoRef} width="100%" height="100%"/>
+                  <video autoPlay muted ref={videoRef} width="100%" height="100%"/>
                   <span onClick={handleStopStream}>&times;</span>
                   <canvas ref={refCanvas} style={{display:'none'}}/>
               </div>
