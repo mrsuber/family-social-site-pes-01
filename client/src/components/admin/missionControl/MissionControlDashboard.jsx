@@ -210,11 +210,17 @@ const MissionControlDashboard = () => {
             phone: data.phone || null,
             photoUrl: data.photoUrl || null,
             relationshipType: data.relationshipType,
-            generalId: autoGeneralId || data.generalId || null,
-            departmentId: autoDepartmentId || data.departmentId || null,
+            // Priority: auto-assigned values override form values
+            generalId: autoGeneralId !== null ? autoGeneralId : (data.generalId || null),
+            departmentId: autoDepartmentId !== null ? autoDepartmentId : (data.departmentId || null),
             status: 'active',
             notes: data.notes || null
           };
+
+          // Debug logging
+          console.log('Creating person with payload:', payload);
+          console.log('Parent context:', parentNodeForNewResource);
+          console.log('Auto assignments - GeneralId:', autoGeneralId, 'DepartmentId:', autoDepartmentId);
           break;
 
         case 'department':
@@ -222,10 +228,11 @@ const MissionControlDashboard = () => {
           payload = {
             name: data.name,
             description: data.description || null,
-            generalId: autoGeneralId || data.generalId || null,
+            generalId: autoGeneralId !== null ? autoGeneralId : (data.generalId || null),
             budget: data.budget ? parseFloat(data.budget) : null,
             status: data.status || 'active'
           };
+          console.log('Creating department with generalId:', payload.generalId);
           break;
 
         case 'general':
@@ -244,9 +251,10 @@ const MissionControlDashboard = () => {
           payload = {
             name: data.name,
             description: data.description || null,
-            generalId: autoGeneralId || data.generalId || null,
+            generalId: autoGeneralId !== null ? autoGeneralId : (data.generalId || null),
             status: data.status || 'active'
           };
+          console.log('Creating project with generalId:', payload.generalId);
           break;
 
         case 'asset':
@@ -254,11 +262,12 @@ const MissionControlDashboard = () => {
           payload = {
             name: data.name,
             assetType: 'equipment',
-            generalId: autoGeneralId || data.generalId || null,
+            generalId: autoGeneralId !== null ? autoGeneralId : (data.generalId || null),
             purchaseCost: data.value ? parseFloat(data.value) : null,
             status: data.status === 'acquired' ? 'working' : 'planning',
             condition: 100
           };
+          console.log('Creating asset with generalId:', payload.generalId);
           break;
 
         default:
@@ -953,12 +962,15 @@ const MissionControlDashboard = () => {
                   <>
                     <input type="text" name="fullName" placeholder="Full Name" required />
                     <input type="text" name="title" placeholder="Title" required />
-                    <select name="generalId">
-                      <option value="">Select General</option>
-                      {generals.map(g => (
-                        <option key={g.id} value={g.id}>{g.name}</option>
-                      ))}
-                    </select>
+                    {/* Only show general dropdown if NOT creating from context menu */}
+                    {!parentNodeForNewResource && (
+                      <select name="generalId">
+                        <option value="">Select General</option>
+                        {generals.map(g => (
+                          <option key={g.id} value={g.id}>{g.name}</option>
+                        ))}
+                      </select>
+                    )}
                     <input type="text" name="photoUrl" placeholder="Photo URL" />
                     <select name="relationshipType" required>
                       <option value="employee">Employee</option>
@@ -988,12 +1000,14 @@ const MissionControlDashboard = () => {
                   <>
                     <input type="text" name="name" placeholder="Department Name" required />
                     <textarea name="description" placeholder="Description" rows={3}></textarea>
-                    <select name="generalId">
-                      <option value="">Assign to General</option>
-                      {generals.map(g => (
-                        <option key={g.id} value={g.id}>{g.name}</option>
-                      ))}
-                    </select>
+                    {!parentNodeForNewResource && (
+                      <select name="generalId">
+                        <option value="">Assign to General</option>
+                        {generals.map(g => (
+                          <option key={g.id} value={g.id}>{g.name}</option>
+                        ))}
+                      </select>
+                    )}
                     <input type="number" name="budget" placeholder="Budget (optional)" />
                     <select name="status">
                       <option value="active">Active</option>
@@ -1020,12 +1034,14 @@ const MissionControlDashboard = () => {
                   <>
                     <input type="text" name="name" placeholder="Project Name" required />
                     <textarea name="description" placeholder="Description"></textarea>
-                    <select name="generalId">
-                      <option value="">Select General</option>
-                      {generals.map(g => (
-                        <option key={g.id} value={g.id}>{g.name}</option>
-                      ))}
-                    </select>
+                    {!parentNodeForNewResource && (
+                      <select name="generalId">
+                        <option value="">Select General</option>
+                        {generals.map(g => (
+                          <option key={g.id} value={g.id}>{g.name}</option>
+                        ))}
+                      </select>
+                    )}
                     <select name="status">
                       <option value="active">Active</option>
                       <option value="planning">Planning</option>
@@ -1043,12 +1059,14 @@ const MissionControlDashboard = () => {
                       <option value="acquired">Acquired</option>
                       <option value="target">Target to Acquire</option>
                     </select>
-                    <select name="generalId">
-                      <option value="">Assign to General (optional)</option>
-                      {generals.map(g => (
-                        <option key={g.id} value={g.id}>{g.name}</option>
-                      ))}
-                    </select>
+                    {!parentNodeForNewResource && (
+                      <select name="generalId">
+                        <option value="">Assign to General (optional)</option>
+                        {generals.map(g => (
+                          <option key={g.id} value={g.id}>{g.name}</option>
+                        ))}
+                      </select>
+                    )}
                   </>
                 )}
 
