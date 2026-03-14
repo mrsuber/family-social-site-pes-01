@@ -42,7 +42,27 @@ import {
 const PersonDetailModal = ({ person, onClose, onUpdate }) => {
   const [activeTab, setActiveTab] = useState('overview');
   const [isEditing, setIsEditing] = useState(false);
-  const [editData, setEditData] = useState(person?.fullData || {});
+  const fullPersonData = person?.fullData || {};
+  const [editData, setEditData] = useState({
+    fullName: fullPersonData.fullName || person?.label || '',
+    title: fullPersonData.title || person?.title || '',
+    bio: fullPersonData.bio || '',
+    strategicGoal: fullPersonData.strategicGoal || '',
+    email: fullPersonData.email || '',
+    phone: fullPersonData.phone || '',
+    whatsapp: fullPersonData.whatsapp || '',
+    website: fullPersonData.website || '',
+    facebook: fullPersonData.facebook || '',
+    instagram: fullPersonData.instagram || '',
+    linkedin: fullPersonData.linkedin || '',
+    educationLevel: fullPersonData.educationLevel || '',
+    interests: fullPersonData.interests || '',
+    problems: fullPersonData.problems || '',
+    notes: fullPersonData.notes || '',
+    location: fullPersonData.location || '',
+    physicalAddress: fullPersonData.physicalAddress || '',
+    maritalStatus: fullPersonData.maritalStatus || '',
+  });
   const [uploading, setUploading] = useState(false);
   const [photoGallery, setPhotoGallery] = useState(person?.fullData?.photoGallery || []);
   const [documents, setDocuments] = useState(person?.fullData?.documents || []);
@@ -79,23 +99,18 @@ const PersonDetailModal = ({ person, onClose, onUpdate }) => {
   const tabs = [...baseTabs, ...commanderTabs];
 
   const handleSave = async () => {
-    // API call to update person
-    if (onUpdate) {
-      await onUpdate(editData);
-    }
-
-    // Update local person state with new values
-    setCurrentPerson({
-      ...currentPerson,
-      label: editData.fullName || currentPerson.label,
-      title: editData.title || currentPerson.title,
-      fullData: {
-        ...currentPerson.fullData,
-        ...editData
+    try {
+      // API call to update person
+      if (onUpdate) {
+        await onUpdate(editData);
+        // Close modal on success - parent will refresh data
+        onClose();
       }
-    });
-
-    setIsEditing(false);
+    } catch (err) {
+      console.error('Error in handleSave:', err);
+      // Error is already handled by onUpdate in parent component
+      setIsEditing(false);
+    }
   };
 
   const handlePhotoUpload = async (e, type = 'profile') => {
