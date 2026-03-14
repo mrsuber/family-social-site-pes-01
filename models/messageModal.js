@@ -1,12 +1,61 @@
-const mongoose = require('mongoose')
+const { DataTypes, Model } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const messageSchema = new mongoose.Schema({
-  conversation:{type: mongoose.Types.ObjectId, ref:'conversation' },
-  sender:{type: mongoose.Types.ObjectId, ref:'user' },
-  recipient:{type: mongoose.Types.ObjectId, ref:'user' },
-  text:String,
-  media:Array,
-  call: Object
-},{timestamps:true})
+class Message extends Model {}
 
-module.exports = mongoose.model('message', messageSchema)
+Message.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
+    },
+    conversationId: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      field: 'conversation_id',
+      references: {
+        model: 'conversations',
+        key: 'id'
+      }
+    },
+    senderId: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      field: 'sender_id',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    },
+    recipientId: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      field: 'recipient_id',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    },
+    text: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    media: {
+      type: DataTypes.ARRAY(DataTypes.TEXT),
+      defaultValue: []
+    },
+    call: {
+      type: DataTypes.JSONB,
+      allowNull: true
+    }
+  },
+  {
+    sequelize,
+    modelName: 'Message',
+    tableName: 'messages',
+    timestamps: true
+  }
+);
+
+module.exports = Message;

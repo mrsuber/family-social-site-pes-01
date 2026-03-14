@@ -9,6 +9,7 @@ import {
   BlogHomePage,
   AdminHome,AdminLoginScreen,AdminErrorScreen,AdminExpenseScreen,
   AdminProjectExpansionScreen,
+  AdminMissionControlScreen,
   AdminApplicationScreen,AdminApplicationScreen2,AdminApplicationScreen3,
   AdminStudent,AdminCourse,AdminCourse2,
   AdminRelCourse2
@@ -35,7 +36,11 @@ const App=()=> {
 
   useEffect(()=>{
     dispatch(refreshToken())
-    const socket = io('http://localhost:5001')
+    // Use production URL if not localhost, otherwise use localhost for development
+    const socketUrl = window.location.hostname === 'localhost'
+      ? 'http://localhost:5001'
+      : `https://${window.location.hostname}`;
+    const socket = io(socketUrl)
     dispatch({type:GLOBALTYPES.SOCKET, payload:socket})
     return () => socket.close()
   },[dispatch])
@@ -75,6 +80,7 @@ const App=()=> {
 
             <Route exact path="/admin/expense" component={auth.token && auth.user.isSuperAdmin===true? AdminExpenseScreen : AdminErrorScreen}/>
             <Route exact path="/admin/projectExpansion" component={auth.token && auth.user.isSuperAdmin===true? AdminProjectExpansionScreen : AdminErrorScreen}/>
+            <Route exact path="/admin/missionControl" component={auth.token && auth.user.isSuperAdmin===true? AdminMissionControlScreen : AdminErrorScreen}/>
 
 
             <Route exact path="/admin/application" component={auth.token && auth.user.isSuperAdmin===true? AdminApplicationScreen : AdminErrorScreen}/>

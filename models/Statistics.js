@@ -1,13 +1,22 @@
+const { DataTypes, Model } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const mongoose = require('mongoose')
+class Statistics extends Model {}
 
-const StatisticsSchema = new mongoose.Schema({
+Statistics.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
+    }
+  },
+  {
+    sequelize,
+    modelName: 'Statistics',
+    tableName: 'statistics',
+    timestamps: true
+  }
+);
 
-},
-{timestamps:true})
-
-
-
-const User = mongoose.model("statistics",StatisticsSchema);
-
-module.exports=User;
+module.exports = Statistics;

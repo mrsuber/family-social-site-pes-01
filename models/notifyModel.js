@@ -1,16 +1,56 @@
-const mongoose = require('mongoose')
+const { DataTypes, Model } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const notifySchema = new mongoose.Schema({
-  id: mongoose.Types.ObjectId,
-  user: {type: mongoose.Types.ObjectId, ref:'user'},
-  recipients:[mongoose.Types.ObjectId],
-  url:String,
-  text:String,
-  content:String,
-  image:String,
-  isRead:{type:Boolean, default:false}
+class Notification extends Model {}
 
-},
-{timestamps:true})
+Notification.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
+    },
+    userId: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      field: 'user_id',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    },
+    recipients: {
+      type: DataTypes.ARRAY(DataTypes.UUID),
+      defaultValue: []
+    },
+    url: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    text: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    content: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    isRead: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+      field: 'is_read'
+    }
+  },
+  {
+    sequelize,
+    modelName: 'Notification',
+    tableName: 'notifications',
+    timestamps: true
+  }
+);
 
-module.exports = mongoose.model('notify',notifySchema)
+module.exports = Notification;

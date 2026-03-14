@@ -1,15 +1,48 @@
-const mongoose = require('mongoose')
+const { DataTypes, Model } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const postSchema = new mongoose.Schema({
-  content:String,
-  images:{
-    type:Array,
-    required:true
+class Post extends Model {}
+
+Post.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
+    },
+    content: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    images: {
+      type: DataTypes.ARRAY(DataTypes.TEXT),
+      allowNull: false,
+      defaultValue: []
+    },
+    likes: {
+      type: DataTypes.ARRAY(DataTypes.UUID),
+      defaultValue: []
+    },
+    comments: {
+      type: DataTypes.ARRAY(DataTypes.UUID),
+      defaultValue: []
+    },
+    userId: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      field: 'user_id',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    }
   },
-  likes:[{type: mongoose.Types.ObjectId,ref:'user'}],
-  comments:[{type: mongoose.Types.ObjectId,ref:'comment'}],
-  user:{type: mongoose.Types.ObjectId,ref:'user'}
-},
-{timestamps:true})
+  {
+    sequelize,
+    modelName: 'Post',
+    tableName: 'posts',
+    timestamps: true
+  }
+);
 
-module.exports = mongoose.model('post',postSchema)
+module.exports = Post;

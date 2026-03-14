@@ -1,57 +1,66 @@
-const mongoose = require("mongoose")
+const { DataTypes, Model } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const computerEngineeringSchema = new mongoose.Schema(
+class ComputerEngineering extends Model {}
+
+ComputerEngineering.init(
   {
-
-  learningTitle:{type:String,required:true},
-  logo:{type:String,default:"https://github.com/mrsuber/family-social-site-pes-01/blob/master/client/src/images/suber_logo1.png?raw=true"},
-  path:{type:String,required:true},
-  about:{type:String},
-  TotalNumberOfBranches:{type:String},
-  TotalNumberCompleted:{type:String},
-  LessonTittle:[
-    {
-      title:{type:String},
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
     },
-  ],
-  //this is for structure details.
-  companyHeadOfficeLocation:{type:String},
-  companyLevel1:[
-    {
-      name:{type:String},
-      courseStatus:{type:String},
-      courseNumber:{type:String},
-      logo:{type:String,default:"https://github.com/mrsuber/family-social-site-pes-01/blob/master/client/src/images/suber_logo1.png?raw=true"},
-      menu:[
-        {
-          name:{type:String},
-          detail:{type:String},
-          ancorName:{type:String},
-        },
-      ],
-      additionalRead:[
-        {
-          title:{type:String},
-          url:{type:String},
-        },
-      ],
+    learningTitle: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-  ],
-  source:[
-    {
-      name:{type:String},
-      link:{type:String},
+    logo: {
+      type: DataTypes.STRING,
+      defaultValue: 'https://github.com/mrsuber/family-social-site-pes-01/blob/master/client/src/images/suber_logo1.png?raw=true'
     },
-  ],
-  people:[
-    {
-      name:{type:String}
-
+    path: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-  ],
-
-},
-{timestamps:true}
+    about: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    TotalNumberOfBranches: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    TotalNumberCompleted: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    LessonTittle: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    companyHeadOfficeLocation: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    companyLevel1: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    source: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    people: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    }
+  },
+  {
+    sequelize,
+    modelName: 'ComputerEngineering',
+    tableName: 'computer_engineering',
+    timestamps: true
+  }
 );
 
-module.exports = mongoose.model("computerEngineering",computerEngineeringSchema)
+module.exports = ComputerEngineering;

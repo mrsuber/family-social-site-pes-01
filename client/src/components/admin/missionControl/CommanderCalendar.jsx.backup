@@ -1,0 +1,448 @@
+import React, { useState, useEffect } from 'react';
+import './CommanderCalendar.css';
+import {
+  Add,
+  Event,
+  AccessTime,
+  CheckCircle,
+  Error,
+  Delete,
+  Edit,
+  ChevronLeft,
+  ChevronRight,
+  Today,
+  ViewModule,
+  ViewWeek,
+  ViewDay
+} from '@material-ui/icons';
+import { getAPI, postAPI, putAPI, deleteAPI } from '../../../utils/fetchData';
+
+const CommanderCalendar = ({ personId }) => {
+  const [events, setEvents] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [viewMode, setViewMode] = useState('month'); // month, week, day
+  const [showEventForm, setShowEventForm] = useState(false);
+  const [editingEvent, setEditingEvent] = useState(null);
+  const [selectedDayForNewEvent, setSelectedDayForNewEvent] = useState(null);
+  const [formData, setFormData] = useState({
+    title: '',
+    description: '',
+    eventType: 'task',
+    startDate: '',
+    endDate: '',
+    allDay: false,
+    priority: 'medium',
+    status: 'pending'
+  });
+
+  useEffect(() => {
+    if (personId) {
+      fetchEvents();
+    }
+  }, [personId, selectedDate]);
+
+  const fetchEvents = async () => {
+    try {
+      const res = await getAPI(`calendar/person/${personId}`);
+      if (res.data.success) {
+        setEvents(res.data.data);
+      }
+    } catch (err) {
+      console.error('Error fetching calendar events:', err);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const eventData = {
+        ...formData,
+        personId
+      };
+
+      if (editingEvent) {
+        await putAPI(`calendar/${editingEvent.id}`, eventData);
+      } else {
+        await postAPI('calendar', eventData);
+      }
+
+      fetchEvents();
+      resetForm();
+    } catch (err) {
+      console.error('Error saving event:', err);
+    }
+  };
+
+  const handleDelete = async (eventId) => {
+    if (window.confirm('Delete this event?')) {
+      try {
+        await deleteAPI(`calendar/${eventId}`);
+        fetchEvents();
+      } catch (err) {
+        console.error('Error deleting event:', err);
+      }
+    }
+  };
+
+  const handleStatusChange = async (eventId, newStatus) => {
+    try {
+      await putAPI(`calendar/${eventId}/status`, { status: newStatus });
+      fetchEvents();
+    } catch (err) {
+      console.error('Error updating status:', err);
+    }
+  };
+
+  const resetForm = () => {
+    setFormData({
+      title: '',
+      description: '',
+      eventType: 'task',
+      startDate: '',
+      endDate: '',
+      allDay: false,
+      priority: 'medium',
+      status: 'pending'
+    });
+    setEditingEvent(null);
+    setShowEventForm(false);
+  };
+
+  const editEvent = (event) => {
+    setEditingEvent(event);
+    setFormData({
+      title: event.title,
+      description: event.description || '',
+      eventType: event.eventType,
+      startDate: event.startDate.split('T')[0],
+      endDate: event.endDate ? event.endDate.split('T')[0] : '',
+      allDay: event.allDay,
+      priority: event.priority,
+      status: event.status
+    });
+    setShowEventForm(true);
+  };
+
+  const getStatusIcon = (status) => {
+    switch (status) {
+      case 'completed':
+        return <CheckCircle style={{ color: '#10b981', fontSize: 18 }} />;
+      case 'in-progress':
+        return <AccessTime style={{ color: '#f59e0b', fontSize: 18 }} />;
+      case 'cancelled':
+        return <Error style={{ color: '#ef4444', fontSize: 18 }} />;
+      default:
+        return <Event style={{ color: '#6b7280', fontSize: 18 }} />;
+    }
+  };
+
+  const getPriorityColor = (priority) => {
+    switch (priority) {
+      case 'critical':
+        return '#dc2626';
+      case 'high':
+        return '#ea580c';
+      case 'medium':
+        return '#f59e0b';
+      default:
+        return '#6b7280';
+    }
+  };
+
+  const getFilteredEvents = () => {
+    return events.filter(event => {
+      const eventDate = new Date(event.startDate);
+      const year = selectedDate.getFullYear();
+      const month = selectedDate.getMonth();
+
+      if (viewMode === 'month') {
+        return eventDate.getFullYear() === year && eventDate.getMonth() === month;
+      }
+      return true; // For list view, show all
+    });
+  };
+
+  const groupEventsByDate = () => {
+    const grouped = {};
+    getFilteredEvents().forEach(event => {
+      const date = new Date(event.startDate).toDateString();
+      if (!grouped[date]) {
+        grouped[date] = [];
+      }
+      grouped[date].push(event);
+    });
+    return grouped;
+  };
+
+  const navigateMonth = (direction) => {
+    const newDate = new Date(selectedDate);
+    newDate.setMonth(newDate.getMonth() + direction);
+    setSelectedDate(newDate);
+  };
+
+  const goToToday = () => {
+    setSelectedDate(new Date());
+  };
+
+  const getDaysInMonth = (date) => {
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+    const daysInMonth = lastDay.getDate();
+    const startingDayOfWeek = firstDay.getDay();
+
+    const days = [];
+
+    // Add empty cells for days before the first of the month
+    for (let i = 0; i < startingDayOfWeek; i++) {
+      days.push(null);
+    }
+
+    // Add all days of the month
+    for (let day = 1; day <= daysInMonth; day++) {
+      days.push(new Date(year, month, day));
+    }
+
+    return days;
+  };
+
+  const getEventsForDate = (date) => {
+    if (!date) return [];
+    return events.filter(event => {
+      const eventDate = new Date(event.startDate);
+      return eventDate.toDateString() === date.toDateString();
+    });
+  };
+
+  const isToday = (date) => {
+    if (!date) return false;
+    const today = new Date();
+    return date.toDateString() === today.toDateString();
+  };
+
+  const isSelectedMonth = (date) => {
+    if (!date) return false;
+    return date.getMonth() === selectedDate.getMonth();
+  };
+
+  const handleDayClick = (date) => {
+    if (!date) return;
+    setSelectedDayForNewEvent(date);
+    setFormData({
+      ...formData,
+      startDate: date.toISOString().split('T')[0]
+    });
+    setShowEventForm(true);
+  };
+
+  const groupedEvents = groupEventsByDate();
+  const sortedDates = Object.keys(groupedEvents).sort((a, b) => new Date(a) - new Date(b));
+  const calendarDays = getDaysInMonth(selectedDate);
+
+  return (
+    <div className="commander-calendar">
+      <div className="calendar-header">
+        <div className="calendar-nav">
+          <button onClick={goToToday} className="btn-today">
+            <Today /> Today
+          </button>
+          <button onClick={() => navigateMonth(-1)} className="nav-btn">
+            <ChevronLeft />
+          </button>
+          <button onClick={() => navigateMonth(1)} className="nav-btn">
+            <ChevronRight />
+          </button>
+          <h3 className="current-month">
+            {selectedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+          </h3>
+        </div>
+
+        <div className="calendar-actions">
+          <div className="view-switcher">
+            <button
+              className={`view-btn ${viewMode === 'day' ? 'active' : ''}`}
+              onClick={() => setViewMode('day')}
+              title="Day view"
+            >
+              <ViewDay />
+            </button>
+            <button
+              className={`view-btn ${viewMode === 'week' ? 'active' : ''}`}
+              onClick={() => setViewMode('week')}
+              title="Week view"
+            >
+              <ViewWeek />
+            </button>
+            <button
+              className={`view-btn ${viewMode === 'month' ? 'active' : ''}`}
+              onClick={() => setViewMode('month')}
+              title="Month view"
+            >
+              <ViewModule />
+            </button>
+          </div>
+          <button onClick={() => setShowEventForm(true)} className="btn-add-event">
+            <Add /> New Event
+          </button>
+        </div>
+      </div>
+
+      {showEventForm && (
+        <div className="event-form-overlay" onClick={resetForm}>
+          <form className="event-form" onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit}>
+            <h4>{editingEvent ? 'Edit Event' : 'New Event'}</h4>
+
+            <input
+              type="text"
+              placeholder="Event title"
+              value={formData.title}
+              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+              required
+            />
+
+            <textarea
+              placeholder="Description (optional)"
+              value={formData.description}
+              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+              rows={3}
+            />
+
+            <div className="form-row">
+              <select
+                value={formData.eventType}
+                onChange={(e) => setFormData({ ...formData, eventType: e.target.value })}
+              >
+                <option value="task">Task</option>
+                <option value="appointment">Appointment</option>
+                <option value="meeting">Meeting</option>
+                <option value="deadline">Deadline</option>
+                <option value="reminder">Reminder</option>
+              </select>
+
+              <select
+                value={formData.priority}
+                onChange={(e) => setFormData({ ...formData, priority: e.target.value })}
+              >
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+                <option value="critical">Critical</option>
+              </select>
+            </div>
+
+            <div className="form-row">
+              <input
+                type="date"
+                value={formData.startDate}
+                onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
+                required
+              />
+
+              <input
+                type="date"
+                value={formData.endDate}
+                onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
+              />
+            </div>
+
+            <label className="checkbox-label">
+              <input
+                type="checkbox"
+                checked={formData.allDay}
+                onChange={(e) => setFormData({ ...formData, allDay: e.target.checked })}
+              />
+              All day event
+            </label>
+
+            <div className="form-actions">
+              <button type="button" onClick={resetForm} className="btn-cancel">
+                Cancel
+              </button>
+              <button type="submit" className="btn-save">
+                {editingEvent ? 'Update' : 'Create'}
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+
+      <div className="events-list">
+        {sortedDates.length === 0 ? (
+          <div className="empty-state">
+            <Event style={{ fontSize: 48, color: '#6b7280' }} />
+            <p>No events for this period</p>
+            <button onClick={() => setShowEventForm(true)} className="btn-add-first">
+              Create your first event
+            </button>
+          </div>
+        ) : (
+          sortedDates.map(date => (
+            <div key={date} className="date-group">
+              <div className="date-header">
+                {new Date(date).toLocaleDateString('en-US', {
+                  weekday: 'short',
+                  month: 'short',
+                  day: 'numeric'
+                })}
+              </div>
+
+              {groupedEvents[date].map(event => (
+                <div
+                  key={event.id}
+                  className={`event-item ${event.status}`}
+                  style={{ borderLeftColor: getPriorityColor(event.priority) }}
+                >
+                  <div className="event-main">
+                    <div className="event-status">
+                      {getStatusIcon(event.status)}
+                    </div>
+
+                    <div className="event-content">
+                      <h5 className="event-title">{event.title}</h5>
+                      {event.description && (
+                        <p className="event-description">{event.description}</p>
+                      )}
+                      <div className="event-meta">
+                        <span className="event-type">{event.eventType}</span>
+                        <span className="event-priority">{event.priority}</span>
+                      </div>
+                    </div>
+
+                    <div className="event-actions">
+                      {event.status !== 'completed' && (
+                        <button
+                          onClick={() => handleStatusChange(event.id, 'completed')}
+                          className="btn-complete"
+                          title="Mark as complete"
+                        >
+                          <CheckCircle />
+                        </button>
+                      )}
+                      <button
+                        onClick={() => editEvent(event)}
+                        className="btn-edit"
+                        title="Edit event"
+                      >
+                        <Edit />
+                      </button>
+                      <button
+                        onClick={() => handleDelete(event.id)}
+                        className="btn-delete"
+                        title="Delete event"
+                      >
+                        <Delete />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default CommanderCalendar;

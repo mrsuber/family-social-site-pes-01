@@ -1,103 +1,103 @@
-const mongoose = require("mongoose")
+const { DataTypes, Model } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const CompanyDescription = new mongoose.Schema(
+class CompanyDescription extends Model {}
+
+CompanyDescription.init(
   {
-  // { userId:{type:String,required:true},
-    user:{type:mongoose.Types.ObjectId, ref:'user'},
-    companyName:{type:String,required:true},
-    logo:{type:String},
-    about:{type:String},
-    aboutSource:[
-      {
-          name:{type:String},
-          link:{type:String}
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
+    },
+    userId: {
+      type: DataTypes.UUID,
+      allowNull: true,
+      field: 'user_id',
+      references: {
+        model: 'users',
+        key: 'id'
       }
-    ],
-    MainLocation:{type:String},
-    TotalNumberOfBranches:{type:String},
-    OtherLocations:[
-      {
-        name:{type:String},
-        link:{type:String}
-      }
-    ],
-    LocationSources:[
-      {
-        name:{type:String},
-        link:{type:String}
-      }
-    ],
-    JobPost:[
-      {
-        name:{type:String},
-        location:{type:String},
-        link:{type:String},
-        analysis:{
-          status:{type:String},
-          jobLocation:{type:String},
-          currentOfficeLocation:{type:String},
-          details1:{type:String},
-          details2:{type:String},
-          details3:{type:String},
-          details4:{type:String},
-        },
-        reasonForAnalysis:{type:String},
-        analysisSource:[
-          {
-            name:{type:String},
-            link:{type:String}
-          }
-        ],
-
-      },
-    ],
-    JobPostSources:[
-      {
-        name:{type:String},
-        link:{type:String}
-      }
-    ],
-    Employee:[
-      {
-        year:{type:String},
-        numberOfEmployee:{type:String}
-
-      }
-    ],
-    EmployeeType:{type:String},
-    EmployeeSource:[
-      {
-        name:{type:String},
-        link:{type:String}
-      }
-    ],
-    Revenue:[
-      {
-        year:{type:String},
-        amount:{type:String}
-      }
-    ],
-    RevenueType:{type:String},
-    RevenueSource:[
-      {
-        name:{type:String},
-        link:{type:String}
-      },
-    ],
-    Departments:[
-      {
-        DepartmentName:{type:String},
-        DepartmentDesc:{type:String}
-      },
-    ],
-    DepartmentSource:[
-      {
-        name:{type:String},
-        link:{type:String}
-      }
-    ]
+    },
+    companyName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    logo: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    about: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    aboutSource: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    MainLocation: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    TotalNumberOfBranches: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    OtherLocations: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    LocationSources: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    JobPost: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    JobPostSources: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    Employee: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    EmployeeType: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    EmployeeSource: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    Revenue: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    RevenueType: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    RevenueSource: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    Departments: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    DepartmentSource: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    }
   },
-  {timestamps:true}
-  );
+  {
+    sequelize,
+    modelName: 'CompanyDescription',
+    tableName: 'company_descriptions',
+    timestamps: true
+  }
+);
 
-  module.exports = mongoose.model("companyDescription",CompanyDescription)
+module.exports = CompanyDescription;

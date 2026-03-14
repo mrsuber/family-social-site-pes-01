@@ -1,7 +1,7 @@
 
 require('dotenv').config()
 const express = require('express')
-const connectDB = require('./config/db')
+const { connectDB } = require('./config/db')
 const errorHandler = require('./middleware/error')
 const path = require('path')
 const cookieParser = require('cookie-parser')
@@ -54,6 +54,9 @@ app.use('/api',require('./routes/notifyRouter'))
 app.use('/api',require('./routes/messageRouter'))
 app.use('/api',require('./routes/welcomeRouter'))
 app.use('/api',require('./routes/schoolRouter'))
+
+// Resource Management System Routes
+app.use('/api',require('./routes/resourceRoutes'))
 
 
 

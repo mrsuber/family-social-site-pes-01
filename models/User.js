@@ -1,108 +1,158 @@
 const crypto = require('crypto');
-const mongoose = require('mongoose')
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+const { DataTypes, Model } = require('sequelize');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const { sequelize } = require('../config/db');
 
-
-const UserSchema = new mongoose.Schema({
-  fullname:{
-    type:String,
-    trim:true,
-    maxlength:25
-  },
-  username:{
-    type:String,
-    required:[true,"please provide a username  "],
-    unique:true
-  },
-  email:{
-    type:String,
-    required:[true,"please provide an email"],
-    trim:true,
-    unique:true,
-    match:[
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-       "Please fill valid email address"
-    ]
-  },
-  password:{
-    type:String,
-    required:[true,"Please add a password"],
-    minlength:6,
-    select:false
-  },
-  profilePic:{type:String,default:"https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png"},
-  role:{type:String,default:'user'},
-  gender:{type:String,default:'male'},
-  mobile:{type:String,default:''},
-  address:{type:String,default:''},
-  story:{
-    type:String,
-    default:'',
-    maxlength:200
-
-  },
-  website:{type:String,default:''},
-  saved:[
-    {
-    type:mongoose.Types.ObjectId,
-    ref:'user'
+class User extends Model {
+  async matchPasswords(password) {
+    return await bcrypt.compare(password, this.password);
   }
-],
-  followers:[
-    {
-    type:mongoose.Types.ObjectId,
-    ref:'user'
+
+  getSignedToken() {
+    return jwt.sign({ id: this.id }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRE });
   }
-],
-  following:[
-    {
-      type:mongoose.Types.ObjectId,
-      ref:'user'
+
+  refreshToken() {
+    return jwt.sign({ id: this.id }, process.env.JWT_SECRET, { expiresIn: '30d' });
+  }
+
+  getResetPasswordToken() {
+    const resetToken = crypto.randomBytes(20).toString('hex');
+    this.resetPasswordToken = crypto.createHash('sha256').update(resetToken).digest('hex');
+    this.resetPasswordExpire = new Date(Date.now() + 10 * 60 * 1000);
+    return resetToken;
+  }
+}
+
+User.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
+    },
+    fullname: {
+      type: DataTypes.STRING(25),
+      allowNull: true
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        notEmpty: { msg: 'please provide a username' }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: { msg: 'Please fill valid email address' }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: {
+          args: [6, 255],
+          msg: 'Password must be at least 6 characters'
+        }
+      }
+    },
+    profilePic: {
+      type: DataTypes.STRING,
+      defaultValue: 'https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png'
+    },
+    role: {
+      type: DataTypes.STRING,
+      defaultValue: 'user'
+    },
+    gender: {
+      type: DataTypes.STRING,
+      defaultValue: 'male'
+    },
+    mobile: {
+      type: DataTypes.STRING,
+      defaultValue: ''
+    },
+    address: {
+      type: DataTypes.STRING,
+      defaultValue: ''
+    },
+    story: {
+      type: DataTypes.STRING(200),
+      defaultValue: ''
+    },
+    website: {
+      type: DataTypes.STRING,
+      defaultValue: ''
+    },
+    saved: {
+      type: DataTypes.ARRAY(DataTypes.UUID),
+      defaultValue: []
+    },
+    followers: {
+      type: DataTypes.ARRAY(DataTypes.UUID),
+      defaultValue: []
+    },
+    following: {
+      type: DataTypes.ARRAY(DataTypes.UUID),
+      defaultValue: []
+    },
+    isApplication1: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    isApplication2: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    isApplication3: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    isStudentTech: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    isStudentRel: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    isSuperAdmin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    resetPasswordToken: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    resetPasswordExpire: {
+      type: DataTypes.DATE,
+      allowNull: true
     }
-  ],
-  isApplication1:{type:Boolean,default:false},
-  isApplication2:{type:Boolean,default:false},
-  isApplication3:{type:Boolean,default:false},
-  isStudentTech:{type:Boolean,default:false},
-  isStudentRel:{type:Boolean,default:false},
-  isAdmin:{type:Boolean,default:false},
-  isSuperAdmin:{type:Boolean,default:false},
-  resetPasswordToken: String,
-  resetPasswordExpire:Date
-},
-{timestamps:true})
-
-//midile ware to hash the password
-UserSchema.pre("save", async function(next){
-  if(!this.isModified("password")){
-    next()
+  },
+  {
+    sequelize,
+    modelName: 'User',
+    tableName: 'users',
+    timestamps: true,
+    hooks: {
+      beforeSave: async (user) => {
+        if (user.changed('password')) {
+          const salt = await bcrypt.genSalt(10);
+          user.password = await bcrypt.hash(user.password, salt);
+        }
+      }
+    }
   }
+);
 
-  const salt =await bcrypt.genSalt(10)
-  this.password=await bcrypt.hash(this.password,salt)
-  next();
-})
-
-UserSchema.methods.matchPasswords = async function(password){
-  return await bcrypt.compare(password, this.password)
-}
-
-UserSchema.methods.getSignedToken = function(){
-  return jwt.sign({id:this._id}, process.env.JWT_SECRET,{expiresIn:process.env.JWT_EXPIRE})
-}
-
-UserSchema.methods.refreshToken = function(){
-  return jwt.sign({id:this._id}, process.env.JWT_SECRET,{expiresIn:'30d'})
-}
-
-UserSchema.methods.getResetPasswordToken = function(){
-  const resetToken= crypto.randomBytes(20).toString("hex")
-  this.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex");
-  this.resetPasswordExpire = Date.now() + 10*(60*1000)
-  return resetToken;
-}
-
-const User = mongoose.model("user",UserSchema);
-
-module.exports=User;
+module.exports = User;

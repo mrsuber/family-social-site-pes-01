@@ -27,6 +27,7 @@ export {default as AdminApplicationScreen} from './admin/applications/AdminAppli
 export {default as AdminApplicationScreen2} from './admin/applications/AdminApplicationScreen2'
 export {default as AdminApplicationScreen3} from './admin/applications/AdminApplicationScreen3'
 export {default as AdminProjectExpansionScreen} from './admin/projectExpansion/AdminProjectExpansionScreen'
+export {default as AdminMissionControlScreen} from './admin/missionControl/MissionControlScreen'
 export {default as AdminStudent} from './admin/students/StudentScreen'
 export {default as AdminStudent2} from './admin/students/StudentScreen2'
 export {default as AdminCourse} from './admin/coures/CourseScreen'

@@ -1,66 +1,43 @@
-import axios from 'axios'
+import axios from 'axios';
 
-export const getDataAPI = async (url,token) =>{
-  const config = {
-    headers:{
-      "Content-Type":"application/json",
-      Authorization:`Bearer ${token}`
-    }
-  }
-  const res = await axios.get(`/api/${url}`,config)
-
+export const getAPI = async (url, token) => {
+  const res = await axios.get(`/api/${url}`, {
+    headers: { Authorization: token },
+  });
   return res;
-}
+};
 
-
-export const postDataAPI = async (url,data,token) =>{
-  const config = {
-    headers:{
-      "Content-Type":"application/json",
-      Authorization:`Bearer ${token}`
-    }
-  }
-
-  const res = await axios.post(`/api/${url}`,data,config)
-
+export const postAPI = async (url, post, token) => {
+  const res = await axios.post(`/api/${url}`, post, {
+    headers: { Authorization: token },
+  });
   return res;
-}
+};
 
-export const putDataAPI = async (url,post) =>{
-  const config = {
-    headers:{
-      "Content-Type":"application/json",
-      Authorization:`Bearer ${localStorage.getItem("authToken")}`
-    }
-  }
-  const res = await axios.put(`/api/${url}`,post,config)
-
+export const putAPI = async (url, post, token) => {
+  const res = await axios.put(`/api/${url}`, post, {
+    headers: { Authorization: token },
+  });
   return res;
-}
+};
 
-
-export const patchDataAPI = async (url,post,token) =>{
-
-  const config = {
-    headers:{
-      "Content-Type":"application/json",
-      Authorization:`Bearer ${token}`
-    }
-  }
-  const res = await axios.patch(`/api/${url}`,post,config)
-
+export const patchAPI = async (url, post, token) => {
+  const res = await axios.patch(`/api/${url}`, post, {
+    headers: { Authorization: token },
+  });
   return res;
-}
+};
 
-
-export const deleteDataAPI = async (url,token) =>{
-  const config = {
-    headers:{
-      "Content-Type":"application/json",
-      Authorization:`Bearer ${token}`
-    }
-  }
-  const res = await axios.delete(`/api/${url}`,config)
-
+export const deleteAPI = async (url, token) => {
+  const res = await axios.delete(`/api/${url}`, {
+    headers: { Authorization: token },
+  });
   return res;
-}
+};
+
+// Legacy naming aliases for backward compatibility
+export const getDataAPI = getAPI;
+export const postDataAPI = postAPI;
+export const putDataAPI = putAPI;
+export const patchDataAPI = patchAPI;
+export const deleteDataAPI = deleteAPI;

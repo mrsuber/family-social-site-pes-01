@@ -1,46 +1,66 @@
-const mongoose = require('mongoose')
+const { DataTypes, Model } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const schoolSchema = new mongoose.Schema({
-  // computerEngineering:{type: mongoose.Types.ObjectId, ref:'computerEngineering' },
-  // religiousStuties:{type: mongoose.Types.ObjectId, ref:'religiousStuties' },
-  name:{type:String,required:true},
-  learningTitle:{type:String,required:true},
-  logo:{type:String,default:"https://github.com/mrsuber/family-social-site-pes-01/blob/master/client/src/images/suber_logo1.png?raw=true"},
-  path:{type:String,required:true},
-  about:{type:String},
-  MainLocation:{type:String},
-  TotalNumberOfBranches:{type:String},
-  OtherLocations:[
-    {
-      name:{type:String},
-      link:{type:String},
+class School extends Model {}
+
+School.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
     },
-  ],
-
-  JobPost:[
-    {
-      name:{type:String},
-      location:{type:String},
-      details:{type:String},
-      analysis:{
-        status:{type:String},
-        jobLocation:{type:String},
-        details1:{type:String},
-        details2:{type:String},
-        details3:{type:String},
-        details4:{type:String},
-        details5:{type:String},
-
-      },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-  ],
-  JobPostSources:[
-    {
-      name:{type:String},
-      link:{type:String},
+    learningTitle: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-  ],
-  courseLink:{type:String},
-},{timestamps:true})
+    logo: {
+      type: DataTypes.STRING,
+      defaultValue: 'https://github.com/mrsuber/family-social-site-pes-01/blob/master/client/src/images/suber_logo1.png?raw=true'
+    },
+    path: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    about: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    MainLocation: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    TotalNumberOfBranches: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    OtherLocations: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    JobPost: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    JobPostSources: {
+      type: DataTypes.JSONB,
+      defaultValue: []
+    },
+    courseLink: {
+      type: DataTypes.STRING,
+      allowNull: true
+    }
+  },
+  {
+    sequelize,
+    modelName: 'School',
+    tableName: 'schools',
+    timestamps: true
+  }
+);
 
-module.exports = mongoose.model('school', schoolSchema)
+module.exports = School;

@@ -1,30 +1,54 @@
-const mongoose = require("mongoose")
+const { DataTypes, Model } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const RecipeSchema = new mongoose.Schema(
+class Recipe extends Model {}
+
+Recipe.init(
   {
-  name:{type:String,required:true},
-  category:{type:String,required:true},
-  price:{type:String,required:true},
-  desc:{type:String,required:true},
-
-  fileName:{
-    type:String,
-    required:true
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    price: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    desc: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    fileName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    filePath: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    fileType: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    fileSize: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
-  filePath:{
-    type:String,
-    required:true
-  },
-  fileType:{
-    type:String,
-    required:true
-  },
-  fileSize:{
-    type:String,
-    required:true
+  {
+    sequelize,
+    modelName: 'Recipe',
+    tableName: 'recipes',
+    timestamps: true
   }
-},
-{timestamps:true}
 );
 
-module.exports = mongoose.model("Recipe",RecipeSchema)
+module.exports = Recipe;

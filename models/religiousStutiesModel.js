@@ -1,11 +1,26 @@
-const mongoose = require("mongoose")
+const { DataTypes, Model } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const religiousStutiesSchema = new mongoose.Schema(
+class ReligiousStudies extends Model {}
+
+ReligiousStudies.init(
   {
-  name:{type:String,required:true},
-
-},
-{timestamps:true}
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+  },
+  {
+    sequelize,
+    modelName: 'ReligiousStudies',
+    tableName: 'religious_studies',
+    timestamps: true
+  }
 );
 
-module.exports = mongoose.model("religiousStuties",religiousStutiesSchema)
+module.exports = ReligiousStudies;

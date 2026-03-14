@@ -1,15 +1,39 @@
-const mongoose = require('mongoose')
+const { DataTypes, Model } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const familyMemberSchema = new mongoose.Schema({
-  familyName:{
-    type:String,
-    required:true
-  },
-  familyHead:{
-    type:String,
-    required:true
-  },
-  familyMember:{type: mongoose.Types.ObjectId,ref:'user'}
-},{timestamps:true})
+class FamilyMember extends Model {}
 
-module.exports = mongoose.model('familyMember', familyMemberSchema)
+FamilyMember.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
+    },
+    familyName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    familyHead: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    familyMemberId: {
+      type: DataTypes.UUID,
+      allowNull: true,
+      field: 'family_member_id',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    }
+  },
+  {
+    sequelize,
+    modelName: 'FamilyMember',
+    tableName: 'family_members',
+    timestamps: true
+  }
+);
+
+module.exports = FamilyMember;
