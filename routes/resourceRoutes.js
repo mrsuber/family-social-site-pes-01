@@ -11,6 +11,7 @@ const departmentCtrl = require('../controllers/departmentCtrl');
 const calendarCtrl = require('../controllers/calendarCtrl');
 const diaryCtrl = require('../controllers/diaryCtrl');
 const uploadCtrl = require('../controllers/uploadCtrl');
+const missionControlCtrl = require('../controllers/missionControlCtrl');
 const { upload } = require('../middleware/upload');
 
 // ==================== ANALYTICS ROUTES ====================
@@ -145,5 +146,11 @@ router.post('/upload/document', upload.single('document'), uploadCtrl.uploadDocu
 router.delete('/upload/document', uploadCtrl.deleteDocument);
 router.post('/upload/diary-audio', upload.single('audio'), uploadCtrl.uploadDiaryAudio);
 router.delete('/upload/diary-audio', uploadCtrl.deleteDiaryAudio);
+
+// ==================== MISSION CONTROL ROUTES ====================
+// Mission control canvas node positions
+router.get('/mission-control/positions', missionControlCtrl.getNodePositions);
+router.post('/mission-control/positions', missionControlCtrl.saveNodePositions);
+router.delete('/mission-control/positions', missionControlCtrl.resetNodePositions);
 
 module.exports = router;

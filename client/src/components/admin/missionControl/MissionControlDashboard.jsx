@@ -19,7 +19,7 @@ import PersonalCircleNode from './nodes/PersonalCircleNode';
 import DepartmentNode from './nodes/DepartmentNode';
 import PersonDetailModal from './PersonDetailModal';
 import LifeOperationsCanvas from './LifeOperationsCanvas';
-import { getAPI, postAPI, deleteAPI } from '../../../utils/fetchData';
+import { getAPI, postAPI, putAPI, deleteAPI } from '../../../utils/fetchData';
 import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet } from '@material-ui/icons';
 import { useReactFlow } from 'reactflow';
 
@@ -268,7 +268,7 @@ const MissionControlDashboard = () => {
 
       // Rebuild the graph with new data
       if (stats) {
-        buildNodeGraph(
+        await buildNodeGraph(
           stats,
           generalsRes.data.data,
           peopleRes.data.data,
@@ -326,24 +326,52 @@ const MissionControlDashboard = () => {
     );
   }, [setNodes]);
 
-  // Save node positions to localStorage
-  const saveNodePositions = useCallback((nodes) => {
+  // Save node positions to both localStorage and database
+  const saveNodePositions = useCallback(async (nodes) => {
     const positions = {};
     nodes.forEach(node => {
       positions[node.id] = node.position;
     });
+
+    // Save to localStorage for immediate access
     localStorage.setItem(STORAGE_KEY, JSON.stringify(positions));
+
+    // Save to database for persistence
+    try {
+      await postAPI('mission-control/positions', { positions });
+    } catch (err) {
+      console.error('Error saving positions to database:', err);
+    }
   }, []);
 
-  // Load saved positions from localStorage
-  const loadSavedPositions = useCallback(() => {
+  // Load saved positions from database (with localStorage fallback)
+  const loadSavedPositions = useCallback(async () => {
+    try {
+      // Try to load from database first
+      const res = await getAPI('mission-control/positions');
+      if (res.data.success && res.data.data && Object.keys(res.data.data).length > 0) {
+        // Also save to localStorage for offline access
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(res.data.data));
+        return res.data.data;
+      }
+    } catch (err) {
+      console.error('Error loading positions from database:', err);
+    }
+
+    // Fallback to localStorage if database fails or is empty
     const saved = localStorage.getItem(STORAGE_KEY);
     return saved ? JSON.parse(saved) : null;
   }, []);
 
   // Reset layout to default
-  const resetLayout = useCallback(() => {
+  const resetLayout = useCallback(async () => {
     localStorage.removeItem(STORAGE_KEY);
+    // Also clear database positions
+    try {
+      await deleteAPI('mission-control/positions');
+    } catch (err) {
+      console.error('Error clearing positions from database:', err);
+    }
     window.location.reload();
   }, []);
 
@@ -374,7 +402,7 @@ const MissionControlDashboard = () => {
         setAssets(assetsRes.data.data);
 
         // Build node graph
-        buildNodeGraph(
+        await buildNodeGraph(
           statsRes.data.data,
           generalsRes.data.data,
           peopleRes.data.data,
@@ -389,10 +417,10 @@ const MissionControlDashboard = () => {
     fetchData();
   }, []);
 
-  const buildNodeGraph = (statsData, generalsData, peopleData, assetsData, departmentsData = []) => {
+  const buildNodeGraph = async (statsData, generalsData, peopleData, assetsData, departmentsData = []) => {
     const newNodes = [];
     const newEdges = [];
-    const savedPositions = loadSavedPositions();
+    const savedPositions = await loadSavedPositions();
 
     // Commander node (center top)
     const commander = peopleData.find(p => p.relationshipType === 'high_commander');
@@ -1026,8 +1054,8 @@ const MissionControlDashboard = () => {
                 return;
               }
 
-              // Make API call to update person
-              const res = await postAPI(`missionControl/person/${personId}`, updatedData);
+              // Make API call to update person (using PUT method)
+              const res = await putAPI(`people/${personId}`, updatedData);
 
               if (res.data.success) {
                 alert('Person updated successfully!');
@@ -1046,7 +1074,7 @@ const MissionControlDashboard = () => {
 
                 // Rebuild the graph with updated data
                 if (stats) {
-                  buildNodeGraph(
+                  await buildNodeGraph(
                     stats,
                     generalsRes.data.data,
                     peopleRes.data.data,
