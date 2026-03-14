@@ -44,6 +44,7 @@ const MissionControlDashboard = () => {
   const [generals, setGenerals] = useState([]);
   const [people, setPeople] = useState([]);
   const [assets, setAssets] = useState([]);
+  const [departments, setDepartments] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
   const [addResourceType, setAddResourceType] = useState('person');
   const [focusedGeneral, setFocusedGeneral] = useState(null);
@@ -175,15 +176,26 @@ const MissionControlDashboard = () => {
       let endpoint = '';
       let payload = {};
 
-      // Auto-assign parent generalId if creating from context menu
+      // Auto-assign parent generalId/departmentId if creating from context menu
       let autoGeneralId = null;
+      let autoDepartmentId = null;
+
       if (parentNodeForNewResource) {
         if (parentNodeForNewResource.nodeType === 'general') {
           // Extract UUID from nodeId (format: "general-uuid")
           autoGeneralId = parentNodeForNewResource.nodeId.split('-').slice(1).join('-');
         } else if (parentNodeForNewResource.nodeType === 'department') {
-          // For departments, we'd need to get the department's generalId - for now use form selection
-          autoGeneralId = data.generalId || null;
+          // Extract UUID from nodeId (format: "department-uuid")
+          autoDepartmentId = parentNodeForNewResource.nodeId.split('-').slice(1).join('-');
+          // Department resources also need to inherit the department's generalId
+          // We'll get this from the departments data
+          const deptData = departments.find(d => d.id === autoDepartmentId);
+          if (deptData) {
+            autoGeneralId = deptData.generalId;
+          }
+        } else if (parentNodeForNewResource.nodeType === 'commander') {
+          // Creating from commander - no auto assignment needed for generals
+          autoGeneralId = null;
         }
       }
 
@@ -199,6 +211,7 @@ const MissionControlDashboard = () => {
             photoUrl: data.photoUrl || null,
             relationshipType: data.relationshipType,
             generalId: autoGeneralId || data.generalId || null,
+            departmentId: autoDepartmentId || data.departmentId || null,
             status: 'active',
             notes: data.notes || null
           };
@@ -265,6 +278,7 @@ const MissionControlDashboard = () => {
       setGenerals(generalsRes.data.data);
       setPeople(peopleRes.data.data);
       setAssets(assetsRes.data.data);
+      setDepartments(departmentsRes.data.data);
 
       // Rebuild the graph with new data
       if (stats) {
@@ -400,6 +414,7 @@ const MissionControlDashboard = () => {
         setGenerals(generalsRes.data.data);
         setPeople(peopleRes.data.data);
         setAssets(assetsRes.data.data);
+        setDepartments(departmentsRes.data.data);
 
         // Build node graph
         await buildNodeGraph(
@@ -882,6 +897,17 @@ const MissionControlDashboard = () => {
               <h2>Add New Resource</h2>
               <button className="mc-modal-close" onClick={handleCloseAddModal}>×</button>
             </div>
+            {parentNodeForNewResource && (
+              <div style={{
+                padding: '10px 20px',
+                background: '#1e3a8a',
+                color: '#fff',
+                fontSize: '14px',
+                borderBottom: '1px solid #374151'
+              }}>
+                📌 Will be connected to: <strong>{parentNodeForNewResource.nodeLabel}</strong> ({parentNodeForNewResource.nodeType})
+              </div>
+            )}
             <div className="mc-modal-body">
               <div className="mc-modal-tabs">
                 <button
@@ -1071,6 +1097,7 @@ const MissionControlDashboard = () => {
                 setGenerals(generalsRes.data.data);
                 setPeople(peopleRes.data.data);
                 setAssets(assetsRes.data.data);
+                setDepartments(departmentsRes.data.data);
 
                 // Rebuild the graph with updated data
                 if (stats) {
