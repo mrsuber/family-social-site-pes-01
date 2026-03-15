@@ -700,3 +700,98 @@
 .personal-circle-handle {
   background: #ec4899;
 }
+
+/* ==================== LIFE OPS CARD NODE ==================== */
+.life-ops-card-node {
+  min-width: 220px;
+  max-width: 220px;
+  background: #1a1d2e;
+  border: 2px solid #a855f7;
+  border-radius: 16px;
+  padding: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.life-ops-card-node:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(168, 85, 247, 0.5);
+  border-color: #c084fc;
+}
+
+.life-ops-card-header {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  padding: 14px 16px;
+  border-radius: 14px 14px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.life-ops-icon {
+  font-size: 24px;
+}
+
+.life-ops-title {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+}
+
+.life-ops-card-body {
+  padding: 16px;
+  background: #1f2937;
+}
+
+.life-ops-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.life-ops-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #111827;
+  border-radius: 8px;
+  border: 1px solid #374151;
+}
+
+.life-ops-stat-label {
+  color: #9ca3af;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.life-ops-stat-value {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.life-ops-card-footer {
+  padding: 10px 16px;
+  background: #111827;
+  border-radius: 0 0 14px 14px;
+  border-top: 1px solid #374151;
+  text-align: center;
+}
+
+.life-ops-hint {
+  color: #a855f7;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+.life-ops-card-node:hover .life-ops-hint {
+  opacity: 1;
+}

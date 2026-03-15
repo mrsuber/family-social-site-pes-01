@@ -17,6 +17,7 @@ import CommanderNode from './nodes/CommanderNode';
 import AssetNode from './nodes/AssetNode';
 import PersonalCircleNode from './nodes/PersonalCircleNode';
 import DepartmentNode from './nodes/DepartmentNode';
+import LifeOpsCardNode from './nodes/LifeOpsCardNode';
 import PersonDetailModal from './PersonDetailModal';
 import LifeOperationsCanvas from './LifeOperationsCanvas';
 import { getAPI, postAPI, putAPI, deleteAPI } from '../../../utils/fetchData';
@@ -33,6 +34,7 @@ const nodeTypes = {
   asset: AssetNode,
   personalCircle: PersonalCircleNode,
   department: DepartmentNode,
+  lifeOpsCard: LifeOpsCardNode,
 };
 
 const MissionControlDashboard = () => {
@@ -45,6 +47,13 @@ const MissionControlDashboard = () => {
   const [people, setPeople] = useState([]);
   const [assets, setAssets] = useState([]);
   const [departments, setDepartments] = useState([]);
+  const [lifeOpsData, setLifeOpsData] = useState({
+    financial: null,
+    connections: null,
+    dailyOps: null,
+    calendar: null,
+    diary: null
+  });
   const [showAddModal, setShowAddModal] = useState(false);
   const [addResourceType, setAddResourceType] = useState('person');
   const [focusedGeneral, setFocusedGeneral] = useState(null);
@@ -296,7 +305,8 @@ const MissionControlDashboard = () => {
           generalsRes.data.data,
           peopleRes.data.data,
           assetsRes.data.data,
-          departmentsRes.data.data
+          departmentsRes.data.data,
+          lifeOpsData
         );
       }
 
@@ -331,8 +341,29 @@ const MissionControlDashboard = () => {
       // Show comprehensive person detail modal
       setSelectedPerson(node.data);
       setShowPersonDetail(true);
+    } else if (node.type === 'lifeOpsCard') {
+      // For Life Ops cards, open commander modal with specific tab
+      const commander = people.find(p => p.relationshipType === 'high_commander');
+      if (commander) {
+        const tabMap = {
+          'financial': 'financial',
+          'network': 'connections',
+          'daily': 'operations',
+          'calendar': 'calendar',
+          'diary': 'diary'
+        };
+        setSelectedPerson({
+          label: commander.fullName,
+          title: commander.title,
+          photo: commander.photoUrl,
+          relationshipType: commander.relationshipType,
+          fullData: commander,
+          initialTab: tabMap[node.data.cardType] // Pass the tab to open
+        });
+        setShowPersonDetail(true);
+      }
     }
-  }, [edges, setNodes]);
+  }, [edges, setNodes, people]);
 
   // Clear focus when clicking canvas
   const onPaneClick = useCallback(() => {
@@ -425,13 +456,38 @@ const MissionControlDashboard = () => {
         setAssets(assetsRes.data.data);
         setDepartments(departmentsRes.data.data);
 
+        // Fetch Life Operations data for commander
+        const commander = peopleRes.data.data.find(p => p.relationshipType === 'high_commander');
+        if (commander) {
+          try {
+            const [financialRes, connectionsRes, dailyLogsRes, calendarRes, diaryRes] = await Promise.all([
+              getAPI(`life-ops/financial-dashboard/${commander.id}`).catch(() => ({ data: null })),
+              getAPI(`connections/${commander.id}`).catch(() => ({ data: { data: [] } })),
+              getAPI(`life-ops/daily-logs/${commander.id}`).catch(() => ({ data: { data: [] } })),
+              getAPI(`calendar/person/${commander.id}`).catch(() => ({ data: { data: [] } })),
+              getAPI(`diary/person/${commander.id}`).catch(() => ({ data: { data: [] } }))
+            ]);
+
+            setLifeOpsData({
+              financial: financialRes.data?.data || financialRes.data,
+              connections: connectionsRes.data?.data || [],
+              dailyOps: dailyLogsRes.data?.data || [],
+              calendar: calendarRes.data?.data || [],
+              diary: diaryRes.data?.data || []
+            });
+          } catch (lifeOpsErr) {
+            console.error('Error fetching life ops data:', lifeOpsErr);
+          }
+        }
+
         // Build node graph
         await buildNodeGraph(
           statsRes.data.data,
           generalsRes.data.data,
           peopleRes.data.data,
           assetsRes.data.data,
-          departmentsRes.data.data
+          departmentsRes.data.data,
+          lifeOpsData
         );
       } catch (err) {
         console.error('Error fetching mission control data:', err);
@@ -441,7 +497,7 @@ const MissionControlDashboard = () => {
     fetchData();
   }, []);
 
-  const buildNodeGraph = async (statsData, generalsData, peopleData, assetsData, departmentsData = []) => {
+  const buildNodeGraph = async (statsData, generalsData, peopleData, assetsData, departmentsData = [], lifeOpsData = {}) => {
     const newNodes = [];
     const newEdges = [];
     const savedPositions = await loadSavedPositions();
@@ -466,6 +522,112 @@ const MissionControlDashboard = () => {
             projects: statsData.projects.activeProjects
           }
         },
+      });
+
+      // Add Life Operations Cards around commander
+      const lifeOpsCards = [
+        {
+          id: 'life-ops-financial',
+          type: 'lifeOpsCard',
+          position: savedPositions?.['life-ops-financial'] || { x: 300, y: 100 },
+          data: {
+            cardType: 'financial',
+            label: '💰 Financial Command',
+            icon: '💰',
+            stats: {
+              totalIncome: lifeOpsData.financial?.totalIncome || 0,
+              totalExpenses: lifeOpsData.financial?.totalExpenses || 0,
+              runway: lifeOpsData.financial?.runway || 0,
+              savingsRate: lifeOpsData.financial?.savingsRate || 0
+            }
+          }
+        },
+        {
+          id: 'life-ops-network',
+          type: 'lifeOpsCard',
+          position: savedPositions?.['life-ops-network'] || { x: 900, y: 100 },
+          data: {
+            cardType: 'network',
+            label: '🤝 Network',
+            icon: '🤝',
+            stats: {
+              total: lifeOpsData.connections?.length || 0,
+              active: lifeOpsData.connections?.filter(c => c.status === 'active').length || 0,
+              upcoming: lifeOpsData.connections?.filter(c => c.nextOutreachDate && new Date(c.nextOutreachDate) <= new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)).length || 0
+            }
+          }
+        },
+        {
+          id: 'life-ops-daily',
+          type: 'lifeOpsCard',
+          position: savedPositions?.['life-ops-daily'] || { x: 300, y: 250 },
+          data: {
+            cardType: 'daily',
+            label: '✅ Daily Ops',
+            icon: '✅',
+            stats: {
+              totalLogs: lifeOpsData.dailyOps?.length || 0,
+              recentLogs: lifeOpsData.dailyOps?.filter(log => {
+                const logDate = new Date(log.date);
+                const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+                return logDate >= weekAgo;
+              }).length || 0
+            }
+          }
+        },
+        {
+          id: 'life-ops-calendar',
+          type: 'lifeOpsCard',
+          position: savedPositions?.['life-ops-calendar'] || { x: 900, y: 250 },
+          data: {
+            cardType: 'calendar',
+            label: '📅 Calendar',
+            icon: '📅',
+            stats: {
+              totalEvents: lifeOpsData.calendar?.length || 0,
+              upcoming: lifeOpsData.calendar?.filter(e => new Date(e.date) >= new Date()).length || 0,
+              today: lifeOpsData.calendar?.filter(e => {
+                const eventDate = new Date(e.date);
+                const today = new Date();
+                return eventDate.toDateString() === today.toDateString();
+              }).length || 0
+            }
+          }
+        },
+        {
+          id: 'life-ops-diary',
+          type: 'lifeOpsCard',
+          position: savedPositions?.['life-ops-diary'] || { x: 600, y: 300 },
+          data: {
+            cardType: 'diary',
+            label: '📖 Diary',
+            icon: '📖',
+            stats: {
+              totalEntries: lifeOpsData.diary?.length || 0,
+              thisWeek: lifeOpsData.diary?.filter(e => {
+                const entryDate = new Date(e.date);
+                const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+                return entryDate >= weekAgo;
+              }).length || 0,
+              lastEntry: lifeOpsData.diary?.[0]?.date || 'N/A'
+            }
+          }
+        }
+      ];
+
+      // Add life ops card nodes
+      lifeOpsCards.forEach(card => {
+        newNodes.push(card);
+
+        // Connect to commander
+        newEdges.push({
+          id: `commander-${card.id}`,
+          source: commanderId,
+          target: card.id,
+          type: 'smoothstep',
+          animated: true,
+          style: { stroke: '#a855f7', strokeWidth: 2, strokeDasharray: '5,5' }
+        });
       });
     }
 
@@ -1124,7 +1286,8 @@ const MissionControlDashboard = () => {
                     generalsRes.data.data,
                     peopleRes.data.data,
                     assetsRes.data.data,
-                    departmentsRes.data.data
+                    departmentsRes.data.data,
+                    lifeOpsData
                   );
                 }
               } else {
