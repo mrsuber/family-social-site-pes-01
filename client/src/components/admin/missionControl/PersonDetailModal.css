@@ -716,7 +716,46 @@
   margin-top: 4px;
 }
 
+/* ==================== PERSON DETAIL ACTION BUTTONS ==================== */
+.person-detail-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.person-detail-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.person-detail-action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.person-detail-action-btn svg {
+  font-size: 18px;
+}
+
 /* ==================== ASSET DETAIL MODAL ==================== */
+.asset-detail-modal {
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .asset-detail-modal .person-detail-body {
   padding: 24px;
 }

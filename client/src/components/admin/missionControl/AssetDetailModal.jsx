@@ -55,7 +55,7 @@ const AssetDetailModal = ({ asset, onClose, onUpdate }) => {
 
   return (
     <div className="person-detail-overlay" onClick={onClose}>
-      <div className="person-detail-modal asset-detail-modal" onClick={(e) => e.stopPropagation()}>
+      <div className="person-detail-modal asset-detail-modal" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '900px', maxHeight: '90vh' }}>
         {/* Header */}
         <div className="person-detail-header" style={{ background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' }}>
           <div className="person-detail-header-content">
@@ -132,7 +132,7 @@ const AssetDetailModal = ({ asset, onClose, onUpdate }) => {
         </div>
 
         {/* Body */}
-        <div className="person-detail-body">
+        <div className="person-detail-body" style={{ maxHeight: 'calc(90vh - 120px)', overflowY: 'auto' }}>
           <div className="asset-detail-grid">
             {/* Basic Information */}
             <div className="asset-detail-section">
