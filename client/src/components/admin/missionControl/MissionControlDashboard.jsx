@@ -19,6 +19,7 @@ import PersonalCircleNode from './nodes/PersonalCircleNode';
 import DepartmentNode from './nodes/DepartmentNode';
 import LifeOpsCardNode from './nodes/LifeOpsCardNode';
 import PersonDetailModal from './PersonDetailModal';
+import AssetDetailModal from './AssetDetailModal';
 import LifeOperationsCanvas from './LifeOperationsCanvas';
 import { getAPI, postAPI, putAPI, deleteAPI } from '../../../utils/fetchData';
 import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet } from '@material-ui/icons';
@@ -59,6 +60,8 @@ const MissionControlDashboard = () => {
   const [focusedGeneral, setFocusedGeneral] = useState(null);
   const [selectedPerson, setSelectedPerson] = useState(null);
   const [showPersonDetail, setShowPersonDetail] = useState(false);
+  const [selectedAsset, setSelectedAsset] = useState(null);
+  const [showAssetDetail, setShowAssetDetail] = useState(false);
   const [contextMenu, setContextMenu] = useState(null);
   const [formData, setFormData] = useState({});
   const [parentNodeForNewResource, setParentNodeForNewResource] = useState(null);
@@ -341,6 +344,10 @@ const MissionControlDashboard = () => {
       // Show comprehensive person detail modal
       setSelectedPerson(node.data);
       setShowPersonDetail(true);
+    } else if (node.type === 'asset') {
+      // Show asset detail modal
+      setSelectedAsset(node.data);
+      setShowAssetDetail(true);
     } else if (node.type === 'lifeOpsCard') {
       // For Life Ops cards, open commander modal with specific tab
       const commander = people.find(p => p.relationshipType === 'high_commander');
@@ -1296,6 +1303,61 @@ const MissionControlDashboard = () => {
             } catch (err) {
               console.error('Error updating person:', err);
               alert('Error updating person: ' + (err.response?.data?.msg || err.message));
+            }
+          }}
+        />
+      )}
+
+      {/* Asset Detail Modal */}
+      {showAssetDetail && selectedAsset && (
+        <AssetDetailModal
+          asset={selectedAsset}
+          onClose={() => setShowAssetDetail(false)}
+          onUpdate={async (updatedData) => {
+            try {
+              // Get the asset ID from fullData
+              const assetId = selectedAsset.fullData?.id || selectedAsset.id;
+              if (!assetId) {
+                alert('Error: Asset ID not found');
+                return;
+              }
+
+              // Make API call to update asset (using PUT method)
+              const res = await putAPI(`assets/${assetId}`, updatedData);
+
+              if (res.data.success) {
+                alert('Asset updated successfully!');
+
+                // Refresh the data and rebuild the graph
+                const [generalsRes, peopleRes, assetsRes, departmentsRes] = await Promise.all([
+                  getAPI('generals'),
+                  getAPI('people?limit=1000'),
+                  getAPI('assets'),
+                  getAPI('departments')
+                ]);
+
+                setGenerals(generalsRes.data.data);
+                setPeople(peopleRes.data.data);
+                setAssets(assetsRes.data.data);
+                setDepartments(departmentsRes.data.data);
+
+                // Rebuild the graph with updated data
+                if (stats) {
+                  await buildNodeGraph(
+                    stats,
+                    generalsRes.data.data,
+                    peopleRes.data.data,
+                    assetsRes.data.data,
+                    departmentsRes.data.data,
+                    lifeOpsData
+                  );
+                }
+              } else {
+                alert('Failed to update asset: ' + (res.data.msg || 'Unknown error'));
+              }
+            } catch (err) {
+              console.error('Error updating asset:', err);
+              alert('Error updating asset: ' + (err.response?.data?.msg || err.message));
             }
           }}
         />

@@ -716,6 +716,115 @@
   margin-top: 4px;
 }
 
+/* ==================== ASSET DETAIL MODAL ==================== */
+.asset-detail-modal .person-detail-body {
+  padding: 24px;
+}
+
+.asset-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.asset-detail-section {
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #374151;
+}
+
+.asset-detail-section.full-width {
+  grid-column: 1 / -1;
+}
+
+.asset-detail-section h3 {
+  color: #f3f4f6;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.asset-detail-section h3 svg {
+  color: #f59e0b;
+  font-size: 20px;
+}
+
+.asset-detail-field {
+  margin-bottom: 16px;
+}
+
+.asset-detail-field:last-child {
+  margin-bottom: 0;
+}
+
+.asset-detail-field label {
+  display: block;
+  color: #9ca3af;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.asset-detail-field p {
+  color: #f3f4f6;
+  font-size: 15px;
+  margin: 0;
+}
+
+.asset-detail-field input,
+.asset-detail-field select,
+.asset-detail-field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  color: #f3f4f6;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.asset-detail-field input:focus,
+.asset-detail-field select:focus,
+.asset-detail-field textarea:focus {
+  outline: none;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.asset-detail-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.asset-avatar {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.condition-bar {
+  width: 100%;
+  height: 24px;
+  background: #1f2937;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #374151;
+}
+
+.condition-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 12px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .person-modal {
@@ -746,5 +855,9 @@
   .photo-gallery {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 8px;
+  }
+
+  .asset-detail-grid {
+    grid-template-columns: 1fr;
   }
 }
