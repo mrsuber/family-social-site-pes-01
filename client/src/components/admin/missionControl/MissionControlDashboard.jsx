@@ -165,6 +165,40 @@ const MissionControlDashboard = () => {
             case 'department':
               await deleteAPI(`departments/${actualId}`);
               break;
+            case 'menuNode':
+            case 'inventoryNode':
+            case 'ordersNode':
+            case 'suppliersNode':
+            case 'staffNode':
+              // For restaurant nodes, we need to get the restaurant ID from node data
+              const node = nodes.find(n => n.id === contextMenu.nodeId);
+              if (node && node.data.restaurantId) {
+                // Ask user if they want to delete the entire restaurant
+                const confirmDelete = window.confirm(
+                  `This will delete the entire restaurant and all its data (menu, inventory, orders, etc.). Continue?`
+                );
+                if (confirmDelete) {
+                  await deleteAPI(`restaurants/${node.data.restaurantId}`);
+                  // Remove all related restaurant nodes from UI
+                  setNodes((nds) => nds.filter((n) =>
+                    !(n.data.restaurantId === node.data.restaurantId)
+                  ));
+                  // Remove all related edges
+                  const restaurantNodeIds = nodes
+                    .filter(n => n.data.restaurantId === node.data.restaurantId)
+                    .map(n => n.id);
+                  setEdges((eds) => eds.filter((e) =>
+                    !restaurantNodeIds.includes(e.source) && !restaurantNodeIds.includes(e.target)
+                  ));
+                  alert('Restaurant and all related data deleted successfully');
+                  setContextMenu(null);
+                  return;
+                } else {
+                  setContextMenu(null);
+                  return;
+                }
+              }
+              break;
             default:
               console.warn('Unknown node type:', contextMenu.nodeType);
           }
@@ -194,7 +228,7 @@ const MissionControlDashboard = () => {
     }
 
     setContextMenu(null);
-  }, [contextMenu, setNodes, setEdges]);
+  }, [contextMenu, setNodes, setEdges, nodes]);
 
   // Close context menu when clicking anywhere
   const handleCloseContextMenu = useCallback(() => {
