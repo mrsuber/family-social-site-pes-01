@@ -266,6 +266,52 @@ const uploadCtrl = {
       console.error('Delete diary audio error:', err);
       res.status(500).json({ msg: err.message });
     }
+  },
+
+  // Upload landmark photo
+  uploadLandmarkPhoto: async (req, res) => {
+    try {
+      if (!req.file) {
+        return res.status(400).json({ success: false, msg: 'No file uploaded' });
+      }
+
+      const photoUrl = `/uploads/photos/${req.file.filename}`;
+
+      res.status(200).json({
+        success: true,
+        msg: 'Landmark photo uploaded successfully',
+        url: photoUrl,
+        filename: req.file.originalname
+      });
+    } catch (err) {
+      console.error('Upload landmark photo error:', err);
+      res.status(500).json({ success: false, msg: err.message });
+    }
+  },
+
+  // Delete landmark photo
+  deleteLandmarkPhoto: async (req, res) => {
+    try {
+      const { photoUrl } = req.body;
+
+      if (!photoUrl) {
+        return res.status(400).json({ success: false, msg: 'Photo URL is required' });
+      }
+
+      // Delete file from disk
+      const filePath = path.join(__dirname, '..', photoUrl);
+      if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+      }
+
+      res.status(200).json({
+        success: true,
+        msg: 'Photo deleted successfully'
+      });
+    } catch (err) {
+      console.error('Delete landmark photo error:', err);
+      res.status(500).json({ success: false, msg: err.message });
+    }
   }
 };
 

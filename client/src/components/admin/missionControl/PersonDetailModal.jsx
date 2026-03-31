@@ -76,6 +76,7 @@ const PersonDetailModal = ({ person, onClose, onUpdate }) => {
 
   const fullData = person.fullData || {};
   const isCommander = person.relationshipType === 'high_commander' || fullData.relationshipType === 'high_commander';
+  const isInvestor = person.relationshipType === 'investor' || fullData.relationshipType === 'investor';
 
   const baseTabs = [
     { id: 'overview', label: 'Overview', icon: <Person /> },
@@ -87,6 +88,11 @@ const PersonDetailModal = ({ person, onClose, onUpdate }) => {
     { id: 'gallery', label: 'Gallery', icon: <PhotoLibrary /> },
   ];
 
+  // Add investor-specific tabs
+  const investorTabs = isInvestor ? [
+    { id: 'investment', label: 'Investment Details', icon: <TrendingUp /> },
+  ] : [];
+
   // Add commander-specific tabs
   const commanderTabs = isCommander ? [
     { id: 'calendar', label: 'Calendar', icon: <Event /> },
@@ -96,7 +102,7 @@ const PersonDetailModal = ({ person, onClose, onUpdate }) => {
     { id: 'operations', label: 'Daily Ops', icon: <Dashboard /> },
   ] : [];
 
-  const tabs = [...baseTabs, ...commanderTabs];
+  const tabs = [...baseTabs, ...investorTabs, ...commanderTabs];
 
   const handleSave = async () => {
     try {
@@ -680,6 +686,102 @@ const PersonDetailModal = ({ person, onClose, onUpdate }) => {
                     </button>
                   </div>
                 )}
+              </section>
+            </div>
+          )}
+
+          {activeTab === 'investment' && isInvestor && (
+            <div className="tab-content">
+              <section className="content-section">
+                <h3><AttachMoney /> Investment Information</h3>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '15px' }}>
+                  <div>
+                    <label style={{ color: '#94a3b8', fontSize: '14px', display: 'block', marginBottom: '5px' }}>
+                      Investment Amount
+                    </label>
+                    <p style={{ fontSize: '24px', fontWeight: 'bold', color: '#10b981' }}>
+                      {fullData.investmentAmount
+                        ? new Intl.NumberFormat('en-US', {
+                            style: 'currency',
+                            currency: fullData.investmentCurrency || 'XAF',
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0
+                          }).format(fullData.investmentAmount)
+                        : 'Not specified'}
+                    </p>
+                  </div>
+                  <div>
+                    <label style={{ color: '#94a3b8', fontSize: '14px', display: 'block', marginBottom: '5px' }}>
+                      Equity Percentage
+                    </label>
+                    <p style={{ fontSize: '24px', fontWeight: 'bold', color: '#f59e0b' }}>
+                      {fullData.equityPercentage ? `${fullData.equityPercentage}%` : 'Not specified'}
+                    </p>
+                  </div>
+                </div>
+                {fullData.equityPercentage && (
+                  <div style={{ marginTop: '20px' }}>
+                    <div style={{
+                      width: '100%',
+                      height: '30px',
+                      background: '#1e293b',
+                      borderRadius: '15px',
+                      overflow: 'hidden',
+                      border: '1px solid rgba(245, 158, 11, 0.3)'
+                    }}>
+                      <div
+                        style={{
+                          width: `${Math.min(fullData.equityPercentage, 100)}%`,
+                          height: '100%',
+                          background: 'linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%)',
+                          transition: 'width 0.3s ease',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: '#fff',
+                          fontSize: '12px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        {fullData.equityPercentage}% Equity
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </section>
+
+              <section className="content-section">
+                <h3>Investment Timeline</h3>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <Event style={{ color: '#3b82f6' }} />
+                  <div>
+                    <label style={{ color: '#94a3b8', fontSize: '14px', display: 'block' }}>
+                      Investment Date
+                    </label>
+                    <p style={{ fontSize: '16px', marginTop: '5px' }}>
+                      {fullData.investmentDate
+                        ? new Date(fullData.investmentDate).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })
+                        : 'Not specified'}
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section className="content-section">
+                <h3>Currency</h3>
+                <p style={{ fontSize: '16px' }}>
+                  {fullData.investmentCurrency || 'XAF'} - {
+                    fullData.investmentCurrency === 'XAF' ? 'Central African CFA Franc' :
+                    fullData.investmentCurrency === 'USD' ? 'US Dollar' :
+                    fullData.investmentCurrency === 'EUR' ? 'Euro' :
+                    fullData.investmentCurrency === 'GBP' ? 'British Pound' :
+                    fullData.investmentCurrency
+                  }
+                </p>
               </section>
             </div>
           )}

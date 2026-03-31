@@ -114,10 +114,44 @@ Person.init(
       field: 'performance_rating',
       comment: '0-100 rating'
     },
+    departmentId: {
+      type: DataTypes.UUID,
+      allowNull: true,
+      field: 'department_id',
+      references: {
+        model: 'departments',
+        key: 'id'
+      },
+      comment: 'Department this person belongs to'
+    },
     lastContactDate: {
       type: DataTypes.DATE,
       allowNull: true,
       field: 'last_contact_date'
+    },
+    investmentAmount: {
+      type: DataTypes.DECIMAL(15, 2),
+      allowNull: true,
+      field: 'investment_amount',
+      comment: 'Amount invested by this person (for investor relationship type)'
+    },
+    investmentCurrency: {
+      type: DataTypes.STRING,
+      defaultValue: 'XAF',
+      field: 'investment_currency',
+      comment: 'Currency of the investment'
+    },
+    investmentDate: {
+      type: DataTypes.DATE,
+      allowNull: true,
+      field: 'investment_date',
+      comment: 'Date when the investment was made'
+    },
+    equityPercentage: {
+      type: DataTypes.DECIMAL(5, 2),
+      allowNull: true,
+      field: 'equity_percentage',
+      comment: 'Percentage of equity owned (0-100)'
     }
   },
   {

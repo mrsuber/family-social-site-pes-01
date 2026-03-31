@@ -11,8 +11,10 @@ import {
   FilterList
 } from '@material-ui/icons';
 import { getAPI, postAPI, putAPI, deleteAPI } from '../../../utils/fetchData';
+import { useSelector } from 'react-redux';
 
 const FinancialDashboard = ({ personId }) => {
+  const { auth } = useSelector(state => state);
   const [dashboard, setDashboard] = useState(null);
   const [incomes, setIncomes] = useState([]);
   const [expenses, setExpenses] = useState([]);
@@ -53,9 +55,9 @@ const FinancialDashboard = ({ personId }) => {
   const fetchFinancialData = async () => {
     try {
       const [dashRes, incomeRes, expenseRes] = await Promise.all([
-        getAPI(`life-ops/financial-dashboard/${personId}?months=${months}&currentSavings=${currentSavings}`),
-        getAPI(`life-ops/income/${personId}?months=${months}`),
-        getAPI(`life-ops/expenses/${personId}?months=${months}`)
+        getAPI(`life-ops/financial-dashboard/${personId}?months=${months}&currentSavings=${currentSavings}`, auth.token),
+        getAPI(`life-ops/income/${personId}?months=${months}`, auth.token),
+        getAPI(`life-ops/expenses/${personId}?months=${months}`, auth.token)
       ]);
 
       if (dashRes.data.success) setDashboard(dashRes.data.dashboard);
@@ -71,9 +73,9 @@ const FinancialDashboard = ({ personId }) => {
     try {
       const data = { ...incomeForm, personId };
       if (editingItem) {
-        await putAPI(`life-ops/income/${editingItem.id}`, data);
+        await putAPI(`life-ops/income/${editingItem.id}`, data, auth.token);
       } else {
-        await postAPI('life-ops/income', data);
+        await postAPI('life-ops/income', data, auth.token);
       }
       fetchFinancialData();
       resetIncomeForm();
@@ -87,9 +89,9 @@ const FinancialDashboard = ({ personId }) => {
     try {
       const data = { ...expenseForm, personId };
       if (editingItem) {
-        await putAPI(`life-ops/expenses/${editingItem.id}`, data);
+        await putAPI(`life-ops/expenses/${editingItem.id}`, data, auth.token);
       } else {
-        await postAPI('life-ops/expenses', data);
+        await postAPI('life-ops/expenses', data, auth.token);
       }
       fetchFinancialData();
       resetExpenseForm();
@@ -101,7 +103,7 @@ const FinancialDashboard = ({ personId }) => {
   const deleteIncome = async (id) => {
     if (window.confirm('Delete this income stream?')) {
       try {
-        await deleteAPI(`life-ops/income/${id}`);
+        await deleteAPI(`life-ops/income/${id}`, auth.token);
         fetchFinancialData();
       } catch (err) {
         console.error('Error deleting income:', err);
@@ -112,7 +114,7 @@ const FinancialDashboard = ({ personId }) => {
   const deleteExpense = async (id) => {
     if (window.confirm('Delete this expense?')) {
       try {
-        await deleteAPI(`life-ops/expenses/${id}`);
+        await deleteAPI(`life-ops/expenses/${id}`, auth.token);
         fetchFinancialData();
       } catch (err) {
         console.error('Error deleting expense:', err);

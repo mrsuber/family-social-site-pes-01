@@ -16,6 +16,13 @@ PhysicalAsset.init(
       field: 'asset_type',
       comment: 'car, computer, machine, equipment, tool, etc.'
     },
+    acquisitionStatus: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'target',
+      field: 'acquisition_status',
+      comment: 'target (to acquire) or acquired (already owned)'
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,

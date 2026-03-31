@@ -252,14 +252,14 @@ const DailyOperations = ({ personId }) => {
                       <AttachMoney style={{ color: '#10b981' }} />
                       <div>
                         <span className="metric-label">Income</span>
-                        <span className="metric-value">${parseFloat(log.totalIncome || 0).toFixed(2)}</span>
+                        <span className="metric-value">{parseFloat(log.totalIncome || 0).toLocaleString('fr-FR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} XAF</span>
                       </div>
                     </div>
                     <div className="metric">
                       <AttachMoney style={{ color: '#ef4444' }} />
                       <div>
                         <span className="metric-label">Expenses</span>
-                        <span className="metric-value">${parseFloat(log.totalExpenses || 0).toFixed(2)}</span>
+                        <span className="metric-value">{parseFloat(log.totalExpenses || 0).toLocaleString('fr-FR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} XAF</span>
                       </div>
                     </div>
                   </div>

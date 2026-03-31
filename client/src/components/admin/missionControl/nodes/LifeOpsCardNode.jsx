@@ -20,6 +20,16 @@ const LifeOpsCardNode = ({ data }) => {
     }
   };
 
+  const formatXAF = (value) => {
+    if (!value || value === 0) return '0 XAF';
+    if (value >= 1000000) {
+      return `${(value / 1000000).toFixed(2)}M XAF`;
+    } else if (value >= 1000) {
+      return `${(value / 1000).toFixed(0)}K XAF`;
+    }
+    return `${value.toLocaleString()} XAF`;
+  };
+
   const renderStats = () => {
     switch (data.cardType) {
       case 'financial':
@@ -27,11 +37,11 @@ const LifeOpsCardNode = ({ data }) => {
           <div className="life-ops-stats">
             <div className="life-ops-stat">
               <span className="life-ops-stat-label">Income</span>
-              <span className="life-ops-stat-value">${data.stats.totalIncome?.toLocaleString() || 0}</span>
+              <span className="life-ops-stat-value">{formatXAF(data.stats.totalIncome || 0)}</span>
             </div>
             <div className="life-ops-stat">
               <span className="life-ops-stat-label">Expenses</span>
-              <span className="life-ops-stat-value">${data.stats.totalExpenses?.toLocaleString() || 0}</span>
+              <span className="life-ops-stat-value">{formatXAF(data.stats.totalExpenses || 0)}</span>
             </div>
             <div className="life-ops-stat">
               <span className="life-ops-stat-label">Runway</span>

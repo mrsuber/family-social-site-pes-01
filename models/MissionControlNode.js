@@ -13,7 +13,6 @@ MissionControlNode.init(
     nodeId: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
       field: 'node_id',
       comment: 'The node ID from ReactFlow (e.g., general-uuid, person-uuid)'
     },

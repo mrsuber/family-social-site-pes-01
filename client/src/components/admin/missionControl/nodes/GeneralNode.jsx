@@ -15,6 +15,31 @@ const GeneralNode = ({ data }) => {
     }
   };
 
+  // Parse objectives if it's a JSON string
+  const parseObjectives = () => {
+    if (!data.objectives) return [];
+
+    // If it's already an array, return it
+    if (Array.isArray(data.objectives)) {
+      return data.objectives;
+    }
+
+    // If it's a string, try to parse it
+    if (typeof data.objectives === 'string') {
+      try {
+        const parsed = JSON.parse(data.objectives);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (e) {
+        console.error('Failed to parse objectives:', e);
+        return [];
+      }
+    }
+
+    return [];
+  };
+
+  const objectives = parseObjectives();
+
   return (
     <div className={`custom-node general-node status-${data.status} ${data.focused ? 'node-focused' : ''}`}>
       <Handle
@@ -33,15 +58,15 @@ const GeneralNode = ({ data }) => {
         </div>
         <p className="node-description">{data.description}</p>
 
-        {data.objectives && data.objectives.length > 0 && (
+        {objectives.length > 0 && (
           <div className="objectives-section">
-            <span className="objectives-label">Objectives ({data.objectives.length})</span>
+            <span className="objectives-label">Objectives ({objectives.length})</span>
             <ul className="objectives-list">
-              {data.objectives.slice(0, 2).map((objective, index) => (
+              {objectives.slice(0, 2).map((objective, index) => (
                 <li key={index}>{objective}</li>
               ))}
-              {data.objectives.length > 2 && (
-                <li className="more-objectives">+{data.objectives.length - 2} more...</li>
+              {objectives.length > 2 && (
+                <li className="more-objectives">+{objectives.length - 2} more...</li>
               )}
             </ul>
           </div>

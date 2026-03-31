@@ -146,8 +146,13 @@ router.post('/upload/document', upload.single('document'), uploadCtrl.uploadDocu
 router.delete('/upload/document', uploadCtrl.deleteDocument);
 router.post('/upload/diary-audio', upload.single('audio'), uploadCtrl.uploadDiaryAudio);
 router.delete('/upload/diary-audio', uploadCtrl.deleteDiaryAudio);
+router.post('/upload/landmark-photo', upload.single('photo'), uploadCtrl.uploadLandmarkPhoto);
+router.delete('/upload/landmark-photo', uploadCtrl.deleteLandmarkPhoto);
 
 // ==================== MISSION CONTROL ROUTES ====================
+// Mission control dashboard data
+router.get('/mission-control/dashboard', missionControlCtrl.getDashboardData);
+
 // Mission control canvas node positions
 router.get('/mission-control/positions', missionControlCtrl.getNodePositions);
 router.post('/mission-control/positions', missionControlCtrl.saveNodePositions);

@@ -19,17 +19,29 @@ const AssetNode = ({ data }) => {
     }
   };
 
-  const formatCurrency = (value) => {
+  const formatCurrency = (value, currency = 'XAF') => {
     if (!value) return 'N/A';
+
+    // For XAF, format as "1,500,000 XAF" or "1.5M XAF"
+    if (currency === 'XAF') {
+      if (value >= 1000000) {
+        return `${(value / 1000000).toFixed(2)}M XAF`;
+      } else if (value >= 1000) {
+        return `${(value / 1000).toFixed(0)}K XAF`;
+      }
+      return `${value.toLocaleString()} XAF`;
+    }
+
+    // For other currencies, use standard formatting
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'USD',
+      currency: currency || 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
   };
 
-  const isTarget = data.notes && data.notes.includes('TARGET TO ACQUIRE');
+  const isTarget = data.acquisitionStatus === 'target';
 
   return (
     <div className={`custom-node asset-node ${isTarget ? 'asset-target' : 'asset-acquired'} ${data.focused ? 'node-focused' : ''}`}>
@@ -44,7 +56,7 @@ const AssetNode = ({ data }) => {
         </div>
         <div className="asset-info">
           <h4 className="asset-name">{data.label}</h4>
-          <div className="asset-value">{formatCurrency(data.value)}</div>
+          <div className="asset-value">{formatCurrency(data.value, data.currency || 'XAF')}</div>
           {isTarget && <div className="asset-target-badge">TARGET</div>}
           <div className="asset-condition">
             <span>Condition:</span>

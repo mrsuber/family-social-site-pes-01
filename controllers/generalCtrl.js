@@ -2,6 +2,8 @@ const { Op } = require('sequelize');
 const General = require('../models/General');
 const Person = require('../models/Person');
 const Project = require('../models/Project');
+const Department = require('../models/Department');
+const PhysicalAsset = require('../models/PhysicalAsset');
 const ErrorResponse = require('../utils/errorResponse');
 
 const generalCtrl = {
@@ -110,6 +112,30 @@ const generalCtrl = {
         return res.status(404).json({ msg: 'General not found' });
       }
 
+      // Check for related resources that would prevent deletion
+      const relatedCounts = await Promise.all([
+        Person.count({ where: { generalId: req.params.id } }),
+        Project.count({ where: { generalId: req.params.id } }),
+        Department.count({ where: { generalId: req.params.id } }),
+        PhysicalAsset.count({ where: { generalId: req.params.id } })
+      ]);
+
+      const [peopleCount, projectsCount, departmentsCount, assetsCount] = relatedCounts;
+
+      if (peopleCount > 0 || projectsCount > 0 || departmentsCount > 0 || assetsCount > 0) {
+        const resources = [];
+        if (peopleCount > 0) resources.push(`${peopleCount} ${peopleCount === 1 ? 'person' : 'people'}`);
+        if (projectsCount > 0) resources.push(`${projectsCount} ${projectsCount === 1 ? 'project' : 'projects'}`);
+        if (departmentsCount > 0) resources.push(`${departmentsCount} ${departmentsCount === 1 ? 'department' : 'departments'}`);
+        if (assetsCount > 0) resources.push(`${assetsCount} ${assetsCount === 1 ? 'asset' : 'assets'}`);
+
+        return res.status(400).json({
+          success: false,
+          msg: `Cannot delete general. It has ${resources.join(', ')} assigned to it. Please reassign or delete these resources first.`
+        });
+      }
+
+      // If no related resources, safe to delete
       await general.destroy();
 
       res.status(200).json({

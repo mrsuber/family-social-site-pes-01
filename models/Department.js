@@ -36,6 +36,16 @@ Department.init(
         key: 'id'
       }
     },
+    parentDepartmentId: {
+      type: DataTypes.UUID,
+      allowNull: true,
+      field: 'parent_department_id',
+      references: {
+        model: 'departments',
+        key: 'id'
+      },
+      comment: 'For hierarchical department structure - parent department ID'
+    },
     orderNumber: {
       type: DataTypes.INTEGER,
       defaultValue: 0,

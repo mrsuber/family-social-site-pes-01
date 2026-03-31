@@ -28,6 +28,31 @@ const DepartmentNode = ({ data }) => {
     }
   };
 
+  // Parse objectives if it's a JSON string
+  const parseObjectives = () => {
+    if (!data.objectives) return [];
+
+    // If it's already an array, return it
+    if (Array.isArray(data.objectives)) {
+      return data.objectives;
+    }
+
+    // If it's a string, try to parse it
+    if (typeof data.objectives === 'string') {
+      try {
+        const parsed = JSON.parse(data.objectives);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (e) {
+        console.error('Failed to parse objectives:', e);
+        return [];
+      }
+    }
+
+    return [];
+  };
+
+  const objectives = parseObjectives();
+
   return (
     <div className={`custom-node department-node ${data.focused ? 'node-focused' : ''}`}
          style={{ borderColor: getStatusColor() }}>
@@ -59,10 +84,10 @@ const DepartmentNode = ({ data }) => {
             </div>
           </div>
 
-          {data.objectives && data.objectives.length > 0 && (
+          {objectives.length > 0 && (
             <div className="department-objectives">
               <span className="objectives-count">
-                {data.objectives.length} objectives
+                {objectives.length} objectives
               </span>
             </div>
           )}

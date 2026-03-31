@@ -12,7 +12,8 @@ import {
   AdminMissionControlScreen,
   AdminApplicationScreen,AdminApplicationScreen2,AdminApplicationScreen3,
   AdminStudent,AdminCourse,AdminCourse2,
-  AdminRelCourse2
+  AdminRelCourse2,
+  AdminRestaurantScreen
 
 
 
@@ -81,6 +82,7 @@ const App=()=> {
             <Route exact path="/admin/expense" component={auth.token && auth.user.isSuperAdmin===true? AdminExpenseScreen : AdminErrorScreen}/>
             <Route exact path="/admin/projectExpansion" component={auth.token && auth.user.isSuperAdmin===true? AdminProjectExpansionScreen : AdminErrorScreen}/>
             <Route exact path="/admin/missionControl" component={auth.token && auth.user.isSuperAdmin===true? AdminMissionControlScreen : AdminErrorScreen}/>
+            <Route exact path="/admin/restaurant" component={auth.token && auth.user.isSuperAdmin===true? AdminRestaurantScreen : AdminErrorScreen}/>
 
 
             <Route exact path="/admin/application" component={auth.token && auth.user.isSuperAdmin===true? AdminApplicationScreen : AdminErrorScreen}/>

@@ -118,3 +118,34 @@ export const deleteDiaryAudio = async (diaryEntryId) => {
     throw err;
   }
 };
+
+export const uploadLandmarkPhoto = async (file) => {
+  try {
+    const formData = new FormData();
+    formData.append('photo', file);
+
+    const res = await axios.post(`${API_URL}/upload/landmark-photo`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+
+    return res.data;
+  } catch (err) {
+    console.error('Upload landmark photo error:', err);
+    throw err;
+  }
+};
+
+export const deleteLandmarkPhoto = async (photoUrl) => {
+  try {
+    const res = await axios.delete(`${API_URL}/upload/landmark-photo`, {
+      data: { photoUrl }
+    });
+
+    return res.data;
+  } catch (err) {
+    console.error('Delete landmark photo error:', err);
+    throw err;
+  }
+};

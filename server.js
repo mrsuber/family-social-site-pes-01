@@ -15,6 +15,10 @@ const morgan = require('morgan')
 //connectDB
 connectDB();
 
+// Setup Islamic LMS model associations
+const setupIslamicCourseAssociations = require('./models/islamicCourseAssociations');
+setupIslamicCourseAssociations();
+
 const app = express();
 
 app.use(express.json())
@@ -57,6 +61,18 @@ app.use('/api',require('./routes/schoolRouter'))
 
 // Resource Management System Routes
 app.use('/api',require('./routes/resourceRoutes'))
+
+// Landmark Routes
+app.use('/api',require('./routes/landmarkRoutes'))
+
+// Life Operations Routes (Daily Ops, Diary, Calendar)
+app.use('/api/life-ops',require('./routes/lifeOpsRoutes'))
+
+// Islamic Learning Management System Routes
+app.use('/api',require('./routes/islamicCourseRoutes'))
+
+// Restaurant Management System Routes
+app.use('/api',require('./routes/restaurantRoutes'))
 
 
 

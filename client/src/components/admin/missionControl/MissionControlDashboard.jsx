@@ -12,18 +12,34 @@ import 'reactflow/dist/style.css';
 import './MissionControlDashboard.css';
 import GeneralNode from './nodes/GeneralNode';
 import PersonNode from './nodes/PersonNode';
+import InvestorNode from './nodes/InvestorNode';
 import ProjectNode from './nodes/ProjectNode';
 import CommanderNode from './nodes/CommanderNode';
 import AssetNode from './nodes/AssetNode';
 import PersonalCircleNode from './nodes/PersonalCircleNode';
 import DepartmentNode from './nodes/DepartmentNode';
 import LifeOpsCardNode from './nodes/LifeOpsCardNode';
+import RevenueNode from './nodes/RevenueNode';
+import ExpenseNode from './nodes/ExpenseNode';
+import LandmarkNode from './nodes/LandmarkNode';
+import RestaurantResourceNode from './nodes/RestaurantResourceNode';
+import MenuNode from './nodes/MenuNode';
+import InventoryNode from './nodes/InventoryNode';
+import OrdersPOSNode from './nodes/OrdersPOSNode';
+import SuppliersNode from './nodes/SuppliersNode';
+import StaffScheduleNode from './nodes/StaffScheduleNode';
 import PersonDetailModal from './PersonDetailModal';
 import AssetDetailModal from './AssetDetailModal';
+import DepartmentDetailModal from './DepartmentDetailModal';
+import ProjectDetailModal from './ProjectDetailModal';
+import GeneralDetailModal from './GeneralDetailModal';
+import LandmarkDetailModal from './LandmarkDetailModal';
+import RestaurantDetailModal from './RestaurantDetailModal';
 import LifeOperationsCanvas from './LifeOperationsCanvas';
 import { getAPI, postAPI, putAPI, deleteAPI } from '../../../utils/fetchData';
 import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet } from '@material-ui/icons';
 import { useReactFlow } from 'reactflow';
+import { useSelector } from 'react-redux';
 
 const STORAGE_KEY = 'missionControl_nodePositions';
 
@@ -31,14 +47,25 @@ const nodeTypes = {
   commander: CommanderNode,
   general: GeneralNode,
   person: PersonNode,
+  investor: InvestorNode,
   project: ProjectNode,
   asset: AssetNode,
   personalCircle: PersonalCircleNode,
   department: DepartmentNode,
   lifeOpsCard: LifeOpsCardNode,
+  revenue: RevenueNode,
+  expense: ExpenseNode,
+  landmark: LandmarkNode,
+  restaurantResource: RestaurantResourceNode,
+  menuNode: MenuNode,
+  inventoryNode: InventoryNode,
+  ordersNode: OrdersPOSNode,
+  suppliersNode: SuppliersNode,
+  staffNode: StaffScheduleNode,
 };
 
 const MissionControlDashboard = () => {
+  const { auth } = useSelector(state => state);
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [darkMode, setDarkMode] = useState(true);
@@ -62,6 +89,18 @@ const MissionControlDashboard = () => {
   const [showPersonDetail, setShowPersonDetail] = useState(false);
   const [selectedAsset, setSelectedAsset] = useState(null);
   const [showAssetDetail, setShowAssetDetail] = useState(false);
+  const [selectedDepartment, setSelectedDepartment] = useState(null);
+  const [showDepartmentDetail, setShowDepartmentDetail] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [showProjectDetail, setShowProjectDetail] = useState(false);
+  const [selectedGeneral, setSelectedGeneral] = useState(null);
+  const [showGeneralDetail, setShowGeneralDetail] = useState(false);
+  const [selectedLandmark, setSelectedLandmark] = useState(null);
+  const [showLandmarkDetail, setShowLandmarkDetail] = useState(false);
+  const [landmarks, setLandmarks] = useState([]);
+  const [restaurantData, setRestaurantData] = useState([]);
+  const [selectedRestaurantNode, setSelectedRestaurantNode] = useState(null);
+  const [showRestaurantDetail, setShowRestaurantDetail] = useState(false);
   const [contextMenu, setContextMenu] = useState(null);
   const [formData, setFormData] = useState({});
   const [parentNodeForNewResource, setParentNodeForNewResource] = useState(null);
@@ -106,26 +145,36 @@ const MissionControlDashboard = () => {
         // Extract the actual ID from the nodeId (format: "type-uuid")
         const actualId = contextMenu.nodeId.split('-').slice(1).join('-');
 
-        // Call appropriate delete API based on node type
-        switch (contextMenu.nodeType) {
-          case 'general':
-            await deleteAPI(`generals/${actualId}`);
-            break;
-          case 'person':
-          case 'personalCircle':
-            await deleteAPI(`people/${actualId}`);
-            break;
-          case 'project':
-            await deleteAPI(`projects/${actualId}`);
-            break;
-          case 'asset':
-            await deleteAPI(`assets/${actualId}`);
-            break;
-          case 'department':
-            await deleteAPI(`departments/${actualId}`);
-            break;
-          default:
-            console.warn('Unknown node type:', contextMenu.nodeType);
+        // Try to call appropriate delete API based on node type
+        // If it's a virtual node (404), just remove from UI
+        try {
+          switch (contextMenu.nodeType) {
+            case 'general':
+              await deleteAPI(`generals/${actualId}`);
+              break;
+            case 'person':
+            case 'personalCircle':
+              await deleteAPI(`people/${actualId}`);
+              break;
+            case 'project':
+              await deleteAPI(`projects/${actualId}`);
+              break;
+            case 'asset':
+              await deleteAPI(`assets/${actualId}`);
+              break;
+            case 'department':
+              await deleteAPI(`departments/${actualId}`);
+              break;
+            default:
+              console.warn('Unknown node type:', contextMenu.nodeType);
+          }
+        } catch (apiErr) {
+          // If 404, it's a virtual node or already deleted - just remove from UI
+          // For other errors, re-throw
+          if (apiErr.response?.status !== 404) {
+            throw apiErr;
+          }
+          console.log('Virtual node or already deleted, removing from UI:', contextMenu.nodeLabel);
         }
 
         // Remove node from UI
@@ -135,9 +184,12 @@ const MissionControlDashboard = () => {
         setEdges((eds) => eds.filter((e) =>
           e.source !== contextMenu.nodeId && e.target !== contextMenu.nodeId
         ));
+
+        alert(`${contextMenu.nodeLabel} deleted successfully`);
       } catch (err) {
         console.error('Error deleting node:', err);
-        alert('Failed to delete. Please try again.');
+        const errorMsg = err.response?.data?.msg || err.message || 'Failed to delete. Please try again.';
+        alert(errorMsg);
       }
     }
 
@@ -170,6 +222,48 @@ const MissionControlDashboard = () => {
     setShowAddModal(true);
     setContextMenu(null);
   }, [contextMenu]);
+
+  // Handle view project details from context menu
+  const handleViewProjectDetails = useCallback(() => {
+    if (!contextMenu || contextMenu.nodeType !== 'project') return;
+
+    // Find the project node and get its full data
+    const projectNode = nodes.find(n => n.id === contextMenu.nodeId);
+    if (projectNode && projectNode.data.fullData) {
+      setSelectedProject(projectNode.data.fullData);
+      setShowProjectDetail(true);
+    }
+
+    setContextMenu(null);
+  }, [contextMenu, nodes]);
+
+  // Handle view department details from context menu
+  const handleViewDepartmentDetails = useCallback(() => {
+    if (!contextMenu || contextMenu.nodeType !== 'department') return;
+
+    // Find the department node and get its full data
+    const departmentNode = nodes.find(n => n.id === contextMenu.nodeId);
+    if (departmentNode && departmentNode.data.fullData) {
+      setSelectedDepartment(departmentNode.data.fullData);
+      setShowDepartmentDetail(true);
+    }
+
+    setContextMenu(null);
+  }, [contextMenu, nodes]);
+
+  // Handle view general details from context menu
+  const handleViewGeneralDetails = useCallback(() => {
+    if (!contextMenu || contextMenu.nodeType !== 'general') return;
+
+    // Find the general in the generals array
+    const general = generals.find(g => `general-${g.id}` === contextMenu.nodeId);
+    if (general) {
+      setSelectedGeneral(general);
+      setShowGeneralDetail(true);
+    }
+
+    setContextMenu(null);
+  }, [contextMenu, generals]);
 
   // Helper function to close modal and clean up
   const handleCloseAddModal = useCallback(() => {
@@ -206,8 +300,12 @@ const MissionControlDashboard = () => {
             autoGeneralId = deptData.generalId;
           }
         } else if (parentNodeForNewResource.nodeType === 'commander') {
-          // Creating from commander - no auto assignment needed for generals
-          autoGeneralId = null;
+          // Get the commander's generalId from people data
+          const commanderId = parentNodeForNewResource.nodeId.split('-').slice(1).join('-');
+          const commanderData = people.find(p => p.id === commanderId);
+          if (commanderData) {
+            autoGeneralId = commanderData.generalId;
+          }
         }
       }
 
@@ -260,10 +358,23 @@ const MissionControlDashboard = () => {
 
         case 'project':
           endpoint = 'projects';
+          // Priority: auto-assigned generalId > user-selected generalId from form
+          const projectGeneralId = autoGeneralId !== null ? autoGeneralId : (data.generalId || null);
+
+          // Projects MUST have a generalId
+          if (!projectGeneralId) {
+            if (generals.length === 0) {
+              alert('Cannot create project: No generals exist. Please create a General first.');
+            } else {
+              alert('Error: Projects must be assigned to a General. Please select a General from the dropdown.');
+            }
+            return;
+          }
+
           payload = {
             name: data.name,
             description: data.description || null,
-            generalId: autoGeneralId !== null ? autoGeneralId : (data.generalId || null),
+            generalId: projectGeneralId,
             status: data.status || 'active'
           };
           console.log('Creating project with generalId:', payload.generalId);
@@ -280,6 +391,55 @@ const MissionControlDashboard = () => {
             condition: 100
           };
           console.log('Creating asset with generalId:', payload.generalId);
+          break;
+
+        case 'investor':
+          endpoint = 'people';
+          payload = {
+            fullName: data.fullName,
+            title: data.title || null,
+            email: data.email || null,
+            phone: data.phone || null,
+            photoUrl: data.photoUrl || null,
+            relationshipType: 'investor',
+            generalId: autoGeneralId !== null ? autoGeneralId : (data.generalId || null),
+            departmentId: autoDepartmentId !== null ? autoDepartmentId : null,
+            status: 'active',
+            investmentAmount: data.investmentAmount ? parseFloat(data.investmentAmount) : null,
+            investmentCurrency: data.investmentCurrency || 'XAF',
+            investmentDate: data.investmentDate || null,
+            equityPercentage: data.equityPercentage ? parseFloat(data.equityPercentage) : null,
+            notes: data.notes || null
+          };
+          console.log('Creating investor with payload:', payload);
+          break;
+
+        case 'restaurant':
+          endpoint = 'restaurants';
+
+          // Parse operating hours if provided
+          let operatingHours = {};
+          if (data.operatingHours && data.operatingHours.trim()) {
+            try {
+              operatingHours = JSON.parse(data.operatingHours);
+            } catch (e) {
+              alert('Invalid operating hours JSON format. Using empty object.');
+            }
+          }
+
+          payload = {
+            name: data.name,
+            location: data.location || null,
+            address: data.address || null,
+            phone: data.phone || null,
+            email: data.email || null,
+            capacity: data.capacity ? parseInt(data.capacity) : null,
+            status: data.status || 'planning',
+            departmentId: autoDepartmentId !== null ? autoDepartmentId : (data.departmentId || null),
+            operatingHours: operatingHours
+          };
+
+          console.log('Creating restaurant with payload:', payload);
           break;
 
         default:
@@ -327,7 +487,52 @@ const MissionControlDashboard = () => {
   const onNodeClick = useCallback((event, node) => {
     if (node.type === 'general') {
       setFocusedGeneral(node.id);
-      // Highlight this general and its connected nodes
+
+      // Extract the general's UUID from the node ID (format: "general-uuid")
+      const generalId = node.id.split('general-')[1];
+
+      // Highlight this general and all nodes that belong to it
+      setNodes(nds =>
+        nds.map(n => {
+          // Check if this node should be highlighted
+          let shouldHighlight = false;
+
+          if (n.id === node.id) {
+            // This is the general itself
+            shouldHighlight = true;
+          } else if (n.data?.fullData?.generalId === generalId) {
+            // This node belongs to this general (departments, people, assets, etc.)
+            shouldHighlight = true;
+          }
+
+          return {
+            ...n,
+            data: {
+              ...n.data,
+              focused: shouldHighlight
+            }
+          };
+        })
+      );
+    } else if (node.type === 'person' || node.type === 'investor' || node.type === 'personalCircle' || node.type === 'commander') {
+      // Show comprehensive person detail modal
+      setSelectedPerson(node.data);
+      setShowPersonDetail(true);
+    } else if (node.type === 'asset') {
+      // Show asset detail modal
+      setSelectedAsset(node.data);
+      setShowAssetDetail(true);
+    } else if (node.type === 'department') {
+      // Show department detail modal
+      setSelectedDepartment(node.data.fullData);
+      setShowDepartmentDetail(true);
+    } else if (node.type === 'landmark') {
+      // Show landmark detail modal
+      setSelectedLandmark(node.data.fullData);
+      setShowLandmarkDetail(true);
+    } else if (node.type === 'project') {
+      // Highlight project and its connected nodes (same as general)
+      setFocusedGeneral(node.id);
       setNodes(nds =>
         nds.map(n => ({
           ...n,
@@ -340,14 +545,6 @@ const MissionControlDashboard = () => {
           }
         }))
       );
-    } else if (node.type === 'person' || node.type === 'personalCircle' || node.type === 'commander') {
-      // Show comprehensive person detail modal
-      setSelectedPerson(node.data);
-      setShowPersonDetail(true);
-    } else if (node.type === 'asset') {
-      // Show asset detail modal
-      setSelectedAsset(node.data);
-      setShowAssetDetail(true);
     } else if (node.type === 'lifeOpsCard') {
       // For Life Ops cards, open commander modal with specific tab
       const commander = people.find(p => p.relationshipType === 'high_commander');
@@ -445,34 +642,38 @@ const MissionControlDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [statsRes, generalsRes, peopleRes, assetsRes, departmentsRes] = await Promise.all([
-          getAPI('analytics/dashboard'),
-          getAPI('generals'),
-          getAPI('people?limit=1000'),
-          getAPI('assets'),
-          getAPI('departments')
-        ]);
+        console.log('Fetching mission control dashboard data...');
+        const startTime = Date.now();
 
-        console.log('People data:', peopleRes.data.data);
-        console.log('Assets data:', assetsRes.data.data);
-        console.log('Departments data:', departmentsRes.data.data);
+        // Fetch all data in one optimized API call
+        const dashboardRes = await getAPI('mission-control/dashboard', auth.token);
+        const { stats, generals, people, departments, assets, incomeStreams, expenses, landmarks, restaurants } = dashboardRes.data.data;
 
-        setStats(statsRes.data.data);
-        setGenerals(generalsRes.data.data);
-        setPeople(peopleRes.data.data);
-        setAssets(assetsRes.data.data);
-        setDepartments(departmentsRes.data.data);
+        const endTime = Date.now();
+        console.log(`Dashboard data loaded in ${endTime - startTime}ms`);
+        console.log('People data:', people);
+        console.log('Assets data:', assets);
+        console.log('Departments data:', departments);
+        console.log('Landmarks data:', landmarks);
+
+        setStats(stats);
+        setGenerals(generals);
+        setPeople(people);
+        setAssets(assets);
+        setDepartments(departments);
+        setLandmarks(landmarks || []);
+        setRestaurantData(restaurants || []);
 
         // Fetch Life Operations data for commander
-        const commander = peopleRes.data.data.find(p => p.relationshipType === 'high_commander');
+        const commander = people.find(p => p.relationshipType === 'high_commander');
         if (commander) {
           try {
             const [financialRes, connectionsRes, dailyLogsRes, calendarRes, diaryRes] = await Promise.all([
-              getAPI(`life-ops/financial-dashboard/${commander.id}`).catch(() => ({ data: null })),
-              getAPI(`connections/${commander.id}`).catch(() => ({ data: { data: [] } })),
-              getAPI(`life-ops/daily-logs/${commander.id}`).catch(() => ({ data: { data: [] } })),
-              getAPI(`calendar/person/${commander.id}`).catch(() => ({ data: { data: [] } })),
-              getAPI(`diary/person/${commander.id}`).catch(() => ({ data: { data: [] } }))
+              getAPI(`life-ops/financial-dashboard/${commander.id}`, auth.token).catch(() => ({ data: null })),
+              getAPI(`connections/${commander.id}`, auth.token).catch(() => ({ data: { data: [] } })),
+              getAPI(`life-ops/daily-logs/${commander.id}`, auth.token).catch(() => ({ data: { data: [] } })),
+              getAPI(`calendar/person/${commander.id}`, auth.token).catch(() => ({ data: { data: [] } })),
+              getAPI(`diary/person/${commander.id}`, auth.token).catch(() => ({ data: { data: [] } }))
             ]);
 
             setLifeOpsData({
@@ -489,12 +690,16 @@ const MissionControlDashboard = () => {
 
         // Build node graph
         await buildNodeGraph(
-          statsRes.data.data,
-          generalsRes.data.data,
-          peopleRes.data.data,
-          assetsRes.data.data,
-          departmentsRes.data.data,
-          lifeOpsData
+          stats,
+          generals,
+          people,
+          assets,
+          departments,
+          lifeOpsData,
+          incomeStreams || [],
+          expenses || [],
+          landmarks || [],
+          restaurants || []
         );
       } catch (err) {
         console.error('Error fetching mission control data:', err);
@@ -504,10 +709,12 @@ const MissionControlDashboard = () => {
     fetchData();
   }, []);
 
-  const buildNodeGraph = async (statsData, generalsData, peopleData, assetsData, departmentsData = [], lifeOpsData = {}) => {
+  const buildNodeGraph = async (statsData, generalsData, peopleData, assetsData, departmentsData = [], lifeOpsData = {}, incomeStreamsData = [], expensesData = [], landmarksData = [], restaurantsData = []) => {
     const newNodes = [];
     const newEdges = [];
     const savedPositions = await loadSavedPositions();
+
+    console.log('Building node graph with landmarks:', landmarksData);
 
     // Commander node (center top)
     const commander = peopleData.find(p => p.relationshipType === 'high_commander');
@@ -542,10 +749,12 @@ const MissionControlDashboard = () => {
             label: '💰 Financial Command',
             icon: '💰',
             stats: {
-              totalIncome: lifeOpsData.financial?.totalIncome || 0,
-              totalExpenses: lifeOpsData.financial?.totalExpenses || 0,
-              runway: lifeOpsData.financial?.runway || 0,
-              savingsRate: lifeOpsData.financial?.savingsRate || 0
+              totalIncome: statsData.financial?.monthlyRevenue || 0,
+              totalExpenses: statsData.financial?.monthlyExpenses || 0,
+              runway: (statsData.financial?.monthlyRevenue || 0) - (statsData.financial?.monthlyExpenses || 0) <= 0
+                ? 0
+                : Math.floor((lifeOpsData.financial?.currentSavings || 0) / ((statsData.financial?.monthlyExpenses || 1))),
+              savingsRate: ((statsData.financial?.monthlyRevenue || 0) - (statsData.financial?.monthlyExpenses || 0)) / (statsData.financial?.monthlyRevenue || 1) * 100
             }
           }
         },
@@ -709,24 +918,138 @@ const MissionControlDashboard = () => {
       }
     });
 
-    // Add department nodes under their generals
-    // Group departments by general
+    // Add landmark nodes attached to generals
+    generalsData.forEach((general, generalIndex) => {
+      const generalLandmarks = landmarksData.filter(lm => lm.generalId === general.id);
+      const xBase = 200 + (generalIndex * 350);
+      const generalNodeId = `general-${general.id}`;
+
+      generalLandmarks.forEach((landmark, landmarkIndex) => {
+        const landmarkId = `landmark-${landmark.id}`;
+        const yPosition = 400 + (landmarkIndex * 180); // Space landmarks vertically
+
+        newNodes.push({
+          id: landmarkId,
+          type: 'landmark',
+          position: savedPositions?.[landmarkId] || { x: xBase, y: yPosition },
+          data: {
+            label: landmark.title,
+            description: landmark.description,
+            status: landmark.status,
+            priority: landmark.priority,
+            progress: landmark.progress,
+            amount: landmark.amount,
+            currency: landmark.currency,
+            paymentStatus: landmark.paymentStatus,
+            amountPaid: landmark.amountPaid,
+            startDate: landmark.startDate,
+            endDate: landmark.endDate,
+            category: landmark.category,
+            reminderDays: landmark.reminderDays,
+            fullData: landmark,
+            onClick: () => {
+              setSelectedLandmark(landmark);
+              setShowLandmarkDetail(true);
+            }
+          },
+        });
+
+        // Connect general to landmark
+        newEdges.push({
+          id: `${generalNodeId}-${landmarkId}`,
+          source: generalNodeId,
+          target: landmarkId,
+          type: 'smoothstep',
+          animated: landmark.status === 'processing',
+          style: {
+            stroke: landmark.status === 'done' ? '#10b981' :
+                   landmark.status === 'processing' ? '#3b82f6' : '#6b7280'
+          }
+        });
+      });
+    });
+
+    // Add landmark nodes attached to High Commander
+    if (commander) {
+      const commanderLandmarks = landmarksData.filter(lm => lm.personId === commander.id);
+      const commanderNodeId = 'commander-1';
+
+      commanderLandmarks.forEach((landmark, landmarkIndex) => {
+        const landmarkId = `landmark-${landmark.id}`;
+        const yPosition = 400 + (landmarkIndex * 180); // Space landmarks vertically below commander
+        const xPosition = 600; // Same x as commander
+
+        newNodes.push({
+          id: landmarkId,
+          type: 'landmark',
+          position: savedPositions?.[landmarkId] || { x: xPosition, y: yPosition },
+          data: {
+            label: landmark.title,
+            description: landmark.description,
+            status: landmark.status,
+            priority: landmark.priority,
+            progress: landmark.progress,
+            amount: landmark.amount,
+            currency: landmark.currency,
+            paymentStatus: landmark.paymentStatus,
+            amountPaid: landmark.amountPaid,
+            startDate: landmark.startDate,
+            endDate: landmark.endDate,
+            category: landmark.category,
+            reminderDays: landmark.reminderDays,
+            fullData: landmark,
+            onClick: () => {
+              setSelectedLandmark(landmark);
+              setShowLandmarkDetail(true);
+            }
+          },
+        });
+
+        // Connect commander to landmark
+        newEdges.push({
+          id: `${commanderNodeId}-${landmarkId}`,
+          source: commanderNodeId,
+          target: landmarkId,
+          type: 'smoothstep',
+          animated: landmark.status === 'processing',
+          style: {
+            stroke: landmark.status === 'done' ? '#10b981' :
+                   landmark.status === 'processing' ? '#3b82f6' : '#6b7280'
+          }
+        });
+      });
+    }
+
+    // Add department nodes under their generals with hierarchical support
+    // Group departments by general, separating parents and children
     const departmentsByGeneral = {};
+    const parentDepartments = [];
+    const childDepartments = [];
+
     departmentsData.forEach(dept => {
       if (dept.generalId) {
         if (!departmentsByGeneral[dept.generalId]) {
-          departmentsByGeneral[dept.generalId] = [];
+          departmentsByGeneral[dept.generalId] = { parents: [], children: [] };
         }
-        departmentsByGeneral[dept.generalId].push(dept);
+
+        // Separate parent and child departments
+        if (dept.parentDepartmentId === null) {
+          departmentsByGeneral[dept.generalId].parents.push(dept);
+          parentDepartments.push(dept);
+        } else {
+          departmentsByGeneral[dept.generalId].children.push(dept);
+          childDepartments.push(dept);
+        }
       }
     });
 
     // Add department nodes for each general
     generalsData.forEach((general, generalIndex) => {
-      const generalDepartments = departmentsByGeneral[general.id] || [];
+      const generalDepts = departmentsByGeneral[general.id] || { parents: [], children: [] };
       const xBase = 200 + (generalIndex * 350);
 
-      generalDepartments.forEach((dept, deptIndex) => {
+      // First, render parent departments
+      generalDepts.parents.forEach((dept, deptIndex) => {
         const nodeId = `department-${dept.id}`;
         const col = deptIndex % 2;
         const row = Math.floor(deptIndex / 2);
@@ -744,58 +1067,105 @@ const MissionControlDashboard = () => {
             status: dept.status,
             peopleCount: dept.peopleCount || 0,
             objectives: dept.objectives || [],
-            fullData: dept
+            fullData: dept,
+            isParent: true
           },
         });
 
-        // Connect to general
+        // Connect parent department to general
         newEdges.push({
           id: `general-${general.id}-dept-${dept.id}`,
           source: `general-${general.id}`,
           target: nodeId,
           type: 'smoothstep',
-          style: { stroke: '#3b82f6' }
+          style: { stroke: '#3b82f6', strokeWidth: 2 }
         });
       });
     });
 
-    // Add people nodes under their generals/departments
-    // Group people by general first
-    const peopleByGeneral = {};
+    // Now render child departments under their parents
+    childDepartments.forEach((dept, globalChildIndex) => {
+      const nodeId = `department-${dept.id}`;
+      const parentNodeId = `department-${dept.parentDepartmentId}`;
+
+      // Find the parent department to position children relative to it
+      const parentDept = parentDepartments.find(p => p.id === dept.parentDepartmentId);
+      const parentPosition = savedPositions?.[parentNodeId];
+
+      // Get all siblings (other children of the same parent)
+      const siblings = childDepartments.filter(d => d.parentDepartmentId === dept.parentDepartmentId);
+      const siblingIndex = siblings.findIndex(s => s.id === dept.id);
+
+      // Position children in a grid under parent
+      const col = siblingIndex % 3;
+      const row = Math.floor(siblingIndex / 3);
+
+      newNodes.push({
+        id: nodeId,
+        type: 'department',
+        position: savedPositions?.[nodeId] || {
+          x: (parentPosition?.x || 200) - 100 + (col * 100),
+          y: (parentPosition?.y || 500) + 130 + (row * 100)
+        },
+        data: {
+          label: dept.name,
+          description: dept.description,
+          status: dept.status,
+          peopleCount: dept.peopleCount || 0,
+          objectives: dept.objectives || [],
+          fullData: dept,
+          isChild: true,
+          parentDepartmentId: dept.parentDepartmentId
+        },
+      });
+
+      // Connect child department to parent department
+      newEdges.push({
+        id: `parent-dept-${dept.parentDepartmentId}-child-${dept.id}`,
+        source: parentNodeId,
+        target: nodeId,
+        type: 'smoothstep',
+        style: { stroke: '#8b5cf6', strokeWidth: 1 }
+      });
+    });
+
+    // Add people nodes under their departments
+    // Group people by department and track those without departments
     const peopleByDepartment = {};
+    const peopleWithoutDepartment = [];
+
     peopleData.forEach(person => {
       if (person.generalId && person.relationshipType !== 'high_commander') {
-        if (!peopleByGeneral[person.generalId]) {
-          peopleByGeneral[person.generalId] = [];
-        }
-        peopleByGeneral[person.generalId].push(person);
-
-        // Also group by department if they have one
         if (person.departmentId) {
+          // Group by department
           if (!peopleByDepartment[person.departmentId]) {
             peopleByDepartment[person.departmentId] = [];
           }
           peopleByDepartment[person.departmentId].push(person);
+        } else {
+          // Track people without departments (like general commanders)
+          peopleWithoutDepartment.push(person);
         }
       }
     });
 
-    // Add people nodes for each general
-    generalsData.forEach((general, generalIndex) => {
-      const generalPeople = peopleByGeneral[general.id] || [];
-      const xBase = 150 + (generalIndex * 350);
+    // Add people under their departments
+    [...parentDepartments, ...childDepartments].forEach(dept => {
+      const deptPeople = peopleByDepartment[dept.id] || [];
+      const deptNodeId = `department-${dept.id}`;
+      const deptPosition = savedPositions?.[deptNodeId];
 
-      generalPeople.forEach((person, personIndex) => {
+      deptPeople.forEach((person, personIndex) => {
         const nodeId = `person-${person.id}`;
-        const col = personIndex % 3;
-        const row = Math.floor(personIndex / 3);
+        const col = personIndex % 2; // 2 columns for people under departments
+        const row = Math.floor(personIndex / 2);
 
         newNodes.push({
           id: nodeId,
-          type: 'person',
+          type: person.relationshipType === 'investor' ? 'investor' : 'person',
           position: savedPositions?.[nodeId] || {
-            x: xBase + (col * 100),
-            y: 450 + (row * 130)
+            x: (deptPosition?.x || 200) - 40 + (col * 80),
+            y: (deptPosition?.y || 600) + 100 + (row * 90)
           },
           data: {
             label: person.fullName,
@@ -803,28 +1173,62 @@ const MissionControlDashboard = () => {
             photo: person.photoUrl,
             relationshipType: person.relationshipType,
             performanceRating: person.performanceRating,
+            investmentAmount: person.investmentAmount,
+            currency: person.investmentCurrency || 'XAF',
+            investmentDate: person.investmentDate,
+            equityPercentage: person.equityPercentage,
             fullData: person
           },
         });
 
-        // Connect to department if assigned, otherwise to general
-        if (person.departmentId) {
-          newEdges.push({
-            id: `dept-${person.departmentId}-person-${person.id}`,
-            source: `department-${person.departmentId}`,
-            target: nodeId,
-            type: 'smoothstep',
-            style: { stroke: '#3b82f6' }
-          });
-        } else {
-          newEdges.push({
-            id: `general-${general.id}-person-${person.id}`,
-            source: `general-${general.id}`,
-            target: nodeId,
-            type: 'smoothstep',
-            style: { stroke: '#6b7280' }
-          });
-        }
+        // Connect person to their department
+        newEdges.push({
+          id: `dept-${person.departmentId}-person-${person.id}`,
+          source: deptNodeId,
+          target: nodeId,
+          type: 'smoothstep',
+          style: { stroke: '#10b981' }
+        });
+      });
+    });
+
+    // Add people without departments (like general commanders) under their general
+    generalsData.forEach((general, generalIndex) => {
+      const generalPeopleNoDept = peopleWithoutDepartment.filter(p => p.generalId === general.id);
+      const xBase = 200 + (generalIndex * 350);
+
+      generalPeopleNoDept.forEach((person, personIndex) => {
+        const nodeId = `person-${person.id}`;
+
+        newNodes.push({
+          id: nodeId,
+          type: person.relationshipType === 'investor' ? 'investor' : 'person',
+          position: savedPositions?.[nodeId] || {
+            x: xBase + (personIndex * 100),
+            y: 330
+          },
+          data: {
+            label: person.fullName,
+            title: person.title,
+            photo: person.photoUrl,
+            relationshipType: person.relationshipType,
+            performanceRating: person.performanceRating,
+            investmentAmount: person.investmentAmount,
+            currency: person.investmentCurrency || 'XAF',
+            investmentDate: person.investmentDate,
+            equityPercentage: person.equityPercentage,
+            fullData: person
+          },
+        });
+
+        // Connect person to general
+        newEdges.push({
+          id: `general-${general.id}-person-${person.id}`,
+          source: `general-${general.id}`,
+          target: nodeId,
+          type: 'smoothstep',
+          style: { stroke: '#6b7280' }
+        });
       });
     });
 
@@ -843,28 +1247,28 @@ const MissionControlDashboard = () => {
     // Add asset nodes for each general
     generalsData.forEach((general, generalIndex) => {
       const generalAssets = assetsByGeneral[general.id] || [];
-      const generalPeople = peopleByGeneral[general.id] || [];
       const xBase = 150 + (generalIndex * 350);
 
-      // Calculate starting Y position for assets (below people)
-      const peopleRows = Math.ceil(generalPeople.length / 3);
-      const assetsStartY = 450 + (peopleRows * 130) + 50;
+      // Position assets at a fixed Y position (they're under generals, not departments)
+      const assetsStartY = 750;
 
-      generalAssets.slice(0, 3).forEach((asset, assetIndex) => {
+      generalAssets.forEach((asset, assetIndex) => {
         const nodeId = `asset-${asset.id}`;
 
         newNodes.push({
           id: nodeId,
           type: 'asset',
           position: savedPositions?.[nodeId] || {
-            x: xBase + (assetIndex % 2) * 120,
-            y: assetsStartY + Math.floor(assetIndex / 2) * 120
+            x: xBase + (assetIndex % 3) * 120,
+            y: assetsStartY + Math.floor(assetIndex / 3) * 100
           },
           data: {
             label: asset.name,
             value: asset.purchaseCost,
+            currency: asset.currency || 'XAF',
             assetType: asset.assetType,
             condition: asset.condition,
+            acquisitionStatus: asset.acquisitionStatus || 'target',
             notes: asset.notes,
             fullData: asset
           },
@@ -876,8 +1280,307 @@ const MissionControlDashboard = () => {
           source: `general-${general.id}`,
           target: nodeId,
           type: 'smoothstep',
-          style: { stroke: '#f59e0b', strokeDasharray: asset.notes && asset.notes.includes('TARGET') ? '5,5' : '0' }
+          style: { stroke: '#f59e0b', strokeDasharray: asset.acquisitionStatus === 'target' ? '5,5' : '0' }
         });
+      });
+    });
+
+    // Add restaurant operational nodes under their departments
+    restaurantsData.forEach((restaurantItem, restaurantIndex) => {
+      const { restaurant, menuItems, inventoryItems, suppliers, orders } = restaurantItem;
+      const deptNodeId = `department-${restaurant.departmentId}`;
+      const deptPosition = savedPositions?.[deptNodeId];
+
+      if (!deptPosition) return; // Skip if department position not found
+
+      const handleRestaurantNodeClick = (nodeData) => {
+        setSelectedRestaurantNode(nodeData);
+        setShowRestaurantDetail(true);
+      };
+
+      // Calculate aggregate restaurant stats
+      const activeOrders = orders?.filter(o => ['received', 'preparing', 'ready'].includes(o.orderStatus)).length || 0;
+      const todaySales = orders?.reduce((sum, o) => {
+        if (new Date(o.orderedAt).toDateString() === new Date().toDateString()) {
+          return sum + parseFloat(o.total);
+        }
+        return sum;
+      }, 0) || 0;
+
+      const preparingCount = orders?.filter(o => o.orderStatus === 'preparing').length || 0;
+      const readyCount = orders?.filter(o => o.orderStatus === 'ready').length || 0;
+      const completedToday = orders?.filter(o => {
+        return o.orderStatus === 'completed' &&
+               new Date(o.orderedAt).toDateString() === new Date().toDateString();
+      }).length || 0;
+
+      const lowStockCount = inventoryItems?.filter(i => i.status === 'low_stock').length || 0;
+      const inStockCount = inventoryItems?.filter(i => i.status === 'in_stock').length || 0;
+      const outOfStockCount = inventoryItems?.filter(i => i.status === 'out_of_stock').length || 0;
+
+      const activeSuppliers = suppliers?.filter(s => s.status === 'active').length || 0;
+      const averageRating = suppliers?.length > 0
+        ? suppliers.reduce((sum, s) => sum + parseFloat(s.rating || 0), 0) / suppliers.length
+        : 0;
+
+      const availableMenuItems = menuItems?.filter(m => m.isAvailable).length || 0;
+      const popularCount = menuItems?.filter(m => m.isPopular).length || 0;
+      const categories = [...new Set(menuItems?.map(m => m.category))].length || 0;
+
+      // Base position for this restaurant's nodes
+      const baseX = (deptPosition.x || 200) + (restaurantIndex * 300);
+      const baseY = (deptPosition.y || 500) + 150;
+
+      // 1. Menu Node
+      const menuNodeId = `menu-${restaurant.id}`;
+      newNodes.push({
+        id: menuNodeId,
+        type: 'menuNode',
+        position: savedPositions?.[menuNodeId] || {
+          x: baseX - 320,
+          y: baseY
+        },
+        data: {
+          label: 'Menu Management',
+          restaurantNodeType: 'menu',
+          restaurantId: restaurant.id,
+          totalItems: menuItems?.length || 0,
+          categories: categories,
+          popularCount: popularCount,
+          availableItems: availableMenuItems,
+          onNodeClick: handleRestaurantNodeClick
+        },
+      });
+
+      newEdges.push({
+        id: `dept-${restaurant.departmentId}-menu-${restaurant.id}`,
+        source: deptNodeId,
+        target: menuNodeId,
+        type: 'smoothstep',
+        style: { stroke: '#10b981', strokeWidth: 2 }
+      });
+
+      // 2. Inventory Node
+      const invNodeId = `inventory-${restaurant.id}`;
+      newNodes.push({
+        id: invNodeId,
+        type: 'inventoryNode',
+        position: savedPositions?.[invNodeId] || {
+          x: baseX - 80,
+          y: baseY
+        },
+        data: {
+          label: 'Inventory',
+          restaurantNodeType: 'inventory',
+          restaurantId: restaurant.id,
+          totalItems: inventoryItems?.length || 0,
+          lowStockCount: lowStockCount,
+          inStockCount: inStockCount,
+          outOfStockCount: outOfStockCount,
+          lastRestockDate: inventoryItems?.[0]?.lastRestocked,
+          onNodeClick: handleRestaurantNodeClick
+        },
+      });
+
+      newEdges.push({
+        id: `dept-${restaurant.departmentId}-inventory-${restaurant.id}`,
+        source: deptNodeId,
+        target: invNodeId,
+        type: 'smoothstep',
+        style: { stroke: '#3b82f6', strokeWidth: 2 }
+      });
+
+      // 3. Orders/POS Node
+      const ordersNodeId = `orders-${restaurant.id}`;
+      newNodes.push({
+        id: ordersNodeId,
+        type: 'ordersNode',
+        position: savedPositions?.[ordersNodeId] || {
+          x: baseX + 160,
+          y: baseY
+        },
+        data: {
+          label: 'Orders & POS',
+          restaurantNodeType: 'orders',
+          restaurantId: restaurant.id,
+          activeOrders: activeOrders,
+          todaySales: todaySales,
+          currency: restaurant.currency || 'XAF',
+          preparingCount: preparingCount,
+          readyCount: readyCount,
+          completedToday: completedToday,
+          performanceStatus: activeOrders > 10 ? 'high' : activeOrders > 5 ? 'medium' : 'low',
+          onNodeClick: handleRestaurantNodeClick
+        },
+      });
+
+      newEdges.push({
+        id: `dept-${restaurant.departmentId}-orders-${restaurant.id}`,
+        source: deptNodeId,
+        target: ordersNodeId,
+        type: 'smoothstep',
+        style: { stroke: '#f59e0b', strokeWidth: 2 }
+      });
+
+      // 4. Suppliers Node
+      const suppNodeId = `suppliers-${restaurant.id}`;
+      newNodes.push({
+        id: suppNodeId,
+        type: 'suppliersNode',
+        position: savedPositions?.[suppNodeId] || {
+          x: baseX - 200,
+          y: baseY + 250
+        },
+        data: {
+          label: 'Suppliers',
+          restaurantNodeType: 'suppliers',
+          restaurantId: restaurant.id,
+          totalSuppliers: suppliers?.length || 0,
+          activeSuppliers: activeSuppliers,
+          inactiveSuppliers: (suppliers?.length || 0) - activeSuppliers,
+          averageRating: averageRating,
+          nextDeliveryDate: suppliers?.[0]?.nextDeliveryDate,
+          totalContacts: suppliers?.filter(s => s.phone || s.email).length || 0,
+          onNodeClick: handleRestaurantNodeClick
+        },
+      });
+
+      newEdges.push({
+        id: `menu-${restaurant.id}-suppliers`,
+        source: menuNodeId,
+        target: suppNodeId,
+        type: 'smoothstep',
+        style: { stroke: '#8b5cf6', strokeWidth: 1 }
+      });
+
+      // 5. Staff Schedule Node
+      const staffNodeId = `staff-${restaurant.id}`;
+      newNodes.push({
+        id: staffNodeId,
+        type: 'staffNode',
+        position: savedPositions?.[staffNodeId] || {
+          x: baseX + 60,
+          y: baseY + 250
+        },
+        data: {
+          label: 'Staff Schedule',
+          restaurantNodeType: 'staff',
+          restaurantId: restaurant.id,
+          totalStaff: 0, // TODO: Fetch from staff shifts API
+          onDutyToday: 0,
+          shiftsToday: 0,
+          morningShifts: 0,
+          afternoonShifts: 0,
+          eveningShifts: 0,
+          roles: [],
+          checkedIn: 0,
+          absent: 0,
+          onNodeClick: handleRestaurantNodeClick
+        },
+      });
+
+      newEdges.push({
+        id: `orders-${restaurant.id}-staff`,
+        source: ordersNodeId,
+        target: staffNodeId,
+        type: 'smoothstep',
+        style: { stroke: '#ec4899', strokeWidth: 1 }
+      });
+    });
+
+    // Add Revenue/Income Streams
+    incomeStreamsData.forEach((income, index) => {
+      const nodeId = `income-${income.id}`;
+      const yPosition = 200 + (index * 180); // Stack vertically on the left
+
+      newNodes.push({
+        id: nodeId,
+        type: 'revenue',
+        position: savedPositions?.[nodeId] || {
+          x: -400, // Left side of canvas
+          y: yPosition
+        },
+        data: {
+          label: income.name,
+          amount: income.amount,
+          currency: income.currency || 'XAF',
+          incomeType: income.incomeType,
+          frequency: income.frequency,
+          status: income.status,
+          clientName: income.clientName,
+          fullData: income
+        }
+      });
+
+      // Connect to High Commander with green animated edge if active
+      if (income.status === 'active') {
+        newEdges.push({
+          id: `income-${income.id}-commander`,
+          source: nodeId,
+          target: 'commander-1',
+          type: 'smoothstep',
+          animated: true,
+          style: {
+            stroke: '#10b981',
+            strokeWidth: 2.5,
+            filter: 'drop-shadow(0 0 8px rgba(16, 185, 129, 0.6))'
+          }
+        });
+      }
+
+      // Also connect to the assigned general if specified
+      if (income.generalId) {
+        newEdges.push({
+          id: `income-${income.id}-general-${income.generalId}`,
+          source: nodeId,
+          target: `general-${income.generalId}`,
+          type: 'smoothstep',
+          animated: income.status === 'active',
+          style: {
+            stroke: income.status === 'active' ? '#10b981' : '#9ca3af',
+            strokeWidth: income.status === 'active' ? 2 : 1
+          }
+        });
+      }
+    });
+
+    // Add Expenses
+    expensesData.forEach((expense, index) => {
+      const nodeId = `expense-${expense.id}`;
+      const yPosition = 200 + (index * 160); // Stack vertically on the right
+
+      newNodes.push({
+        id: nodeId,
+        type: 'expense',
+        position: savedPositions?.[nodeId] || {
+          x: 1800, // Right side of canvas
+          y: yPosition
+        },
+        data: {
+          label: expense.name,
+          amount: expense.amount,
+          monthlyEquivalent: expense.monthlyEquivalent,
+          currency: expense.currency || 'XAF',
+          category: expense.category,
+          frequency: expense.frequency,
+          status: expense.status,
+          provider: expense.provider,
+          isEssential: expense.isEssential,
+          fullData: expense
+        }
+      });
+
+      // Connect to High Commander with red edge
+      newEdges.push({
+        id: `expense-${expense.id}-commander`,
+        source: 'commander-1',
+        target: nodeId,
+        type: 'smoothstep',
+        style: {
+          stroke: expense.isEssential ? '#dc2626' : '#f59e0b',
+          strokeWidth: expense.isEssential ? 2 : 1.5,
+          strokeDasharray: expense.status === 'active' ? '0' : '5,5'
+        }
       });
     });
 
@@ -1124,6 +1827,18 @@ const MissionControlDashboard = () => {
                 >
                   Asset
                 </button>
+                <button
+                  className={`mc-modal-tab ${addResourceType === 'investor' ? 'active' : ''}`}
+                  onClick={() => setAddResourceType('investor')}
+                >
+                  Investor
+                </button>
+                <button
+                  className={`mc-modal-tab ${addResourceType === 'restaurant' ? 'active' : ''}`}
+                  onClick={() => setAddResourceType('restaurant')}
+                >
+                  Restaurant
+                </button>
               </div>
 
               <form className="mc-modal-form" onSubmit={handleAddResource}>
@@ -1203,9 +1918,16 @@ const MissionControlDashboard = () => {
                   <>
                     <input type="text" name="name" placeholder="Project Name" required />
                     <textarea name="description" placeholder="Description"></textarea>
-                    {!parentNodeForNewResource && (
-                      <select name="generalId">
-                        <option value="">Select General</option>
+                    {/* Show general dropdown if:
+                        1. No parent node, OR
+                        2. Parent node has no generalId (like High Commander) */}
+                    {(!parentNodeForNewResource ||
+                      (parentNodeForNewResource && !parentNodeForNewResource.generalId)) && (
+                      <select name="generalId" required>
+                        <option value="">Select General (Required)</option>
+                        {generals.length === 0 && (
+                          <option value="" disabled>No generals available - create a general first</option>
+                        )}
                         {generals.map(g => (
                           <option key={g.id} value={g.id}>{g.name}</option>
                         ))}
@@ -1222,11 +1944,26 @@ const MissionControlDashboard = () => {
                 {addResourceType === 'asset' && (
                   <>
                     <input type="text" name="name" placeholder="Asset Name" required />
-                    <textarea name="description" placeholder="Description"></textarea>
-                    <input type="number" name="value" placeholder="Value ($)" />
+                    <textarea name="notes" placeholder="Description/Notes"></textarea>
+                    <select name="assetType" required>
+                      <option value="">Select Asset Type</option>
+                      <option value="technology">Technology</option>
+                      <option value="equipment">Equipment</option>
+                      <option value="vehicle">Vehicle</option>
+                      <option value="property">Property</option>
+                      <option value="financial">Financial</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <select name="acquisitionStatus" required>
+                      <option value="target">TARGET - To Acquire</option>
+                      <option value="acquired">ACQUIRED - Already Owned</option>
+                    </select>
+                    <input type="number" name="purchaseCost" placeholder="Purchase Cost ($)" />
+                    <input type="number" name="condition" placeholder="Condition (0-100)" min="0" max="100" defaultValue="100" />
                     <select name="status">
-                      <option value="acquired">Acquired</option>
-                      <option value="target">Target to Acquire</option>
+                      <option value="working">Working</option>
+                      <option value="maintenance">Maintenance</option>
+                      <option value="broken">Broken</option>
                     </select>
                     {!parentNodeForNewResource && (
                       <select name="generalId">
@@ -1236,6 +1973,92 @@ const MissionControlDashboard = () => {
                         ))}
                       </select>
                     )}
+                  </>
+                )}
+
+                {addResourceType === 'investor' && (
+                  <>
+                    <input type="text" name="fullName" placeholder="Investor Full Name" required />
+                    <input type="text" name="title" placeholder="Title/Company" />
+                    <input type="email" name="email" placeholder="Email" />
+                    <input type="text" name="phone" placeholder="Phone" />
+                    <input type="text" name="photoUrl" placeholder="Photo URL" />
+                    <input
+                      type="number"
+                      name="investmentAmount"
+                      placeholder="Investment Amount"
+                      required
+                      step="0.01"
+                      min="0"
+                    />
+                    <select name="investmentCurrency">
+                      <option value="XAF">XAF (Central African CFA)</option>
+                      <option value="USD">USD</option>
+                      <option value="EUR">EUR</option>
+                      <option value="GBP">GBP</option>
+                    </select>
+                    <label style={{ color: '#94a3b8', fontSize: '14px', marginTop: '10px' }}>
+                      Investment Date
+                    </label>
+                    <input
+                      type="date"
+                      name="investmentDate"
+                      required
+                    />
+                    <input
+                      type="number"
+                      name="equityPercentage"
+                      placeholder="Equity Percentage (0-100)"
+                      step="0.01"
+                      min="0"
+                      max="100"
+                    />
+                    {!parentNodeForNewResource && (
+                      <select name="generalId">
+                        <option value="">Assign to General (optional)</option>
+                        {generals.map(g => (
+                          <option key={g.id} value={g.id}>{g.name}</option>
+                        ))}
+                      </select>
+                    )}
+                    <textarea name="notes" placeholder="Notes about this investor..." rows={3}></textarea>
+                  </>
+                )}
+
+                {addResourceType === 'restaurant' && (
+                  <>
+                    <input type="text" name="name" placeholder="Restaurant Name" required />
+                    <input type="text" name="location" placeholder="Location (e.g., Downtown Yaoundé)" required />
+                    <textarea name="address" placeholder="Full Address" rows={2}></textarea>
+                    <input type="tel" name="phone" placeholder="Phone Number" />
+                    <input type="email" name="email" placeholder="Email Address" />
+                    <input
+                      type="number"
+                      name="capacity"
+                      placeholder="Seating Capacity"
+                      min="1"
+                    />
+                    <select name="status" required>
+                      <option value="planning">Planning</option>
+                      <option value="active">Active</option>
+                      <option value="closed">Closed</option>
+                    </select>
+                    {!parentNodeForNewResource && (
+                      <select name="departmentId" required>
+                        <option value="">Select Department</option>
+                        {departments.map(d => (
+                          <option key={d.id} value={d.id}>{d.name}</option>
+                        ))}
+                      </select>
+                    )}
+                    <label style={{ color: '#94a3b8', fontSize: '14px', marginTop: '10px' }}>
+                      Operating Hours (JSON format, optional)
+                    </label>
+                    <textarea
+                      name="operatingHours"
+                      placeholder='{"monday":"11:00-22:00","tuesday":"11:00-22:00"}'
+                      rows={3}
+                    ></textarea>
                   </>
                 )}
 
@@ -1363,6 +2186,249 @@ const MissionControlDashboard = () => {
         />
       )}
 
+      {/* Department Detail Modal */}
+      {showDepartmentDetail && selectedDepartment && (
+        <DepartmentDetailModal
+          department={selectedDepartment}
+          onClose={() => setShowDepartmentDetail(false)}
+          onSave={async (updatedData) => {
+            try {
+              const departmentId = updatedData.id;
+              if (!departmentId) {
+                alert('Error: Department ID not found');
+                return;
+              }
+
+              // Make API call to update department
+              const res = await putAPI(`departments/${departmentId}`, updatedData);
+
+              if (res.data.success) {
+                alert('Department updated successfully!');
+
+                // Refresh the data and rebuild the graph
+                const [generalsRes, peopleRes, assetsRes, departmentsRes] = await Promise.all([
+                  getAPI('generals'),
+                  getAPI('people?limit=1000'),
+                  getAPI('assets'),
+                  getAPI('departments')
+                ]);
+
+                setGenerals(generalsRes.data.data);
+                setPeople(peopleRes.data.data);
+                setAssets(assetsRes.data.data);
+                setDepartments(departmentsRes.data.data);
+
+                // Rebuild the graph with updated data
+                if (stats) {
+                  await buildNodeGraph(
+                    stats,
+                    generalsRes.data.data,
+                    peopleRes.data.data,
+                    assetsRes.data.data,
+                    departmentsRes.data.data,
+                    lifeOpsData
+                  );
+                }
+
+                setShowDepartmentDetail(false);
+              } else {
+                alert('Failed to update department: ' + (res.data.msg || 'Unknown error'));
+              }
+            } catch (err) {
+              console.error('Error updating department:', err);
+              alert('Error updating department: ' + (err.response?.data?.msg || err.message));
+            }
+          }}
+        />
+      )}
+
+      {/* Project Detail Modal */}
+      {showProjectDetail && selectedProject && (
+        <ProjectDetailModal
+          project={selectedProject}
+          onClose={() => setShowProjectDetail(false)}
+          onSave={async (updatedData) => {
+            try {
+              const projectId = updatedData.id;
+              if (!projectId) {
+                alert('Error: Project ID not found');
+                return;
+              }
+
+              // Make API call to update project
+              const res = await putAPI(`projects/${projectId}`, updatedData);
+
+              if (res.data.success) {
+                alert('Project updated successfully!');
+
+                // Refresh the data and rebuild the graph
+                const [generalsRes, peopleRes, assetsRes, departmentsRes] = await Promise.all([
+                  getAPI('generals'),
+                  getAPI('people?limit=1000'),
+                  getAPI('assets'),
+                  getAPI('departments')
+                ]);
+
+                setGenerals(generalsRes.data.data);
+                setPeople(peopleRes.data.data);
+                setAssets(assetsRes.data.data);
+                setDepartments(departmentsRes.data.data);
+
+                // Rebuild the graph with updated data
+                if (stats) {
+                  await buildNodeGraph(
+                    stats,
+                    generalsRes.data.data,
+                    peopleRes.data.data,
+                    assetsRes.data.data,
+                    departmentsRes.data.data,
+                    lifeOpsData
+                  );
+                }
+
+                setShowProjectDetail(false);
+              } else {
+                alert('Failed to update project: ' + (res.data.msg || 'Unknown error'));
+              }
+            } catch (err) {
+              console.error('Error updating project:', err);
+              alert('Error updating project: ' + (err.response?.data?.msg || err.message));
+            }
+          }}
+        />
+      )}
+
+      {/* Restaurant Detail Modal */}
+      {showRestaurantDetail && selectedRestaurantNode && (
+        <RestaurantDetailModal
+          node={selectedRestaurantNode}
+          onClose={() => setShowRestaurantDetail(false)}
+          onUpdate={async () => {
+            // Reload restaurant data
+            const dashboardRes = await getAPI('mission-control/dashboard', auth.token);
+            if (dashboardRes.data.success) {
+              const { stats, generals, people, departments, assets, incomeStreams, expenses, landmarks, restaurants } = dashboardRes.data.data;
+              setRestaurantData(restaurants || []);
+              await buildNodeGraph(stats, generals, people, assets, departments, lifeOpsData, incomeStreams || [], expenses || [], landmarks || [], restaurants || []);
+            }
+            setShowRestaurantDetail(false);
+          }}
+        />
+      )}
+
+      {/* Landmark Detail Modal */}
+      {showLandmarkDetail && selectedLandmark && (
+        <LandmarkDetailModal
+          landmark={selectedLandmark}
+          onClose={() => setShowLandmarkDetail(false)}
+          onSave={async (updatedData) => {
+            try {
+              const landmarkId = updatedData.id || selectedLandmark.id;
+              if (!landmarkId) {
+                alert('Error: Landmark ID not found');
+                return;
+              }
+
+              // Debug: Check if token exists
+              console.log('=== DEBUG LANDMARK UPDATE ===');
+              console.log('Auth object:', auth);
+              console.log('Token:', auth.token);
+              console.log('Token exists:', !!auth.token);
+
+              if (!auth.token) {
+                alert('Error: No authentication token found. Please try logging in again.');
+                return;
+              }
+
+              // Make API call to update landmark
+              const res = await putAPI(`landmarks/${landmarkId}`, updatedData, auth.token);
+
+              if (res.data.success) {
+                alert('Landmark updated successfully!');
+
+                // Fetch all data to rebuild the graph
+                const dashboardRes = await getAPI('mission-control/dashboard', auth.token);
+                if (dashboardRes.data.success) {
+                  const { stats, generals, people, departments, assets, incomeStreams, expenses, landmarks } = dashboardRes.data.data;
+                  setStats(stats);
+                  setGenerals(generals);
+                  setPeople(people);
+                  setDepartments(departments);
+                  setAssets(assets);
+                  setLandmarks(landmarks);
+
+                  // Rebuild the graph with updated data
+                  await buildNodeGraph(stats, generals, people, assets, departments, lifeOpsData, incomeStreams || [], expenses || [], landmarks);
+                }
+
+                setShowLandmarkDetail(false);
+              } else {
+                alert('Failed to update landmark: ' + (res.data.msg || 'Unknown error'));
+              }
+            } catch (err) {
+              console.error('Error updating landmark:', err);
+              alert('Error updating landmark: ' + (err.response?.data?.msg || err.message));
+            }
+          }}
+        />
+      )}
+
+      {/* General Detail Modal */}
+      {showGeneralDetail && selectedGeneral && (
+        <GeneralDetailModal
+          general={selectedGeneral}
+          onClose={() => setShowGeneralDetail(false)}
+          onSave={async (updatedData) => {
+            try {
+              const generalId = updatedData.id;
+              if (!generalId) {
+                alert('Error: General ID not found');
+                return;
+              }
+
+              // Make API call to update general
+              const res = await putAPI(`generals/${generalId}`, updatedData);
+
+              if (res.data.success) {
+                alert('General updated successfully!');
+
+                // Refresh the data and rebuild the graph
+                const [generalsRes, peopleRes, assetsRes, departmentsRes] = await Promise.all([
+                  getAPI('generals'),
+                  getAPI('people?limit=1000'),
+                  getAPI('assets'),
+                  getAPI('departments')
+                ]);
+
+                setGenerals(generalsRes.data.data);
+                setPeople(peopleRes.data.data);
+                setAssets(assetsRes.data.data);
+                setDepartments(departmentsRes.data.data);
+
+                // Rebuild the graph with updated data
+                if (stats) {
+                  await buildNodeGraph(
+                    stats,
+                    generalsRes.data.data,
+                    peopleRes.data.data,
+                    assetsRes.data.data,
+                    departmentsRes.data.data,
+                    lifeOpsData
+                  );
+                }
+
+                setShowGeneralDetail(false);
+              } else {
+                alert('Failed to update general: ' + (res.data.msg || 'Unknown error'));
+              }
+            } catch (err) {
+              console.error('Error updating general:', err);
+              alert('Error updating general: ' + (err.response?.data?.msg || err.message));
+            }
+          }}
+        />
+      )}
+
       {/* Context Menu */}
       {contextMenu && (
         <div
@@ -1377,6 +2443,24 @@ const MissionControlDashboard = () => {
         >
           <div className="mc-context-menu-content" onClick={(e) => e.stopPropagation()}>
             <div className="mc-context-menu-header">{contextMenu.nodeLabel}</div>
+            {contextMenu.nodeType === 'general' && (
+              <button className="mc-context-menu-item" onClick={handleViewGeneralDetails}>
+                <Dashboard style={{ fontSize: 18, marginRight: 8 }} />
+                View Details
+              </button>
+            )}
+            {contextMenu.nodeType === 'project' && (
+              <button className="mc-context-menu-item" onClick={handleViewProjectDetails}>
+                <Assessment style={{ fontSize: 18, marginRight: 8 }} />
+                View Details
+              </button>
+            )}
+            {contextMenu.nodeType === 'department' && (
+              <button className="mc-context-menu-item" onClick={handleViewDepartmentDetails}>
+                <Business style={{ fontSize: 18, marginRight: 8 }} />
+                View Details
+              </button>
+            )}
             <button className="mc-context-menu-item" onClick={handleCreateResourceFromNode}>
               <Add style={{ fontSize: 18, marginRight: 8 }} />
               Create Resource
