@@ -566,6 +566,10 @@ const MissionControlDashboard = () => {
         });
         setShowPersonDetail(true);
       }
+    } else if (node.type === 'menuNode' || node.type === 'inventoryNode' || node.type === 'ordersNode' || node.type === 'suppliersNode' || node.type === 'staffNode') {
+      // Show restaurant detail modal
+      setSelectedRestaurantNode(node);
+      setShowRestaurantDetail(true);
     }
   }, [edges, setNodes, people]);
 
@@ -1293,11 +1297,6 @@ const MissionControlDashboard = () => {
 
       if (!deptPosition) return; // Skip if department position not found
 
-      const handleRestaurantNodeClick = (nodeData) => {
-        setSelectedRestaurantNode(nodeData);
-        setShowRestaurantDetail(true);
-      };
-
       // Calculate aggregate restaurant stats
       const activeOrders = orders?.filter(o => ['received', 'preparing', 'ready'].includes(o.orderStatus)).length || 0;
       const todaySales = orders?.reduce((sum, o) => {
@@ -1347,8 +1346,7 @@ const MissionControlDashboard = () => {
           totalItems: menuItems?.length || 0,
           categories: categories,
           popularCount: popularCount,
-          availableItems: availableMenuItems,
-          onNodeClick: handleRestaurantNodeClick
+          availableItems: availableMenuItems
         },
       });
 
@@ -1377,8 +1375,7 @@ const MissionControlDashboard = () => {
           lowStockCount: lowStockCount,
           inStockCount: inStockCount,
           outOfStockCount: outOfStockCount,
-          lastRestockDate: inventoryItems?.[0]?.lastRestocked,
-          onNodeClick: handleRestaurantNodeClick
+          lastRestockDate: inventoryItems?.[0]?.lastRestocked
         },
       });
 
@@ -1409,8 +1406,7 @@ const MissionControlDashboard = () => {
           preparingCount: preparingCount,
           readyCount: readyCount,
           completedToday: completedToday,
-          performanceStatus: activeOrders > 10 ? 'high' : activeOrders > 5 ? 'medium' : 'low',
-          onNodeClick: handleRestaurantNodeClick
+          performanceStatus: activeOrders > 10 ? 'high' : activeOrders > 5 ? 'medium' : 'low'
         },
       });
 
@@ -1440,8 +1436,7 @@ const MissionControlDashboard = () => {
           inactiveSuppliers: (suppliers?.length || 0) - activeSuppliers,
           averageRating: averageRating,
           nextDeliveryDate: suppliers?.[0]?.nextDeliveryDate,
-          totalContacts: suppliers?.filter(s => s.phone || s.email).length || 0,
-          onNodeClick: handleRestaurantNodeClick
+          totalContacts: suppliers?.filter(s => s.phone || s.email).length || 0
         },
       });
 
@@ -1474,8 +1469,7 @@ const MissionControlDashboard = () => {
           eveningShifts: 0,
           roles: [],
           checkedIn: 0,
-          absent: 0,
-          onNodeClick: handleRestaurantNodeClick
+          absent: 0
         },
       });
 
