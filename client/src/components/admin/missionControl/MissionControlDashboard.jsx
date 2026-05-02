@@ -1364,6 +1364,34 @@ const MissionControlDashboard = () => {
       const baseX = (deptPosition.x || 200) + (restaurantIndex * 300);
       const baseY = (deptPosition.y || 500) + 150;
 
+      // 0. Restaurant Resource Node (Main restaurant card)
+      const restaurantNodeId = `restaurant-${restaurant.id}`;
+      newNodes.push({
+        id: restaurantNodeId,
+        type: 'restaurantResource',
+        position: savedPositions?.[restaurantNodeId] || {
+          x: baseX,
+          y: baseY - 100
+        },
+        data: {
+          label: restaurant.name,
+          resourceType: 'restaurant',
+          restaurantId: restaurant.id,
+          location: restaurant.location,
+          status: restaurant.status,
+          capacity: restaurant.capacity,
+          count: menuItems?.length || 0
+        },
+      });
+
+      newEdges.push({
+        id: `dept-${restaurant.departmentId}-restaurant-${restaurant.id}`,
+        source: deptNodeId,
+        target: restaurantNodeId,
+        type: 'smoothstep',
+        style: { stroke: '#f59e0b', strokeWidth: 2 }
+      });
+
       // 1. Menu Node
       const menuNodeId = `menu-${restaurant.id}`;
       newNodes.push({
@@ -1385,8 +1413,8 @@ const MissionControlDashboard = () => {
       });
 
       newEdges.push({
-        id: `dept-${restaurant.departmentId}-menu-${restaurant.id}`,
-        source: deptNodeId,
+        id: `restaurant-${restaurant.id}-menu-${restaurant.id}`,
+        source: restaurantNodeId,
         target: menuNodeId,
         type: 'smoothstep',
         style: { stroke: '#10b981', strokeWidth: 2 }
@@ -1414,8 +1442,8 @@ const MissionControlDashboard = () => {
       });
 
       newEdges.push({
-        id: `dept-${restaurant.departmentId}-inventory-${restaurant.id}`,
-        source: deptNodeId,
+        id: `restaurant-${restaurant.id}-inventory-${restaurant.id}`,
+        source: restaurantNodeId,
         target: invNodeId,
         type: 'smoothstep',
         style: { stroke: '#3b82f6', strokeWidth: 2 }
@@ -1445,8 +1473,8 @@ const MissionControlDashboard = () => {
       });
 
       newEdges.push({
-        id: `dept-${restaurant.departmentId}-orders-${restaurant.id}`,
-        source: deptNodeId,
+        id: `restaurant-${restaurant.id}-orders-${restaurant.id}`,
+        source: restaurantNodeId,
         target: ordersNodeId,
         type: 'smoothstep',
         style: { stroke: '#f59e0b', strokeWidth: 2 }

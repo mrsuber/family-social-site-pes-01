@@ -74,6 +74,9 @@ app.use('/api',require('./routes/islamicCourseRoutes'))
 // Restaurant Management System Routes
 app.use('/api',require('./routes/restaurantRoutes'))
 
+// Biography Routes
+app.use('/api/biography',require('./routes/biography'))
+
 
 
 if(process.env.NODE_ENV==="production"){

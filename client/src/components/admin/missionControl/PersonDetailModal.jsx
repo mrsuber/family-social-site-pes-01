@@ -31,6 +31,7 @@ import CommanderDiary from './CommanderDiary';
 import FinancialDashboard from './FinancialDashboard';
 import ConnectionManager from './ConnectionManager';
 import DailyOperations from './DailyOperations';
+import BiographyViewer from './BiographyViewer';
 import {
   uploadProfilePhoto,
   uploadGalleryPhoto,
@@ -303,16 +304,7 @@ const PersonDetailModal = ({ person, onClose, onUpdate }) => {
             <div className="tab-content">
               <section className="content-section">
                 <h3>Biography</h3>
-                {isEditing ? (
-                  <textarea
-                    value={editData.bio || ''}
-                    onChange={(e) => setEditData({...editData, bio: e.target.value})}
-                    placeholder="Write biography..."
-                    rows={4}
-                  />
-                ) : (
-                  <p>{fullData.bio || 'No biography available'}</p>
-                )}
+                <BiographyViewer personId={fullData.id || person.id || person.data?.id} />
               </section>
 
               <section className="content-section">

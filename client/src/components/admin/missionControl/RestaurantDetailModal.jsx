@@ -18,7 +18,7 @@ import {
   TrendingUp,
   AttachMoney
 } from '@material-ui/icons';
-import { fetchData } from '../../../utils/fetchData';
+import { getAPI } from '../../../utils/fetchData';
 
 const RestaurantDetailModal = ({ node, onClose, onUpdate }) => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -60,8 +60,18 @@ const RestaurantDetailModal = ({ node, onClose, onUpdate }) => {
           endpoint = `/api/restaurants/${restaurantId}/menu`;
       }
 
-      const response = await fetchData(endpoint);
-      setData(response || []);
+      // Remove '/api/' prefix since getAPI adds it automatically
+      const cleanEndpoint = endpoint.replace(/^\/api\//, '');
+      const response = await getAPI(cleanEndpoint);
+
+      // Handle response structure - could be response.data.data or response.data
+      let responseData = response.data;
+      if (responseData && responseData.data) {
+        responseData = responseData.data;
+      }
+
+      // Ensure we always have an array
+      setData(Array.isArray(responseData) ? responseData : []);
     } catch (error) {
       console.error('Error loading restaurant data:', error);
     } finally {
@@ -104,7 +114,7 @@ const RestaurantDetailModal = ({ node, onClose, onUpdate }) => {
 
   const renderMenuItems = () => {
     if (loading) return <div className="loading-state">Loading menu items...</div>;
-    if (!data || data.length === 0) return <div className="empty-state">No menu items found</div>;
+    if (!data || !Array.isArray(data) || data.length === 0) return <div className="empty-state">No menu items found</div>;
 
     return (
       <div className="restaurant-items-grid">
@@ -140,7 +150,7 @@ const RestaurantDetailModal = ({ node, onClose, onUpdate }) => {
 
   const renderInventoryItems = () => {
     if (loading) return <div className="loading-state">Loading inventory...</div>;
-    if (!data || data.length === 0) return <div className="empty-state">No inventory items found</div>;
+    if (!data || !Array.isArray(data) || data.length === 0) return <div className="empty-state">No inventory items found</div>;
 
     return (
       <div className="restaurant-items-grid">
@@ -186,7 +196,7 @@ const RestaurantDetailModal = ({ node, onClose, onUpdate }) => {
 
   const renderOrders = () => {
     if (loading) return <div className="loading-state">Loading orders...</div>;
-    if (!data || data.length === 0) return <div className="empty-state">No orders found</div>;
+    if (!data || !Array.isArray(data) || data.length === 0) return <div className="empty-state">No orders found</div>;
 
     return (
       <div className="restaurant-items-grid">
@@ -226,7 +236,7 @@ const RestaurantDetailModal = ({ node, onClose, onUpdate }) => {
 
   const renderSuppliers = () => {
     if (loading) return <div className="loading-state">Loading suppliers...</div>;
-    if (!data || data.length === 0) return <div className="empty-state">No suppliers found</div>;
+    if (!data || !Array.isArray(data) || data.length === 0) return <div className="empty-state">No suppliers found</div>;
 
     return (
       <div className="restaurant-items-grid">
