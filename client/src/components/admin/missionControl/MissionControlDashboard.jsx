@@ -36,8 +36,9 @@ import GeneralDetailModal from './GeneralDetailModal';
 import LandmarkDetailModal from './LandmarkDetailModal';
 import RestaurantDetailModal from './RestaurantDetailModal';
 import LifeOperationsCanvas from './LifeOperationsCanvas';
+import DailyTimetableCard from './DailyTimetableCard';
 import { getAPI, postAPI, putAPI, deleteAPI } from '../../../utils/fetchData';
-import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet } from '@material-ui/icons';
+import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet, Schedule } from '@material-ui/icons';
 import { useReactFlow } from 'reactflow';
 import { useSelector } from 'react-redux';
 
@@ -1737,6 +1738,12 @@ const MissionControlDashboard = () => {
             >
               <AccountBalanceWallet /> Life Operations
             </button>
+            <button
+              className={`mc-sidebar-item ${selectedView === 'timetable' ? 'active' : ''}`}
+              onClick={() => setSelectedView('timetable')}
+            >
+              <Schedule /> Daily Timetable
+            </button>
           </div>
 
           <div className="mc-sidebar-section">
@@ -1776,7 +1783,11 @@ const MissionControlDashboard = () => {
 
         {/* Canvas Area */}
         <div className="mc-canvas-container">
-          {selectedView === 'lifeops' ? (
+          {selectedView === 'timetable' ? (
+            <div style={{ padding: '20px', overflowY: 'auto', height: '100%' }}>
+              <DailyTimetableCard personId={auth.user?.id} />
+            </div>
+          ) : selectedView === 'lifeops' ? (
             <LifeOperationsCanvas />
           ) : (
             <ReactFlow

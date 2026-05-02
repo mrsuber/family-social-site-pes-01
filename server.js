@@ -77,6 +77,9 @@ app.use('/api',require('./routes/restaurantRoutes'))
 // Biography Routes
 app.use('/api/biography',require('./routes/biography'))
 
+// Daily Timetable Routes
+app.use('/api',require('./routes/timetableRoutes'))
+
 
 
 if(process.env.NODE_ENV==="production"){
