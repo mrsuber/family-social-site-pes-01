@@ -62,7 +62,7 @@ GlobalAsset.init(
       comment: 'potential, contacted, negotiating, active, completed, inactive'
     },
     userId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
       allowNull: false,
       field: 'user_id',
       references: {
