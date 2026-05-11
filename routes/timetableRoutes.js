@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const timetableCtrl = require('../controllers/timetableCtrl');
-const auth = require('../middleware/auth');
+const { auth } = require('../middleware/auth');
 
 // Get timetable for specific person and date
 router.get('/timetable/:personId/:date', auth, timetableCtrl.getTimetable);

@@ -15,9 +15,9 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogActions,
-  Rating
+  DialogActions
 } from '@material-ui/core';
+import { Rating } from '@material-ui/lab';
 import {
   CheckCircle,
   RadioButtonUnchecked,

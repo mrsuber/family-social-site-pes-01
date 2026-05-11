@@ -37,8 +37,9 @@ import LandmarkDetailModal from './LandmarkDetailModal';
 import RestaurantDetailModal from './RestaurantDetailModal';
 import LifeOperationsCanvas from './LifeOperationsCanvas';
 import DailyTimetableCard from './DailyTimetableCard';
+import GlobalAssetsMap from './GlobalAssetsMap';
 import { getAPI, postAPI, putAPI, deleteAPI } from '../../../utils/fetchData';
-import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet, Schedule } from '@material-ui/icons';
+import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet, Schedule, Public } from '@material-ui/icons';
 import { useReactFlow } from 'reactflow';
 import { useSelector } from 'react-redux';
 
@@ -1744,6 +1745,12 @@ const MissionControlDashboard = () => {
             >
               <Schedule /> Daily Timetable
             </button>
+            <button
+              className={`mc-sidebar-item ${selectedView === 'globalAssets' ? 'active' : ''}`}
+              onClick={() => setSelectedView('globalAssets')}
+            >
+              <Public /> Global Assets & Resources
+            </button>
           </div>
 
           <div className="mc-sidebar-section">
@@ -1789,6 +1796,8 @@ const MissionControlDashboard = () => {
             </div>
           ) : selectedView === 'lifeops' ? (
             <LifeOperationsCanvas />
+          ) : selectedView === 'globalAssets' ? (
+            <GlobalAssetsMap />
           ) : (
             <ReactFlow
               nodes={filteredNodes}

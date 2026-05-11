@@ -80,6 +80,8 @@ app.use('/api/biography',require('./routes/biography'))
 // Daily Timetable Routes
 app.use('/api',require('./routes/timetableRoutes'))
 
+// Global Assets & Resources Routes
+app.use('/api',require('./routes/globalAssetsRoutes'))
 
 
 if(process.env.NODE_ENV==="production"){
