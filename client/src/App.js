@@ -13,9 +13,9 @@ import {
   AdminApplicationScreen,AdminApplicationScreen2,AdminApplicationScreen3,
   AdminStudent,AdminCourse,AdminCourse2,
   AdminRelCourse2,
-  AdminRestaurantScreen
-
-
+  AdminRestaurantScreen,
+  AdminFarmProductsListPage,
+  AdminFarmProductEditPage
 
 } from './pages'
 //component
@@ -83,7 +83,8 @@ const App=()=> {
             <Route exact path="/admin/projectExpansion" component={auth.token && auth.user.isSuperAdmin===true? AdminProjectExpansionScreen : AdminErrorScreen}/>
             <Route exact path="/admin/missionControl" component={auth.token && auth.user.isSuperAdmin===true? AdminMissionControlScreen : AdminErrorScreen}/>
             <Route exact path="/admin/restaurant" component={auth.token && auth.user.isSuperAdmin===true? AdminRestaurantScreen : AdminErrorScreen}/>
-
+            <Route exact path="/admin/farm-products" component={auth.token && auth.user.isSuperAdmin===true? AdminFarmProductsListPage : AdminErrorScreen}/>
+            <Route exact path="/admin/farm-products/:id" component={auth.token && auth.user.isSuperAdmin===true? AdminFarmProductEditPage : AdminErrorScreen}/>
 
             <Route exact path="/admin/application" component={auth.token && auth.user.isSuperAdmin===true? AdminApplicationScreen : AdminErrorScreen}/>
             <Route exact path="/admin/application/oracle" component={auth.token && (auth.user.isApplication1===true || auth.user.isSuperAdmin===true)? AdminApplicationScreen2 : AdminErrorScreen}/>
