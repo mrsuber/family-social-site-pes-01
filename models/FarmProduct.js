@@ -10,7 +10,6 @@ const FarmProduct = sequelize.define('FarmProduct', {
   sku: {
     type: DataTypes.STRING(50),
     allowNull: false,
-    unique: true,
     comment: 'Stock Keeping Unit (e.g., FP-HER-GAR-045)'
   },
   name: {
