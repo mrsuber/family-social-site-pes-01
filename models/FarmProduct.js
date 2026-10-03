@@ -197,7 +197,7 @@ const FarmProduct = sequelize.define('FarmProduct', {
       fields: ['status']
     },
     {
-      fields: ['stockStatus']
+      fields: ['stock_status']
     },
     {
       fields: ['name']
