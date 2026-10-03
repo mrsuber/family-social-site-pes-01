@@ -89,6 +89,9 @@ app.use('/api/referrals',require('./routes/referralRoutes'))
 // Farm Products Routes
 app.use('/api/farm-products',require('./routes/farmProductRoutes'))
 
+// Empire Command Center Routes
+app.use('/api',require('./routes/empireCommandRoutes'))
+
 if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join(__dirname,'/client/build')))
   app.get('*',(req,res)=>{

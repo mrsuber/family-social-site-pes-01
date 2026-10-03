@@ -37,7 +37,7 @@ import LandmarkDetailModal from './LandmarkDetailModal';
 import RestaurantDetailModal from './RestaurantDetailModal';
 import LifeOperationsCanvas from './LifeOperationsCanvas';
 import DailyTimetableCard from './DailyTimetableCard';
-import GlobalAssetsMap from './GlobalAssetsMap';
+import EmpireCommandCenter from './EmpireCommandCenter';
 import { getAPI, postAPI, putAPI, deleteAPI } from '../../../utils/fetchData';
 import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet, Schedule, Public } from '@material-ui/icons';
 import { useReactFlow } from 'reactflow';
@@ -1797,7 +1797,7 @@ const MissionControlDashboard = () => {
           ) : selectedView === 'lifeops' ? (
             <LifeOperationsCanvas />
           ) : selectedView === 'globalAssets' ? (
-            <GlobalAssetsMap />
+            <EmpireCommandCenter />
           ) : (
             <ReactFlow
               nodes={filteredNodes}

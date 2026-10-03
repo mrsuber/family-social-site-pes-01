@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+html,body{margin:0;height:100%;background:#0B1222;color:#E2E8F0;font-family:'IBM Plex Sans',sans-serif;overflow:hidden}
+#wrap{height:100%;display:flex}
+#mapcol{flex:1;min-width:0;position:relative}
+#map{position:absolute;inset:0;background:#0B1222}
+.leaflet-container{font-family:'IBM Plex Sans',sans-serif;background:#0B1222}
+.leaflet-control-attribution{background:rgba(15,23,42,.85)!important;color:#94A3B8!important;font-size:10px}
+.leaflet-control-attribution a{color:#93C5FD!important}
+.leaflet-bar a{background:#1E293B!important;color:#E2E8F0!important;border-color:#334155!important}
+.leaflet-top.leaflet-left{top:48px}
+#panel{width:300px;flex-shrink:0;background:#1E293B;border-left:1px solid #334155;padding:18px;box-sizing:border-box;overflow:auto;font-size:13px;line-height:1.5}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#94A3B8}
+h3{margin:4px 0 10px;font-size:17px;font-weight:600}
+ul{margin:4px 0 12px;padding-left:16px}li{margin:2px 0}
+.tag{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-family:'IBM Plex Mono',monospace;margin-bottom:6px}
+button{background:#334155;border:1px solid #475569;color:#E2E8F0;border-radius:6px;padding:6px 10px;font:500 12px 'IBM Plex Sans';cursor:pointer}
+button:hover{background:#475569}
+.btns{display:flex;gap:8px;margin-top:8px}.btns button{flex:1;padding:7px}
+#bar{position:absolute;top:10px;left:10px;right:10px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;pointer-events:none}
+#bar>*{pointer-events:auto}
+.grp{display:flex;gap:3px;background:rgba(15,23,42,.92);border:1px solid #334155;border-radius:8px;padding:3px}
+.grp button{border:none;background:transparent;padding:5px 9px}.grp button.on{background:#3B82F6}
+#cov{position:absolute;left:10px;bottom:22px;z-index:1000;background:rgba(15,23,42,.92);border:1px solid #334155;border-radius:8px;padding:10px 12px;font-size:12px;display:flex;flex-direction:column;gap:6px}
+.lg{display:flex;align-items:center;gap:8px}.sw{width:10px;height:10px;border-radius:50%;box-sizing:border-box}
+#err{position:absolute;inset:0;z-index:999;display:none;align-items:center;justify-content:center;text-align:center;padding:30px;color:#94A3B8;font-size:13px;pointer-events:none}
+.lbl{background:rgba(15,23,42,.85);border:1px solid #334155;border-radius:4px;box-shadow:none;color:#E2E8F0;font:600 11px 'IBM Plex Sans';padding:1px 6px}
+.lbl:before{display:none}
+.lbl.ops{border-color:#3B82F6}.lbl.hq{border-color:#EF4444;color:#FCA5A5}
+.route{stroke-dasharray:8 8;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-16}}
+.hqring{animation:pulse 1.8s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(3)}}
+</style></head>
+<body>
+<div id="wrap">
+ <div id="mapcol"><div id="map"></div>
+  <div id="err">Map tiles could not load from this network. Your markers and routes are still shown.</div>
+  <div id="bar">
+   <div class="grp"><button data-v="africa">Africa</button><button data-v="cameroon" class="on">Cameroon</button><button data-v="buea">Buea</button><button data-v="survey">Survey zones</button></div>
+   <div class="grp"><button data-b="dark" class="on">Dark</button><button data-b="streets">Streets</button><button data-b="satellite">Satellite</button></div>
+   <div class="grp"><button data-l="ops" class="on">Operations</button><button data-l="routes" class="on">Routes</button><button data-l="expand" class="on">Expansion</button></div>
+  </div>
+  <div id="cov">
+   <div class="mono" style="font-size:10px">Coverage · 10 regions</div>
+   <div class="lg"><span class="sw" style="background:#EF4444"></span>Active <b id="nA"></b></div>
+   <div class="lg"><span class="sw" style="background:#3B82F6"></span>Planned <b id="nP"></b></div>
+   <div class="lg"><span class="sw" style="border:1.5px dashed #94A3B8"></span>Untapped <b id="nU"></b></div>
+  </div>
+ </div>
+ <div id="panel"></div>
+</div>
+<script>
+const COL={active:'#EF4444',planned:'#3B82F6',target:'#6B7280'};
+const LOC=[
+ {id:'buea',name:'Buea',region:'Southwest',role:'HQ',ll:[4.1527,9.2410],st:'active',dir:'left',sections:[['Active operations',['Camsol Technology (your office)','SuberCraftex (106 products listed)','SuberFood (launching December)']],['People',['High Commander (you)','Ali Barkat (arrives Oct 10)']],['Assets',['Office / home workspace','Laptops (2)','Starlink internet']],['Upcoming',['Nov 1–15: customer surveys — Mile 2, Bonduma, Molyko']]]},
+ {id:'molyko',name:'Molyko',region:'Southwest · Buea',role:'Survey zone',ll:[4.1580,9.2950],st:'planned',minor:1,sections:[['Upcoming',['Nov 1–15: SuberFood customer survey']]]},
+ {id:'bonduma',name:'Bonduma',region:'Southwest · Buea',role:'Survey zone',ll:[4.1430,9.2870],st:'planned',minor:1,sections:[['Upcoming',['Nov 1–15: SuberFood customer survey']]]},
+ {id:'mile2',name:'Mile 2',region:'Southwest · Buea',role:'Survey zone',ll:[4.1330,9.2668],st:'planned',minor:1,sections:[['Upcoming',['Nov 1–15: SuberFood customer survey']]]},
+ {id:'foumbot',name:'Foumbot',region:'West',role:'Farmers',ll:[5.5089,10.6333],st:'planned',dir:'right',sections:[['Role',['Produce source for SuberFood']],['Upcoming',['Nov 16–30: farmer visits with Ali']]]},
+ {id:'yaounde',name:'Yaoundé',region:'Centre',role:'Farmers · capital',ll:[3.8480,11.5021],st:'planned',sections:[['Role',['Produce source for SuberFood']],['Upcoming',['Nov 16–30: farmer visits']]]},
+ ...[['Douala','Littoral',4.0511,9.7679,'right'],['Bamenda','Northwest',5.9631,10.1591,'left'],['Bafoussam','West',5.4778,10.4176,'left'],['Bertoua','East',4.5770,13.6846],['Ebolowa','South',2.9,11.15],['Ngaoundéré','Adamawa',7.327,13.584],['Garoua','North',9.3,13.4],['Maroua','Far North',10.591,14.3159]]
+  .map(([n,r,a,b,dir])=>({id:n.toLowerCase(),name:n,region:r,role:'Regional capital · expansion target',ll:[a,b],st:'target',dir}))
+];
+const REG={Southwest:'active',West:'planned',Centre:'planned',Littoral:'target',Northwest:'target',East:'target',South:'target',Adamawa:'target',North:'target','Far North':'target'};
+const cnt=k=>Object.values(REG).filter(v=>v===k).length;nA.textContent=cnt('active');nP.textContent=cnt('planned');nU.textContent=cnt('target');
+
+const map=L.map('map',{minZoom:3,maxZoom:19,worldCopyJump:true,zoomSnap:.5}).setView([5.9,12.4],6);
+const OSM='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+const BASES={
+ dark:L.layerGroup([
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:20,maxNativeZoom:16,attribution:'© Esri, HERE, Garmin, '+OSM}),
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{maxZoom:20,maxNativeZoom:16})
+ ]),
+ streets:L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'© Esri, HERE, Garmin, '+OSM}),
+ satellite:L.layerGroup([
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'Imagery © Esri, Maxar, Earthstar Geographics'}),
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',{maxZoom:19}),
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}',{maxZoom:19})
+ ])
+};
+let base=BASES.dark.addTo(map),fails=0,oks=0;
+function watch(l){(l.eachLayer?l.getLayers():[l]).forEach(t=>{t.on('tileerror',()=>{fails++;if(fails>6&&!oks)err.style.display='flex';});t.on('tileload',()=>{oks++;err.style.display='none';});});}
+Object.values(BASES).forEach(watch);
+document.querySelectorAll('[data-b]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-b]').forEach(x=>x.classList.toggle('on',x===b));map.removeLayer(base);base=BASES[b.dataset.b].addTo(map);fails=0;oks=0;});
+
+const layers={ops:L.layerGroup().addTo(map),routes:L.layerGroup().addTo(map),expand:L.layerGroup().addTo(map)};
+const markers={};let sel='buea';
+LOC.forEach(l=>{
+ const hq=l.st==='active';
+ if(hq)L.circleMarker(l.ll,{radius:10,color:COL.active,weight:2,fill:false,className:'hqring',interactive:false}).addTo(layers.ops);
+ const m=L.circleMarker(l.ll,{radius:hq?9:l.minor?6:l.st==='planned'?8:6,fillColor:COL[l.st],fillOpacity:l.st==='target'?.6:1,color:l.st==='target'?'#CBD5E1':'#0F172A',weight:1.5,dashArray:l.st==='target'?'3 3':null}).on('click',()=>{sel=l.id;panel();});
+ m.bindTooltip(l.name,{permanent:!l.minor,direction:l.dir||'right',offset:[l.dir==='left'?-10:10,0],className:'lbl'+(hq?' hq':l.st==='planned'?' ops':'')});
+ m.addTo(l.st==='target'?layers.expand:layers.ops);markers[l.id]=m;
+});
+// survey zone labels appear only when zoomed in
+map.on('zoomend',()=>{const z=map.getZoom();LOC.filter(l=>l.minor).forEach(l=>{const m=markers[l.id];if(z>=13)m.openTooltip();else m.closeTooltip();});});
+const P=id=>LOC.find(x=>x.id===id).ll;
+[['foumbot','buea'],['yaounde','buea']].forEach(([a,b])=>{
+ const A=P(a),B=P(b),mid=[(A[0]+B[0])/2+.35,(A[1]+B[1])/2],pts=[];
+ for(let t=0;t<=1.0001;t+=.05){const u=1-t;pts.push([u*u*A[0]+2*u*t*mid[0]+t*t*B[0],u*u*A[1]+2*u*t*mid[1]+t*t*B[1]]);}
+ L.polyline(pts,{color:'#F59E0B',weight:3,className:'route'}).bindTooltip('SuberFood supply chain · Nov 16–30',{sticky:true}).addTo(layers.routes);
+});
+function panel(){
+ const l=LOC.find(x=>x.id===sel),c=COL[l.st],stl={active:'ACTIVE',planned:'PLANNED',target:'UNTAPPED'}[l.st];
+ const secs=l.sections||[['Status',['No operations yet — '+l.region+' region']],['Opportunity',['Candidate market for SuberFood / SuberCraftex expansion']]];
+ document.getElementById('panel').innerHTML=`<div class="mono">${l.region} · ${l.role}</div><h3>${l.name}</h3>
+ <span class="tag" style="background:${c}22;color:${l.st==='target'?'#CBD5E1':c};border:1px solid ${c}88">${stl}</span>
+ ${secs.map(([t,i])=>`<div class="mono" style="margin-top:8px">${t}</div><ul>${i.map(x=>`<li>${x}</li>`).join('')}</ul>`).join('')}
+ <div class="mono">Coordinates</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#CBD5E1;margin-bottom:8px">${l.ll[0].toFixed(4)}, ${l.ll[1].toFixed(4)}</div>
+ <div class="btns"><button id="zin">Street view</button><button>Add asset</button></div>`;
+ document.getElementById('zin').onclick=()=>map.flyTo(l.ll,l.minor?17:15,{duration:1.4});
+ LOC.forEach(x=>markers[x.id].setStyle({weight:x.id===sel?3:1.5,color:x.id===sel?'#F8FAFC':(x.st==='target'?'#CBD5E1':'#0F172A')}));
+}
+const VIEWS={africa:()=>map.flyToBounds([[-35,-18],[37,52]],{duration:1.2}),cameroon:()=>map.flyToBounds([[1.6,8.4],[13.1,16.2]],{duration:1.2}),
+ buea:()=>map.flyTo([4.153,9.262],13,{duration:1.4}),survey:()=>map.flyToBounds([[4.125,9.255],[4.165,9.305]],{duration:1.4})};
+document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-v]').forEach(x=>x.classList.toggle('on',x===b));VIEWS[b.dataset.v]();});
+document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{const g=layers[b.dataset.l],on=map.hasLayer(g);on?map.removeLayer(g):g.addTo(map);b.classList.toggle('on',!on);});
+map.fitBounds([[1.6,8.4],[13.1,16.2]]);
+panel();
+</script>
+</body></html>

@@ -1,9 +1,335 @@
 .global-assets-container {
   display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   background: #0f172a;
   color: #e2e8f0;
+  overflow: hidden;
+}
+
+/* Tabs */
+.global-assets-tabs {
+  display: flex;
+  gap: 0;
+  background: #1e293b;
+  border-bottom: 2px solid #334155;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.global-assets-tab {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 3px solid transparent;
+  font-family: 'IBM Plex Sans', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.global-assets-tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+}
+
+.global-assets-tab.active {
+  color: #60a5fa;
+  background: #0f172a;
+  border-bottom-color: #3b82f6;
+}
+
+.global-assets-tab svg {
+  font-size: 18px;
+}
+
+/* Empire Dashboard Content */
+.empire-dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Empire Resources Header */
+.empire-resources-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+
+.empire-header-title {
+  flex: 1;
+}
+
+.empire-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.empire-subtitle {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.empire-add-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.empire-add-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Empire Resource Cards */
+.empire-resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  padding: 24px 32px;
+}
+
+.empire-resource-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.2s;
+  display: flex;
+  gap: 16px;
+}
+
+.empire-resource-card:hover {
+  border-color: #475569;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.empire-card-active {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.empire-card-development {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.empire-card-potential {
+  border-color: #6b7280;
+  background: rgba(107, 116, 128, 0.05);
+}
+
+.empire-card-icon {
+  width: 48px;
+  height: 48px;
+  background: #3b82f6;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: white;
+}
+
+.empire-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.empire-card-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.empire-card-description {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.empire-card-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.empire-location {
+  font-size: 11px;
+  color: #64748b;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.empire-status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+.empire-status-active {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.empire-status-dev {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.empire-status-potential,
+.empire-status-planned,
+.empire-status-contacted,
+.empire-status-negotiating {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.empire-status-inactive,
+.empire-status-target {
+  background: rgba(107, 116, 128, 0.2);
+  color: #94a3b8;
+}
+
+.empire-link {
+  font-size: 13px;
+  color: #60a5fa;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+  transition: color 0.2s;
+}
+
+.empire-link:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.empire-contact {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+.empire-card-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.empire-btn-icon {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #e2e8f0;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.empire-btn-icon:hover {
+  background: #475569;
+}
+
+.empire-btn-danger:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+}
+
+/* Map Section */
+.empire-map-section {
+  padding: 24px 32px;
+}
+
+.empire-map-header {
+  margin-bottom: 20px;
+}
+
+.empire-map-header h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.empire-map-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Placeholder Views */
+.cameroon-map-view,
+.constellation-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.map-placeholder,
+.constellation-placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 41, 59, 0.3);
+  border: 2px dashed #334155;
+  border-radius: 12px;
+  margin: 24px 32px;
+  padding: 48px;
+  text-align: center;
+}
+
+.map-placeholder h2,
+.constellation-placeholder h2 {
+  font-size: 24px;
+  color: #f1f5f9;
+  margin: 0 0 16px 0;
+}
+
+.map-placeholder p,
+.constellation-placeholder p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 8px 0;
+  max-width: 600px;
 }
 
 /* Controls Panel */

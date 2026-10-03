@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import './ProductsListPage.css';
 
 const ProductsListPage = () => {
-  const navigate = useNavigate();
+  const history = useHistory();
   const { auth } = useSelector(state => state);
 
   const [products, setProducts] = useState([]);
@@ -104,7 +104,7 @@ const ProductsListPage = () => {
       <div className="page-header">
         <h1>Farm Products Management</h1>
         <button
-          onClick={() => navigate('/admin/farm-products/new')}
+          onClick={() => history.push('/admin/farm-products/new')}
           className="btn-add-product"
         >
           + Add New Product
@@ -255,7 +255,7 @@ const ProductsListPage = () => {
 
                   <div className="product-actions">
                     <button
-                      onClick={() => navigate(`/admin/farm-products/${product.id}`)}
+                      onClick={() => history.push(`/admin/farm-products/${product.id}`)}
                       className="btn-view"
                     >
                       👁️ View

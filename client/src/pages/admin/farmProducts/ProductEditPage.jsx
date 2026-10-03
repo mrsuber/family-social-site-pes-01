@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import './ProductEditPage.css';
 
 const ProductEditPage = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
+  const history = useHistory();
   const { auth } = useSelector(state => state);
 
   const [product, setProduct] = useState(null);
@@ -245,7 +245,7 @@ const ProductEditPage = () => {
   return (
     <div className="product-edit-page">
       <div className="product-edit-header">
-        <button onClick={() => navigate('/admin/farm-products')} className="btn-back">
+        <button onClick={() => history.push('/admin/farm-products')} className="btn-back">
           ← Back to Products
         </button>
         <h1>Edit Product</h1>

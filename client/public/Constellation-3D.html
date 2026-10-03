@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
+    "three/addons/controls/OrbitControls.js": "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+    "three/addons/exporters/OBJExporter.js": "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js",
+    "three/addons/exporters/GLTFExporter.js": "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js"
+  },
+  "integrity": {
+    "https://unpkg.com/three@0.184.0/build/three.module.js": "sha384-8FCZ1eVO6it4+pbec2aDtnTrwjWXZLJRC+MAGCIPDgsYnUrl/E0A2YlF8ioMKI/J",
+    "https://unpkg.com/three@0.184.0/build/three.core.js": "sha384-dw2ooPewaEIrAgl6oFDBmmBWCE9oW9LxRGcfwZ0hLvEprzo202wXl7vCYHRlSnOT",
+    "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js": "sha384-4rziNxOBZKQ69i+w+f89KJ55TCYquwchVbByQwmaOeIOXdOU2PLDn3kOfXHwIJC9",
+    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js": "sha384-nbwtoZENJD3Vq+ACK0CuGQdPMuDWHkamC2KJD70EV5nfg6jQjfppKOea07YJN+N3",
+    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js": "sha384-VofkvpG6HERhFCYbsUOHeNXBCqID2nfqkQqnVzE1jc/oPcz+qJ13ADdXH08hE+cQ"
+  }
+}
+</script>
+<style>
+html,body{margin:0;height:100%;background:#0F172A;color:#E2E8F0;font-family:'IBM Plex Sans',sans-serif;overflow:hidden}
+#stage{position:absolute;inset:0}
+canvas{display:block;cursor:grab}canvas:active{cursor:grabbing}
+#labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.nl{position:absolute;transform:translate(-50%,0);text-align:center;white-space:nowrap;text-shadow:0 1px 4px #000,0 0 8px #000}
+.nl b{display:block;font-size:12px;font-weight:600}
+.nl span{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.06em}
+button,select,input,textarea{font:500 12px 'IBM Plex Sans';color:#E2E8F0}
+button{background:#1E293B;border:1px solid #334155;border-radius:6px;padding:6px 10px;cursor:pointer}
+button:hover{background:#334155}button.on{background:#3B82F6;border-color:#3B82F6}
+#bar{position:absolute;top:10px;left:10px;display:flex;gap:6px;flex-wrap:wrap;z-index:3}
+#legend{position:absolute;left:10px;bottom:10px;display:flex;gap:6px;flex-wrap:wrap;z-index:3;max-width:calc(100% - 20px)}
+#legend button{display:flex;align-items:center;gap:6px;background:rgba(15,23,42,.88);font-size:11px;padding:4px 9px}
+#legend button.off{opacity:.35}
+.sw{width:9px;height:9px;border-radius:50%}
+#readout{position:absolute;left:10px;right:10px;bottom:44px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#64748B;z-index:3;pointer-events:none;text-shadow:0 1px 3px #000}
+#info{position:absolute;top:10px;right:10px;width:250px;background:rgba(30,41,59,.95);border:1px solid #334155;border-radius:10px;padding:12px 14px;font-size:12px;z-index:4;display:none;box-shadow:0 12px 32px rgba(0,0,0,.5)}
+#info h4{margin:0 0 2px;font-size:15px}
+.row{display:flex;justify-content:space-between;gap:10px;margin:3px 0}.row span:first-child{color:#94A3B8}
+#form{position:absolute;inset:0;background:rgba(2,6,23,.7);display:none;align-items:center;justify-content:center;z-index:6}
+#form>div{width:300px;background:#1E293B;border:1px solid #334155;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+label{display:flex;flex-direction:column;gap:4px;font-size:11px;color:#94A3B8}
+input,select,textarea{background:#0F172A;border:1px solid #475569;border-radius:6px;padding:8px;font-weight:400;font-size:13px}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#94A3B8}
+</style></head>
+<body>
+<div id="stage"></div><div id="labels"></div>
+<div id="bar"><button id="addBtn" class="on">+ Add node</button><button id="rotBtn">Auto-rotate</button><button id="resetBtn">Reset view</button></div>
+<div id="info"></div>
+<div id="readout">Drag to rotate · scroll to zoom · right-drag to pan · hover a line for its metric</div>
+<div id="legend"></div>
+<div id="form"><div>
+ <div style="font-size:16px;font-weight:600">Add node to the constellation</div>
+ <label>Name<input id="fName" placeholder="e.g. Douala Branch"></label>
+ <label>Type<select id="fType"><option>Company</option><option>Person</option><option>Partner</option><option>Location</option><option>Client</option></select></label>
+ <label>Health<select id="fHealth"><option value="green">Healthy</option><option value="amber">Active / warning</option><option value="red">Critical</option><option value="gray">On hold</option><option value="blue">Future</option></select></label>
+ <label>Connect to<select id="fTo"></select></label>
+ <label>Flow type<select id="fFlow"><option value="money">Money</option><option value="time">Time</option><option value="people">People</option><option value="tech">Tech</option><option value="integration">Integration</option></select></label>
+ <label>Note / metric<input id="fNote" placeholder="e.g. 50K XAF/month from retainers"></label>
+ <div style="display:flex;gap:8px;justify-content:flex-end"><button id="fCancel">Cancel</button><button id="fSave" class="on">Add node</button></div>
+</div></div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const HC={red:'#EF4444',amber:'#F59E0B',green:'#10B981',gray:'#6B7280',blue:'#3B82F6',white:'#E2E8F0',purple:'#8B5CF6'};
+const FC={money:['Money','#10B981'],time:['Time','#3B82F6'],people:['People','#8B5CF6'],tech:['Tech','#F97316'],integration:['Integration','#FCD34D'],future:['Pending','#6B7280']};
+const BASE=[
+ {id:'C',name:'High Commander',sub:'Mohamad',c:'white',r:.9,p:[0,0,0],rows:[['Roles','CEO · CTO · CFO'],['Status','Overloaded'],['Location','Buea']]},
+ {id:'camsol',name:'Camsol Technology',sub:'Maxed out',c:'red',r:.72,p:[-4.2,.4,1.2],rows:[['Revenue','300K XAF/mo'],['Client','SDO'],['Next','Report Oct 20']]},
+ {id:'suberfood',name:'SuberFood',sub:'Launch Dec 1',c:'red',r:.8,p:[4.2,.2,-.6],rows:[['Platform','70%'],['Team','Ali (Oct 10)'],['Target','200K XAF/mo'],['Missing','Pre-orders, wallet, PWC']]},
+ {id:'pwc',name:'PayWithCamsol',sub:'Stable',c:'green',r:.58,p:[0,3.6,-1.6],rows:[['Rails','MTN MoMo, Orange Money'],['Client','Icons (integrating)'],['Revenue','TBD']]},
+ {id:'profundra',name:'ProFundra',sub:'Not monetized',c:'amber',r:.52,p:[-2.6,-2.9,-1.8],rows:[['Revenue','0 XAF'],['URL','profundra.com'],['Future','NGO partnerships']]},
+ {id:'craftex',name:'SuberCraftex',sub:'Low revenue',c:'amber',r:.52,p:[2.9,-2.7,2],rows:[['Products','106'],['Investors','7'],['Revenue','0–50K XAF/mo']]},
+ {id:'ali',name:'Ali Barkat',sub:'Arrives Oct 10',c:'purple',r:.3,p:[6,2.6,1.6],rows:[['Role','SuberFood Ops Manager']]},
+ {id:'kd',name:'KD',sub:'Waiting',c:'gray',r:.28,p:[-4.8,3.1,-2.2],rows:[['Role','Accountant'],['Hire when','SuberFood ≥ 200K/mo']]}
+];
+const BASE_E=[
+ ['camsol','C','money',4,'300,000 XAF/month from SDO contract → you'],
+ ['C','camsol','time',6,'60% of your week (24h) → Camsol'],
+ ['C','suberfood','time',3,'30% of your week (12h) → SuberFood'],
+ ['C','profundra','time',1.5,'Planning/admin 4h, tracked in ProFundra'],
+ ['camsol','profundra','tech',2,'Camsol builds ProFundra'],
+ ['camsol','pwc','tech',2,'Camsol builds PayWithCamsol'],
+ ['camsol','suberfood','tech',2,'Camsol builds the SuberFood platform (70%)'],
+ ['pwc','suberfood','integration',2,'PayWithCamsol → SuberFood checkout (planned)',1],
+ ['pwc','C','money',1.5,'Icons integration · revenue TBD',1],
+ ['ali','suberfood','people',2.5,'Ali Barkat joins SuberFood operations Oct 10'],
+ ['craftex','C','money',1,'SuberCraftex 0–50K XAF/month (inconsistent)'],
+ ['kd','C','future',1,'KD — hire once SuberFood hits 200K/mo',1]
+];
+const KEY='ecc-constellation-custom';
+let custom=[];try{custom=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
+
+const stage=document.getElementById('stage'),labels=document.getElementById('labels');
+const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));stage.appendChild(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#0F172A');scene.fog=new THREE.Fog('#0F172A',18,40);
+const camera=new THREE.PerspectiveCamera(45,1,.1,200);const HOME=new THREE.Vector3(2,4,15);camera.position.copy(HOME);
+const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.minDistance=4;controls.maxDistance=40;controls.autoRotateSpeed=.8;
+scene.add(new THREE.AmbientLight('#ffffff',.55));const dl=new THREE.DirectionalLight('#ffffff',1.6);dl.position.set(5,8,6);scene.add(dl);
+const pl=new THREE.PointLight('#93C5FD',30,20);scene.add(pl);
+const grid=new THREE.PolarGridHelper(9,16,6,64,'#1E3A5F','#172338');grid.position.y=-4.2;scene.add(grid);
+{const g=new THREE.BufferGeometry(),a=[];for(let i=0;i<900;i++){const v=new THREE.Vector3().randomDirection().multiplyScalar(25+Math.random()*30);a.push(v.x,v.y,v.z);}
+ g.setAttribute('position',new THREE.Float32BufferAttribute(a,3));scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:'#475569',size:.12,fog:false})));}
+
+let world=new THREE.Group();scene.add(world);
+let nodes=[],edges=[],particles=[],hidden=new Set(),selected=null;
+function nodeList(){return [...BASE,...custom.map(n=>({...n,custom:true}))];}
+function edgeList(){return [...BASE_E,...custom.map(n=>[n.id,n.to,n.flow,2,n.note||`${n.name} ↔ ${n.toName}`])];}
+function build(){
+ scene.remove(world);world=new THREE.Group();scene.add(world);nodes=[];edges=[];particles=[];labels.innerHTML='';
+ const byId={};
+ nodeList().forEach(n=>{
+  const col=new THREE.Color(HC[n.c]);
+  const mesh=new THREE.Mesh(new THREE.SphereGeometry(n.r,48,32),new THREE.MeshStandardMaterial({color:col,emissive:col,emissiveIntensity:n.id==='C'?.15:.45,roughness:.35,metalness:.2}));
+  mesh.position.set(...n.p);mesh.userData=n;world.add(mesh);
+  const halo=new THREE.Mesh(new THREE.SphereGeometry(n.r*1.35,32,24),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.12,blending:THREE.AdditiveBlending,depthWrite:false}));
+  halo.position.copy(mesh.position);world.add(halo);
+  if(n.id==='C'){const ring=new THREE.Mesh(new THREE.TorusGeometry(1.25,.025,12,96),new THREE.MeshBasicMaterial({color:'#93C5FD'}));ring.rotation.x=Math.PI/2.3;mesh.add(ring);}
+  const el=document.createElement('div');el.className='nl';el.innerHTML=`<b>${n.name}</b><span style="color:${n.c==='gray'||n.c==='white'?'#94A3B8':HC[n.c]}">${(n.sub||'').toUpperCase()}</span>`;labels.appendChild(el);
+  const o={n,mesh,halo,el};nodes.push(o);byId[n.id]=o;
+ });
+ edgeList().forEach(([a,b,flow,w,text,dashed],i)=>{
+  const A=byId[a],B=byId[b];if(!A||!B)return;
+  const pa=A.mesh.position,pb=B.mesh.position,mid=pa.clone().add(pb).multiplyScalar(.5);
+  const off=new THREE.Vector3().subVectors(pb,pa).cross(new THREE.Vector3(0,1,0)).normalize().multiplyScalar(pa.distanceTo(pb)*.12*(i%2?1:-1));
+  if(off.lengthSq()===0)off.set(0,.6,0);mid.add(off).add(new THREE.Vector3(0,.4,0));
+  const curve=new THREE.QuadraticBezierCurve3(pa.clone(),mid,pb.clone());
+  const col=new THREE.Color(FC[flow][1]);
+  const tube=new THREE.Mesh(new THREE.TubeGeometry(curve,48,.012+w*.012,8,false),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:dashed?.25:.45,depthWrite:false}));
+  tube.userData={text:`${FC[flow][0]} · ${text}`,color:FC[flow][1],flow};world.add(tube);
+  const hit=new THREE.Mesh(new THREE.TubeGeometry(curve,32,.18,6,false),new THREE.MeshBasicMaterial({visible:false}));hit.userData=tube.userData;hit.userData.tube=tube;world.add(hit);
+  const n=dashed?1:Math.max(1,Math.round(w/1.4));const e={tube,hit,flow,parts:[]};
+  for(let j=0;j<n;j++){const p=new THREE.Mesh(new THREE.SphereGeometry(dashed?.06:.085,12,8),new THREE.MeshBasicMaterial({color:col}));
+   p.userData={curve,t:j/n,speed:dashed?.12:.22};world.add(p);particles.push(p);e.parts.push(p);}
+  edges.push(e);
+ });
+ applyHidden();legend();
+}
+function applyHidden(){edges.forEach(e=>{const v=!hidden.has(e.flow);e.tube.visible=v;e.hit.userData.off=!v;e.parts.forEach(p=>p.visible=v);});}
+function legend(){
+ const L=document.getElementById('legend');L.innerHTML='';
+ Object.entries(FC).forEach(([k,[name,c]])=>{const b=document.createElement('button');b.className=hidden.has(k)?'off':'';b.innerHTML=`<span class="sw" style="background:${c}"></span>${name}`;
+  b.onclick=()=>{hidden.has(k)?hidden.delete(k):hidden.add(k);applyHidden();legend();};L.appendChild(b);});
+}
+function showInfo(n){
+ const info=document.getElementById('info');if(!n){info.style.display='none';return;}
+ const rows=n.rows||[['Type',n.type],['Connected to',n.toName],['Flow',FC[n.flow][0]],...(n.note?[['Note',n.note]]:[])];
+ info.innerHTML=`<div class="mono">${n.custom?'CUSTOM NODE':'CORE NODE'}</div><h4>${n.name}</h4><div style="color:${HC[n.c]==='#E2E8F0'?'#94A3B8':HC[n.c]};font-family:'IBM Plex Mono',monospace;font-size:10px;margin-bottom:6px">${(n.sub||'').toUpperCase()}</div>
+ ${rows.map(([k,v])=>`<div class="row"><span>${k}</span><span>${v}</span></div>`).join('')}
+ <div style="display:flex;gap:6px;margin-top:10px"><button id="focusBtn" style="flex:1">Focus</button>${n.custom?'<button id="delBtn" style="flex:1;color:#FCA5A5">Remove</button>':''}<button id="closeBtn">×</button></div>`;
+ info.style.display='block';
+ document.getElementById('closeBtn').onclick=()=>{selected=null;showInfo(null);};
+ document.getElementById('focusBtn').onclick=()=>{focusTo=new THREE.Vector3(...n.p);};
+ const d=document.getElementById('delBtn');if(d)d.onclick=()=>{custom=custom.filter(x=>x.id!==n.id&&x.to!==n.id);save();selected=null;showInfo(null);build();};
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(custom))}catch(e){}}
+
+const ray=new THREE.Raycaster(),mouse=new THREE.Vector2(),readout=document.getElementById('readout');let down=null,hoverEdge=null,focusTo=null;
+function pick(e){const r=renderer.domElement.getBoundingClientRect();mouse.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(mouse,camera);}
+renderer.domElement.addEventListener('pointermove',e=>{pick(e);
+ const nh=ray.intersectObjects(nodes.map(o=>o.mesh))[0];
+ if(nh){renderer.domElement.style.cursor='pointer';if(!selected)showInfo(nh.object.userData);setEdge(null);return;}
+ renderer.domElement.style.cursor='';if(!selected)showInfo(null);
+ const eh=ray.intersectObjects(edges.filter(x=>!x.hit.userData.off).map(x=>x.hit))[0];setEdge(eh?eh.object.userData:null);
+});
+function setEdge(u){if(hoverEdge&&hoverEdge!==u)hoverEdge.tube.material.opacity=hoverEdge.text.includes('planned')||hoverEdge.flow==='future'?.25:.45;
+ hoverEdge=u;if(u){u.tube.material.opacity=1;readout.textContent=u.text;readout.style.color=u.color;}else{readout.textContent='Drag to rotate · scroll to zoom · right-drag to pan · hover a line for its metric';readout.style.color='#64748B';}}
+renderer.domElement.addEventListener('pointerdown',e=>down=[e.clientX,e.clientY]);
+renderer.domElement.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>4)return;pick(e);
+ const nh=ray.intersectObjects(nodes.map(o=>o.mesh))[0];selected=nh?nh.object.userData:null;showInfo(selected);});
+
+const form=document.getElementById('form');
+document.getElementById('addBtn').onclick=()=>{const s=document.getElementById('fTo');s.innerHTML=nodeList().map(n=>`<option value="${n.id}">${n.name}</option>`).join('');s.value='C';form.style.display='flex';document.getElementById('fName').focus();};
+document.getElementById('fCancel').onclick=()=>form.style.display='none';
+document.getElementById('fSave').onclick=()=>{
+ const name=fName.value.trim();if(!name){fName.focus();return;}
+ const to=fTo.value,tgt=nodeList().find(n=>n.id===to),tp=new THREE.Vector3(...tgt.p);
+ const out=(tp.lengthSq()<.01?new THREE.Vector3().randomDirection():tp.clone().normalize()).add(new THREE.Vector3().randomDirection().multiplyScalar(.6)).normalize();
+ const p=tp.clone().add(out.multiplyScalar(2.6));p.y=Math.max(-3.6,Math.min(5,p.y));
+ const type=fType.value;
+ custom.push({id:'n'+Date.now(),name,type,sub:type,c:fHealth.value,r:type==='Person'?.3:.45,p:[p.x,p.y,p.z],to,toName:tgt.name,flow:fFlow.value,note:fNote.value.trim()});
+ save();form.style.display='none';fName.value='';fNote.value='';build();
+};
+const rotBtn=document.getElementById('rotBtn');rotBtn.onclick=()=>{controls.autoRotate=!controls.autoRotate;rotBtn.classList.toggle('on',controls.autoRotate);};
+document.getElementById('resetBtn').onclick=()=>{camera.position.copy(HOME);controls.target.set(0,0,0);focusTo=null;};
+
+function resize(){const w=stage.clientWidth,h=stage.clientHeight;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();}
+new ResizeObserver(resize).observe(stage);resize();
+const clock=new THREE.Clock(),v=new THREE.Vector3();
+renderer.setAnimationLoop(()=>{
+ const dt=clock.getDelta(),t=clock.elapsedTime;
+ particles.forEach(p=>{const u=p.userData;u.t=(u.t+dt*u.speed)%1;u.curve.getPoint(u.t,p.position);});
+ nodes.forEach(o=>{if(o.n.c==='red'){const s=1+.25*((t*.7)%1);o.halo.scale.setScalar(s);o.halo.material.opacity=.22*(1-(t*.7)%1);}});
+ if(focusTo){controls.target.lerp(focusTo,.08);if(controls.target.distanceTo(focusTo)<.01)focusTo=null;}
+ controls.update();renderer.render(scene,camera);
+ const w=stage.clientWidth,h=stage.clientHeight;
+ nodes.forEach(o=>{v.copy(o.mesh.position);v.y-=o.n.r+.15;v.project(camera);
+  const vis=v.z<1&&Math.abs(v.x)<1.1&&Math.abs(v.y)<1.1;o.el.style.display=vis?'':'none';
+  if(vis){o.el.style.left=((v.x+1)/2*w)+'px';o.el.style.top=((1-v.y)/2*h)+'px';const d=camera.position.distanceTo(o.mesh.position);o.el.style.opacity=Math.max(.35,Math.min(1,22/d/1.4));}});
+});
+build();
+</script>
+</body></html>
