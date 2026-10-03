@@ -1,14 +1,17 @@
 #!/bin/bash
 
 # Deployment script for family-social-site
-# VPS: 148.230.118.19
+# VPS: 76.13.41.99:2222
+# SSH: ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99
 # Domain: x.subercraftex.com
 
 echo "Starting deployment process..."
 
 # Variables
-VPS_IP="148.230.118.19"
-VPS_USER="root"
+VPS_IP="76.13.41.99"
+VPS_PORT="2222"
+VPS_USER="mohamaduser"
+SSH_KEY="~/.ssh/id_ed25519"
 APP_NAME="family-social-site-pes-01"
 APP_DIR="/var/www/$APP_NAME"
 REPO_URL="https://github.com/mrsuber/family-social-site-pes-01.git"
@@ -16,7 +19,7 @@ DOMAIN="x.subercraftex.com"
 EMAIL="mohamad.siysinyuy@gmail.com"
 
 echo "Step 1: Testing SSH connection..."
-ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no $VPS_USER@$VPS_IP "echo 'SSH connection successful'"
+ssh -i $SSH_KEY -p $VPS_PORT -o ConnectTimeout=10 -o StrictHostKeyChecking=no $VPS_USER@$VPS_IP "echo 'SSH connection successful'"
 
 if [ $? -ne 0 ]; then
     echo "Error: Cannot connect to VPS. Please check your SSH connection."
@@ -24,7 +27,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Step 2: Installing system dependencies..."
-ssh $VPS_USER@$VPS_IP << 'ENDSSH'
+ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP << 'ENDSSH'
 # Update system
 apt-get update
 
@@ -63,7 +66,7 @@ echo "Dependencies installed successfully"
 ENDSSH
 
 echo "Step 3: Cloning/updating repository on VPS..."
-ssh $VPS_USER@$VPS_IP << ENDSSH
+ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP << ENDSSH
 mkdir -p /var/www
 cd /var/www
 
@@ -79,7 +82,7 @@ fi
 ENDSSH
 
 echo "Step 4: Copying production environment file..."
-ssh $VPS_USER@$VPS_IP "cat > $APP_DIR/.env << 'EOF'
+ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP "cat > $APP_DIR/.env << 'EOF'
 DISABLE_COLLECTSTATIC = 1
 JWT_EXPIRE = 144min
 JWT_SECRET = 02dc7f7bf1c2fe9bd2464eea0ff4f92958409cad8c07158edb85080064320b5884ecd9
@@ -89,16 +92,16 @@ PORT = 5001
 EOF"
 
 echo "Step 5: Installing backend dependencies..."
-ssh $VPS_USER@$VPS_IP "cd $APP_DIR && npm install"
+ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP "cd $APP_DIR && npm install"
 
 echo "Step 6: Installing client dependencies and building React app..."
-ssh $VPS_USER@$VPS_IP "cd $APP_DIR/client && npm install && npm run build"
+ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP "cd $APP_DIR/client && npm install && npm run build"
 
 echo "Step 7: Creating superadmin account..."
-ssh $VPS_USER@$VPS_IP "cd $APP_DIR && node createSuperAdmin.js"
+ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP "cd $APP_DIR && node createSuperAdmin.js"
 
 echo "Step 8: Setting up PM2 to run the application..."
-ssh $VPS_USER@$VPS_IP << 'ENDSSH'
+ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP << 'ENDSSH'
 cd /var/www/family-social-site-pes-01
 pm2 stop all
 pm2 delete all
@@ -108,13 +111,13 @@ pm2 startup systemd
 ENDSSH
 
 echo "Step 9: Installing Certbot for SSL..."
-ssh $VPS_USER@$VPS_IP << 'ENDSSH'
+ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP << 'ENDSSH'
 # Install certbot
 apt-get install -y certbot python3-certbot-nginx
 ENDSSH
 
 echo "Step 10: Configuring Nginx (initial HTTP config)..."
-ssh $VPS_USER@$VPS_IP << ENDSSH
+ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP << ENDSSH
 cat > /etc/nginx/sites-available/family-social-site << 'EOF'
 server {
     listen 80;
@@ -153,7 +156,7 @@ echo "Step 11: Obtaining SSL certificate..."
 echo "IMPORTANT: Make sure your domain $DOMAIN points to $VPS_IP"
 read -p "Press Enter to continue with SSL certificate setup (or Ctrl+C to skip)..."
 
-ssh $VPS_USER@$VPS_IP << ENDSSH
+ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP << ENDSSH
 certbot --nginx -d $DOMAIN --non-interactive --agree-tos --email $EMAIL --redirect
 ENDSSH
 
@@ -165,15 +168,15 @@ echo ""
 echo "Your application is now running at:"
 echo "  - HTTPS: https://$DOMAIN"
 echo "  - HTTP: http://$DOMAIN"
-echo "  - IP: http://$VPS_IP"
+echo "  - IP: http://$VPS_IP:$VPS_PORT"
 echo ""
 echo "Superadmin credentials:"
 echo "  Email: $EMAIL"
 echo "  Password: Msb1@@@@"
 echo ""
 echo "Useful commands:"
-echo "  - View logs: ssh root@$VPS_IP 'pm2 logs'"
-echo "  - Restart app: ssh root@$VPS_IP 'pm2 restart family-social-site'"
-echo "  - Stop app: ssh root@$VPS_IP 'pm2 stop family-social-site'"
-echo "  - Renew SSL: ssh root@$VPS_IP 'certbot renew'"
+echo "  - View logs: ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP 'pm2 logs'"
+echo "  - Restart app: ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP 'pm2 restart family-social-site'"
+echo "  - Stop app: ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP 'pm2 stop family-social-site'"
+echo "  - Renew SSL: ssh -i $SSH_KEY -p $VPS_PORT $VPS_USER@$VPS_IP 'certbot renew'"
 echo "========================================="

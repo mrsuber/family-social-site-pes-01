@@ -340,8 +340,8 @@ After implementing these changes:
    ```bash
    cd client && npm run build
    tar -czf build.tar.gz build/
-   scp build.tar.gz root@148.230.118.19:/root/family-social/client/
-   ssh root@148.230.118.19 "cd /root/family-social/client && rm -rf build && tar -xzf build.tar.gz && rm -f build.tar.gz"
+   scp -i ~/.ssh/id_ed25519 -P 2222 build.tar.gz mohamaduser@76.13.41.99:/root/family-social/client/
+   ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99 "cd /root/family-social/client && rm -rf build && tar -xzf build.tar.gz && rm -f build.tar.gz"
    ```
 
 2. **Navigate to Mission Control:**

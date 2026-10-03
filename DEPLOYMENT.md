@@ -1,13 +1,16 @@
 # Deployment Guide
 
 ## Server Information
-- **VPS IP**: 148.230.118.19
+- **VPS IP**: 76.13.41.99
+- **SSH Port**: 2222
+- **SSH User**: mohamaduser
+- **SSH Key**: ~/.ssh/id_ed25519
 - **Domain**: x.subercraftex.com
-- **SSH**: `ssh root@148.230.118.19`
+- **SSH**: `ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99`
 
 ## Prerequisites
-1. Ensure domain `x.subercraftex.com` points to `148.230.118.19`
-2. SSH access to the VPS
+1. Ensure domain `x.subercraftex.com` points to `76.13.41.99`
+2. SSH access to the VPS with the correct SSH key
 3. Git repository is up to date
 
 ## Quick Deployment
@@ -39,7 +42,7 @@ If you prefer to deploy manually:
 
 ### 1. SSH into VPS
 ```bash
-ssh root@148.230.118.19
+ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99
 ```
 
 ### 2. Install Dependencies
@@ -155,7 +158,7 @@ certbot --nginx -d x.subercraftex.com --non-interactive --agree-tos --email moha
 ## Access Your Application
 - **HTTPS**: https://x.subercraftex.com
 - **HTTP**: http://x.subercraftex.com
-- **IP**: http://148.230.118.19
+- **IP**: http://76.13.41.99:2222
 
 ## Useful Commands
 

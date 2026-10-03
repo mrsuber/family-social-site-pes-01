@@ -163,11 +163,11 @@ node scripts/createHighCommanderLandmarksComplete.js
 
 ### **Step 4: Deploy to Remote Server (Optional)**
 
-If you want to deploy to your remote server (148.230.118.19):
+If you want to deploy to your remote server (76.13.41.99:2222):
 
 ```bash
 # SSH into server
-ssh root@148.230.118.19
+ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99
 
 # Navigate to project
 cd /root/family-social

@@ -231,7 +231,8 @@
 ## DEPLOYMENT INFO
 
 **Current Deployment:**
-- Server IP: 148.230.118.19
+- Server: 76.13.41.99:2222
+- SSH: ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99
 - Process Manager: PM2
 - Reverse Proxy: Nginx
 - OS: Ubuntu

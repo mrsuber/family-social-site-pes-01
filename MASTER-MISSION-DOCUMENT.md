@@ -519,7 +519,8 @@ Distribution:
 - **Payments:** Stripe API
 - **File Storage:** Local filesystem with optimization
 - **Maps:** Mapbox GL
-- **Deployment:** VPS (148.230.118.19), PM2 process manager
+- **Deployment:** VPS (76.13.41.99:2222), PM2 process manager
+- **SSH:** ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99
 
 **User Roles:**
 1. **Customer** - Browse, purchase, track orders
@@ -1639,7 +1640,8 @@ This is not a fantasy. This is a methodical, step-by-step plan to build the capa
 - Mapbox GL (delivery tracking)
 
 **Deployment:**
-- VPS (148.230.118.19)
+- VPS (76.13.41.99:2222)
+- SSH: ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99
 - PM2 process manager
 - Nginx reverse proxy
 - Ubuntu server

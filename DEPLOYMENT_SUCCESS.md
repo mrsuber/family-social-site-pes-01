@@ -1,7 +1,8 @@
 # ✅ DEPLOYMENT SUCCESSFUL: Global Assets & Resources System
 
 **Date:** May 11, 2026, 10:15 AM UTC
-**Server:** 148.230.118.19 (agent.subercraftex.com)
+**Server:** 76.13.41.99:2222 (agent.subercraftex.com)
+**SSH:** ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99
 **High Commander:** Mohamad Siysinyuy
 **Status:** 🟢 **LIVE & OPERATIONAL**
 
@@ -77,7 +78,7 @@ The **Global Assets & Resources** tracking system has been successfully deployed
 
 **Table:** `global_assets`
 **Status:** ✅ Created Successfully
-**Location:** PostgreSQL on 148.230.118.19
+**Location:** PostgreSQL on 76.13.41.99:2222
 
 ```sql
 -- Table structure confirmed:
@@ -243,7 +244,7 @@ All endpoints are now available at: `https://agent.subercraftex.com/api`
 
 **Database Backup Command:**
 ```bash
-ssh root@148.230.118.19 "pg_dump -U postgres -d family_social_db -t global_assets > /root/backups/global_assets_$(date +%Y%m%d).sql"
+ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99 "pg_dump -U postgres -d family_social_db -t global_assets > /root/backups/global_assets_$(date +%Y%m%d).sql"
 ```
 
 **Files Deployed to Production:**

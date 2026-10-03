@@ -154,7 +154,8 @@ A **crowdfunded manufacturing ecosystem** where investors fund inventory and equ
 - **Database:** PostgreSQL with Prisma ORM (25+ models)
 - **Authentication:** JWT tokens, bcrypt hashing
 - **Payments:** Stripe API
-- **Deployment:** VPS (148.230.118.19), PM2, Nginx, Ubuntu
+- **Deployment:** VPS (76.13.41.99:2222), PM2, Nginx, Ubuntu
+- **SSH:** ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99
 
 ### The Investor Model (Revolutionary)
 
@@ -718,7 +719,8 @@ Annual Profit: +736.8K XAF
 ## PART 13: THE DEPLOYMENT & BUSINESS PLANS
 
 ### Current Deployment
-- **Server:** VPS (148.230.118.19)
+- **Server:** VPS (76.13.41.99:2222)
+- **SSH:** ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99
 - **Process Manager:** PM2
 - **Reverse Proxy:** Nginx
 - **OS:** Ubuntu

@@ -138,9 +138,9 @@ git push origin master
 
 ## Deployment to Production Server
 
-**SSH into your DigitalOcean server:**
+**SSH into your server:**
 ```bash
-ssh root@148.230.118.19
+ssh -i ~/.ssh/id_ed25519 -p 2222 mohamaduser@76.13.41.99
 cd /root/family-social
 ```
 

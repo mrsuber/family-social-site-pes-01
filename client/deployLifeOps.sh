@@ -4,7 +4,9 @@ echo "========================================="
 echo "Deploying Life Operations System"
 echo "========================================="
 
-VPS_HOST="root@148.230.118.19"
+VPS_HOST="mohamaduser@76.13.41.99"
+VPS_PORT="2222"
+SSH_KEY="~/.ssh/id_ed25519"
 VPS_DIR="/root/family-social"
 
 echo ""
@@ -12,15 +14,15 @@ echo "Step 1: Deploying Models..."
 echo "----------------------------------------"
 
 # Deploy all Life Operations models
-scp models/IncomeStream.js ${VPS_HOST}:${VPS_DIR}/models/
-scp models/Expense.js ${VPS_HOST}:${VPS_DIR}/models/
-scp models/TimeBlock.js ${VPS_HOST}:${VPS_DIR}/models/
-scp models/LearningInvestment.js ${VPS_HOST}:${VPS_DIR}/models/
-scp models/Connection.js ${VPS_HOST}:${VPS_DIR}/models/
-scp models/Conversation.js ${VPS_HOST}:${VPS_DIR}/models/
-scp models/Gift.js ${VPS_HOST}:${VPS_DIR}/models/
-scp models/DailyLog.js ${VPS_HOST}:${VPS_DIR}/models/
-scp models/WeeklyPlan.js ${VPS_HOST}:${VPS_DIR}/models/
+scp -i ${SSH_KEY} -P ${VPS_PORT} models/IncomeStream.js ${VPS_HOST}:${VPS_DIR}/models/
+scp -i ${SSH_KEY} -P ${VPS_PORT} models/Expense.js ${VPS_HOST}:${VPS_DIR}/models/
+scp -i ${SSH_KEY} -P ${VPS_PORT} models/TimeBlock.js ${VPS_HOST}:${VPS_DIR}/models/
+scp -i ${SSH_KEY} -P ${VPS_PORT} models/LearningInvestment.js ${VPS_HOST}:${VPS_DIR}/models/
+scp -i ${SSH_KEY} -P ${VPS_PORT} models/Connection.js ${VPS_HOST}:${VPS_DIR}/models/
+scp -i ${SSH_KEY} -P ${VPS_PORT} models/Conversation.js ${VPS_HOST}:${VPS_DIR}/models/
+scp -i ${SSH_KEY} -P ${VPS_PORT} models/Gift.js ${VPS_HOST}:${VPS_DIR}/models/
+scp -i ${SSH_KEY} -P ${VPS_PORT} models/DailyLog.js ${VPS_HOST}:${VPS_DIR}/models/
+scp -i ${SSH_KEY} -P ${VPS_PORT} models/WeeklyPlan.js ${VPS_HOST}:${VPS_DIR}/models/
 
 echo "✓ Models deployed"
 
@@ -29,8 +31,8 @@ echo "Step 2: Deploying Controllers..."
 echo "----------------------------------------"
 
 # Deploy controllers
-scp controllers/lifeOpsCtrl.js ${VPS_HOST}:${VPS_DIR}/controllers/
-scp controllers/connectionCtrl.js ${VPS_HOST}:${VPS_DIR}/controllers/
+scp -i ${SSH_KEY} -P ${VPS_PORT} controllers/lifeOpsCtrl.js ${VPS_HOST}:${VPS_DIR}/controllers/
+scp -i ${SSH_KEY} -P ${VPS_PORT} controllers/connectionCtrl.js ${VPS_HOST}:${VPS_DIR}/controllers/
 
 echo "✓ Controllers deployed"
 
@@ -39,8 +41,8 @@ echo "Step 3: Deploying Routes..."
 echo "----------------------------------------"
 
 # Deploy routes
-scp routes/lifeOpsRoutes.js ${VPS_HOST}:${VPS_DIR}/routes/
-scp routes/connectionRoutes.js ${VPS_HOST}:${VPS_DIR}/routes/
+scp -i ${SSH_KEY} -P ${VPS_PORT} routes/lifeOpsRoutes.js ${VPS_HOST}:${VPS_DIR}/routes/
+scp -i ${SSH_KEY} -P ${VPS_PORT} routes/connectionRoutes.js ${VPS_HOST}:${VPS_DIR}/routes/
 
 echo "✓ Routes deployed"
 
@@ -49,7 +51,7 @@ echo "Step 4: Updating Server Routes Configuration..."
 echo "----------------------------------------"
 
 # Create a script to update server.js with new routes
-ssh ${VPS_HOST} "cd ${VPS_DIR} && cat >> server.js << 'ROUTES_EOF'
+ssh -i ${SSH_KEY} -p ${VPS_PORT} ${VPS_HOST} "cd ${VPS_DIR} && cat >> server.js << 'ROUTES_EOF'
 
 // Life Operations Routes
 const lifeOpsRoutes = require('./routes/lifeOpsRoutes');
@@ -67,7 +69,7 @@ echo "Step 5: Creating Database Sync Script..."
 echo "----------------------------------------"
 
 # Create sync script on VPS
-ssh ${VPS_HOST} "cd ${VPS_DIR} && cat > syncLifeOpsDatabase.js << 'SYNC_EOF'
+ssh -i ${SSH_KEY} -p ${VPS_PORT} ${VPS_HOST} "cd ${VPS_DIR} && cat > syncLifeOpsDatabase.js << 'SYNC_EOF'
 require('dotenv').config();
 const { sequelize, connectDB } = require('./config/db');
 
@@ -139,7 +141,7 @@ echo ""
 echo "Step 6: Installing Dependencies (if needed)..."
 echo "----------------------------------------"
 
-ssh ${VPS_HOST} "cd ${VPS_DIR} && npm install"
+ssh -i ${SSH_KEY} -p ${VPS_PORT} ${VPS_HOST} "cd ${VPS_DIR} && npm install"
 
 echo "✓ Dependencies checked"
 
@@ -147,13 +149,13 @@ echo ""
 echo "Step 7: Syncing Database (Creating New Tables)..."
 echo "----------------------------------------"
 
-ssh ${VPS_HOST} "cd ${VPS_DIR} && node syncLifeOpsDatabase.js"
+ssh -i ${SSH_KEY} -p ${VPS_PORT} ${VPS_HOST} "cd ${VPS_DIR} && node syncLifeOpsDatabase.js"
 
 echo ""
 echo "Step 8: Restarting Server..."
 echo "----------------------------------------"
 
-ssh ${VPS_HOST} "cd ${VPS_DIR} && pm2 restart family-social || pm2 start server.js --name family-social"
+ssh -i ${SSH_KEY} -p ${VPS_PORT} ${VPS_HOST} "cd ${VPS_DIR} && pm2 restart family-social || pm2 start server.js --name family-social"
 
 echo "✓ Server restarted"
 

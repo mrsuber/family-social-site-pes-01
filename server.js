@@ -83,6 +83,11 @@ app.use('/api',require('./routes/timetableRoutes'))
 // Global Assets & Resources Routes
 app.use('/api',require('./routes/globalAssetsRoutes'))
 
+// Referral Routes
+app.use('/api/referrals',require('./routes/referralRoutes'))
+
+// Farm Products Routes
+app.use('/api/farm-products',require('./routes/farmProductRoutes'))
 
 if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join(__dirname,'/client/build')))
