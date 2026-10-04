@@ -263,6 +263,7 @@
   flex: 1;
   position: relative;
   background: #111827;
+  overflow-y: auto;
 }
 
 .light-mode .mc-canvas-container {
