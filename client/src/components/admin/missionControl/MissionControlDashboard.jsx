@@ -42,8 +42,9 @@ import MorningBriefModal from './MorningBriefModal';
 import AliView from './AliView';
 import FocusHeatMap from './FocusHeatMap';
 import EnergyFlows from './EnergyFlows';
+import ProjectConstellation from './ProjectConstellation';
 import { getAPI, postAPI, putAPI, deleteAPI } from '../../../utils/fetchData';
-import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet, Schedule, Public, WbSunny, PersonOutline, Whatshot, TrendingUp } from '@material-ui/icons';
+import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet, Schedule, Public, WbSunny, PersonOutline, Whatshot, TrendingUp, BubbleChart } from '@material-ui/icons';
 import { useReactFlow } from 'reactflow';
 import { useSelector } from 'react-redux';
 
@@ -1769,6 +1770,12 @@ const MissionControlDashboard = () => {
               <Public /> Global Assets & Resources
             </button>
             <button
+              className={`mc-sidebar-item ${selectedView === 'projectConstellation' ? 'active' : ''}`}
+              onClick={() => setSelectedView('projectConstellation')}
+            >
+              <BubbleChart /> Project Constellation
+            </button>
+            <button
               className={`mc-sidebar-item ${selectedView === 'focusHeatMap' ? 'active' : ''}`}
               onClick={() => setSelectedView('focusHeatMap')}
             >
@@ -1827,6 +1834,8 @@ const MissionControlDashboard = () => {
             <LifeOperationsCanvas />
           ) : selectedView === 'globalAssets' ? (
             <EmpireCommandCenter />
+          ) : selectedView === 'projectConstellation' ? (
+            <ProjectConstellation />
           ) : selectedView === 'focusHeatMap' ? (
             <FocusHeatMap />
           ) : selectedView === 'energyFlows' ? (

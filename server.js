@@ -83,6 +83,9 @@ app.use('/api',require('./routes/timetableRoutes'))
 // Global Assets & Resources Routes
 app.use('/api',require('./routes/globalAssetsRoutes'))
 
+// Project Constellation Routes
+app.use('/api',require('./routes/constellationNodeRoutes'))
+
 // Referral Routes
 app.use('/api/referrals',require('./routes/referralRoutes'))
 

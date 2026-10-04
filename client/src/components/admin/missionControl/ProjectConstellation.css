@@ -1,0 +1,389 @@
+.constellation-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background: #0F172A;
+  overflow: hidden;
+}
+
+.constellation-stage {
+  position: absolute;
+  inset: 0;
+}
+
+.constellation-stage canvas {
+  display: block;
+  cursor: grab;
+}
+
+.constellation-stage canvas:active {
+  cursor: grabbing;
+}
+
+.constellation-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.nl {
+  position: absolute;
+  transform: translate(-50%, 0);
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 1px 4px #000, 0 0 8px #000;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.nl b {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+.nl span {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+}
+
+.constellation-bar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  z-index: 3;
+}
+
+.constellation-bar button {
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #E2E8F0;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.constellation-bar button:hover {
+  background: #334155;
+}
+
+.constellation-bar button.on,
+.constellation-bar button.btn-add {
+  background: #3B82F6;
+  border-color: #3B82F6;
+}
+
+.constellation-bar button.on:hover,
+.constellation-bar button.btn-add:hover {
+  background: #2563EB;
+}
+
+.constellation-legend {
+  position: absolute;
+  left: 10px;
+  bottom: 44px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  z-index: 3;
+  max-width: calc(100% - 20px);
+}
+
+.constellation-legend button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid #334155;
+  border-radius: 6px;
+  font-size: 11px;
+  padding: 5px 10px;
+  color: #E2E8F0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.constellation-legend button:hover {
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.constellation-legend button.off {
+  opacity: 0.35;
+}
+
+.sw {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.constellation-readout {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  z-index: 3;
+  pointer-events: none;
+  text-shadow: 0 1px 3px #000;
+}
+
+.constellation-info {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 280px;
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 12px;
+  z-index: 4;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.constellation-info .info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+.constellation-info .info-header button {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.constellation-info .info-header button:hover {
+  color: #E2E8F0;
+}
+
+.constellation-info .mono {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #64748B;
+  margin-bottom: 4px;
+}
+
+.constellation-info h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+.constellation-info .sub-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  margin-bottom: 6px;
+}
+
+.constellation-info .info-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.constellation-info .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.constellation-info .row span:first-child {
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.constellation-info .row span:last-child {
+  color: #E2E8F0;
+  text-align: right;
+}
+
+.constellation-info .info-footer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #334155;
+}
+
+.constellation-info .btn-delete {
+  width: 100%;
+  background: #991B1B;
+  border: 1px solid #B91C1C;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #FCA5A5;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.constellation-info .btn-delete:hover {
+  background: #B91C1C;
+  color: #FECACA;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 500px;
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+.modal-header button {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.modal-header button:hover {
+  color: #E2E8F0;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: #0F172A;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: #E2E8F0;
+  font-size: 13px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3B82F6;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.btn-secondary,
+.btn-primary {
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-secondary {
+  background: #334155;
+  color: #E2E8F0;
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+.btn-primary {
+  background: #3B82F6;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #2563EB;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
