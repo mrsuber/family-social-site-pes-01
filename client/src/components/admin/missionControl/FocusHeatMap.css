@@ -28,7 +28,7 @@
   align-items: baseline;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .focus-heat-map-title {
@@ -127,14 +127,13 @@
   cursor: grabbing;
 }
 
-.critical-card {
+.critical-lane .heat-map-card {
   border: 1px solid rgba(239, 68, 68, 0.55);
   box-shadow: 0 0 22px rgba(239, 68, 68, 0.18);
 }
 
-.critical-card:hover {
+.critical-lane .heat-map-card:hover {
   box-shadow: 0 0 32px rgba(239, 68, 68, 0.28);
-  transform: translateY(-2px);
 }
 
 .active-card {
@@ -143,7 +142,6 @@
 
 .active-card:hover {
   border-color: rgba(245, 158, 11, 0.6);
-  transform: translateY(-2px);
 }
 
 /* Card Content */
@@ -159,13 +157,14 @@
   color: #CBD5E1;
 }
 
-.card-progress {
+/* Horizontal Progress Bar */
+.card-progress-row {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.progress-bar {
+.progress-bar-horizontal {
   flex: 1;
   height: 6px;
   background: #0F172A;
@@ -173,27 +172,25 @@
   overflow: hidden;
 }
 
-.progress-fill {
+.progress-fill-red {
   height: 100%;
-  transition: width 0.3s;
-}
-
-.critical-fill {
   background: #EF4444;
+  transition: width 0.4s;
 }
 
-.active-fill {
+.progress-fill-amber {
+  height: 100%;
   background: #F59E0B;
+  transition: width 0.4s;
 }
 
-.progress-text {
+.progress-pct {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 12px;
   color: #E2E8F0;
-  min-width: 40px;
-  text-align: right;
 }
 
+/* Card Missing */
 .card-missing {
   font-size: 13px;
   color: #FCA5A5;
@@ -210,15 +207,13 @@
   color: #CBD5E1;
 }
 
-.card-status {
+/* Card Status */
+.card-status-ok {
   font-size: 13px;
-}
-
-.card-status.success {
   color: #10B981;
 }
 
-.card-hours {
+.card-time-week {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
   color: #94A3B8;
@@ -230,6 +225,7 @@
   gap: 8px;
   margin-top: auto;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .card-actions button {
@@ -249,8 +245,6 @@
 
 .btn-work-now:hover {
   background: #DC2626;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
 .btn-monitor,
@@ -263,6 +257,19 @@
 .btn-monitor:hover,
 .btn-details:hover {
   background: #475569;
+}
+
+.link-profundra {
+  font-size: 12px;
+  color: #93C5FD;
+  text-decoration: none;
+  margin-left: auto;
+  align-self: center;
+}
+
+.link-profundra:hover {
+  color: #BFDBFE;
+  text-decoration: underline;
 }
 
 /* Hold Lane Chips */
@@ -288,18 +295,13 @@
 
 .hold-chip:hover {
   background: #334155;
-  border-color: #475569;
 }
 
 .hold-chip:active {
   cursor: grabbing;
 }
 
-.hold-chip-title {
-  color: #E2E8F0;
-}
-
-.hold-chip-resume {
+.chip-resume {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
   color: #94A3B8;

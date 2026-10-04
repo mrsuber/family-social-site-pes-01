@@ -13,40 +13,8 @@ const FocusHeatMap = () => {
   });
 
   useEffect(() => {
-    loadProjects();
+    loadMockData();
   }, []);
-
-  const loadProjects = async () => {
-    try {
-      // Load all projects and categorize by priority
-      const res = await getAPI('projects', auth.token);
-      if (res.data.success) {
-        const projects = res.data.data || [];
-
-        // Categorize projects by status/priority
-        const critical = projects.filter(p =>
-          p.priority === 'critical' || p.status === 'critical'
-        );
-        const active = projects.filter(p =>
-          (p.priority === 'active' || p.status === 'active') &&
-          p.priority !== 'critical' && p.status !== 'critical'
-        );
-        const hold = projects.filter(p =>
-          p.status === 'on_hold' || p.status === 'planning'
-        );
-
-        setLanes({
-          critical: critical.map(p => formatProjectCard(p)),
-          active: active.map(p => formatProjectCard(p)),
-          hold: hold.map(p => formatProjectCard(p))
-        });
-      }
-    } catch (err) {
-      console.error('Error loading projects for heat map:', err);
-      // Load default/mock data if backend not ready
-      loadMockData();
-    }
-  };
 
   const loadMockData = () => {
     setLanes({
@@ -54,7 +22,7 @@ const FocusHeatMap = () => {
         {
           id: 'suberfood',
           title: 'SuberFood Platform',
-          meta: ['6 days until Ali arrives', 'Due Oct 31 · 27 days'],
+          meta: ['7 days until Ali arrives', 'Due Oct 31 · 28 days'],
           pct: 70,
           missing: ['Pre-orders', 'Wallet system', 'PayWithCamsol'],
           hours: '12h',
@@ -65,13 +33,14 @@ const FocusHeatMap = () => {
         {
           id: 'camsol-sdo',
           title: 'Camsol SDO Report',
-          meta: ['Due Oct 20 · 16 days'],
+          meta: ['Due Oct 20 · 17 days'],
           pct: 60,
           ok: 'On track',
           hours: '24h',
           hasOk: true,
           hasPct: true,
-          hasHours: true
+          hasHours: true,
+          hasPf: true
         }
       ],
       active: [
@@ -85,8 +54,7 @@ const FocusHeatMap = () => {
         {
           id: 'craftex',
           title: 'SuberCraftex',
-          meta: ['106 products · low revenue', 'Needs marketing — after SuberFood'],
-          hasOk: false
+          meta: ['106 products · low revenue', 'Needs marketing — after SuberFood']
         }
       ],
       hold: [
@@ -109,19 +77,6 @@ const FocusHeatMap = () => {
     });
   };
 
-  const formatProjectCard = (project) => {
-    return {
-      id: project.id,
-      title: project.name,
-      meta: [project.description || ''],
-      pct: project.progress || 0,
-      hasPct: !!project.progress,
-      hasOk: project.status === 'active',
-      ok: project.status === 'active' ? 'On track' : '',
-      resume: project.resumeDate || ''
-    };
-  };
-
   const handleDragStart = (e, itemId, sourceLane) => {
     setDraggedItem({ id: itemId, source: sourceLane });
     e.dataTransfer.effectAllowed = 'move';
@@ -134,21 +89,16 @@ const FocusHeatMap = () => {
 
   const handleDrop = async (e, targetLane) => {
     e.preventDefault();
-
-    if (!draggedItem) return;
-
-    const { id, source } = draggedItem;
-
-    if (source === targetLane) {
+    if (!draggedItem || draggedItem.source === targetLane) {
       setDraggedItem(null);
       return;
     }
 
-    // Move item between lanes
+    const { id, source } = draggedItem;
     const sourceItems = [...lanes[source]];
     const targetItems = [...lanes[targetLane]];
-
     const itemIndex = sourceItems.findIndex(item => item.id === id);
+
     if (itemIndex === -1) return;
 
     const [movedItem] = sourceItems.splice(itemIndex, 1);
@@ -161,27 +111,6 @@ const FocusHeatMap = () => {
     });
 
     setDraggedItem(null);
-
-    // Update backend if project exists
-    try {
-      let newStatus = 'active';
-      if (targetLane === 'critical') newStatus = 'critical';
-      if (targetLane === 'hold') newStatus = 'on_hold';
-
-      await putAPI(`projects/${id}`, { status: newStatus }, auth.token);
-    } catch (err) {
-      console.error('Error updating project priority:', err);
-    }
-  };
-
-  const handleWorkNow = (itemId) => {
-    console.log('Starting work on:', itemId);
-    // Can add routing or modal here
-  };
-
-  const handleDetails = (itemId) => {
-    console.log('Show details for:', itemId);
-    // Can add modal or routing here
   };
 
   const pulseRed = (
@@ -191,8 +120,7 @@ const FocusHeatMap = () => {
       height: 8,
       borderRadius: '50%',
       background: '#EF4444',
-      animation: 'ecc-pulse 1.6s infinite',
-      flexShrink: 0
+      animation: 'ecc-pulse 1.6s infinite'
     }}></span>
   );
 
@@ -200,9 +128,7 @@ const FocusHeatMap = () => {
     <section className="focus-heat-map">
       <div className="focus-heat-map-header">
         <div className="focus-heat-map-title">02 · FOCUS HEAT MAP</div>
-        <div className="focus-heat-map-subtitle">
-          Drag cards between lanes to change priority
-        </div>
+        <div className="focus-heat-map-subtitle">Drag cards between lanes to change priority</div>
       </div>
 
       {/* CRITICAL Lane */}
@@ -218,24 +144,25 @@ const FocusHeatMap = () => {
           {lanes.critical.map(item => (
             <div
               key={item.id}
-              className="heat-map-card critical-card"
+              className="heat-map-card"
               draggable
               onDragStart={(e) => handleDragStart(e, item.id, 'critical')}
             >
               <div className="card-title">{item.title}</div>
+
               {item.meta.map((m, i) => (
                 <div key={i} className="card-meta">{m}</div>
               ))}
 
               {item.hasPct && (
-                <div className="card-progress">
-                  <div className="progress-bar">
+                <div className="card-progress-row">
+                  <div className="progress-bar-horizontal">
                     <div
-                      className="progress-fill critical-fill"
+                      className="progress-fill-red"
                       style={{ width: `${item.pct}%` }}
                     ></div>
                   </div>
-                  <span className="progress-text">{item.pct}%</span>
+                  <span className="progress-pct">{item.pct}%</span>
                 </div>
               )}
 
@@ -249,20 +176,26 @@ const FocusHeatMap = () => {
               )}
 
               {item.hasOk && (
-                <div className="card-status success">✓ {item.ok}</div>
+                <div className="card-status-ok">✓ {item.ok}</div>
               )}
 
               {item.hasHours && (
-                <div className="card-hours">TIME THIS WEEK · {item.hours}</div>
+                <div className="card-time-week">TIME THIS WEEK · {item.hours}</div>
               )}
 
               <div className="card-actions">
-                <button className="btn-work-now" onClick={() => handleWorkNow(item.id)}>
-                  Work now
-                </button>
-                <button className="btn-details" onClick={() => handleDetails(item.id)}>
-                  Details
-                </button>
+                <button className="btn-work-now">Work now</button>
+                <button className="btn-details">Details</button>
+                {item.hasPf && (
+                  <a
+                    href="https://profundra.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-profundra"
+                  >
+                    View in ProFundra →
+                  </a>
+                )}
               </div>
             </div>
           ))}
@@ -287,33 +220,30 @@ const FocusHeatMap = () => {
               onDragStart={(e) => handleDragStart(e, item.id, 'active')}
             >
               <div className="card-title">{item.title}</div>
+
               {item.meta.map((m, i) => (
                 <div key={i} className="card-meta">{m}</div>
               ))}
 
               {item.hasPct && (
-                <div className="card-progress">
-                  <div className="progress-bar">
+                <div className="card-progress-row">
+                  <div className="progress-bar-horizontal">
                     <div
-                      className="progress-fill active-fill"
+                      className="progress-fill-amber"
                       style={{ width: `${item.pct}%` }}
                     ></div>
                   </div>
-                  <span className="progress-text">{item.pct}%</span>
+                  <span className="progress-pct">{item.pct}%</span>
                 </div>
               )}
 
               {item.hasOk && (
-                <div className="card-status success">✓ {item.ok}</div>
+                <div className="card-status-ok">✓ {item.ok}</div>
               )}
 
               <div className="card-actions">
-                <button className="btn-monitor" onClick={() => handleWorkNow(item.id)}>
-                  Monitor
-                </button>
-                <button className="btn-details" onClick={() => handleDetails(item.id)}>
-                  Details
-                </button>
+                <button className="btn-monitor">Monitor</button>
+                <button className="btn-details">Details</button>
               </div>
             </div>
           ))}
@@ -336,10 +266,9 @@ const FocusHeatMap = () => {
               className="hold-chip"
               draggable
               onDragStart={(e) => handleDragStart(e, item.id, 'hold')}
-              onClick={() => handleDetails(item.id)}
             >
-              <span className="hold-chip-title">{item.title}</span>
-              <span className="hold-chip-resume">→ {item.resume}</span>
+              <span>{item.title}</span>
+              <span className="chip-resume">→ {item.resume}</span>
             </div>
           ))}
         </div>
