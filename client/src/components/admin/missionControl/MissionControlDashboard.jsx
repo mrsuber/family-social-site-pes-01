@@ -38,8 +38,12 @@ import RestaurantDetailModal from './RestaurantDetailModal';
 import LifeOperationsCanvas from './LifeOperationsCanvas';
 import DailyTimetableCard from './DailyTimetableCard';
 import EmpireCommandCenter from './EmpireCommandCenter';
+import MorningBriefModal from './MorningBriefModal';
+import AliView from './AliView';
+import FocusHeatMap from './FocusHeatMap';
+import EnergyFlows from './EnergyFlows';
 import { getAPI, postAPI, putAPI, deleteAPI } from '../../../utils/fetchData';
-import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet, Schedule, Public } from '@material-ui/icons';
+import { Search, Add, Brightness4, Brightness7, Dashboard, People, Assessment, Business, Refresh, Delete, AccountBalanceWallet, Schedule, Public, WbSunny, PersonOutline, Whatshot, TrendingUp } from '@material-ui/icons';
 import { useReactFlow } from 'reactflow';
 import { useSelector } from 'react-redux';
 
@@ -106,6 +110,8 @@ const MissionControlDashboard = () => {
   const [contextMenu, setContextMenu] = useState(null);
   const [formData, setFormData] = useState({});
   const [parentNodeForNewResource, setParentNodeForNewResource] = useState(null);
+  const [showMorningBrief, setShowMorningBrief] = useState(false);
+  const [viewMode, setViewMode] = useState('commander'); // 'commander' or 'ali'
 
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
@@ -1679,6 +1685,11 @@ const MissionControlDashboard = () => {
 
   const { filteredNodes, filteredEdges } = getFilteredNodesAndEdges();
 
+  // If Ali's view is selected, render that instead
+  if (viewMode === 'ali') {
+    return <AliView onSwitchToCommander={() => setViewMode('commander')} />;
+  }
+
   return (
     <div className={`mission-control ${darkMode ? 'dark-mode' : 'light-mode'}`}>
       {/* Top Bar */}
@@ -1691,6 +1702,12 @@ const MissionControlDashboard = () => {
           </div>
         </div>
         <div className="mc-topbar-right">
+          <button className="mc-icon-btn" onClick={() => setShowMorningBrief(true)} title="Morning Brief">
+            <WbSunny /> Morning brief
+          </button>
+          <button className="mc-icon-btn" onClick={() => setViewMode(viewMode === 'commander' ? 'ali' : 'commander')} title="Switch View">
+            <PersonOutline /> {viewMode === 'commander' ? "Ali's view" : "Commander view"}
+          </button>
           <button className="mc-icon-btn" onClick={resetLayout} title="Reset Layout">
             <Refresh />
           </button>
@@ -1751,6 +1768,18 @@ const MissionControlDashboard = () => {
             >
               <Public /> Global Assets & Resources
             </button>
+            <button
+              className={`mc-sidebar-item ${selectedView === 'focusHeatMap' ? 'active' : ''}`}
+              onClick={() => setSelectedView('focusHeatMap')}
+            >
+              <Whatshot /> Focus Heat Map
+            </button>
+            <button
+              className={`mc-sidebar-item ${selectedView === 'energyFlows' ? 'active' : ''}`}
+              onClick={() => setSelectedView('energyFlows')}
+            >
+              <TrendingUp /> Energy Flows
+            </button>
           </div>
 
           <div className="mc-sidebar-section">
@@ -1798,6 +1827,10 @@ const MissionControlDashboard = () => {
             <LifeOperationsCanvas />
           ) : selectedView === 'globalAssets' ? (
             <EmpireCommandCenter />
+          ) : selectedView === 'focusHeatMap' ? (
+            <FocusHeatMap />
+          ) : selectedView === 'energyFlows' ? (
+            <EnergyFlows />
           ) : (
             <ReactFlow
               nodes={filteredNodes}
@@ -2549,6 +2582,16 @@ const MissionControlDashboard = () => {
             )}
           </div>
         </div>
+      )}
+
+      {/* Morning Brief Modal */}
+      {showMorningBrief && (
+        <MorningBriefModal
+          onClose={() => setShowMorningBrief(false)}
+          onBeginDay={() => {
+            console.log('Day started - focus on priorities');
+          }}
+        />
       )}
     </div>
   );

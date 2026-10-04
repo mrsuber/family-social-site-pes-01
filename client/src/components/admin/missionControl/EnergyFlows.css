@@ -1,0 +1,321 @@
+.energy-flows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  background: #0F172A;
+  min-height: 100vh;
+  max-width: 600px;
+}
+
+.energy-flows-header {
+  margin-bottom: 6px;
+}
+
+.energy-flows-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: #94A3B8;
+}
+
+/* Energy Card */
+.energy-card {
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.energy-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #E2E8F0;
+}
+
+.card-subtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #94A3B8;
+}
+
+/* Time Rows */
+.time-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.time-row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 84px;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+  color: #E2E8F0;
+}
+
+.time-label {
+  color: #E2E8F0;
+}
+
+.time-bar-container {
+  height: 12px;
+  background: #0F172A;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.time-bar-fill {
+  height: 100%;
+  transition: width 0.4s;
+}
+
+.time-stats {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  text-align: right;
+  color: #E2E8F0;
+}
+
+/* Manual Controls */
+.manual-controls {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  background: #0F172A;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.manual-slider {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 40px;
+  gap: 8px;
+  align-items: center;
+  color: #E2E8F0;
+}
+
+.manual-slider input[type="range"] {
+  accent-color: #3B82F6;
+  width: 100%;
+}
+
+.manual-slider span:last-child {
+  font-family: 'IBM Plex Mono', monospace;
+  text-align: right;
+}
+
+/* Time Warning */
+.time-warning {
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.warning-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.warning-body {
+  color: #CBD5E1;
+}
+
+/* Cash Flow */
+.cash-section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #6EE7B7;
+  margin-top: 4px;
+}
+
+.expenses-label {
+  color: #FCA5A5;
+  margin-top: 6px;
+}
+
+.cash-row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 92px;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+  color: #E2E8F0;
+}
+
+.cash-label {
+  color: #E2E8F0;
+}
+
+.cash-bar-container {
+  height: 10px;
+  background: #0F172A;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.cash-bar-fill {
+  height: 100%;
+  transition: width 0.4s;
+}
+
+.income-bar {
+  background: #10B981;
+  width: 100%;
+}
+
+.expense-bar {
+  background: #EF4444;
+  opacity: 0.8;
+}
+
+.net-bar {
+  background: #10B981;
+}
+
+.cash-amount {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  text-align: right;
+  color: #E2E8F0;
+}
+
+.net-row {
+  border-top: 1px solid #334155;
+  padding-top: 8px;
+  margin-top: 2px;
+}
+
+.net-row .cash-label {
+  font-weight: 600;
+}
+
+.net-amount {
+  color: #10B981;
+  font-weight: 600;
+}
+
+.cash-meta {
+  display: flex;
+  gap: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #94A3B8;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+/* Team Status */
+.team-members {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.team-member-card {
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+}
+
+.team-member-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.team-member-name {
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+.team-member-status {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.team-member-role {
+  color: #94A3B8;
+}
+
+.team-member-allocation {
+  color: #94A3B8;
+}
+
+.team-member-warning {
+  color: #FCA5A5;
+}
+
+/* Action Buttons */
+.energy-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn-primary,
+.btn-secondary {
+  border-radius: 6px;
+  padding: 7px 12px;
+  font: 500 12px 'IBM Plex Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-primary {
+  background: #3B82F6;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #2563EB;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #E2E8F0;
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .energy-flows {
+    padding: 12px;
+  }
+
+  .time-row,
+  .cash-row {
+    grid-template-columns: 100px minmax(0, 1fr) 80px;
+    gap: 8px;
+  }
+
+  .manual-slider {
+    grid-template-columns: 100px minmax(0, 1fr) 35px;
+  }
+}

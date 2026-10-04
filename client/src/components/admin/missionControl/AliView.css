@@ -1,0 +1,220 @@
+.ali-view-container {
+  min-height: 100vh;
+  background: #0F172A;
+  padding: 32px 24px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.ali-view-content {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ali-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ali-view-subtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: #94A3B8;
+}
+
+.ali-switch-btn {
+  background: #1E293B;
+  border: 1px solid #334155;
+  color: #E2E8F0;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font: 500 12px 'IBM Plex Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ali-switch-btn:hover {
+  background: #334155;
+  border-color: #475569;
+}
+
+.ali-welcome-card {
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.ali-welcome-name {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #E2E8F0;
+}
+
+.ali-welcome-role {
+  color: #94A3B8;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.ali-welcome-stats {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.ali-stat-box {
+  background: #0F172A;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ali-stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: #94A3B8;
+  letter-spacing: 0.1em;
+}
+
+.ali-stat-value {
+  font-weight: 600;
+  color: #E2E8F0;
+  font-size: 14px;
+}
+
+.ali-tasks-card,
+.ali-upcoming-card {
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.ali-card-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: #94A3B8;
+  margin-bottom: 10px;
+}
+
+.ali-task-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #334155;
+  cursor: pointer;
+  font-size: 15px;
+  color: #E2E8F0;
+  transition: all 0.2s;
+}
+
+.ali-task-item:hover {
+  background: rgba(51, 65, 85, 0.3);
+  margin: 0 -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 6px;
+}
+
+.ali-task-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #10B981;
+  cursor: pointer;
+}
+
+.ali-task-label {
+  color: #E2E8F0;
+  transition: all 0.2s;
+}
+
+.ali-task-label.done {
+  color: #64748B;
+  text-decoration: line-through;
+}
+
+.ali-timeline {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px 16px;
+  font-size: 14px;
+}
+
+.ali-timeline-date {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.ali-timeline-date.amber {
+  color: #F59E0B;
+}
+
+.ali-timeline-date.red {
+  color: #EF4444;
+}
+
+.ali-timeline-desc {
+  color: #E2E8F0;
+}
+
+.ali-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.ali-btn-secondary,
+.ali-btn-primary {
+  flex: 1;
+  border-radius: 8px;
+  padding: 12px;
+  font: 500 14px 'IBM Plex Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ali-btn-secondary {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #E2E8F0;
+}
+
+.ali-btn-secondary:hover {
+  background: #475569;
+}
+
+.ali-btn-primary {
+  background: #3B82F6;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.ali-btn-primary:hover {
+  background: #2563EB;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.ali-btn-secondary svg,
+.ali-btn-primary svg {
+  font-size: 18px;
+}
