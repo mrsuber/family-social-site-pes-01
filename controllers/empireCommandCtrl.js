@@ -259,6 +259,128 @@ const empireCommandCtrl = {
     } catch (err) {
       return res.status(500).json({ msg: err.message });
     }
+  },
+
+  // Update expense
+  updateExpense: async (req, res) => {
+    try {
+      const { index, name, amount } = req.body;
+
+      if (index === undefined || (!name && !amount)) {
+        return res.status(400).json({ msg: 'Index and at least one field (name or amount) are required' });
+      }
+
+      const commandData = await EmpireCommand.findOne({ userId: req.user.id });
+
+      if (!commandData) {
+        return res.status(404).json({ msg: 'Empire Command data not found' });
+      }
+
+      if (index < 0 || index >= commandData.expenses.length) {
+        return res.status(400).json({ msg: 'Invalid expense index' });
+      }
+
+      if (name) commandData.expenses[index].name = name;
+      if (amount !== undefined) commandData.expenses[index].amount = amount;
+
+      await commandData.save();
+
+      res.json({
+        msg: 'Expense updated',
+        data: commandData
+      });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  },
+
+  // Delete expense
+  deleteExpense: async (req, res) => {
+    try {
+      const { index } = req.body;
+
+      if (index === undefined) {
+        return res.status(400).json({ msg: 'Index is required' });
+      }
+
+      const commandData = await EmpireCommand.findOne({ userId: req.user.id });
+
+      if (!commandData) {
+        return res.status(404).json({ msg: 'Empire Command data not found' });
+      }
+
+      if (index < 0 || index >= commandData.expenses.length) {
+        return res.status(400).json({ msg: 'Invalid expense index' });
+      }
+
+      commandData.expenses.splice(index, 1);
+      await commandData.save();
+
+      res.json({
+        msg: 'Expense deleted',
+        data: commandData
+      });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  },
+
+  // Update income
+  updateIncome: async (req, res) => {
+    try {
+      const { income } = req.body;
+
+      if (income === undefined) {
+        return res.status(400).json({ msg: 'Income is required' });
+      }
+
+      const commandData = await EmpireCommand.findOneAndUpdate(
+        { userId: req.user.id },
+        { $set: { income } },
+        { new: true }
+      );
+
+      if (!commandData) {
+        return res.status(404).json({ msg: 'Empire Command data not found' });
+      }
+
+      res.json({
+        msg: 'Income updated',
+        data: commandData
+      });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  },
+
+  // Auto-adjust time allocation
+  autoAdjustTime: async (req, res) => {
+    try {
+      // Suggested allocation for SuberFood deadline:
+      // Camsol SDO: 20h (50%), SuberFood: 16h (40%), Admin: 4h (10%)
+      const commandData = await EmpireCommand.findOneAndUpdate(
+        { userId: req.user.id },
+        {
+          $set: {
+            'timeAllocation.camsol': 20,
+            'timeAllocation.suberfood': 16,
+            'timeAllocation.admin': 4
+          }
+        },
+        { new: true }
+      );
+
+      if (!commandData) {
+        return res.status(404).json({ msg: 'Empire Command data not found' });
+      }
+
+      res.json({
+        msg: 'Time allocation auto-adjusted',
+        data: commandData
+      });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
   }
 };
 

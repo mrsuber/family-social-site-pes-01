@@ -86,6 +86,63 @@ const EmpireCommandCenter = () => {
     setTimeout(() => setToast(null), 2600);
   };
 
+  // Auto-adjust time allocation
+  const handleAutoAdjust = async () => {
+    try {
+      await putAPI('empire-command/time-allocation/auto-adjust', null, auth.token);
+      await loadCommandData();
+      showToast('Time rebalanced: SDO 20h · SuberFood 16h');
+    } catch (err) {
+      showToast('Error adjusting time: ' + err.response?.data?.msg || err.message);
+    }
+  };
+
+  // Update time allocation
+  const handleUpdateTimeAllocation = async (camsol, suberfood, admin) => {
+    try {
+      await putAPI('empire-command/time-allocation', { camsol, suberfood, admin }, auth.token);
+      await loadCommandData();
+      showToast('Time allocation updated');
+      setShowModal(null);
+    } catch (err) {
+      showToast('Error updating time: ' + err.response?.data?.msg || err.message);
+    }
+  };
+
+  // Add expense
+  const handleAddExpense = async (name, amount) => {
+    try {
+      await postAPI('empire-command/expense', { name, amount }, auth.token);
+      await loadCommandData();
+      showToast('Expense added');
+      setShowModal(null);
+    } catch (err) {
+      showToast('Error adding expense: ' + err.response?.data?.msg || err.message);
+    }
+  };
+
+  // Update expense
+  const handleUpdateExpense = async (index, name, amount) => {
+    try {
+      await putAPI('empire-command/expense', { index, name, amount }, auth.token);
+      await loadCommandData();
+      showToast('Expense updated');
+    } catch (err) {
+      showToast('Error updating expense: ' + err.response?.data?.msg || err.message);
+    }
+  };
+
+  // Delete expense
+  const handleDeleteExpense = async (index) => {
+    try {
+      await deleteAPI('empire-command/expense', auth.token, { index });
+      await loadCommandData();
+      showToast('Expense deleted');
+    } catch (err) {
+      showToast('Error deleting expense: ' + err.response?.data?.msg || err.message);
+    }
+  };
+
   const formatCurrency = (amount) => {
     return amount.toLocaleString('en-US') + ' XAF';
   };
@@ -312,8 +369,8 @@ const EmpireCommandCenter = () => {
             </div>
 
             <div className="action-buttons">
-              <button className="btn-primary" onClick={() => showToast('Time rebalanced: SDO 20h · SuberFood 16h')}>Auto-adjust</button>
-              <button>Manual override</button>
+              <button className="btn-primary" onClick={handleAutoAdjust}>Auto-adjust</button>
+              <button onClick={() => setShowModal('time-edit')}>Manual override</button>
             </div>
           </div>
         </section>
@@ -354,7 +411,8 @@ const EmpireCommandCenter = () => {
           <div className="fab-menu">
             <button onClick={() => { setShowModal('eod'); setFabOpen(false); }}>Log work done today</button>
             <button onClick={() => { setShowModal('tasks'); setFabOpen(false); }}>Update project status</button>
-            <button onClick={() => { setShowModal('expense'); setFabOpen(false); }}>Add expense</button>
+            <button onClick={() => { setShowModal('expense'); setFabOpen(false); }}>Manage expenses</button>
+            <button onClick={() => { setShowModal('time-edit'); setFabOpen(false); }}>Edit time allocation</button>
             <button onClick={() => window.open('https://profundra.com', '_blank')}>Create task in ProFundra</button>
           </div>
         )}
@@ -366,8 +424,28 @@ const EmpireCommandCenter = () => {
       {/* Toast Notifications */}
       {toast && <div className="toast">{toast}</div>}
 
-      {/* Modals would go here - simplified for now */}
-      {showModal && (
+      {/* Time Allocation Edit Modal */}
+      {showModal === 'time-edit' && (
+        <TimeEditModal
+          data={data}
+          onSave={handleUpdateTimeAllocation}
+          onClose={() => setShowModal(null)}
+        />
+      )}
+
+      {/* Expense Management Modal */}
+      {showModal === 'expense' && (
+        <ExpenseModal
+          data={data}
+          onAdd={handleAddExpense}
+          onUpdate={handleUpdateExpense}
+          onDelete={handleDeleteExpense}
+          onClose={() => setShowModal(null)}
+        />
+      )}
+
+      {/* Other modals would go here */}
+      {showModal && !['time-edit', 'expense'].includes(showModal) && (
         <div className="modal-overlay" onClick={() => setShowModal(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>{showModal} Modal</h2>
@@ -418,6 +496,148 @@ const TimeBar = ({ label, hours, color }) => {
         <div className="time-fill" style={{ width: `${percentage}%`, backgroundColor: color }}></div>
       </div>
       <span className="time-hours">{Math.round(percentage)}% · {hours}h</span>
+    </div>
+  );
+};
+
+// Time Allocation Edit Modal
+const TimeEditModal = ({ data, onSave, onClose }) => {
+  const [camsol, setCamsol] = useState(data.timeAllocation?.camsol || 0);
+  const [suberfood, setSuberfood] = useState(data.timeAllocation?.suberfood || 0);
+  const [admin, setAdmin] = useState(data.timeAllocation?.admin || 0);
+
+  const total = camsol + suberfood + admin;
+
+  const handleSave = () => {
+    if (total > 40) {
+      alert('Total hours cannot exceed 40 hours per week');
+      return;
+    }
+    onSave(camsol, suberfood, admin);
+  };
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-header">
+          <h2>Edit Time Allocation</h2>
+          <button onClick={onClose}>×</button>
+        </div>
+        <div className="modal-body">
+          <div className="form-group">
+            <label>Camsol SDO</label>
+            <input
+              type="number"
+              value={camsol}
+              onChange={(e) => setCamsol(Number(e.target.value))}
+              min="0"
+              max="40"
+            />
+          </div>
+          <div className="form-group">
+            <label>SuberFood Dev</label>
+            <input
+              type="number"
+              value={suberfood}
+              onChange={(e) => setSuberfood(Number(e.target.value))}
+              min="0"
+              max="40"
+            />
+          </div>
+          <div className="form-group">
+            <label>Planning / Admin</label>
+            <input
+              type="number"
+              value={admin}
+              onChange={(e) => setAdmin(Number(e.target.value))}
+              min="0"
+              max="40"
+            />
+          </div>
+          <div className="form-group">
+            <strong>Total: {total}h / 40h</strong>
+            {total > 40 && <span style={{ color: '#EF4444', marginLeft: '10px' }}>Exceeds 40 hours!</span>}
+          </div>
+        </div>
+        <div className="modal-footer">
+          <button className="btn-secondary" onClick={onClose}>Cancel</button>
+          <button className="btn-primary" onClick={handleSave}>Save Changes</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Expense Management Modal
+const ExpenseModal = ({ data, onAdd, onUpdate, onDelete, onClose }) => {
+  const [expenses, setExpenses] = useState(data.expenses || []);
+  const [newExpenseName, setNewExpenseName] = useState('');
+  const [newExpenseAmount, setNewExpenseAmount] = useState('');
+
+  const handleAdd = () => {
+    if (!newExpenseName || !newExpenseAmount) {
+      alert('Please fill in both name and amount');
+      return;
+    }
+    onAdd(newExpenseName, Number(newExpenseAmount));
+    setNewExpenseName('');
+    setNewExpenseAmount('');
+  };
+
+  const handleUpdate = (index) => {
+    const expense = expenses[index];
+    onUpdate(index, expense.name, expense.amount);
+  };
+
+  const handleDelete = (index) => {
+    if (window.confirm(`Delete "${expenses[index].name}"?`)) {
+      onDelete(index);
+    }
+  };
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-header">
+          <h2>Manage Expenses</h2>
+          <button onClick={onClose}>×</button>
+        </div>
+        <div className="modal-body">
+          <div className="form-group">
+            <label>Add New Expense</label>
+            <div className="form-row">
+              <input
+                type="text"
+                placeholder="Expense name"
+                value={newExpenseName}
+                onChange={(e) => setNewExpenseName(e.target.value)}
+              />
+              <input
+                type="number"
+                placeholder="Amount (XAF)"
+                value={newExpenseAmount}
+                onChange={(e) => setNewExpenseAmount(e.target.value)}
+              />
+            </div>
+            <button className="btn-primary" onClick={handleAdd} style={{ marginTop: '10px' }}>
+              Add Expense
+            </button>
+          </div>
+          <div className="form-group">
+            <label>Current Expenses</label>
+            {expenses.map((expense, index) => (
+              <div key={index} style={{ display: 'flex', gap: '10px', marginBottom: '10px', alignItems: 'center' }}>
+                <span style={{ flex: 1 }}>{expense.name}</span>
+                <span style={{ width: '120px' }}>{expense.amount.toLocaleString()} XAF</span>
+                <button className="btn-secondary" onClick={() => handleDelete(index)}>Delete</button>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="modal-footer">
+          <button className="btn-secondary" onClick={onClose}>Close</button>
+        </div>
+      </div>
     </div>
   );
 };

@@ -8,11 +8,17 @@ router.get('/empire-command', auth, empireCommandCtrl.getEmpireCommand);
 // Update Empire Command data
 router.put('/empire-command', auth, empireCommandCtrl.updateEmpireCommand);
 
-// Update time allocation
+// Time Allocation
 router.put('/empire-command/time-allocation', auth, empireCommandCtrl.updateTimeAllocation);
+router.put('/empire-command/time-allocation/auto-adjust', auth, empireCommandCtrl.autoAdjustTime);
 
-// Add expense
+// Expenses
 router.post('/empire-command/expense', auth, empireCommandCtrl.addExpense);
+router.put('/empire-command/expense', auth, empireCommandCtrl.updateExpense);
+router.delete('/empire-command/expense', auth, empireCommandCtrl.deleteExpense);
+
+// Income
+router.put('/empire-command/income', auth, empireCommandCtrl.updateIncome);
 
 // Update project priority (move between lanes)
 router.put('/empire-command/project-priority', auth, empireCommandCtrl.updateProjectPriority);
