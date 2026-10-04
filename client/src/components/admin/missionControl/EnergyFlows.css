@@ -1,3 +1,18 @@
+@keyframes ecc-pulse {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 0 7px transparent;
+    opacity: 0.7;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+    opacity: 1;
+  }
+}
+
 .energy-flows {
   display: flex;
   flex-direction: column;
@@ -8,18 +23,13 @@
   max-width: 600px;
 }
 
-.energy-flows-header {
-  margin-bottom: 6px;
-}
-
-.energy-flows-title {
+.energy-title {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 12px;
   letter-spacing: 0.16em;
   color: #94A3B8;
 }
 
-/* Energy Card */
 .energy-card {
   background: #1E293B;
   border: 1px solid #334155;
@@ -30,13 +40,13 @@
   gap: 12px;
 }
 
-.energy-card-header {
+.card-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.card-title {
+.card-title-text {
   font-weight: 600;
   font-size: 16px;
   color: #E2E8F0;
@@ -49,12 +59,6 @@
 }
 
 /* Time Rows */
-.time-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
 .time-row {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr) 84px;
@@ -68,7 +72,7 @@
   color: #E2E8F0;
 }
 
-.time-bar-container {
+.time-bar-bg {
   height: 12px;
   background: #0F172A;
   border-radius: 3px;
@@ -90,30 +94,22 @@
 /* Manual Controls */
 .manual-controls {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
+  grid-template-columns: 120px minmax(0, 1fr) 40px;
+  gap: 8px 12px;
+  align-items: center;
+  font-size: 12px;
   background: #0F172A;
   border-radius: 8px;
   padding: 10px 12px;
-  font-size: 12px;
-}
-
-.manual-slider {
-  display: grid;
-  grid-template-columns: 120px minmax(0, 1fr) 40px;
-  gap: 8px;
-  align-items: center;
   color: #E2E8F0;
 }
 
-.manual-slider input[type="range"] {
+.manual-controls input[type="range"] {
   accent-color: #3B82F6;
-  width: 100%;
 }
 
-.manual-slider span:last-child {
+.manual-value {
   font-family: 'IBM Plex Mono', monospace;
-  text-align: right;
 }
 
 /* Time Warning */
@@ -134,15 +130,18 @@
 }
 
 /* Cash Flow */
-.cash-section-label {
+.section-label {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.12em;
-  color: #6EE7B7;
   margin-top: 4px;
 }
 
-.expenses-label {
+.income-label {
+  color: #6EE7B7;
+}
+
+.expense-label {
   color: #FCA5A5;
   margin-top: 6px;
 }
@@ -156,33 +155,39 @@
   color: #E2E8F0;
 }
 
-.cash-label {
+.cash-name {
   color: #E2E8F0;
 }
 
-.cash-bar-container {
+.cash-name-bold {
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+.cash-bar-full {
+  height: 12px;
+  border-radius: 3px;
+}
+
+.income-bar {
+  background: #10B981;
+}
+
+.cash-bar-bg {
   height: 10px;
   background: #0F172A;
   border-radius: 3px;
   overflow: hidden;
 }
 
-.cash-bar-fill {
+.expense-bar-fill {
   height: 100%;
-  transition: width 0.4s;
-}
-
-.income-bar {
-  background: #10B981;
-  width: 100%;
-}
-
-.expense-bar {
   background: #EF4444;
   opacity: 0.8;
 }
 
-.net-bar {
+.net-bar-fill {
+  height: 100%;
   background: #10B981;
 }
 
@@ -193,19 +198,18 @@
   color: #E2E8F0;
 }
 
+.cash-amount-net {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  text-align: right;
+  color: #10B981;
+  font-weight: 600;
+}
+
 .net-row {
   border-top: 1px solid #334155;
   padding-top: 8px;
   margin-top: 2px;
-}
-
-.net-row .cash-label {
-  font-weight: 600;
-}
-
-.net-amount {
-  color: #10B981;
-  font-weight: 600;
 }
 
 .cash-meta {
@@ -218,57 +222,11 @@
   flex-wrap: wrap;
 }
 
-/* Team Status */
-.team-members {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.team-member-card {
-  border-radius: 8px;
-  padding: 12px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  font-size: 13px;
-}
-
-.team-member-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  align-items: center;
-}
-
-.team-member-name {
-  font-weight: 600;
-  color: #E2E8F0;
-}
-
-.team-member-status {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.team-member-role {
-  color: #94A3B8;
-}
-
-.team-member-allocation {
-  color: #94A3B8;
-}
-
-.team-member-warning {
-  color: #FCA5A5;
-}
-
-/* Action Buttons */
-.energy-card-actions {
+/* Card Actions */
+.card-actions {
   display: flex;
   gap: 8px;
-  margin-top: 4px;
+  margin-top: 0;
 }
 
 .btn-primary,
@@ -289,8 +247,6 @@
 
 .btn-primary:hover {
   background: #2563EB;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .btn-secondary {
@@ -301,6 +257,69 @@
 
 .btn-secondary:hover {
   background: #475569;
+}
+
+/* Team Status */
+.team-card {
+  background: #0F172A;
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+}
+
+.commander-card {
+  border: 1px solid rgba(239, 68, 68, 0.45);
+}
+
+.ali-card {
+  border: 1px solid rgba(139, 92, 246, 0.5);
+}
+
+.kd-card {
+  border: 1px dashed #475569;
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.team-name {
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+.team-status {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.team-status.overloaded {
+  color: #EF4444;
+}
+
+.team-status.arriving {
+  color: #A78BFA;
+}
+
+.team-status.waiting {
+  color: #9CA3AF;
+}
+
+.team-role {
+  color: #94A3B8;
+}
+
+.team-warning {
+  color: #FCA5A5;
 }
 
 /* Responsive */
@@ -315,7 +334,7 @@
     gap: 8px;
   }
 
-  .manual-slider {
+  .manual-controls {
     grid-template-columns: 100px minmax(0, 1fr) 35px;
   }
 }
