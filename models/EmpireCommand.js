@@ -1,129 +1,135 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-// Empire Command Center - Main Dashboard Data
-const empireCommandSchema = new mongoose.Schema({
+const EmpireCommand = sequelize.define('EmpireCommand', {
+  id: {
+    type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV4,
+    primaryKey: true
+  },
   userId: {
-    type: mongoose.Types.ObjectId,
-    ref: 'user',
-    required: true
+    type: DataTypes.UUID,
+    allowNull: false,
+    unique: true,
+    field: 'user_id'
   },
 
   // Vital Signs
   vitalSigns: {
-    cashNet: {
-      type: Number,
-      default: 0
-    },
-    runway: {
-      type: Number,
-      default: 0
-    },
-    nextDeadline: {
-      title: String,
-      days: Number,
-      date: String
-    },
-    criticalProject: {
-      name: String,
-      completion: Number,
-      daysToLaunch: Number
-    },
-    peopleStatus: {
-      alertLevel: {
-        type: String,
-        enum: ['positive', 'warning', 'urgent', 'critical'],
-        default: 'positive'
+    type: DataTypes.JSONB,
+    defaultValue: {
+      cashNet: 238600,
+      runway: 2.5,
+      nextDeadline: {
+        title: 'Ali arrives',
+        days: 6,
+        date: 'Oct 10'
       },
-      message: String
-    }
+      criticalProject: {
+        name: 'SuberFood',
+        completion: 70,
+        daysToLaunch: 58
+      },
+      peopleStatus: {
+        alertLevel: 'urgent',
+        message: 'Training not ready'
+      }
+    },
+    field: 'vital_signs'
   },
 
   // Project Organization
   projects: {
-    critical: [{
-      type: String
-    }],
-    active: [{
-      type: String
-    }],
-    hold: [{
-      type: String
-    }]
+    type: DataTypes.JSONB,
+    defaultValue: {
+      critical: ['suberfood', 'sdo'],
+      active: ['pwc', 'craftex'],
+      hold: ['ngo', 'bank', 'growth']
+    }
   },
 
   // Time Allocation (hours per week)
   timeAllocation: {
-    camsol: {
-      type: Number,
-      default: 0
+    type: DataTypes.JSONB,
+    defaultValue: {
+      camsol: 24,
+      suberfood: 12,
+      admin: 4
     },
-    suberfood: {
-      type: Number,
-      default: 0
-    },
-    admin: {
-      type: Number,
-      default: 0
-    }
+    field: 'time_allocation'
   },
 
   // Financial Data
   income: {
-    type: Number,
-    default: 0
+    type: DataTypes.DECIMAL(12, 2),
+    defaultValue: 300000
   },
-  expenses: [{
-    name: String,
-    amount: Number
-  }],
+
+  expenses: {
+    type: DataTypes.JSONB,
+    defaultValue: [
+      { name: 'Rent', amount: 70000 },
+      { name: 'Food', amount: 50000 },
+      { name: 'Internet', amount: 30000 },
+      { name: 'Hosting / Cloud', amount: 18600 },
+      { name: 'Claude AI (×2)', amount: 24000 },
+      { name: 'Utilities', amount: 20000 },
+      { name: 'Other', amount: 26000 }
+    ]
+  },
 
   // Timeline Events
-  timeline: [{
-    date: String,
-    label: String,
-    month: Number,
-    day: Number,
-    color: String,
-    priority: {
-      type: String,
-      enum: ['low', 'medium', 'high', 'critical'],
-      default: 'medium'
-    }
-  }],
+  timeline: {
+    type: DataTypes.JSONB,
+    defaultValue: [
+      { date: 'Oct 10', label: 'Ali arrives', month: 9, day: 10, color: '#EF4444', priority: 'critical' },
+      { date: 'Oct 20', label: 'SDO report due', month: 9, day: 20, color: '#F59E0B', priority: 'high' },
+      { date: 'Oct 31', label: 'SuberFood platform complete', month: 9, day: 31, color: '#EF4444', priority: 'critical' },
+      { date: 'Nov 1–15', label: 'Ali surveys Buea customers', month: 10, day: 1, color: '#3B82F6', priority: 'medium' },
+      { date: 'Nov 16–30', label: 'Farmer visits — Foumbot, Yaoundé', month: 10, day: 16, color: '#3B82F6', priority: 'medium' },
+      { date: 'Dec 1', label: 'SuberFood launch', month: 11, day: 1, color: '#EF4444', priority: 'critical' }
+    ]
+  },
 
   // Team Members
-  team: [{
-    name: String,
-    role: String,
-    status: {
-      type: String,
-      enum: ['active', 'arriving', 'waiting', 'inactive'],
-      default: 'active'
-    },
-    arrivalDate: Date,
-    tasks: [String],
-    notes: String
-  }],
+  team: {
+    type: DataTypes.JSONB,
+    defaultValue: [
+      {
+        name: 'Ali Barkat',
+        role: 'SuberFood Operations Manager',
+        status: 'arriving',
+        arrivalDate: '2026-10-10',
+        tasks: ['Complete platform training', 'Review customer survey plan', 'Identify target quarters in Buea'],
+        notes: 'Living with you in Buea'
+      },
+      {
+        name: 'KD',
+        role: 'Accountant / tax compliance',
+        status: 'waiting',
+        notes: 'Hire when SuberFood hits 200K/mo'
+      }
+    ]
+  },
 
   // Custom Settings
   settings: {
-    viewMode: {
-      type: String,
-      enum: ['commander', 'ali'],
-      default: 'commander'
-    },
-    showMorningBrief: {
-      type: Boolean,
-      default: true
-    },
-    lastMorningBrief: Date
+    type: DataTypes.JSONB,
+    defaultValue: {
+      viewMode: 'commander',
+      showMorningBrief: true
+    }
   }
-
 }, {
-  timestamps: true
+  tableName: 'empire_commands',
+  underscored: true,
+  timestamps: true,
+  indexes: [
+    {
+      unique: true,
+      fields: ['user_id']
+    }
+  ]
 });
 
-// Index for quick user lookup
-empireCommandSchema.index({ userId: 1 });
-
-module.exports = mongoose.model('empireCommand', empireCommandSchema);
+module.exports = EmpireCommand;
