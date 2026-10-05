@@ -43,13 +43,15 @@ button:hover{background:#475569}
   <div id="bar">
    <div class="grp"><button data-v="africa">Africa</button><button data-v="cameroon" class="on">Cameroon</button><button data-v="buea">Buea</button><button data-v="survey">Survey zones</button></div>
    <div class="grp"><button data-b="dark" class="on">Dark</button><button data-b="streets">Streets</button><button data-b="satellite">Satellite</button></div>
-   <div class="grp"><button data-l="ops" class="on">Operations</button><button data-l="routes" class="on">Routes</button><button data-l="expand" class="on">Expansion</button></div>
+   <div class="grp"><button data-l="ops" class="on">Operations</button><button data-l="routes" class="on">Routes</button><button data-l="expand" class="on">Expansion</button><button data-l="suberfood" class="on" style="background:#10B981;color:#fff">SuberFood Clients</button></div>
+   <div class="grp"><button id="refreshClients">🔄 Refresh Clients</button></div>
   </div>
   <div id="cov">
    <div class="mono" style="font-size:10px">Coverage · 10 regions</div>
    <div class="lg"><span class="sw" style="background:#EF4444"></span>Active <b id="nA"></b></div>
    <div class="lg"><span class="sw" style="background:#3B82F6"></span>Planned <b id="nP"></b></div>
    <div class="lg"><span class="sw" style="border:1.5px dashed #94A3B8"></span>Untapped <b id="nU"></b></div>
+   <div class="lg"><span class="sw" style="background:#10B981"></span>SuberFood Clients <b id="nSF">0</b></div>
   </div>
  </div>
  <div id="panel"></div>
@@ -88,8 +90,9 @@ function watch(l){(l.eachLayer?l.getLayers():[l]).forEach(t=>{t.on('tileerror',(
 Object.values(BASES).forEach(watch);
 document.querySelectorAll('[data-b]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-b]').forEach(x=>x.classList.toggle('on',x===b));map.removeLayer(base);base=BASES[b.dataset.b].addTo(map);fails=0;oks=0;});
 
-const layers={ops:L.layerGroup().addTo(map),routes:L.layerGroup().addTo(map),expand:L.layerGroup().addTo(map)};
+const layers={ops:L.layerGroup().addTo(map),routes:L.layerGroup().addTo(map),expand:L.layerGroup().addTo(map),suberfood:L.layerGroup().addTo(map)};
 const markers={};let sel='buea';
+let suberFoodClients=[];let clientMarkers={};
 LOC.forEach(l=>{
  const hq=l.st==='active';
  if(hq)L.circleMarker(l.ll,{radius:10,color:COL.active,weight:2,fill:false,className:'hqring',interactive:false}).addTo(layers.ops);
@@ -105,6 +108,73 @@ const P=id=>LOC.find(x=>x.id===id).ll;
  for(let t=0;t<=1.0001;t+=.05){const u=1-t;pts.push([u*u*A[0]+2*u*t*mid[0]+t*t*B[0],u*u*A[1]+2*u*t*mid[1]+t*t*B[1]]);}
  L.polyline(pts,{color:'#F59E0B',weight:3,className:'route'}).bindTooltip('SuberFood supply chain · Nov 16–30',{sticky:true}).addTo(layers.routes);
 });
+// Fetch SuberFood clients from API
+async function fetchSuberFoodClients(){
+ try{
+  const apiUrl='http://localhost:3000/api/clients/locations';
+  const res=await fetch(apiUrl);
+  if(!res.ok){console.warn('SuberFood API not available:',res.status);return;}
+  const json=await res.json();
+  if(json.success&&json.data){
+   suberFoodClients=json.data;
+   displaySuberFoodClients();
+  }
+ }catch(e){console.warn('Error fetching SuberFood clients:',e.message);}
+}
+// Display SuberFood clients on map
+function displaySuberFoodClients(){
+ layers.suberfood.clearLayers();
+ clientMarkers={};
+ let count=0;
+ suberFoodClients.forEach((client,idx)=>{
+  if(!client.latitude||!client.longitude)return;
+  const ll=[client.latitude,client.longitude];
+  const m=L.circleMarker(ll,{radius:7,fillColor:'#10B981',fillOpacity:0.8,color:'#059669',weight:2}).on('click',()=>{showClientPanel(client);});
+  m.bindTooltip(client.clientName||'SuberFood Client',{direction:'right',offset:[10,0],className:'lbl',permanent:false});
+  m.addTo(layers.suberfood);
+  clientMarkers[client.id]=m;
+  count++;
+ });
+ document.getElementById('nSF').textContent=count;
+}
+// Show client details in panel
+function showClientPanel(client){
+ const items=client.items||[];
+ const itemsList=items.map(i=>`<li>${i.name} (${i.quantity} ${i.unit}) - ${i.totalPrice.toLocaleString()} XAF</li>`).join('');
+ const statusColors={PENDING:'#F59E0B',CONFIRMED:'#3B82F6',PREPARING:'#8B5CF6',OUT_FOR_DELIVERY:'#06B6D4',DELIVERED:'#10B981',COMPLETED:'#10B981',CANCELLED:'#EF4444'};
+ const statusColor=statusColors[client.orderStatus]||'#6B7280';
+ document.getElementById('panel').innerHTML=`
+  <div class="mono">SuberFood Client · ${client.city||'Unknown'}</div>
+  <h3>${client.clientName||'Anonymous'}</h3>
+  <span class="tag" style="background:${statusColor}22;color:${statusColor};border:1px solid ${statusColor}88">${client.orderStatus}</span>
+  <div class="mono" style="margin-top:12px">Contact</div>
+  <ul>
+   <li>Phone: ${client.clientPhone||'N/A'}</li>
+   ${client.clientEmail?`<li>Email: ${client.clientEmail}</li>`:''}
+  </ul>
+  <div class="mono">Order Details</div>
+  <ul>
+   <li>Order #: ${client.orderNumber}</li>
+   <li>Total: ${client.totalAmount.toLocaleString()} XAF</li>
+   <li>Date: ${new Date(client.orderDate).toLocaleDateString()}</li>
+  </ul>
+  ${items.length>0?`<div class="mono">Items Ordered</div><ul>${itemsList}</ul>`:''}
+  <div class="mono">Delivery Address</div>
+  <ul><li>${client.address||'N/A'}</li></ul>
+  <div class="mono">Coordinates</div>
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#CBD5E1;margin-bottom:8px">${client.latitude.toFixed(6)}, ${client.longitude.toFixed(6)}</div>
+  <div class="btns"><button onclick="map.flyTo([${client.latitude},${client.longitude}],16,{duration:1.4})">Zoom to client</button></div>
+ `;
+}
+// Refresh button handler
+document.getElementById('refreshClients').onclick=()=>{
+ document.getElementById('refreshClients').textContent='⟳ Loading...';
+ fetchSuberFoodClients().then(()=>{
+  document.getElementById('refreshClients').textContent='🔄 Refresh Clients';
+ });
+};
+// Load SuberFood clients on page load
+fetchSuberFoodClients();
 function panel(){
  const l=LOC.find(x=>x.id===sel),c=COL[l.st],stl={active:'ACTIVE',planned:'PLANNED',target:'UNTAPPED'}[l.st];
  const secs=l.sections||[['Status',['No operations yet — '+l.region+' region']],['Opportunity',['Candidate market for SuberFood / SuberCraftex expansion']]];
