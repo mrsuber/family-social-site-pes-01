@@ -24,18 +24,24 @@ const app = express();
 app.use(express.json())
 app.use(cookieParser())
 
-//Error unhandler(should be last piece of middleware)
-app.use(errorHandler)
-
 //file upload
 const cors = require('cors')
 const bodyParser=require('body-parser')
-app.use(cors({ origin: 'http://localhost:3000' }))
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}))
 app.use(bodyParser.json())
 app.use('/uploads',express.static(path.join(__dirname,'uploads')))
 //socket
 const http = require('http').createServer(app)
-const io = require('socket.io')(http, { cors: { origin: 'http://localhost:3000' } })
+const io = require('socket.io')(http, {
+  cors: {
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST'],
+    credentials: true
+  }
+})
 const SocketServer = require('./socketServer')
 
 
@@ -107,6 +113,8 @@ if(process.env.NODE_ENV==="production"){
   })
 }
 
+//Error handler (should be last piece of middleware)
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 5001;
 

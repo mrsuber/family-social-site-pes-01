@@ -269,70 +269,6 @@ const EmpireCommandCenter = () => {
         )}
       </section>
 
-      {/* Zone 2: Focus Heat Map */}
-      <section className="zone-focus-heat">
-        <div className="zone-header">
-          <span className="zone-label">02 · FOCUS HEAT MAP</span>
-          <span className="zone-hint">Drag cards between lanes to change priority</span>
-        </div>
-
-        <div className="heat-lane critical-lane">
-          <div className="lane-header">
-            <PulseIndicator color="#EF4444" /> CRITICAL — needs your attention right now
-          </div>
-          <div className="project-cards">
-            <ProjectCard
-              title="SuberFood Platform"
-              meta={[`${daysToAli} days until Ali arrives`, `Due Oct 31 · ${calculateDaysUntil(2026, 9, 31)} days`]}
-              completion={70}
-              missing={['Pre-orders', 'Wallet system', 'PayWithCamsol']}
-              hours="12h"
-              type="critical"
-              onWork={() => setShowModal('tasks')}
-            />
-            <ProjectCard
-              title="Camsol SDO Report"
-              meta={[`Due Oct 20 · ${calculateDaysUntil(2026, 9, 20)} days`]}
-              completion={60}
-              status="On track"
-              hours="24h"
-              type="critical"
-              onWork={() => setShowModal('tasks')}
-            />
-          </div>
-        </div>
-
-        <div className="heat-lane active-lane">
-          <div className="lane-header">
-            <span className="status-dot active"></span> ACTIVE — in progress, stable
-          </div>
-          <div className="project-cards">
-            <ProjectCard
-              title="PayWithCamsol"
-              meta={['Icons integrating', 'Monitor only']}
-              status="Stable"
-              type="active"
-            />
-            <ProjectCard
-              title="SuberCraftex"
-              meta={['106 products · low revenue', 'Needs marketing — after SuberFood']}
-              type="active"
-            />
-          </div>
-        </div>
-
-        <div className="heat-lane hold-lane">
-          <div className="lane-header">
-            <span className="status-dot hold"></span> ON HOLD — resume later
-          </div>
-          <div className="hold-items">
-            <div className="hold-item">ProFundra NGO Partnerships <span>→ Q1 2027</span></div>
-            <div className="hold-item">PayWithCamsol Bank Integration <span>→ Q1 2027</span></div>
-            <div className="hold-item">SuberCraftex Aggressive Growth <span>→ Dec 2026</span></div>
-          </div>
-        </div>
-      </section>
-
       {/* Zones 3 & 4: Constellation and Energy Flows */}
       <div className="zones-34">
         {/* Zone 3: Project Constellation */}
@@ -350,30 +286,6 @@ const EmpireCommandCenter = () => {
           </div>
         </section>
 
-        {/* Zone 4: Energy Flows */}
-        <section className="zone-energy">
-          <div className="zone-label">04 · ENERGY FLOWS</div>
-
-          <div className="energy-card">
-            <div className="card-header">
-              <span>Time spent this week</span>
-              <span className="time-total">{data.timeAllocation.camsol + data.timeAllocation.suberfood + data.timeAllocation.admin}h / week</span>
-            </div>
-            <TimeBar label="Camsol SDO" hours={data.timeAllocation.camsol} color="#3B82F6" />
-            <TimeBar label="SuberFood Dev" hours={data.timeAllocation.suberfood} color="#EF4444" />
-            <TimeBar label="Planning / Admin" hours={data.timeAllocation.admin} color="#6B7280" />
-
-            <div className="warning-box time-warning">
-              <div className="warning-title">SuberFood at risk</div>
-              <div>Needs 20h/week to finish by Oct 31. Suggested: reduce SDO to 20h (50%), raise SuberFood to 16h (40%).</div>
-            </div>
-
-            <div className="action-buttons">
-              <button className="btn-primary" onClick={handleAutoAdjust}>Auto-adjust</button>
-              <button onClick={() => setShowModal('time-edit')}>Manual override</button>
-            </div>
-          </div>
-        </section>
       </div>
 
       {/* Zone 5: Geographic Operations */}
@@ -386,21 +298,6 @@ const EmpireCommandCenter = () => {
               title="Cameroon operations map"
               className="map-iframe"
             />
-          </div>
-          <div className="cloud-services">
-            <div className="service-label">CLOUD / REMOTE</div>
-            <a href="https://profundra.com" target="_blank" rel="noopener noreferrer" className="service-item">
-              <span className="service-name">ProFundra</span>
-              <span className="service-url">profundra.com</span>
-            </a>
-            <div className="service-item">
-              <span className="service-name">PayWithCamsol</span>
-              <span className="service-desc">Payment gateway · MTN MoMo, Orange Money</span>
-            </div>
-            <div className="service-item">
-              <span className="service-name">SuberCraftex platform</span>
-              <span className="service-desc">subercraftex.com · 106 products</span>
-            </div>
           </div>
         </div>
       </section>

@@ -39,7 +39,7 @@ const App=()=> {
     dispatch(refreshToken())
     // Use production URL if not localhost, otherwise use localhost for development
     const socketUrl = window.location.hostname === 'localhost'
-      ? 'http://localhost:5001'
+      ? 'http://localhost:5002'
       : `https://${window.location.hostname}`;
     const socket = io(socketUrl)
     dispatch({type:GLOBALTYPES.SOCKET, payload:socket})

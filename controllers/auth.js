@@ -159,14 +159,12 @@ exports.generateAccessToken = async (req, res) => {
     const rf_token = req.cookies.refreshtoken
 
     if (!rf_token) {
-      res.status(400).json({ msg: "please login now" })
-      return next(new ErrorResponse("pleas login now", 400))
+      return res.status(400).json({ msg: "please login now" })
     }
 
     jwt.verify(rf_token, process.env.JWT_SECRET, async (err, result) => {
       if (err) {
-        res.status(400).json({ msg: "please login now" })
-        return next(new ErrorResponse("please login now", 400))
+        return res.status(400).json({ msg: "please login now" })
       }
 
       const user = await User.findByPk(result.id, {
@@ -174,8 +172,7 @@ exports.generateAccessToken = async (req, res) => {
       })
 
       if (!user) {
-        res.status(400).json({ msg: "This user does not exist" })
-        return next(new ErrorResponse("This user does not exist", 400))
+        return res.status(400).json({ msg: "This user does not exist" })
       }
 
       const token = user.getSignedToken()
@@ -185,8 +182,7 @@ exports.generateAccessToken = async (req, res) => {
       })
     })
   } catch (err) {
-    res.status(500).json({ msg: err.message })
-    return next(new ErrorResponse(err.message, 401))
+    return res.status(500).json({ msg: err.message })
   }
 }
 

@@ -10,6 +10,7 @@ const GlobalAssetsMap = () => {
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(true);
   const [zoom, setZoom] = useState(1);
   const [panPosition, setPanPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
@@ -406,6 +407,91 @@ const GlobalAssetsMap = () => {
           </div>
         )}
       </div>
+
+      {/* Welcome Modal */}
+      {showWelcomeModal && (
+        <div className="modal-overlay" onClick={() => setShowWelcomeModal(false)}>
+          <div className="modal-content welcome-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <div>
+                <h2 style={{ fontSize: '20px', fontWeight: '700', letterSpacing: '0.06em' }}>
+                  GLOBAL ASSETS & RESOURCES
+                </h2>
+                <div style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: '12px', color: '#94A3B8', marginTop: '4px' }}>
+                  {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
+                </div>
+              </div>
+            </div>
+
+            <div className="modal-body" style={{ gap: '14px' }}>
+              <div style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: '11px', letterSpacing: '0.14em', color: '#94A3B8' }}>
+                STRATEGIC PRIORITIES
+              </div>
+
+              <div style={{ display: 'flex', gap: '12px', alignItems: 'center', background: '#0F172A', border: '1px solid #334155', borderRadius: '8px', padding: '12px' }}>
+                <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: '18px', color: '#EF4444', width: '20px' }}>1</span>
+                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                  <span style={{ fontWeight: '500', fontSize: '14px' }}>Map key suppliers for SuberFood launch</span>
+                  <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: '11px', color: '#94A3B8' }}>Nigeria, Chad textile sources</span>
+                </div>
+                <button
+                  onClick={() => { setShowWelcomeModal(false); setShowAddModal(true); }}
+                  style={{ background: '#334155', border: '1px solid #475569', color: '#E2E8F0', borderRadius: '6px', padding: '6px 10px', font: '500 12px IBM Plex Sans', cursor: 'pointer' }}
+                >
+                  Add now
+                </button>
+              </div>
+
+              <div style={{ display: 'flex', gap: '12px', alignItems: 'center', background: '#0F172A', border: '1px solid #334155', borderRadius: '8px', padding: '12px' }}>
+                <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: '18px', color: '#F59E0B', width: '20px' }}>2</span>
+                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                  <span style={{ fontWeight: '500', fontSize: '14px' }}>Identify equipment sources for expansion</span>
+                  <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: '11px', color: '#94A3B8' }}>Embroidery motors, industrial sewing</span>
+                </div>
+                <button
+                  onClick={() => { setShowWelcomeModal(false); setShowAddModal(true); }}
+                  style={{ background: '#334155', border: '1px solid #475569', color: '#E2E8F0', borderRadius: '6px', padding: '6px 10px', font: '500 12px IBM Plex Sans', cursor: 'pointer' }}
+                >
+                  Add now
+                </button>
+              </div>
+
+              <div style={{ display: 'flex', gap: '12px', alignItems: 'center', background: '#0F172A', border: '1px solid #334155', borderRadius: '8px', padding: '12px' }}>
+                <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: '18px', color: '#3B82F6', width: '20px' }}>3</span>
+                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                  <span style={{ fontWeight: '500', fontSize: '14px' }}>Track logistics hubs for distribution</span>
+                  <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: '11px', color: '#94A3B8' }}>Douala, Yaounde shipping routes</span>
+                </div>
+                <button
+                  onClick={() => { setShowWelcomeModal(false); setShowAddModal(true); }}
+                  style={{ background: '#334155', border: '1px solid #475569', color: '#E2E8F0', borderRadius: '6px', padding: '6px 10px', font: '500 12px IBM Plex Sans', cursor: 'pointer' }}
+                >
+                  Add now
+                </button>
+              </div>
+
+              <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.4)', borderRadius: '8px', padding: '10px 12px', fontSize: '13px' }}>
+                Track strategic assets globally to build your empire's supply chain and expand operations across Africa.
+              </div>
+
+              <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
+                <button
+                  onClick={() => setShowWelcomeModal(false)}
+                  style={{ background: '#334155', border: '1px solid #475569', color: '#E2E8F0', borderRadius: '6px', padding: '9px 14px', font: '500 13px IBM Plex Sans', cursor: 'pointer' }}
+                >
+                  View map
+                </button>
+                <button
+                  onClick={() => { setShowWelcomeModal(false); setShowAddModal(true); }}
+                  style={{ background: '#3B82F6', border: 'none', color: '#fff', borderRadius: '6px', padding: '9px 14px', font: '600 13px IBM Plex Sans', cursor: 'pointer' }}
+                >
+                  Add first asset
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Add/Edit Modal */}
       {(showAddModal || showEditModal) && (
